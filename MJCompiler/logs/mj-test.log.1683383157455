@@ -1,0 +1,96 @@
+INFO  15:49:40,700 - Compiling source file: C:\Users\Korisnik\Desktop\PP1-projekat\MJCompiler\test\program.mj
+INFO  15:49:40,706 - #2 program
+INFO  15:49:40,706 - #10 filip
+INFO  15:49:40,707 - #3 const
+INFO  15:49:40,707 - #10 int
+INFO  15:49:40,707 - #10 nula
+INFO  15:49:40,707 - #19 =
+INFO  15:49:40,708 - #11 0
+INFO  15:49:40,708 - #24 ,
+INFO  15:49:40,708 - #10 jedan
+INFO  15:49:40,708 - #19 =
+INFO  15:49:40,708 - #11 1
+INFO  15:49:40,708 - #22 ;
+INFO  15:49:40,708 - #3 const
+INFO  15:49:40,709 - #10 boolean
+INFO  15:49:40,709 - #10 b
+INFO  15:49:40,709 - #19 =
+INFO  15:49:40,709 - #13 1
+INFO  15:49:40,709 - #24 ,
+INFO  15:49:40,709 - #10 c
+INFO  15:49:40,709 - #19 =
+INFO  15:49:40,709 - #13 0
+INFO  15:49:40,711 - #22 ;
+INFO  15:49:40,711 - #3 const
+INFO  15:49:40,711 - #10 character
+INFO  15:49:40,711 - #10 a
+INFO  15:49:40,711 - #19 =
+INFO  15:49:40,711 - #12 a
+INFO  15:49:40,711 - #22 ;
+INFO  15:49:40,712 - Program(
+ filip
+  ConstVarDeclList_CONST(
+    ConstVarDeclList_CONST(
+      ConstVarDeclList_CONST(
+        ConstVarDeclList_EPSILON(
+        ) [ConstVarDeclList_EPSILON]
+        ConstDeclList(
+          Type(
+           int
+          ) [Type]
+          ConstDeclOneOrMore_MORE(
+            ConstDecl(
+             nula
+              Constant_NUMBER(
+               0
+              ) [Constant_NUMBER]
+            ) [ConstDecl]
+            ConstDeclOneOrMore_ONE(
+              ConstDecl(
+               jedan
+                Constant_NUMBER(
+                 1
+                ) [Constant_NUMBER]
+              ) [ConstDecl]
+            ) [ConstDeclOneOrMore_ONE]
+          ) [ConstDeclOneOrMore_MORE]
+        ) [ConstDeclList]
+      ) [ConstVarDeclList_CONST]
+      ConstDeclList(
+        Type(
+         boolean
+        ) [Type]
+        ConstDeclOneOrMore_MORE(
+          ConstDecl(
+           b
+            Constant_BOOLEAN(
+             1
+            ) [Constant_BOOLEAN]
+          ) [ConstDecl]
+          ConstDeclOneOrMore_ONE(
+            ConstDecl(
+             c
+              Constant_BOOLEAN(
+               0
+              ) [Constant_BOOLEAN]
+            ) [ConstDecl]
+          ) [ConstDeclOneOrMore_ONE]
+        ) [ConstDeclOneOrMore_MORE]
+      ) [ConstDeclList]
+    ) [ConstVarDeclList_CONST]
+    ConstDeclList(
+      Type(
+       character
+      ) [Type]
+      ConstDeclOneOrMore_ONE(
+        ConstDecl(
+         a
+          Constant_CHARACTER(
+           a
+          ) [Constant_CHARACTER]
+        ) [ConstDecl]
+      ) [ConstDeclOneOrMore_ONE]
+    ) [ConstDeclList]
+  ) [ConstVarDeclList_CONST]
+) [Program]
+INFO  15:49:40,712 - ===================================

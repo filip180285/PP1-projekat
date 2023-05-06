@@ -1,0 +1,121 @@
+package rs.ac.bg.etf.pp1;
+
+import java_cup.runtime.*;
+import org.apache.log4j.*;
+import rs.ac.bg.etf.pp1.ast.*;
+
+parser code {:
+
+	boolean errorDetected;
+	
+	Logger log = Logger.getLogger(getClass());
+   
+   
+    // slede redefinisani metodi za prijavu gresaka radi izmene teksta poruke
+     
+    public void report_fatal_error(String message, Object info) throws java.lang.Exception {
+      done_parsing();
+      report_error(message, info);
+    }
+  
+    public void syntax_error(Symbol cur_token) {
+        report_error("\nSintaksna greska", cur_token);
+    }
+  
+    public void unrecovered_syntax_error(Symbol cur_token) throws java.lang.Exception {
+        report_fatal_error("Fatalna greska, parsiranje se ne moze nastaviti", cur_token);
+    }
+
+    public void report_error(String message, Object info) {
+    	errorDetected = true;
+    	StringBuilder msg = new StringBuilder(message); 
+    	if (info instanceof Symbol)
+            msg.append (" na liniji ").append(((Symbol)info).left);
+        log.error(msg.toString());
+    }
+
+
+:}
+
+init with {:
+	errorDetected = false;
+:}
+
+scan with {:
+	Symbol s = this.getScanner().next_token();
+	if (s != null && s.value != null) 
+		log.info(s.toString() + " " + s.value.toString());
+	return s;
+:}
+
+terminal PROGRAM, CONST, NEW, PRINT, READ, RETURN, VOID, GOTO;
+terminal String IDENTIFIER;
+terminal Integer NUMBER; 
+terminal Character CHARACTER;
+terminal Integer BOOLEAN;
+terminal PLUS, MINUS, MULTIPLICATION, DIVISION, MODULUS, EQUALS, INCREMENT, DECREMENT;
+terminal SEMICOLON, COLON, COMMA, LEFT_PARENTHESIS, RIGHT_PARENTHESIS, LEFT_BRACKET, RIGHT_BRACKET, LEFT_BRACE, RIGHT_BRACE;
+
+nonterminal Program, ConstVarDeclList, ConstDeclList, VarDeclList;
+nonterminal Type, ConstDeclOneOrMore, ConstDecl, Constant, VarDeclOneOrMore, VarDecl, MethodDecl;
+
+
+/*** Program = "program" ident {ConstDecl | VarDecl | ClassDecl } "{" {MethodDecl} "}". ***/
+
+Program ::= (Program) PROGRAM IDENTIFIER ConstVarDeclList;
+
+ConstVarDeclList ::= (ConstVarDeclList_CONST) ConstVarDeclList ConstDeclList
+					 | 
+					 (ConstVarDeclList_VAR) ConstVarDeclList VarDeclList
+					 |
+					 (ConstVarDeclList_EPSILON) /* epsilon */
+					 ;
+					 
+/*** ConstDecl = "const" Type ident"="(numConst | charConst | boolConst) {, ident "=" (numConst | charConst | boolConst)} ";". ***/
+
+ConstDeclList ::= (ConstDeclList) CONST Type ConstDeclOneOrMore SEMICOLON;	// const int x = 2;	const int y = 3, z = 5;
+
+ConstDeclOneOrMore ::= (ConstDeclOneOrMore_MORE) ConstDecl COMMA ConstDeclOneOrMore
+					   |
+					   (ConstDeclOneOrMore_ONE) ConstDecl;
+
+ConstDecl ::= (ConstDecl) IDENTIFIER EQUALS Constant;
+
+Constant ::= (Constant_NUMBER) NUMBER
+			 | 
+			 (Constant_CHARACTER) CHARACTER
+			 |
+			 (Constant_BOOLEAN) BOOLEAN;
+			 
+Type ::= (Type) IDENTIFIER;
+
+/*** VarDecl = Type ident ["[" "]"] {"," ident ["[" "]"]} ";". ***/
+
+VarDeclList ::= (VarDeclList) Type VarDeclOneOrMore SEMICOLON;	// int x; int y, z, niz[];
+
+VarDeclOneOrMore ::= (VarDeclOneOrMore_MORE) VarDecl COMMA VarDeclOneOrMore
+					 |
+					 (VarDeclOneOrMore_ONE) VarDecl;
+
+VarDecl ::= (VarDecl_VAR) IDENTIFIER
+			|
+			(VarDecl_ARRAY) IDENTIFIER LEFT_BRACKET RIGHT_BRACKET;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

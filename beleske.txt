@@ -1,3 +1,7 @@
 - nisam stavio operator "." jer ne vidim potrebu i situaciju u kojoj se koristi za A nivo
 - mj-test.log je najnoviji ispis, stari mj-test.log se preimenuje sa konkateniranim trenutnim milisekundama
-- yyline i yycolumn uvecati za 1 pri ispisu, jer krecu od 0 
+- yyline i yycolumn uvecati za 1 pri ispisu, jer krecu od 0
+- false = 0, true = 1 (mozda staviti new Integer(0|1) ali vrv ne treba)
+
+- rad po uzoru na veru, neke razlike u gramatici:
+deklaracija niza

@@ -1,0 +1,42 @@
+INFO  15:39:35,009 - Compiling source file: C:\Users\Korisnik\Desktop\PP1-projekat\MJCompiler\test\program.mj
+INFO  15:39:35,016 - #2 program
+INFO  15:39:35,016 - #10 filip
+INFO  15:39:35,016 - #3 const
+INFO  15:39:35,016 - #10 int
+INFO  15:39:35,016 - #10 nula
+INFO  15:39:35,017 - #19 =
+INFO  15:39:35,017 - #11 0
+INFO  15:39:35,017 - #24 ,
+INFO  15:39:35,017 - #10 jedan
+INFO  15:39:35,017 - #19 =
+INFO  15:39:35,017 - #11 1
+INFO  15:39:35,017 - #22 ;
+INFO  15:39:35,019 - Program(
+ filip
+  ConstVarDeclList_CONST(
+    ConstVarDeclList_EPSILON(
+    ) [ConstVarDeclList_EPSILON]
+    ConstDeclList(
+      Type(
+       int
+      ) [Type]
+      ConstDeclOneOrMore_MORE(
+        ConstDecl(
+         nula
+          Constant_NUMBER(
+           0
+          ) [Constant_NUMBER]
+        ) [ConstDecl]
+        ConstDeclOneOrMore_ONE(
+          ConstDecl(
+           jedan
+            Constant_NUMBER(
+             1
+            ) [Constant_NUMBER]
+          ) [ConstDecl]
+        ) [ConstDeclOneOrMore_ONE]
+      ) [ConstDeclOneOrMore_MORE]
+    ) [ConstDeclList]
+  ) [ConstVarDeclList_CONST]
+) [Program]
+INFO  15:39:35,021 - ===================================

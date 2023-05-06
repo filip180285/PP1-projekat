@@ -74,19 +74,3 @@ import java_cup.runtime.Symbol;
 [a-zA-Z][a-zA-Z0-9_]*	{return new_symbol (sym.IDENTIFIER, yytext()); }
 
 . { System.err.println("Leksicka greska (" + yytext() + ") na liniji " + (yyline + 1) + ", na koloni " + (yycolumn + 1) + "\n"); }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

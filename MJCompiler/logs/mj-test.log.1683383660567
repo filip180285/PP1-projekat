@@ -1,0 +1,66 @@
+INFO  16:28:22,376 - Compiling source file: C:\Users\Korisnik\Desktop\PP1-projekat\MJCompiler\test\program.mj
+INFO  16:28:22,384 - #2 program
+INFO  16:28:22,384 - #10 filip
+INFO  16:28:22,384 - #10 int
+INFO  16:28:22,384 - #10 niz
+INFO  16:28:22,385 - #27 [
+INFO  16:28:22,385 - #28 ]
+INFO  16:28:22,385 - #24 ,
+INFO  16:28:22,385 - #10 niz2
+INFO  16:28:22,385 - #27 [
+INFO  16:28:22,385 - #28 ]
+INFO  16:28:22,385 - #24 ,
+INFO  16:28:22,385 - #10 a
+INFO  16:28:22,385 - #24 ,
+INFO  16:28:22,385 - #10 b
+INFO  16:28:22,385 - #22 ;
+INFO  16:28:22,385 - #10 char
+INFO  16:28:22,386 - #10 nizch
+INFO  16:28:22,386 - #27 [
+INFO  16:28:22,386 - #28 ]
+INFO  16:28:22,386 - #22 ;
+INFO  16:28:22,387 - Program(
+ filip
+  ConstVarDeclList_VAR(
+    ConstVarDeclList_VAR(
+      ConstVarDeclList_EPSILON(
+      ) [ConstVarDeclList_EPSILON]
+      VarDeclList(
+        Type(
+         int
+        ) [Type]
+        VarDeclOneOrMore_MORE(
+          VarDecl_ARRAY(
+           niz
+          ) [VarDecl_ARRAY]
+          VarDeclOneOrMore_MORE(
+            VarDecl_ARRAY(
+             niz2
+            ) [VarDecl_ARRAY]
+            VarDeclOneOrMore_MORE(
+              VarDecl_VAR(
+               a
+              ) [VarDecl_VAR]
+              VarDeclOneOrMore_ONE(
+                VarDecl_VAR(
+                 b
+                ) [VarDecl_VAR]
+              ) [VarDeclOneOrMore_ONE]
+            ) [VarDeclOneOrMore_MORE]
+          ) [VarDeclOneOrMore_MORE]
+        ) [VarDeclOneOrMore_MORE]
+      ) [VarDeclList]
+    ) [ConstVarDeclList_VAR]
+    VarDeclList(
+      Type(
+       char
+      ) [Type]
+      VarDeclOneOrMore_ONE(
+        VarDecl_ARRAY(
+         nizch
+        ) [VarDecl_ARRAY]
+      ) [VarDeclOneOrMore_ONE]
+    ) [VarDeclList]
+  ) [ConstVarDeclList_VAR]
+) [Program]
+INFO  16:28:22,387 - ===================================

@@ -1,0 +1,24 @@
+INFO  16:27:28,120 - Compiling source file: C:\Users\Korisnik\Desktop\PP1-projekat\MJCompiler\test\program.mj
+INFO  16:27:28,131 - #2 program
+INFO  16:27:28,131 - #10 filip
+INFO  16:27:28,131 - #10 int
+INFO  16:27:28,132 - #10 b
+INFO  16:27:28,133 - #22 ;
+INFO  16:27:28,135 - Program(
+ filip
+  ConstVarDeclList_VAR(
+    ConstVarDeclList_EPSILON(
+    ) [ConstVarDeclList_EPSILON]
+    VarDeclList(
+      Type(
+       int
+      ) [Type]
+      VarDeclOneOrMore_ONE(
+        VarDecl_VAR(
+         b
+        ) [VarDecl_VAR]
+      ) [VarDeclOneOrMore_ONE]
+    ) [VarDeclList]
+  ) [ConstVarDeclList_VAR]
+) [Program]
+INFO  16:27:28,135 - ===================================

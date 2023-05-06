@@ -1,0 +1,63 @@
+INFO  15:41:21,678 - Compiling source file: C:\Users\Korisnik\Desktop\PP1-projekat\MJCompiler\test\program.mj
+INFO  15:41:21,684 - #2 program
+INFO  15:41:21,684 - #10 filip
+INFO  15:41:21,684 - #3 const
+INFO  15:41:21,685 - #10 int
+INFO  15:41:21,685 - #10 nula
+INFO  15:41:21,685 - #19 =
+INFO  15:41:21,685 - #11 0
+INFO  15:41:21,685 - #24 ,
+INFO  15:41:21,686 - #10 jedan
+INFO  15:41:21,686 - #19 =
+INFO  15:41:21,686 - #11 1
+INFO  15:41:21,686 - #22 ;
+INFO  15:41:21,686 - #3 const
+INFO  15:41:21,687 - #10 boolean
+INFO  15:41:21,687 - #10 b
+INFO  15:41:21,687 - #19 =
+INFO  15:41:21,687 - #13 1
+INFO  15:41:21,687 - #22 ;
+INFO  15:41:21,688 - Program(
+ filip
+  ConstVarDeclList_CONST(
+    ConstVarDeclList_CONST(
+      ConstVarDeclList_EPSILON(
+      ) [ConstVarDeclList_EPSILON]
+      ConstDeclList(
+        Type(
+         int
+        ) [Type]
+        ConstDeclOneOrMore_MORE(
+          ConstDecl(
+           nula
+            Constant_NUMBER(
+             0
+            ) [Constant_NUMBER]
+          ) [ConstDecl]
+          ConstDeclOneOrMore_ONE(
+            ConstDecl(
+             jedan
+              Constant_NUMBER(
+               1
+              ) [Constant_NUMBER]
+            ) [ConstDecl]
+          ) [ConstDeclOneOrMore_ONE]
+        ) [ConstDeclOneOrMore_MORE]
+      ) [ConstDeclList]
+    ) [ConstVarDeclList_CONST]
+    ConstDeclList(
+      Type(
+       boolean
+      ) [Type]
+      ConstDeclOneOrMore_ONE(
+        ConstDecl(
+         b
+          Constant_BOOLEAN(
+           1
+          ) [Constant_BOOLEAN]
+        ) [ConstDecl]
+      ) [ConstDeclOneOrMore_ONE]
+    ) [ConstDeclList]
+  ) [ConstVarDeclList_CONST]
+) [Program]
+INFO  15:41:21,688 - ===================================
