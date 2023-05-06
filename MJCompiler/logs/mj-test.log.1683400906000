@@ -1,0 +1,101 @@
+INFO  21:20:51,995 - Compiling source file: C:\Users\Korisnik\Desktop\PP1-projekat\MJCompiler\test\program.mj
+INFO  21:20:52,017 - #2 program
+INFO  21:20:52,017 - #10 test301
+INFO  21:20:52,017 - #29 {
+INFO  21:20:52,018 - #8 void
+INFO  21:20:52,018 - #10 main
+INFO  21:20:52,018 - #25 (
+INFO  21:20:52,018 - #26 )
+INFO  21:20:52,019 - #29 {
+INFO  21:20:52,019 - #6 read
+INFO  21:20:52,020 - #25 (
+INFO  21:20:52,020 - #26 )
+INFO  21:20:52,020 - #22 ;
+INFO  21:20:52,020 - #29 {
+INFO  21:20:52,021 - #5 print
+INFO  21:20:52,021 - #25 (
+INFO  21:20:52,021 - #26 )
+INFO  21:20:52,021 - #22 ;
+INFO  21:20:52,021 - #29 {
+INFO  21:20:52,021 - #6 read
+INFO  21:20:52,021 - #25 (
+INFO  21:20:52,022 - #26 )
+INFO  21:20:52,022 - #22 ;
+INFO  21:20:52,024 - #5 print
+INFO  21:20:52,024 - #25 (
+INFO  21:20:52,024 - #26 )
+INFO  21:20:52,024 - #22 ;
+INFO  21:20:52,024 - #30 }
+INFO  21:20:52,024 - #30 }
+INFO  21:20:52,024 - #7 return
+INFO  21:20:52,024 - #22 ;
+INFO  21:20:52,025 - #30 }
+INFO  21:20:52,025 - #30 }
+INFO  21:20:52,027 - Program(
+ test301
+  ConstVarDeclList_EPSILON(
+  ) [ConstVarDeclList_EPSILON]
+ {
+  MethodDecl(
+   main
+   (
+   )
+    MethodVarDeclList_EPSILON(
+    ) [MethodVarDeclList_EPSILON]
+   {
+    StatementList_STATEMENTS(
+      StatementList_STATEMENTS(
+        StatementList_STATEMENTS(
+          StatementList_EPSILON(
+          ) [StatementList_EPSILON]
+          Statement_READ(
+           (
+           )
+           ;
+          ) [Statement_READ]
+        ) [StatementList_STATEMENTS]
+        Statement_StatementList(
+         {
+          StatementList_STATEMENTS(
+            StatementList_STATEMENTS(
+              StatementList_EPSILON(
+              ) [StatementList_EPSILON]
+              Statement_PRINT(
+               (
+               )
+               ;
+              ) [Statement_PRINT]
+            ) [StatementList_STATEMENTS]
+            Statement_StatementList(
+             {
+              StatementList_STATEMENTS(
+                StatementList_STATEMENTS(
+                  StatementList_EPSILON(
+                  ) [StatementList_EPSILON]
+                  Statement_READ(
+                   (
+                   )
+                   ;
+                  ) [Statement_READ]
+                ) [StatementList_STATEMENTS]
+                Statement_PRINT(
+                 (
+                 )
+                 ;
+                ) [Statement_PRINT]
+              ) [StatementList_STATEMENTS]
+             }
+            ) [Statement_StatementList]
+          ) [StatementList_STATEMENTS]
+         }
+        ) [Statement_StatementList]
+      ) [StatementList_STATEMENTS]
+      Statement_RETURN(
+       ;
+      ) [Statement_RETURN]
+    ) [StatementList_STATEMENTS]
+   }
+  ) [MethodDecl]
+ }
+) [Program]
+INFO  21:20:52,028 - ===================================

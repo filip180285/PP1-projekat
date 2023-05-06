@@ -58,7 +58,11 @@ terminal SEMICOLON, COLON, COMMA, LEFT_PARENTHESIS, RIGHT_PARENTHESIS, LEFT_BRAC
 
 nonterminal Program, ConstVarDeclList, ConstDeclList, VarDeclList, MethodDecl;
 nonterminal Type, ConstDeclOneOrMore, ConstDecl, Constant, VarDeclOneOrMore, VarDecl;
-nonterminal MethodVarDeclList;
+nonterminal MethodVarDeclList, StatementList;
+nonterminal Statement;
+nonterminal DesignatorStatement, Designator, Expr, ExprList, Term, TermList, FactorSign, DesignatorStatementList;
+nonterminal MayPrintNumConst, MayDesignator;
+nonterminal Factor, UnaryMinus, Assignop, Addop, Mulop;
 
 
 
@@ -111,26 +115,145 @@ VarDecl ::= (VarDecl_VAR) IDENTIFIER
 			
 /*** MethodDecl = (Type | "void") ident "(" [FormPars] ")" {VarDecl} "{" {Statement} "}". ***/
 
-MethodDecl ::= (MethodDecl) VOID IDENTIFIER LEFT_PARENTHESIS RIGHT_PARENTHESIS MethodVarDeclList LEFT_BRACE RIGHT_BRACE;
+MethodDecl ::= (MethodDecl) VOID IDENTIFIER LEFT_PARENTHESIS RIGHT_PARENTHESIS MethodVarDeclList LEFT_BRACE StatementList RIGHT_BRACE;
 
 MethodVarDeclList ::= (MethodVarDeclList_VAR) MethodVarDeclList VarDeclList
 					  |
 					  (MethodVarDeclList_EPSILON) /* epsilon */
 					  ;
 
+StatementList ::= (StatementList_STATEMENTS) StatementList Statement
+				  |
+				  (StatementList_EPSILON) /* epsilon */
+				  ;
+				  
+				  
+				  
+/*** Statement = DesignatorStatement ";"
+				| "return" [Expr] ";"
+				| "read" "(" Designator ")" ";"
+				| "print" "(" Expr ["," numConst] ")" ";"
+				| "{" {Statement} "}".
+ ***/				  
+
+Statement ::= (Statement_DesignatorStatement) DesignatorStatement SEMICOLON
+			  |
+			  (Statement_RETURN) RETURN SEMICOLON
+			  |
+			  (Statement_READ) READ LEFT_PARENTHESIS Designator RIGHT_PARENTHESIS SEMICOLON
+			  |
+			  (Statement_PRINT) PRINT LEFT_PARENTHESIS Expr MayPrintNumConst RIGHT_PARENTHESIS SEMICOLON
+			  |
+			  (Statement_StatementList) LEFT_BRACE StatementList RIGHT_BRACE;
+			  
+MayPrintNumConst ::= (MayPrintNumConst_NUMBER) COMMA NUMBER
+					 |
+					 (MayPrintNumConst_EPSILON) /* epsilon */
+					 ;
+			  
+			  
+
+/*** DesignatorStatement = Designator (Assignop Expr | "(" [ActPars] ")" | "++" | "--")
+						   |
+						  "[" [Designator] {"," [Designator]}"]" "=" Designator.
+ ***/
+ 
+DesignatorStatement ::= (DesignatorSt_Assign) Designator Assignop Expr
+					    | 
+					    (DesignatorStat_INC) Designator INCREMENT
+					    |
+					    (DesignatorStat_DEC) Designator DECREMENT
+						|
+						(DesignatorStatement_List) LEFT_BRACKET DesignatorStatementList RIGHT_BRACKET EQUALS Designator;
+						
+DesignatorStatementList ::= (DesignatorStatementList_MORE)  DesignatorStatementList COMMA MayDesignator
+							|
+							(DesignatorStatementList_ONE) MayDesignator;
+
+MayDesignator ::= (MayDesignator_Designator) Designator
+				  |
+				  (MayDesignator_EPSILON) /* epsilon */
+				  ;							
+
+
+/*** Expr = ["-"] Term [Addop Term]. ***/
+
+Expr ::= (Expr) ExprList;
+		
+ExprList ::= (ExprList_ONE) Term
+			 |
+			 (ExprList_MORE) ExprList Addop Term;
+		
+
+
+/*** Term = Factor {Mulop Factor}. ***/
+
+Term ::= (Term) TermList;
+		
+TermList ::= (TermList_ONE) FactorSign
+			 |
+			 (TermList_MORE) TermList Mulop FactorSign;			  
+			  
+		
+			  
+/*** Factor = Designator
+			  | numConst
+			  | charConst
+ 			  | boolConst
+			  | "new" Type ( "[" Expr "]" )
+			  | "(" Expr ")".
+***/
+			  
+FactorSign ::= (FactorSign) UnaryMinus Factor;
+
+UnaryMinus ::= (UnaryMinus_MINUS) MINUS
+			   |
+			   (UnaryMinus_EPSILON) /* epsilon */
+			   ;
+
+Factor ::= (Factor_Designator) Designator
+		   |
+		   (Factor_NUMBER) NUMBER
+		   |
+		   (Factor_CHARACTER) CHARACTER
+		   |
+		   (Factor_BOOLEAN) BOOLEAN
+		   |
+		   (Factor_NEW) NEW Type LEFT_BRACKET Expr RIGHT_BRACKET
+		   |
+		   (Factor_Expr) LEFT_PARENTHESIS Expr RIGHT_PARENTHESIS
+		   ;
 
 
 
+/*** Designator = ident {"[" Expr "]"}. ***/
+
+Designator ::= (Designator_ONE) IDENTIFIER
+			   |
+			   (Designator_ARRAY) IDENTIFIER LEFT_BRACKET Expr RIGHT_BRACKET;
 
 
 
+/*** Assignop = "=". ***/
+
+Assignop ::= (Assignop) EQUALS;
 
 
 
+/*** Addop = "+" | "-". ***/
+
+Addop ::= (Addop_PLUS) PLUS
+		  |
+		  (Addop_MINUS) MINUS
+		  ;
 
 
 
+/*** Mulop = "*" | "/" | "%". ***/
 
-
-
-
+Mulop ::= (Mulop_MUL) MULTIPLICATION
+		  |
+		  (Mulop_DIV) DIVISION
+		  |
+		  (Mulop_MOD) MODULUS
+		  ;

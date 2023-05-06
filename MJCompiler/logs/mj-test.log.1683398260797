@@ -1,0 +1,73 @@
+INFO  20:37:21,044 - Compiling source file: C:\Users\Korisnik\Desktop\PP1-projekat\MJCompiler\test\program.mj
+INFO  20:37:21,076 - #2 program
+INFO  20:37:21,076 - #10 test301
+INFO  20:37:21,077 - #29 {
+INFO  20:37:21,078 - #8 void
+INFO  20:37:21,078 - #10 main
+INFO  20:37:21,078 - #25 (
+INFO  20:37:21,078 - #26 )
+INFO  20:37:21,078 - #29 {
+INFO  20:37:21,079 - #6 read
+INFO  20:37:21,081 - #25 (
+INFO  20:37:21,081 - #26 )
+INFO  20:37:21,081 - #22 ;
+INFO  20:37:21,081 - #29 {
+INFO  20:37:21,082 - #5 print
+INFO  20:37:21,082 - #25 (
+INFO  20:37:21,082 - #26 )
+INFO  20:37:21,082 - #22 ;
+INFO  20:37:21,082 - #30 }
+INFO  20:37:21,083 - #5 print
+INFO  20:37:21,083 - #25 (
+INFO  20:37:21,083 - #26 )
+INFO  20:37:21,083 - #22 ;
+INFO  20:37:21,085 - #30 }
+INFO  20:37:21,086 - #30 }
+INFO  20:37:21,089 - Program(
+ test301
+  ConstVarDeclList_EPSILON(
+  ) [ConstVarDeclList_EPSILON]
+ {
+  MethodDecl(
+   main
+   (
+   )
+    MethodVarDeclList_EPSILON(
+    ) [MethodVarDeclList_EPSILON]
+   {
+    StatementList_STATEMENTS(
+      StatementList_STATEMENTS(
+        StatementList_STATEMENTS(
+          StatementList_EPSILON(
+          ) [StatementList_EPSILON]
+          Statement_READ(
+           (
+           )
+           ;
+          ) [Statement_READ]
+        ) [StatementList_STATEMENTS]
+        Statement_StatementList(
+         {
+          StatementList_STATEMENTS(
+            StatementList_EPSILON(
+            ) [StatementList_EPSILON]
+            Statement_PRINT(
+             (
+             )
+             ;
+            ) [Statement_PRINT]
+          ) [StatementList_STATEMENTS]
+         }
+        ) [Statement_StatementList]
+      ) [StatementList_STATEMENTS]
+      Statement_PRINT(
+       (
+       )
+       ;
+      ) [Statement_PRINT]
+    ) [StatementList_STATEMENTS]
+   }
+  ) [MethodDecl]
+ }
+) [Program]
+INFO  20:37:21,090 - ===================================

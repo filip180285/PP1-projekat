@@ -1,0 +1,174 @@
+INFO  17:23:04,221 - Compiling source file: C:\Users\Korisnik\Desktop\PP1-projekat\MJCompiler\test\program.mj
+INFO  17:23:04,230 - #2 program
+INFO  17:23:04,230 - #10 test301
+INFO  17:23:04,230 - #3 const
+INFO  17:23:04,231 - #10 int
+INFO  17:23:04,231 - #10 nula
+INFO  17:23:04,232 - #19 =
+INFO  17:23:04,232 - #11 0
+INFO  17:23:04,232 - #22 ;
+INFO  17:23:04,233 - #3 const
+INFO  17:23:04,234 - #10 int
+INFO  17:23:04,234 - #10 jedan
+INFO  17:23:04,234 - #19 =
+INFO  17:23:04,234 - #11 1
+INFO  17:23:04,234 - #22 ;
+INFO  17:23:04,234 - #3 const
+INFO  17:23:04,234 - #10 int
+INFO  17:23:04,234 - #10 pet
+INFO  17:23:04,234 - #19 =
+INFO  17:23:04,234 - #11 5
+INFO  17:23:04,234 - #22 ;
+INFO  17:23:04,234 - #10 int
+INFO  17:23:04,234 - #10 niz
+INFO  17:23:04,234 - #27 [
+INFO  17:23:04,234 - #28 ]
+INFO  17:23:04,235 - #24 ,
+INFO  17:23:04,235 - #10 niz2
+INFO  17:23:04,235 - #27 [
+INFO  17:23:04,235 - #28 ]
+INFO  17:23:04,235 - #24 ,
+INFO  17:23:04,235 - #10 a
+INFO  17:23:04,235 - #24 ,
+INFO  17:23:04,235 - #10 b
+INFO  17:23:04,235 - #22 ;
+INFO  17:23:04,235 - #10 char
+INFO  17:23:04,236 - #10 nizch
+INFO  17:23:04,236 - #27 [
+INFO  17:23:04,236 - #28 ]
+INFO  17:23:04,236 - #22 ;
+INFO  17:23:04,236 - #29 {
+INFO  17:23:04,236 - #8 void
+INFO  17:23:04,236 - #10 main
+INFO  17:23:04,236 - #25 (
+INFO  17:23:04,236 - #26 )
+INFO  17:23:04,236 - #10 int
+INFO  17:23:04,237 - #10 bodovi
+INFO  17:23:04,237 - #22 ;
+INFO  17:23:04,237 - #10 bool
+INFO  17:23:04,237 - #10 bt
+INFO  17:23:04,237 - #22 ;
+INFO  17:23:04,237 - #29 {
+INFO  17:23:04,237 - #30 }
+INFO  17:23:04,237 - #30 }
+INFO  17:23:04,239 - Program(
+ test301
+  ConstVarDeclList_VAR(
+    ConstVarDeclList_VAR(
+      ConstVarDeclList_CONST(
+        ConstVarDeclList_CONST(
+          ConstVarDeclList_CONST(
+            ConstVarDeclList_EPSILON(
+            ) [ConstVarDeclList_EPSILON]
+            ConstDeclList(
+              Type(
+               int
+              ) [Type]
+              ConstDeclOneOrMore_ONE(
+                ConstDecl(
+                 nula
+                  Constant_NUMBER(
+                   0
+                  ) [Constant_NUMBER]
+                ) [ConstDecl]
+              ) [ConstDeclOneOrMore_ONE]
+            ) [ConstDeclList]
+          ) [ConstVarDeclList_CONST]
+          ConstDeclList(
+            Type(
+             int
+            ) [Type]
+            ConstDeclOneOrMore_ONE(
+              ConstDecl(
+               jedan
+                Constant_NUMBER(
+                 1
+                ) [Constant_NUMBER]
+              ) [ConstDecl]
+            ) [ConstDeclOneOrMore_ONE]
+          ) [ConstDeclList]
+        ) [ConstVarDeclList_CONST]
+        ConstDeclList(
+          Type(
+           int
+          ) [Type]
+          ConstDeclOneOrMore_ONE(
+            ConstDecl(
+             pet
+              Constant_NUMBER(
+               5
+              ) [Constant_NUMBER]
+            ) [ConstDecl]
+          ) [ConstDeclOneOrMore_ONE]
+        ) [ConstDeclList]
+      ) [ConstVarDeclList_CONST]
+      VarDeclList(
+        Type(
+         int
+        ) [Type]
+        VarDeclOneOrMore_MORE(
+          VarDecl_ARRAY(
+           niz
+          ) [VarDecl_ARRAY]
+          VarDeclOneOrMore_MORE(
+            VarDecl_ARRAY(
+             niz2
+            ) [VarDecl_ARRAY]
+            VarDeclOneOrMore_MORE(
+              VarDecl_VAR(
+               a
+              ) [VarDecl_VAR]
+              VarDeclOneOrMore_ONE(
+                VarDecl_VAR(
+                 b
+                ) [VarDecl_VAR]
+              ) [VarDeclOneOrMore_ONE]
+            ) [VarDeclOneOrMore_MORE]
+          ) [VarDeclOneOrMore_MORE]
+        ) [VarDeclOneOrMore_MORE]
+      ) [VarDeclList]
+    ) [ConstVarDeclList_VAR]
+    VarDeclList(
+      Type(
+       char
+      ) [Type]
+      VarDeclOneOrMore_ONE(
+        VarDecl_ARRAY(
+         nizch
+        ) [VarDecl_ARRAY]
+      ) [VarDeclOneOrMore_ONE]
+    ) [VarDeclList]
+  ) [ConstVarDeclList_VAR]
+  MethodDecl(
+   main
+    MethodVarDeclList_VAR(
+      MethodVarDeclList_VAR(
+        MethodVarDeclList_EPSILON(
+        ) [MethodVarDeclList_EPSILON]
+        VarDeclList(
+          Type(
+           int
+          ) [Type]
+          VarDeclOneOrMore_ONE(
+            VarDecl_VAR(
+             bodovi
+            ) [VarDecl_VAR]
+          ) [VarDeclOneOrMore_ONE]
+        ) [VarDeclList]
+      ) [MethodVarDeclList_VAR]
+      VarDeclList(
+        Type(
+         bool
+        ) [Type]
+        VarDeclOneOrMore_ONE(
+          VarDecl_VAR(
+           bt
+          ) [VarDecl_VAR]
+        ) [VarDeclOneOrMore_ONE]
+      ) [VarDeclList]
+    ) [MethodVarDeclList_VAR]
+    StatementList_EPSILON(
+    ) [StatementList_EPSILON]
+  ) [MethodDecl]
+) [Program]
+INFO  17:23:04,239 - ===================================

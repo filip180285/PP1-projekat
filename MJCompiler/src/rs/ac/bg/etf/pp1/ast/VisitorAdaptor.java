@@ -1,18 +1,71 @@
 // generated with ast extension for cup
 // version 0.8
-// 6/4/2023 17:10:36
+// 7/4/2023 1:37:10
 
 
 package rs.ac.bg.etf.pp1.ast;
 
 public abstract class VisitorAdaptor implements Visitor { 
 
-    public void visit(VarDeclOneOrMore VarDeclOneOrMore) { }
-    public void visit(ConstVarDeclList ConstVarDeclList) { }
-    public void visit(ConstDeclOneOrMore ConstDeclOneOrMore) { }
-    public void visit(MethodVarDeclList MethodVarDeclList) { }
+    public void visit(Designator Designator) { }
+    public void visit(Factor Factor) { }
+    public void visit(Mulop Mulop) { }
+    public void visit(DesignatorStatement DesignatorStatement) { }
+    public void visit(DesignatorStatementList DesignatorStatementList) { }
     public void visit(Constant Constant) { }
+    public void visit(MayPrintNumConst MayPrintNumConst) { }
+    public void visit(ExprList ExprList) { }
+    public void visit(MethodVarDeclList MethodVarDeclList) { }
+    public void visit(ConstDeclOneOrMore ConstDeclOneOrMore) { }
+    public void visit(UnaryMinus UnaryMinus) { }
+    public void visit(MayDesignator MayDesignator) { }
     public void visit(VarDecl VarDecl) { }
+    public void visit(VarDeclOneOrMore VarDeclOneOrMore) { }
+    public void visit(Addop Addop) { }
+    public void visit(TermList TermList) { }
+    public void visit(Statement Statement) { }
+    public void visit(ConstVarDeclList ConstVarDeclList) { }
+    public void visit(StatementList StatementList) { }
+    public void visit(Mulop_MOD Mulop_MOD) { visit(); }
+    public void visit(Mulop_DIV Mulop_DIV) { visit(); }
+    public void visit(Mulop_MUL Mulop_MUL) { visit(); }
+    public void visit(Addop_MINUS Addop_MINUS) { visit(); }
+    public void visit(Addop_PLUS Addop_PLUS) { visit(); }
+    public void visit(Assignop Assignop) { visit(); }
+    public void visit(Designator_ARRAY Designator_ARRAY) { visit(); }
+    public void visit(Designator_ONE Designator_ONE) { visit(); }
+    public void visit(Factor_Expr Factor_Expr) { visit(); }
+    public void visit(Factor_NEW Factor_NEW) { visit(); }
+    public void visit(Factor_BOOLEAN Factor_BOOLEAN) { visit(); }
+    public void visit(Factor_CHARACTER Factor_CHARACTER) { visit(); }
+    public void visit(Factor_NUMBER Factor_NUMBER) { visit(); }
+    public void visit(Factor_Designator Factor_Designator) { visit(); }
+    public void visit(UnaryMinus_EPSILON UnaryMinus_EPSILON) { visit(); }
+    public void visit(UnaryMinus_MINUS UnaryMinus_MINUS) { visit(); }
+    public void visit(FactorSign FactorSign) { visit(); }
+    public void visit(TermList_MORE TermList_MORE) { visit(); }
+    public void visit(TermList_ONE TermList_ONE) { visit(); }
+    public void visit(Term Term) { visit(); }
+    public void visit(ExprList_MORE ExprList_MORE) { visit(); }
+    public void visit(ExprList_ONE ExprList_ONE) { visit(); }
+    public void visit(Expr Expr) { visit(); }
+    public void visit(MayDesignator_EPSILON MayDesignator_EPSILON) { visit(); }
+    public void visit(MayDesignator_Designator MayDesignator_Designator) { visit(); }
+    public void visit(DesignatorStatementList_ONE DesignatorStatementList_ONE) { visit(); }
+    public void visit(DesignatorStatementList_MORE DesignatorStatementList_MORE) { visit(); }
+    public void visit(DesignatorStatement_List DesignatorStatement_List) { visit(); }
+    public void visit(DesignatorStat_DEC DesignatorStat_DEC) { visit(); }
+    public void visit(DesignatorStat_INC DesignatorStat_INC) { visit(); }
+    public void visit(DesignatorSt_Assign DesignatorSt_Assign) { visit(); }
+    public void visit(MayPrintNumConst_EPSILON MayPrintNumConst_EPSILON) { visit(); }
+    public void visit(MayPrintNumConst_NUMBER MayPrintNumConst_NUMBER) { visit(); }
+    public void visit(Statement_StatementList Statement_StatementList) { visit(); }
+    public void visit(Statement_PRINT Statement_PRINT) { visit(); }
+    public void visit(Statement_READ Statement_READ) { visit(); }
+    public void visit(Statement_RETURN Statement_RETURN) { visit(); }
+    public void visit(Statement_DesignatorStatement Statement_DesignatorStatement) { visit(); }
+    public void visit(StatementList_EPSILON StatementList_EPSILON) { visit(); }
+    public void visit(StatementList_STATEMENTS StatementList_STATEMENTS) { visit(); }
     public void visit(MethodVarDeclList_EPSILON MethodVarDeclList_EPSILON) { visit(); }
     public void visit(MethodVarDeclList_VAR MethodVarDeclList_VAR) { visit(); }
     public void visit(MethodDecl MethodDecl) { visit(); }

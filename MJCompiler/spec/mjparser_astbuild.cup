@@ -68,6 +68,23 @@ nonterminal Constant Constant;
 nonterminal VarDeclOneOrMore VarDeclOneOrMore;
 nonterminal VarDecl VarDecl;
 nonterminal MethodVarDeclList MethodVarDeclList;
+nonterminal StatementList StatementList;
+nonterminal Statement Statement;
+nonterminal DesignatorStatement DesignatorStatement;
+nonterminal Designator Designator;
+nonterminal Expr Expr;
+nonterminal ExprList ExprList;
+nonterminal Term Term;
+nonterminal TermList TermList;
+nonterminal FactorSign FactorSign;
+nonterminal DesignatorStatementList DesignatorStatementList;
+nonterminal MayPrintNumConst MayPrintNumConst;
+nonterminal MayDesignator MayDesignator;
+nonterminal Factor Factor;
+nonterminal UnaryMinus UnaryMinus;
+nonterminal Assignop Assignop;
+nonterminal Addop Addop;
+nonterminal Mulop Mulop;
 
 
 
@@ -120,26 +137,145 @@ VarDecl ::= (VarDecl_VAR) IDENTIFIER:I1 {: RESULT=new VarDecl_VAR(I1); RESULT.se
 			
 /*** MethodDecl = (Type | "void") ident "(" [FormPars] ")" {VarDecl} "{" {Statement} "}". ***/
 
-MethodDecl ::= (MethodDecl) VOID IDENTIFIER:I1 LEFT_PARENTHESIS RIGHT_PARENTHESIS MethodVarDeclList:M2 LEFT_BRACE RIGHT_BRACE {: RESULT=new MethodDecl(I1, M2); RESULT.setLine(I1left); :};
+MethodDecl ::= (MethodDecl) VOID IDENTIFIER:I1 LEFT_PARENTHESIS RIGHT_PARENTHESIS MethodVarDeclList:M2 LEFT_BRACE StatementList:S3 RIGHT_BRACE {: RESULT=new MethodDecl(I1, M2, S3); RESULT.setLine(I1left); :};
 
 MethodVarDeclList ::= (MethodVarDeclList_VAR) MethodVarDeclList:M1 VarDeclList:V2 {: RESULT=new MethodVarDeclList_VAR(M1, V2); RESULT.setLine(M1left); :}
 					  |
 					  (MethodVarDeclList_EPSILON) {: RESULT=new MethodVarDeclList_EPSILON(); :} /* epsilon */
 					  ;
 
+StatementList ::= (StatementList_STATEMENTS) StatementList:S1 Statement:S2 {: RESULT=new StatementList_STATEMENTS(S1, S2); RESULT.setLine(S1left); :}
+				  |
+				  (StatementList_EPSILON) {: RESULT=new StatementList_EPSILON(); :} /* epsilon */
+				  ;
+				  
+				  
+				  
+/*** Statement = DesignatorStatement ";"
+				| "return" [Expr] ";"
+				| "read" "(" Designator ")" ";"
+				| "print" "(" Expr ["," numConst] ")" ";"
+				| "{" {Statement} "}".
+ ***/				  
+
+Statement ::= (Statement_DesignatorStatement) DesignatorStatement:D1 SEMICOLON {: RESULT=new Statement_DesignatorStatement(D1); RESULT.setLine(D1left); :}
+			  |
+			  (Statement_RETURN) RETURN SEMICOLON {: RESULT=new Statement_RETURN(); :}
+			  |
+			  (Statement_READ) READ LEFT_PARENTHESIS Designator:D1 RIGHT_PARENTHESIS SEMICOLON {: RESULT=new Statement_READ(D1); RESULT.setLine(D1left); :}
+			  |
+			  (Statement_PRINT) PRINT LEFT_PARENTHESIS Expr:E1 MayPrintNumConst:M2 RIGHT_PARENTHESIS SEMICOLON {: RESULT=new Statement_PRINT(E1, M2); RESULT.setLine(E1left); :}
+			  |
+			  (Statement_StatementList) LEFT_BRACE StatementList:S1 RIGHT_BRACE {: RESULT=new Statement_StatementList(S1); RESULT.setLine(S1left); :};
+			  
+MayPrintNumConst ::= (MayPrintNumConst_NUMBER) COMMA NUMBER:N1 {: RESULT=new MayPrintNumConst_NUMBER(N1); RESULT.setLine(N1left); :}
+					 |
+					 (MayPrintNumConst_EPSILON) {: RESULT=new MayPrintNumConst_EPSILON(); :} /* epsilon */
+					 ;
+			  
+			  
+
+/*** DesignatorStatement = Designator (Assignop Expr | "(" [ActPars] ")" | "++" | "--")
+						   |
+						  "[" [Designator] {"," [Designator]}"]" "=" Designator.
+ ***/
+ 
+DesignatorStatement ::= (DesignatorSt_Assign) Designator:D1 Assignop:A2 Expr:E3 {: RESULT=new DesignatorSt_Assign(D1, A2, E3); RESULT.setLine(D1left); :}
+					    | 
+					    (DesignatorStat_INC) Designator:D1 INCREMENT {: RESULT=new DesignatorStat_INC(D1); RESULT.setLine(D1left); :}
+					    |
+					    (DesignatorStat_DEC) Designator:D1 DECREMENT {: RESULT=new DesignatorStat_DEC(D1); RESULT.setLine(D1left); :}
+						|
+						(DesignatorStatement_List) LEFT_BRACKET DesignatorStatementList:D1 RIGHT_BRACKET EQUALS Designator:D2 {: RESULT=new DesignatorStatement_List(D1, D2); RESULT.setLine(D1left); :};
+						
+DesignatorStatementList ::= (DesignatorStatementList_MORE)  DesignatorStatementList:D1 COMMA MayDesignator:M2 {: RESULT=new DesignatorStatementList_MORE(D1, M2); RESULT.setLine(D1left); :}
+							|
+							(DesignatorStatementList_ONE) MayDesignator:M1 {: RESULT=new DesignatorStatementList_ONE(M1); RESULT.setLine(M1left); :};
+
+MayDesignator ::= (MayDesignator_Designator) Designator:D1 {: RESULT=new MayDesignator_Designator(D1); RESULT.setLine(D1left); :}
+				  |
+				  (MayDesignator_EPSILON) {: RESULT=new MayDesignator_EPSILON(); :} /* epsilon */
+				  ;							
+
+
+/*** Expr = ["-"] Term [Addop Term]. ***/
+
+Expr ::= (Expr) ExprList:E1 {: RESULT=new Expr(E1); RESULT.setLine(E1left); :};
+		
+ExprList ::= (ExprList_ONE) Term:T1 {: RESULT=new ExprList_ONE(T1); RESULT.setLine(T1left); :}
+			 |
+			 (ExprList_MORE) ExprList:E1 Addop:A2 Term:T3 {: RESULT=new ExprList_MORE(E1, A2, T3); RESULT.setLine(E1left); :};
+		
+
+
+/*** Term = Factor {Mulop Factor}. ***/
+
+Term ::= (Term) TermList:T1 {: RESULT=new Term(T1); RESULT.setLine(T1left); :};
+		
+TermList ::= (TermList_ONE) FactorSign:F1 {: RESULT=new TermList_ONE(F1); RESULT.setLine(F1left); :}
+			 |
+			 (TermList_MORE) TermList:T1 Mulop:M2 FactorSign:F3 {: RESULT=new TermList_MORE(T1, M2, F3); RESULT.setLine(T1left); :};			  
+			  
+		
+			  
+/*** Factor = Designator
+			  | numConst
+			  | charConst
+ 			  | boolConst
+			  | "new" Type ( "[" Expr "]" )
+			  | "(" Expr ")".
+***/
+			  
+FactorSign ::= (FactorSign) UnaryMinus:U1 Factor:F2 {: RESULT=new FactorSign(U1, F2); RESULT.setLine(U1left); :};
+
+UnaryMinus ::= (UnaryMinus_MINUS) MINUS {: RESULT=new UnaryMinus_MINUS(); :}
+			   |
+			   (UnaryMinus_EPSILON) {: RESULT=new UnaryMinus_EPSILON(); :} /* epsilon */
+			   ;
+
+Factor ::= (Factor_Designator) Designator:D1 {: RESULT=new Factor_Designator(D1); RESULT.setLine(D1left); :}
+		   |
+		   (Factor_NUMBER) NUMBER:N1 {: RESULT=new Factor_NUMBER(N1); RESULT.setLine(N1left); :}
+		   |
+		   (Factor_CHARACTER) CHARACTER:C1 {: RESULT=new Factor_CHARACTER(C1); RESULT.setLine(C1left); :}
+		   |
+		   (Factor_BOOLEAN) BOOLEAN:B1 {: RESULT=new Factor_BOOLEAN(B1); RESULT.setLine(B1left); :}
+		   |
+		   (Factor_NEW) NEW Type:T1 LEFT_BRACKET Expr:E2 RIGHT_BRACKET {: RESULT=new Factor_NEW(T1, E2); RESULT.setLine(T1left); :}
+		   |
+		   (Factor_Expr) LEFT_PARENTHESIS Expr:E1 RIGHT_PARENTHESIS {: RESULT=new Factor_Expr(E1); RESULT.setLine(E1left); :}
+		   ;
 
 
 
+/*** Designator = ident {"[" Expr "]"}. ***/
+
+Designator ::= (Designator_ONE) IDENTIFIER:I1 {: RESULT=new Designator_ONE(I1); RESULT.setLine(I1left); :}
+			   |
+			   (Designator_ARRAY) IDENTIFIER:I1 LEFT_BRACKET Expr:E2 RIGHT_BRACKET {: RESULT=new Designator_ARRAY(I1, E2); RESULT.setLine(I1left); :};
 
 
 
+/*** Assignop = "=". ***/
+
+Assignop ::= (Assignop) EQUALS {: RESULT=new Assignop(); :};
 
 
 
+/*** Addop = "+" | "-". ***/
+
+Addop ::= (Addop_PLUS) PLUS {: RESULT=new Addop_PLUS(); :}
+		  |
+		  (Addop_MINUS) MINUS {: RESULT=new Addop_MINUS(); :}
+		  ;
 
 
 
+/*** Mulop = "*" | "/" | "%". ***/
 
-
-
-
+Mulop ::= (Mulop_MUL) MULTIPLICATION {: RESULT=new Mulop_MUL(); :}
+		  |
+		  (Mulop_DIV) DIVISION {: RESULT=new Mulop_DIV(); :}
+		  |
+		  (Mulop_MOD) MODULUS {: RESULT=new Mulop_MOD(); :}
+		  ;

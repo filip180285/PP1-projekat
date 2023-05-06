@@ -1,0 +1,30 @@
+INFO  20:21:31,960 - Compiling source file: C:\Users\Korisnik\Desktop\PP1-projekat\MJCompiler\test\program.mj
+INFO  20:21:31,994 - #2 program
+INFO  20:21:31,995 - #10 test301
+INFO  20:21:31,995 - #29 {
+INFO  20:21:31,997 - #8 void
+INFO  20:21:31,998 - #10 main
+INFO  20:21:31,999 - #25 (
+INFO  20:21:31,999 - #26 )
+INFO  20:21:31,999 - #29 {
+INFO  20:21:32,001 - #7 return
+INFO  20:21:32,004 - #22 ;
+INFO  20:21:32,005 - #30 }
+INFO  20:21:32,009 - #30 }
+INFO  20:21:32,015 - Program(
+ test301
+  ConstVarDeclList_EPSILON(
+  ) [ConstVarDeclList_EPSILON]
+  MethodDecl(
+   main
+    MethodVarDeclList_EPSILON(
+    ) [MethodVarDeclList_EPSILON]
+    StatementList_STATEMENTS(
+      StatementList_EPSILON(
+      ) [StatementList_EPSILON]
+      Statement_RETURN(
+      ) [Statement_RETURN]
+    ) [StatementList_STATEMENTS]
+  ) [MethodDecl]
+) [Program]
+INFO  20:21:32,018 - ===================================
