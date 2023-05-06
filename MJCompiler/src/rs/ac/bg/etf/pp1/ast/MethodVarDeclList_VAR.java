@@ -5,25 +5,16 @@
 
 package rs.ac.bg.etf.pp1.ast;
 
-public class MethodDecl implements SyntaxNode {
+public class MethodVarDeclList_VAR extends MethodVarDeclList {
 
-    private SyntaxNode parent;
-    private int line;
-    private String I1;
     private MethodVarDeclList MethodVarDeclList;
+    private VarDeclList VarDeclList;
 
-    public MethodDecl (String I1, MethodVarDeclList MethodVarDeclList) {
-        this.I1=I1;
+    public MethodVarDeclList_VAR (MethodVarDeclList MethodVarDeclList, VarDeclList VarDeclList) {
         this.MethodVarDeclList=MethodVarDeclList;
         if(MethodVarDeclList!=null) MethodVarDeclList.setParent(this);
-    }
-
-    public String getI1() {
-        return I1;
-    }
-
-    public void setI1(String I1) {
-        this.I1=I1;
+        this.VarDeclList=VarDeclList;
+        if(VarDeclList!=null) VarDeclList.setParent(this);
     }
 
     public MethodVarDeclList getMethodVarDeclList() {
@@ -34,20 +25,12 @@ public class MethodDecl implements SyntaxNode {
         this.MethodVarDeclList=MethodVarDeclList;
     }
 
-    public SyntaxNode getParent() {
-        return parent;
+    public VarDeclList getVarDeclList() {
+        return VarDeclList;
     }
 
-    public void setParent(SyntaxNode parent) {
-        this.parent=parent;
-    }
-
-    public int getLine() {
-        return line;
-    }
-
-    public void setLine(int line) {
-        this.line=line;
+    public void setVarDeclList(VarDeclList VarDeclList) {
+        this.VarDeclList=VarDeclList;
     }
 
     public void accept(Visitor visitor) {
@@ -56,25 +39,25 @@ public class MethodDecl implements SyntaxNode {
 
     public void childrenAccept(Visitor visitor) {
         if(MethodVarDeclList!=null) MethodVarDeclList.accept(visitor);
+        if(VarDeclList!=null) VarDeclList.accept(visitor);
     }
 
     public void traverseTopDown(Visitor visitor) {
         accept(visitor);
         if(MethodVarDeclList!=null) MethodVarDeclList.traverseTopDown(visitor);
+        if(VarDeclList!=null) VarDeclList.traverseTopDown(visitor);
     }
 
     public void traverseBottomUp(Visitor visitor) {
         if(MethodVarDeclList!=null) MethodVarDeclList.traverseBottomUp(visitor);
+        if(VarDeclList!=null) VarDeclList.traverseBottomUp(visitor);
         accept(visitor);
     }
 
     public String toString(String tab) {
         StringBuffer buffer=new StringBuffer();
         buffer.append(tab);
-        buffer.append("MethodDecl(\n");
-
-        buffer.append(" "+tab+I1);
-        buffer.append("\n");
+        buffer.append("MethodVarDeclList_VAR(\n");
 
         if(MethodVarDeclList!=null)
             buffer.append(MethodVarDeclList.toString("  "+tab));
@@ -82,8 +65,14 @@ public class MethodDecl implements SyntaxNode {
             buffer.append(tab+"  null");
         buffer.append("\n");
 
+        if(VarDeclList!=null)
+            buffer.append(VarDeclList.toString("  "+tab));
+        else
+            buffer.append(tab+"  null");
+        buffer.append("\n");
+
         buffer.append(tab);
-        buffer.append(") [MethodDecl]");
+        buffer.append(") [MethodVarDeclList_VAR]");
         return buffer.toString();
     }
 }

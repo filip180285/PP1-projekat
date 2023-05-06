@@ -1,0 +1,129 @@
+INFO  16:34:20,570 - Compiling source file: C:\Users\Korisnik\Desktop\PP1-projekat\MJCompiler\test\program.mj
+INFO  16:34:20,578 - #2 program
+INFO  16:34:20,578 - #10 filip
+INFO  16:34:20,579 - #3 const
+INFO  16:34:20,579 - #10 int
+INFO  16:34:20,579 - #10 nula
+INFO  16:34:20,579 - #19 =
+INFO  16:34:20,579 - #11 0
+INFO  16:34:20,580 - #22 ;
+INFO  16:34:20,580 - #3 const
+INFO  16:34:20,581 - #10 int
+INFO  16:34:20,581 - #10 jedan
+INFO  16:34:20,581 - #19 =
+INFO  16:34:20,581 - #11 1
+INFO  16:34:20,581 - #22 ;
+INFO  16:34:20,581 - #3 const
+INFO  16:34:20,581 - #10 int
+INFO  16:34:20,581 - #10 pet
+INFO  16:34:20,581 - #19 =
+INFO  16:34:20,581 - #11 5
+INFO  16:34:20,581 - #22 ;
+INFO  16:34:20,581 - #10 int
+INFO  16:34:20,583 - #10 niz
+INFO  16:34:20,583 - #27 [
+INFO  16:34:20,583 - #28 ]
+INFO  16:34:20,583 - #24 ,
+INFO  16:34:20,583 - #10 niz2
+INFO  16:34:20,583 - #27 [
+INFO  16:34:20,584 - #28 ]
+INFO  16:34:20,584 - #24 ,
+INFO  16:34:20,584 - #10 a
+INFO  16:34:20,584 - #24 ,
+INFO  16:34:20,584 - #10 b
+INFO  16:34:20,584 - #22 ;
+INFO  16:34:20,584 - #10 char
+INFO  16:34:20,585 - #10 nizch
+INFO  16:34:20,585 - #27 [
+INFO  16:34:20,585 - #28 ]
+INFO  16:34:20,585 - #22 ;
+INFO  16:34:20,586 - Program(
+ filip
+  ConstVarDeclList_VAR(
+    ConstVarDeclList_VAR(
+      ConstVarDeclList_CONST(
+        ConstVarDeclList_CONST(
+          ConstVarDeclList_CONST(
+            ConstVarDeclList_EPSILON(
+            ) [ConstVarDeclList_EPSILON]
+            ConstDeclList(
+              Type(
+               int
+              ) [Type]
+              ConstDeclOneOrMore_ONE(
+                ConstDecl(
+                 nula
+                  Constant_NUMBER(
+                   0
+                  ) [Constant_NUMBER]
+                ) [ConstDecl]
+              ) [ConstDeclOneOrMore_ONE]
+            ) [ConstDeclList]
+          ) [ConstVarDeclList_CONST]
+          ConstDeclList(
+            Type(
+             int
+            ) [Type]
+            ConstDeclOneOrMore_ONE(
+              ConstDecl(
+               jedan
+                Constant_NUMBER(
+                 1
+                ) [Constant_NUMBER]
+              ) [ConstDecl]
+            ) [ConstDeclOneOrMore_ONE]
+          ) [ConstDeclList]
+        ) [ConstVarDeclList_CONST]
+        ConstDeclList(
+          Type(
+           int
+          ) [Type]
+          ConstDeclOneOrMore_ONE(
+            ConstDecl(
+             pet
+              Constant_NUMBER(
+               5
+              ) [Constant_NUMBER]
+            ) [ConstDecl]
+          ) [ConstDeclOneOrMore_ONE]
+        ) [ConstDeclList]
+      ) [ConstVarDeclList_CONST]
+      VarDeclList(
+        Type(
+         int
+        ) [Type]
+        VarDeclOneOrMore_MORE(
+          VarDecl_ARRAY(
+           niz
+          ) [VarDecl_ARRAY]
+          VarDeclOneOrMore_MORE(
+            VarDecl_ARRAY(
+             niz2
+            ) [VarDecl_ARRAY]
+            VarDeclOneOrMore_MORE(
+              VarDecl_VAR(
+               a
+              ) [VarDecl_VAR]
+              VarDeclOneOrMore_ONE(
+                VarDecl_VAR(
+                 b
+                ) [VarDecl_VAR]
+              ) [VarDeclOneOrMore_ONE]
+            ) [VarDeclOneOrMore_MORE]
+          ) [VarDeclOneOrMore_MORE]
+        ) [VarDeclOneOrMore_MORE]
+      ) [VarDeclList]
+    ) [ConstVarDeclList_VAR]
+    VarDeclList(
+      Type(
+       char
+      ) [Type]
+      VarDeclOneOrMore_ONE(
+        VarDecl_ARRAY(
+         nizch
+        ) [VarDecl_ARRAY]
+      ) [VarDeclOneOrMore_ONE]
+    ) [VarDeclList]
+  ) [ConstVarDeclList_VAR]
+) [Program]
+INFO  16:34:20,586 - ===================================

@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 6/4/2023 16:27:2
+// 6/4/2023 17:10:36
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -11,11 +11,14 @@ public class Program implements SyntaxNode {
     private int line;
     private String I1;
     private ConstVarDeclList ConstVarDeclList;
+    private MethodDecl MethodDecl;
 
-    public Program (String I1, ConstVarDeclList ConstVarDeclList) {
+    public Program (String I1, ConstVarDeclList ConstVarDeclList, MethodDecl MethodDecl) {
         this.I1=I1;
         this.ConstVarDeclList=ConstVarDeclList;
         if(ConstVarDeclList!=null) ConstVarDeclList.setParent(this);
+        this.MethodDecl=MethodDecl;
+        if(MethodDecl!=null) MethodDecl.setParent(this);
     }
 
     public String getI1() {
@@ -32,6 +35,14 @@ public class Program implements SyntaxNode {
 
     public void setConstVarDeclList(ConstVarDeclList ConstVarDeclList) {
         this.ConstVarDeclList=ConstVarDeclList;
+    }
+
+    public MethodDecl getMethodDecl() {
+        return MethodDecl;
+    }
+
+    public void setMethodDecl(MethodDecl MethodDecl) {
+        this.MethodDecl=MethodDecl;
     }
 
     public SyntaxNode getParent() {
@@ -56,15 +67,18 @@ public class Program implements SyntaxNode {
 
     public void childrenAccept(Visitor visitor) {
         if(ConstVarDeclList!=null) ConstVarDeclList.accept(visitor);
+        if(MethodDecl!=null) MethodDecl.accept(visitor);
     }
 
     public void traverseTopDown(Visitor visitor) {
         accept(visitor);
         if(ConstVarDeclList!=null) ConstVarDeclList.traverseTopDown(visitor);
+        if(MethodDecl!=null) MethodDecl.traverseTopDown(visitor);
     }
 
     public void traverseBottomUp(Visitor visitor) {
         if(ConstVarDeclList!=null) ConstVarDeclList.traverseBottomUp(visitor);
+        if(MethodDecl!=null) MethodDecl.traverseBottomUp(visitor);
         accept(visitor);
     }
 
@@ -78,6 +92,12 @@ public class Program implements SyntaxNode {
 
         if(ConstVarDeclList!=null)
             buffer.append(ConstVarDeclList.toString("  "+tab));
+        else
+            buffer.append(tab+"  null");
+        buffer.append("\n");
+
+        if(MethodDecl!=null)
+            buffer.append(MethodDecl.toString("  "+tab));
         else
             buffer.append(tab+"  null");
         buffer.append("\n");

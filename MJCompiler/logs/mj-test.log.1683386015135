@@ -1,0 +1,59 @@
+INFO  17:12:43,787 - Compiling source file: C:\Users\Korisnik\Desktop\PP1-projekat\MJCompiler\test\program.mj
+INFO  17:12:43,795 - #2 program
+INFO  17:12:43,795 - #10 test301
+INFO  17:12:43,795 - #29 {
+INFO  17:12:43,796 - #8 void
+INFO  17:12:43,796 - #10 main
+INFO  17:12:43,796 - #25 (
+INFO  17:12:43,796 - #26 )
+INFO  17:12:43,796 - #10 int
+INFO  17:12:43,796 - #10 bodovi
+INFO  17:12:43,797 - #22 ;
+INFO  17:12:43,797 - #10 bool
+INFO  17:12:43,798 - #10 bt
+INFO  17:12:43,798 - #24 ,
+INFO  17:12:43,798 - #10 pt
+INFO  17:12:43,798 - #22 ;
+INFO  17:12:43,798 - #29 {
+INFO  17:12:43,798 - #30 }
+INFO  17:12:43,798 - #30 }
+INFO  17:12:43,799 - Program(
+ test301
+  ConstVarDeclList_EPSILON(
+  ) [ConstVarDeclList_EPSILON]
+  MethodDecl(
+   main
+    MethodVarDeclList_VAR(
+      MethodVarDeclList_VAR(
+        MethodVarDeclList_EPSILON(
+        ) [MethodVarDeclList_EPSILON]
+        VarDeclList(
+          Type(
+           int
+          ) [Type]
+          VarDeclOneOrMore_ONE(
+            VarDecl_VAR(
+             bodovi
+            ) [VarDecl_VAR]
+          ) [VarDeclOneOrMore_ONE]
+        ) [VarDeclList]
+      ) [MethodVarDeclList_VAR]
+      VarDeclList(
+        Type(
+         bool
+        ) [Type]
+        VarDeclOneOrMore_MORE(
+          VarDecl_VAR(
+           bt
+          ) [VarDecl_VAR]
+          VarDeclOneOrMore_ONE(
+            VarDecl_VAR(
+             pt
+            ) [VarDecl_VAR]
+          ) [VarDeclOneOrMore_ONE]
+        ) [VarDeclOneOrMore_MORE]
+      ) [VarDeclList]
+    ) [MethodVarDeclList_VAR]
+  ) [MethodDecl]
+) [Program]
+INFO  17:12:43,799 - ===================================

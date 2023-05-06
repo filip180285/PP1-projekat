@@ -60,18 +60,20 @@ nonterminal Program Program;
 nonterminal ConstVarDeclList ConstVarDeclList;
 nonterminal ConstDeclList ConstDeclList;
 nonterminal VarDeclList VarDeclList;
+nonterminal MethodDecl MethodDecl;
 nonterminal Type Type;
 nonterminal ConstDeclOneOrMore ConstDeclOneOrMore;
 nonterminal ConstDecl ConstDecl;
 nonterminal Constant Constant;
 nonterminal VarDeclOneOrMore VarDeclOneOrMore;
 nonterminal VarDecl VarDecl;
-nonterminal MethodDecl MethodDecl;
+nonterminal MethodVarDeclList MethodVarDeclList;
+
 
 
 /*** Program = "program" ident {ConstDecl | VarDecl | ClassDecl } "{" {MethodDecl} "}". ***/
 
-Program ::= (Program) PROGRAM IDENTIFIER:I1 ConstVarDeclList:C2 {: RESULT=new Program(I1, C2); RESULT.setLine(I1left); :};
+Program ::= (Program) PROGRAM IDENTIFIER:I1 ConstVarDeclList:C2 LEFT_BRACE MethodDecl:M3 RIGHT_BRACE {: RESULT=new Program(I1, C2, M3); RESULT.setLine(I1left); :};
 
 ConstVarDeclList ::= (ConstVarDeclList_CONST) ConstVarDeclList:C1 ConstDeclList:C2 {: RESULT=new ConstVarDeclList_CONST(C1, C2); RESULT.setLine(C1left); :}
 					 | 
@@ -79,6 +81,8 @@ ConstVarDeclList ::= (ConstVarDeclList_CONST) ConstVarDeclList:C1 ConstDeclList:
 					 |
 					 (ConstVarDeclList_EPSILON) {: RESULT=new ConstVarDeclList_EPSILON(); :} /* epsilon */
 					 ;
+
+
 					 
 /*** ConstDecl = "const" Type ident"="(numConst | charConst | boolConst) {, ident "=" (numConst | charConst | boolConst)} ";". ***/
 
@@ -98,6 +102,8 @@ Constant ::= (Constant_NUMBER) NUMBER:N1 {: RESULT=new Constant_NUMBER(N1); RESU
 			 
 Type ::= (Type) IDENTIFIER:I1 {: RESULT=new Type(I1); RESULT.setLine(I1left); :};
 
+
+
 /*** VarDecl = Type ident ["[" "]"] {"," ident ["[" "]"]} ";". ***/
 
 VarDeclList ::= (VarDeclList) Type:T1 VarDeclOneOrMore:V2 SEMICOLON {: RESULT=new VarDeclList(T1, V2); RESULT.setLine(T1left); :};	// int x; int y, z, niz[];
@@ -109,8 +115,17 @@ VarDeclOneOrMore ::= (VarDeclOneOrMore_MORE) VarDecl:V1 COMMA VarDeclOneOrMore:V
 VarDecl ::= (VarDecl_VAR) IDENTIFIER:I1 {: RESULT=new VarDecl_VAR(I1); RESULT.setLine(I1left); :}
 			|
 			(VarDecl_ARRAY) IDENTIFIER:I1 LEFT_BRACKET RIGHT_BRACKET {: RESULT=new VarDecl_ARRAY(I1); RESULT.setLine(I1left); :};
+			
+	
+			
+/*** MethodDecl = (Type | "void") ident "(" [FormPars] ")" {VarDecl} "{" {Statement} "}". ***/
 
+MethodDecl ::= (MethodDecl) VOID IDENTIFIER:I1 LEFT_PARENTHESIS RIGHT_PARENTHESIS MethodVarDeclList:M2 LEFT_BRACE RIGHT_BRACE {: RESULT=new MethodDecl(I1, M2); RESULT.setLine(I1left); :};
 
+MethodVarDeclList ::= (MethodVarDeclList_VAR) MethodVarDeclList:M1 VarDeclList:V2 {: RESULT=new MethodVarDeclList_VAR(M1, V2); RESULT.setLine(M1left); :}
+					  |
+					  (MethodVarDeclList_EPSILON) {: RESULT=new MethodVarDeclList_EPSILON(); :} /* epsilon */
+					  ;
 
 
 

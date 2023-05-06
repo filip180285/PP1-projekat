@@ -56,13 +56,15 @@ terminal Integer BOOLEAN;
 terminal PLUS, MINUS, MULTIPLICATION, DIVISION, MODULUS, EQUALS, INCREMENT, DECREMENT;
 terminal SEMICOLON, COLON, COMMA, LEFT_PARENTHESIS, RIGHT_PARENTHESIS, LEFT_BRACKET, RIGHT_BRACKET, LEFT_BRACE, RIGHT_BRACE;
 
-nonterminal Program, ConstVarDeclList, ConstDeclList, VarDeclList;
-nonterminal Type, ConstDeclOneOrMore, ConstDecl, Constant, VarDeclOneOrMore, VarDecl, MethodDecl;
+nonterminal Program, ConstVarDeclList, ConstDeclList, VarDeclList, MethodDecl;
+nonterminal Type, ConstDeclOneOrMore, ConstDecl, Constant, VarDeclOneOrMore, VarDecl;
+nonterminal MethodVarDeclList;
+
 
 
 /*** Program = "program" ident {ConstDecl | VarDecl | ClassDecl } "{" {MethodDecl} "}". ***/
 
-Program ::= (Program) PROGRAM IDENTIFIER ConstVarDeclList;
+Program ::= (Program) PROGRAM IDENTIFIER ConstVarDeclList LEFT_BRACE MethodDecl RIGHT_BRACE;
 
 ConstVarDeclList ::= (ConstVarDeclList_CONST) ConstVarDeclList ConstDeclList
 					 | 
@@ -70,6 +72,8 @@ ConstVarDeclList ::= (ConstVarDeclList_CONST) ConstVarDeclList ConstDeclList
 					 |
 					 (ConstVarDeclList_EPSILON) /* epsilon */
 					 ;
+
+
 					 
 /*** ConstDecl = "const" Type ident"="(numConst | charConst | boolConst) {, ident "=" (numConst | charConst | boolConst)} ";". ***/
 
@@ -89,6 +93,8 @@ Constant ::= (Constant_NUMBER) NUMBER
 			 
 Type ::= (Type) IDENTIFIER;
 
+
+
 /*** VarDecl = Type ident ["[" "]"] {"," ident ["[" "]"]} ";". ***/
 
 VarDeclList ::= (VarDeclList) Type VarDeclOneOrMore SEMICOLON;	// int x; int y, z, niz[];
@@ -100,8 +106,17 @@ VarDeclOneOrMore ::= (VarDeclOneOrMore_MORE) VarDecl COMMA VarDeclOneOrMore
 VarDecl ::= (VarDecl_VAR) IDENTIFIER
 			|
 			(VarDecl_ARRAY) IDENTIFIER LEFT_BRACKET RIGHT_BRACKET;
+			
+	
+			
+/*** MethodDecl = (Type | "void") ident "(" [FormPars] ")" {VarDecl} "{" {Statement} "}". ***/
 
+MethodDecl ::= (MethodDecl) VOID IDENTIFIER LEFT_PARENTHESIS RIGHT_PARENTHESIS MethodVarDeclList LEFT_BRACE RIGHT_BRACE;
 
+MethodVarDeclList ::= (MethodVarDeclList_VAR) MethodVarDeclList VarDeclList
+					  |
+					  (MethodVarDeclList_EPSILON) /* epsilon */
+					  ;
 
 
 
