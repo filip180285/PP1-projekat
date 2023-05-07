@@ -1,0 +1,60 @@
+INFO  15:55:20,857 - Compiling source file: C:\Users\Korisnik\Desktop\PP1-projekat\MJCompiler\test\program.mj
+INFO  15:55:20,875 - #2 program
+INFO  15:55:20,875 - #10 test301
+INFO  15:55:20,875 - #29 {
+INFO  15:55:20,876 - #8 void
+INFO  15:55:20,876 - #10 main
+INFO  15:55:20,876 - #25 (
+INFO  15:55:20,876 - #26 )
+INFO  15:55:20,877 - #29 {
+INFO  15:55:20,877 - #6 read
+INFO  15:55:20,877 - #25 (
+INFO  15:55:20,877 - #10 a
+INFO  15:55:20,877 - #27 [
+INFO  15:55:20,878 - #11 10
+INFO  15:55:20,879 - #28 ]
+INFO  15:55:20,880 - #26 )
+INFO  15:55:20,880 - #22 ;
+INFO  15:55:20,880 - #30 }
+INFO  15:55:20,880 - #30 }
+INFO  15:55:20,881 - Program(
+  ProgramName(
+   test301
+  ) [ProgramName]
+  ConstVarDeclList_EPSILON(
+  ) [ConstVarDeclList_EPSILON]
+  MethodDecl(
+    MethodName(
+     main
+    ) [MethodName]
+    MethodVarDeclList_EPSILON(
+    ) [MethodVarDeclList_EPSILON]
+    StatementList_STATEMENTS(
+      StatementList_EPSILON(
+      ) [StatementList_EPSILON]
+      Statement_READ(
+        Designator_ARRAY(
+          DesignatorArrayName(
+           a
+          ) [DesignatorArrayName]
+          Expr(
+            ExprList_ONE(
+              Term(
+                TermList_ONE(
+                  FactorSign(
+                    UnaryMinus_EPSILON(
+                    ) [UnaryMinus_EPSILON]
+                    Factor_NUMBER(
+                     10
+                    ) [Factor_NUMBER]
+                  ) [FactorSign]
+                ) [TermList_ONE]
+              ) [Term]
+            ) [ExprList_ONE]
+          ) [Expr]
+        ) [Designator_ARRAY]
+      ) [Statement_READ]
+    ) [StatementList_STATEMENTS]
+  ) [MethodDecl]
+) [Program]
+INFO  15:55:20,886 - ===================================

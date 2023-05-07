@@ -1,0 +1,71 @@
+INFO  15:53:47,544 - Compiling source file: C:\Users\Korisnik\Desktop\PP1-projekat\MJCompiler\test\program.mj
+INFO  15:53:47,565 - #2 program
+INFO  15:53:47,565 - #10 test301
+INFO  15:53:47,565 - #29 {
+INFO  15:53:47,565 - #8 void
+INFO  15:53:47,565 - #10 main
+INFO  15:53:47,566 - #25 (
+INFO  15:53:47,566 - #26 )
+INFO  15:53:47,566 - #29 {
+INFO  15:53:47,566 - #27 [
+INFO  15:53:47,567 - #24 ,
+INFO  15:53:47,567 - #24 ,
+INFO  15:53:47,567 - #24 ,
+INFO  15:53:47,567 - #24 ,
+INFO  15:53:47,567 - #24 ,
+INFO  15:53:47,567 - #28 ]
+INFO  15:53:47,568 - #19 =
+INFO  15:53:47,568 - #10 c
+INFO  15:53:47,568 - #22 ;
+INFO  15:53:47,568 - #30 }
+INFO  15:53:47,568 - #30 }
+INFO  15:53:47,569 - Program(
+  ProgramName(
+   test301
+  ) [ProgramName]
+  ConstVarDeclList_EPSILON(
+  ) [ConstVarDeclList_EPSILON]
+  MethodDecl(
+    MethodName(
+     main
+    ) [MethodName]
+    MethodVarDeclList_EPSILON(
+    ) [MethodVarDeclList_EPSILON]
+    StatementList_STATEMENTS(
+      StatementList_EPSILON(
+      ) [StatementList_EPSILON]
+      Statement_DesignatorStatement(
+        DesignatorStatement_List(
+          DesignatorStatementList_MORE(
+            DesignatorStatementList_MORE(
+              DesignatorStatementList_MORE(
+                DesignatorStatementList_MORE(
+                  DesignatorStatementList_MORE(
+                    DesignatorStatementList_ONE(
+                      MayDesignator_EPSILON(
+                      ) [MayDesignator_EPSILON]
+                    ) [DesignatorStatementList_ONE]
+                    MayDesignator_EPSILON(
+                    ) [MayDesignator_EPSILON]
+                  ) [DesignatorStatementList_MORE]
+                  MayDesignator_EPSILON(
+                  ) [MayDesignator_EPSILON]
+                ) [DesignatorStatementList_MORE]
+                MayDesignator_EPSILON(
+                ) [MayDesignator_EPSILON]
+              ) [DesignatorStatementList_MORE]
+              MayDesignator_EPSILON(
+              ) [MayDesignator_EPSILON]
+            ) [DesignatorStatementList_MORE]
+            MayDesignator_EPSILON(
+            ) [MayDesignator_EPSILON]
+          ) [DesignatorStatementList_MORE]
+          Designator_ONE(
+           c
+          ) [Designator_ONE]
+        ) [DesignatorStatement_List]
+      ) [Statement_DesignatorStatement]
+    ) [StatementList_STATEMENTS]
+  ) [MethodDecl]
+) [Program]
+INFO  15:53:47,569 - ===================================

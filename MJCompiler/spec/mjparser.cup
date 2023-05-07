@@ -56,11 +56,11 @@ terminal Integer BOOLEAN;
 terminal PLUS, MINUS, MULTIPLICATION, DIVISION, MODULUS, EQUALS, INCREMENT, DECREMENT;
 terminal SEMICOLON, COLON, COMMA, LEFT_PARENTHESIS, RIGHT_PARENTHESIS, LEFT_BRACKET, RIGHT_BRACKET, LEFT_BRACE, RIGHT_BRACE;
 
-nonterminal Program, ConstVarDeclList, ConstDeclList, VarDeclList, MethodDecl;
+nonterminal Program, ProgramName, ConstVarDeclList, ConstDeclList, VarDeclList, MethodDecl, MethodName;
 nonterminal Type, ConstDeclOneOrMore, ConstDecl, Constant, VarDeclOneOrMore, VarDecl;
 nonterminal MethodVarDeclList, StatementList;
 nonterminal Statement;
-nonterminal DesignatorStatement, Designator, Expr, ExprList, Term, TermList, FactorSign, DesignatorStatementList;
+nonterminal DesignatorStatement, Designator, DesignatorArrayName, Expr, ExprList, Term, TermList, FactorSign, DesignatorStatementList;
 nonterminal MayPrintNumConst, MayDesignator;
 nonterminal Factor, UnaryMinus, Assignop, Addop, Mulop;
 
@@ -68,7 +68,9 @@ nonterminal Factor, UnaryMinus, Assignop, Addop, Mulop;
 
 /*** Program = "program" ident {ConstDecl | VarDecl | ClassDecl } "{" {MethodDecl} "}". ***/
 
-Program ::= (Program) PROGRAM IDENTIFIER ConstVarDeclList LEFT_BRACE MethodDecl RIGHT_BRACE;
+Program ::= (Program) PROGRAM ProgramName ConstVarDeclList LEFT_BRACE MethodDecl RIGHT_BRACE;
+
+ProgramName ::= (ProgramName) IDENTIFIER;
 
 ConstVarDeclList ::= (ConstVarDeclList_CONST) ConstVarDeclList ConstDeclList
 					 | 
@@ -115,7 +117,9 @@ VarDecl ::= (VarDecl_VAR) IDENTIFIER
 			
 /*** MethodDecl = (Type | "void") ident "(" [FormPars] ")" {VarDecl} "{" {Statement} "}". ***/
 
-MethodDecl ::= (MethodDecl) VOID IDENTIFIER LEFT_PARENTHESIS RIGHT_PARENTHESIS MethodVarDeclList LEFT_BRACE StatementList RIGHT_BRACE;
+MethodDecl ::= (MethodDecl) VOID MethodName LEFT_PARENTHESIS RIGHT_PARENTHESIS MethodVarDeclList LEFT_BRACE StatementList RIGHT_BRACE;
+
+MethodName ::= (MethodName) IDENTIFIER;
 
 MethodVarDeclList ::= (MethodVarDeclList_VAR) MethodVarDeclList VarDeclList
 					  |
@@ -230,7 +234,9 @@ Factor ::= (Factor_Designator) Designator
 
 Designator ::= (Designator_ONE) IDENTIFIER
 			   |
-			   (Designator_ARRAY) IDENTIFIER LEFT_BRACKET Expr RIGHT_BRACKET;
+			   (Designator_ARRAY) DesignatorArrayName LEFT_BRACKET Expr RIGHT_BRACKET;
+			   
+DesignatorArrayName ::= (DesignatorArrayName) IDENTIFIER;
 
 
 

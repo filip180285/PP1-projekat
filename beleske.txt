@@ -6,4 +6,6 @@
 - rad po uzoru na veru, neke razlike u gramatici:
 deklaracija niza
 nema goto i single statement, mozda izdvojiti ugnjezdeni statement u poseban neterminal
-dodat nivo indirekcije za term, nisam siguran zasto
+dodat nivo indirekcije za term i expr, nisam siguran zasto
+designator stmt
+za oporavak od greske samo dodati da designator stmt terminira u error

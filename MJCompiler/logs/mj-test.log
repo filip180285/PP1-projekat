@@ -1,311 +1,313 @@
-INFO  01:38:06,482 - Compiling source file: C:\Users\Korisnik\Desktop\PP1-projekat\MJCompiler\test\program.mj
-INFO  01:38:06,503 - #2 program
-INFO  01:38:06,503 - #10 test301
-INFO  01:38:06,503 - #3 const
-INFO  01:38:06,503 - #10 int
-INFO  01:38:06,503 - #10 nula
-INFO  01:38:06,504 - #19 =
-INFO  01:38:06,504 - #11 0
-INFO  01:38:06,504 - #22 ;
-INFO  01:38:06,505 - #3 const
-INFO  01:38:06,505 - #10 int
-INFO  01:38:06,505 - #10 jedan
-INFO  01:38:06,505 - #19 =
-INFO  01:38:06,505 - #11 1
-INFO  01:38:06,505 - #22 ;
-INFO  01:38:06,505 - #3 const
-INFO  01:38:06,505 - #10 int
-INFO  01:38:06,505 - #10 pet
-INFO  01:38:06,506 - #19 =
-INFO  01:38:06,506 - #11 5
-INFO  01:38:06,506 - #22 ;
-INFO  01:38:06,506 - #10 int
-INFO  01:38:06,506 - #10 niz
-INFO  01:38:06,506 - #27 [
-INFO  01:38:06,506 - #28 ]
-INFO  01:38:06,506 - #24 ,
-INFO  01:38:06,506 - #10 niz2
-INFO  01:38:06,506 - #27 [
-INFO  01:38:06,506 - #28 ]
-INFO  01:38:06,506 - #24 ,
-INFO  01:38:06,506 - #10 a
-INFO  01:38:06,506 - #24 ,
-INFO  01:38:06,506 - #10 b
-INFO  01:38:06,506 - #22 ;
-INFO  01:38:06,507 - #10 char
-INFO  01:38:06,507 - #10 nizch
-INFO  01:38:06,507 - #27 [
-INFO  01:38:06,507 - #28 ]
-INFO  01:38:06,507 - #22 ;
-INFO  01:38:06,507 - #29 {
-INFO  01:38:06,507 - #8 void
-INFO  01:38:06,507 - #10 main
-INFO  01:38:06,507 - #25 (
-INFO  01:38:06,507 - #26 )
-INFO  01:38:06,507 - #10 int
-INFO  01:38:06,508 - #10 bodovi
-INFO  01:38:06,508 - #22 ;
-INFO  01:38:06,508 - #10 bool
-INFO  01:38:06,508 - #10 bt
-INFO  01:38:06,508 - #22 ;
-INFO  01:38:06,508 - #29 {
-INFO  01:38:06,508 - #10 bodovi
-INFO  01:38:06,509 - #19 =
-INFO  01:38:06,509 - #11 0
-INFO  01:38:06,510 - #22 ;
-INFO  01:38:06,511 - #10 bodovi
-INFO  01:38:06,511 - #20 ++
-INFO  01:38:06,511 - #22 ;
-INFO  01:38:06,511 - #10 bodovi
-INFO  01:38:06,511 - #19 =
-INFO  01:38:06,511 - #10 bodovi
-INFO  01:38:06,511 - #14 +
-INFO  01:38:06,511 - #10 jedan
-INFO  01:38:06,512 - #22 ;
-INFO  01:38:06,512 - #10 bodovi
-INFO  01:38:06,512 - #19 =
-INFO  01:38:06,512 - #10 bodovi
-INFO  01:38:06,512 - #16 *
-INFO  01:38:06,512 - #10 pet
-INFO  01:38:06,513 - #22 ;
-INFO  01:38:06,513 - #10 bodovi
-INFO  01:38:06,515 - #21 --
-INFO  01:38:06,515 - #22 ;
-INFO  01:38:06,515 - #5 print
-INFO  01:38:06,515 - #25 (
-INFO  01:38:06,515 - #10 bodovi
-INFO  01:38:06,515 - #26 )
-INFO  01:38:06,516 - #22 ;
-INFO  01:38:06,516 - #10 niz
-INFO  01:38:06,516 - #19 =
-INFO  01:38:06,516 - #4 new
-INFO  01:38:06,516 - #10 int
-INFO  01:38:06,516 - #27 [
-INFO  01:38:06,516 - #11 3
-INFO  01:38:06,516 - #28 ]
-INFO  01:38:06,516 - #22 ;
-INFO  01:38:06,516 - #10 niz
-INFO  01:38:06,516 - #27 [
-INFO  01:38:06,516 - #10 nula
-INFO  01:38:06,516 - #28 ]
-INFO  01:38:06,516 - #19 =
-INFO  01:38:06,516 - #10 jedan
-INFO  01:38:06,516 - #22 ;
-INFO  01:38:06,516 - #10 niz
-INFO  01:38:06,517 - #27 [
-INFO  01:38:06,517 - #11 1
-INFO  01:38:06,517 - #28 ]
-INFO  01:38:06,517 - #19 =
-INFO  01:38:06,517 - #11 2
-INFO  01:38:06,517 - #22 ;
-INFO  01:38:06,517 - #10 niz
-INFO  01:38:06,517 - #27 [
-INFO  01:38:06,517 - #10 niz
-INFO  01:38:06,517 - #27 [
-INFO  01:38:06,517 - #10 jedan
-INFO  01:38:06,517 - #28 ]
-INFO  01:38:06,517 - #28 ]
-INFO  01:38:06,517 - #19 =
-INFO  01:38:06,517 - #10 niz
-INFO  01:38:06,517 - #27 [
-INFO  01:38:06,517 - #10 niz
-INFO  01:38:06,517 - #27 [
-INFO  01:38:06,517 - #11 0
-INFO  01:38:06,517 - #28 ]
-INFO  01:38:06,517 - #28 ]
-INFO  01:38:06,517 - #16 *
-INFO  01:38:06,517 - #11 3
-INFO  01:38:06,517 - #22 ;
-INFO  01:38:06,518 - #10 bodovi
-INFO  01:38:06,518 - #19 =
-INFO  01:38:06,518 - #10 niz
-INFO  01:38:06,518 - #27 [
-INFO  01:38:06,518 - #11 2
-INFO  01:38:06,518 - #28 ]
-INFO  01:38:06,518 - #17 /
-INFO  01:38:06,518 - #10 niz
-INFO  01:38:06,518 - #27 [
-INFO  01:38:06,518 - #11 0
-INFO  01:38:06,518 - #28 ]
-INFO  01:38:06,518 - #22 ;
-INFO  01:38:06,518 - #5 print
-INFO  01:38:06,519 - #25 (
-INFO  01:38:06,519 - #10 bodovi
-INFO  01:38:06,519 - #26 )
-INFO  01:38:06,519 - #22 ;
-INFO  01:38:06,519 - #5 print
-INFO  01:38:06,519 - #25 (
-INFO  01:38:06,519 - #10 niz
-INFO  01:38:06,519 - #27 [
-INFO  01:38:06,519 - #11 2
-INFO  01:38:06,519 - #28 ]
-INFO  01:38:06,519 - #26 )
-INFO  01:38:06,519 - #22 ;
-INFO  01:38:06,519 - #27 [
-INFO  01:38:06,519 - #10 a
-INFO  01:38:06,519 - #24 ,
-INFO  01:38:06,519 - #10 b
-INFO  01:38:06,519 - #28 ]
-INFO  01:38:06,519 - #19 =
-INFO  01:38:06,519 - #10 niz
-INFO  01:38:06,519 - #22 ;
-INFO  01:38:06,520 - #5 print
-INFO  01:38:06,520 - #25 (
-INFO  01:38:06,520 - #10 a
-INFO  01:38:06,520 - #26 )
-INFO  01:38:06,520 - #22 ;
-INFO  01:38:06,520 - #5 print
-INFO  01:38:06,520 - #25 (
-INFO  01:38:06,520 - #10 b
-INFO  01:38:06,520 - #26 )
-INFO  01:38:06,520 - #22 ;
-INFO  01:38:06,520 - #27 [
-INFO  01:38:06,520 - #24 ,
-INFO  01:38:06,520 - #10 a
-INFO  01:38:06,520 - #24 ,
-INFO  01:38:06,520 - #28 ]
-INFO  01:38:06,521 - #19 =
-INFO  01:38:06,521 - #10 niz
-INFO  01:38:06,521 - #22 ;
-INFO  01:38:06,521 - #5 print
-INFO  01:38:06,521 - #25 (
-INFO  01:38:06,521 - #10 a
-INFO  01:38:06,521 - #26 )
-INFO  01:38:06,521 - #22 ;
-INFO  01:38:06,521 - #10 niz2
-INFO  01:38:06,521 - #19 =
-INFO  01:38:06,521 - #4 new
-INFO  01:38:06,521 - #10 int
-INFO  01:38:06,521 - #27 [
-INFO  01:38:06,521 - #11 2
-INFO  01:38:06,521 - #28 ]
-INFO  01:38:06,521 - #22 ;
-INFO  01:38:06,521 - #27 [
-INFO  01:38:06,521 - #10 niz2
-INFO  01:38:06,521 - #27 [
-INFO  01:38:06,521 - #11 0
-INFO  01:38:06,521 - #28 ]
-INFO  01:38:06,521 - #24 ,
-INFO  01:38:06,521 - #24 ,
-INFO  01:38:06,521 - #10 niz2
-INFO  01:38:06,521 - #27 [
-INFO  01:38:06,521 - #10 niz
-INFO  01:38:06,521 - #27 [
-INFO  01:38:06,521 - #10 nula
-INFO  01:38:06,521 - #28 ]
-INFO  01:38:06,521 - #28 ]
-INFO  01:38:06,522 - #28 ]
-INFO  01:38:06,522 - #19 =
-INFO  01:38:06,522 - #10 niz
-INFO  01:38:06,522 - #22 ;
-INFO  01:38:06,522 - #5 print
-INFO  01:38:06,522 - #25 (
-INFO  01:38:06,522 - #10 niz2
-INFO  01:38:06,522 - #27 [
-INFO  01:38:06,522 - #11 0
-INFO  01:38:06,522 - #28 ]
-INFO  01:38:06,522 - #26 )
-INFO  01:38:06,522 - #22 ;
-INFO  01:38:06,522 - #5 print
-INFO  01:38:06,522 - #25 (
-INFO  01:38:06,522 - #10 niz2
-INFO  01:38:06,522 - #27 [
-INFO  01:38:06,522 - #11 1
-INFO  01:38:06,522 - #28 ]
-INFO  01:38:06,522 - #26 )
-INFO  01:38:06,522 - #22 ;
-INFO  01:38:06,522 - #10 nizch
-INFO  01:38:06,522 - #19 =
-INFO  01:38:06,522 - #4 new
-INFO  01:38:06,522 - #10 char
-INFO  01:38:06,522 - #27 [
-INFO  01:38:06,522 - #11 3
-INFO  01:38:06,522 - #28 ]
-INFO  01:38:06,522 - #22 ;
-INFO  01:38:06,522 - #10 nizch
-INFO  01:38:06,522 - #27 [
-INFO  01:38:06,522 - #11 0
-INFO  01:38:06,522 - #28 ]
-INFO  01:38:06,522 - #19 =
-INFO  01:38:06,522 - #12 a
-INFO  01:38:06,523 - #22 ;
-INFO  01:38:06,523 - #10 nizch
-INFO  01:38:06,523 - #27 [
-INFO  01:38:06,523 - #10 jedan
-INFO  01:38:06,523 - #28 ]
-INFO  01:38:06,523 - #19 =
-INFO  01:38:06,523 - #12 b
-INFO  01:38:06,523 - #22 ;
-INFO  01:38:06,523 - #10 nizch
-INFO  01:38:06,523 - #27 [
-INFO  01:38:06,523 - #10 pet
-INFO  01:38:06,523 - #15 -
-INFO  01:38:06,523 - #11 3
-INFO  01:38:06,523 - #28 ]
-INFO  01:38:06,523 - #19 =
-INFO  01:38:06,523 - #12 c
-INFO  01:38:06,523 - #22 ;
-INFO  01:38:06,524 - #5 print
-INFO  01:38:06,524 - #25 (
-INFO  01:38:06,524 - #10 nizch
-INFO  01:38:06,524 - #27 [
-INFO  01:38:06,524 - #11 1
-INFO  01:38:06,524 - #28 ]
-INFO  01:38:06,524 - #26 )
-INFO  01:38:06,524 - #22 ;
-INFO  01:38:06,524 - #5 print
-INFO  01:38:06,524 - #25 (
-INFO  01:38:06,524 - #10 nizch
-INFO  01:38:06,524 - #27 [
-INFO  01:38:06,525 - #10 jedan
-INFO  01:38:06,525 - #16 *
-INFO  01:38:06,525 - #11 2
-INFO  01:38:06,525 - #28 ]
-INFO  01:38:06,525 - #26 )
-INFO  01:38:06,525 - #22 ;
-INFO  01:38:06,525 - #6 read
-INFO  01:38:06,525 - #25 (
-INFO  01:38:06,525 - #10 bodovi
-INFO  01:38:06,525 - #26 )
-INFO  01:38:06,525 - #22 ;
-INFO  01:38:06,525 - #10 bodovi
-INFO  01:38:06,525 - #19 =
-INFO  01:38:06,525 - #15 -
-INFO  01:38:06,525 - #10 bodovi
-INFO  01:38:06,525 - #14 +
-INFO  01:38:06,525 - #25 (
-INFO  01:38:06,526 - #10 pet
-INFO  01:38:06,526 - #16 *
-INFO  01:38:06,526 - #10 a
-INFO  01:38:06,526 - #17 /
-INFO  01:38:06,526 - #11 2
-INFO  01:38:06,526 - #15 -
-INFO  01:38:06,526 - #10 jedan
-INFO  01:38:06,526 - #26 )
-INFO  01:38:06,526 - #16 *
-INFO  01:38:06,526 - #10 bodovi
-INFO  01:38:06,526 - #15 -
-INFO  01:38:06,526 - #25 (
-INFO  01:38:06,526 - #11 3
-INFO  01:38:06,526 - #18 %
-INFO  01:38:06,526 - #11 2
-INFO  01:38:06,526 - #14 +
-INFO  01:38:06,526 - #11 3
-INFO  01:38:06,526 - #16 *
-INFO  01:38:06,526 - #11 2
-INFO  01:38:06,527 - #15 -
-INFO  01:38:06,527 - #11 3
-INFO  01:38:06,527 - #26 )
-INFO  01:38:06,527 - #22 ;
-INFO  01:38:06,527 - #5 print
-INFO  01:38:06,527 - #25 (
-INFO  01:38:06,527 - #10 bodovi
-INFO  01:38:06,527 - #26 )
-INFO  01:38:06,527 - #22 ;
-INFO  01:38:06,527 - #30 }
-INFO  01:38:06,527 - #30 }
-INFO  01:38:06,536 - Program(
- test301
+INFO  15:56:22,851 - Compiling source file: C:\Users\Korisnik\Desktop\PP1-projekat\MJCompiler\test\program.mj
+INFO  15:56:22,869 - #2 program
+INFO  15:56:22,870 - #10 test301
+INFO  15:56:22,870 - #3 const
+INFO  15:56:22,870 - #10 int
+INFO  15:56:22,870 - #10 nula
+INFO  15:56:22,871 - #19 =
+INFO  15:56:22,871 - #11 0
+INFO  15:56:22,871 - #22 ;
+INFO  15:56:22,872 - #3 const
+INFO  15:56:22,872 - #10 int
+INFO  15:56:22,872 - #10 jedan
+INFO  15:56:22,872 - #19 =
+INFO  15:56:22,872 - #11 1
+INFO  15:56:22,872 - #22 ;
+INFO  15:56:22,872 - #3 const
+INFO  15:56:22,872 - #10 int
+INFO  15:56:22,872 - #10 pet
+INFO  15:56:22,872 - #19 =
+INFO  15:56:22,872 - #11 5
+INFO  15:56:22,872 - #22 ;
+INFO  15:56:22,872 - #10 int
+INFO  15:56:22,873 - #10 niz
+INFO  15:56:22,873 - #27 [
+INFO  15:56:22,873 - #28 ]
+INFO  15:56:22,873 - #24 ,
+INFO  15:56:22,873 - #10 niz2
+INFO  15:56:22,873 - #27 [
+INFO  15:56:22,873 - #28 ]
+INFO  15:56:22,873 - #24 ,
+INFO  15:56:22,873 - #10 a
+INFO  15:56:22,873 - #24 ,
+INFO  15:56:22,873 - #10 b
+INFO  15:56:22,873 - #22 ;
+INFO  15:56:22,874 - #10 char
+INFO  15:56:22,874 - #10 nizch
+INFO  15:56:22,874 - #27 [
+INFO  15:56:22,874 - #28 ]
+INFO  15:56:22,874 - #22 ;
+INFO  15:56:22,874 - #29 {
+INFO  15:56:22,874 - #8 void
+INFO  15:56:22,874 - #10 main
+INFO  15:56:22,874 - #25 (
+INFO  15:56:22,875 - #26 )
+INFO  15:56:22,875 - #10 int
+INFO  15:56:22,875 - #10 bodovi
+INFO  15:56:22,875 - #22 ;
+INFO  15:56:22,875 - #10 bool
+INFO  15:56:22,875 - #10 bt
+INFO  15:56:22,875 - #22 ;
+INFO  15:56:22,876 - #29 {
+INFO  15:56:22,876 - #10 bodovi
+INFO  15:56:22,876 - #19 =
+INFO  15:56:22,876 - #11 0
+INFO  15:56:22,877 - #22 ;
+INFO  15:56:22,878 - #10 bodovi
+INFO  15:56:22,878 - #20 ++
+INFO  15:56:22,878 - #22 ;
+INFO  15:56:22,879 - #10 bodovi
+INFO  15:56:22,879 - #19 =
+INFO  15:56:22,879 - #10 bodovi
+INFO  15:56:22,879 - #14 +
+INFO  15:56:22,879 - #10 jedan
+INFO  15:56:22,880 - #22 ;
+INFO  15:56:22,880 - #10 bodovi
+INFO  15:56:22,880 - #19 =
+INFO  15:56:22,880 - #10 bodovi
+INFO  15:56:22,880 - #16 *
+INFO  15:56:22,880 - #10 pet
+INFO  15:56:22,881 - #22 ;
+INFO  15:56:22,881 - #10 bodovi
+INFO  15:56:22,883 - #21 --
+INFO  15:56:22,883 - #22 ;
+INFO  15:56:22,883 - #5 print
+INFO  15:56:22,883 - #25 (
+INFO  15:56:22,883 - #10 bodovi
+INFO  15:56:22,883 - #26 )
+INFO  15:56:22,884 - #22 ;
+INFO  15:56:22,884 - #10 niz
+INFO  15:56:22,884 - #19 =
+INFO  15:56:22,884 - #4 new
+INFO  15:56:22,884 - #10 int
+INFO  15:56:22,884 - #27 [
+INFO  15:56:22,884 - #11 3
+INFO  15:56:22,884 - #28 ]
+INFO  15:56:22,884 - #22 ;
+INFO  15:56:22,884 - #10 niz
+INFO  15:56:22,884 - #27 [
+INFO  15:56:22,885 - #10 nula
+INFO  15:56:22,885 - #28 ]
+INFO  15:56:22,885 - #19 =
+INFO  15:56:22,885 - #10 jedan
+INFO  15:56:22,885 - #22 ;
+INFO  15:56:22,885 - #10 niz
+INFO  15:56:22,885 - #27 [
+INFO  15:56:22,885 - #11 1
+INFO  15:56:22,885 - #28 ]
+INFO  15:56:22,885 - #19 =
+INFO  15:56:22,885 - #11 2
+INFO  15:56:22,885 - #22 ;
+INFO  15:56:22,885 - #10 niz
+INFO  15:56:22,885 - #27 [
+INFO  15:56:22,885 - #10 niz
+INFO  15:56:22,885 - #27 [
+INFO  15:56:22,885 - #10 jedan
+INFO  15:56:22,885 - #28 ]
+INFO  15:56:22,885 - #28 ]
+INFO  15:56:22,885 - #19 =
+INFO  15:56:22,885 - #10 niz
+INFO  15:56:22,886 - #27 [
+INFO  15:56:22,886 - #10 niz
+INFO  15:56:22,886 - #27 [
+INFO  15:56:22,886 - #11 0
+INFO  15:56:22,886 - #28 ]
+INFO  15:56:22,886 - #28 ]
+INFO  15:56:22,886 - #16 *
+INFO  15:56:22,886 - #11 3
+INFO  15:56:22,886 - #22 ;
+INFO  15:56:22,886 - #10 bodovi
+INFO  15:56:22,886 - #19 =
+INFO  15:56:22,886 - #10 niz
+INFO  15:56:22,886 - #27 [
+INFO  15:56:22,886 - #11 2
+INFO  15:56:22,886 - #28 ]
+INFO  15:56:22,886 - #17 /
+INFO  15:56:22,886 - #10 niz
+INFO  15:56:22,887 - #27 [
+INFO  15:56:22,887 - #11 0
+INFO  15:56:22,887 - #28 ]
+INFO  15:56:22,887 - #22 ;
+INFO  15:56:22,887 - #5 print
+INFO  15:56:22,887 - #25 (
+INFO  15:56:22,887 - #10 bodovi
+INFO  15:56:22,887 - #26 )
+INFO  15:56:22,887 - #22 ;
+INFO  15:56:22,887 - #5 print
+INFO  15:56:22,887 - #25 (
+INFO  15:56:22,887 - #10 niz
+INFO  15:56:22,887 - #27 [
+INFO  15:56:22,887 - #11 2
+INFO  15:56:22,887 - #28 ]
+INFO  15:56:22,887 - #26 )
+INFO  15:56:22,887 - #22 ;
+INFO  15:56:22,887 - #27 [
+INFO  15:56:22,887 - #10 a
+INFO  15:56:22,888 - #24 ,
+INFO  15:56:22,888 - #10 b
+INFO  15:56:22,888 - #28 ]
+INFO  15:56:22,888 - #19 =
+INFO  15:56:22,888 - #10 niz
+INFO  15:56:22,888 - #22 ;
+INFO  15:56:22,888 - #5 print
+INFO  15:56:22,888 - #25 (
+INFO  15:56:22,888 - #10 a
+INFO  15:56:22,888 - #26 )
+INFO  15:56:22,888 - #22 ;
+INFO  15:56:22,888 - #5 print
+INFO  15:56:22,888 - #25 (
+INFO  15:56:22,888 - #10 b
+INFO  15:56:22,888 - #26 )
+INFO  15:56:22,888 - #22 ;
+INFO  15:56:22,888 - #27 [
+INFO  15:56:22,888 - #24 ,
+INFO  15:56:22,889 - #10 a
+INFO  15:56:22,889 - #24 ,
+INFO  15:56:22,889 - #28 ]
+INFO  15:56:22,889 - #19 =
+INFO  15:56:22,889 - #10 niz
+INFO  15:56:22,889 - #22 ;
+INFO  15:56:22,889 - #5 print
+INFO  15:56:22,889 - #25 (
+INFO  15:56:22,889 - #10 a
+INFO  15:56:22,889 - #26 )
+INFO  15:56:22,889 - #22 ;
+INFO  15:56:22,889 - #10 niz2
+INFO  15:56:22,889 - #19 =
+INFO  15:56:22,889 - #4 new
+INFO  15:56:22,889 - #10 int
+INFO  15:56:22,889 - #27 [
+INFO  15:56:22,889 - #11 2
+INFO  15:56:22,890 - #28 ]
+INFO  15:56:22,890 - #22 ;
+INFO  15:56:22,890 - #27 [
+INFO  15:56:22,890 - #10 niz2
+INFO  15:56:22,890 - #27 [
+INFO  15:56:22,890 - #11 0
+INFO  15:56:22,890 - #28 ]
+INFO  15:56:22,890 - #24 ,
+INFO  15:56:22,890 - #24 ,
+INFO  15:56:22,890 - #10 niz2
+INFO  15:56:22,890 - #27 [
+INFO  15:56:22,890 - #10 niz
+INFO  15:56:22,890 - #27 [
+INFO  15:56:22,890 - #10 nula
+INFO  15:56:22,890 - #28 ]
+INFO  15:56:22,890 - #28 ]
+INFO  15:56:22,890 - #28 ]
+INFO  15:56:22,890 - #19 =
+INFO  15:56:22,890 - #10 niz
+INFO  15:56:22,890 - #22 ;
+INFO  15:56:22,890 - #5 print
+INFO  15:56:22,890 - #25 (
+INFO  15:56:22,890 - #10 niz2
+INFO  15:56:22,890 - #27 [
+INFO  15:56:22,890 - #11 0
+INFO  15:56:22,890 - #28 ]
+INFO  15:56:22,890 - #26 )
+INFO  15:56:22,890 - #22 ;
+INFO  15:56:22,890 - #5 print
+INFO  15:56:22,890 - #25 (
+INFO  15:56:22,891 - #10 niz2
+INFO  15:56:22,891 - #27 [
+INFO  15:56:22,891 - #11 1
+INFO  15:56:22,891 - #28 ]
+INFO  15:56:22,891 - #26 )
+INFO  15:56:22,891 - #22 ;
+INFO  15:56:22,891 - #10 nizch
+INFO  15:56:22,891 - #19 =
+INFO  15:56:22,891 - #4 new
+INFO  15:56:22,891 - #10 char
+INFO  15:56:22,891 - #27 [
+INFO  15:56:22,891 - #11 3
+INFO  15:56:22,891 - #28 ]
+INFO  15:56:22,891 - #22 ;
+INFO  15:56:22,891 - #10 nizch
+INFO  15:56:22,891 - #27 [
+INFO  15:56:22,891 - #11 0
+INFO  15:56:22,891 - #28 ]
+INFO  15:56:22,891 - #19 =
+INFO  15:56:22,891 - #12 a
+INFO  15:56:22,891 - #22 ;
+INFO  15:56:22,891 - #10 nizch
+INFO  15:56:22,891 - #27 [
+INFO  15:56:22,891 - #10 jedan
+INFO  15:56:22,891 - #28 ]
+INFO  15:56:22,891 - #19 =
+INFO  15:56:22,891 - #12 b
+INFO  15:56:22,891 - #22 ;
+INFO  15:56:22,891 - #10 nizch
+INFO  15:56:22,891 - #27 [
+INFO  15:56:22,892 - #10 pet
+INFO  15:56:22,892 - #15 -
+INFO  15:56:22,892 - #11 3
+INFO  15:56:22,893 - #28 ]
+INFO  15:56:22,893 - #19 =
+INFO  15:56:22,893 - #12 c
+INFO  15:56:22,893 - #22 ;
+INFO  15:56:22,893 - #5 print
+INFO  15:56:22,893 - #25 (
+INFO  15:56:22,893 - #10 nizch
+INFO  15:56:22,893 - #27 [
+INFO  15:56:22,893 - #11 1
+INFO  15:56:22,893 - #28 ]
+INFO  15:56:22,893 - #26 )
+INFO  15:56:22,893 - #22 ;
+INFO  15:56:22,893 - #5 print
+INFO  15:56:22,893 - #25 (
+INFO  15:56:22,893 - #10 nizch
+INFO  15:56:22,893 - #27 [
+INFO  15:56:22,893 - #10 jedan
+INFO  15:56:22,893 - #16 *
+INFO  15:56:22,893 - #11 2
+INFO  15:56:22,893 - #28 ]
+INFO  15:56:22,893 - #26 )
+INFO  15:56:22,893 - #22 ;
+INFO  15:56:22,894 - #6 read
+INFO  15:56:22,894 - #25 (
+INFO  15:56:22,894 - #10 bodovi
+INFO  15:56:22,894 - #26 )
+INFO  15:56:22,894 - #22 ;
+INFO  15:56:22,894 - #10 bodovi
+INFO  15:56:22,894 - #19 =
+INFO  15:56:22,894 - #15 -
+INFO  15:56:22,894 - #10 bodovi
+INFO  15:56:22,894 - #14 +
+INFO  15:56:22,894 - #25 (
+INFO  15:56:22,894 - #10 pet
+INFO  15:56:22,894 - #16 *
+INFO  15:56:22,894 - #10 a
+INFO  15:56:22,894 - #17 /
+INFO  15:56:22,894 - #11 2
+INFO  15:56:22,894 - #15 -
+INFO  15:56:22,894 - #10 jedan
+INFO  15:56:22,895 - #26 )
+INFO  15:56:22,895 - #16 *
+INFO  15:56:22,895 - #10 bodovi
+INFO  15:56:22,895 - #15 -
+INFO  15:56:22,895 - #25 (
+INFO  15:56:22,895 - #11 3
+INFO  15:56:22,895 - #18 %
+INFO  15:56:22,895 - #11 2
+INFO  15:56:22,895 - #14 +
+INFO  15:56:22,895 - #11 3
+INFO  15:56:22,895 - #16 *
+INFO  15:56:22,895 - #11 2
+INFO  15:56:22,895 - #15 -
+INFO  15:56:22,895 - #11 3
+INFO  15:56:22,895 - #26 )
+INFO  15:56:22,895 - #22 ;
+INFO  15:56:22,895 - #5 print
+INFO  15:56:22,895 - #25 (
+INFO  15:56:22,895 - #10 bodovi
+INFO  15:56:22,896 - #26 )
+INFO  15:56:22,896 - #22 ;
+INFO  15:56:22,896 - #30 }
+INFO  15:56:22,896 - #30 }
+INFO  15:56:22,905 - Program(
+  ProgramName(
+   test301
+  ) [ProgramName]
   ConstVarDeclList_VAR(
     ConstVarDeclList_VAR(
       ConstVarDeclList_CONST(
@@ -393,7 +395,9 @@ INFO  01:38:06,536 - Program(
     ) [VarDeclList]
   ) [ConstVarDeclList_VAR]
   MethodDecl(
-   main
+    MethodName(
+     main
+    ) [MethodName]
     MethodVarDeclList_VAR(
       MethodVarDeclList_VAR(
         MethodVarDeclList_EPSILON(
@@ -645,7 +649,9 @@ INFO  01:38:06,536 - Program(
                                                     Statement_DesignatorStatement(
                                                       DesignatorSt_Assign(
                                                         Designator_ARRAY(
-                                                         niz
+                                                          DesignatorArrayName(
+                                                           niz
+                                                          ) [DesignatorArrayName]
                                                           Expr(
                                                             ExprList_ONE(
                                                               Term(
@@ -689,7 +695,9 @@ INFO  01:38:06,536 - Program(
                                                   Statement_DesignatorStatement(
                                                     DesignatorSt_Assign(
                                                       Designator_ARRAY(
-                                                       niz
+                                                        DesignatorArrayName(
+                                                         niz
+                                                        ) [DesignatorArrayName]
                                                         Expr(
                                                           ExprList_ONE(
                                                             Term(
@@ -729,7 +737,9 @@ INFO  01:38:06,536 - Program(
                                                 Statement_DesignatorStatement(
                                                   DesignatorSt_Assign(
                                                     Designator_ARRAY(
-                                                     niz
+                                                      DesignatorArrayName(
+                                                       niz
+                                                      ) [DesignatorArrayName]
                                                       Expr(
                                                         ExprList_ONE(
                                                           Term(
@@ -739,7 +749,9 @@ INFO  01:38:06,536 - Program(
                                                                 ) [UnaryMinus_EPSILON]
                                                                 Factor_Designator(
                                                                   Designator_ARRAY(
-                                                                   niz
+                                                                    DesignatorArrayName(
+                                                                     niz
+                                                                    ) [DesignatorArrayName]
                                                                     Expr(
                                                                       ExprList_ONE(
                                                                         Term(
@@ -777,7 +789,9 @@ INFO  01:38:06,536 - Program(
                                                                 ) [UnaryMinus_EPSILON]
                                                                 Factor_Designator(
                                                                   Designator_ARRAY(
-                                                                   niz
+                                                                    DesignatorArrayName(
+                                                                     niz
+                                                                    ) [DesignatorArrayName]
                                                                     Expr(
                                                                       ExprList_ONE(
                                                                         Term(
@@ -787,7 +801,9 @@ INFO  01:38:06,536 - Program(
                                                                               ) [UnaryMinus_EPSILON]
                                                                               Factor_Designator(
                                                                                 Designator_ARRAY(
-                                                                                 niz
+                                                                                  DesignatorArrayName(
+                                                                                   niz
+                                                                                  ) [DesignatorArrayName]
                                                                                   Expr(
                                                                                     ExprList_ONE(
                                                                                       Term(
@@ -847,7 +863,9 @@ INFO  01:38:06,536 - Program(
                                                               ) [UnaryMinus_EPSILON]
                                                               Factor_Designator(
                                                                 Designator_ARRAY(
-                                                                 niz
+                                                                  DesignatorArrayName(
+                                                                   niz
+                                                                  ) [DesignatorArrayName]
                                                                   Expr(
                                                                     ExprList_ONE(
                                                                       Term(
@@ -874,7 +892,9 @@ INFO  01:38:06,536 - Program(
                                                             ) [UnaryMinus_EPSILON]
                                                             Factor_Designator(
                                                               Designator_ARRAY(
-                                                               niz
+                                                                DesignatorArrayName(
+                                                                 niz
+                                                                ) [DesignatorArrayName]
                                                                 Expr(
                                                                   ExprList_ONE(
                                                                     Term(
@@ -932,7 +952,9 @@ INFO  01:38:06,536 - Program(
                                                       ) [UnaryMinus_EPSILON]
                                                       Factor_Designator(
                                                         Designator_ARRAY(
-                                                         niz
+                                                          DesignatorArrayName(
+                                                           niz
+                                                          ) [DesignatorArrayName]
                                                           Expr(
                                                             ExprList_ONE(
                                                               Term(
@@ -1119,7 +1141,9 @@ INFO  01:38:06,536 - Program(
                                     DesignatorStatementList_ONE(
                                       MayDesignator_Designator(
                                         Designator_ARRAY(
-                                         niz2
+                                          DesignatorArrayName(
+                                           niz2
+                                          ) [DesignatorArrayName]
                                           Expr(
                                             ExprList_ONE(
                                               Term(
@@ -1143,7 +1167,9 @@ INFO  01:38:06,536 - Program(
                                   ) [DesignatorStatementList_MORE]
                                   MayDesignator_Designator(
                                     Designator_ARRAY(
-                                     niz2
+                                      DesignatorArrayName(
+                                       niz2
+                                      ) [DesignatorArrayName]
                                       Expr(
                                         ExprList_ONE(
                                           Term(
@@ -1153,7 +1179,9 @@ INFO  01:38:06,536 - Program(
                                                 ) [UnaryMinus_EPSILON]
                                                 Factor_Designator(
                                                   Designator_ARRAY(
-                                                   niz
+                                                    DesignatorArrayName(
+                                                     niz
+                                                    ) [DesignatorArrayName]
                                                     Expr(
                                                       ExprList_ONE(
                                                         Term(
@@ -1197,7 +1225,9 @@ INFO  01:38:06,536 - Program(
                                       ) [UnaryMinus_EPSILON]
                                       Factor_Designator(
                                         Designator_ARRAY(
-                                         niz2
+                                          DesignatorArrayName(
+                                           niz2
+                                          ) [DesignatorArrayName]
                                           Expr(
                                             ExprList_ONE(
                                               Term(
@@ -1234,7 +1264,9 @@ INFO  01:38:06,536 - Program(
                                     ) [UnaryMinus_EPSILON]
                                     Factor_Designator(
                                       Designator_ARRAY(
-                                       niz2
+                                        DesignatorArrayName(
+                                         niz2
+                                        ) [DesignatorArrayName]
                                         Expr(
                                           ExprList_ONE(
                                             Term(
@@ -1306,7 +1338,9 @@ INFO  01:38:06,536 - Program(
                     Statement_DesignatorStatement(
                       DesignatorSt_Assign(
                         Designator_ARRAY(
-                         nizch
+                          DesignatorArrayName(
+                           nizch
+                          ) [DesignatorArrayName]
                           Expr(
                             ExprList_ONE(
                               Term(
@@ -1346,7 +1380,9 @@ INFO  01:38:06,536 - Program(
                   Statement_DesignatorStatement(
                     DesignatorSt_Assign(
                       Designator_ARRAY(
-                       nizch
+                        DesignatorArrayName(
+                         nizch
+                        ) [DesignatorArrayName]
                         Expr(
                           ExprList_ONE(
                             Term(
@@ -1388,7 +1424,9 @@ INFO  01:38:06,536 - Program(
                 Statement_DesignatorStatement(
                   DesignatorSt_Assign(
                     Designator_ARRAY(
-                     nizch
+                      DesignatorArrayName(
+                       nizch
+                      ) [DesignatorArrayName]
                       Expr(
                         ExprList_MORE(
                           ExprList_ONE(
@@ -1452,7 +1490,9 @@ INFO  01:38:06,536 - Program(
                           ) [UnaryMinus_EPSILON]
                           Factor_Designator(
                             Designator_ARRAY(
-                             nizch
+                              DesignatorArrayName(
+                               nizch
+                              ) [DesignatorArrayName]
                               Expr(
                                 ExprList_ONE(
                                   Term(
@@ -1489,7 +1529,9 @@ INFO  01:38:06,536 - Program(
                         ) [UnaryMinus_EPSILON]
                         Factor_Designator(
                           Designator_ARRAY(
-                           nizch
+                            DesignatorArrayName(
+                             nizch
+                            ) [DesignatorArrayName]
                             Expr(
                               ExprList_ONE(
                                 Term(
@@ -1752,4 +1794,4 @@ INFO  01:38:06,536 - Program(
     ) [StatementList_STATEMENTS]
   ) [MethodDecl]
 ) [Program]
-INFO  01:38:06,538 - ===================================
+INFO  15:56:22,908 - ===================================

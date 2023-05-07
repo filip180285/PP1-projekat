@@ -1,27 +1,28 @@
 // generated with ast extension for cup
 // version 0.8
-// 7/4/2023 1:37:10
+// 7/4/2023 15:26:19
 
 
 package rs.ac.bg.etf.pp1.ast;
 
 public class Designator_ARRAY extends Designator {
 
-    private String I1;
+    private DesignatorArrayName DesignatorArrayName;
     private Expr Expr;
 
-    public Designator_ARRAY (String I1, Expr Expr) {
-        this.I1=I1;
+    public Designator_ARRAY (DesignatorArrayName DesignatorArrayName, Expr Expr) {
+        this.DesignatorArrayName=DesignatorArrayName;
+        if(DesignatorArrayName!=null) DesignatorArrayName.setParent(this);
         this.Expr=Expr;
         if(Expr!=null) Expr.setParent(this);
     }
 
-    public String getI1() {
-        return I1;
+    public DesignatorArrayName getDesignatorArrayName() {
+        return DesignatorArrayName;
     }
 
-    public void setI1(String I1) {
-        this.I1=I1;
+    public void setDesignatorArrayName(DesignatorArrayName DesignatorArrayName) {
+        this.DesignatorArrayName=DesignatorArrayName;
     }
 
     public Expr getExpr() {
@@ -37,15 +38,18 @@ public class Designator_ARRAY extends Designator {
     }
 
     public void childrenAccept(Visitor visitor) {
+        if(DesignatorArrayName!=null) DesignatorArrayName.accept(visitor);
         if(Expr!=null) Expr.accept(visitor);
     }
 
     public void traverseTopDown(Visitor visitor) {
         accept(visitor);
+        if(DesignatorArrayName!=null) DesignatorArrayName.traverseTopDown(visitor);
         if(Expr!=null) Expr.traverseTopDown(visitor);
     }
 
     public void traverseBottomUp(Visitor visitor) {
+        if(DesignatorArrayName!=null) DesignatorArrayName.traverseBottomUp(visitor);
         if(Expr!=null) Expr.traverseBottomUp(visitor);
         accept(visitor);
     }
@@ -55,7 +59,10 @@ public class Designator_ARRAY extends Designator {
         buffer.append(tab);
         buffer.append("Designator_ARRAY(\n");
 
-        buffer.append(" "+tab+I1);
+        if(DesignatorArrayName!=null)
+            buffer.append(DesignatorArrayName.toString("  "+tab));
+        else
+            buffer.append(tab+"  null");
         buffer.append("\n");
 
         if(Expr!=null)

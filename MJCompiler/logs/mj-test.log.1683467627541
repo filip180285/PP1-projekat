@@ -1,0 +1,59 @@
+INFO  15:53:20,885 - Compiling source file: C:\Users\Korisnik\Desktop\PP1-projekat\MJCompiler\test\program.mj
+INFO  15:53:20,903 - #2 program
+INFO  15:53:20,903 - #10 test301
+INFO  15:53:20,903 - #29 {
+INFO  15:53:20,903 - #8 void
+INFO  15:53:20,903 - #10 main
+INFO  15:53:20,903 - #25 (
+INFO  15:53:20,904 - #26 )
+INFO  15:53:20,904 - #29 {
+INFO  15:53:20,905 - #27 [
+INFO  15:53:20,905 - #10 a
+INFO  15:53:20,905 - #24 ,
+INFO  15:53:20,905 - #10 b
+INFO  15:53:20,905 - #28 ]
+INFO  15:53:20,905 - #19 =
+INFO  15:53:20,905 - #10 c
+INFO  15:53:20,905 - #22 ;
+INFO  15:53:20,905 - #30 }
+INFO  15:53:20,905 - #30 }
+INFO  15:53:20,907 - Program(
+  ProgramName(
+   test301
+  ) [ProgramName]
+  ConstVarDeclList_EPSILON(
+  ) [ConstVarDeclList_EPSILON]
+  MethodDecl(
+    MethodName(
+     main
+    ) [MethodName]
+    MethodVarDeclList_EPSILON(
+    ) [MethodVarDeclList_EPSILON]
+    StatementList_STATEMENTS(
+      StatementList_EPSILON(
+      ) [StatementList_EPSILON]
+      Statement_DesignatorStatement(
+        DesignatorStatement_List(
+          DesignatorStatementList_MORE(
+            DesignatorStatementList_ONE(
+              MayDesignator_Designator(
+                Designator_ONE(
+                 a
+                ) [Designator_ONE]
+              ) [MayDesignator_Designator]
+            ) [DesignatorStatementList_ONE]
+            MayDesignator_Designator(
+              Designator_ONE(
+               b
+              ) [Designator_ONE]
+            ) [MayDesignator_Designator]
+          ) [DesignatorStatementList_MORE]
+          Designator_ONE(
+           c
+          ) [Designator_ONE]
+        ) [DesignatorStatement_List]
+      ) [Statement_DesignatorStatement]
+    ) [StatementList_STATEMENTS]
+  ) [MethodDecl]
+) [Program]
+INFO  15:53:20,907 - ===================================

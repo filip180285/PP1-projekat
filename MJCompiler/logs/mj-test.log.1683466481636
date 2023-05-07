@@ -1,0 +1,58 @@
+INFO  15:32:01,024 - Compiling source file: C:\Users\Korisnik\Desktop\PP1-projekat\MJCompiler\test\program.mj
+INFO  15:32:01,046 - #2 program
+INFO  15:32:01,046 - #10 test301
+INFO  15:32:01,046 - #29 {
+INFO  15:32:01,047 - #8 void
+INFO  15:32:01,047 - #10 main
+INFO  15:32:01,047 - #25 (
+INFO  15:32:01,048 - #26 )
+INFO  15:32:01,048 - #29 {
+INFO  15:32:01,048 - #10 a
+INFO  15:32:01,049 - #19 =
+INFO  15:32:01,049 - #11 5
+INFO  15:32:01,050 - #22 ;
+INFO  15:32:01,051 - #30 }
+INFO  15:32:01,051 - #30 }
+INFO  15:32:01,053 - Program(
+  ProgramName(
+   test301
+  ) [ProgramName]
+  ConstVarDeclList_EPSILON(
+  ) [ConstVarDeclList_EPSILON]
+  MethodDecl(
+    MethodName(
+     main
+    ) [MethodName]
+    MethodVarDeclList_EPSILON(
+    ) [MethodVarDeclList_EPSILON]
+    StatementList_STATEMENTS(
+      StatementList_EPSILON(
+      ) [StatementList_EPSILON]
+      Statement_DesignatorStatement(
+        DesignatorSt_Assign(
+          Designator_ONE(
+           a
+          ) [Designator_ONE]
+          Assignop(
+          ) [Assignop]
+          Expr(
+            ExprList_ONE(
+              Term(
+                TermList_ONE(
+                  FactorSign(
+                    UnaryMinus_EPSILON(
+                    ) [UnaryMinus_EPSILON]
+                    Factor_NUMBER(
+                     5
+                    ) [Factor_NUMBER]
+                  ) [FactorSign]
+                ) [TermList_ONE]
+              ) [Term]
+            ) [ExprList_ONE]
+          ) [Expr]
+        ) [DesignatorSt_Assign]
+      ) [Statement_DesignatorStatement]
+    ) [StatementList_STATEMENTS]
+  ) [MethodDecl]
+) [Program]
+INFO  15:32:01,055 - ===================================

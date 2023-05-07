@@ -1,0 +1,101 @@
+INFO  15:36:23,347 - Compiling source file: C:\Users\Korisnik\Desktop\PP1-projekat\MJCompiler\test\program.mj
+INFO  15:36:23,365 - #2 program
+INFO  15:36:23,365 - #10 test301
+INFO  15:36:23,366 - #29 {
+INFO  15:36:23,367 - #8 void
+INFO  15:36:23,367 - #10 main
+INFO  15:36:23,367 - #25 (
+INFO  15:36:23,367 - #26 )
+INFO  15:36:23,367 - #29 {
+INFO  15:36:23,368 - #10 a
+INFO  15:36:23,368 - #19 =
+INFO  15:36:23,368 - #11 1
+INFO  15:36:23,369 - #16 *
+INFO  15:36:23,369 - #11 2
+INFO  15:36:23,370 - #14 +
+INFO  15:36:23,370 - #11 3
+INFO  15:36:23,371 - #16 *
+INFO  15:36:23,371 - #11 5
+INFO  15:36:23,371 - #22 ;
+INFO  15:36:23,372 - #30 }
+INFO  15:36:23,372 - #30 }
+INFO  15:36:23,373 - Program(
+  ProgramName(
+   test301
+  ) [ProgramName]
+  ConstVarDeclList_EPSILON(
+  ) [ConstVarDeclList_EPSILON]
+  MethodDecl(
+    MethodName(
+     main
+    ) [MethodName]
+    MethodVarDeclList_EPSILON(
+    ) [MethodVarDeclList_EPSILON]
+    StatementList_STATEMENTS(
+      StatementList_EPSILON(
+      ) [StatementList_EPSILON]
+      Statement_DesignatorStatement(
+        DesignatorSt_Assign(
+          Designator_ONE(
+           a
+          ) [Designator_ONE]
+          Assignop(
+          ) [Assignop]
+          Expr(
+            ExprList_MORE(
+              ExprList_ONE(
+                Term(
+                  TermList_MORE(
+                    TermList_ONE(
+                      FactorSign(
+                        UnaryMinus_EPSILON(
+                        ) [UnaryMinus_EPSILON]
+                        Factor_NUMBER(
+                         1
+                        ) [Factor_NUMBER]
+                      ) [FactorSign]
+                    ) [TermList_ONE]
+                    Mulop_MUL(
+                    ) [Mulop_MUL]
+                    FactorSign(
+                      UnaryMinus_EPSILON(
+                      ) [UnaryMinus_EPSILON]
+                      Factor_NUMBER(
+                       2
+                      ) [Factor_NUMBER]
+                    ) [FactorSign]
+                  ) [TermList_MORE]
+                ) [Term]
+              ) [ExprList_ONE]
+              Addop_PLUS(
+              ) [Addop_PLUS]
+              Term(
+                TermList_MORE(
+                  TermList_ONE(
+                    FactorSign(
+                      UnaryMinus_EPSILON(
+                      ) [UnaryMinus_EPSILON]
+                      Factor_NUMBER(
+                       3
+                      ) [Factor_NUMBER]
+                    ) [FactorSign]
+                  ) [TermList_ONE]
+                  Mulop_MUL(
+                  ) [Mulop_MUL]
+                  FactorSign(
+                    UnaryMinus_EPSILON(
+                    ) [UnaryMinus_EPSILON]
+                    Factor_NUMBER(
+                     5
+                    ) [Factor_NUMBER]
+                  ) [FactorSign]
+                ) [TermList_MORE]
+              ) [Term]
+            ) [ExprList_MORE]
+          ) [Expr]
+        ) [DesignatorSt_Assign]
+      ) [Statement_DesignatorStatement]
+    ) [StatementList_STATEMENTS]
+  ) [MethodDecl]
+) [Program]
+INFO  15:36:23,379 - ===================================

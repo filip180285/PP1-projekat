@@ -57,10 +57,12 @@ terminal PLUS, MINUS, MULTIPLICATION, DIVISION, MODULUS, EQUALS, INCREMENT, DECR
 terminal SEMICOLON, COLON, COMMA, LEFT_PARENTHESIS, RIGHT_PARENTHESIS, LEFT_BRACKET, RIGHT_BRACKET, LEFT_BRACE, RIGHT_BRACE;
 
 nonterminal Program Program;
+nonterminal ProgramName ProgramName;
 nonterminal ConstVarDeclList ConstVarDeclList;
 nonterminal ConstDeclList ConstDeclList;
 nonterminal VarDeclList VarDeclList;
 nonterminal MethodDecl MethodDecl;
+nonterminal MethodName MethodName;
 nonterminal Type Type;
 nonterminal ConstDeclOneOrMore ConstDeclOneOrMore;
 nonterminal ConstDecl ConstDecl;
@@ -72,6 +74,7 @@ nonterminal StatementList StatementList;
 nonterminal Statement Statement;
 nonterminal DesignatorStatement DesignatorStatement;
 nonterminal Designator Designator;
+nonterminal DesignatorArrayName DesignatorArrayName;
 nonterminal Expr Expr;
 nonterminal ExprList ExprList;
 nonterminal Term Term;
@@ -90,7 +93,9 @@ nonterminal Mulop Mulop;
 
 /*** Program = "program" ident {ConstDecl | VarDecl | ClassDecl } "{" {MethodDecl} "}". ***/
 
-Program ::= (Program) PROGRAM IDENTIFIER:I1 ConstVarDeclList:C2 LEFT_BRACE MethodDecl:M3 RIGHT_BRACE {: RESULT=new Program(I1, C2, M3); RESULT.setLine(I1left); :};
+Program ::= (Program) PROGRAM ProgramName:P1 ConstVarDeclList:C2 LEFT_BRACE MethodDecl:M3 RIGHT_BRACE {: RESULT=new Program(P1, C2, M3); RESULT.setLine(P1left); :};
+
+ProgramName ::= (ProgramName) IDENTIFIER:I1 {: RESULT=new ProgramName(I1); RESULT.setLine(I1left); :};
 
 ConstVarDeclList ::= (ConstVarDeclList_CONST) ConstVarDeclList:C1 ConstDeclList:C2 {: RESULT=new ConstVarDeclList_CONST(C1, C2); RESULT.setLine(C1left); :}
 					 | 
@@ -137,7 +142,9 @@ VarDecl ::= (VarDecl_VAR) IDENTIFIER:I1 {: RESULT=new VarDecl_VAR(I1); RESULT.se
 			
 /*** MethodDecl = (Type | "void") ident "(" [FormPars] ")" {VarDecl} "{" {Statement} "}". ***/
 
-MethodDecl ::= (MethodDecl) VOID IDENTIFIER:I1 LEFT_PARENTHESIS RIGHT_PARENTHESIS MethodVarDeclList:M2 LEFT_BRACE StatementList:S3 RIGHT_BRACE {: RESULT=new MethodDecl(I1, M2, S3); RESULT.setLine(I1left); :};
+MethodDecl ::= (MethodDecl) VOID MethodName:M1 LEFT_PARENTHESIS RIGHT_PARENTHESIS MethodVarDeclList:M2 LEFT_BRACE StatementList:S3 RIGHT_BRACE {: RESULT=new MethodDecl(M1, M2, S3); RESULT.setLine(M1left); :};
+
+MethodName ::= (MethodName) IDENTIFIER:I1 {: RESULT=new MethodName(I1); RESULT.setLine(I1left); :};
 
 MethodVarDeclList ::= (MethodVarDeclList_VAR) MethodVarDeclList:M1 VarDeclList:V2 {: RESULT=new MethodVarDeclList_VAR(M1, V2); RESULT.setLine(M1left); :}
 					  |
@@ -252,7 +259,9 @@ Factor ::= (Factor_Designator) Designator:D1 {: RESULT=new Factor_Designator(D1)
 
 Designator ::= (Designator_ONE) IDENTIFIER:I1 {: RESULT=new Designator_ONE(I1); RESULT.setLine(I1left); :}
 			   |
-			   (Designator_ARRAY) IDENTIFIER:I1 LEFT_BRACKET Expr:E2 RIGHT_BRACKET {: RESULT=new Designator_ARRAY(I1, E2); RESULT.setLine(I1left); :};
+			   (Designator_ARRAY) DesignatorArrayName:D1 LEFT_BRACKET Expr:E2 RIGHT_BRACKET {: RESULT=new Designator_ARRAY(D1, E2); RESULT.setLine(D1left); :};
+			   
+DesignatorArrayName ::= (DesignatorArrayName) IDENTIFIER:I1 {: RESULT=new DesignatorArrayName(I1); RESULT.setLine(I1left); :};
 
 
 

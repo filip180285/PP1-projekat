@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 7/4/2023 1:37:10
+// 7/4/2023 15:26:19
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -32,6 +32,7 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(Addop_MINUS Addop_MINUS) { visit(); }
     public void visit(Addop_PLUS Addop_PLUS) { visit(); }
     public void visit(Assignop Assignop) { visit(); }
+    public void visit(DesignatorArrayName DesignatorArrayName) { visit(); }
     public void visit(Designator_ARRAY Designator_ARRAY) { visit(); }
     public void visit(Designator_ONE Designator_ONE) { visit(); }
     public void visit(Factor_Expr Factor_Expr) { visit(); }
@@ -68,6 +69,7 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(StatementList_STATEMENTS StatementList_STATEMENTS) { visit(); }
     public void visit(MethodVarDeclList_EPSILON MethodVarDeclList_EPSILON) { visit(); }
     public void visit(MethodVarDeclList_VAR MethodVarDeclList_VAR) { visit(); }
+    public void visit(MethodName MethodName) { visit(); }
     public void visit(MethodDecl MethodDecl) { visit(); }
     public void visit(VarDecl_ARRAY VarDecl_ARRAY) { visit(); }
     public void visit(VarDecl_VAR VarDecl_VAR) { visit(); }
@@ -85,6 +87,7 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(ConstVarDeclList_EPSILON ConstVarDeclList_EPSILON) { visit(); }
     public void visit(ConstVarDeclList_VAR ConstVarDeclList_VAR) { visit(); }
     public void visit(ConstVarDeclList_CONST ConstVarDeclList_CONST) { visit(); }
+    public void visit(ProgramName ProgramName) { visit(); }
     public void visit(Program Program) { visit(); }
 
 

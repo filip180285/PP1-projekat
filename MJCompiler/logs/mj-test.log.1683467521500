@@ -1,0 +1,87 @@
+INFO  15:49:55,477 - Compiling source file: C:\Users\Korisnik\Desktop\PP1-projekat\MJCompiler\test\program.mj
+INFO  15:49:55,496 - #2 program
+INFO  15:49:55,496 - #10 test301
+INFO  15:49:55,496 - #29 {
+INFO  15:49:55,496 - #8 void
+INFO  15:49:55,496 - #10 main
+INFO  15:49:55,497 - #25 (
+INFO  15:49:55,497 - #26 )
+INFO  15:49:55,497 - #29 {
+INFO  15:49:55,497 - #10 a
+INFO  15:49:55,498 - #19 =
+INFO  15:49:55,498 - #25 (
+INFO  15:49:55,499 - #11 4
+INFO  15:49:55,499 - #16 *
+INFO  15:49:55,499 - #11 2
+INFO  15:49:55,500 - #26 )
+INFO  15:49:55,501 - #22 ;
+INFO  15:49:55,501 - #30 }
+INFO  15:49:55,501 - #30 }
+INFO  15:49:55,502 - Program(
+  ProgramName(
+   test301
+  ) [ProgramName]
+  ConstVarDeclList_EPSILON(
+  ) [ConstVarDeclList_EPSILON]
+  MethodDecl(
+    MethodName(
+     main
+    ) [MethodName]
+    MethodVarDeclList_EPSILON(
+    ) [MethodVarDeclList_EPSILON]
+    StatementList_STATEMENTS(
+      StatementList_EPSILON(
+      ) [StatementList_EPSILON]
+      Statement_DesignatorStatement(
+        DesignatorSt_Assign(
+          Designator_ONE(
+           a
+          ) [Designator_ONE]
+          Assignop(
+          ) [Assignop]
+          Expr(
+            ExprList_ONE(
+              Term(
+                TermList_ONE(
+                  FactorSign(
+                    UnaryMinus_EPSILON(
+                    ) [UnaryMinus_EPSILON]
+                    Factor_Expr(
+                      Expr(
+                        ExprList_ONE(
+                          Term(
+                            TermList_MORE(
+                              TermList_ONE(
+                                FactorSign(
+                                  UnaryMinus_EPSILON(
+                                  ) [UnaryMinus_EPSILON]
+                                  Factor_NUMBER(
+                                   4
+                                  ) [Factor_NUMBER]
+                                ) [FactorSign]
+                              ) [TermList_ONE]
+                              Mulop_MUL(
+                              ) [Mulop_MUL]
+                              FactorSign(
+                                UnaryMinus_EPSILON(
+                                ) [UnaryMinus_EPSILON]
+                                Factor_NUMBER(
+                                 2
+                                ) [Factor_NUMBER]
+                              ) [FactorSign]
+                            ) [TermList_MORE]
+                          ) [Term]
+                        ) [ExprList_ONE]
+                      ) [Expr]
+                    ) [Factor_Expr]
+                  ) [FactorSign]
+                ) [TermList_ONE]
+              ) [Term]
+            ) [ExprList_ONE]
+          ) [Expr]
+        ) [DesignatorSt_Assign]
+      ) [Statement_DesignatorStatement]
+    ) [StatementList_STATEMENTS]
+  ) [MethodDecl]
+) [Program]
+INFO  15:49:55,503 - ===================================

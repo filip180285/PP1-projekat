@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 7/4/2023 1:37:10
+// 7/4/2023 15:26:19
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -9,24 +9,25 @@ public class MethodDecl implements SyntaxNode {
 
     private SyntaxNode parent;
     private int line;
-    private String I1;
+    private MethodName MethodName;
     private MethodVarDeclList MethodVarDeclList;
     private StatementList StatementList;
 
-    public MethodDecl (String I1, MethodVarDeclList MethodVarDeclList, StatementList StatementList) {
-        this.I1=I1;
+    public MethodDecl (MethodName MethodName, MethodVarDeclList MethodVarDeclList, StatementList StatementList) {
+        this.MethodName=MethodName;
+        if(MethodName!=null) MethodName.setParent(this);
         this.MethodVarDeclList=MethodVarDeclList;
         if(MethodVarDeclList!=null) MethodVarDeclList.setParent(this);
         this.StatementList=StatementList;
         if(StatementList!=null) StatementList.setParent(this);
     }
 
-    public String getI1() {
-        return I1;
+    public MethodName getMethodName() {
+        return MethodName;
     }
 
-    public void setI1(String I1) {
-        this.I1=I1;
+    public void setMethodName(MethodName MethodName) {
+        this.MethodName=MethodName;
     }
 
     public MethodVarDeclList getMethodVarDeclList() {
@@ -66,17 +67,20 @@ public class MethodDecl implements SyntaxNode {
     }
 
     public void childrenAccept(Visitor visitor) {
+        if(MethodName!=null) MethodName.accept(visitor);
         if(MethodVarDeclList!=null) MethodVarDeclList.accept(visitor);
         if(StatementList!=null) StatementList.accept(visitor);
     }
 
     public void traverseTopDown(Visitor visitor) {
         accept(visitor);
+        if(MethodName!=null) MethodName.traverseTopDown(visitor);
         if(MethodVarDeclList!=null) MethodVarDeclList.traverseTopDown(visitor);
         if(StatementList!=null) StatementList.traverseTopDown(visitor);
     }
 
     public void traverseBottomUp(Visitor visitor) {
+        if(MethodName!=null) MethodName.traverseBottomUp(visitor);
         if(MethodVarDeclList!=null) MethodVarDeclList.traverseBottomUp(visitor);
         if(StatementList!=null) StatementList.traverseBottomUp(visitor);
         accept(visitor);
@@ -87,7 +91,10 @@ public class MethodDecl implements SyntaxNode {
         buffer.append(tab);
         buffer.append("MethodDecl(\n");
 
-        buffer.append(" "+tab+I1);
+        if(MethodName!=null)
+            buffer.append(MethodName.toString("  "+tab));
+        else
+            buffer.append(tab+"  null");
         buffer.append("\n");
 
         if(MethodVarDeclList!=null)
