@@ -48,16 +48,15 @@ scan with {:
 	return s;
 :}
 
-terminal PROGRAM, CONST, NEW, PRINT, READ, RETURN, VOID, GOTO;
+terminal PROGRAM, CONST, NEW, PRINT, READ, RETURN, VOID;
 terminal String IDENTIFIER;
 terminal Integer NUMBER; 
 terminal Character CHARACTER;
 terminal Integer BOOLEAN;
 terminal PLUS, MINUS, MULTIPLICATION, DIVISION, MODULUS, EQUALS, INCREMENT, DECREMENT;
-terminal SEMICOLON, COLON, COMMA, LEFT_PARENTHESIS, RIGHT_PARENTHESIS, LEFT_BRACKET, RIGHT_BRACKET, LEFT_BRACE, RIGHT_BRACE;
+terminal SEMICOLON, COMMA, LEFT_PARENTHESIS, RIGHT_PARENTHESIS, LEFT_BRACKET, RIGHT_BRACKET, LEFT_BRACE, RIGHT_BRACE;
 
 nonterminal Program Program;
-nonterminal ProgramName ProgramName;
 nonterminal ConstVarDeclList ConstVarDeclList;
 nonterminal ConstDeclList ConstDeclList;
 nonterminal VarDeclList VarDeclList;
@@ -89,6 +88,7 @@ nonterminal Assignop Assignop;
 nonterminal Addop Addop;
 nonterminal Mulop Mulop;
 
+nonterminal rs.etf.pp1.symboltable.concepts.Obj ProgramName;
 
 
 /*** Program = "program" ident {ConstDecl | VarDecl | ClassDecl } "{" {MethodDecl} "}". ***/

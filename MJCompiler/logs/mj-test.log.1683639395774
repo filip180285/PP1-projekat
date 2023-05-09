@@ -1,0 +1,33 @@
+INFO  20:37:45,547 - Compiling source file: C:\Users\Korisnik\Desktop\PP1-projekat\MJCompiler\test\program.mj
+INFO  20:37:45,566 - #2 program
+INFO  20:37:45,566 - #10 test301
+INFO  20:37:45,566 - #29 {
+INFO  20:37:45,567 - #8 void
+INFO  20:37:45,567 - #10 main
+INFO  20:37:45,567 - #25 (
+INFO  20:37:45,567 - #26 )
+INFO  20:37:45,568 - #29 {
+INFO  20:37:45,568 - #30 }
+INFO  20:37:45,568 - #30 }
+INFO  20:37:45,569 - ==============ISPIS STABLA=====================
+INFO  20:37:45,569 - Program(
+  ProgramName(
+   test301
+  ) [ProgramName]
+  ConstVarDeclList_EPSILON(
+  ) [ConstVarDeclList_EPSILON]
+  MethodDecl(
+    MethodName(
+     main
+    ) [MethodName]
+    MethodVarDeclList_EPSILON(
+    ) [MethodVarDeclList_EPSILON]
+    StatementList_EPSILON(
+    ) [StatementList_EPSILON]
+  ) [MethodDecl]
+) [Program]
+INFO  20:37:45,572 - ==============ZAVRSEN ISPIS STABLA=====================
+INFO  20:37:45,572 - ==============ISPIS SEMANTICKE ANALIZE=====================
+INFO  20:37:45,579 - Test program cvor na liniji 3
+INFO  20:37:45,579 - ==============ZAVRSEN ISPIS SEMANTICKE ANALIZE=====================
+INFO  20:37:45,580 - Parsiranje uspesno zavrseno!

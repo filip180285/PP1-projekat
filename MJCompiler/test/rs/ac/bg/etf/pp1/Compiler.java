@@ -14,8 +14,9 @@ import org.apache.log4j.xml.DOMConfigurator;
 
 import rs.ac.bg.etf.pp1.ast.Program;
 import rs.ac.bg.etf.pp1.util.Log4JUtils;
+import rs.etf.pp1.symboltable.Tab;
 
-public class MJParserTest {
+public class Compiler {
 
 	static {
 		DOMConfigurator.configure(Log4JUtils.instance().findLoggerConfigFile());
@@ -24,7 +25,7 @@ public class MJParserTest {
 	
 	public static void main(String[] args) throws Exception {
 		
-		Logger log = Logger.getLogger(MJParserTest.class);
+		Logger log = Logger.getLogger(Compiler.class);
 		
 		Reader br = null;
 		try {
@@ -39,16 +40,23 @@ public class MJParserTest {
 	        
 	        Program prog = (Program)(s.value); 
 			// ispis sintaksnog stabla
+	        log.info("==============ISPIS STABLA=====================");
 			log.info(prog.toString(""));
-			log.info("===================================");
+			log.info("==============ZAVRSEN ISPIS STABLA=====================");
+			log.info("==============ISPIS SEMANTICKE ANALIZE=====================");
 
 			// ispis prepoznatih programskih konstrukcija
-			/*RuleVisitor v = new RuleVisitor();
+			Tab.init();
+			SemanticAnalyzer v = new SemanticAnalyzer();
 			prog.traverseBottomUp(v); 
-	      
-			log.info(" Print count calls = " + v.printCallCount);
-
-			log.info(" Deklarisanih promenljivih ima = " + v.varDeclCount);*/
+			log.info("==============ZAVRSEN ISPIS SEMANTICKE ANALIZE=====================");
+			Tab.dump();
+			
+			if(!p.errorDetected && v.passed()){
+				log.info("Parsiranje uspesno zavrseno!");
+			}else{
+				log.error("Parsiranje NIJE uspesno zavrseno!");
+			}
 			
 		} 
 		finally {
