@@ -1,0 +1,77 @@
+INFO  00:57:37,444 - Compiling source file: C:\Users\Korisnik\Desktop\PP1-projekat\MJCompiler\test\program.mj
+INFO  00:57:37,462 - #2 program
+INFO  00:57:37,462 - #9 test301
+INFO  00:57:37,462 - #3 const
+INFO  00:57:37,463 - #9 int
+INFO  00:57:37,463 - #9 b
+INFO  00:57:37,463 - #18 =
+INFO  00:57:37,463 - #10 3
+INFO  00:57:37,463 - #21 ;
+INFO  00:57:37,464 - #3 const
+INFO  00:57:37,465 - #9 char
+INFO  00:57:37,465 - #9 b
+INFO  00:57:37,465 - #18 =
+INFO  00:57:37,465 - #10 4
+INFO  00:57:37,465 - #21 ;
+INFO  00:57:37,465 - #27 {
+INFO  00:57:37,465 - #8 void
+INFO  00:57:37,465 - #9 main
+INFO  00:57:37,465 - #23 (
+INFO  00:57:37,465 - #24 )
+INFO  00:57:37,465 - #27 {
+INFO  00:57:37,466 - #28 }
+INFO  00:57:37,466 - #28 }
+INFO  00:57:37,467 - 
+                     ==============ISPIS STABLA=====================
+INFO  00:57:37,468 - Program(
+  ProgramName(
+   test301
+  ) [ProgramName]
+  ConstVarDeclList_CONST(
+    ConstVarDeclList_CONST(
+      ConstVarDeclList_EPSILON(
+      ) [ConstVarDeclList_EPSILON]
+      ConstDeclList(
+        Type(
+         int
+        ) [Type]
+        ConstDeclOneOrMore_ONE(
+          ConstDecl(
+           b
+            Constant_NUMBER(
+             3
+            ) [Constant_NUMBER]
+          ) [ConstDecl]
+        ) [ConstDeclOneOrMore_ONE]
+      ) [ConstDeclList]
+    ) [ConstVarDeclList_CONST]
+    ConstDeclList(
+      Type(
+       char
+      ) [Type]
+      ConstDeclOneOrMore_ONE(
+        ConstDecl(
+         b
+          Constant_NUMBER(
+           4
+          ) [Constant_NUMBER]
+        ) [ConstDecl]
+      ) [ConstDeclOneOrMore_ONE]
+    ) [ConstDeclList]
+  ) [ConstVarDeclList_CONST]
+  MethodDecl(
+    MethodName(
+     main
+    ) [MethodName]
+    MethodVarDeclList_EPSILON(
+    ) [MethodVarDeclList_EPSILON]
+    StatementList_EPSILON(
+    ) [StatementList_EPSILON]
+  ) [MethodDecl]
+) [Program]
+INFO  00:57:37,468 - ==============ZAVRSEN ISPIS STABLA=====================
+
+INFO  00:57:37,468 - ==============ISPIS SEMANTICKE ANALIZE=====================
+INFO  00:57:37,476 - ==============ZAVRSEN ISPIS SEMANTICKE ANALIZE=====================
+
+INFO  00:57:37,476 - Parsiranje uspesno zavrseno!

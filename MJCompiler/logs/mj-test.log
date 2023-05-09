@@ -1,167 +1,102 @@
-INFO  17:31:11,040 - Compiling source file: C:\Users\Korisnik\Desktop\PP1-projekat\MJCompiler\test\program.mj
-INFO  17:31:11,064 - #2 program
-INFO  17:31:11,064 - #9 test301
-INFO  17:31:11,064 - #27 {
-INFO  17:31:11,065 - #8 void
-INFO  17:31:11,065 - #9 main
-INFO  17:31:11,065 - #23 (
-INFO  17:31:11,065 - #24 )
-INFO  17:31:11,065 - #27 {
-INFO  17:31:11,066 - #9 a
-INFO  17:31:11,066 - #18 =
-INFO  17:31:11,067 - #10 3
-INFO  17:31:11,068 - #13 +
-INFO  17:31:11,068 - #10 2
-INFO  17:31:11,069 - #15 *
-INFO  17:31:11,069 - #10 2
-INFO  17:31:11,070 - #21 ;
-INFO  17:31:11,071 - #9 b
-INFO  17:31:11,071 - #18 =
-INFO  17:31:11,071 - #12 1
-INFO  17:31:11,071 - #21 ;
-INFO  17:31:11,071 - #9 c
-INFO  17:31:11,071 - #19 ++
-INFO  17:31:11,073 - #21 ;
-INFO  17:31:11,073 - #9 d
-INFO  17:31:11,073 - #25 [
-INFO  17:31:11,074 - #10 2
-INFO  17:31:11,074 - #26 ]
-INFO  17:31:11,074 - #18 =
-INFO  17:31:11,074 - #10 2
-INFO  17:31:11,074 - #21 ;
-INFO  17:31:11,074 - #28 }
-INFO  17:31:11,074 - #28 }
-INFO  17:31:11,076 - ==============ISPIS STABLA=====================
-INFO  17:31:11,076 - Program(
+INFO  01:29:00,251 - Compiling source file: C:\Users\Korisnik\Desktop\PP1-projekat\MJCompiler\test\program.mj
+INFO  01:29:00,269 - #2 program
+INFO  01:29:00,269 - #9 test301
+INFO  01:29:00,269 - #3 const
+INFO  01:29:00,270 - #9 int
+INFO  01:29:00,270 - #9 a
+INFO  01:29:00,270 - #18 =
+INFO  01:29:00,271 - #10 3
+INFO  01:29:00,271 - #21 ;
+INFO  01:29:00,271 - #3 const
+INFO  01:29:00,272 - #9 int
+INFO  01:29:00,272 - #9 b
+INFO  01:29:00,272 - #18 =
+INFO  01:29:00,272 - #10 4
+INFO  01:29:00,272 - #22 ,
+INFO  01:29:00,272 - #9 c
+INFO  01:29:00,272 - #18 =
+INFO  01:29:00,272 - #12 1
+INFO  01:29:00,272 - #22 ,
+INFO  01:29:00,272 - #9 d
+INFO  01:29:00,272 - #18 =
+INFO  01:29:00,272 - #10 5
+INFO  01:29:00,272 - #21 ;
+INFO  01:29:00,274 - #27 {
+INFO  01:29:00,274 - #8 void
+INFO  01:29:00,274 - #9 main
+INFO  01:29:00,274 - #23 (
+INFO  01:29:00,275 - #24 )
+INFO  01:29:00,275 - #27 {
+INFO  01:29:00,275 - #28 }
+INFO  01:29:00,276 - #28 }
+INFO  01:29:00,277 - 
+                     ==============ISPIS STABLA=====================
+INFO  01:29:00,277 - Program(
   ProgramName(
    test301
   ) [ProgramName]
-  ConstVarDeclList_EPSILON(
-  ) [ConstVarDeclList_EPSILON]
+  ConstVarDeclList_CONST(
+    ConstVarDeclList_CONST(
+      ConstVarDeclList_EPSILON(
+      ) [ConstVarDeclList_EPSILON]
+      ConstDeclList(
+        Type(
+         int
+        ) [Type]
+        ConstDeclOneOrMore_ONE(
+          ConstDecl(
+           a
+            Constant_NUMBER(
+             3
+            ) [Constant_NUMBER]
+          ) [ConstDecl]
+        ) [ConstDeclOneOrMore_ONE]
+      ) [ConstDeclList]
+    ) [ConstVarDeclList_CONST]
+    ConstDeclList(
+      Type(
+       int
+      ) [Type]
+      ConstDeclOneOrMore_MORE(
+        ConstDecl(
+         b
+          Constant_NUMBER(
+           4
+          ) [Constant_NUMBER]
+        ) [ConstDecl]
+        ConstDeclOneOrMore_MORE(
+          ConstDecl(
+           c
+            Constant_BOOLEAN(
+             1
+            ) [Constant_BOOLEAN]
+          ) [ConstDecl]
+          ConstDeclOneOrMore_ONE(
+            ConstDecl(
+             d
+              Constant_NUMBER(
+               5
+              ) [Constant_NUMBER]
+            ) [ConstDecl]
+          ) [ConstDeclOneOrMore_ONE]
+        ) [ConstDeclOneOrMore_MORE]
+      ) [ConstDeclOneOrMore_MORE]
+    ) [ConstDeclList]
+  ) [ConstVarDeclList_CONST]
   MethodDecl(
     MethodName(
      main
     ) [MethodName]
     MethodVarDeclList_EPSILON(
     ) [MethodVarDeclList_EPSILON]
-    StatementList_STATEMENTS(
-      StatementList_STATEMENTS(
-        StatementList_STATEMENTS(
-          StatementList_STATEMENTS(
-            StatementList_EPSILON(
-            ) [StatementList_EPSILON]
-            Statement_DesignatorStatement(
-              DesignatorSt_Assign(
-                Designator_ONE(
-                 a
-                ) [Designator_ONE]
-                Assignop(
-                ) [Assignop]
-                Expr_MORE(
-                  Expr_ONE(
-                    Term_ONE(
-                      FactorSign(
-                        UnaryMinus_EPSILON(
-                        ) [UnaryMinus_EPSILON]
-                        Factor_NUMBER(
-                         3
-                        ) [Factor_NUMBER]
-                      ) [FactorSign]
-                    ) [Term_ONE]
-                  ) [Expr_ONE]
-                  Addop_PLUS(
-                  ) [Addop_PLUS]
-                  Term_MORE(
-                    Term_ONE(
-                      FactorSign(
-                        UnaryMinus_EPSILON(
-                        ) [UnaryMinus_EPSILON]
-                        Factor_NUMBER(
-                         2
-                        ) [Factor_NUMBER]
-                      ) [FactorSign]
-                    ) [Term_ONE]
-                    Mulop_MUL(
-                    ) [Mulop_MUL]
-                    FactorSign(
-                      UnaryMinus_EPSILON(
-                      ) [UnaryMinus_EPSILON]
-                      Factor_NUMBER(
-                       2
-                      ) [Factor_NUMBER]
-                    ) [FactorSign]
-                  ) [Term_MORE]
-                ) [Expr_MORE]
-              ) [DesignatorSt_Assign]
-            ) [Statement_DesignatorStatement]
-          ) [StatementList_STATEMENTS]
-          Statement_DesignatorStatement(
-            DesignatorSt_Assign(
-              Designator_ONE(
-               b
-              ) [Designator_ONE]
-              Assignop(
-              ) [Assignop]
-              Expr_ONE(
-                Term_ONE(
-                  FactorSign(
-                    UnaryMinus_EPSILON(
-                    ) [UnaryMinus_EPSILON]
-                    Factor_BOOLEAN(
-                     1
-                    ) [Factor_BOOLEAN]
-                  ) [FactorSign]
-                ) [Term_ONE]
-              ) [Expr_ONE]
-            ) [DesignatorSt_Assign]
-          ) [Statement_DesignatorStatement]
-        ) [StatementList_STATEMENTS]
-        Statement_DesignatorStatement(
-          DesignatorStat_INC(
-            Designator_ONE(
-             c
-            ) [Designator_ONE]
-          ) [DesignatorStat_INC]
-        ) [Statement_DesignatorStatement]
-      ) [StatementList_STATEMENTS]
-      Statement_DesignatorStatement(
-        DesignatorSt_Assign(
-          Designator_ARRAY(
-            DesignatorArrayName(
-             d
-            ) [DesignatorArrayName]
-            Expr_ONE(
-              Term_ONE(
-                FactorSign(
-                  UnaryMinus_EPSILON(
-                  ) [UnaryMinus_EPSILON]
-                  Factor_NUMBER(
-                   2
-                  ) [Factor_NUMBER]
-                ) [FactorSign]
-              ) [Term_ONE]
-            ) [Expr_ONE]
-          ) [Designator_ARRAY]
-          Assignop(
-          ) [Assignop]
-          Expr_ONE(
-            Term_ONE(
-              FactorSign(
-                UnaryMinus_EPSILON(
-                ) [UnaryMinus_EPSILON]
-                Factor_NUMBER(
-                 2
-                ) [Factor_NUMBER]
-              ) [FactorSign]
-            ) [Term_ONE]
-          ) [Expr_ONE]
-        ) [DesignatorSt_Assign]
-      ) [Statement_DesignatorStatement]
-    ) [StatementList_STATEMENTS]
+    StatementList_EPSILON(
+    ) [StatementList_EPSILON]
   ) [MethodDecl]
 ) [Program]
-INFO  17:31:11,077 - ==============ZAVRSEN ISPIS STABLA=====================
-INFO  17:31:11,077 - ==============ISPIS SEMANTICKE ANALIZE=====================
-INFO  17:31:11,086 - Test Program cvor na liniji 3
-INFO  17:31:11,086 - ==============ZAVRSEN ISPIS SEMANTICKE ANALIZE=====================
-INFO  17:31:11,086 - Parsiranje uspesno zavrseno!
+INFO  01:29:00,277 - ==============ZAVRSEN ISPIS STABLA=====================
+
+INFO  01:29:00,277 - ==============ISPIS SEMANTICKE ANALIZE=====================
+ERROR 01:29:00,285 - GRESKA-ConstDecl: Neadekvatna dodela konstanti c na liniji 6
+INFO  01:29:00,285 - ==============ZAVRSEN ISPIS SEMANTICKE ANALIZE=====================
+
+ERROR 01:29:00,286 - Parsiranje NIJE uspesno zavrseno!

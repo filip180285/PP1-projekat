@@ -1,0 +1,98 @@
+INFO  00:30:06,826 - Compiling source file: C:\Users\Korisnik\Desktop\PP1-projekat\MJCompiler\test\program.mj
+INFO  00:30:06,857 - #2 program
+INFO  00:30:06,857 - #9 test301
+INFO  00:30:06,857 - #3 const
+INFO  00:30:06,858 - #9 int
+INFO  00:30:06,859 - #9 a
+INFO  00:30:06,859 - #18 =
+INFO  00:30:06,859 - #10 3
+INFO  00:30:06,859 - #21 ;
+INFO  00:30:06,860 - #3 const
+INFO  00:30:06,861 - #9 char
+INFO  00:30:06,861 - #9 x
+INFO  00:30:06,861 - #18 =
+INFO  00:30:06,861 - #11 a
+INFO  00:30:06,861 - #21 ;
+INFO  00:30:06,861 - #3 const
+INFO  00:30:06,861 - #9 bool
+INFO  00:30:06,861 - #9 a
+INFO  00:30:06,861 - #18 =
+INFO  00:30:06,861 - #12 1
+INFO  00:30:06,861 - #21 ;
+INFO  00:30:06,862 - #27 {
+INFO  00:30:06,862 - #8 void
+INFO  00:30:06,863 - #9 main
+INFO  00:30:06,863 - #23 (
+INFO  00:30:06,864 - #24 )
+INFO  00:30:06,864 - #27 {
+INFO  00:30:06,865 - #28 }
+INFO  00:30:06,865 - #28 }
+INFO  00:30:06,867 - 
+                     ==============ISPIS STABLA=====================
+INFO  00:30:06,867 - Program(
+  ProgramName(
+   test301
+  ) [ProgramName]
+  ConstVarDeclList_CONST(
+    ConstVarDeclList_CONST(
+      ConstVarDeclList_CONST(
+        ConstVarDeclList_EPSILON(
+        ) [ConstVarDeclList_EPSILON]
+        ConstDeclList(
+          Type(
+           int
+          ) [Type]
+          ConstDeclOneOrMore_ONE(
+            ConstDecl(
+             a
+              Constant_NUMBER(
+               3
+              ) [Constant_NUMBER]
+            ) [ConstDecl]
+          ) [ConstDeclOneOrMore_ONE]
+        ) [ConstDeclList]
+      ) [ConstVarDeclList_CONST]
+      ConstDeclList(
+        Type(
+         char
+        ) [Type]
+        ConstDeclOneOrMore_ONE(
+          ConstDecl(
+           x
+            Constant_CHARACTER(
+             a
+            ) [Constant_CHARACTER]
+          ) [ConstDecl]
+        ) [ConstDeclOneOrMore_ONE]
+      ) [ConstDeclList]
+    ) [ConstVarDeclList_CONST]
+    ConstDeclList(
+      Type(
+       bool
+      ) [Type]
+      ConstDeclOneOrMore_ONE(
+        ConstDecl(
+         a
+          Constant_BOOLEAN(
+           1
+          ) [Constant_BOOLEAN]
+        ) [ConstDecl]
+      ) [ConstDeclOneOrMore_ONE]
+    ) [ConstDeclList]
+  ) [ConstVarDeclList_CONST]
+  MethodDecl(
+    MethodName(
+     main
+    ) [MethodName]
+    MethodVarDeclList_EPSILON(
+    ) [MethodVarDeclList_EPSILON]
+    StatementList_EPSILON(
+    ) [StatementList_EPSILON]
+  ) [MethodDecl]
+) [Program]
+INFO  00:30:06,867 - ==============ZAVRSEN ISPIS STABLA=====================
+
+INFO  00:30:06,868 - ==============ISPIS SEMANTICKE ANALIZE=====================
+INFO  00:30:06,876 - ==============ZAVRSEN ISPIS SEMANTICKE ANALIZE=====================
+
+INFO  00:30:06,877 - Parsiranje uspesno zavrseno!

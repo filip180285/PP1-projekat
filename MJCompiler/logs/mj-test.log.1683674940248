@@ -1,0 +1,79 @@
+INFO  01:12:57,101 - Compiling source file: C:\Users\Korisnik\Desktop\PP1-projekat\MJCompiler\test\program.mj
+INFO  01:12:57,121 - #2 program
+INFO  01:12:57,121 - #9 test301
+INFO  01:12:57,121 - #3 const
+INFO  01:12:57,122 - #9 char
+INFO  01:12:57,122 - #9 a
+INFO  01:12:57,122 - #18 =
+INFO  01:12:57,122 - #10 3
+INFO  01:12:57,122 - #21 ;
+INFO  01:12:57,123 - #3 const
+INFO  01:12:57,123 - #9 bool
+INFO  01:12:57,123 - #9 b
+INFO  01:12:57,124 - #18 =
+INFO  01:12:57,124 - #10 4
+INFO  01:12:57,124 - #21 ;
+INFO  01:12:57,124 - #27 {
+INFO  01:12:57,124 - #8 void
+INFO  01:12:57,124 - #9 main
+INFO  01:12:57,124 - #23 (
+INFO  01:12:57,124 - #24 )
+INFO  01:12:57,124 - #27 {
+INFO  01:12:57,125 - #28 }
+INFO  01:12:57,125 - #28 }
+INFO  01:12:57,128 - 
+                     ==============ISPIS STABLA=====================
+INFO  01:12:57,128 - Program(
+  ProgramName(
+   test301
+  ) [ProgramName]
+  ConstVarDeclList_CONST(
+    ConstVarDeclList_CONST(
+      ConstVarDeclList_EPSILON(
+      ) [ConstVarDeclList_EPSILON]
+      ConstDeclList(
+        Type(
+         char
+        ) [Type]
+        ConstDeclOneOrMore_ONE(
+          ConstDecl(
+           a
+            Constant_NUMBER(
+             3
+            ) [Constant_NUMBER]
+          ) [ConstDecl]
+        ) [ConstDeclOneOrMore_ONE]
+      ) [ConstDeclList]
+    ) [ConstVarDeclList_CONST]
+    ConstDeclList(
+      Type(
+       bool
+      ) [Type]
+      ConstDeclOneOrMore_ONE(
+        ConstDecl(
+         b
+          Constant_NUMBER(
+           4
+          ) [Constant_NUMBER]
+        ) [ConstDecl]
+      ) [ConstDeclOneOrMore_ONE]
+    ) [ConstDeclList]
+  ) [ConstVarDeclList_CONST]
+  MethodDecl(
+    MethodName(
+     main
+    ) [MethodName]
+    MethodVarDeclList_EPSILON(
+    ) [MethodVarDeclList_EPSILON]
+    StatementList_EPSILON(
+    ) [StatementList_EPSILON]
+  ) [MethodDecl]
+) [Program]
+INFO  01:12:57,128 - ==============ZAVRSEN ISPIS STABLA=====================
+
+INFO  01:12:57,128 - ==============ISPIS SEMANTICKE ANALIZE=====================
+ERROR 01:12:57,136 - GRESKA-ConstDecl: Tipovi sa strana jednakosti nisu identicni na liniji 5
+ERROR 01:12:57,137 - GRESKA-ConstDecl: Tipovi sa strana jednakosti nisu identicni na liniji 6
+INFO  01:12:57,137 - ==============ZAVRSEN ISPIS SEMANTICKE ANALIZE=====================
+
+ERROR 01:12:57,137 - Parsiranje NIJE uspesno zavrseno!

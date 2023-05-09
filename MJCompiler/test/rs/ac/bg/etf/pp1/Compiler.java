@@ -15,6 +15,7 @@ import org.apache.log4j.xml.DOMConfigurator;
 import rs.ac.bg.etf.pp1.ast.Program;
 import rs.ac.bg.etf.pp1.util.Log4JUtils;
 import rs.etf.pp1.symboltable.Tab;
+import rs.etf.pp1.symboltable.concepts.*;
 
 public class Compiler {
 
@@ -40,16 +41,21 @@ public class Compiler {
 	        
 	        Program prog = (Program)(s.value); 
 			// ispis sintaksnog stabla
-	        log.info("==============ISPIS STABLA=====================");
+	        log.info("\n                     ==============ISPIS STABLA=====================");
 			log.info(prog.toString(""));
-			log.info("==============ZAVRSEN ISPIS STABLA=====================");
+			log.info("==============ZAVRSEN ISPIS STABLA=====================\n");
 			log.info("==============ISPIS SEMANTICKE ANALIZE=====================");
 
-			// ispis prepoznatih programskih konstrukcija
+			// inicijalizacija tabele simbola
 			Tab.init();
+			Obj boolType = Tab.insert(Obj.Type, "bool" , new Struct(Struct.Bool));
+			boolType.setAdr(-1);
+			boolType.setLevel(-1);
+			
+			// ispis prepoznatih programskih konstrukcija
 			SemanticAnalyzer v = new SemanticAnalyzer();
 			prog.traverseBottomUp(v); 
-			log.info("==============ZAVRSEN ISPIS SEMANTICKE ANALIZE=====================");
+			log.info("==============ZAVRSEN ISPIS SEMANTICKE ANALIZE=====================\n");
 			Tab.dump();
 			
 			if(!p.errorDetected && v.passed()){

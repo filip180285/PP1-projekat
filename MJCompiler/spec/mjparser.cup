@@ -57,7 +57,7 @@ terminal PLUS, MINUS, MULTIPLICATION, DIVISION, MODULUS, EQUALS, INCREMENT, DECR
 terminal SEMICOLON, COMMA, LEFT_PARENTHESIS, RIGHT_PARENTHESIS, LEFT_BRACKET, RIGHT_BRACKET, LEFT_BRACE, RIGHT_BRACE;
 
 nonterminal Program, ConstVarDeclList, ConstDeclList, VarDeclList, MethodDecl, MethodName;
-nonterminal Type, ConstDeclOneOrMore, ConstDecl, Constant, VarDeclOneOrMore, VarDecl;
+nonterminal Type, ConstDeclOneOrMore, ConstDecl, VarDeclOneOrMore, VarDecl;
 nonterminal MethodVarDeclList, StatementList;
 nonterminal Statement;
 nonterminal DesignatorStatement, Designator, DesignatorArrayName, Expr, Term, FactorSign, DesignatorStatementList;
@@ -66,6 +66,7 @@ nonterminal MayPrintNumConst, MayDesignator;
 nonterminal Factor, UnaryMinus, Assignop, Addop, Mulop;
 
 nonterminal rs.etf.pp1.symboltable.concepts.Obj ProgramName;
+nonterminal rs.etf.pp1.symboltable.concepts.Struct Constant;
 
 
 /*** Program = "program" ident {ConstDecl | VarDecl | ClassDecl } "{" {MethodDecl} "}". ***/

@@ -1,0 +1,57 @@
+INFO  00:51:37,081 - Compiling source file: C:\Users\Korisnik\Desktop\PP1-projekat\MJCompiler\test\program.mj
+INFO  00:51:37,100 - #2 program
+INFO  00:51:37,100 - #9 test301
+INFO  00:51:37,100 - #3 const
+INFO  00:51:37,101 - #9 int
+INFO  00:51:37,101 - #9 int
+INFO  00:51:37,101 - #18 =
+INFO  00:51:37,101 - #10 3
+INFO  00:51:37,101 - #21 ;
+INFO  00:51:37,102 - #27 {
+INFO  00:51:37,102 - #8 void
+INFO  00:51:37,102 - #9 main
+INFO  00:51:37,102 - #23 (
+INFO  00:51:37,103 - #24 )
+INFO  00:51:37,103 - #27 {
+INFO  00:51:37,103 - #28 }
+INFO  00:51:37,104 - #28 }
+INFO  00:51:37,104 - 
+                     ==============ISPIS STABLA=====================
+INFO  00:51:37,105 - Program(
+  ProgramName(
+   test301
+  ) [ProgramName]
+  ConstVarDeclList_CONST(
+    ConstVarDeclList_EPSILON(
+    ) [ConstVarDeclList_EPSILON]
+    ConstDeclList(
+      Type(
+       int
+      ) [Type]
+      ConstDeclOneOrMore_ONE(
+        ConstDecl(
+         int
+          Constant_NUMBER(
+           3
+          ) [Constant_NUMBER]
+        ) [ConstDecl]
+      ) [ConstDeclOneOrMore_ONE]
+    ) [ConstDeclList]
+  ) [ConstVarDeclList_CONST]
+  MethodDecl(
+    MethodName(
+     main
+    ) [MethodName]
+    MethodVarDeclList_EPSILON(
+    ) [MethodVarDeclList_EPSILON]
+    StatementList_EPSILON(
+    ) [StatementList_EPSILON]
+  ) [MethodDecl]
+) [Program]
+INFO  00:51:37,107 - ==============ZAVRSEN ISPIS STABLA=====================
+
+INFO  00:51:37,107 - ==============ISPIS SEMANTICKE ANALIZE=====================
+ERROR 00:51:37,114 - GRESKA-ConstDecl: Vec je definisana konstanta sa imenom int na liniji 5
+INFO  00:51:37,114 - ==============ZAVRSEN ISPIS SEMANTICKE ANALIZE=====================
+
+ERROR 00:51:37,115 - Parsiranje NIJE uspesno zavrseno!

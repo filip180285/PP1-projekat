@@ -1,0 +1,132 @@
+INFO  00:45:12,030 - Compiling source file: C:\Users\Korisnik\Desktop\PP1-projekat\MJCompiler\test\program.mj
+INFO  00:45:12,064 - #2 program
+INFO  00:45:12,065 - #9 test301
+INFO  00:45:12,065 - #3 const
+INFO  00:45:12,066 - #9 int
+INFO  00:45:12,066 - #9 a
+INFO  00:45:12,067 - #18 =
+INFO  00:45:12,067 - #10 3
+INFO  00:45:12,067 - #21 ;
+INFO  00:45:12,068 - #3 const
+INFO  00:45:12,069 - #9 char
+INFO  00:45:12,069 - #9 x
+INFO  00:45:12,069 - #18 =
+INFO  00:45:12,069 - #11 a
+INFO  00:45:12,069 - #21 ;
+INFO  00:45:12,069 - #3 const
+INFO  00:45:12,069 - #9 bool
+INFO  00:45:12,070 - #9 g
+INFO  00:45:12,070 - #18 =
+INFO  00:45:12,070 - #12 1
+INFO  00:45:12,070 - #22 ,
+INFO  00:45:12,070 - #9 h
+INFO  00:45:12,070 - #18 =
+INFO  00:45:12,072 - #12 0
+INFO  00:45:12,072 - #21 ;
+INFO  00:45:12,072 - #3 const
+INFO  00:45:12,072 - #9 int
+INFO  00:45:12,072 - #9 x
+INFO  00:45:12,072 - #18 =
+INFO  00:45:12,073 - #10 3
+INFO  00:45:12,073 - #21 ;
+INFO  00:45:12,073 - #27 {
+INFO  00:45:12,073 - #8 void
+INFO  00:45:12,073 - #9 main
+INFO  00:45:12,073 - #23 (
+INFO  00:45:12,074 - #24 )
+INFO  00:45:12,074 - #27 {
+INFO  00:45:12,074 - #28 }
+INFO  00:45:12,075 - #28 }
+INFO  00:45:12,076 - 
+                     ==============ISPIS STABLA=====================
+INFO  00:45:12,077 - Program(
+  ProgramName(
+   test301
+  ) [ProgramName]
+  ConstVarDeclList_CONST(
+    ConstVarDeclList_CONST(
+      ConstVarDeclList_CONST(
+        ConstVarDeclList_CONST(
+          ConstVarDeclList_EPSILON(
+          ) [ConstVarDeclList_EPSILON]
+          ConstDeclList(
+            Type(
+             int
+            ) [Type]
+            ConstDeclOneOrMore_ONE(
+              ConstDecl(
+               a
+                Constant_NUMBER(
+                 3
+                ) [Constant_NUMBER]
+              ) [ConstDecl]
+            ) [ConstDeclOneOrMore_ONE]
+          ) [ConstDeclList]
+        ) [ConstVarDeclList_CONST]
+        ConstDeclList(
+          Type(
+           char
+          ) [Type]
+          ConstDeclOneOrMore_ONE(
+            ConstDecl(
+             x
+              Constant_CHARACTER(
+               a
+              ) [Constant_CHARACTER]
+            ) [ConstDecl]
+          ) [ConstDeclOneOrMore_ONE]
+        ) [ConstDeclList]
+      ) [ConstVarDeclList_CONST]
+      ConstDeclList(
+        Type(
+         bool
+        ) [Type]
+        ConstDeclOneOrMore_MORE(
+          ConstDecl(
+           g
+            Constant_BOOLEAN(
+             1
+            ) [Constant_BOOLEAN]
+          ) [ConstDecl]
+          ConstDeclOneOrMore_ONE(
+            ConstDecl(
+             h
+              Constant_BOOLEAN(
+               0
+              ) [Constant_BOOLEAN]
+            ) [ConstDecl]
+          ) [ConstDeclOneOrMore_ONE]
+        ) [ConstDeclOneOrMore_MORE]
+      ) [ConstDeclList]
+    ) [ConstVarDeclList_CONST]
+    ConstDeclList(
+      Type(
+       int
+      ) [Type]
+      ConstDeclOneOrMore_ONE(
+        ConstDecl(
+         x
+          Constant_NUMBER(
+           3
+          ) [Constant_NUMBER]
+        ) [ConstDecl]
+      ) [ConstDeclOneOrMore_ONE]
+    ) [ConstDeclList]
+  ) [ConstVarDeclList_CONST]
+  MethodDecl(
+    MethodName(
+     main
+    ) [MethodName]
+    MethodVarDeclList_EPSILON(
+    ) [MethodVarDeclList_EPSILON]
+    StatementList_EPSILON(
+    ) [StatementList_EPSILON]
+  ) [MethodDecl]
+) [Program]
+INFO  00:45:12,077 - ==============ZAVRSEN ISPIS STABLA=====================
+
+INFO  00:45:12,077 - ==============ISPIS SEMANTICKE ANALIZE=====================
+ERROR 00:45:12,090 - GRESKA-ConstDecl: Vec je definisana konstanta sa imenom x na liniji 8
+INFO  00:45:12,090 - ==============ZAVRSEN ISPIS SEMANTICKE ANALIZE=====================
+
+ERROR 00:45:12,091 - Parsiranje NIJE uspesno zavrseno!
