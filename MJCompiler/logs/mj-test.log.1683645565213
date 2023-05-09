@@ -1,0 +1,129 @@
+INFO  17:18:51,728 - Compiling source file: C:\Users\Korisnik\Desktop\PP1-projekat\MJCompiler\test\program.mj
+INFO  17:18:51,749 - #2 program
+INFO  17:18:51,749 - #9 test301
+INFO  17:18:51,749 - #9 char
+INFO  17:18:51,750 - #9 a
+INFO  17:18:51,750 - #25 [
+INFO  17:18:51,750 - #26 ]
+INFO  17:18:51,750 - #19 ++
+ERROR 17:18:51,750 - 
+Sintaksna greska na liniji 4
+INFO  17:18:51,750 - #21 ;
+INFO  17:18:51,750 - #9 int
+INFO  17:18:51,750 - #9 a
+INFO  17:18:51,751 - #22 ,
+ERROR 17:18:51,751 - OPORAVAK od greske u definiciji promenljive izvrsen u liniji 4
+INFO  17:18:51,752 - #9 c
+INFO  17:18:51,752 - #13 +
+ERROR 17:18:51,752 - 
+Sintaksna greska na liniji 5
+INFO  17:18:51,752 - #14 -
+INFO  17:18:51,752 - #21 ;
+INFO  17:18:51,754 - #27 {
+INFO  17:18:51,754 - #8 void
+INFO  17:18:51,754 - #9 main
+ERROR 17:18:51,754 - OPORAVAK od greske u definiciji promenljive izvrsen u liniji 5
+INFO  17:18:51,754 - #23 (
+INFO  17:18:51,755 - #24 )
+INFO  17:18:51,755 - #9 int
+INFO  17:18:51,755 - #9 a
+INFO  17:18:51,755 - #19 ++
+ERROR 17:18:51,755 - 
+Sintaksna greska na liniji 8
+INFO  17:18:51,755 - #21 ;
+INFO  17:18:51,755 - #9 int
+INFO  17:18:51,755 - #9 b
+INFO  17:18:51,755 - #19 ++
+ERROR 17:18:51,755 - OPORAVAK od greske u definiciji promenljive izvrsen u liniji 8
+ERROR 17:18:51,756 - 
+Sintaksna greska na liniji 9
+INFO  17:18:51,756 - #22 ,
+INFO  17:18:51,756 - #9 c
+INFO  17:18:51,756 - #22 ,
+INFO  17:18:51,756 - #9 d
+ERROR 17:18:51,756 - OPORAVAK od greske u definiciji promenljive izvrsen u liniji 9
+INFO  17:18:51,756 - #21 ;
+INFO  17:18:51,756 - #27 {
+INFO  17:18:51,756 - #28 }
+INFO  17:18:51,756 - #28 }
+INFO  17:18:51,757 - ==============ISPIS STABLA=====================
+INFO  17:18:51,758 - Program(
+  ProgramName(
+   test301
+  ) [ProgramName]
+  ConstVarDeclList_VAR(
+    ConstVarDeclList_VAR(
+      ConstVarDeclList_EPSILON(
+      ) [ConstVarDeclList_EPSILON]
+      VarDeclList(
+        Type(
+         char
+        ) [Type]
+        VarDeclOneOrMore_ONE(
+          VarDecl_ERROR(
+          ) [VarDecl_ERROR]
+        ) [VarDeclOneOrMore_ONE]
+      ) [VarDeclList]
+    ) [ConstVarDeclList_VAR]
+    VarDeclList(
+      Type(
+       int
+      ) [Type]
+      VarDeclOneOrMore_MORE(
+        VarDecl_VAR(
+         a
+        ) [VarDecl_VAR]
+        VarDeclOneOrMore_ONE(
+          VarDecl_ERROR(
+          ) [VarDecl_ERROR]
+        ) [VarDeclOneOrMore_ONE]
+      ) [VarDeclOneOrMore_MORE]
+    ) [VarDeclList]
+  ) [ConstVarDeclList_VAR]
+  MethodDecl(
+    MethodName(
+     main
+    ) [MethodName]
+    MethodVarDeclList_VAR(
+      MethodVarDeclList_VAR(
+        MethodVarDeclList_EPSILON(
+        ) [MethodVarDeclList_EPSILON]
+        VarDeclList(
+          Type(
+           int
+          ) [Type]
+          VarDeclOneOrMore_ONE(
+            VarDecl_ERROR(
+            ) [VarDecl_ERROR]
+          ) [VarDeclOneOrMore_ONE]
+        ) [VarDeclList]
+      ) [MethodVarDeclList_VAR]
+      VarDeclList(
+        Type(
+         int
+        ) [Type]
+        VarDeclOneOrMore_MORE(
+          VarDecl_ERROR(
+          ) [VarDecl_ERROR]
+          VarDeclOneOrMore_MORE(
+            VarDecl_VAR(
+             c
+            ) [VarDecl_VAR]
+            VarDeclOneOrMore_ONE(
+              VarDecl_VAR(
+               d
+              ) [VarDecl_VAR]
+            ) [VarDeclOneOrMore_ONE]
+          ) [VarDeclOneOrMore_MORE]
+        ) [VarDeclOneOrMore_MORE]
+      ) [VarDeclList]
+    ) [MethodVarDeclList_VAR]
+    StatementList_EPSILON(
+    ) [StatementList_EPSILON]
+  ) [MethodDecl]
+) [Program]
+INFO  17:18:51,758 - ==============ZAVRSEN ISPIS STABLA=====================
+INFO  17:18:51,758 - ==============ISPIS SEMANTICKE ANALIZE=====================
+INFO  17:18:51,766 - Test Program cvor na liniji 3
+INFO  17:18:51,766 - ==============ZAVRSEN ISPIS SEMANTICKE ANALIZE=====================
+ERROR 17:18:51,766 - Parsiranje NIJE uspesno zavrseno!

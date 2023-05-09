@@ -1,0 +1,83 @@
+INFO  16:39:05,978 - Compiling source file: C:\Users\Korisnik\Desktop\PP1-projekat\MJCompiler\test\program.mj
+INFO  16:39:06,008 - #2 program
+INFO  16:39:06,008 - #9 test301
+INFO  16:39:06,008 - #27 {
+INFO  16:39:06,009 - #8 void
+INFO  16:39:06,009 - #9 main
+INFO  16:39:06,010 - #23 (
+INFO  16:39:06,010 - #24 )
+INFO  16:39:06,010 - #27 {
+INFO  16:39:06,011 - #25 [
+INFO  16:39:06,012 - #9 a
+INFO  16:39:06,012 - #22 ,
+INFO  16:39:06,012 - #9 s
+INFO  16:39:06,012 - #22 ,
+INFO  16:39:06,012 - #22 ,
+INFO  16:39:06,013 - #22 ,
+INFO  16:39:06,013 - #9 s
+INFO  16:39:06,013 - #26 ]
+INFO  16:39:06,013 - #18 =
+INFO  16:39:06,013 - #9 a
+INFO  16:39:06,013 - #21 ;
+INFO  16:39:06,013 - #28 }
+INFO  16:39:06,014 - #28 }
+INFO  16:39:06,017 - ==============ISPIS STABLA=====================
+INFO  16:39:06,017 - Program(
+  ProgramName(
+   test301
+  ) [ProgramName]
+  ConstVarDeclList_EPSILON(
+  ) [ConstVarDeclList_EPSILON]
+  MethodDecl(
+    MethodName(
+     main
+    ) [MethodName]
+    MethodVarDeclList_EPSILON(
+    ) [MethodVarDeclList_EPSILON]
+    StatementList_STATEMENTS(
+      StatementList_EPSILON(
+      ) [StatementList_EPSILON]
+      Statement_DesignatorStatement(
+        DesignatorStatement_List(
+          DesignatorStatementList_MORE(
+            DesignatorStatementList_MORE(
+              DesignatorStatementList_MORE(
+                DesignatorStatementList_MORE(
+                  DesignatorStatementList_ONE(
+                    MayDesignator_Designator(
+                      Designator_ONE(
+                       a
+                      ) [Designator_ONE]
+                    ) [MayDesignator_Designator]
+                  ) [DesignatorStatementList_ONE]
+                  MayDesignator_Designator(
+                    Designator_ONE(
+                     s
+                    ) [Designator_ONE]
+                  ) [MayDesignator_Designator]
+                ) [DesignatorStatementList_MORE]
+                MayDesignator_EPSILON(
+                ) [MayDesignator_EPSILON]
+              ) [DesignatorStatementList_MORE]
+              MayDesignator_EPSILON(
+              ) [MayDesignator_EPSILON]
+            ) [DesignatorStatementList_MORE]
+            MayDesignator_Designator(
+              Designator_ONE(
+               s
+              ) [Designator_ONE]
+            ) [MayDesignator_Designator]
+          ) [DesignatorStatementList_MORE]
+          Designator_ONE(
+           a
+          ) [Designator_ONE]
+        ) [DesignatorStatement_List]
+      ) [Statement_DesignatorStatement]
+    ) [StatementList_STATEMENTS]
+  ) [MethodDecl]
+) [Program]
+INFO  16:39:06,017 - ==============ZAVRSEN ISPIS STABLA=====================
+INFO  16:39:06,018 - ==============ISPIS SEMANTICKE ANALIZE=====================
+INFO  16:39:06,029 - Test Program cvor na liniji 3
+INFO  16:39:06,029 - ==============ZAVRSEN ISPIS SEMANTICKE ANALIZE=====================
+INFO  16:39:06,030 - Parsiranje uspesno zavrseno!

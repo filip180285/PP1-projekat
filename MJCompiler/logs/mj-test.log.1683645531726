@@ -1,0 +1,71 @@
+INFO  17:15:11,483 - Compiling source file: C:\Users\Korisnik\Desktop\PP1-projekat\MJCompiler\test\program.mj
+INFO  17:15:11,501 - #2 program
+INFO  17:15:11,501 - #9 test301
+INFO  17:15:11,501 - #9 char
+INFO  17:15:11,501 - #9 a
+INFO  17:15:11,502 - #25 [
+INFO  17:15:11,502 - #26 ]
+INFO  17:15:11,502 - #19 ++
+ERROR 17:15:11,502 - 
+Sintaksna greska na liniji 4
+INFO  17:15:11,502 - #21 ;
+INFO  17:15:11,502 - #27 {
+INFO  17:15:11,502 - #8 void
+INFO  17:15:11,503 - #9 main
+ERROR 17:15:11,503 - OPORAVAK od greske u definiciji promenljive izvrsen u liniji 4
+INFO  17:15:11,504 - #23 (
+INFO  17:15:11,504 - #24 )
+INFO  17:15:11,504 - #9 int
+INFO  17:15:11,504 - #9 a
+INFO  17:15:11,504 - #19 ++
+ERROR 17:15:11,504 - 
+Sintaksna greska na liniji 7
+INFO  17:15:11,505 - #21 ;
+INFO  17:15:11,505 - #27 {
+INFO  17:15:11,505 - #28 }
+INFO  17:15:11,505 - #28 }
+ERROR 17:15:11,505 - OPORAVAK od greske u definiciji promenljive izvrsen u liniji 7
+INFO  17:15:11,506 - ==============ISPIS STABLA=====================
+INFO  17:15:11,507 - Program(
+  ProgramName(
+   test301
+  ) [ProgramName]
+  ConstVarDeclList_VAR(
+    ConstVarDeclList_EPSILON(
+    ) [ConstVarDeclList_EPSILON]
+    VarDeclList(
+      Type(
+       char
+      ) [Type]
+      VarDeclOneOrMore_ONE(
+        VarDecl_ERROR(
+        ) [VarDecl_ERROR]
+      ) [VarDeclOneOrMore_ONE]
+    ) [VarDeclList]
+  ) [ConstVarDeclList_VAR]
+  MethodDecl(
+    MethodName(
+     main
+    ) [MethodName]
+    MethodVarDeclList_VAR(
+      MethodVarDeclList_EPSILON(
+      ) [MethodVarDeclList_EPSILON]
+      VarDeclList(
+        Type(
+         int
+        ) [Type]
+        VarDeclOneOrMore_ONE(
+          VarDecl_ERROR(
+          ) [VarDecl_ERROR]
+        ) [VarDeclOneOrMore_ONE]
+      ) [VarDeclList]
+    ) [MethodVarDeclList_VAR]
+    StatementList_EPSILON(
+    ) [StatementList_EPSILON]
+  ) [MethodDecl]
+) [Program]
+INFO  17:15:11,507 - ==============ZAVRSEN ISPIS STABLA=====================
+INFO  17:15:11,507 - ==============ISPIS SEMANTICKE ANALIZE=====================
+INFO  17:15:11,514 - Test Program cvor na liniji 3
+INFO  17:15:11,514 - ==============ZAVRSEN ISPIS SEMANTICKE ANALIZE=====================
+ERROR 17:15:11,515 - Parsiranje NIJE uspesno zavrseno!

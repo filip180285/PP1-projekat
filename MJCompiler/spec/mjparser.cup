@@ -112,6 +112,9 @@ VarDeclOneOrMore ::= (VarDeclOneOrMore_MORE) VarDecl COMMA VarDeclOneOrMore
 
 VarDecl ::= (VarDecl_VAR) IDENTIFIER
 			|
+			(VarDecl_ERROR) error:e
+			{: parser.report_error("OPORAVAK od greske u definiciji promenljive izvrsen u liniji " + eleft, null);  :}
+		    | 
 			(VarDecl_ARRAY) IDENTIFIER LEFT_BRACKET RIGHT_BRACKET;
 			
 	
@@ -165,6 +168,9 @@ MayPrintNumConst ::= (MayPrintNumConst_NUMBER) COMMA NUMBER
  
 DesignatorStatement ::= (DesignatorSt_Assign) Designator Assignop Expr
 					    | 
+					    (DesignatorStatement_ERROR) error:e
+					    {: parser.report_error("OPORAVAK od greske u iskazu dodele izvrsen do ; u liniji " + eleft, null);  :}
+					    |
 					    (DesignatorStat_INC) Designator INCREMENT
 					    |
 					    (DesignatorStat_DEC) Designator DECREMENT

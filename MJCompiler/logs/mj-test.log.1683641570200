@@ -1,0 +1,63 @@
+INFO  16:12:41,727 - Compiling source file: C:\Users\Korisnik\Desktop\PP1-projekat\MJCompiler\test\program.mj
+INFO  16:12:41,745 - #2 program
+INFO  16:12:41,746 - #9 test301
+INFO  16:12:41,746 - #27 {
+INFO  16:12:41,746 - #8 void
+INFO  16:12:41,746 - #9 main
+INFO  16:12:41,747 - #23 (
+INFO  16:12:41,747 - #24 )
+INFO  16:12:41,747 - #27 {
+INFO  16:12:41,747 - #9 a
+INFO  16:12:41,748 - #18 =
+INFO  16:12:41,748 - #10 5
+INFO  16:12:41,749 - #21 ;
+INFO  16:12:41,750 - #28 }
+INFO  16:12:41,750 - #28 }
+INFO  16:12:41,751 - ==============ISPIS STABLA=====================
+INFO  16:12:41,752 - Program(
+  ProgramName(
+   test301
+  ) [ProgramName]
+  ConstVarDeclList_EPSILON(
+  ) [ConstVarDeclList_EPSILON]
+  MethodDecl(
+    MethodName(
+     main
+    ) [MethodName]
+    MethodVarDeclList_EPSILON(
+    ) [MethodVarDeclList_EPSILON]
+    StatementList_STATEMENTS(
+      StatementList_EPSILON(
+      ) [StatementList_EPSILON]
+      Statement_DesignatorStatement(
+        DesignatorSt_Assign(
+          Designator_ONE(
+           a
+          ) [Designator_ONE]
+          Assignop(
+          ) [Assignop]
+          Expr(
+            ExprList_ONE(
+              Term(
+                TermList_ONE(
+                  FactorSign(
+                    UnaryMinus_EPSILON(
+                    ) [UnaryMinus_EPSILON]
+                    Factor_NUMBER(
+                     5
+                    ) [Factor_NUMBER]
+                  ) [FactorSign]
+                ) [TermList_ONE]
+              ) [Term]
+            ) [ExprList_ONE]
+          ) [Expr]
+        ) [DesignatorSt_Assign]
+      ) [Statement_DesignatorStatement]
+    ) [StatementList_STATEMENTS]
+  ) [MethodDecl]
+) [Program]
+INFO  16:12:41,754 - ==============ZAVRSEN ISPIS STABLA=====================
+INFO  16:12:41,754 - ==============ISPIS SEMANTICKE ANALIZE=====================
+INFO  16:12:41,758 - Test Program cvor na liniji 3
+INFO  16:12:41,758 - ==============ZAVRSEN ISPIS SEMANTICKE ANALIZE=====================
+INFO  16:12:41,759 - Parsiranje uspesno zavrseno!

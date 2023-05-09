@@ -1,0 +1,89 @@
+INFO  16:58:17,135 - Compiling source file: C:\Users\Korisnik\Desktop\PP1-projekat\MJCompiler\test\program.mj
+INFO  16:58:17,154 - #2 program
+INFO  16:58:17,154 - #9 test301
+INFO  16:58:17,154 - #9 int
+INFO  16:58:17,155 - #9 a
+INFO  16:58:17,155 - #22 ,
+INFO  16:58:17,155 - #9 c
+INFO  16:58:17,155 - #19 ++
+ERROR 16:58:17,155 - 
+Sintaksna greska na liniji 4
+INFO  16:58:17,156 - #21 ;
+INFO  16:58:17,156 - #9 char
+INFO  16:58:17,156 - #9 a
+INFO  16:58:17,156 - #25 [
+ERROR 16:58:17,156 - OPORAVAK od greske u definiciji promenljive izvrsen u liniji 4
+INFO  16:58:17,157 - #26 ]
+INFO  16:58:17,157 - #22 ,
+INFO  16:58:17,157 - #9 b
+INFO  16:58:17,157 - #22 ,
+INFO  16:58:17,157 - #9 c
+INFO  16:58:17,157 - #21 ;
+INFO  16:58:17,159 - #27 {
+INFO  16:58:17,159 - #8 void
+INFO  16:58:17,159 - #9 main
+INFO  16:58:17,159 - #23 (
+INFO  16:58:17,160 - #24 )
+INFO  16:58:17,160 - #27 {
+INFO  16:58:17,160 - #28 }
+INFO  16:58:17,160 - #28 }
+INFO  16:58:17,161 - ==============ISPIS STABLA=====================
+INFO  16:58:17,162 - Program(
+  ProgramName(
+   test301
+  ) [ProgramName]
+  ConstVarDeclList_VAR(
+    ConstVarDeclList_VAR(
+      ConstVarDeclList_EPSILON(
+      ) [ConstVarDeclList_EPSILON]
+      VarDeclList(
+        Type(
+         int
+        ) [Type]
+        VarDeclOneOrMore_MORE(
+          VarDecl_VAR(
+           a
+          ) [VarDecl_VAR]
+          VarDeclOneOrMore_ONE(
+            VarDecl_ERROR(
+            ) [VarDecl_ERROR]
+          ) [VarDeclOneOrMore_ONE]
+        ) [VarDeclOneOrMore_MORE]
+      ) [VarDeclList]
+    ) [ConstVarDeclList_VAR]
+    VarDeclList(
+      Type(
+       char
+      ) [Type]
+      VarDeclOneOrMore_MORE(
+        VarDecl_ARRAY(
+         a
+        ) [VarDecl_ARRAY]
+        VarDeclOneOrMore_MORE(
+          VarDecl_VAR(
+           b
+          ) [VarDecl_VAR]
+          VarDeclOneOrMore_ONE(
+            VarDecl_VAR(
+             c
+            ) [VarDecl_VAR]
+          ) [VarDeclOneOrMore_ONE]
+        ) [VarDeclOneOrMore_MORE]
+      ) [VarDeclOneOrMore_MORE]
+    ) [VarDeclList]
+  ) [ConstVarDeclList_VAR]
+  MethodDecl(
+    MethodName(
+     main
+    ) [MethodName]
+    MethodVarDeclList_EPSILON(
+    ) [MethodVarDeclList_EPSILON]
+    StatementList_EPSILON(
+    ) [StatementList_EPSILON]
+  ) [MethodDecl]
+) [Program]
+INFO  16:58:17,162 - ==============ZAVRSEN ISPIS STABLA=====================
+INFO  16:58:17,162 - ==============ISPIS SEMANTICKE ANALIZE=====================
+INFO  16:58:17,169 - Test Program cvor na liniji 3
+INFO  16:58:17,170 - ==============ZAVRSEN ISPIS SEMANTICKE ANALIZE=====================
+ERROR 16:58:17,170 - Parsiranje NIJE uspesno zavrseno!

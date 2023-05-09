@@ -1,0 +1,45 @@
+INFO  16:22:07,482 - Compiling source file: C:\Users\Korisnik\Desktop\PP1-projekat\MJCompiler\test\program.mj
+INFO  16:22:07,500 - #2 program
+INFO  16:22:07,500 - #9 test301
+INFO  16:22:07,500 - #27 {
+INFO  16:22:07,501 - #8 void
+INFO  16:22:07,501 - #9 main
+INFO  16:22:07,501 - #23 (
+INFO  16:22:07,501 - #24 )
+INFO  16:22:07,501 - #27 {
+INFO  16:22:07,501 - #9 a
+INFO  16:22:07,502 - #19 ++
+INFO  16:22:07,502 - #21 ;
+INFO  16:22:07,502 - #28 }
+INFO  16:22:07,502 - #28 }
+INFO  16:22:07,503 - ==============ISPIS STABLA=====================
+INFO  16:22:07,503 - Program(
+  ProgramName(
+   test301
+  ) [ProgramName]
+  ConstVarDeclList_EPSILON(
+  ) [ConstVarDeclList_EPSILON]
+  MethodDecl(
+    MethodName(
+     main
+    ) [MethodName]
+    MethodVarDeclList_EPSILON(
+    ) [MethodVarDeclList_EPSILON]
+    StatementList_STATEMENTS(
+      StatementList_EPSILON(
+      ) [StatementList_EPSILON]
+      Statement_DesignatorStatement(
+        DesignatorStat_INC(
+          Designator_ONE(
+           a
+          ) [Designator_ONE]
+        ) [DesignatorStat_INC]
+      ) [Statement_DesignatorStatement]
+    ) [StatementList_STATEMENTS]
+  ) [MethodDecl]
+) [Program]
+INFO  16:22:07,505 - ==============ZAVRSEN ISPIS STABLA=====================
+INFO  16:22:07,505 - ==============ISPIS SEMANTICKE ANALIZE=====================
+INFO  16:22:07,514 - Test Program cvor na liniji 3
+INFO  16:22:07,514 - ==============ZAVRSEN ISPIS SEMANTICKE ANALIZE=====================
+INFO  16:22:07,514 - Parsiranje uspesno zavrseno!

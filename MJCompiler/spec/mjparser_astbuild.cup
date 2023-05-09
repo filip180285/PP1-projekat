@@ -136,6 +136,9 @@ VarDeclOneOrMore ::= (VarDeclOneOrMore_MORE) VarDecl:V1 COMMA VarDeclOneOrMore:V
 
 VarDecl ::= (VarDecl_VAR) IDENTIFIER:I1 {: RESULT=new VarDecl_VAR(I1); RESULT.setLine(I1left); :}
 			|
+			(VarDecl_ERROR) error:e
+			{: parser.report_error("OPORAVAK od greske u definiciji promenljive izvrsen u liniji " + eleft, null);  :} {: RESULT=new VarDecl_ERROR(); :}
+		    | 
 			(VarDecl_ARRAY) IDENTIFIER:I1 LEFT_BRACKET RIGHT_BRACKET {: RESULT=new VarDecl_ARRAY(I1); RESULT.setLine(I1left); :};
 			
 	
@@ -189,6 +192,9 @@ MayPrintNumConst ::= (MayPrintNumConst_NUMBER) COMMA NUMBER:N1 {: RESULT=new May
  
 DesignatorStatement ::= (DesignatorSt_Assign) Designator:D1 Assignop:A2 Expr:E3 {: RESULT=new DesignatorSt_Assign(D1, A2, E3); RESULT.setLine(D1left); :}
 					    | 
+					    (DesignatorStatement_ERROR) error:e
+					    {: parser.report_error("OPORAVAK od greske u iskazu dodele izvrsen do ; u liniji " + eleft, null);  :} {: RESULT=new DesignatorStatement_ERROR(); :}
+					    |
 					    (DesignatorStat_INC) Designator:D1 INCREMENT {: RESULT=new DesignatorStat_INC(D1); RESULT.setLine(D1left); :}
 					    |
 					    (DesignatorStat_DEC) Designator:D1 DECREMENT {: RESULT=new DesignatorStat_DEC(D1); RESULT.setLine(D1left); :}

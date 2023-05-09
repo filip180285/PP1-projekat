@@ -1,0 +1,54 @@
+INFO  16:56:40,522 - Compiling source file: C:\Users\Korisnik\Desktop\PP1-projekat\MJCompiler\test\program.mj
+INFO  16:56:40,544 - #2 program
+INFO  16:56:40,545 - #9 test301
+INFO  16:56:40,545 - #9 int
+INFO  16:56:40,546 - #9 a
+INFO  16:56:40,546 - #19 ++
+ERROR 16:56:40,546 - 
+Sintaksna greska na liniji 4
+INFO  16:56:40,546 - #22 ,
+INFO  16:56:40,546 - #9 c
+INFO  16:56:40,546 - #19 ++
+INFO  16:56:40,547 - #21 ;
+INFO  16:56:40,547 - #27 {
+INFO  16:56:40,547 - #8 void
+INFO  16:56:40,547 - #9 main
+ERROR 16:56:40,547 - OPORAVAK od greske u definiciji promenljive izvrsen u liniji 4
+INFO  16:56:40,548 - #23 (
+INFO  16:56:40,548 - #24 )
+INFO  16:56:40,548 - #27 {
+INFO  16:56:40,549 - #28 }
+INFO  16:56:40,549 - #28 }
+INFO  16:56:40,550 - ==============ISPIS STABLA=====================
+INFO  16:56:40,551 - Program(
+  ProgramName(
+   test301
+  ) [ProgramName]
+  ConstVarDeclList_VAR(
+    ConstVarDeclList_EPSILON(
+    ) [ConstVarDeclList_EPSILON]
+    VarDeclList(
+      Type(
+       int
+      ) [Type]
+      VarDeclOneOrMore_ONE(
+        VarDecl_ERROR(
+        ) [VarDecl_ERROR]
+      ) [VarDeclOneOrMore_ONE]
+    ) [VarDeclList]
+  ) [ConstVarDeclList_VAR]
+  MethodDecl(
+    MethodName(
+     main
+    ) [MethodName]
+    MethodVarDeclList_EPSILON(
+    ) [MethodVarDeclList_EPSILON]
+    StatementList_EPSILON(
+    ) [StatementList_EPSILON]
+  ) [MethodDecl]
+) [Program]
+INFO  16:56:40,551 - ==============ZAVRSEN ISPIS STABLA=====================
+INFO  16:56:40,551 - ==============ISPIS SEMANTICKE ANALIZE=====================
+INFO  16:56:40,559 - Test Program cvor na liniji 3
+INFO  16:56:40,559 - ==============ZAVRSEN ISPIS SEMANTICKE ANALIZE=====================
+ERROR 16:56:40,560 - Parsiranje NIJE uspesno zavrseno!

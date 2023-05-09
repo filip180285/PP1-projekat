@@ -1,0 +1,97 @@
+INFO  16:20:25,479 - Compiling source file: C:\Users\Korisnik\Desktop\PP1-projekat\MJCompiler\test\program.mj
+INFO  16:20:25,498 - #2 program
+INFO  16:20:25,498 - #9 test301
+INFO  16:20:25,498 - #27 {
+INFO  16:20:25,499 - #8 void
+INFO  16:20:25,499 - #9 main
+INFO  16:20:25,499 - #23 (
+INFO  16:20:25,499 - #24 )
+INFO  16:20:25,499 - #27 {
+INFO  16:20:25,500 - #9 a
+INFO  16:20:25,500 - #18 =
+INFO  16:20:25,500 - #10 5
+INFO  16:20:25,501 - #13 +
+INFO  16:20:25,502 - #10 3
+INFO  16:20:25,503 - #13 +
+INFO  16:20:25,503 - #10 2
+INFO  16:20:25,503 - #21 ;
+INFO  16:20:25,504 - #28 }
+INFO  16:20:25,504 - #28 }
+INFO  16:20:25,505 - ==============ISPIS STABLA=====================
+INFO  16:20:25,505 - Program(
+  ProgramName(
+   test301
+  ) [ProgramName]
+  ConstVarDeclList_EPSILON(
+  ) [ConstVarDeclList_EPSILON]
+  MethodDecl(
+    MethodName(
+     main
+    ) [MethodName]
+    MethodVarDeclList_EPSILON(
+    ) [MethodVarDeclList_EPSILON]
+    StatementList_STATEMENTS(
+      StatementList_EPSILON(
+      ) [StatementList_EPSILON]
+      Statement_DesignatorStatement(
+        DesignatorSt_Assign(
+          Designator_ONE(
+           a
+          ) [Designator_ONE]
+          Assignop(
+          ) [Assignop]
+          Expr(
+            ExprList_MORE(
+              ExprList_MORE(
+                ExprList_ONE(
+                  Term(
+                    TermList_ONE(
+                      FactorSign(
+                        UnaryMinus_EPSILON(
+                        ) [UnaryMinus_EPSILON]
+                        Factor_NUMBER(
+                         5
+                        ) [Factor_NUMBER]
+                      ) [FactorSign]
+                    ) [TermList_ONE]
+                  ) [Term]
+                ) [ExprList_ONE]
+                Addop_PLUS(
+                ) [Addop_PLUS]
+                Term(
+                  TermList_ONE(
+                    FactorSign(
+                      UnaryMinus_EPSILON(
+                      ) [UnaryMinus_EPSILON]
+                      Factor_NUMBER(
+                       3
+                      ) [Factor_NUMBER]
+                    ) [FactorSign]
+                  ) [TermList_ONE]
+                ) [Term]
+              ) [ExprList_MORE]
+              Addop_PLUS(
+              ) [Addop_PLUS]
+              Term(
+                TermList_ONE(
+                  FactorSign(
+                    UnaryMinus_EPSILON(
+                    ) [UnaryMinus_EPSILON]
+                    Factor_NUMBER(
+                     2
+                    ) [Factor_NUMBER]
+                  ) [FactorSign]
+                ) [TermList_ONE]
+              ) [Term]
+            ) [ExprList_MORE]
+          ) [Expr]
+        ) [DesignatorSt_Assign]
+      ) [Statement_DesignatorStatement]
+    ) [StatementList_STATEMENTS]
+  ) [MethodDecl]
+) [Program]
+INFO  16:20:25,507 - ==============ZAVRSEN ISPIS STABLA=====================
+INFO  16:20:25,507 - ==============ISPIS SEMANTICKE ANALIZE=====================
+INFO  16:20:25,515 - Test Program cvor na liniji 3
+INFO  16:20:25,515 - ==============ZAVRSEN ISPIS SEMANTICKE ANALIZE=====================
+INFO  16:20:25,516 - Parsiranje uspesno zavrseno!

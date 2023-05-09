@@ -1,0 +1,75 @@
+INFO  16:55:13,030 - Compiling source file: C:\Users\Korisnik\Desktop\PP1-projekat\MJCompiler\test\program.mj
+INFO  16:55:13,052 - #2 program
+INFO  16:55:13,052 - #9 test301
+INFO  16:55:13,053 - #9 int
+INFO  16:55:13,054 - #9 a
+INFO  16:55:13,054 - #19 ++
+ERROR 16:55:13,054 - 
+Sintaksna greska na liniji 4
+INFO  16:55:13,055 - #21 ;
+INFO  16:55:13,055 - #27 {
+INFO  16:55:13,055 - #8 void
+INFO  16:55:13,055 - #9 main
+ERROR 16:55:13,056 - OPORAVAK od greske u definiciji promenljive izvrsen u liniji 4
+INFO  16:55:13,057 - #23 (
+INFO  16:55:13,058 - #24 )
+INFO  16:55:13,058 - #27 {
+INFO  16:55:13,059 - #25 [
+INFO  16:55:13,059 - #9 a
+INFO  16:55:13,060 - #22 ,
+INFO  16:55:13,060 - #9 s
+INFO  16:55:13,060 - #22 ,
+INFO  16:55:13,062 - #22 ,
+INFO  16:55:13,062 - #22 ,
+INFO  16:55:13,062 - #9 s
+INFO  16:55:13,062 - #22 ,
+INFO  16:55:13,063 - #19 ++
+ERROR 16:55:13,063 - 
+Sintaksna greska na liniji 9
+INFO  16:55:13,063 - #22 ,
+INFO  16:55:13,063 - #26 ]
+INFO  16:55:13,063 - #18 =
+INFO  16:55:13,063 - #9 a
+INFO  16:55:13,063 - #21 ;
+INFO  16:55:13,063 - #28 }
+INFO  16:55:13,063 - #28 }
+ERROR 16:55:13,063 - OPORAVAK od greske u iskazu dodele izvrsen do ; u liniji 1
+INFO  16:55:13,065 - ==============ISPIS STABLA=====================
+INFO  16:55:13,065 - Program(
+  ProgramName(
+   test301
+  ) [ProgramName]
+  ConstVarDeclList_VAR(
+    ConstVarDeclList_EPSILON(
+    ) [ConstVarDeclList_EPSILON]
+    VarDeclList(
+      Type(
+       int
+      ) [Type]
+      VarDeclOneOrMore_ONE(
+        VarDecl_ERROR(
+        ) [VarDecl_ERROR]
+      ) [VarDeclOneOrMore_ONE]
+    ) [VarDeclList]
+  ) [ConstVarDeclList_VAR]
+  MethodDecl(
+    MethodName(
+     main
+    ) [MethodName]
+    MethodVarDeclList_EPSILON(
+    ) [MethodVarDeclList_EPSILON]
+    StatementList_STATEMENTS(
+      StatementList_EPSILON(
+      ) [StatementList_EPSILON]
+      Statement_DesignatorStatement(
+        DesignatorStatement_ERROR(
+        ) [DesignatorStatement_ERROR]
+      ) [Statement_DesignatorStatement]
+    ) [StatementList_STATEMENTS]
+  ) [MethodDecl]
+) [Program]
+INFO  16:55:13,066 - ==============ZAVRSEN ISPIS STABLA=====================
+INFO  16:55:13,066 - ==============ISPIS SEMANTICKE ANALIZE=====================
+INFO  16:55:13,075 - Test Program cvor na liniji 3
+INFO  16:55:13,075 - ==============ZAVRSEN ISPIS SEMANTICKE ANALIZE=====================
+ERROR 16:55:13,076 - Parsiranje NIJE uspesno zavrseno!
