@@ -1,31 +1,31 @@
 // generated with ast extension for cup
 // version 0.8
-// 9/4/2023 17:14:59
+// 9/4/2023 17:24:45
 
 
 package rs.ac.bg.etf.pp1.ast;
 
-public class ExprList_MORE extends ExprList {
+public class Expr_MORE extends Expr {
 
-    private ExprList ExprList;
+    private Expr Expr;
     private Addop Addop;
     private Term Term;
 
-    public ExprList_MORE (ExprList ExprList, Addop Addop, Term Term) {
-        this.ExprList=ExprList;
-        if(ExprList!=null) ExprList.setParent(this);
+    public Expr_MORE (Expr Expr, Addop Addop, Term Term) {
+        this.Expr=Expr;
+        if(Expr!=null) Expr.setParent(this);
         this.Addop=Addop;
         if(Addop!=null) Addop.setParent(this);
         this.Term=Term;
         if(Term!=null) Term.setParent(this);
     }
 
-    public ExprList getExprList() {
-        return ExprList;
+    public Expr getExpr() {
+        return Expr;
     }
 
-    public void setExprList(ExprList ExprList) {
-        this.ExprList=ExprList;
+    public void setExpr(Expr Expr) {
+        this.Expr=Expr;
     }
 
     public Addop getAddop() {
@@ -49,20 +49,20 @@ public class ExprList_MORE extends ExprList {
     }
 
     public void childrenAccept(Visitor visitor) {
-        if(ExprList!=null) ExprList.accept(visitor);
+        if(Expr!=null) Expr.accept(visitor);
         if(Addop!=null) Addop.accept(visitor);
         if(Term!=null) Term.accept(visitor);
     }
 
     public void traverseTopDown(Visitor visitor) {
         accept(visitor);
-        if(ExprList!=null) ExprList.traverseTopDown(visitor);
+        if(Expr!=null) Expr.traverseTopDown(visitor);
         if(Addop!=null) Addop.traverseTopDown(visitor);
         if(Term!=null) Term.traverseTopDown(visitor);
     }
 
     public void traverseBottomUp(Visitor visitor) {
-        if(ExprList!=null) ExprList.traverseBottomUp(visitor);
+        if(Expr!=null) Expr.traverseBottomUp(visitor);
         if(Addop!=null) Addop.traverseBottomUp(visitor);
         if(Term!=null) Term.traverseBottomUp(visitor);
         accept(visitor);
@@ -71,10 +71,10 @@ public class ExprList_MORE extends ExprList {
     public String toString(String tab) {
         StringBuffer buffer=new StringBuffer();
         buffer.append(tab);
-        buffer.append("ExprList_MORE(\n");
+        buffer.append("Expr_MORE(\n");
 
-        if(ExprList!=null)
-            buffer.append(ExprList.toString("  "+tab));
+        if(Expr!=null)
+            buffer.append(Expr.toString("  "+tab));
         else
             buffer.append(tab+"  null");
         buffer.append("\n");
@@ -92,7 +92,7 @@ public class ExprList_MORE extends ExprList {
         buffer.append("\n");
 
         buffer.append(tab);
-        buffer.append(") [ExprList_MORE]");
+        buffer.append(") [Expr_MORE]");
         return buffer.toString();
     }
 }

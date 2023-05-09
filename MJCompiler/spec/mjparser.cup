@@ -60,7 +60,8 @@ nonterminal Program, ConstVarDeclList, ConstDeclList, VarDeclList, MethodDecl, M
 nonterminal Type, ConstDeclOneOrMore, ConstDecl, Constant, VarDeclOneOrMore, VarDecl;
 nonterminal MethodVarDeclList, StatementList;
 nonterminal Statement;
-nonterminal DesignatorStatement, Designator, DesignatorArrayName, Expr, ExprList, Term, TermList, FactorSign, DesignatorStatementList;
+nonterminal DesignatorStatement, Designator, DesignatorArrayName, Expr, Term, FactorSign, DesignatorStatementList;
+// Expr, ExprList, Term, TermList,
 nonterminal MayPrintNumConst, MayDesignator;
 nonterminal Factor, UnaryMinus, Assignop, Addop, Mulop;
 
@@ -189,21 +190,21 @@ MayDesignator ::= (MayDesignator_Designator) Designator
 
 /*** Expr = ["-"] Term [Addop Term]. ***/
 
-Expr ::= (Expr) ExprList;
+//Expr ::= (Expr) ExprList;
 		
-ExprList ::= (ExprList_ONE) Term
-			 |
-			 (ExprList_MORE) ExprList Addop Term;
+Expr ::= (Expr_ONE) Term // ExprList
+		 |
+		 (Expr_MORE) Expr Addop Term;
 		
 
 
 /*** Term = Factor {Mulop Factor}. ***/
 
-Term ::= (Term) TermList;
+// Term ::= (Term) TermList;
 		
-TermList ::= (TermList_ONE) FactorSign
-			 |
-			 (TermList_MORE) TermList Mulop FactorSign;			  
+Term ::= (Term_ONE) FactorSign // TermList
+		 |
+		 (Term_MORE) Term Mulop FactorSign;			  
 			  
 		
 			  

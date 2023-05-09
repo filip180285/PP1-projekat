@@ -1,15 +1,15 @@
 // generated with ast extension for cup
 // version 0.8
-// 9/4/2023 17:14:59
+// 9/4/2023 17:24:45
 
 
 package rs.ac.bg.etf.pp1.ast;
 
-public class ExprList_ONE extends ExprList {
+public class Expr_ONE extends Expr {
 
     private Term Term;
 
-    public ExprList_ONE (Term Term) {
+    public Expr_ONE (Term Term) {
         this.Term=Term;
         if(Term!=null) Term.setParent(this);
     }
@@ -43,7 +43,7 @@ public class ExprList_ONE extends ExprList {
     public String toString(String tab) {
         StringBuffer buffer=new StringBuffer();
         buffer.append(tab);
-        buffer.append("ExprList_ONE(\n");
+        buffer.append("Expr_ONE(\n");
 
         if(Term!=null)
             buffer.append(Term.toString("  "+tab));
@@ -52,7 +52,7 @@ public class ExprList_ONE extends ExprList {
         buffer.append("\n");
 
         buffer.append(tab);
-        buffer.append(") [ExprList_ONE]");
+        buffer.append(") [Expr_ONE]");
         return buffer.toString();
     }
 }

@@ -1,15 +1,15 @@
 // generated with ast extension for cup
 // version 0.8
-// 9/4/2023 17:14:59
+// 9/4/2023 17:24:45
 
 
 package rs.ac.bg.etf.pp1.ast;
 
-public class TermList_ONE extends TermList {
+public class Term_ONE extends Term {
 
     private FactorSign FactorSign;
 
-    public TermList_ONE (FactorSign FactorSign) {
+    public Term_ONE (FactorSign FactorSign) {
         this.FactorSign=FactorSign;
         if(FactorSign!=null) FactorSign.setParent(this);
     }
@@ -43,7 +43,7 @@ public class TermList_ONE extends TermList {
     public String toString(String tab) {
         StringBuffer buffer=new StringBuffer();
         buffer.append(tab);
-        buffer.append("TermList_ONE(\n");
+        buffer.append("Term_ONE(\n");
 
         if(FactorSign!=null)
             buffer.append(FactorSign.toString("  "+tab));
@@ -52,7 +52,7 @@ public class TermList_ONE extends TermList {
         buffer.append("\n");
 
         buffer.append(tab);
-        buffer.append(") [TermList_ONE]");
+        buffer.append(") [Term_ONE]");
         return buffer.toString();
     }
 }

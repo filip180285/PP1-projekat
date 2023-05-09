@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 9/4/2023 17:14:59
+// 9/4/2023 17:24:45
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -14,7 +14,7 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(DesignatorStatementList DesignatorStatementList) { }
     public void visit(Constant Constant) { }
     public void visit(MayPrintNumConst MayPrintNumConst) { }
-    public void visit(ExprList ExprList) { }
+    public void visit(Expr Expr) { }
     public void visit(MethodVarDeclList MethodVarDeclList) { }
     public void visit(ConstDeclOneOrMore ConstDeclOneOrMore) { }
     public void visit(UnaryMinus UnaryMinus) { }
@@ -22,9 +22,9 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(VarDecl VarDecl) { }
     public void visit(VarDeclOneOrMore VarDeclOneOrMore) { }
     public void visit(Addop Addop) { }
-    public void visit(TermList TermList) { }
     public void visit(Statement Statement) { }
     public void visit(ConstVarDeclList ConstVarDeclList) { }
+    public void visit(Term Term) { }
     public void visit(StatementList StatementList) { }
     public void visit(Mulop_MOD Mulop_MOD) { visit(); }
     public void visit(Mulop_DIV Mulop_DIV) { visit(); }
@@ -44,12 +44,10 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(UnaryMinus_EPSILON UnaryMinus_EPSILON) { visit(); }
     public void visit(UnaryMinus_MINUS UnaryMinus_MINUS) { visit(); }
     public void visit(FactorSign FactorSign) { visit(); }
-    public void visit(TermList_MORE TermList_MORE) { visit(); }
-    public void visit(TermList_ONE TermList_ONE) { visit(); }
-    public void visit(Term Term) { visit(); }
-    public void visit(ExprList_MORE ExprList_MORE) { visit(); }
-    public void visit(ExprList_ONE ExprList_ONE) { visit(); }
-    public void visit(Expr Expr) { visit(); }
+    public void visit(Term_MORE Term_MORE) { visit(); }
+    public void visit(Term_ONE Term_ONE) { visit(); }
+    public void visit(Expr_MORE Expr_MORE) { visit(); }
+    public void visit(Expr_ONE Expr_ONE) { visit(); }
     public void visit(MayDesignator_EPSILON MayDesignator_EPSILON) { visit(); }
     public void visit(MayDesignator_Designator MayDesignator_Designator) { visit(); }
     public void visit(DesignatorStatementList_ONE DesignatorStatementList_ONE) { visit(); }

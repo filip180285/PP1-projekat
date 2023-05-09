@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 9/4/2023 17:14:59
+// 9/4/2023 17:24:45
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -14,7 +14,7 @@ public interface Visitor {
     public void visit(DesignatorStatementList DesignatorStatementList);
     public void visit(Constant Constant);
     public void visit(MayPrintNumConst MayPrintNumConst);
-    public void visit(ExprList ExprList);
+    public void visit(Expr Expr);
     public void visit(MethodVarDeclList MethodVarDeclList);
     public void visit(ConstDeclOneOrMore ConstDeclOneOrMore);
     public void visit(UnaryMinus UnaryMinus);
@@ -22,9 +22,9 @@ public interface Visitor {
     public void visit(VarDecl VarDecl);
     public void visit(VarDeclOneOrMore VarDeclOneOrMore);
     public void visit(Addop Addop);
-    public void visit(TermList TermList);
     public void visit(Statement Statement);
     public void visit(ConstVarDeclList ConstVarDeclList);
+    public void visit(Term Term);
     public void visit(StatementList StatementList);
     public void visit(Mulop_MOD Mulop_MOD);
     public void visit(Mulop_DIV Mulop_DIV);
@@ -44,12 +44,10 @@ public interface Visitor {
     public void visit(UnaryMinus_EPSILON UnaryMinus_EPSILON);
     public void visit(UnaryMinus_MINUS UnaryMinus_MINUS);
     public void visit(FactorSign FactorSign);
-    public void visit(TermList_MORE TermList_MORE);
-    public void visit(TermList_ONE TermList_ONE);
-    public void visit(Term Term);
-    public void visit(ExprList_MORE ExprList_MORE);
-    public void visit(ExprList_ONE ExprList_ONE);
-    public void visit(Expr Expr);
+    public void visit(Term_MORE Term_MORE);
+    public void visit(Term_ONE Term_ONE);
+    public void visit(Expr_MORE Expr_MORE);
+    public void visit(Expr_ONE Expr_ONE);
     public void visit(MayDesignator_EPSILON MayDesignator_EPSILON);
     public void visit(MayDesignator_Designator MayDesignator_Designator);
     public void visit(DesignatorStatementList_ONE DesignatorStatementList_ONE);
