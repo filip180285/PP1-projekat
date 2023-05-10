@@ -1,0 +1,72 @@
+INFO  16:03:03,374 - Compiling source file: C:\Users\Korisnik\Desktop\PP1-projekat\MJCompiler\test\program.mj
+INFO  16:03:03,392 - #2 program
+INFO  16:03:03,393 - #9 test301
+INFO  16:03:03,393 - #27 {
+INFO  16:03:03,394 - #8 void
+INFO  16:03:03,394 - #9 main
+INFO  16:03:03,394 - #23 (
+INFO  16:03:03,394 - #24 )
+INFO  16:03:03,394 - #9 int
+INFO  16:03:03,394 - #9 x
+INFO  16:03:03,395 - #21 ;
+INFO  16:03:03,395 - #27 {
+INFO  16:03:03,395 - #5 print
+INFO  16:03:03,396 - #23 (
+INFO  16:03:03,396 - #14 -
+INFO  16:03:03,396 - #9 x
+INFO  16:03:03,396 - #24 )
+INFO  16:03:03,397 - #21 ;
+INFO  16:03:03,397 - #28 }
+INFO  16:03:03,398 - #28 }
+INFO  16:03:03,399 - 
+                     ==============ISPIS STABLA=====================
+INFO  16:03:03,401 - Program(
+  ProgramName(
+   test301
+  ) [ProgramName]
+  ConstVarDeclList_EPSILON(
+  ) [ConstVarDeclList_EPSILON]
+  MethodDecl(
+    MethodName(
+     main
+    ) [MethodName]
+    MethodVarDeclList_VAR(
+      MethodVarDeclList_EPSILON(
+      ) [MethodVarDeclList_EPSILON]
+      VarDeclList(
+        Type(
+         int
+        ) [Type]
+        VarDeclOneOrMore_ONE(
+          VarDecl_VAR(
+           x
+          ) [VarDecl_VAR]
+        ) [VarDeclOneOrMore_ONE]
+      ) [VarDeclList]
+    ) [MethodVarDeclList_VAR]
+    StatementList_STATEMENTS(
+      StatementList_EPSILON(
+      ) [StatementList_EPSILON]
+      Statement_PRINT(
+        Expr_ONE(
+          Term_ONE(
+            FactorSign(
+              UnaryMinus_MINUS(
+              ) [UnaryMinus_MINUS]
+              Factor_Designator(
+                Designator_ONE(
+                 x
+                ) [Designator_ONE]
+              ) [Factor_Designator]
+            ) [FactorSign]
+          ) [Term_ONE]
+        ) [Expr_ONE]
+        MayPrintNumConst_EPSILON(
+        ) [MayPrintNumConst_EPSILON]
+      ) [Statement_PRINT]
+    ) [StatementList_STATEMENTS]
+  ) [MethodDecl]
+) [Program]
+INFO  16:03:03,401 - ==============ZAVRSEN ISPIS STABLA=====================
+
+INFO  16:03:03,401 - ==============ISPIS SEMANTICKE ANALIZE=====================

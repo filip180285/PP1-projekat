@@ -1,0 +1,187 @@
+INFO  19:52:24,344 - Compiling source file: C:\Users\Korisnik\Desktop\PP1-projekat\MJCompiler\test\program.mj
+INFO  19:52:24,434 - #2 program
+INFO  19:52:24,434 - #9 test301
+INFO  19:52:24,436 - #27 {
+INFO  19:52:24,439 - #8 void
+INFO  19:52:24,440 - #9 main
+INFO  19:52:24,441 - #23 (
+INFO  19:52:24,443 - #24 )
+INFO  19:52:24,443 - #9 int
+INFO  19:52:24,445 - #9 x
+INFO  19:52:24,447 - #21 ;
+INFO  19:52:24,449 - #27 {
+INFO  19:52:24,452 - #5 print
+INFO  19:52:24,453 - #23 (
+INFO  19:52:24,453 - #10 1
+INFO  19:52:24,458 - #24 )
+INFO  19:52:24,463 - #21 ;
+INFO  19:52:24,463 - #5 print
+INFO  19:52:24,464 - #23 (
+INFO  19:52:24,465 - #14 -
+INFO  19:52:24,465 - #10 1
+INFO  19:52:24,467 - #24 )
+INFO  19:52:24,468 - #21 ;
+INFO  19:52:24,471 - #5 print
+INFO  19:52:24,471 - #23 (
+INFO  19:52:24,471 - #11 a
+INFO  19:52:24,472 - #24 )
+INFO  19:52:24,472 - #21 ;
+INFO  19:52:24,473 - #5 print
+INFO  19:52:24,473 - #23 (
+INFO  19:52:24,473 - #14 -
+INFO  19:52:24,473 - #11 a
+INFO  19:52:24,474 - #24 )
+INFO  19:52:24,474 - #21 ;
+INFO  19:52:24,474 - #5 print
+INFO  19:52:24,474 - #23 (
+INFO  19:52:24,475 - #12 0
+INFO  19:52:24,475 - #24 )
+INFO  19:52:24,475 - #21 ;
+INFO  19:52:24,476 - #5 print
+INFO  19:52:24,476 - #23 (
+INFO  19:52:24,476 - #14 -
+INFO  19:52:24,476 - #12 0
+INFO  19:52:24,477 - #24 )
+INFO  19:52:24,477 - #21 ;
+INFO  19:52:24,477 - #28 }
+INFO  19:52:24,477 - #28 }
+INFO  19:52:24,483 - 
+                     ==============ISPIS STABLA=====================
+INFO  19:52:24,485 - Program(
+  ProgramName(
+   test301
+  ) [ProgramName]
+  ConstVarDeclList_EPSILON(
+  ) [ConstVarDeclList_EPSILON]
+  MethodDecl(
+    MethodName(
+     main
+    ) [MethodName]
+    MethodVarDeclList_VAR(
+      MethodVarDeclList_EPSILON(
+      ) [MethodVarDeclList_EPSILON]
+      VarDeclList(
+        Type(
+         int
+        ) [Type]
+        VarDeclOneOrMore_ONE(
+          VarDecl_VAR(
+           x
+          ) [VarDecl_VAR]
+        ) [VarDeclOneOrMore_ONE]
+      ) [VarDeclList]
+    ) [MethodVarDeclList_VAR]
+    StatementList_STATEMENTS(
+      StatementList_STATEMENTS(
+        StatementList_STATEMENTS(
+          StatementList_STATEMENTS(
+            StatementList_STATEMENTS(
+              StatementList_STATEMENTS(
+                StatementList_EPSILON(
+                ) [StatementList_EPSILON]
+                Statement_PRINT(
+                  Expr_ONE(
+                    Term_ONE(
+                      FactorSign(
+                        UnaryMinus_EPSILON(
+                        ) [UnaryMinus_EPSILON]
+                        Factor_NUMBER(
+                         1
+                        ) [Factor_NUMBER]
+                      ) [FactorSign]
+                    ) [Term_ONE]
+                  ) [Expr_ONE]
+                  MayPrintNumConst_EPSILON(
+                  ) [MayPrintNumConst_EPSILON]
+                ) [Statement_PRINT]
+              ) [StatementList_STATEMENTS]
+              Statement_PRINT(
+                Expr_ONE(
+                  Term_ONE(
+                    FactorSign(
+                      UnaryMinus_MINUS(
+                      ) [UnaryMinus_MINUS]
+                      Factor_NUMBER(
+                       1
+                      ) [Factor_NUMBER]
+                    ) [FactorSign]
+                  ) [Term_ONE]
+                ) [Expr_ONE]
+                MayPrintNumConst_EPSILON(
+                ) [MayPrintNumConst_EPSILON]
+              ) [Statement_PRINT]
+            ) [StatementList_STATEMENTS]
+            Statement_PRINT(
+              Expr_ONE(
+                Term_ONE(
+                  FactorSign(
+                    UnaryMinus_EPSILON(
+                    ) [UnaryMinus_EPSILON]
+                    Factor_CHARACTER(
+                     a
+                    ) [Factor_CHARACTER]
+                  ) [FactorSign]
+                ) [Term_ONE]
+              ) [Expr_ONE]
+              MayPrintNumConst_EPSILON(
+              ) [MayPrintNumConst_EPSILON]
+            ) [Statement_PRINT]
+          ) [StatementList_STATEMENTS]
+          Statement_PRINT(
+            Expr_ONE(
+              Term_ONE(
+                FactorSign(
+                  UnaryMinus_MINUS(
+                  ) [UnaryMinus_MINUS]
+                  Factor_CHARACTER(
+                   a
+                  ) [Factor_CHARACTER]
+                ) [FactorSign]
+              ) [Term_ONE]
+            ) [Expr_ONE]
+            MayPrintNumConst_EPSILON(
+            ) [MayPrintNumConst_EPSILON]
+          ) [Statement_PRINT]
+        ) [StatementList_STATEMENTS]
+        Statement_PRINT(
+          Expr_ONE(
+            Term_ONE(
+              FactorSign(
+                UnaryMinus_EPSILON(
+                ) [UnaryMinus_EPSILON]
+                Factor_BOOLEAN(
+                 0
+                ) [Factor_BOOLEAN]
+              ) [FactorSign]
+            ) [Term_ONE]
+          ) [Expr_ONE]
+          MayPrintNumConst_EPSILON(
+          ) [MayPrintNumConst_EPSILON]
+        ) [Statement_PRINT]
+      ) [StatementList_STATEMENTS]
+      Statement_PRINT(
+        Expr_ONE(
+          Term_ONE(
+            FactorSign(
+              UnaryMinus_MINUS(
+              ) [UnaryMinus_MINUS]
+              Factor_BOOLEAN(
+               0
+              ) [Factor_BOOLEAN]
+            ) [FactorSign]
+          ) [Term_ONE]
+        ) [Expr_ONE]
+        MayPrintNumConst_EPSILON(
+        ) [MayPrintNumConst_EPSILON]
+      ) [Statement_PRINT]
+    ) [StatementList_STATEMENTS]
+  ) [MethodDecl]
+) [Program]
+INFO  19:52:24,489 - ==============ZAVRSEN ISPIS STABLA=====================
+
+INFO  19:52:24,489 - ==============ISPIS SEMANTICKE ANALIZE=====================
+ERROR 19:52:24,533 - GRESKA-factorSign: Ne moze se negirati drugi tip osim int na liniji 11
+ERROR 19:52:24,534 - GRESKA-factorSign: Ne moze se negirati drugi tip osim int na liniji 13
+INFO  19:52:24,534 - ==============ZAVRSEN ISPIS SEMANTICKE ANALIZE=====================
+
+ERROR 19:52:24,537 - Parsiranje NIJE uspesno zavrseno!

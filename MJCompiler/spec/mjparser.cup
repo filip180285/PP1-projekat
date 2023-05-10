@@ -60,13 +60,15 @@ nonterminal Program, ConstVarDeclList, ConstDeclList, VarDeclList, MethodDecl;
 nonterminal Type, ConstDeclOneOrMore, ConstDecl, VarDeclOneOrMore, VarDecl;
 nonterminal MethodVarDeclList, StatementList;
 nonterminal Statement;
-nonterminal DesignatorStatement, Designator, DesignatorArrayName, Expr, Term, FactorSign, DesignatorStatementList;
+nonterminal DesignatorStatement, DesignatorStatementList;
 // Expr, ExprList, Term, TermList,
+
 nonterminal MayPrintNumConst, MayDesignator;
-nonterminal Factor, UnaryMinus, Assignop, Addop, Mulop;
+nonterminal UnaryMinus, Assignop, Addop, Mulop;
 
 nonterminal rs.etf.pp1.symboltable.concepts.Obj ProgramName, MethodName;
-nonterminal rs.etf.pp1.symboltable.concepts.Struct Constant;
+nonterminal rs.etf.pp1.symboltable.concepts.Obj Designator, DesignatorArrayName;
+nonterminal rs.etf.pp1.symboltable.concepts.Struct Constant, FactorSign, Factor, Term, Expr;
 
 
 /*** Program = "program" ident {ConstDecl | VarDecl | ClassDecl } "{" {MethodDecl} "}". ***/
@@ -243,7 +245,7 @@ Factor ::= (Factor_Designator) Designator
 
 Designator ::= (Designator_ONE) IDENTIFIER
 			   |
-			   (Designator_ARRAY) DesignatorArrayName LEFT_BRACKET Expr RIGHT_BRACKET;
+			   (Designator_ARRAY_Elem) DesignatorArrayName LEFT_BRACKET Expr RIGHT_BRACKET;
 			   
 DesignatorArrayName ::= (DesignatorArrayName) IDENTIFIER;
 

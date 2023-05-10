@@ -1,0 +1,211 @@
+INFO  20:31:36,211 - Compiling source file: C:\Users\Korisnik\Desktop\PP1-projekat\MJCompiler\test\program.mj
+INFO  20:31:36,273 - #2 program
+INFO  20:31:36,274 - #9 test301
+INFO  20:31:36,274 - #3 const
+INFO  20:31:36,276 - #9 int
+INFO  20:31:36,276 - #9 x
+INFO  20:31:36,278 - #18 =
+INFO  20:31:36,278 - #10 1
+INFO  20:31:36,278 - #22 ,
+INFO  20:31:36,280 - #9 y
+INFO  20:31:36,280 - #18 =
+INFO  20:31:36,280 - #10 2
+INFO  20:31:36,280 - #21 ;
+INFO  20:31:36,281 - #9 char
+INFO  20:31:36,283 - #9 a
+INFO  20:31:36,284 - #25 [
+INFO  20:31:36,284 - #26 ]
+INFO  20:31:36,284 - #22 ,
+INFO  20:31:36,285 - #9 b
+INFO  20:31:36,285 - #21 ;
+INFO  20:31:36,286 - #27 {
+INFO  20:31:36,288 - #8 void
+INFO  20:31:36,289 - #9 main
+INFO  20:31:36,294 - #23 (
+INFO  20:31:36,296 - #24 )
+INFO  20:31:36,296 - #9 int
+INFO  20:31:36,298 - #9 l1
+INFO  20:31:36,299 - #21 ;
+INFO  20:31:36,299 - #9 char
+INFO  20:31:36,300 - #9 l2
+INFO  20:31:36,300 - #21 ;
+INFO  20:31:36,302 - #9 bool
+INFO  20:31:36,302 - #9 l3
+INFO  20:31:36,302 - #21 ;
+INFO  20:31:36,302 - #9 int
+INFO  20:31:36,302 - #9 l4
+INFO  20:31:36,303 - #25 [
+INFO  20:31:36,303 - #26 ]
+INFO  20:31:36,303 - #21 ;
+INFO  20:31:36,304 - #27 {
+INFO  20:31:36,304 - #9 l1
+INFO  20:31:36,307 - #18 =
+INFO  20:31:36,307 - #9 l2
+INFO  20:31:36,312 - #21 ;
+INFO  20:31:36,317 - #9 l2
+INFO  20:31:36,319 - #18 =
+INFO  20:31:36,319 - #9 nedekl
+INFO  20:31:36,320 - #21 ;
+INFO  20:31:36,320 - #28 }
+INFO  20:31:36,320 - #28 }
+INFO  20:31:36,327 - 
+                     ==============ISPIS STABLA=====================
+INFO  20:31:36,330 - Program(
+  ProgramName(
+   test301
+  ) [ProgramName]
+  ConstVarDeclList_VAR(
+    ConstVarDeclList_CONST(
+      ConstVarDeclList_EPSILON(
+      ) [ConstVarDeclList_EPSILON]
+      ConstDeclList(
+        Type(
+         int
+        ) [Type]
+        ConstDeclOneOrMore_MORE(
+          ConstDecl(
+           x
+            Constant_NUMBER(
+             1
+            ) [Constant_NUMBER]
+          ) [ConstDecl]
+          ConstDeclOneOrMore_ONE(
+            ConstDecl(
+             y
+              Constant_NUMBER(
+               2
+              ) [Constant_NUMBER]
+            ) [ConstDecl]
+          ) [ConstDeclOneOrMore_ONE]
+        ) [ConstDeclOneOrMore_MORE]
+      ) [ConstDeclList]
+    ) [ConstVarDeclList_CONST]
+    VarDeclList(
+      Type(
+       char
+      ) [Type]
+      VarDeclOneOrMore_MORE(
+        VarDecl_ARRAY(
+         a
+        ) [VarDecl_ARRAY]
+        VarDeclOneOrMore_ONE(
+          VarDecl_VAR(
+           b
+          ) [VarDecl_VAR]
+        ) [VarDeclOneOrMore_ONE]
+      ) [VarDeclOneOrMore_MORE]
+    ) [VarDeclList]
+  ) [ConstVarDeclList_VAR]
+  MethodDecl(
+    MethodName(
+     main
+    ) [MethodName]
+    MethodVarDeclList_VAR(
+      MethodVarDeclList_VAR(
+        MethodVarDeclList_VAR(
+          MethodVarDeclList_VAR(
+            MethodVarDeclList_EPSILON(
+            ) [MethodVarDeclList_EPSILON]
+            VarDeclList(
+              Type(
+               int
+              ) [Type]
+              VarDeclOneOrMore_ONE(
+                VarDecl_VAR(
+                 l1
+                ) [VarDecl_VAR]
+              ) [VarDeclOneOrMore_ONE]
+            ) [VarDeclList]
+          ) [MethodVarDeclList_VAR]
+          VarDeclList(
+            Type(
+             char
+            ) [Type]
+            VarDeclOneOrMore_ONE(
+              VarDecl_VAR(
+               l2
+              ) [VarDecl_VAR]
+            ) [VarDeclOneOrMore_ONE]
+          ) [VarDeclList]
+        ) [MethodVarDeclList_VAR]
+        VarDeclList(
+          Type(
+           bool
+          ) [Type]
+          VarDeclOneOrMore_ONE(
+            VarDecl_VAR(
+             l3
+            ) [VarDecl_VAR]
+          ) [VarDeclOneOrMore_ONE]
+        ) [VarDeclList]
+      ) [MethodVarDeclList_VAR]
+      VarDeclList(
+        Type(
+         int
+        ) [Type]
+        VarDeclOneOrMore_ONE(
+          VarDecl_ARRAY(
+           l4
+          ) [VarDecl_ARRAY]
+        ) [VarDeclOneOrMore_ONE]
+      ) [VarDeclList]
+    ) [MethodVarDeclList_VAR]
+    StatementList_STATEMENTS(
+      StatementList_STATEMENTS(
+        StatementList_EPSILON(
+        ) [StatementList_EPSILON]
+        Statement_DesignatorStatement(
+          DesignatorSt_Assign(
+            Designator_ONE(
+             l1
+            ) [Designator_ONE]
+            Assignop(
+            ) [Assignop]
+            Expr_ONE(
+              Term_ONE(
+                FactorSign(
+                  UnaryMinus_EPSILON(
+                  ) [UnaryMinus_EPSILON]
+                  Factor_Designator(
+                    Designator_ONE(
+                     l2
+                    ) [Designator_ONE]
+                  ) [Factor_Designator]
+                ) [FactorSign]
+              ) [Term_ONE]
+            ) [Expr_ONE]
+          ) [DesignatorSt_Assign]
+        ) [Statement_DesignatorStatement]
+      ) [StatementList_STATEMENTS]
+      Statement_DesignatorStatement(
+        DesignatorSt_Assign(
+          Designator_ONE(
+           l2
+          ) [Designator_ONE]
+          Assignop(
+          ) [Assignop]
+          Expr_ONE(
+            Term_ONE(
+              FactorSign(
+                UnaryMinus_EPSILON(
+                ) [UnaryMinus_EPSILON]
+                Factor_Designator(
+                  Designator_ONE(
+                   nedekl
+                  ) [Designator_ONE]
+                ) [Factor_Designator]
+              ) [FactorSign]
+            ) [Term_ONE]
+          ) [Expr_ONE]
+        ) [DesignatorSt_Assign]
+      ) [Statement_DesignatorStatement]
+    ) [StatementList_STATEMENTS]
+  ) [MethodDecl]
+) [Program]
+INFO  20:31:36,332 - ==============ZAVRSEN ISPIS STABLA=====================
+
+INFO  20:31:36,333 - ==============ISPIS SEMANTICKE ANALIZE=====================
+ERROR 20:31:36,378 - GRESKA-designator_ONE: Pristup nedeklarisanoj oznaci nedekl na liniji 10
+INFO  20:31:36,379 - ==============ZAVRSEN ISPIS SEMANTICKE ANALIZE=====================
+
+ERROR 20:31:36,384 - Parsiranje NIJE uspesno zavrseno!

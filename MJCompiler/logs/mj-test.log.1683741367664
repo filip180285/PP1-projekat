@@ -1,0 +1,79 @@
+INFO  19:55:46,139 - Compiling source file: C:\Users\Korisnik\Desktop\PP1-projekat\MJCompiler\test\program.mj
+INFO  19:55:46,172 - #2 program
+INFO  19:55:46,173 - #9 test301
+INFO  19:55:46,173 - #9 int
+INFO  19:55:46,174 - #9 a
+INFO  19:55:46,175 - #21 ;
+INFO  19:55:46,176 - #27 {
+INFO  19:55:46,177 - #8 void
+INFO  19:55:46,177 - #9 main
+INFO  19:55:46,177 - #23 (
+INFO  19:55:46,178 - #24 )
+INFO  19:55:46,178 - #27 {
+INFO  19:55:46,178 - #9 a
+INFO  19:55:46,179 - #18 =
+INFO  19:55:46,179 - #9 x
+INFO  19:55:46,180 - #21 ;
+INFO  19:55:46,182 - #28 }
+INFO  19:55:46,182 - #28 }
+INFO  19:55:46,184 - 
+                     ==============ISPIS STABLA=====================
+INFO  19:55:46,184 - Program(
+  ProgramName(
+   test301
+  ) [ProgramName]
+  ConstVarDeclList_VAR(
+    ConstVarDeclList_EPSILON(
+    ) [ConstVarDeclList_EPSILON]
+    VarDeclList(
+      Type(
+       int
+      ) [Type]
+      VarDeclOneOrMore_ONE(
+        VarDecl_VAR(
+         a
+        ) [VarDecl_VAR]
+      ) [VarDeclOneOrMore_ONE]
+    ) [VarDeclList]
+  ) [ConstVarDeclList_VAR]
+  MethodDecl(
+    MethodName(
+     main
+    ) [MethodName]
+    MethodVarDeclList_EPSILON(
+    ) [MethodVarDeclList_EPSILON]
+    StatementList_STATEMENTS(
+      StatementList_EPSILON(
+      ) [StatementList_EPSILON]
+      Statement_DesignatorStatement(
+        DesignatorSt_Assign(
+          Designator_ONE(
+           a
+          ) [Designator_ONE]
+          Assignop(
+          ) [Assignop]
+          Expr_ONE(
+            Term_ONE(
+              FactorSign(
+                UnaryMinus_EPSILON(
+                ) [UnaryMinus_EPSILON]
+                Factor_Designator(
+                  Designator_ONE(
+                   x
+                  ) [Designator_ONE]
+                ) [Factor_Designator]
+              ) [FactorSign]
+            ) [Term_ONE]
+          ) [Expr_ONE]
+        ) [DesignatorSt_Assign]
+      ) [Statement_DesignatorStatement]
+    ) [StatementList_STATEMENTS]
+  ) [MethodDecl]
+) [Program]
+INFO  19:55:46,190 - ==============ZAVRSEN ISPIS STABLA=====================
+
+INFO  19:55:46,190 - ==============ISPIS SEMANTICKE ANALIZE=====================
+ERROR 19:55:46,203 - GRESKA-designator_ONE: Pristup nedeklarisanoj oznaci x na liniji 8
+INFO  19:55:46,203 - ==============ZAVRSEN ISPIS SEMANTICKE ANALIZE=====================
+
+ERROR 19:55:46,204 - Parsiranje NIJE uspesno zavrseno!

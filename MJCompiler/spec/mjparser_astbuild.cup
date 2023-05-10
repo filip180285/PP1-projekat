@@ -70,23 +70,19 @@ nonterminal MethodVarDeclList MethodVarDeclList;
 nonterminal StatementList StatementList;
 nonterminal Statement Statement;
 nonterminal DesignatorStatement DesignatorStatement;
-nonterminal Designator Designator;
-nonterminal DesignatorArrayName DesignatorArrayName;
-nonterminal Expr Expr;
-nonterminal Term Term;
-nonterminal FactorSign FactorSign;
 nonterminal DesignatorStatementList DesignatorStatementList;
 // Expr, ExprList, Term, TermList,
+
 nonterminal MayPrintNumConst MayPrintNumConst;
 nonterminal MayDesignator MayDesignator;
-nonterminal Factor Factor;
 nonterminal UnaryMinus UnaryMinus;
 nonterminal Assignop Assignop;
 nonterminal Addop Addop;
 nonterminal Mulop Mulop;
 
 nonterminal rs.etf.pp1.symboltable.concepts.Obj ProgramName, MethodName;
-nonterminal rs.etf.pp1.symboltable.concepts.Struct Constant;
+nonterminal rs.etf.pp1.symboltable.concepts.Obj Designator, DesignatorArrayName;
+nonterminal rs.etf.pp1.symboltable.concepts.Struct Constant, FactorSign, Factor, Term, Expr;
 
 
 /*** Program = "program" ident {ConstDecl | VarDecl | ClassDecl } "{" {MethodDecl} "}". ***/
@@ -263,7 +259,7 @@ Factor ::= (Factor_Designator) Designator:D1 {: RESULT=new Factor_Designator(D1)
 
 Designator ::= (Designator_ONE) IDENTIFIER:I1 {: RESULT=new Designator_ONE(I1); RESULT.setLine(I1left); :}
 			   |
-			   (Designator_ARRAY) DesignatorArrayName:D1 LEFT_BRACKET Expr:E2 RIGHT_BRACKET {: RESULT=new Designator_ARRAY(D1, E2); RESULT.setLine(D1left); :};
+			   (Designator_ARRAY_Elem) DesignatorArrayName:D1 LEFT_BRACKET Expr:E2 RIGHT_BRACKET {: RESULT=new Designator_ARRAY_Elem(D1, E2); RESULT.setLine(D1left); :};
 			   
 DesignatorArrayName ::= (DesignatorArrayName) IDENTIFIER:I1 {: RESULT=new DesignatorArrayName(I1); RESULT.setLine(I1left); :};
 

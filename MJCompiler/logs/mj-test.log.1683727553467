@@ -1,0 +1,70 @@
+INFO  16:04:12,428 - Compiling source file: C:\Users\Korisnik\Desktop\PP1-projekat\MJCompiler\test\program.mj
+INFO  16:04:12,446 - #2 program
+INFO  16:04:12,446 - #9 test301
+INFO  16:04:12,447 - #27 {
+INFO  16:04:12,447 - #8 void
+INFO  16:04:12,447 - #9 main
+INFO  16:04:12,447 - #23 (
+INFO  16:04:12,448 - #24 )
+INFO  16:04:12,448 - #9 int
+INFO  16:04:12,448 - #9 x
+INFO  16:04:12,449 - #21 ;
+INFO  16:04:12,449 - #27 {
+INFO  16:04:12,449 - #5 print
+INFO  16:04:12,450 - #23 (
+INFO  16:04:12,450 - #14 -
+INFO  16:04:12,450 - #11 a
+INFO  16:04:12,450 - #24 )
+INFO  16:04:12,452 - #21 ;
+INFO  16:04:12,452 - #28 }
+INFO  16:04:12,452 - #28 }
+INFO  16:04:12,453 - 
+                     ==============ISPIS STABLA=====================
+INFO  16:04:12,455 - Program(
+  ProgramName(
+   test301
+  ) [ProgramName]
+  ConstVarDeclList_EPSILON(
+  ) [ConstVarDeclList_EPSILON]
+  MethodDecl(
+    MethodName(
+     main
+    ) [MethodName]
+    MethodVarDeclList_VAR(
+      MethodVarDeclList_EPSILON(
+      ) [MethodVarDeclList_EPSILON]
+      VarDeclList(
+        Type(
+         int
+        ) [Type]
+        VarDeclOneOrMore_ONE(
+          VarDecl_VAR(
+           x
+          ) [VarDecl_VAR]
+        ) [VarDeclOneOrMore_ONE]
+      ) [VarDeclList]
+    ) [MethodVarDeclList_VAR]
+    StatementList_STATEMENTS(
+      StatementList_EPSILON(
+      ) [StatementList_EPSILON]
+      Statement_PRINT(
+        Expr_ONE(
+          Term_ONE(
+            FactorSign(
+              UnaryMinus_MINUS(
+              ) [UnaryMinus_MINUS]
+              Factor_CHARACTER(
+               a
+              ) [Factor_CHARACTER]
+            ) [FactorSign]
+          ) [Term_ONE]
+        ) [Expr_ONE]
+        MayPrintNumConst_EPSILON(
+        ) [MayPrintNumConst_EPSILON]
+      ) [Statement_PRINT]
+    ) [StatementList_STATEMENTS]
+  ) [MethodDecl]
+) [Program]
+INFO  16:04:12,455 - ==============ZAVRSEN ISPIS STABLA=====================
+
+INFO  16:04:12,455 - ==============ISPIS SEMANTICKE ANALIZE=====================

@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 10/4/2023 2:24:8
+// 10/4/2023 19:22:5
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -9,6 +9,8 @@ public class FactorSign implements SyntaxNode {
 
     private SyntaxNode parent;
     private int line;
+    public rs.etf.pp1.symboltable.concepts.Struct struct = null;
+
     private UnaryMinus UnaryMinus;
     private Factor Factor;
 
