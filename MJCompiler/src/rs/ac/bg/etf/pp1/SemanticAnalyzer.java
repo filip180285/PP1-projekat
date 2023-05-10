@@ -35,7 +35,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     private Struct currentType; // za cuvanje tipa konstanti i varijabli
     private int currentConstValue; // za cuvanje vrednosti konstante
     
-    private boolean mainDetected = false; // da bi razlikovali opsege pri ubacivanju varijabli u tabelu simbola
+    private boolean mainDetected = false; // za razlikovanje opsega pri ubacivanju varijabli u tabelu simbola
     
     // ProgramName ::= (ProgramName) IDENTIFIER;
     @Override
@@ -171,7 +171,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     public void visit(MethodName methodName) {
     	String methName = methodName.getI1();
     	
-    	if(methName.equals("main") == false) {
+    	if("main".equals(methName) == false) {
     		report_error("GRESKA-MethodName: Ime metode mora biti main", methodName);
     		return;
     	}

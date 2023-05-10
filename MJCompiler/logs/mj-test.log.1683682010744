@@ -1,0 +1,78 @@
+INFO  03:26:24,442 - Compiling source file: C:\Users\Korisnik\Desktop\PP1-projekat\MJCompiler\test\program.mj
+INFO  03:26:24,461 - #2 program
+INFO  03:26:24,461 - #9 test301
+INFO  03:26:24,461 - #9 int
+INFO  03:26:24,461 - #9 niz1
+INFO  03:26:24,462 - #25 [
+INFO  03:26:24,462 - #26 ]
+INFO  03:26:24,462 - #22 ,
+INFO  03:26:24,462 - #9 niz2
+INFO  03:26:24,462 - #25 [
+INFO  03:26:24,462 - #26 ]
+INFO  03:26:24,462 - #21 ;
+INFO  03:26:24,462 - #27 {
+INFO  03:26:24,463 - #8 void
+INFO  03:26:24,463 - #9 main
+INFO  03:26:24,463 - #23 (
+INFO  03:26:24,463 - #24 )
+INFO  03:26:24,463 - #9 int
+INFO  03:26:24,464 - #9 niz3
+INFO  03:26:24,464 - #25 [
+INFO  03:26:24,464 - #26 ]
+INFO  03:26:24,464 - #21 ;
+INFO  03:26:24,464 - #27 {
+INFO  03:26:24,466 - #28 }
+INFO  03:26:24,466 - #28 }
+INFO  03:26:24,467 - 
+                     ==============ISPIS STABLA=====================
+INFO  03:26:24,467 - Program(
+  ProgramName(
+   test301
+  ) [ProgramName]
+  ConstVarDeclList_VAR(
+    ConstVarDeclList_EPSILON(
+    ) [ConstVarDeclList_EPSILON]
+    VarDeclList(
+      Type(
+       int
+      ) [Type]
+      VarDeclOneOrMore_MORE(
+        VarDecl_ARRAY(
+         niz1
+        ) [VarDecl_ARRAY]
+        VarDeclOneOrMore_ONE(
+          VarDecl_ARRAY(
+           niz2
+          ) [VarDecl_ARRAY]
+        ) [VarDeclOneOrMore_ONE]
+      ) [VarDeclOneOrMore_MORE]
+    ) [VarDeclList]
+  ) [ConstVarDeclList_VAR]
+  MethodDecl(
+    MethodName(
+     main
+    ) [MethodName]
+    MethodVarDeclList_VAR(
+      MethodVarDeclList_EPSILON(
+      ) [MethodVarDeclList_EPSILON]
+      VarDeclList(
+        Type(
+         int
+        ) [Type]
+        VarDeclOneOrMore_ONE(
+          VarDecl_ARRAY(
+           niz3
+          ) [VarDecl_ARRAY]
+        ) [VarDeclOneOrMore_ONE]
+      ) [VarDeclList]
+    ) [MethodVarDeclList_VAR]
+    StatementList_EPSILON(
+    ) [StatementList_EPSILON]
+  ) [MethodDecl]
+) [Program]
+INFO  03:26:24,467 - ==============ZAVRSEN ISPIS STABLA=====================
+
+INFO  03:26:24,468 - ==============ISPIS SEMANTICKE ANALIZE=====================
+INFO  03:26:24,475 - ==============ZAVRSEN ISPIS SEMANTICKE ANALIZE=====================
+
+INFO  03:26:24,476 - Parsiranje uspesno zavrseno!
