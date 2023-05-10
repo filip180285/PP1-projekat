@@ -1,0 +1,122 @@
+INFO  01:53:05,671 - Compiling source file: C:\Users\Korisnik\Desktop\PP1-projekat\MJCompiler\test\program.mj
+INFO  01:53:05,690 - #2 program
+INFO  01:53:05,690 - #9 test301
+INFO  01:53:05,690 - #3 const
+INFO  01:53:05,691 - #9 int
+INFO  01:53:05,691 - #9 a
+INFO  01:53:05,691 - #18 =
+INFO  01:53:05,691 - #10 3
+INFO  01:53:05,691 - #21 ;
+INFO  01:53:05,692 - #9 int
+INFO  01:53:05,692 - #9 krka
+INFO  01:53:05,693 - #22 ,
+INFO  01:53:05,693 - #9 olimpija
+INFO  01:53:05,693 - #22 ,
+INFO  01:53:05,693 - #9 buducnost
+INFO  01:53:05,693 - #21 ;
+INFO  01:53:05,693 - #9 bool
+INFO  01:53:05,693 - #9 cz
+INFO  01:53:05,694 - #22 ,
+INFO  01:53:05,694 - #9 par
+INFO  01:53:05,694 - #21 ;
+INFO  01:53:05,694 - #9 char
+INFO  01:53:05,696 - #9 cdvita
+INFO  01:53:05,696 - #21 ;
+INFO  01:53:05,696 - #27 {
+INFO  01:53:05,696 - #8 void
+INFO  01:53:05,696 - #9 main
+INFO  01:53:05,696 - #23 (
+INFO  01:53:05,696 - #24 )
+INFO  01:53:05,696 - #27 {
+INFO  01:53:05,697 - #28 }
+INFO  01:53:05,697 - #28 }
+INFO  01:53:05,698 - 
+                     ==============ISPIS STABLA=====================
+INFO  01:53:05,698 - Program(
+  ProgramName(
+   test301
+  ) [ProgramName]
+  ConstVarDeclList_VAR(
+    ConstVarDeclList_VAR(
+      ConstVarDeclList_VAR(
+        ConstVarDeclList_CONST(
+          ConstVarDeclList_EPSILON(
+          ) [ConstVarDeclList_EPSILON]
+          ConstDeclList(
+            Type(
+             int
+            ) [Type]
+            ConstDeclOneOrMore_ONE(
+              ConstDecl(
+               a
+                Constant_NUMBER(
+                 3
+                ) [Constant_NUMBER]
+              ) [ConstDecl]
+            ) [ConstDeclOneOrMore_ONE]
+          ) [ConstDeclList]
+        ) [ConstVarDeclList_CONST]
+        VarDeclList(
+          Type(
+           int
+          ) [Type]
+          VarDeclOneOrMore_MORE(
+            VarDecl_VAR(
+             krka
+            ) [VarDecl_VAR]
+            VarDeclOneOrMore_MORE(
+              VarDecl_VAR(
+               olimpija
+              ) [VarDecl_VAR]
+              VarDeclOneOrMore_ONE(
+                VarDecl_VAR(
+                 buducnost
+                ) [VarDecl_VAR]
+              ) [VarDeclOneOrMore_ONE]
+            ) [VarDeclOneOrMore_MORE]
+          ) [VarDeclOneOrMore_MORE]
+        ) [VarDeclList]
+      ) [ConstVarDeclList_VAR]
+      VarDeclList(
+        Type(
+         bool
+        ) [Type]
+        VarDeclOneOrMore_MORE(
+          VarDecl_VAR(
+           cz
+          ) [VarDecl_VAR]
+          VarDeclOneOrMore_ONE(
+            VarDecl_VAR(
+             par
+            ) [VarDecl_VAR]
+          ) [VarDeclOneOrMore_ONE]
+        ) [VarDeclOneOrMore_MORE]
+      ) [VarDeclList]
+    ) [ConstVarDeclList_VAR]
+    VarDeclList(
+      Type(
+       char
+      ) [Type]
+      VarDeclOneOrMore_ONE(
+        VarDecl_VAR(
+         cdvita
+        ) [VarDecl_VAR]
+      ) [VarDeclOneOrMore_ONE]
+    ) [VarDeclList]
+  ) [ConstVarDeclList_VAR]
+  MethodDecl(
+    MethodName(
+     main
+    ) [MethodName]
+    MethodVarDeclList_EPSILON(
+    ) [MethodVarDeclList_EPSILON]
+    StatementList_EPSILON(
+    ) [StatementList_EPSILON]
+  ) [MethodDecl]
+) [Program]
+INFO  01:53:05,699 - ==============ZAVRSEN ISPIS STABLA=====================
+
+INFO  01:53:05,699 - ==============ISPIS SEMANTICKE ANALIZE=====================
+INFO  01:53:05,706 - ==============ZAVRSEN ISPIS SEMANTICKE ANALIZE=====================
+
+INFO  01:53:05,707 - Parsiranje uspesno zavrseno!

@@ -1,0 +1,208 @@
+INFO  02:02:01,824 - Compiling source file: C:\Users\Korisnik\Desktop\PP1-projekat\MJCompiler\test\program.mj
+INFO  02:02:01,842 - #2 program
+INFO  02:02:01,842 - #9 test301
+INFO  02:02:01,842 - #3 const
+INFO  02:02:01,843 - #9 int
+INFO  02:02:01,843 - #9 a
+INFO  02:02:01,844 - #18 =
+INFO  02:02:01,844 - #10 3
+INFO  02:02:01,844 - #21 ;
+INFO  02:02:01,844 - #9 int
+INFO  02:02:01,845 - #9 krka
+INFO  02:02:01,845 - #22 ,
+INFO  02:02:01,845 - #9 olimpija
+INFO  02:02:01,845 - #22 ,
+INFO  02:02:01,845 - #9 buducnost
+INFO  02:02:01,845 - #21 ;
+INFO  02:02:01,845 - #9 bool
+INFO  02:02:01,846 - #9 cz
+INFO  02:02:01,846 - #22 ,
+INFO  02:02:01,846 - #9 par
+INFO  02:02:01,846 - #21 ;
+INFO  02:02:01,846 - #9 char
+INFO  02:02:01,848 - #9 cdvita
+INFO  02:02:01,848 - #21 ;
+INFO  02:02:01,848 - #9 int
+INFO  02:02:01,848 - #9 niz
+INFO  02:02:01,848 - #25 [
+INFO  02:02:01,848 - #26 ]
+INFO  02:02:01,848 - #21 ;
+INFO  02:02:01,848 - #9 char
+INFO  02:02:01,848 - #9 kk
+INFO  02:02:01,848 - #25 [
+INFO  02:02:01,848 - #26 ]
+INFO  02:02:01,848 - #22 ,
+INFO  02:02:01,848 - #9 bb
+INFO  02:02:01,848 - #25 [
+INFO  02:02:01,848 - #26 ]
+INFO  02:02:01,849 - #21 ;
+INFO  02:02:01,849 - #9 bool
+INFO  02:02:01,849 - #9 ss
+INFO  02:02:01,849 - #25 [
+INFO  02:02:01,849 - #26 ]
+INFO  02:02:01,849 - #21 ;
+INFO  02:02:01,849 - #9 int
+INFO  02:02:01,849 - #9 ss
+INFO  02:02:01,849 - #22 ,
+INFO  02:02:01,849 - #9 bb
+INFO  02:02:01,849 - #25 [
+INFO  02:02:01,849 - #26 ]
+INFO  02:02:01,849 - #21 ;
+INFO  02:02:01,849 - #27 {
+INFO  02:02:01,849 - #8 void
+INFO  02:02:01,849 - #9 main
+INFO  02:02:01,849 - #23 (
+INFO  02:02:01,850 - #24 )
+INFO  02:02:01,850 - #27 {
+INFO  02:02:01,850 - #28 }
+INFO  02:02:01,850 - #28 }
+INFO  02:02:01,851 - 
+                     ==============ISPIS STABLA=====================
+INFO  02:02:01,852 - Program(
+  ProgramName(
+   test301
+  ) [ProgramName]
+  ConstVarDeclList_VAR(
+    ConstVarDeclList_VAR(
+      ConstVarDeclList_VAR(
+        ConstVarDeclList_VAR(
+          ConstVarDeclList_VAR(
+            ConstVarDeclList_VAR(
+              ConstVarDeclList_VAR(
+                ConstVarDeclList_CONST(
+                  ConstVarDeclList_EPSILON(
+                  ) [ConstVarDeclList_EPSILON]
+                  ConstDeclList(
+                    Type(
+                     int
+                    ) [Type]
+                    ConstDeclOneOrMore_ONE(
+                      ConstDecl(
+                       a
+                        Constant_NUMBER(
+                         3
+                        ) [Constant_NUMBER]
+                      ) [ConstDecl]
+                    ) [ConstDeclOneOrMore_ONE]
+                  ) [ConstDeclList]
+                ) [ConstVarDeclList_CONST]
+                VarDeclList(
+                  Type(
+                   int
+                  ) [Type]
+                  VarDeclOneOrMore_MORE(
+                    VarDecl_VAR(
+                     krka
+                    ) [VarDecl_VAR]
+                    VarDeclOneOrMore_MORE(
+                      VarDecl_VAR(
+                       olimpija
+                      ) [VarDecl_VAR]
+                      VarDeclOneOrMore_ONE(
+                        VarDecl_VAR(
+                         buducnost
+                        ) [VarDecl_VAR]
+                      ) [VarDeclOneOrMore_ONE]
+                    ) [VarDeclOneOrMore_MORE]
+                  ) [VarDeclOneOrMore_MORE]
+                ) [VarDeclList]
+              ) [ConstVarDeclList_VAR]
+              VarDeclList(
+                Type(
+                 bool
+                ) [Type]
+                VarDeclOneOrMore_MORE(
+                  VarDecl_VAR(
+                   cz
+                  ) [VarDecl_VAR]
+                  VarDeclOneOrMore_ONE(
+                    VarDecl_VAR(
+                     par
+                    ) [VarDecl_VAR]
+                  ) [VarDeclOneOrMore_ONE]
+                ) [VarDeclOneOrMore_MORE]
+              ) [VarDeclList]
+            ) [ConstVarDeclList_VAR]
+            VarDeclList(
+              Type(
+               char
+              ) [Type]
+              VarDeclOneOrMore_ONE(
+                VarDecl_VAR(
+                 cdvita
+                ) [VarDecl_VAR]
+              ) [VarDeclOneOrMore_ONE]
+            ) [VarDeclList]
+          ) [ConstVarDeclList_VAR]
+          VarDeclList(
+            Type(
+             int
+            ) [Type]
+            VarDeclOneOrMore_ONE(
+              VarDecl_ARRAY(
+               niz
+              ) [VarDecl_ARRAY]
+            ) [VarDeclOneOrMore_ONE]
+          ) [VarDeclList]
+        ) [ConstVarDeclList_VAR]
+        VarDeclList(
+          Type(
+           char
+          ) [Type]
+          VarDeclOneOrMore_MORE(
+            VarDecl_ARRAY(
+             kk
+            ) [VarDecl_ARRAY]
+            VarDeclOneOrMore_ONE(
+              VarDecl_ARRAY(
+               bb
+              ) [VarDecl_ARRAY]
+            ) [VarDeclOneOrMore_ONE]
+          ) [VarDeclOneOrMore_MORE]
+        ) [VarDeclList]
+      ) [ConstVarDeclList_VAR]
+      VarDeclList(
+        Type(
+         bool
+        ) [Type]
+        VarDeclOneOrMore_ONE(
+          VarDecl_ARRAY(
+           ss
+          ) [VarDecl_ARRAY]
+        ) [VarDeclOneOrMore_ONE]
+      ) [VarDeclList]
+    ) [ConstVarDeclList_VAR]
+    VarDeclList(
+      Type(
+       int
+      ) [Type]
+      VarDeclOneOrMore_MORE(
+        VarDecl_VAR(
+         ss
+        ) [VarDecl_VAR]
+        VarDeclOneOrMore_ONE(
+          VarDecl_ARRAY(
+           bb
+          ) [VarDecl_ARRAY]
+        ) [VarDeclOneOrMore_ONE]
+      ) [VarDeclOneOrMore_MORE]
+    ) [VarDeclList]
+  ) [ConstVarDeclList_VAR]
+  MethodDecl(
+    MethodName(
+     main
+    ) [MethodName]
+    MethodVarDeclList_EPSILON(
+    ) [MethodVarDeclList_EPSILON]
+    StatementList_EPSILON(
+    ) [StatementList_EPSILON]
+  ) [MethodDecl]
+) [Program]
+INFO  02:02:01,852 - ==============ZAVRSEN ISPIS STABLA=====================
+
+INFO  02:02:01,852 - ==============ISPIS SEMANTICKE ANALIZE=====================
+ERROR 02:02:01,861 - GRESKA-VarDecl_VAR: Ime ss je vec deklarisano na liniji 12
+ERROR 02:02:01,861 - GRESKA-VarDecl_ARRAY: Ime bb je vec deklarisano na liniji 12
+INFO  02:02:01,861 - ==============ZAVRSEN ISPIS SEMANTICKE ANALIZE=====================
+
+ERROR 02:02:01,861 - Parsiranje NIJE uspesno zavrseno!

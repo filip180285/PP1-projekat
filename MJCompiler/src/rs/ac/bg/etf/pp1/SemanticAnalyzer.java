@@ -35,6 +35,8 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     private Struct currentType; // za cuvanje tipa konstanti i varijabli
     private int currentConstValue; // za cuvanje vrednosti konstante
     
+    private boolean mainDetected = false; // da bi razlikovali opsege pri ubacivanju varijabli u tabelu simbola
+    
     // ProgramName ::= (ProgramName) IDENTIFIER;
     @Override
     public void visit(ProgramName programName) {
@@ -46,7 +48,8 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     // Program ::= (Program) PROGRAM ProgramName ConstVarDeclList LEFT_BRACE MethodDecl RIGHT_BRACE;
     @Override
     public void visit(Program program){
-    	Tab.chainLocalSymbols(program.getProgramName().obj);
+    	Obj progObj = program.getProgramName().obj;
+    	Tab.chainLocalSymbols(progObj);
     	Tab.closeScope();
     }
     
@@ -54,6 +57,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     @Override
     public void visit(Type type) {
     	Obj typeObj = Tab.find(type.getI1());
+    	
     	if(typeObj != Tab.noObj) { // tip postoji
     		if(typeObj.getKind() == Obj.Type) {	// int, char, bool
     			currentType = typeObj.getType();
@@ -78,13 +82,13 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     	Obj constObj = Tab.find(constName);
     	
     	if(constObj != Tab.noObj) {
-    		report_error("GRESKA-ConstDecl: Ime " + constName + " je vec definisano", constDecl);
+    		report_error("GRESKA-ConstDecl: Ime konstante" + constName + " je vec deklarisano", constDecl);
     		return;
     	} else {
     		Constant c = constDecl.getConstant();
     		Struct cType = c.struct;
     		if(cType.assignableTo(currentType) == false) { 
-    			report_error("GRESKA-ConstDecl: Neadekvatna dodela konstanti " + constName , constDecl);
+    			report_error("GRESKA-ConstDecl: Neadekvatna dodela vrednosti konstanti " + constName , constDecl);
         		return;
     		}
     		constObj = Tab.insert(Obj.Con, constName, currentType);
@@ -114,4 +118,86 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     	currentConstValue = constant_BOOLEAN.getB1();
     }
     
+    // VarDecl ::= (VarDecl_VAR) IDENTIFIER
+    @Override
+    public void visit(VarDecl_VAR varDecl_VAR) {
+    	String varName = varDecl_VAR.getI1();
+    	Obj varObj = null;
+    	
+    	if(mainDetected == false) {
+    		varObj = Tab.find(varName); // trazi se u globalnom opsegu
+    	}
+    	else {
+    		varObj = Tab.currentScope.findSymbol(varName); // trazi se u lokalnom i universe opsegu
+    		if(varObj == null) {
+    			varObj = Tab.currentScope.getOuter().getOuter().findSymbol(varName);
+    		}
+    	}
+    	
+    	if((mainDetected == false && varObj != Tab.noObj) || (mainDetected == true && varObj != null)) {
+    		report_error("GRESKA-VarDecl_VAR: Ime varijable " + varName + " je vec deklarisano", varDecl_VAR);
+    		return;
+    	} else {
+    		Tab.insert(Obj.Var, varName, currentType);
+    	}
+    }
+    
+    // VarDecl ::= (VarDecl_ARRAY) IDENTIFIER LEFT_BRACKET RIGHT_BRACKET;
+    @Override
+    public void visit(VarDecl_ARRAY varDecl_ARRAY) {
+    	String arrayName = varDecl_ARRAY.getI1();
+    	Obj varObj = null;
+    	
+    	if(mainDetected == false) {
+    		varObj = Tab.find(arrayName); // trazi se u globalnom opsegu
+    	}
+    	else {
+    		varObj = Tab.currentScope.findSymbol(arrayName); // trazi se u lokalnom i universe opsegu
+    		if(varObj == null) {
+    			varObj = Tab.currentScope.getOuter().getOuter().findSymbol(arrayName);
+    		}
+    	}
+
+    	if((mainDetected == false && varObj != Tab.noObj) || (mainDetected == true && varObj != null)) {
+    		report_error("GRESKA-VarDecl_ARRAY: Ime niza " + arrayName + " je vec deklarisano", varDecl_ARRAY);
+    		return;
+    	} else {
+    		Tab.insert(Obj.Var, arrayName, new Struct(Struct.Array, currentType));
+    	}
+    }
+    
+    // MethodName ::= (MethodName) IDENTIFIER;
+    @Override
+    public void visit(MethodName methodName) {
+    	String methName = methodName.getI1();
+    	
+    	if(methName.equals("main") == false) {
+    		report_error("GRESKA-MethodName: Ime metode mora biti main", methodName);
+    		return;
+    	}
+    	mainDetected = true;
+    	methodName.obj = Tab.insert(Obj.Meth, methName, Tab.noType);
+    	Tab.openScope();
+    }
+    
+    // MethodDecl ::= (MethodDecl) VOID MethodName LEFT_PARENTHESIS RIGHT_PARENTHESIS MethodVarDeclList LEFT_BRACE StatementList RIGHT_BRACE;
+    @Override
+    public void visit(MethodDecl methodDecl) {
+    	if(mainDetected == true) {
+	    	Obj methObj = methodDecl.getMethodName().obj;
+		    Tab.chainLocalSymbols(methObj);
+		    Tab.closeScope();
+    	}
+    }
 }
+
+
+
+
+
+
+
+
+
+
+

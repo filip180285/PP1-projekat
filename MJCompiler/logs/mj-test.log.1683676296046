@@ -1,0 +1,102 @@
+INFO  01:29:00,251 - Compiling source file: C:\Users\Korisnik\Desktop\PP1-projekat\MJCompiler\test\program.mj
+INFO  01:29:00,269 - #2 program
+INFO  01:29:00,269 - #9 test301
+INFO  01:29:00,269 - #3 const
+INFO  01:29:00,270 - #9 int
+INFO  01:29:00,270 - #9 a
+INFO  01:29:00,270 - #18 =
+INFO  01:29:00,271 - #10 3
+INFO  01:29:00,271 - #21 ;
+INFO  01:29:00,271 - #3 const
+INFO  01:29:00,272 - #9 int
+INFO  01:29:00,272 - #9 b
+INFO  01:29:00,272 - #18 =
+INFO  01:29:00,272 - #10 4
+INFO  01:29:00,272 - #22 ,
+INFO  01:29:00,272 - #9 c
+INFO  01:29:00,272 - #18 =
+INFO  01:29:00,272 - #12 1
+INFO  01:29:00,272 - #22 ,
+INFO  01:29:00,272 - #9 d
+INFO  01:29:00,272 - #18 =
+INFO  01:29:00,272 - #10 5
+INFO  01:29:00,272 - #21 ;
+INFO  01:29:00,274 - #27 {
+INFO  01:29:00,274 - #8 void
+INFO  01:29:00,274 - #9 main
+INFO  01:29:00,274 - #23 (
+INFO  01:29:00,275 - #24 )
+INFO  01:29:00,275 - #27 {
+INFO  01:29:00,275 - #28 }
+INFO  01:29:00,276 - #28 }
+INFO  01:29:00,277 - 
+                     ==============ISPIS STABLA=====================
+INFO  01:29:00,277 - Program(
+  ProgramName(
+   test301
+  ) [ProgramName]
+  ConstVarDeclList_CONST(
+    ConstVarDeclList_CONST(
+      ConstVarDeclList_EPSILON(
+      ) [ConstVarDeclList_EPSILON]
+      ConstDeclList(
+        Type(
+         int
+        ) [Type]
+        ConstDeclOneOrMore_ONE(
+          ConstDecl(
+           a
+            Constant_NUMBER(
+             3
+            ) [Constant_NUMBER]
+          ) [ConstDecl]
+        ) [ConstDeclOneOrMore_ONE]
+      ) [ConstDeclList]
+    ) [ConstVarDeclList_CONST]
+    ConstDeclList(
+      Type(
+       int
+      ) [Type]
+      ConstDeclOneOrMore_MORE(
+        ConstDecl(
+         b
+          Constant_NUMBER(
+           4
+          ) [Constant_NUMBER]
+        ) [ConstDecl]
+        ConstDeclOneOrMore_MORE(
+          ConstDecl(
+           c
+            Constant_BOOLEAN(
+             1
+            ) [Constant_BOOLEAN]
+          ) [ConstDecl]
+          ConstDeclOneOrMore_ONE(
+            ConstDecl(
+             d
+              Constant_NUMBER(
+               5
+              ) [Constant_NUMBER]
+            ) [ConstDecl]
+          ) [ConstDeclOneOrMore_ONE]
+        ) [ConstDeclOneOrMore_MORE]
+      ) [ConstDeclOneOrMore_MORE]
+    ) [ConstDeclList]
+  ) [ConstVarDeclList_CONST]
+  MethodDecl(
+    MethodName(
+     main
+    ) [MethodName]
+    MethodVarDeclList_EPSILON(
+    ) [MethodVarDeclList_EPSILON]
+    StatementList_EPSILON(
+    ) [StatementList_EPSILON]
+  ) [MethodDecl]
+) [Program]
+INFO  01:29:00,277 - ==============ZAVRSEN ISPIS STABLA=====================
+
+INFO  01:29:00,277 - ==============ISPIS SEMANTICKE ANALIZE=====================
+ERROR 01:29:00,285 - GRESKA-ConstDecl: Neadekvatna dodela konstanti c na liniji 6
+INFO  01:29:00,285 - ==============ZAVRSEN ISPIS SEMANTICKE ANALIZE=====================
+
+ERROR 01:29:00,286 - Parsiranje NIJE uspesno zavrseno!

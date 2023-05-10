@@ -1,0 +1,75 @@
+INFO  01:51:55,288 - Compiling source file: C:\Users\Korisnik\Desktop\PP1-projekat\MJCompiler\test\program.mj
+INFO  01:51:55,307 - #2 program
+INFO  01:51:55,307 - #9 test301
+INFO  01:51:55,307 - #3 const
+INFO  01:51:55,307 - #9 int
+INFO  01:51:55,308 - #9 a
+INFO  01:51:55,308 - #18 =
+INFO  01:51:55,308 - #10 3
+INFO  01:51:55,308 - #21 ;
+INFO  01:51:55,309 - #9 int
+INFO  01:51:55,309 - #9 krka
+INFO  01:51:55,309 - #18 =
+ERROR 01:51:55,309 - 
+Sintaksna greska na liniji 6
+INFO  01:51:55,309 - #10 9
+INFO  01:51:55,309 - #21 ;
+INFO  01:51:55,309 - #27 {
+INFO  01:51:55,310 - #8 void
+INFO  01:51:55,310 - #9 main
+ERROR 01:51:55,310 - OPORAVAK od greske u definiciji promenljive izvrsen u liniji 6
+INFO  01:51:55,311 - #23 (
+INFO  01:51:55,311 - #24 )
+INFO  01:51:55,311 - #27 {
+INFO  01:51:55,312 - #28 }
+INFO  01:51:55,312 - #28 }
+INFO  01:51:55,313 - 
+                     ==============ISPIS STABLA=====================
+INFO  01:51:55,313 - Program(
+  ProgramName(
+   test301
+  ) [ProgramName]
+  ConstVarDeclList_VAR(
+    ConstVarDeclList_CONST(
+      ConstVarDeclList_EPSILON(
+      ) [ConstVarDeclList_EPSILON]
+      ConstDeclList(
+        Type(
+         int
+        ) [Type]
+        ConstDeclOneOrMore_ONE(
+          ConstDecl(
+           a
+            Constant_NUMBER(
+             3
+            ) [Constant_NUMBER]
+          ) [ConstDecl]
+        ) [ConstDeclOneOrMore_ONE]
+      ) [ConstDeclList]
+    ) [ConstVarDeclList_CONST]
+    VarDeclList(
+      Type(
+       int
+      ) [Type]
+      VarDeclOneOrMore_ONE(
+        VarDecl_ERROR(
+        ) [VarDecl_ERROR]
+      ) [VarDeclOneOrMore_ONE]
+    ) [VarDeclList]
+  ) [ConstVarDeclList_VAR]
+  MethodDecl(
+    MethodName(
+     main
+    ) [MethodName]
+    MethodVarDeclList_EPSILON(
+    ) [MethodVarDeclList_EPSILON]
+    StatementList_EPSILON(
+    ) [StatementList_EPSILON]
+  ) [MethodDecl]
+) [Program]
+INFO  01:51:55,314 - ==============ZAVRSEN ISPIS STABLA=====================
+
+INFO  01:51:55,314 - ==============ISPIS SEMANTICKE ANALIZE=====================
+INFO  01:51:55,321 - ==============ZAVRSEN ISPIS SEMANTICKE ANALIZE=====================
+
+ERROR 01:51:55,322 - Parsiranje NIJE uspesno zavrseno!

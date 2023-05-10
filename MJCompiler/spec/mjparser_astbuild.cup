@@ -61,7 +61,6 @@ nonterminal ConstVarDeclList ConstVarDeclList;
 nonterminal ConstDeclList ConstDeclList;
 nonterminal VarDeclList VarDeclList;
 nonterminal MethodDecl MethodDecl;
-nonterminal MethodName MethodName;
 nonterminal Type Type;
 nonterminal ConstDeclOneOrMore ConstDeclOneOrMore;
 nonterminal ConstDecl ConstDecl;
@@ -86,7 +85,7 @@ nonterminal Assignop Assignop;
 nonterminal Addop Addop;
 nonterminal Mulop Mulop;
 
-nonterminal rs.etf.pp1.symboltable.concepts.Obj ProgramName;
+nonterminal rs.etf.pp1.symboltable.concepts.Obj ProgramName, MethodName;
 nonterminal rs.etf.pp1.symboltable.concepts.Struct Constant;
 
 

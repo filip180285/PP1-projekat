@@ -1,0 +1,79 @@
+INFO  03:11:54,306 - Compiling source file: C:\Users\Korisnik\Desktop\PP1-projekat\MJCompiler\test\program.mj
+INFO  03:11:54,324 - #2 program
+INFO  03:11:54,324 - #9 test301
+INFO  03:11:54,324 - #9 int
+INFO  03:11:54,325 - #9 niz1
+INFO  03:11:54,325 - #25 [
+INFO  03:11:54,325 - #26 ]
+INFO  03:11:54,325 - #22 ,
+INFO  03:11:54,325 - #9 niz2
+INFO  03:11:54,325 - #25 [
+INFO  03:11:54,325 - #26 ]
+INFO  03:11:54,325 - #21 ;
+INFO  03:11:54,326 - #27 {
+INFO  03:11:54,326 - #8 void
+INFO  03:11:54,326 - #9 main
+INFO  03:11:54,326 - #23 (
+INFO  03:11:54,327 - #24 )
+INFO  03:11:54,327 - #9 int
+INFO  03:11:54,327 - #9 int
+INFO  03:11:54,327 - #25 [
+INFO  03:11:54,327 - #26 ]
+INFO  03:11:54,327 - #21 ;
+INFO  03:11:54,327 - #27 {
+INFO  03:11:54,328 - #28 }
+INFO  03:11:54,328 - #28 }
+INFO  03:11:54,329 - 
+                     ==============ISPIS STABLA=====================
+INFO  03:11:54,329 - Program(
+  ProgramName(
+   test301
+  ) [ProgramName]
+  ConstVarDeclList_VAR(
+    ConstVarDeclList_EPSILON(
+    ) [ConstVarDeclList_EPSILON]
+    VarDeclList(
+      Type(
+       int
+      ) [Type]
+      VarDeclOneOrMore_MORE(
+        VarDecl_ARRAY(
+         niz1
+        ) [VarDecl_ARRAY]
+        VarDeclOneOrMore_ONE(
+          VarDecl_ARRAY(
+           niz2
+          ) [VarDecl_ARRAY]
+        ) [VarDeclOneOrMore_ONE]
+      ) [VarDeclOneOrMore_MORE]
+    ) [VarDeclList]
+  ) [ConstVarDeclList_VAR]
+  MethodDecl(
+    MethodName(
+     main
+    ) [MethodName]
+    MethodVarDeclList_VAR(
+      MethodVarDeclList_EPSILON(
+      ) [MethodVarDeclList_EPSILON]
+      VarDeclList(
+        Type(
+         int
+        ) [Type]
+        VarDeclOneOrMore_ONE(
+          VarDecl_ARRAY(
+           int
+          ) [VarDecl_ARRAY]
+        ) [VarDeclOneOrMore_ONE]
+      ) [VarDeclList]
+    ) [MethodVarDeclList_VAR]
+    StatementList_EPSILON(
+    ) [StatementList_EPSILON]
+  ) [MethodDecl]
+) [Program]
+INFO  03:11:54,329 - ==============ZAVRSEN ISPIS STABLA=====================
+
+INFO  03:11:54,329 - ==============ISPIS SEMANTICKE ANALIZE=====================
+ERROR 03:11:54,337 - GRESKA-VarDecl_ARRAY: Ime int je vec deklarisano na liniji 8
+INFO  03:11:54,337 - ==============ZAVRSEN ISPIS SEMANTICKE ANALIZE=====================
+
+ERROR 03:11:54,338 - Parsiranje NIJE uspesno zavrseno!

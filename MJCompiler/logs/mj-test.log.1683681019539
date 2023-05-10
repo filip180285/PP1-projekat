@@ -1,0 +1,53 @@
+INFO  03:10:07,255 - Compiling source file: C:\Users\Korisnik\Desktop\PP1-projekat\MJCompiler\test\program.mj
+INFO  03:10:07,273 - #2 program
+INFO  03:10:07,273 - #9 test301
+INFO  03:10:07,273 - #9 int
+INFO  03:10:07,274 - #9 niz1
+INFO  03:10:07,274 - #25 [
+INFO  03:10:07,274 - #26 ]
+INFO  03:10:07,274 - #21 ;
+INFO  03:10:07,274 - #27 {
+INFO  03:10:07,275 - #8 void
+INFO  03:10:07,275 - #9 mAin
+INFO  03:10:07,275 - #23 (
+INFO  03:10:07,275 - #24 )
+INFO  03:10:07,275 - #27 {
+INFO  03:10:07,276 - #28 }
+INFO  03:10:07,276 - #28 }
+INFO  03:10:07,277 - 
+                     ==============ISPIS STABLA=====================
+INFO  03:10:07,277 - Program(
+  ProgramName(
+   test301
+  ) [ProgramName]
+  ConstVarDeclList_VAR(
+    ConstVarDeclList_EPSILON(
+    ) [ConstVarDeclList_EPSILON]
+    VarDeclList(
+      Type(
+       int
+      ) [Type]
+      VarDeclOneOrMore_ONE(
+        VarDecl_ARRAY(
+         niz1
+        ) [VarDecl_ARRAY]
+      ) [VarDeclOneOrMore_ONE]
+    ) [VarDeclList]
+  ) [ConstVarDeclList_VAR]
+  MethodDecl(
+    MethodName(
+     mAin
+    ) [MethodName]
+    MethodVarDeclList_EPSILON(
+    ) [MethodVarDeclList_EPSILON]
+    StatementList_EPSILON(
+    ) [StatementList_EPSILON]
+  ) [MethodDecl]
+) [Program]
+INFO  03:10:07,280 - ==============ZAVRSEN ISPIS STABLA=====================
+
+INFO  03:10:07,280 - ==============ISPIS SEMANTICKE ANALIZE=====================
+ERROR 03:10:07,287 - GRESKA-MethodName: Ime metode mora biti main na liniji 8
+INFO  03:10:07,287 - ==============ZAVRSEN ISPIS SEMANTICKE ANALIZE=====================
+
+ERROR 03:10:07,288 - Parsiranje NIJE uspesno zavrseno!

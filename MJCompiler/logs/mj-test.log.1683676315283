@@ -1,0 +1,121 @@
+INFO  01:51:36,049 - Compiling source file: C:\Users\Korisnik\Desktop\PP1-projekat\MJCompiler\test\program.mj
+INFO  01:51:36,067 - #2 program
+INFO  01:51:36,067 - #9 test301
+INFO  01:51:36,067 - #3 const
+INFO  01:51:36,068 - #9 int
+INFO  01:51:36,068 - #9 a
+INFO  01:51:36,069 - #18 =
+INFO  01:51:36,069 - #10 3
+INFO  01:51:36,069 - #21 ;
+INFO  01:51:36,069 - #3 const
+INFO  01:51:36,070 - #9 int
+INFO  01:51:36,070 - #9 b
+INFO  01:51:36,070 - #18 =
+INFO  01:51:36,070 - #10 4
+INFO  01:51:36,070 - #22 ,
+INFO  01:51:36,070 - #9 c
+INFO  01:51:36,070 - #18 =
+INFO  01:51:36,070 - #12 1
+INFO  01:51:36,070 - #22 ,
+INFO  01:51:36,070 - #9 d
+INFO  01:51:36,070 - #18 =
+INFO  01:51:36,070 - #10 5
+INFO  01:51:36,070 - #21 ;
+INFO  01:51:36,072 - #9 int
+INFO  01:51:36,073 - #9 krka
+INFO  01:51:36,073 - #18 =
+ERROR 01:51:36,073 - 
+Sintaksna greska na liniji 7
+INFO  01:51:36,073 - #10 9
+INFO  01:51:36,073 - #21 ;
+INFO  01:51:36,073 - #27 {
+INFO  01:51:36,073 - #8 void
+INFO  01:51:36,073 - #9 main
+ERROR 01:51:36,073 - OPORAVAK od greske u definiciji promenljive izvrsen u liniji 7
+INFO  01:51:36,074 - #23 (
+INFO  01:51:36,075 - #24 )
+INFO  01:51:36,075 - #27 {
+INFO  01:51:36,075 - #28 }
+INFO  01:51:36,075 - #28 }
+INFO  01:51:36,076 - 
+                     ==============ISPIS STABLA=====================
+INFO  01:51:36,077 - Program(
+  ProgramName(
+   test301
+  ) [ProgramName]
+  ConstVarDeclList_VAR(
+    ConstVarDeclList_CONST(
+      ConstVarDeclList_CONST(
+        ConstVarDeclList_EPSILON(
+        ) [ConstVarDeclList_EPSILON]
+        ConstDeclList(
+          Type(
+           int
+          ) [Type]
+          ConstDeclOneOrMore_ONE(
+            ConstDecl(
+             a
+              Constant_NUMBER(
+               3
+              ) [Constant_NUMBER]
+            ) [ConstDecl]
+          ) [ConstDeclOneOrMore_ONE]
+        ) [ConstDeclList]
+      ) [ConstVarDeclList_CONST]
+      ConstDeclList(
+        Type(
+         int
+        ) [Type]
+        ConstDeclOneOrMore_MORE(
+          ConstDecl(
+           b
+            Constant_NUMBER(
+             4
+            ) [Constant_NUMBER]
+          ) [ConstDecl]
+          ConstDeclOneOrMore_MORE(
+            ConstDecl(
+             c
+              Constant_BOOLEAN(
+               1
+              ) [Constant_BOOLEAN]
+            ) [ConstDecl]
+            ConstDeclOneOrMore_ONE(
+              ConstDecl(
+               d
+                Constant_NUMBER(
+                 5
+                ) [Constant_NUMBER]
+              ) [ConstDecl]
+            ) [ConstDeclOneOrMore_ONE]
+          ) [ConstDeclOneOrMore_MORE]
+        ) [ConstDeclOneOrMore_MORE]
+      ) [ConstDeclList]
+    ) [ConstVarDeclList_CONST]
+    VarDeclList(
+      Type(
+       int
+      ) [Type]
+      VarDeclOneOrMore_ONE(
+        VarDecl_ERROR(
+        ) [VarDecl_ERROR]
+      ) [VarDeclOneOrMore_ONE]
+    ) [VarDeclList]
+  ) [ConstVarDeclList_VAR]
+  MethodDecl(
+    MethodName(
+     main
+    ) [MethodName]
+    MethodVarDeclList_EPSILON(
+    ) [MethodVarDeclList_EPSILON]
+    StatementList_EPSILON(
+    ) [StatementList_EPSILON]
+  ) [MethodDecl]
+) [Program]
+INFO  01:51:36,077 - ==============ZAVRSEN ISPIS STABLA=====================
+
+INFO  01:51:36,077 - ==============ISPIS SEMANTICKE ANALIZE=====================
+ERROR 01:51:36,085 - GRESKA-ConstDecl: Neadekvatna dodela konstanti c na liniji 6
+INFO  01:51:36,085 - ==============ZAVRSEN ISPIS SEMANTICKE ANALIZE=====================
+
+ERROR 01:51:36,086 - Parsiranje NIJE uspesno zavrseno!
