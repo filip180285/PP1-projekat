@@ -1,0 +1,218 @@
+INFO  23:26:12,957 - Compiling source file: C:\Users\Korisnik\Desktop\PP1-projekat\MJCompiler\test\program.mj
+INFO  23:26:12,992 - #2 program
+INFO  23:26:12,992 - #9 test301
+INFO  23:26:12,992 - #3 const
+INFO  23:26:12,994 - #9 int
+INFO  23:26:12,994 - #9 x
+INFO  23:26:12,995 - #18 =
+INFO  23:26:12,995 - #10 1
+INFO  23:26:12,995 - #22 ,
+INFO  23:26:12,996 - #9 y
+INFO  23:26:12,996 - #18 =
+INFO  23:26:12,996 - #10 2
+INFO  23:26:12,996 - #21 ;
+INFO  23:26:12,996 - #9 char
+INFO  23:26:12,997 - #9 a
+INFO  23:26:12,997 - #25 [
+INFO  23:26:12,997 - #26 ]
+INFO  23:26:12,997 - #22 ,
+INFO  23:26:12,997 - #9 b
+INFO  23:26:12,997 - #21 ;
+INFO  23:26:12,998 - #27 {
+INFO  23:26:12,998 - #8 void
+INFO  23:26:12,998 - #9 main
+INFO  23:26:12,999 - #23 (
+INFO  23:26:12,999 - #24 )
+INFO  23:26:12,999 - #9 int
+INFO  23:26:13,000 - #9 l1
+INFO  23:26:13,000 - #21 ;
+INFO  23:26:13,000 - #9 char
+INFO  23:26:13,000 - #9 l2
+INFO  23:26:13,000 - #21 ;
+INFO  23:26:13,000 - #9 bool
+INFO  23:26:13,000 - #9 l3
+INFO  23:26:13,000 - #21 ;
+INFO  23:26:13,000 - #9 int
+INFO  23:26:13,000 - #9 l4
+INFO  23:26:13,001 - #25 [
+INFO  23:26:13,001 - #26 ]
+INFO  23:26:13,001 - #21 ;
+INFO  23:26:13,001 - #27 {
+INFO  23:26:13,001 - #9 l1
+INFO  23:26:13,001 - #18 =
+INFO  23:26:13,002 - #9 bool
+INFO  23:26:13,004 - #13 +
+INFO  23:26:13,005 - #9 char
+INFO  23:26:13,011 - #13 +
+INFO  23:26:13,011 - #11 c
+INFO  23:26:13,011 - #21 ;
+INFO  23:26:13,011 - #28 }
+INFO  23:26:13,012 - #28 }
+INFO  23:26:13,013 - 
+                     ==============ISPIS STABLA=====================
+INFO  23:26:13,014 - Program(
+  ProgramName(
+   test301
+  ) [ProgramName]
+  ConstVarDeclList_VAR(
+    ConstVarDeclList_CONST(
+      ConstVarDeclList_EPSILON(
+      ) [ConstVarDeclList_EPSILON]
+      ConstDeclList(
+        Type(
+         int
+        ) [Type]
+        ConstDeclOneOrMore_MORE(
+          ConstDecl(
+           x
+            Constant_NUMBER(
+             1
+            ) [Constant_NUMBER]
+          ) [ConstDecl]
+          ConstDeclOneOrMore_ONE(
+            ConstDecl(
+             y
+              Constant_NUMBER(
+               2
+              ) [Constant_NUMBER]
+            ) [ConstDecl]
+          ) [ConstDeclOneOrMore_ONE]
+        ) [ConstDeclOneOrMore_MORE]
+      ) [ConstDeclList]
+    ) [ConstVarDeclList_CONST]
+    VarDeclList(
+      Type(
+       char
+      ) [Type]
+      VarDeclOneOrMore_MORE(
+        VarDecl_ARRAY(
+         a
+        ) [VarDecl_ARRAY]
+        VarDeclOneOrMore_ONE(
+          VarDecl_VAR(
+           b
+          ) [VarDecl_VAR]
+        ) [VarDeclOneOrMore_ONE]
+      ) [VarDeclOneOrMore_MORE]
+    ) [VarDeclList]
+  ) [ConstVarDeclList_VAR]
+  MethodDecl(
+    MethodName(
+     main
+    ) [MethodName]
+    MethodVarDeclList_VAR(
+      MethodVarDeclList_VAR(
+        MethodVarDeclList_VAR(
+          MethodVarDeclList_VAR(
+            MethodVarDeclList_EPSILON(
+            ) [MethodVarDeclList_EPSILON]
+            VarDeclList(
+              Type(
+               int
+              ) [Type]
+              VarDeclOneOrMore_ONE(
+                VarDecl_VAR(
+                 l1
+                ) [VarDecl_VAR]
+              ) [VarDeclOneOrMore_ONE]
+            ) [VarDeclList]
+          ) [MethodVarDeclList_VAR]
+          VarDeclList(
+            Type(
+             char
+            ) [Type]
+            VarDeclOneOrMore_ONE(
+              VarDecl_VAR(
+               l2
+              ) [VarDecl_VAR]
+            ) [VarDeclOneOrMore_ONE]
+          ) [VarDeclList]
+        ) [MethodVarDeclList_VAR]
+        VarDeclList(
+          Type(
+           bool
+          ) [Type]
+          VarDeclOneOrMore_ONE(
+            VarDecl_VAR(
+             l3
+            ) [VarDecl_VAR]
+          ) [VarDeclOneOrMore_ONE]
+        ) [VarDeclList]
+      ) [MethodVarDeclList_VAR]
+      VarDeclList(
+        Type(
+         int
+        ) [Type]
+        VarDeclOneOrMore_ONE(
+          VarDecl_ARRAY(
+           l4
+          ) [VarDecl_ARRAY]
+        ) [VarDeclOneOrMore_ONE]
+      ) [VarDeclList]
+    ) [MethodVarDeclList_VAR]
+    StatementList_STATEMENTS(
+      StatementList_EPSILON(
+      ) [StatementList_EPSILON]
+      Statement_DesignatorStatement(
+        DesignatorSt_Assign(
+          Designator_ONE(
+           l1
+          ) [Designator_ONE]
+          Assignop(
+          ) [Assignop]
+          Expr_MORE(
+            Expr_MORE(
+              Expr_ONE(
+                Term_ONE(
+                  FactorSign(
+                    UnaryMinus_EPSILON(
+                    ) [UnaryMinus_EPSILON]
+                    Factor_Designator(
+                      Designator_ONE(
+                       bool
+                      ) [Designator_ONE]
+                    ) [Factor_Designator]
+                  ) [FactorSign]
+                ) [Term_ONE]
+              ) [Expr_ONE]
+              Addop_PLUS(
+              ) [Addop_PLUS]
+              Term_ONE(
+                FactorSign(
+                  UnaryMinus_EPSILON(
+                  ) [UnaryMinus_EPSILON]
+                  Factor_Designator(
+                    Designator_ONE(
+                     char
+                    ) [Designator_ONE]
+                  ) [Factor_Designator]
+                ) [FactorSign]
+              ) [Term_ONE]
+            ) [Expr_MORE]
+            Addop_PLUS(
+            ) [Addop_PLUS]
+            Term_ONE(
+              FactorSign(
+                UnaryMinus_EPSILON(
+                ) [UnaryMinus_EPSILON]
+                Factor_CHARACTER(
+                 c
+                ) [Factor_CHARACTER]
+              ) [FactorSign]
+            ) [Term_ONE]
+          ) [Expr_MORE]
+        ) [DesignatorSt_Assign]
+      ) [Statement_DesignatorStatement]
+    ) [StatementList_STATEMENTS]
+  ) [MethodDecl]
+) [Program]
+INFO  23:26:13,015 - ==============ZAVRSEN ISPIS STABLA=====================
+
+INFO  23:26:13,015 - ==============ISPIS SEMANTICKE ANALIZE=====================
+ERROR 23:26:13,023 - GRESKA-designator_ONE: Oznaka bool nije konstanta ni varijabla na liniji 9
+ERROR 23:26:13,024 - GRESKA-designator_ONE: Oznaka char nije konstanta ni varijabla na liniji 9
+ERROR 23:26:13,024 - GRESKA-term_MORE: Sabiraju se/Oduzimaju se tipovi koji nisu oba int na liniji 5
+ERROR 23:26:13,024 - GRESKA-term_MORE: Sabiraju se/Oduzimaju se tipovi koji nisu oba int na liniji 5
+INFO  23:26:13,024 - ==============ZAVRSEN ISPIS SEMANTICKE ANALIZE=====================
+
+ERROR 23:26:13,025 - Parsiranje NIJE uspesno zavrseno!

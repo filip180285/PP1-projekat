@@ -1,0 +1,213 @@
+INFO  23:46:33,971 - Compiling source file: C:\Users\Korisnik\Desktop\PP1-projekat\MJCompiler\test\program.mj
+INFO  23:46:33,990 - #2 program
+INFO  23:46:33,990 - #9 test301
+INFO  23:46:33,990 - #3 const
+INFO  23:46:33,991 - #9 int
+INFO  23:46:33,991 - #9 x
+INFO  23:46:33,991 - #18 =
+INFO  23:46:33,991 - #10 1
+INFO  23:46:33,991 - #22 ,
+INFO  23:46:33,992 - #9 y
+INFO  23:46:33,992 - #18 =
+INFO  23:46:33,992 - #10 2
+INFO  23:46:33,992 - #21 ;
+INFO  23:46:33,992 - #9 char
+INFO  23:46:33,993 - #9 a
+INFO  23:46:33,993 - #25 [
+INFO  23:46:33,993 - #26 ]
+INFO  23:46:33,993 - #22 ,
+INFO  23:46:33,993 - #9 b
+INFO  23:46:33,993 - #21 ;
+INFO  23:46:33,993 - #27 {
+INFO  23:46:33,994 - #8 void
+INFO  23:46:33,994 - #9 main
+INFO  23:46:33,996 - #23 (
+INFO  23:46:33,996 - #24 )
+INFO  23:46:33,996 - #9 int
+INFO  23:46:33,997 - #9 l1
+INFO  23:46:33,997 - #21 ;
+INFO  23:46:33,997 - #9 char
+INFO  23:46:33,997 - #9 l2
+INFO  23:46:33,997 - #21 ;
+INFO  23:46:33,997 - #9 bool
+INFO  23:46:33,997 - #9 l3
+INFO  23:46:33,997 - #21 ;
+INFO  23:46:33,998 - #9 int
+INFO  23:46:33,998 - #9 l4
+INFO  23:46:33,998 - #25 [
+INFO  23:46:33,998 - #26 ]
+INFO  23:46:33,998 - #21 ;
+INFO  23:46:33,998 - #27 {
+INFO  23:46:33,998 - #9 a
+INFO  23:46:33,998 - #25 [
+INFO  23:46:33,999 - #10 2
+INFO  23:46:33,999 - #15 *
+INFO  23:46:34,000 - #9 bool
+INFO  23:46:34,001 - #26 ]
+INFO  23:46:34,001 - #18 =
+INFO  23:46:34,001 - #10 4
+INFO  23:46:34,002 - #21 ;
+INFO  23:46:34,002 - #28 }
+INFO  23:46:34,002 - #28 }
+INFO  23:46:34,003 - 
+                     ==============ISPIS STABLA=====================
+INFO  23:46:34,004 - Program(
+  ProgramName(
+   test301
+  ) [ProgramName]
+  ConstVarDeclList_VAR(
+    ConstVarDeclList_CONST(
+      ConstVarDeclList_EPSILON(
+      ) [ConstVarDeclList_EPSILON]
+      ConstDeclList(
+        Type(
+         int
+        ) [Type]
+        ConstDeclOneOrMore_MORE(
+          ConstDecl(
+           x
+            Constant_NUMBER(
+             1
+            ) [Constant_NUMBER]
+          ) [ConstDecl]
+          ConstDeclOneOrMore_ONE(
+            ConstDecl(
+             y
+              Constant_NUMBER(
+               2
+              ) [Constant_NUMBER]
+            ) [ConstDecl]
+          ) [ConstDeclOneOrMore_ONE]
+        ) [ConstDeclOneOrMore_MORE]
+      ) [ConstDeclList]
+    ) [ConstVarDeclList_CONST]
+    VarDeclList(
+      Type(
+       char
+      ) [Type]
+      VarDeclOneOrMore_MORE(
+        VarDecl_ARRAY(
+         a
+        ) [VarDecl_ARRAY]
+        VarDeclOneOrMore_ONE(
+          VarDecl_VAR(
+           b
+          ) [VarDecl_VAR]
+        ) [VarDeclOneOrMore_ONE]
+      ) [VarDeclOneOrMore_MORE]
+    ) [VarDeclList]
+  ) [ConstVarDeclList_VAR]
+  MethodDecl(
+    MethodName(
+     main
+    ) [MethodName]
+    MethodVarDeclList_VAR(
+      MethodVarDeclList_VAR(
+        MethodVarDeclList_VAR(
+          MethodVarDeclList_VAR(
+            MethodVarDeclList_EPSILON(
+            ) [MethodVarDeclList_EPSILON]
+            VarDeclList(
+              Type(
+               int
+              ) [Type]
+              VarDeclOneOrMore_ONE(
+                VarDecl_VAR(
+                 l1
+                ) [VarDecl_VAR]
+              ) [VarDeclOneOrMore_ONE]
+            ) [VarDeclList]
+          ) [MethodVarDeclList_VAR]
+          VarDeclList(
+            Type(
+             char
+            ) [Type]
+            VarDeclOneOrMore_ONE(
+              VarDecl_VAR(
+               l2
+              ) [VarDecl_VAR]
+            ) [VarDeclOneOrMore_ONE]
+          ) [VarDeclList]
+        ) [MethodVarDeclList_VAR]
+        VarDeclList(
+          Type(
+           bool
+          ) [Type]
+          VarDeclOneOrMore_ONE(
+            VarDecl_VAR(
+             l3
+            ) [VarDecl_VAR]
+          ) [VarDeclOneOrMore_ONE]
+        ) [VarDeclList]
+      ) [MethodVarDeclList_VAR]
+      VarDeclList(
+        Type(
+         int
+        ) [Type]
+        VarDeclOneOrMore_ONE(
+          VarDecl_ARRAY(
+           l4
+          ) [VarDecl_ARRAY]
+        ) [VarDeclOneOrMore_ONE]
+      ) [VarDeclList]
+    ) [MethodVarDeclList_VAR]
+    StatementList_STATEMENTS(
+      StatementList_EPSILON(
+      ) [StatementList_EPSILON]
+      Statement_DesignatorStatement(
+        DesignatorSt_Assign(
+          Designator_ARRAY_Elem(
+            DesignatorArrayName(
+             a
+            ) [DesignatorArrayName]
+            Expr_ONE(
+              Term_MORE(
+                Term_ONE(
+                  FactorSign(
+                    UnaryMinus_EPSILON(
+                    ) [UnaryMinus_EPSILON]
+                    Factor_NUMBER(
+                     2
+                    ) [Factor_NUMBER]
+                  ) [FactorSign]
+                ) [Term_ONE]
+                Mulop_MUL(
+                ) [Mulop_MUL]
+                FactorSign(
+                  UnaryMinus_EPSILON(
+                  ) [UnaryMinus_EPSILON]
+                  Factor_Designator(
+                    Designator_ONE(
+                     bool
+                    ) [Designator_ONE]
+                  ) [Factor_Designator]
+                ) [FactorSign]
+              ) [Term_MORE]
+            ) [Expr_ONE]
+          ) [Designator_ARRAY_Elem]
+          Assignop(
+          ) [Assignop]
+          Expr_ONE(
+            Term_ONE(
+              FactorSign(
+                UnaryMinus_EPSILON(
+                ) [UnaryMinus_EPSILON]
+                Factor_NUMBER(
+                 4
+                ) [Factor_NUMBER]
+              ) [FactorSign]
+            ) [Term_ONE]
+          ) [Expr_ONE]
+        ) [DesignatorSt_Assign]
+      ) [Statement_DesignatorStatement]
+    ) [StatementList_STATEMENTS]
+  ) [MethodDecl]
+) [Program]
+INFO  23:46:34,004 - ==============ZAVRSEN ISPIS STABLA=====================
+
+INFO  23:46:34,004 - ==============ISPIS SEMANTICKE ANALIZE=====================
+ERROR 23:46:34,013 - GRESKA-designator_ONE: Oznaka bool nije konstanta ni varijabla na liniji 9
+ERROR 23:46:34,013 - GRESKA-term_MORE: Mnoze se/Dele se/Moduluju se tipovi koji nisu oba int na liniji 3
+INFO  23:46:34,013 - ==============ZAVRSEN ISPIS SEMANTICKE ANALIZE=====================
+
+ERROR 23:46:34,014 - Parsiranje NIJE uspesno zavrseno!

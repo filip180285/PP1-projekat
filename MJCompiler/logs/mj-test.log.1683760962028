@@ -1,0 +1,265 @@
+INFO  01:22:01,821 - Compiling source file: C:\Users\Korisnik\Desktop\PP1-projekat\MJCompiler\test\program.mj
+INFO  01:22:01,839 - #2 program
+INFO  01:22:01,839 - #9 test301
+INFO  01:22:01,839 - #3 const
+INFO  01:22:01,840 - #9 int
+INFO  01:22:01,840 - #9 x
+INFO  01:22:01,840 - #18 =
+INFO  01:22:01,840 - #10 1
+INFO  01:22:01,841 - #22 ,
+INFO  01:22:01,841 - #9 y
+INFO  01:22:01,841 - #18 =
+INFO  01:22:01,841 - #10 2
+INFO  01:22:01,841 - #21 ;
+INFO  01:22:01,841 - #9 int
+INFO  01:22:01,842 - #9 a
+INFO  01:22:01,842 - #25 [
+INFO  01:22:01,842 - #26 ]
+INFO  01:22:01,842 - #22 ,
+INFO  01:22:01,842 - #9 b
+INFO  01:22:01,842 - #21 ;
+INFO  01:22:01,843 - #9 char
+INFO  01:22:01,843 - #9 m
+INFO  01:22:01,843 - #25 [
+INFO  01:22:01,845 - #26 ]
+INFO  01:22:01,845 - #21 ;
+INFO  01:22:01,845 - #27 {
+INFO  01:22:01,845 - #8 void
+INFO  01:22:01,845 - #9 main
+INFO  01:22:01,845 - #23 (
+INFO  01:22:01,846 - #24 )
+INFO  01:22:01,846 - #9 int
+INFO  01:22:01,846 - #9 l1
+INFO  01:22:01,846 - #21 ;
+INFO  01:22:01,846 - #9 char
+INFO  01:22:01,846 - #9 l2
+INFO  01:22:01,846 - #21 ;
+INFO  01:22:01,846 - #9 bool
+INFO  01:22:01,846 - #9 l3
+INFO  01:22:01,846 - #21 ;
+INFO  01:22:01,846 - #9 int
+INFO  01:22:01,846 - #9 l4
+INFO  01:22:01,847 - #25 [
+INFO  01:22:01,847 - #26 ]
+INFO  01:22:01,847 - #21 ;
+INFO  01:22:01,847 - #27 {
+INFO  01:22:01,847 - #9 a
+INFO  01:22:01,847 - #25 [
+INFO  01:22:01,847 - #10 2
+INFO  01:22:01,848 - #26 ]
+INFO  01:22:01,849 - #19 ++
+INFO  01:22:01,849 - #21 ;
+INFO  01:22:01,849 - #9 a
+INFO  01:22:01,849 - #25 [
+INFO  01:22:01,849 - #10 2
+INFO  01:22:01,849 - #26 ]
+INFO  01:22:01,849 - #20 --
+INFO  01:22:01,849 - #21 ;
+INFO  01:22:01,849 - #9 l1
+INFO  01:22:01,850 - #19 ++
+INFO  01:22:01,850 - #21 ;
+INFO  01:22:01,850 - #9 l1
+INFO  01:22:01,850 - #20 --
+INFO  01:22:01,850 - #21 ;
+INFO  01:22:01,850 - #9 int
+INFO  01:22:01,850 - #19 ++
+INFO  01:22:01,850 - #21 ;
+INFO  01:22:01,850 - #28 }
+INFO  01:22:01,850 - #28 }
+INFO  01:22:01,851 - 
+                     ==============ISPIS STABLA=====================
+INFO  01:22:01,852 - Program(
+  ProgramName(
+   test301
+  ) [ProgramName]
+  ConstVarDeclList_VAR(
+    ConstVarDeclList_VAR(
+      ConstVarDeclList_CONST(
+        ConstVarDeclList_EPSILON(
+        ) [ConstVarDeclList_EPSILON]
+        ConstDeclList(
+          Type(
+           int
+          ) [Type]
+          ConstDeclOneOrMore_MORE(
+            ConstDecl(
+             x
+              Constant_NUMBER(
+               1
+              ) [Constant_NUMBER]
+            ) [ConstDecl]
+            ConstDeclOneOrMore_ONE(
+              ConstDecl(
+               y
+                Constant_NUMBER(
+                 2
+                ) [Constant_NUMBER]
+              ) [ConstDecl]
+            ) [ConstDeclOneOrMore_ONE]
+          ) [ConstDeclOneOrMore_MORE]
+        ) [ConstDeclList]
+      ) [ConstVarDeclList_CONST]
+      VarDeclList(
+        Type(
+         int
+        ) [Type]
+        VarDeclOneOrMore_MORE(
+          VarDecl_ARRAY(
+           a
+          ) [VarDecl_ARRAY]
+          VarDeclOneOrMore_ONE(
+            VarDecl_VAR(
+             b
+            ) [VarDecl_VAR]
+          ) [VarDeclOneOrMore_ONE]
+        ) [VarDeclOneOrMore_MORE]
+      ) [VarDeclList]
+    ) [ConstVarDeclList_VAR]
+    VarDeclList(
+      Type(
+       char
+      ) [Type]
+      VarDeclOneOrMore_ONE(
+        VarDecl_ARRAY(
+         m
+        ) [VarDecl_ARRAY]
+      ) [VarDeclOneOrMore_ONE]
+    ) [VarDeclList]
+  ) [ConstVarDeclList_VAR]
+  MethodDecl(
+    MethodName(
+     main
+    ) [MethodName]
+    MethodVarDeclList_VAR(
+      MethodVarDeclList_VAR(
+        MethodVarDeclList_VAR(
+          MethodVarDeclList_VAR(
+            MethodVarDeclList_EPSILON(
+            ) [MethodVarDeclList_EPSILON]
+            VarDeclList(
+              Type(
+               int
+              ) [Type]
+              VarDeclOneOrMore_ONE(
+                VarDecl_VAR(
+                 l1
+                ) [VarDecl_VAR]
+              ) [VarDeclOneOrMore_ONE]
+            ) [VarDeclList]
+          ) [MethodVarDeclList_VAR]
+          VarDeclList(
+            Type(
+             char
+            ) [Type]
+            VarDeclOneOrMore_ONE(
+              VarDecl_VAR(
+               l2
+              ) [VarDecl_VAR]
+            ) [VarDeclOneOrMore_ONE]
+          ) [VarDeclList]
+        ) [MethodVarDeclList_VAR]
+        VarDeclList(
+          Type(
+           bool
+          ) [Type]
+          VarDeclOneOrMore_ONE(
+            VarDecl_VAR(
+             l3
+            ) [VarDecl_VAR]
+          ) [VarDeclOneOrMore_ONE]
+        ) [VarDeclList]
+      ) [MethodVarDeclList_VAR]
+      VarDeclList(
+        Type(
+         int
+        ) [Type]
+        VarDeclOneOrMore_ONE(
+          VarDecl_ARRAY(
+           l4
+          ) [VarDecl_ARRAY]
+        ) [VarDeclOneOrMore_ONE]
+      ) [VarDeclList]
+    ) [MethodVarDeclList_VAR]
+    StatementList_STATEMENTS(
+      StatementList_STATEMENTS(
+        StatementList_STATEMENTS(
+          StatementList_STATEMENTS(
+            StatementList_STATEMENTS(
+              StatementList_EPSILON(
+              ) [StatementList_EPSILON]
+              Statement_DesignatorStatement(
+                DesignatorStat_INC(
+                  Designator_ARRAY_Elem(
+                    DesignatorArrayName(
+                     a
+                    ) [DesignatorArrayName]
+                    Expr_ONE(
+                      Term_ONE(
+                        FactorSign(
+                          UnaryMinus_EPSILON(
+                          ) [UnaryMinus_EPSILON]
+                          Factor_NUMBER(
+                           2
+                          ) [Factor_NUMBER]
+                        ) [FactorSign]
+                      ) [Term_ONE]
+                    ) [Expr_ONE]
+                  ) [Designator_ARRAY_Elem]
+                ) [DesignatorStat_INC]
+              ) [Statement_DesignatorStatement]
+            ) [StatementList_STATEMENTS]
+            Statement_DesignatorStatement(
+              DesignatorStat_DEC(
+                Designator_ARRAY_Elem(
+                  DesignatorArrayName(
+                   a
+                  ) [DesignatorArrayName]
+                  Expr_ONE(
+                    Term_ONE(
+                      FactorSign(
+                        UnaryMinus_EPSILON(
+                        ) [UnaryMinus_EPSILON]
+                        Factor_NUMBER(
+                         2
+                        ) [Factor_NUMBER]
+                      ) [FactorSign]
+                    ) [Term_ONE]
+                  ) [Expr_ONE]
+                ) [Designator_ARRAY_Elem]
+              ) [DesignatorStat_DEC]
+            ) [Statement_DesignatorStatement]
+          ) [StatementList_STATEMENTS]
+          Statement_DesignatorStatement(
+            DesignatorStat_INC(
+              Designator_ONE(
+               l1
+              ) [Designator_ONE]
+            ) [DesignatorStat_INC]
+          ) [Statement_DesignatorStatement]
+        ) [StatementList_STATEMENTS]
+        Statement_DesignatorStatement(
+          DesignatorStat_DEC(
+            Designator_ONE(
+             l1
+            ) [Designator_ONE]
+          ) [DesignatorStat_DEC]
+        ) [Statement_DesignatorStatement]
+      ) [StatementList_STATEMENTS]
+      Statement_DesignatorStatement(
+        DesignatorStat_INC(
+          Designator_ONE(
+           int
+          ) [Designator_ONE]
+        ) [DesignatorStat_INC]
+      ) [Statement_DesignatorStatement]
+    ) [StatementList_STATEMENTS]
+  ) [MethodDecl]
+) [Program]
+INFO  01:22:01,854 - ==============ZAVRSEN ISPIS STABLA=====================
+
+INFO  01:22:01,854 - ==============ISPIS SEMANTICKE ANALIZE=====================
+ERROR 01:22:01,863 - GRESKA-Designator_ONE: Oznaka int nije konstanta ni varijabla na liniji 20
+ERROR 01:22:01,863 - GRESKA-designatorStat_INC: Inkrementiranje noObj nije inkrementiranje nad int tipom na liniji 20
+INFO  01:22:01,863 - ==============ZAVRSEN ISPIS SEMANTICKE ANALIZE=====================
+
+ERROR 01:22:01,863 - Parsiranje NIJE uspesno zavrseno!

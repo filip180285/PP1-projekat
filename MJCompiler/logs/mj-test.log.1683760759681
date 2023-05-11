@@ -1,0 +1,363 @@
+INFO  01:18:05,881 - Compiling source file: C:\Users\Korisnik\Desktop\PP1-projekat\MJCompiler\test\program.mj
+INFO  01:18:05,900 - #2 program
+INFO  01:18:05,900 - #9 test301
+INFO  01:18:05,900 - #3 const
+INFO  01:18:05,901 - #9 int
+INFO  01:18:05,901 - #9 x
+INFO  01:18:05,901 - #18 =
+INFO  01:18:05,901 - #10 1
+INFO  01:18:05,901 - #22 ,
+INFO  01:18:05,902 - #9 y
+INFO  01:18:05,902 - #18 =
+INFO  01:18:05,902 - #10 2
+INFO  01:18:05,902 - #21 ;
+INFO  01:18:05,902 - #9 int
+INFO  01:18:05,903 - #9 a
+INFO  01:18:05,903 - #25 [
+INFO  01:18:05,903 - #26 ]
+INFO  01:18:05,903 - #22 ,
+INFO  01:18:05,903 - #9 b
+INFO  01:18:05,903 - #21 ;
+INFO  01:18:05,903 - #9 char
+INFO  01:18:05,904 - #9 m
+INFO  01:18:05,904 - #25 [
+INFO  01:18:05,904 - #26 ]
+INFO  01:18:05,904 - #21 ;
+INFO  01:18:05,904 - #27 {
+INFO  01:18:05,904 - #8 void
+INFO  01:18:05,904 - #9 main
+INFO  01:18:05,904 - #23 (
+INFO  01:18:05,905 - #24 )
+INFO  01:18:05,905 - #9 int
+INFO  01:18:05,905 - #9 l1
+INFO  01:18:05,905 - #21 ;
+INFO  01:18:05,905 - #9 char
+INFO  01:18:05,905 - #9 l2
+INFO  01:18:05,906 - #21 ;
+INFO  01:18:05,906 - #9 bool
+INFO  01:18:05,906 - #9 l3
+INFO  01:18:05,906 - #21 ;
+INFO  01:18:05,906 - #9 int
+INFO  01:18:05,906 - #9 l4
+INFO  01:18:05,906 - #25 [
+INFO  01:18:05,906 - #26 ]
+INFO  01:18:05,906 - #21 ;
+INFO  01:18:05,906 - #27 {
+INFO  01:18:05,906 - #9 a
+INFO  01:18:05,906 - #25 [
+INFO  01:18:05,907 - #10 2
+INFO  01:18:05,907 - #26 ]
+INFO  01:18:05,908 - #19 ++
+INFO  01:18:05,908 - #21 ;
+INFO  01:18:05,908 - #9 a
+INFO  01:18:05,909 - #25 [
+INFO  01:18:05,909 - #10 2
+INFO  01:18:05,909 - #26 ]
+INFO  01:18:05,909 - #20 --
+INFO  01:18:05,909 - #21 ;
+INFO  01:18:05,909 - #9 l1
+INFO  01:18:05,909 - #19 ++
+INFO  01:18:05,909 - #21 ;
+INFO  01:18:05,909 - #9 l1
+INFO  01:18:05,909 - #20 --
+INFO  01:18:05,909 - #21 ;
+INFO  01:18:05,909 - #9 l3
+INFO  01:18:05,909 - #19 ++
+INFO  01:18:05,909 - #21 ;
+INFO  01:18:05,909 - #9 l3
+INFO  01:18:05,909 - #20 --
+INFO  01:18:05,909 - #21 ;
+INFO  01:18:05,909 - #9 c
+INFO  01:18:05,910 - #25 [
+INFO  01:18:05,910 - #10 3
+INFO  01:18:05,910 - #26 ]
+INFO  01:18:05,910 - #19 ++
+INFO  01:18:05,910 - #21 ;
+INFO  01:18:05,910 - #9 c
+INFO  01:18:05,910 - #25 [
+INFO  01:18:05,910 - #10 3
+INFO  01:18:05,910 - #26 ]
+INFO  01:18:05,910 - #20 --
+INFO  01:18:05,910 - #21 ;
+INFO  01:18:05,910 - #9 x
+INFO  01:18:05,910 - #19 ++
+INFO  01:18:05,910 - #21 ;
+INFO  01:18:05,910 - #9 x
+INFO  01:18:05,910 - #20 --
+INFO  01:18:05,910 - #21 ;
+INFO  01:18:05,910 - #28 }
+INFO  01:18:05,910 - #28 }
+INFO  01:18:05,912 - 
+                     ==============ISPIS STABLA=====================
+INFO  01:18:05,912 - Program(
+  ProgramName(
+   test301
+  ) [ProgramName]
+  ConstVarDeclList_VAR(
+    ConstVarDeclList_VAR(
+      ConstVarDeclList_CONST(
+        ConstVarDeclList_EPSILON(
+        ) [ConstVarDeclList_EPSILON]
+        ConstDeclList(
+          Type(
+           int
+          ) [Type]
+          ConstDeclOneOrMore_MORE(
+            ConstDecl(
+             x
+              Constant_NUMBER(
+               1
+              ) [Constant_NUMBER]
+            ) [ConstDecl]
+            ConstDeclOneOrMore_ONE(
+              ConstDecl(
+               y
+                Constant_NUMBER(
+                 2
+                ) [Constant_NUMBER]
+              ) [ConstDecl]
+            ) [ConstDeclOneOrMore_ONE]
+          ) [ConstDeclOneOrMore_MORE]
+        ) [ConstDeclList]
+      ) [ConstVarDeclList_CONST]
+      VarDeclList(
+        Type(
+         int
+        ) [Type]
+        VarDeclOneOrMore_MORE(
+          VarDecl_ARRAY(
+           a
+          ) [VarDecl_ARRAY]
+          VarDeclOneOrMore_ONE(
+            VarDecl_VAR(
+             b
+            ) [VarDecl_VAR]
+          ) [VarDeclOneOrMore_ONE]
+        ) [VarDeclOneOrMore_MORE]
+      ) [VarDeclList]
+    ) [ConstVarDeclList_VAR]
+    VarDeclList(
+      Type(
+       char
+      ) [Type]
+      VarDeclOneOrMore_ONE(
+        VarDecl_ARRAY(
+         m
+        ) [VarDecl_ARRAY]
+      ) [VarDeclOneOrMore_ONE]
+    ) [VarDeclList]
+  ) [ConstVarDeclList_VAR]
+  MethodDecl(
+    MethodName(
+     main
+    ) [MethodName]
+    MethodVarDeclList_VAR(
+      MethodVarDeclList_VAR(
+        MethodVarDeclList_VAR(
+          MethodVarDeclList_VAR(
+            MethodVarDeclList_EPSILON(
+            ) [MethodVarDeclList_EPSILON]
+            VarDeclList(
+              Type(
+               int
+              ) [Type]
+              VarDeclOneOrMore_ONE(
+                VarDecl_VAR(
+                 l1
+                ) [VarDecl_VAR]
+              ) [VarDeclOneOrMore_ONE]
+            ) [VarDeclList]
+          ) [MethodVarDeclList_VAR]
+          VarDeclList(
+            Type(
+             char
+            ) [Type]
+            VarDeclOneOrMore_ONE(
+              VarDecl_VAR(
+               l2
+              ) [VarDecl_VAR]
+            ) [VarDeclOneOrMore_ONE]
+          ) [VarDeclList]
+        ) [MethodVarDeclList_VAR]
+        VarDeclList(
+          Type(
+           bool
+          ) [Type]
+          VarDeclOneOrMore_ONE(
+            VarDecl_VAR(
+             l3
+            ) [VarDecl_VAR]
+          ) [VarDeclOneOrMore_ONE]
+        ) [VarDeclList]
+      ) [MethodVarDeclList_VAR]
+      VarDeclList(
+        Type(
+         int
+        ) [Type]
+        VarDeclOneOrMore_ONE(
+          VarDecl_ARRAY(
+           l4
+          ) [VarDecl_ARRAY]
+        ) [VarDeclOneOrMore_ONE]
+      ) [VarDeclList]
+    ) [MethodVarDeclList_VAR]
+    StatementList_STATEMENTS(
+      StatementList_STATEMENTS(
+        StatementList_STATEMENTS(
+          StatementList_STATEMENTS(
+            StatementList_STATEMENTS(
+              StatementList_STATEMENTS(
+                StatementList_STATEMENTS(
+                  StatementList_STATEMENTS(
+                    StatementList_STATEMENTS(
+                      StatementList_STATEMENTS(
+                        StatementList_EPSILON(
+                        ) [StatementList_EPSILON]
+                        Statement_DesignatorStatement(
+                          DesignatorStat_INC(
+                            Designator_ARRAY_Elem(
+                              DesignatorArrayName(
+                               a
+                              ) [DesignatorArrayName]
+                              Expr_ONE(
+                                Term_ONE(
+                                  FactorSign(
+                                    UnaryMinus_EPSILON(
+                                    ) [UnaryMinus_EPSILON]
+                                    Factor_NUMBER(
+                                     2
+                                    ) [Factor_NUMBER]
+                                  ) [FactorSign]
+                                ) [Term_ONE]
+                              ) [Expr_ONE]
+                            ) [Designator_ARRAY_Elem]
+                          ) [DesignatorStat_INC]
+                        ) [Statement_DesignatorStatement]
+                      ) [StatementList_STATEMENTS]
+                      Statement_DesignatorStatement(
+                        DesignatorStat_DEC(
+                          Designator_ARRAY_Elem(
+                            DesignatorArrayName(
+                             a
+                            ) [DesignatorArrayName]
+                            Expr_ONE(
+                              Term_ONE(
+                                FactorSign(
+                                  UnaryMinus_EPSILON(
+                                  ) [UnaryMinus_EPSILON]
+                                  Factor_NUMBER(
+                                   2
+                                  ) [Factor_NUMBER]
+                                ) [FactorSign]
+                              ) [Term_ONE]
+                            ) [Expr_ONE]
+                          ) [Designator_ARRAY_Elem]
+                        ) [DesignatorStat_DEC]
+                      ) [Statement_DesignatorStatement]
+                    ) [StatementList_STATEMENTS]
+                    Statement_DesignatorStatement(
+                      DesignatorStat_INC(
+                        Designator_ONE(
+                         l1
+                        ) [Designator_ONE]
+                      ) [DesignatorStat_INC]
+                    ) [Statement_DesignatorStatement]
+                  ) [StatementList_STATEMENTS]
+                  Statement_DesignatorStatement(
+                    DesignatorStat_DEC(
+                      Designator_ONE(
+                       l1
+                      ) [Designator_ONE]
+                    ) [DesignatorStat_DEC]
+                  ) [Statement_DesignatorStatement]
+                ) [StatementList_STATEMENTS]
+                Statement_DesignatorStatement(
+                  DesignatorStat_INC(
+                    Designator_ONE(
+                     l3
+                    ) [Designator_ONE]
+                  ) [DesignatorStat_INC]
+                ) [Statement_DesignatorStatement]
+              ) [StatementList_STATEMENTS]
+              Statement_DesignatorStatement(
+                DesignatorStat_DEC(
+                  Designator_ONE(
+                   l3
+                  ) [Designator_ONE]
+                ) [DesignatorStat_DEC]
+              ) [Statement_DesignatorStatement]
+            ) [StatementList_STATEMENTS]
+            Statement_DesignatorStatement(
+              DesignatorStat_INC(
+                Designator_ARRAY_Elem(
+                  DesignatorArrayName(
+                   c
+                  ) [DesignatorArrayName]
+                  Expr_ONE(
+                    Term_ONE(
+                      FactorSign(
+                        UnaryMinus_EPSILON(
+                        ) [UnaryMinus_EPSILON]
+                        Factor_NUMBER(
+                         3
+                        ) [Factor_NUMBER]
+                      ) [FactorSign]
+                    ) [Term_ONE]
+                  ) [Expr_ONE]
+                ) [Designator_ARRAY_Elem]
+              ) [DesignatorStat_INC]
+            ) [Statement_DesignatorStatement]
+          ) [StatementList_STATEMENTS]
+          Statement_DesignatorStatement(
+            DesignatorStat_DEC(
+              Designator_ARRAY_Elem(
+                DesignatorArrayName(
+                 c
+                ) [DesignatorArrayName]
+                Expr_ONE(
+                  Term_ONE(
+                    FactorSign(
+                      UnaryMinus_EPSILON(
+                      ) [UnaryMinus_EPSILON]
+                      Factor_NUMBER(
+                       3
+                      ) [Factor_NUMBER]
+                    ) [FactorSign]
+                  ) [Term_ONE]
+                ) [Expr_ONE]
+              ) [Designator_ARRAY_Elem]
+            ) [DesignatorStat_DEC]
+          ) [Statement_DesignatorStatement]
+        ) [StatementList_STATEMENTS]
+        Statement_DesignatorStatement(
+          DesignatorStat_INC(
+            Designator_ONE(
+             x
+            ) [Designator_ONE]
+          ) [DesignatorStat_INC]
+        ) [Statement_DesignatorStatement]
+      ) [StatementList_STATEMENTS]
+      Statement_DesignatorStatement(
+        DesignatorStat_DEC(
+          Designator_ONE(
+           x
+          ) [Designator_ONE]
+        ) [DesignatorStat_DEC]
+      ) [Statement_DesignatorStatement]
+    ) [StatementList_STATEMENTS]
+  ) [MethodDecl]
+) [Program]
+INFO  01:18:05,913 - ==============ZAVRSEN ISPIS STABLA=====================
+
+INFO  01:18:05,913 - ==============ISPIS SEMANTICKE ANALIZE=====================
+ERROR 01:18:05,921 - GRESKA-designatorStat_INC: Inkrementiranje l3 nije inkrementiranje nad int tipom na liniji 14
+ERROR 01:18:05,921 - GRESKA-designatorStat_DEC: Dekrementiranje l3 nije inkrementiranje nad int tipom na liniji 15
+ERROR 01:18:05,921 - GRESKA-Designator_ARRAYName: Pristup nedeklarisanoj oznaci niza c na liniji 16
+ERROR 01:18:05,921 - GRESKA-designatorStat_INC: Inkrementiranje noObj nije inkrementiranje nad int tipom na liniji 16
+ERROR 01:18:05,921 - GRESKA-Designator_ARRAYName: Pristup nedeklarisanoj oznaci niza c na liniji 17
+ERROR 01:18:05,921 - GRESKA-designatorStat_DEC: Dekrementiranje noObj nije inkrementiranje nad int tipom na liniji 17
+ERROR 01:18:05,921 - GRESKA-designatorStat_INC: Inkrementiranje x nije inkrementiranje varijable ni elementa niza na liniji 18
+ERROR 01:18:05,921 - GRESKA-designatorStat_DEC: Dekrementiranje x nije inkrementiranje varijable ni elementa niza na liniji 19
+INFO  01:18:05,922 - ==============ZAVRSEN ISPIS SEMANTICKE ANALIZE=====================
+
+ERROR 01:18:05,922 - Parsiranje NIJE uspesno zavrseno!

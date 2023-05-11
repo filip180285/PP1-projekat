@@ -41,6 +41,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     @Override
     public void visit(ProgramName programName) {
     	String progName = programName.getI1();
+    	
     	programName.obj = Tab.insert(Obj.Prog, progName, Tab.noType);
     	Tab.openScope();
     }
@@ -49,6 +50,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     @Override
     public void visit(Program program){
     	Obj progObj = program.getProgramName().obj;
+    	
     	Tab.chainLocalSymbols(progObj);
     	Tab.closeScope();
     }
@@ -215,10 +217,16 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     	factor_BOOLEAN.struct = Tab.find("bool").getType();
     }
     
-    // PROVJERI TIP IZRAZA**************************************
     // Factor ::= (Factor_NEW) NEW Type LEFT_BRACKET Expr RIGHT_BRACKET
     @Override
     public void visit(Factor_NEW factor_NEW) {
+    	Struct exprType = factor_NEW.getExpr().struct;
+    	
+    	if(exprType.equals(Tab.intType) == false) {
+    		report_error("GRESKA-Factor_NEW: Tip izraza u definiciji niza nije int", factor_NEW);
+    		factor_NEW.struct = Tab.noType;
+    		return;
+    	}
     	factor_NEW.struct = new Struct(Struct.Array, currentType);
     }
     
@@ -236,12 +244,12 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     	int desKind = desObj.getKind();
     	
     	if(desObj == Tab.noObj) {
-    		report_error("GRESKA-designator_ONE: Pristup nedeklarisanoj oznaci " + desName, designator_ONE);
+    		report_error("GRESKA-Designator_ONE: Pristup nedeklarisanoj oznaci " + desName, designator_ONE);
     		designator_ONE.obj = Tab.noObj;
     		return;
     	}
     	else if ( (desKind == Obj.Con || desKind == Obj.Var) == false ) {
-    		report_error("GRESKA-designator_ONE: Oznaka " + desName + " mora biti konstanta ili varijabla", designator_ONE);
+    		report_error("GRESKA-Designator_ONE: Oznaka " + desName + " nije konstanta ni varijabla", designator_ONE);
     		designator_ONE.obj = Tab.noObj;
     		return;
     	}
@@ -255,28 +263,35 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     	int desKind = desArrayObj.getKind();
     	
     	if(desArrayObj == Tab.noObj) {
-    		report_error("GRESKA-Designator_ARRAY_Elem: Pristup nedeklarisanoj oznaci niza " + desArrayName, designatorArrayName);
+    		report_error("GRESKA-Designator_ARRAYName: Pristup nedeklarisanoj oznaci niza " + desArrayName, designatorArrayName);
     		designatorArrayName.obj = Tab.noObj;
     		return;
     	}
     	else if (desKind != Obj.Var)  {
-    		report_error("GRESKA-Designator_ARRAY_Elem: Oznaka " + desArrayName + " mora biti varijabla", designatorArrayName);
+    		report_error("GRESKA-Designator_ARRAYName: Oznaka " + desArrayName + " nije varijabla", designatorArrayName);
     		designatorArrayName.obj = Tab.noObj;
     		return;
     	}
     	else if(desArrayObj.getType().getKind() != Struct.Array) {
-    		report_error("GRESKA-Designator_ARRAY_Elem: Oznaka " + desArrayName + " mora biti varijabla nizovnog tipa", designatorArrayName);
+    		report_error("GRESKA-Designator_ARRAYName: Oznaka " + desArrayName + " nije varijabla nizovnog tipa", designatorArrayName);
     		designatorArrayName.obj = Tab.noObj;
     		return;
     	}
     	designatorArrayName.obj = desArrayObj;
     }
     
-    // PROVJERI TIP IZRAZA**************************************
     // Designator ::= (designator_ARRAY_Elem) DesignatorArrayName LEFT_BRACKET Expr RIGHT_BRACKET;
     @Override
     public void visit(Designator_ARRAY_Elem designator_ARRAY_Elem) {
     		Obj danObj = designator_ARRAY_Elem.getDesignatorArrayName().obj;
+    		Struct exprType = designator_ARRAY_Elem.getExpr().struct;
+    		
+    		if(exprType.equals(Tab.intType) == false) {
+        		report_error("GRESKA-Designator_ARRAY_Elem: Tip izraza u indeksiranju elementa niza nije int", designator_ARRAY_Elem);
+        		designator_ARRAY_Elem.obj = Tab.noObj;
+        		return;
+    		}
+    		
     		if(danObj != Tab.noObj) {
 	    		Struct elemType = danObj.getType().getElemType();
 	    		Obj elemObj = new Obj(Obj.Elem, "elementNiza", elemType);
@@ -298,7 +313,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     			factorSign.struct = f.struct;
     		}
     		else {
-        		report_error("GRESKA-factorSign: Ne moze se negirati drugi tip osim int", factorSign);
+        		report_error("GRESKA-FactorSign: Negiran je tip koji nije int", factorSign);
         		factorSign.struct = Tab.noType;
         		return;
     		}
@@ -306,6 +321,118 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     	else {
     		factorSign.struct = f.struct;
     	}
+    }
+    
+    // Term ::= (Term_ONE) FactorSign
+    public void visit(Term_ONE term_ONE) {
+    	term_ONE.struct = term_ONE.getFactorSign().struct;
+    }
+    
+    // Term ::= (Term_MORE) Term Mulop FactorSign;
+    public void visit(Term_MORE term_MORE) {
+    	Struct factorType = term_MORE.getFactorSign().struct; // right operand type
+    	Struct termType = term_MORE.getTerm().struct; // left operand type
+    	
+    	if(factorType.equals(termType) && termType.equals(Tab.intType)) {
+    		term_MORE.struct = Tab.intType;
+    	}
+    	else {
+    		report_error("GRESKA-Term_MORE: Mnoze se/Dele se/Moduluju se tipovi koji nisu oba int", term_MORE);
+    		term_MORE.struct = Tab.noType;
+    		return;
+    	}
+    }
+    
+    // Expr ::= (Expr_ONE) Term
+    public void visit(Expr_ONE expr_ONE) {
+    	expr_ONE.struct = expr_ONE.getTerm().struct;
+    }
+    
+    // Expr ::= (Expr_MORE) Expr Addop Term;
+    public void visit(Expr_MORE expr_MORE) {
+    	Struct termType = expr_MORE.getTerm().struct; // right operand type
+    	Struct exprType = expr_MORE.getExpr().struct; // left operand type
+    	
+    	if(termType.equals(exprType) && exprType.equals(Tab.intType)) {
+    		expr_MORE.struct = Tab.intType;
+    	}
+    	else {
+    		report_error("GRESKA-Expr_MORE: Sabiraju se/Oduzimaju se tipovi koji nisu oba int", expr_MORE);
+    		expr_MORE.struct = Tab.noType;
+    		return;
+    	}
+    }
+    
+    // DesignatorStatement ::= (DesignatorSt_Assign) Designator Assignop Expr
+    public void visit(DesignatorSt_Assign designatorSt_Assign) {
+    	Obj desObj = designatorSt_Assign.getDesignator().obj;
+    	Struct exprType = designatorSt_Assign.getExpr().struct;
+    	int kind = desObj.getKind();
+    	
+    	if(kind != Obj.Var && kind != Obj.Elem) {
+    		report_error("GRESKA-DesignatorSt_Assign: Dodela vrednosti u "+ desObj.getName() +" nije u promenljivu ni u element niza", designatorSt_Assign);
+    		return;
+    	}
+    	else if(exprType.assignableTo(desObj.getType()) == false) {
+    		report_error("GRESKA-DesignatorSt_Assign: Dodela vrednosti u " + desObj.getName() + ",tipovi sa leve i desne strane jednakosti nisu isti", designatorSt_Assign);
+    		return;
+    	}
+    }
+    
+    // DesignatorStatement ::= (DesignatorStat_INC) Designator INCREMENT
+    public void visit(DesignatorStat_INC designatorStat_INC) { 
+    	Obj desObj = designatorStat_INC.getDesignator().obj;
+    	int kind = desObj.getKind();
+    	
+    	if(kind != Obj.Var && kind != Obj.Elem) {
+    		report_error("GRESKA-DesignatorStat_INC: Inkrementiranje "+ desObj.getName() +" nije inkrementiranje varijable ni elementa niza", designatorStat_INC);
+    		return;
+    	}
+    	else if(desObj.getType().equals(Tab.intType) == false) {
+    		report_error("GRESKA-DesignatorStat_INC: Inkrementiranje " + desObj.getName() + " nije inkrementiranje nad int tipom", designatorStat_INC);
+    		return;
+    	}
+    }
+    
+    // DesignatorStatement ::= (DesignatorStat_DEC) Designator DECREMENT
+    public void visit(DesignatorStat_DEC designatorStat_DEC) { 
+    	Obj desObj = designatorStat_DEC.getDesignator().obj;
+    	int kind = desObj.getKind();
+    	
+    	if(kind != Obj.Var && kind != Obj.Elem) {
+    		report_error("GRESKA-DesignatorStat_DEC: Dekrementiranje "+ desObj.getName() +" nije dekrementiranje varijable ni elementa niza", designatorStat_DEC);
+    		return;
+    	}
+    	else if(desObj.getType().equals(Tab.intType) == false) {
+    		report_error("GRESKA-DesignatorStat_DEC: Dekrementiranje " + desObj.getName() + " nije dekrementiranje nad int tipom", designatorStat_DEC);
+    		return;
+    	}
+    }
+    
+    // Statement ::= (Statement_READ) READ LEFT_PARENTHESIS Designator RIGHT_PARENTHESIS SEMICOLON
+    public void visit(Statement_READ statement_READ) {
+    	Obj desObj = statement_READ.getDesignator().obj;
+    	int kind = desObj.getKind();
+    	
+    	if(kind != Obj.Var && kind != Obj.Elem) {
+    		report_error("GRESKA-statement_READ: Read "+ desObj.getName() +" nije read varijable ni elementa niza", statement_READ);
+    		return;
+    	}
+    	else if(desObj.getType().equals(Tab.intType) == false && desObj.getType().equals(Tab.charType) == false && 
+    		desObj.getType().equals(Tab.find("bool").getType()) == false) {
+    		report_error("GRESKA-Statement_READ: Read " + desObj.getName() + " nije read nad int/char/bool tipom", statement_READ);
+    		return;
+    	}
+    }
+    
+    // Statement ::= (Statement_PRINT) PRINT LEFT_PARENTHESIS Expr MayPrintNumConst RIGHT_PARENTHESIS SEMICOLON
+    public void visit(Statement_PRINT statement_PRINT) {
+    	Struct exprType = statement_PRINT.getExpr().struct;
+    	if(exprType.equals(Tab.intType) == false && exprType.equals(Tab.charType) == false && 
+    			exprType.equals(Tab.find("bool").getType()) == false) {
+        	report_error("GRESKA-Statement_PRINT: Print nema int/char/bool argument", statement_PRINT);
+        	return;
+        }
     }
 }
 

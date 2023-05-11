@@ -1,0 +1,229 @@
+INFO  00:22:21,736 - Compiling source file: C:\Users\Korisnik\Desktop\PP1-projekat\MJCompiler\test\program.mj
+INFO  00:22:21,757 - #2 program
+INFO  00:22:21,757 - #9 test301
+INFO  00:22:21,757 - #3 const
+INFO  00:22:21,758 - #9 int
+INFO  00:22:21,758 - #9 x
+INFO  00:22:21,758 - #18 =
+INFO  00:22:21,758 - #10 1
+INFO  00:22:21,759 - #22 ,
+INFO  00:22:21,759 - #9 y
+INFO  00:22:21,759 - #18 =
+INFO  00:22:21,759 - #10 2
+INFO  00:22:21,759 - #21 ;
+INFO  00:22:21,759 - #9 char
+INFO  00:22:21,760 - #9 a
+INFO  00:22:21,760 - #25 [
+INFO  00:22:21,760 - #26 ]
+INFO  00:22:21,760 - #22 ,
+INFO  00:22:21,760 - #9 b
+INFO  00:22:21,760 - #21 ;
+INFO  00:22:21,760 - #27 {
+INFO  00:22:21,761 - #8 void
+INFO  00:22:21,761 - #9 main
+INFO  00:22:21,761 - #23 (
+INFO  00:22:21,762 - #24 )
+INFO  00:22:21,762 - #9 int
+INFO  00:22:21,762 - #9 l1
+INFO  00:22:21,762 - #21 ;
+INFO  00:22:21,762 - #9 char
+INFO  00:22:21,762 - #9 l2
+INFO  00:22:21,762 - #21 ;
+INFO  00:22:21,762 - #9 bool
+INFO  00:22:21,762 - #9 l3
+INFO  00:22:21,762 - #21 ;
+INFO  00:22:21,763 - #9 int
+INFO  00:22:21,763 - #9 l4
+INFO  00:22:21,763 - #25 [
+INFO  00:22:21,763 - #26 ]
+INFO  00:22:21,763 - #21 ;
+INFO  00:22:21,763 - #27 {
+INFO  00:22:21,763 - #9 a
+INFO  00:22:21,763 - #18 =
+INFO  00:22:21,763 - #10 2
+INFO  00:22:21,764 - #13 +
+INFO  00:22:21,765 - #9 b
+INFO  00:22:21,766 - #25 [
+INFO  00:22:21,766 - #10 3
+INFO  00:22:21,766 - #26 ]
+INFO  00:22:21,766 - #15 *
+INFO  00:22:21,766 - #10 4
+INFO  00:22:21,767 - #21 ;
+INFO  00:22:21,767 - #28 }
+INFO  00:22:21,767 - #28 }
+INFO  00:22:21,768 - 
+                     ==============ISPIS STABLA=====================
+INFO  00:22:21,769 - Program(
+  ProgramName(
+   test301
+  ) [ProgramName]
+  ConstVarDeclList_VAR(
+    ConstVarDeclList_CONST(
+      ConstVarDeclList_EPSILON(
+      ) [ConstVarDeclList_EPSILON]
+      ConstDeclList(
+        Type(
+         int
+        ) [Type]
+        ConstDeclOneOrMore_MORE(
+          ConstDecl(
+           x
+            Constant_NUMBER(
+             1
+            ) [Constant_NUMBER]
+          ) [ConstDecl]
+          ConstDeclOneOrMore_ONE(
+            ConstDecl(
+             y
+              Constant_NUMBER(
+               2
+              ) [Constant_NUMBER]
+            ) [ConstDecl]
+          ) [ConstDeclOneOrMore_ONE]
+        ) [ConstDeclOneOrMore_MORE]
+      ) [ConstDeclList]
+    ) [ConstVarDeclList_CONST]
+    VarDeclList(
+      Type(
+       char
+      ) [Type]
+      VarDeclOneOrMore_MORE(
+        VarDecl_ARRAY(
+         a
+        ) [VarDecl_ARRAY]
+        VarDeclOneOrMore_ONE(
+          VarDecl_VAR(
+           b
+          ) [VarDecl_VAR]
+        ) [VarDeclOneOrMore_ONE]
+      ) [VarDeclOneOrMore_MORE]
+    ) [VarDeclList]
+  ) [ConstVarDeclList_VAR]
+  MethodDecl(
+    MethodName(
+     main
+    ) [MethodName]
+    MethodVarDeclList_VAR(
+      MethodVarDeclList_VAR(
+        MethodVarDeclList_VAR(
+          MethodVarDeclList_VAR(
+            MethodVarDeclList_EPSILON(
+            ) [MethodVarDeclList_EPSILON]
+            VarDeclList(
+              Type(
+               int
+              ) [Type]
+              VarDeclOneOrMore_ONE(
+                VarDecl_VAR(
+                 l1
+                ) [VarDecl_VAR]
+              ) [VarDeclOneOrMore_ONE]
+            ) [VarDeclList]
+          ) [MethodVarDeclList_VAR]
+          VarDeclList(
+            Type(
+             char
+            ) [Type]
+            VarDeclOneOrMore_ONE(
+              VarDecl_VAR(
+               l2
+              ) [VarDecl_VAR]
+            ) [VarDeclOneOrMore_ONE]
+          ) [VarDeclList]
+        ) [MethodVarDeclList_VAR]
+        VarDeclList(
+          Type(
+           bool
+          ) [Type]
+          VarDeclOneOrMore_ONE(
+            VarDecl_VAR(
+             l3
+            ) [VarDecl_VAR]
+          ) [VarDeclOneOrMore_ONE]
+        ) [VarDeclList]
+      ) [MethodVarDeclList_VAR]
+      VarDeclList(
+        Type(
+         int
+        ) [Type]
+        VarDeclOneOrMore_ONE(
+          VarDecl_ARRAY(
+           l4
+          ) [VarDecl_ARRAY]
+        ) [VarDeclOneOrMore_ONE]
+      ) [VarDeclList]
+    ) [MethodVarDeclList_VAR]
+    StatementList_STATEMENTS(
+      StatementList_EPSILON(
+      ) [StatementList_EPSILON]
+      Statement_DesignatorStatement(
+        DesignatorSt_Assign(
+          Designator_ONE(
+           a
+          ) [Designator_ONE]
+          Assignop(
+          ) [Assignop]
+          Expr_MORE(
+            Expr_ONE(
+              Term_ONE(
+                FactorSign(
+                  UnaryMinus_EPSILON(
+                  ) [UnaryMinus_EPSILON]
+                  Factor_NUMBER(
+                   2
+                  ) [Factor_NUMBER]
+                ) [FactorSign]
+              ) [Term_ONE]
+            ) [Expr_ONE]
+            Addop_PLUS(
+            ) [Addop_PLUS]
+            Term_MORE(
+              Term_ONE(
+                FactorSign(
+                  UnaryMinus_EPSILON(
+                  ) [UnaryMinus_EPSILON]
+                  Factor_Designator(
+                    Designator_ARRAY_Elem(
+                      DesignatorArrayName(
+                       b
+                      ) [DesignatorArrayName]
+                      Expr_ONE(
+                        Term_ONE(
+                          FactorSign(
+                            UnaryMinus_EPSILON(
+                            ) [UnaryMinus_EPSILON]
+                            Factor_NUMBER(
+                             3
+                            ) [Factor_NUMBER]
+                          ) [FactorSign]
+                        ) [Term_ONE]
+                      ) [Expr_ONE]
+                    ) [Designator_ARRAY_Elem]
+                  ) [Factor_Designator]
+                ) [FactorSign]
+              ) [Term_ONE]
+              Mulop_MUL(
+              ) [Mulop_MUL]
+              FactorSign(
+                UnaryMinus_EPSILON(
+                ) [UnaryMinus_EPSILON]
+                Factor_NUMBER(
+                 4
+                ) [Factor_NUMBER]
+              ) [FactorSign]
+            ) [Term_MORE]
+          ) [Expr_MORE]
+        ) [DesignatorSt_Assign]
+      ) [Statement_DesignatorStatement]
+    ) [StatementList_STATEMENTS]
+  ) [MethodDecl]
+) [Program]
+INFO  00:22:21,769 - ==============ZAVRSEN ISPIS STABLA=====================
+
+INFO  00:22:21,769 - ==============ISPIS SEMANTICKE ANALIZE=====================
+ERROR 00:22:21,775 - GRESKA-Designator_ARRAY_Elem: Oznaka b nije varijabla nizovnog tipa na liniji 9
+ERROR 00:22:21,775 - GRESKA-term_MORE: Mnoze se/Dele se/Moduluju se tipovi koji nisu oba int na liniji 7
+ERROR 00:22:21,775 - GRESKA-term_MORE: Sabiraju se/Oduzimaju se tipovi koji nisu oba int na liniji 4
+INFO  00:22:21,775 - ==============ZAVRSEN ISPIS SEMANTICKE ANALIZE=====================
+
+ERROR 00:22:21,776 - Parsiranje NIJE uspesno zavrseno!

@@ -1,0 +1,77 @@
+INFO  02:09:06,465 - Compiling source file: C:\Users\Korisnik\Desktop\PP1-projekat\MJCompiler\test\program.mj
+INFO  02:09:06,485 - #2 program
+INFO  02:09:06,485 - #9 test301
+INFO  02:09:06,485 - #9 char
+INFO  02:09:06,486 - #9 m
+INFO  02:09:06,486 - #25 [
+INFO  02:09:06,486 - #26 ]
+INFO  02:09:06,486 - #21 ;
+INFO  02:09:06,487 - #27 {
+INFO  02:09:06,487 - #8 void
+INFO  02:09:06,487 - #9 main
+INFO  02:09:06,487 - #23 (
+INFO  02:09:06,488 - #24 )
+INFO  02:09:06,488 - #27 {
+INFO  02:09:06,488 - #5 print
+INFO  02:09:06,488 - #23 (
+INFO  02:09:06,488 - #10 4
+INFO  02:09:06,489 - #22 ,
+INFO  02:09:06,489 - #10 15
+INFO  02:09:06,490 - #24 )
+INFO  02:09:06,490 - #21 ;
+INFO  02:09:06,490 - #28 }
+INFO  02:09:06,490 - #28 }
+INFO  02:09:06,491 - 
+                     ==============ISPIS STABLA=====================
+INFO  02:09:06,491 - Program(
+  ProgramName(
+   test301
+  ) [ProgramName]
+  ConstVarDeclList_VAR(
+    ConstVarDeclList_EPSILON(
+    ) [ConstVarDeclList_EPSILON]
+    VarDeclList(
+      Type(
+       char
+      ) [Type]
+      VarDeclOneOrMore_ONE(
+        VarDecl_ARRAY(
+         m
+        ) [VarDecl_ARRAY]
+      ) [VarDeclOneOrMore_ONE]
+    ) [VarDeclList]
+  ) [ConstVarDeclList_VAR]
+  MethodDecl(
+    MethodName(
+     main
+    ) [MethodName]
+    MethodVarDeclList_EPSILON(
+    ) [MethodVarDeclList_EPSILON]
+    StatementList_STATEMENTS(
+      StatementList_EPSILON(
+      ) [StatementList_EPSILON]
+      Statement_PRINT(
+        Expr_ONE(
+          Term_ONE(
+            FactorSign(
+              UnaryMinus_EPSILON(
+              ) [UnaryMinus_EPSILON]
+              Factor_NUMBER(
+               4
+              ) [Factor_NUMBER]
+            ) [FactorSign]
+          ) [Term_ONE]
+        ) [Expr_ONE]
+        MayPrintNumConst_NUMBER(
+         15
+        ) [MayPrintNumConst_NUMBER]
+      ) [Statement_PRINT]
+    ) [StatementList_STATEMENTS]
+  ) [MethodDecl]
+) [Program]
+INFO  02:09:06,491 - ==============ZAVRSEN ISPIS STABLA=====================
+
+INFO  02:09:06,491 - ==============ISPIS SEMANTICKE ANALIZE=====================
+INFO  02:09:06,500 - ==============ZAVRSEN ISPIS SEMANTICKE ANALIZE=====================
+
+INFO  02:09:06,501 - Parsiranje uspesno zavrseno!

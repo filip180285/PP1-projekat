@@ -1,0 +1,53 @@
+INFO  02:22:01,692 - Compiling source file: C:\Users\Korisnik\Desktop\PP1-projekat\MJCompiler\test\program.mj
+INFO  02:22:01,712 - #2 program
+INFO  02:22:01,712 - #9 test301
+INFO  02:22:01,712 - #27 {
+INFO  02:22:01,713 - #8 void
+INFO  02:22:01,713 - #9 main
+INFO  02:22:01,713 - #23 (
+INFO  02:22:01,714 - #24 )
+INFO  02:22:01,714 - #27 {
+INFO  02:22:01,714 - #7 return
+INFO  02:22:01,715 - #21 ;
+INFO  02:22:01,715 - #7 return
+INFO  02:22:01,715 - #21 ;
+INFO  02:22:01,715 - #7 return
+INFO  02:22:01,715 - #21 ;
+INFO  02:22:01,715 - #28 }
+INFO  02:22:01,715 - #28 }
+INFO  02:22:01,716 - 
+                     ==============ISPIS STABLA=====================
+INFO  02:22:01,716 - Program(
+  ProgramName(
+   test301
+  ) [ProgramName]
+  ConstVarDeclList_EPSILON(
+  ) [ConstVarDeclList_EPSILON]
+  MethodDecl(
+    MethodName(
+     main
+    ) [MethodName]
+    MethodVarDeclList_EPSILON(
+    ) [MethodVarDeclList_EPSILON]
+    StatementList_STATEMENTS(
+      StatementList_STATEMENTS(
+        StatementList_STATEMENTS(
+          StatementList_EPSILON(
+          ) [StatementList_EPSILON]
+          Statement_RETURN(
+          ) [Statement_RETURN]
+        ) [StatementList_STATEMENTS]
+        Statement_RETURN(
+        ) [Statement_RETURN]
+      ) [StatementList_STATEMENTS]
+      Statement_RETURN(
+      ) [Statement_RETURN]
+    ) [StatementList_STATEMENTS]
+  ) [MethodDecl]
+) [Program]
+INFO  02:22:01,719 - ==============ZAVRSEN ISPIS STABLA=====================
+
+INFO  02:22:01,719 - ==============ISPIS SEMANTICKE ANALIZE=====================
+INFO  02:22:01,727 - ==============ZAVRSEN ISPIS SEMANTICKE ANALIZE=====================
+
+INFO  02:22:01,727 - Parsiranje uspesno zavrseno!

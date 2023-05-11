@@ -1,0 +1,65 @@
+INFO  01:41:05,423 - Compiling source file: C:\Users\Korisnik\Desktop\PP1-projekat\MJCompiler\test\program.mj
+INFO  01:41:05,443 - #2 program
+INFO  01:41:05,443 - #9 test301
+INFO  01:41:05,443 - #9 char
+INFO  01:41:05,444 - #9 m
+INFO  01:41:05,444 - #25 [
+INFO  01:41:05,445 - #26 ]
+INFO  01:41:05,445 - #21 ;
+INFO  01:41:05,445 - #27 {
+INFO  01:41:05,445 - #8 void
+INFO  01:41:05,445 - #9 main
+INFO  01:41:05,445 - #23 (
+INFO  01:41:05,446 - #24 )
+INFO  01:41:05,446 - #27 {
+INFO  01:41:05,446 - #6 read
+INFO  01:41:05,447 - #23 (
+INFO  01:41:05,447 - #9 m
+INFO  01:41:05,447 - #24 )
+INFO  01:41:05,447 - #21 ;
+INFO  01:41:05,447 - #28 }
+INFO  01:41:05,447 - #28 }
+INFO  01:41:05,448 - 
+                     ==============ISPIS STABLA=====================
+INFO  01:41:05,450 - Program(
+  ProgramName(
+   test301
+  ) [ProgramName]
+  ConstVarDeclList_VAR(
+    ConstVarDeclList_EPSILON(
+    ) [ConstVarDeclList_EPSILON]
+    VarDeclList(
+      Type(
+       char
+      ) [Type]
+      VarDeclOneOrMore_ONE(
+        VarDecl_ARRAY(
+         m
+        ) [VarDecl_ARRAY]
+      ) [VarDeclOneOrMore_ONE]
+    ) [VarDeclList]
+  ) [ConstVarDeclList_VAR]
+  MethodDecl(
+    MethodName(
+     main
+    ) [MethodName]
+    MethodVarDeclList_EPSILON(
+    ) [MethodVarDeclList_EPSILON]
+    StatementList_STATEMENTS(
+      StatementList_EPSILON(
+      ) [StatementList_EPSILON]
+      Statement_READ(
+        Designator_ONE(
+         m
+        ) [Designator_ONE]
+      ) [Statement_READ]
+    ) [StatementList_STATEMENTS]
+  ) [MethodDecl]
+) [Program]
+INFO  01:41:05,450 - ==============ZAVRSEN ISPIS STABLA=====================
+
+INFO  01:41:05,450 - ==============ISPIS SEMANTICKE ANALIZE=====================
+ERROR 01:41:05,458 - GRESKA-statement_READ: Citanje m nije citanje nad int/char/bool tipom na liniji 8
+INFO  01:41:05,458 - ==============ZAVRSEN ISPIS SEMANTICKE ANALIZE=====================
+
+ERROR 01:41:05,459 - Parsiranje NIJE uspesno zavrseno!

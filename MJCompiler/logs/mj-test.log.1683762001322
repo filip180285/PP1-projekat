@@ -1,0 +1,304 @@
+INFO  01:39:19,795 - Compiling source file: C:\Users\Korisnik\Desktop\PP1-projekat\MJCompiler\test\program.mj
+INFO  01:39:19,821 - #2 program
+INFO  01:39:19,821 - #9 test301
+INFO  01:39:19,821 - #3 const
+INFO  01:39:19,822 - #9 int
+INFO  01:39:19,823 - #9 x
+INFO  01:39:19,823 - #18 =
+INFO  01:39:19,823 - #10 1
+INFO  01:39:19,823 - #22 ,
+INFO  01:39:19,824 - #9 y
+INFO  01:39:19,824 - #18 =
+INFO  01:39:19,824 - #10 2
+INFO  01:39:19,825 - #21 ;
+INFO  01:39:19,825 - #9 int
+INFO  01:39:19,826 - #9 a
+INFO  01:39:19,826 - #25 [
+INFO  01:39:19,826 - #26 ]
+INFO  01:39:19,826 - #22 ,
+INFO  01:39:19,826 - #9 b
+INFO  01:39:19,826 - #21 ;
+INFO  01:39:19,827 - #9 char
+INFO  01:39:19,828 - #9 m
+INFO  01:39:19,828 - #25 [
+INFO  01:39:19,830 - #26 ]
+INFO  01:39:19,830 - #21 ;
+INFO  01:39:19,830 - #27 {
+INFO  01:39:19,830 - #8 void
+INFO  01:39:19,830 - #9 main
+INFO  01:39:19,830 - #23 (
+INFO  01:39:19,831 - #24 )
+INFO  01:39:19,831 - #9 int
+INFO  01:39:19,831 - #9 x
+INFO  01:39:19,831 - #21 ;
+INFO  01:39:19,832 - #9 char
+INFO  01:39:19,832 - #9 l2
+INFO  01:39:19,832 - #21 ;
+INFO  01:39:19,832 - #9 bool
+INFO  01:39:19,832 - #9 l3
+INFO  01:39:19,832 - #21 ;
+INFO  01:39:19,832 - #9 bool
+INFO  01:39:19,832 - #9 l4
+INFO  01:39:19,832 - #25 [
+INFO  01:39:19,832 - #26 ]
+INFO  01:39:19,832 - #21 ;
+INFO  01:39:19,832 - #27 {
+INFO  01:39:19,833 - #6 read
+INFO  01:39:19,833 - #23 (
+INFO  01:39:19,833 - #9 x
+INFO  01:39:19,833 - #24 )
+INFO  01:39:19,833 - #21 ;
+INFO  01:39:19,833 - #6 read
+INFO  01:39:19,834 - #23 (
+INFO  01:39:19,834 - #9 l2
+INFO  01:39:19,834 - #24 )
+INFO  01:39:19,834 - #21 ;
+INFO  01:39:19,834 - #6 read
+INFO  01:39:19,834 - #23 (
+INFO  01:39:19,834 - #9 l3
+INFO  01:39:19,834 - #24 )
+INFO  01:39:19,834 - #21 ;
+INFO  01:39:19,834 - #6 read
+INFO  01:39:19,834 - #23 (
+INFO  01:39:19,834 - #9 m
+INFO  01:39:19,835 - #25 [
+INFO  01:39:19,835 - #10 2
+INFO  01:39:19,836 - #26 ]
+INFO  01:39:19,837 - #24 )
+INFO  01:39:19,838 - #21 ;
+INFO  01:39:19,838 - #6 read
+INFO  01:39:19,838 - #23 (
+INFO  01:39:19,839 - #9 a
+INFO  01:39:19,839 - #25 [
+INFO  01:39:19,839 - #10 2
+INFO  01:39:19,839 - #26 ]
+INFO  01:39:19,840 - #24 )
+INFO  01:39:19,840 - #21 ;
+INFO  01:39:19,840 - #6 read
+INFO  01:39:19,840 - #23 (
+INFO  01:39:19,840 - #9 l4
+INFO  01:39:19,840 - #25 [
+INFO  01:39:19,840 - #10 2
+INFO  01:39:19,840 - #26 ]
+INFO  01:39:19,840 - #24 )
+INFO  01:39:19,840 - #21 ;
+INFO  01:39:19,840 - #6 read
+INFO  01:39:19,840 - #23 (
+INFO  01:39:19,840 - #9 m
+INFO  01:39:19,840 - #24 )
+INFO  01:39:19,840 - #21 ;
+INFO  01:39:19,840 - #28 }
+INFO  01:39:19,840 - #28 }
+INFO  01:39:19,841 - 
+                     ==============ISPIS STABLA=====================
+INFO  01:39:19,842 - Program(
+  ProgramName(
+   test301
+  ) [ProgramName]
+  ConstVarDeclList_VAR(
+    ConstVarDeclList_VAR(
+      ConstVarDeclList_CONST(
+        ConstVarDeclList_EPSILON(
+        ) [ConstVarDeclList_EPSILON]
+        ConstDeclList(
+          Type(
+           int
+          ) [Type]
+          ConstDeclOneOrMore_MORE(
+            ConstDecl(
+             x
+              Constant_NUMBER(
+               1
+              ) [Constant_NUMBER]
+            ) [ConstDecl]
+            ConstDeclOneOrMore_ONE(
+              ConstDecl(
+               y
+                Constant_NUMBER(
+                 2
+                ) [Constant_NUMBER]
+              ) [ConstDecl]
+            ) [ConstDeclOneOrMore_ONE]
+          ) [ConstDeclOneOrMore_MORE]
+        ) [ConstDeclList]
+      ) [ConstVarDeclList_CONST]
+      VarDeclList(
+        Type(
+         int
+        ) [Type]
+        VarDeclOneOrMore_MORE(
+          VarDecl_ARRAY(
+           a
+          ) [VarDecl_ARRAY]
+          VarDeclOneOrMore_ONE(
+            VarDecl_VAR(
+             b
+            ) [VarDecl_VAR]
+          ) [VarDeclOneOrMore_ONE]
+        ) [VarDeclOneOrMore_MORE]
+      ) [VarDeclList]
+    ) [ConstVarDeclList_VAR]
+    VarDeclList(
+      Type(
+       char
+      ) [Type]
+      VarDeclOneOrMore_ONE(
+        VarDecl_ARRAY(
+         m
+        ) [VarDecl_ARRAY]
+      ) [VarDeclOneOrMore_ONE]
+    ) [VarDeclList]
+  ) [ConstVarDeclList_VAR]
+  MethodDecl(
+    MethodName(
+     main
+    ) [MethodName]
+    MethodVarDeclList_VAR(
+      MethodVarDeclList_VAR(
+        MethodVarDeclList_VAR(
+          MethodVarDeclList_VAR(
+            MethodVarDeclList_EPSILON(
+            ) [MethodVarDeclList_EPSILON]
+            VarDeclList(
+              Type(
+               int
+              ) [Type]
+              VarDeclOneOrMore_ONE(
+                VarDecl_VAR(
+                 x
+                ) [VarDecl_VAR]
+              ) [VarDeclOneOrMore_ONE]
+            ) [VarDeclList]
+          ) [MethodVarDeclList_VAR]
+          VarDeclList(
+            Type(
+             char
+            ) [Type]
+            VarDeclOneOrMore_ONE(
+              VarDecl_VAR(
+               l2
+              ) [VarDecl_VAR]
+            ) [VarDeclOneOrMore_ONE]
+          ) [VarDeclList]
+        ) [MethodVarDeclList_VAR]
+        VarDeclList(
+          Type(
+           bool
+          ) [Type]
+          VarDeclOneOrMore_ONE(
+            VarDecl_VAR(
+             l3
+            ) [VarDecl_VAR]
+          ) [VarDeclOneOrMore_ONE]
+        ) [VarDeclList]
+      ) [MethodVarDeclList_VAR]
+      VarDeclList(
+        Type(
+         bool
+        ) [Type]
+        VarDeclOneOrMore_ONE(
+          VarDecl_ARRAY(
+           l4
+          ) [VarDecl_ARRAY]
+        ) [VarDeclOneOrMore_ONE]
+      ) [VarDeclList]
+    ) [MethodVarDeclList_VAR]
+    StatementList_STATEMENTS(
+      StatementList_STATEMENTS(
+        StatementList_STATEMENTS(
+          StatementList_STATEMENTS(
+            StatementList_STATEMENTS(
+              StatementList_STATEMENTS(
+                StatementList_STATEMENTS(
+                  StatementList_EPSILON(
+                  ) [StatementList_EPSILON]
+                  Statement_READ(
+                    Designator_ONE(
+                     x
+                    ) [Designator_ONE]
+                  ) [Statement_READ]
+                ) [StatementList_STATEMENTS]
+                Statement_READ(
+                  Designator_ONE(
+                   l2
+                  ) [Designator_ONE]
+                ) [Statement_READ]
+              ) [StatementList_STATEMENTS]
+              Statement_READ(
+                Designator_ONE(
+                 l3
+                ) [Designator_ONE]
+              ) [Statement_READ]
+            ) [StatementList_STATEMENTS]
+            Statement_READ(
+              Designator_ARRAY_Elem(
+                DesignatorArrayName(
+                 m
+                ) [DesignatorArrayName]
+                Expr_ONE(
+                  Term_ONE(
+                    FactorSign(
+                      UnaryMinus_EPSILON(
+                      ) [UnaryMinus_EPSILON]
+                      Factor_NUMBER(
+                       2
+                      ) [Factor_NUMBER]
+                    ) [FactorSign]
+                  ) [Term_ONE]
+                ) [Expr_ONE]
+              ) [Designator_ARRAY_Elem]
+            ) [Statement_READ]
+          ) [StatementList_STATEMENTS]
+          Statement_READ(
+            Designator_ARRAY_Elem(
+              DesignatorArrayName(
+               a
+              ) [DesignatorArrayName]
+              Expr_ONE(
+                Term_ONE(
+                  FactorSign(
+                    UnaryMinus_EPSILON(
+                    ) [UnaryMinus_EPSILON]
+                    Factor_NUMBER(
+                     2
+                    ) [Factor_NUMBER]
+                  ) [FactorSign]
+                ) [Term_ONE]
+              ) [Expr_ONE]
+            ) [Designator_ARRAY_Elem]
+          ) [Statement_READ]
+        ) [StatementList_STATEMENTS]
+        Statement_READ(
+          Designator_ARRAY_Elem(
+            DesignatorArrayName(
+             l4
+            ) [DesignatorArrayName]
+            Expr_ONE(
+              Term_ONE(
+                FactorSign(
+                  UnaryMinus_EPSILON(
+                  ) [UnaryMinus_EPSILON]
+                  Factor_NUMBER(
+                   2
+                  ) [Factor_NUMBER]
+                ) [FactorSign]
+              ) [Term_ONE]
+            ) [Expr_ONE]
+          ) [Designator_ARRAY_Elem]
+        ) [Statement_READ]
+      ) [StatementList_STATEMENTS]
+      Statement_READ(
+        Designator_ONE(
+         m
+        ) [Designator_ONE]
+      ) [Statement_READ]
+    ) [StatementList_STATEMENTS]
+  ) [MethodDecl]
+) [Program]
+INFO  01:39:19,842 - ==============ZAVRSEN ISPIS STABLA=====================
+
+INFO  01:39:19,842 - ==============ISPIS SEMANTICKE ANALIZE=====================
+ERROR 01:39:19,852 - GRESKA-statement_READ: Citanje m nije citanje nad int/char/bool tipom na liniji 16
+INFO  01:39:19,852 - ==============ZAVRSEN ISPIS SEMANTICKE ANALIZE=====================
+
+ERROR 01:39:19,852 - Parsiranje NIJE uspesno zavrseno!

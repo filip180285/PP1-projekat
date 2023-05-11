@@ -1,0 +1,207 @@
+INFO  02:13:48,591 - Compiling source file: C:\Users\Korisnik\Desktop\PP1-projekat\MJCompiler\test\program.mj
+INFO  02:13:48,610 - #2 program
+INFO  02:13:48,610 - #9 test301
+INFO  02:13:48,610 - #9 char
+INFO  02:13:48,611 - #9 m
+INFO  02:13:48,611 - #25 [
+INFO  02:13:48,611 - #26 ]
+INFO  02:13:48,611 - #21 ;
+INFO  02:13:48,611 - #3 const
+INFO  02:13:48,612 - #9 bool
+INFO  02:13:48,612 - #9 c
+INFO  02:13:48,612 - #18 =
+INFO  02:13:48,612 - #12 0
+INFO  02:13:48,612 - #21 ;
+INFO  02:13:48,613 - #27 {
+INFO  02:13:48,613 - #8 void
+INFO  02:13:48,613 - #9 main
+INFO  02:13:48,613 - #23 (
+INFO  02:13:48,614 - #24 )
+INFO  02:13:48,614 - #27 {
+INFO  02:13:48,614 - #5 print
+INFO  02:13:48,614 - #23 (
+INFO  02:13:48,614 - #10 4
+INFO  02:13:48,617 - #24 )
+INFO  02:13:48,618 - #21 ;
+INFO  02:13:48,618 - #5 print
+INFO  02:13:48,618 - #23 (
+INFO  02:13:48,618 - #11 a
+INFO  02:13:48,618 - #24 )
+INFO  02:13:48,619 - #21 ;
+INFO  02:13:48,619 - #5 print
+INFO  02:13:48,619 - #23 (
+INFO  02:13:48,619 - #12 1
+INFO  02:13:48,619 - #24 )
+INFO  02:13:48,619 - #21 ;
+INFO  02:13:48,619 - #5 print
+INFO  02:13:48,619 - #23 (
+INFO  02:13:48,619 - #10 3
+INFO  02:13:48,619 - #15 *
+INFO  02:13:48,619 - #10 2
+INFO  02:13:48,620 - #13 +
+INFO  02:13:48,620 - #10 3
+INFO  02:13:48,621 - #15 *
+INFO  02:13:48,621 - #9 c
+INFO  02:13:48,621 - #24 )
+INFO  02:13:48,622 - #21 ;
+INFO  02:13:48,622 - #28 }
+INFO  02:13:48,622 - #28 }
+INFO  02:13:48,623 - 
+                     ==============ISPIS STABLA=====================
+INFO  02:13:48,623 - Program(
+  ProgramName(
+   test301
+  ) [ProgramName]
+  ConstVarDeclList_CONST(
+    ConstVarDeclList_VAR(
+      ConstVarDeclList_EPSILON(
+      ) [ConstVarDeclList_EPSILON]
+      VarDeclList(
+        Type(
+         char
+        ) [Type]
+        VarDeclOneOrMore_ONE(
+          VarDecl_ARRAY(
+           m
+          ) [VarDecl_ARRAY]
+        ) [VarDeclOneOrMore_ONE]
+      ) [VarDeclList]
+    ) [ConstVarDeclList_VAR]
+    ConstDeclList(
+      Type(
+       bool
+      ) [Type]
+      ConstDeclOneOrMore_ONE(
+        ConstDecl(
+         c
+          Constant_BOOLEAN(
+           0
+          ) [Constant_BOOLEAN]
+        ) [ConstDecl]
+      ) [ConstDeclOneOrMore_ONE]
+    ) [ConstDeclList]
+  ) [ConstVarDeclList_CONST]
+  MethodDecl(
+    MethodName(
+     main
+    ) [MethodName]
+    MethodVarDeclList_EPSILON(
+    ) [MethodVarDeclList_EPSILON]
+    StatementList_STATEMENTS(
+      StatementList_STATEMENTS(
+        StatementList_STATEMENTS(
+          StatementList_STATEMENTS(
+            StatementList_EPSILON(
+            ) [StatementList_EPSILON]
+            Statement_PRINT(
+              Expr_ONE(
+                Term_ONE(
+                  FactorSign(
+                    UnaryMinus_EPSILON(
+                    ) [UnaryMinus_EPSILON]
+                    Factor_NUMBER(
+                     4
+                    ) [Factor_NUMBER]
+                  ) [FactorSign]
+                ) [Term_ONE]
+              ) [Expr_ONE]
+              MayPrintNumConst_EPSILON(
+              ) [MayPrintNumConst_EPSILON]
+            ) [Statement_PRINT]
+          ) [StatementList_STATEMENTS]
+          Statement_PRINT(
+            Expr_ONE(
+              Term_ONE(
+                FactorSign(
+                  UnaryMinus_EPSILON(
+                  ) [UnaryMinus_EPSILON]
+                  Factor_CHARACTER(
+                   a
+                  ) [Factor_CHARACTER]
+                ) [FactorSign]
+              ) [Term_ONE]
+            ) [Expr_ONE]
+            MayPrintNumConst_EPSILON(
+            ) [MayPrintNumConst_EPSILON]
+          ) [Statement_PRINT]
+        ) [StatementList_STATEMENTS]
+        Statement_PRINT(
+          Expr_ONE(
+            Term_ONE(
+              FactorSign(
+                UnaryMinus_EPSILON(
+                ) [UnaryMinus_EPSILON]
+                Factor_BOOLEAN(
+                 1
+                ) [Factor_BOOLEAN]
+              ) [FactorSign]
+            ) [Term_ONE]
+          ) [Expr_ONE]
+          MayPrintNumConst_EPSILON(
+          ) [MayPrintNumConst_EPSILON]
+        ) [Statement_PRINT]
+      ) [StatementList_STATEMENTS]
+      Statement_PRINT(
+        Expr_MORE(
+          Expr_ONE(
+            Term_MORE(
+              Term_ONE(
+                FactorSign(
+                  UnaryMinus_EPSILON(
+                  ) [UnaryMinus_EPSILON]
+                  Factor_NUMBER(
+                   3
+                  ) [Factor_NUMBER]
+                ) [FactorSign]
+              ) [Term_ONE]
+              Mulop_MUL(
+              ) [Mulop_MUL]
+              FactorSign(
+                UnaryMinus_EPSILON(
+                ) [UnaryMinus_EPSILON]
+                Factor_NUMBER(
+                 2
+                ) [Factor_NUMBER]
+              ) [FactorSign]
+            ) [Term_MORE]
+          ) [Expr_ONE]
+          Addop_PLUS(
+          ) [Addop_PLUS]
+          Term_MORE(
+            Term_ONE(
+              FactorSign(
+                UnaryMinus_EPSILON(
+                ) [UnaryMinus_EPSILON]
+                Factor_NUMBER(
+                 3
+                ) [Factor_NUMBER]
+              ) [FactorSign]
+            ) [Term_ONE]
+            Mulop_MUL(
+            ) [Mulop_MUL]
+            FactorSign(
+              UnaryMinus_EPSILON(
+              ) [UnaryMinus_EPSILON]
+              Factor_Designator(
+                Designator_ONE(
+                 c
+                ) [Designator_ONE]
+              ) [Factor_Designator]
+            ) [FactorSign]
+          ) [Term_MORE]
+        ) [Expr_MORE]
+        MayPrintNumConst_EPSILON(
+        ) [MayPrintNumConst_EPSILON]
+      ) [Statement_PRINT]
+    ) [StatementList_STATEMENTS]
+  ) [MethodDecl]
+) [Program]
+INFO  02:13:48,624 - ==============ZAVRSEN ISPIS STABLA=====================
+
+INFO  02:13:48,624 - ==============ISPIS SEMANTICKE ANALIZE=====================
+ERROR 02:13:48,632 - GRESKA-Term_MORE: Mnoze se/Dele se/Moduluju se tipovi koji nisu oba int na liniji 11
+ERROR 02:13:48,632 - GRESKA-Expr_MORE: Sabiraju se/Oduzimaju se tipovi koji nisu oba int na liniji 7
+ERROR 02:13:48,632 - GRESKA-Statement_PRINT: Print nema int/char/bool argument na liniji 7
+INFO  02:13:48,632 - ==============ZAVRSEN ISPIS SEMANTICKE ANALIZE=====================
+
+ERROR 02:13:48,633 - Parsiranje NIJE uspesno zavrseno!
