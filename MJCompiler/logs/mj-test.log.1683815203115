@@ -1,0 +1,106 @@
+INFO  16:25:34,237 - Compiling source file: C:\Users\Korisnik\Desktop\PP1-projekat\MJCompiler\test\program.mj
+INFO  16:25:34,256 - #2 program
+INFO  16:25:34,256 - #9 test301
+INFO  16:25:34,256 - #3 const
+INFO  16:25:34,257 - #9 int
+INFO  16:25:34,257 - #9 a
+INFO  16:25:34,257 - #18 =
+INFO  16:25:34,257 - #10 5
+INFO  16:25:34,257 - #21 ;
+INFO  16:25:34,258 - #27 {
+INFO  16:25:34,258 - #8 void
+INFO  16:25:34,258 - #9 main
+INFO  16:25:34,258 - #23 (
+INFO  16:25:34,259 - #24 )
+INFO  16:25:34,259 - #9 int
+INFO  16:25:34,259 - #9 b
+INFO  16:25:34,259 - #18 =
+ERROR 16:25:34,259 - 
+Sintaksna greska na liniji 6
+INFO  16:25:34,259 - #10 2
+INFO  16:25:34,259 - #21 ;
+INFO  16:25:34,259 - #27 {
+INFO  16:25:34,260 - #9 a
+INFO  16:25:34,262 - #18 =
+ERROR 16:25:34,262 - OPORAVAK od greske u definiciji promenljive izvrsen u liniji 6
+INFO  16:25:34,263 - #9 b
+INFO  16:25:34,264 - #21 ;
+INFO  16:25:34,265 - #28 }
+INFO  16:25:34,265 - #28 }
+INFO  16:25:34,266 - 
+                     ==============ISPIS STABLA=====================
+INFO  16:25:34,267 - Program(
+  ProgramName(
+   test301
+  ) [ProgramName]
+  ConstVarDeclList_CONST(
+    ConstVarDeclList_EPSILON(
+    ) [ConstVarDeclList_EPSILON]
+    ConstDeclList(
+      Type(
+       int
+      ) [Type]
+      ConstDeclOneOrMore_ONE(
+        ConstDecl(
+         a
+          Constant_NUMBER(
+           5
+          ) [Constant_NUMBER]
+        ) [ConstDecl]
+      ) [ConstDeclOneOrMore_ONE]
+    ) [ConstDeclList]
+  ) [ConstVarDeclList_CONST]
+  MethodDecl(
+    MethodName(
+     main
+    ) [MethodName]
+    MethodVarDeclList_VAR(
+      MethodVarDeclList_EPSILON(
+      ) [MethodVarDeclList_EPSILON]
+      VarDeclList(
+        Type(
+         int
+        ) [Type]
+        VarDeclOneOrMore_ONE(
+          VarDecl_ERROR(
+          ) [VarDecl_ERROR]
+        ) [VarDeclOneOrMore_ONE]
+      ) [VarDeclList]
+    ) [MethodVarDeclList_VAR]
+    StatementList_STATEMENTS(
+      StatementList_EPSILON(
+      ) [StatementList_EPSILON]
+      Statement_DesignatorStatement(
+        DesignatorSt_Assign(
+          Designator_ONE(
+           a
+          ) [Designator_ONE]
+          Assignop(
+          ) [Assignop]
+          Expr_ONE(
+            Term_ONE(
+              FactorSign(
+                UnaryMinus_EPSILON(
+                ) [UnaryMinus_EPSILON]
+                Factor_Designator(
+                  Designator_ONE(
+                   b
+                  ) [Designator_ONE]
+                ) [Factor_Designator]
+              ) [FactorSign]
+            ) [Term_ONE]
+          ) [Expr_ONE]
+        ) [DesignatorSt_Assign]
+      ) [Statement_DesignatorStatement]
+    ) [StatementList_STATEMENTS]
+  ) [MethodDecl]
+) [Program]
+INFO  16:25:34,267 - ==============ZAVRSEN ISPIS STABLA=====================
+
+INFO  16:25:34,267 - ==============ISPIS SEMANTICKE ANALIZE=====================
+INFO  16:25:34,276 - Pristup oznaci a. Objektni cvor: { KIND: Con, NAME: a, TYPE(Struct): { KIND: Int, ElemType: IntType }ADR: 5, LEVEL: 0 } na liniji 8
+ERROR 16:25:34,276 - GRESKA-Designator_ONE: Pristup nedeklarisanoj oznaci b na liniji 8
+ERROR 16:25:34,276 - GRESKA-DesignatorSt_Assign: Dodela vrednosti u a nije u promenljivu ni u element niza na liniji 8
+INFO  16:25:34,276 - ==============ZAVRSEN ISPIS SEMANTICKE ANALIZE=====================
+
+ERROR 16:25:34,277 - Parsiranje NIJE uspesno zavrseno!

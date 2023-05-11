@@ -28,8 +28,77 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 		log.info(msg.toString());
 	}
 	
-    public boolean passed(){
+    public boolean passed() {
     	return !errorDetected;
+    }
+    
+    private String objKindToString(int kind) {
+    	String kindName;
+    	
+    	switch(kind) { // Con = 0, Var = 1, Type = 2, Meth = 3, Fld = 4, Elem=5, Prog = 6;
+		case 0:
+			kindName = "Con"; break;
+		case 1:
+			kindName = "Var"; break;
+		case 2:
+			kindName = "Type"; break;
+		case 3:
+			kindName = "Meth"; break;
+		case 4:
+			kindName = "Fld"; break;
+		case 5:
+			kindName = "Elem"; break;
+		case 6:
+			kindName = "Prog"; break;
+		default:
+			kindName = "null"; break;
+    	}
+    	return kindName;
+    }
+    
+    private String structKindToString(int kind) {
+    	String structKindName;
+    	
+    	switch(kind) { // None, Int, Char, Array, Class, Bool, Enum, Interface
+		case 0:
+			structKindName = "None"; break;
+		case 1:
+			structKindName = "Int"; break;
+		case 2:
+			structKindName = "Char"; break;
+		case 3:
+			structKindName = "Array"; break;
+		case 4:
+			structKindName = "Class"; break;
+		case 5:
+			structKindName = "Bool"; break;
+		case 6:
+			structKindName = "Enum"; break;
+		case 7:
+			structKindName = "Interface"; break;
+		default:
+			structKindName = "null"; break;
+    	}
+    	return structKindName;
+    }
+    
+    // za ispis pri prisupu simbolickoj kontanti i lokalnoj/globalnoj promjenjivoj
+    private String objNodeToString(Obj o) { // kind, name, type(struct.kind, struct.elemtype), adr, level), 
+    	StringBuilder sb = new StringBuilder();
+    	String kindName, structKindName;
+    	
+    	kindName = objKindToString(o.getKind());
+    	
+    	structKindName = structKindToString(o.getType().getKind());
+    	
+    	sb.append("Objektni cvor: { ");
+    	sb.append("KIND: "); sb.append(kindName); sb.append(", "); 
+    	sb.append("NAME: "); sb.append(o.getName()); sb.append(", ");
+    	sb.append("TYPE(Struct): { KIND: "); sb.append(structKindName); sb.append(", ");
+    	sb.append("ElemType: "); sb.append(structKindName); sb.append("Type"); sb.append(" } , ");
+    	sb.append("ADR: "); sb.append(o.getAdr()); sb.append(", ");
+    	sb.append("LEVEL: "); sb.append(o.getLevel()); sb.append(" }");
+    	return sb.toString();
     }
     
     private Struct currentType; // za cuvanje tipa konstanti i varijabli i postavljanje struct kod factor_new
@@ -197,6 +266,10 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     public void visit(Factor_Designator factor_Designator) {
     	Designator d = factor_Designator.getDesignator();
     	factor_Designator.struct = d.obj.getType(); 
+    	
+    	if(d instanceof Designator_ONE) {
+    		report_info("INFO-Factor_Designator: Pristup oznaci " + d.obj.getName() + ". " + objNodeToString(d.obj) , factor_Designator);
+    	}
     }
     
     // Factor ::= (Factor_NUMBER) NUMBER
@@ -253,6 +326,8 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     		designator_ONE.obj = Tab.noObj;
     		return;
     	}
+    	//report_info("ONE" , designator_ONE);
+    	//report_info("Pristup oznaci " + desName + ". " + objNodeToString(desObj) , designator_ONE);
     	designator_ONE.obj = desObj;
     }
     
@@ -277,6 +352,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     		designatorArrayName.obj = Tab.noObj;
     		return;
     	}
+    	// report_info("ARRAY" , designatorArrayName);
     	designatorArrayName.obj = desArrayObj;
     }
     
@@ -377,6 +453,10 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     		report_error("GRESKA-DesignatorSt_Assign: Dodela vrednosti u " + desObj.getName() + ",tipovi sa leve i desne strane jednakosti nisu isti", designatorSt_Assign);
     		return;
     	}
+    	
+    	if(designatorSt_Assign.getDesignator() instanceof Designator_ONE) {
+    		report_info("INFO-DesignatorSt_Assign: Pristup oznaci " + desObj.getName() + ". " + objNodeToString(desObj) , designatorSt_Assign);
+    	}	
     }
     
     // DesignatorStatement ::= (DesignatorStat_INC) Designator INCREMENT
@@ -391,6 +471,10 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     	else if(desObj.getType().equals(Tab.intType) == false) {
     		report_error("GRESKA-DesignatorStat_INC: Inkrementiranje " + desObj.getName() + " nije inkrementiranje nad int tipom", designatorStat_INC);
     		return;
+    	}
+    	
+    	if(designatorStat_INC.getDesignator() instanceof Designator_ONE) {
+    		report_info("INFO-DesignatorStat_INC: Pristup oznaci " + desObj.getName() + ". " + objNodeToString(desObj) , designatorStat_INC);
     	}
     }
     
@@ -407,6 +491,29 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     		report_error("GRESKA-DesignatorStat_DEC: Dekrementiranje " + desObj.getName() + " nije dekrementiranje nad int tipom", designatorStat_DEC);
     		return;
     	}
+    	
+    	if(designatorStat_DEC.getDesignator() instanceof Designator_ONE) {
+    		report_info("INFO-DesignatorStat_DEC: Pristup oznaci " + desObj.getName() + ". " + objNodeToString(desObj) , designatorStat_DEC);
+    	}
+    }
+    
+    // MayDesignator ::= (MayDesignator_Designator) Designator
+    public void visit(MayDesignator_Designator mayDesignator_Designator) {
+    	Obj desObj = mayDesignator_Designator.getDesignator().obj;
+    	
+    	if(mayDesignator_Designator.getDesignator() instanceof Designator_ONE) {
+    		report_info("INFO-MayDesignator_Designator: Pristup oznaci " + desObj.getName() + ". " + objNodeToString(desObj) , mayDesignator_Designator);
+    	}	
+    }
+    
+    // ************************************************************OBRADA
+    // DesignatorStatement ::= (DesignatorStatement_List) LEFT_BRACKET DesignatorStatementList RIGHT_BRACKET EQUALS Designator;
+    public void visit(DesignatorStatement_List designatorStatement_List) { 
+    	Obj desObj = designatorStatement_List.getDesignator().obj;
+    	
+    	if(designatorStatement_List.getDesignator() instanceof Designator_ONE) {
+    		report_info("INFO-DesignatorStatement_List: Pristup oznaci " + desObj.getName() + ". " + objNodeToString(desObj) , designatorStatement_List);
+    	}	
     }
     
     // Statement ::= (Statement_READ) READ LEFT_PARENTHESIS Designator RIGHT_PARENTHESIS SEMICOLON
@@ -423,6 +530,10 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     		report_error("GRESKA-Statement_READ: Read " + desObj.getName() + " nije read nad int/char/bool tipom", statement_READ);
     		return;
     	}
+    	
+    	if(statement_READ.getDesignator() instanceof Designator_ONE) {
+    		report_info("INFO-Statement_READ: Pristup oznaci " + desObj.getName() + ". " + objNodeToString(desObj) , statement_READ);
+    	}	
     }
     
     // Statement ::= (Statement_PRINT) PRINT LEFT_PARENTHESIS Expr MayPrintNumConst RIGHT_PARENTHESIS SEMICOLON
@@ -434,6 +545,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
         	return;
         }
     }
+    
 }
 
 
