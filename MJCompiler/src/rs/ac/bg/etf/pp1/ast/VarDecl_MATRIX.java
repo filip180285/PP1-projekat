@@ -1,19 +1,15 @@
 // generated with ast extension for cup
 // version 0.8
-// 10/4/2023 19:22:5
+// 11/4/2023 22:56:39
 
 
 package rs.ac.bg.etf.pp1.ast;
 
-public class DesignatorArrayName implements SyntaxNode {
-
-    private SyntaxNode parent;
-    private int line;
-    public rs.etf.pp1.symboltable.concepts.Obj obj = null;
+public class VarDecl_MATRIX extends VarDecl {
 
     private String I1;
 
-    public DesignatorArrayName (String I1) {
+    public VarDecl_MATRIX (String I1) {
         this.I1=I1;
     }
 
@@ -23,22 +19,6 @@ public class DesignatorArrayName implements SyntaxNode {
 
     public void setI1(String I1) {
         this.I1=I1;
-    }
-
-    public SyntaxNode getParent() {
-        return parent;
-    }
-
-    public void setParent(SyntaxNode parent) {
-        this.parent=parent;
-    }
-
-    public int getLine() {
-        return line;
-    }
-
-    public void setLine(int line) {
-        this.line=line;
     }
 
     public void accept(Visitor visitor) {
@@ -59,13 +39,13 @@ public class DesignatorArrayName implements SyntaxNode {
     public String toString(String tab) {
         StringBuffer buffer=new StringBuffer();
         buffer.append(tab);
-        buffer.append("DesignatorArrayName(\n");
+        buffer.append("VarDecl_MATRIX(\n");
 
         buffer.append(" "+tab+I1);
         buffer.append("\n");
 
         buffer.append(tab);
-        buffer.append(") [DesignatorArrayName]");
+        buffer.append(") [VarDecl_MATRIX]");
         return buffer.toString();
     }
 }

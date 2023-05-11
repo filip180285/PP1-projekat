@@ -109,12 +109,12 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     	kindName = objKindToString(o.getKind());
     	
     	structKindName = structKindToString(o.getType().getKind());
-    	if("Array".equals(structKindName) == true) { // niz ili matrica
+    	if("Array".equalsIgnoreCase(structKindName) == true) { // niz ili matrica
     		arrayTypeName = structKindToString(o.getType().getElemType().getKind()); // niz
             arrayTypeName = firstCharToLower(arrayTypeName); 
-    		if("Array".equals(arrayTypeName) == true) { // matrica
+    		if("Array".equalsIgnoreCase(arrayTypeName) == true) { // matrica
     			matrixTypeName = structKindToString(o.getType().getElemType().getElemType().getKind());
-    			matrixTypeName = firstCharToLower(matrixTypeName);  
+    			//matrixTypeName = firstCharToLower(matrixTypeName);  
     		} 
     	}
     	
@@ -130,12 +130,13 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     		sb.append(arrayTypeName); sb.append("Type"); // niz
     		if("Array".equalsIgnoreCase(arrayTypeName) == true) { // matrica
     			sb.append(" { TYPE(Struct): { KIND: "); sb.append(matrixTypeName);
-    			sb.append("ElemType: "); sb.append(matrixTypeName); sb.append("Type"); sb.append(" }, ");
+    			matrixTypeName = firstCharToLower(matrixTypeName);  
+    			sb.append(", ElemType: "); sb.append(matrixTypeName); sb.append("Type"); sb.append(" }");
     		} 
-    		sb.append(" } , ");
+    		sb.append(" }, ");
     	}
     	else { // prost tip
-    		sb.append(structKindName); sb.append("Type"); sb.append(" } , ");
+    		sb.append(structKindName); sb.append("Type"); sb.append(" }, ");
     	}
     	
     	sb.append("ADR: "); sb.append(o.getAdr()); sb.append(", ");
@@ -190,7 +191,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     	Obj constObj = Tab.find(constName);
     	
     	if(constObj != Tab.noObj) {
-    		report_error("GRESKA-ConstDecl: Ime konstante" + constName + " je vec deklarisano", constDecl);
+    		report_error("GRESKA-ConstDecl: Ime konstante " + constName + " je vec deklarisano", constDecl);
     		return;
     	} else {
     		Constant c = constDecl.getConstant();
@@ -274,6 +275,30 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     	}
     }
     
+    // VarDecl ::= (VarDecl_MATRIX) IDENTIFIER LEFT_BRACKET RIGHT_BRACKET LEFT_BRACKET RIGHT_BRACKET;
+    @Override
+    public void visit(VarDecl_MATRIX varDecl_MATRIX) {
+    	String matrixName = varDecl_MATRIX.getI1();
+    	Obj varObj = null;
+    	
+    	if(mainDetected == false) {
+    		varObj = Tab.find(matrixName); // trazi se u globalnom opsegu
+    	}
+    	else {
+    		varObj = Tab.currentScope.findSymbol(matrixName); // trazi se u lokalnom i universe opsegu
+    		if(varObj == null) {
+    			varObj = Tab.currentScope.getOuter().getOuter().findSymbol(matrixName);
+    		}
+    	}
+
+    	if((mainDetected == false && varObj != Tab.noObj) || (mainDetected == true && varObj != null)) {
+    		report_error("GRESKA-VarDecl_MATRIX: Ime matrice " + matrixName + " je vec deklarisano", varDecl_MATRIX);
+    		return;
+    	} else {
+    		Tab.insert(Obj.Var, matrixName, new Struct(Struct.Array, new Struct(Struct.Array, currentType)));
+    	}
+    }
+    
     // MethodName ::= (MethodName) IDENTIFIER;
     @Override
     public void visit(MethodName methodName) {
@@ -340,6 +365,20 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     	factor_NEW.struct = new Struct(Struct.Array, currentType);
     }
     
+    // Factor ::= (Factor_NEW_MATRIX) NEW Type LEFT_BRACKET Expr RIGHT_BRACKET LEFT_BRACKET Expr RIGHT_BRACKET;
+    @Override
+    public void visit(Factor_NEW_MATRIX factor_NEW_MATRIX) {
+    	Struct exprType1 = factor_NEW_MATRIX.getExpr().struct;
+    	Struct exprType2 = factor_NEW_MATRIX.getExpr1().struct;
+    	
+    	if(exprType1.equals(Tab.intType) == false || exprType2.equals(Tab.intType) == false) {
+    		report_error("GRESKA-Factor_NEW_MATRIX: Tip izraza u definiciji niza nije int", factor_NEW_MATRIX);
+    		factor_NEW_MATRIX.struct = Tab.noType;
+    		return;
+    	}
+    	factor_NEW_MATRIX.struct = new Struct(Struct.Array, new Struct(Struct.Array, currentType));
+    }
+    
     // Factor ::= (Factor_Expr) LEFT_PARENTHESIS Expr RIGHT_PARENTHESIS
     @Override
     public void visit(Factor_Expr factor_Expr) {
@@ -368,51 +407,86 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     	designator_ONE.obj = desObj;
     }
     
-    // DesignatorArrayName ::= (DesignatorArrayName) IDENTIFIER;
-    public void visit(DesignatorArrayName designatorArrayName) { 
-    	String desArrayName = designatorArrayName.getI1();
-    	Obj desArrayObj = Tab.find(desArrayName);
-    	int desKind = desArrayObj.getKind();
+    // DesignatorArrayOrMatrixName ::= (DesignatorArrayOrMatrixName) IDENTIFIER;
+    @Override
+    public void visit(DesignatorArrayOrMatrixName designatorArrayOrMatrixName) { 
+    	String desArrayMatrixName = designatorArrayOrMatrixName.getI1();
+    	Obj desArrayMatrixObj = Tab.find(desArrayMatrixName);
+    	int desKind = desArrayMatrixObj.getKind();
     	
-    	if(desArrayObj == Tab.noObj) {
-    		report_error("GRESKA-Designator_ARRAYName: Pristup nedeklarisanoj oznaci niza " + desArrayName, designatorArrayName);
-    		designatorArrayName.obj = Tab.noObj;
+    	if(desArrayMatrixObj == Tab.noObj) {
+    		report_error("GRESKA-designatorArrayOrMatrixName: Pristup nedeklarisanoj oznaci niza " + desArrayMatrixName, designatorArrayOrMatrixName);
+    		designatorArrayOrMatrixName.obj = Tab.noObj;
     		return;
     	}
     	else if (desKind != Obj.Var)  {
-    		report_error("GRESKA-Designator_ARRAYName: Oznaka " + desArrayName + " nije varijabla", designatorArrayName);
-    		designatorArrayName.obj = Tab.noObj;
+    		report_error("GRESKA-designatorArrayOrMatrixName: Oznaka " + desArrayMatrixName + " nije varijabla", designatorArrayOrMatrixName);
+    		designatorArrayOrMatrixName.obj = Tab.noObj;
     		return;
     	}
-    	else if(desArrayObj.getType().getKind() != Struct.Array) {
-    		report_error("GRESKA-Designator_ARRAYName: Oznaka " + desArrayName + " nije varijabla nizovnog tipa", designatorArrayName);
-    		designatorArrayName.obj = Tab.noObj;
+    	else if(desArrayMatrixObj.getType().getKind() != Struct.Array) {
+    		report_error("GRESKA-designatorArrayOrMatrixName: Oznaka " + desArrayMatrixName + " nije varijabla nizovnog/matricnog tipa", designatorArrayOrMatrixName);
+    		designatorArrayOrMatrixName.obj = Tab.noObj;
     		return;
     	}
     	// report_info("ARRAY" , designatorArrayName);
-    	designatorArrayName.obj = desArrayObj;
+    	designatorArrayOrMatrixName.obj = desArrayMatrixObj;
     }
     
-    // Designator ::= (designator_ARRAY_Elem) DesignatorArrayName LEFT_BRACKET Expr RIGHT_BRACKET;
+    //******niz vs matrica
+    // Designator ::= (Designator_Elem) DesignatorArrayOrMatrixName LEFT_BRACKET Expr RIGHT_BRACKET MayMatrix;
     @Override
-    public void visit(Designator_ARRAY_Elem designator_ARRAY_Elem) {
-    		Obj danObj = designator_ARRAY_Elem.getDesignatorArrayName().obj;
-    		Struct exprType = designator_ARRAY_Elem.getExpr().struct;
+    public void visit(Designator_Elem designator_Elem) {
+    	Obj danObj = designator_Elem.getDesignatorArrayOrMatrixName().obj;
+    	Struct exprType = designator_Elem.getExpr().struct;
+    	MayMatrix m = designator_Elem.getMayMatrix();
     		
-    		if(exprType.equals(Tab.intType) == false) {
-        		report_error("GRESKA-Designator_ARRAY_Elem: Tip izraza u indeksiranju elementa niza nije int", designator_ARRAY_Elem);
-        		designator_ARRAY_Elem.obj = Tab.noObj;
-        		return;
-    		}
+    	if(m instanceof MayMatrix_EPSILON) { // niz
+		    if(exprType.equals(Tab.intType) == false) {
+		        report_error("GRESKA-Designator_Elem: Tip izraza u indeksiranju elementa niza nije int", designator_Elem);
+		        designator_Elem.obj = Tab.noObj;
+		        return;
+		    }
+		    		
+		    if(danObj != Tab.noObj) {
+			    Struct elemType = danObj.getType().getElemType();
+			    Obj elemObj = new Obj(Obj.Elem, "elementNiza", elemType);
+			    designator_Elem.obj = elemObj;
+		    }
+		    else {
+		    	designator_Elem.obj = Tab.noObj;
+		    }
+    	}
+    	else { // matrica
+		    if(exprType.equals(Tab.intType) == false) {
+		        report_error("GRESKA-Designator_Elem: Tip izraza u indeksiranju reda elementa matrice nije int", designator_Elem);
+		        designator_Elem.obj = Tab.noObj;
+		        return;
+		    }
+		    
+    		MayMatrix_MATRIX mat = (MayMatrix_MATRIX)m;
+    		Struct exprType2 = mat.getExpr().struct;
     		
-    		if(danObj != Tab.noObj) {
-	    		Struct elemType = danObj.getType().getElemType();
-	    		Obj elemObj = new Obj(Obj.Elem, "elementNiza", elemType);
-	    		designator_ARRAY_Elem.obj = elemObj;
-    		}
-    		else {
-    			designator_ARRAY_Elem.obj = Tab.noObj;
-    		}
+		    if(exprType2.equals(Tab.intType) == false) {
+		        report_error("GRESKA-Designator_Elem: Tip izraza u indeksiranju kolone elementa matrice nije int", designator_Elem);
+		        designator_Elem.obj = Tab.noObj;
+		        return;
+		    }
+		    		
+		    if(danObj != Tab.noObj) {
+			    Struct elemType = danObj.getType().getElemType().getElemType();
+			    if(elemType == null) {
+			        report_error("GRESKA-Designator_Elem: Nizu " + danObj.getName() + " se pristupa kao matrici", designator_Elem);
+			        designator_Elem.obj = Tab.noObj;
+			        return;
+			    }
+			    Obj elemObj = new Obj(Obj.Elem, "elementMatrice", elemType);
+			    designator_Elem.obj = elemObj;
+		    }
+		    else {
+		    	designator_Elem.obj = Tab.noObj;
+		    }
+    	}
     }
     
     // FactorSign ::= (FactorSign) UnaryMinus Factor;
@@ -437,11 +511,13 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     }
     
     // Term ::= (Term_ONE) FactorSign
+    @Override
     public void visit(Term_ONE term_ONE) {
     	term_ONE.struct = term_ONE.getFactorSign().struct;
     }
     
     // Term ::= (Term_MORE) Term Mulop FactorSign;
+    @Override
     public void visit(Term_MORE term_MORE) {
     	Struct factorType = term_MORE.getFactorSign().struct; // right operand type
     	Struct termType = term_MORE.getTerm().struct; // left operand type
@@ -457,6 +533,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     }
     
     // Expr ::= (Expr_ONE) Term
+    @Override
     public void visit(Expr_ONE expr_ONE) {
     	expr_ONE.struct = expr_ONE.getTerm().struct;
     }
@@ -477,6 +554,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     }
     
     // DesignatorStatement ::= (DesignatorSt_Assign) Designator Assignop Expr
+    @Override
     public void visit(DesignatorSt_Assign designatorSt_Assign) {
     	Obj desObj = designatorSt_Assign.getDesignator().obj;
     	Struct exprType = designatorSt_Assign.getExpr().struct;
@@ -491,12 +569,16 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     		return;
     	}
     	
+    	//report_info("Tip leve strane " + desObj.getName() + " " + objNodeToString(desObj) , designatorSt_Assign);
+    	//report_info("Tip desne strane " + exprType.getKind()  , designatorSt_Assign);
+    	
     	if(designatorSt_Assign.getDesignator() instanceof Designator_ONE) {
     		report_info("INFO-DesignatorSt_Assign: Pristup oznaci " + desObj.getName() + ". " + objNodeToString(desObj) , designatorSt_Assign);
     	}	
     }
     
     // DesignatorStatement ::= (DesignatorStat_INC) Designator INCREMENT
+    @Override
     public void visit(DesignatorStat_INC designatorStat_INC) { 
     	Obj desObj = designatorStat_INC.getDesignator().obj;
     	int kind = desObj.getKind();
@@ -516,6 +598,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     }
     
     // DesignatorStatement ::= (DesignatorStat_DEC) Designator DECREMENT
+    @Override
     public void visit(DesignatorStat_DEC designatorStat_DEC) { 
     	Obj desObj = designatorStat_DEC.getDesignator().obj;
     	int kind = desObj.getKind();
@@ -535,6 +618,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     }
     
     // MayDesignator ::= (MayDesignator_Designator) Designator
+    @Override
     public void visit(MayDesignator_Designator mayDesignator_Designator) {
     	Obj desObj = mayDesignator_Designator.getDesignator().obj;
     	int kind = desObj.getKind();
@@ -551,6 +635,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     }
     
     // DesignatorStatement ::= (DesignatorStatement_List) LEFT_BRACKET DesignatorStatementList RIGHT_BRACKET EQUALS Designator;
+    @Override
     public void visit(DesignatorStatement_List designatorStatement_List) { 
     	Obj desArrayObj = designatorStatement_List.getDesignator().obj; // mora biti niz
     	
@@ -572,6 +657,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     }
     
     // Statement ::= (Statement_READ) READ LEFT_PARENTHESIS Designator RIGHT_PARENTHESIS SEMICOLON
+    @Override
     public void visit(Statement_READ statement_READ) {
     	Obj desObj = statement_READ.getDesignator().obj;
     	int kind = desObj.getKind();
@@ -592,6 +678,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     }
     
     // Statement ::= (Statement_PRINT) PRINT LEFT_PARENTHESIS Expr MayPrintNumConst RIGHT_PARENTHESIS SEMICOLON
+    @Override
     public void visit(Statement_PRINT statement_PRINT) {
     	Struct exprType = statement_PRINT.getExpr().struct;
     	if(exprType.equals(Tab.intType) == false && exprType.equals(Tab.charType) == false && 
@@ -600,6 +687,27 @@ public class SemanticAnalyzer extends VisitorAdaptor {
         	return;
         }
     }
+    
+    
+    public static void main(String[] args) {
+    int matrica[][] = {{1,2,3},{4,5,6},{7,8,9}};
+	    //int matrica[][] = new int[3][3];
+	    int niz[] = { 8,8,8 };
+	    System.out.println("Hello, World!\n");
+	    matrica[1] = matrica[0];
+	    for(int i = 0; i < 3; i++) {
+	        for(int j = 0; j < 3; j++) {
+	            System.out.print(matrica[i][j] + "    ");
+	        }
+	        System.out.println("\n");
+	    }
+	    niz = matrica[2];
+	    for(int i = 0; i < 3; i++) {
+	           // System.out.print(niz[i] + "    ");
+	    }
+	    matrica[0][-4] = 5;
+    }
+    
     
 }
 

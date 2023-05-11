@@ -1,0 +1,346 @@
+INFO  01:30:45,582 - Compiling source file: C:\Users\Korisnik\Desktop\PP1-projekat\MJCompiler\test\program.mj
+INFO  01:30:45,603 - #2 program
+INFO  01:30:45,603 - #9 test301
+INFO  01:30:45,604 - #3 const
+INFO  01:30:45,604 - #9 int
+INFO  01:30:45,604 - #9 a
+INFO  01:30:45,605 - #18 =
+INFO  01:30:45,605 - #10 3
+INFO  01:30:45,605 - #22 ,
+INFO  01:30:45,605 - #9 b
+INFO  01:30:45,605 - #18 =
+INFO  01:30:45,606 - #10 5
+INFO  01:30:45,606 - #21 ;
+INFO  01:30:45,606 - #3 const
+INFO  01:30:45,606 - #9 char
+INFO  01:30:45,606 - #9 aa
+INFO  01:30:45,606 - #18 =
+INFO  01:30:45,606 - #11 c
+INFO  01:30:45,606 - #22 ,
+INFO  01:30:45,607 - #9 bb
+INFO  01:30:45,607 - #18 =
+INFO  01:30:45,607 - #11 d
+INFO  01:30:45,607 - #21 ;
+INFO  01:30:45,607 - #3 const
+INFO  01:30:45,607 - #9 bool
+INFO  01:30:45,607 - #9 x
+INFO  01:30:45,607 - #18 =
+INFO  01:30:45,607 - #12 1
+INFO  01:30:45,607 - #21 ;
+INFO  01:30:45,607 - #9 bool
+INFO  01:30:45,607 - #9 y
+INFO  01:30:45,607 - #21 ;
+INFO  01:30:45,608 - #9 int
+INFO  01:30:45,608 - #9 niz1
+INFO  01:30:45,608 - #25 [
+INFO  01:30:45,608 - #26 ]
+INFO  01:30:45,608 - #22 ,
+INFO  01:30:45,608 - #9 niz2
+INFO  01:30:45,608 - #25 [
+INFO  01:30:45,609 - #26 ]
+INFO  01:30:45,609 - #21 ;
+INFO  01:30:45,609 - #9 bool
+INFO  01:30:45,609 - #9 niz3
+INFO  01:30:45,609 - #25 [
+INFO  01:30:45,609 - #26 ]
+INFO  01:30:45,609 - #21 ;
+INFO  01:30:45,609 - #9 char
+INFO  01:30:45,609 - #9 matrix
+INFO  01:30:45,609 - #25 [
+INFO  01:30:45,609 - #26 ]
+INFO  01:30:45,609 - #25 [
+INFO  01:30:45,609 - #26 ]
+INFO  01:30:45,609 - #22 ,
+INFO  01:30:45,609 - #9 matrix2
+INFO  01:30:45,609 - #25 [
+INFO  01:30:45,609 - #26 ]
+INFO  01:30:45,609 - #25 [
+INFO  01:30:45,609 - #26 ]
+INFO  01:30:45,610 - #21 ;
+INFO  01:30:45,610 - #27 {
+INFO  01:30:45,610 - #8 void
+INFO  01:30:45,610 - #9 main
+INFO  01:30:45,610 - #23 (
+INFO  01:30:45,611 - #24 )
+INFO  01:30:45,611 - #9 int
+INFO  01:30:45,611 - #9 t
+INFO  01:30:45,611 - #21 ;
+INFO  01:30:45,611 - #9 bool
+INFO  01:30:45,612 - #9 y
+INFO  01:30:45,612 - #21 ;
+INFO  01:30:45,613 - #9 char
+INFO  01:30:45,613 - #9 u
+INFO  01:30:45,613 - #21 ;
+INFO  01:30:45,613 - #9 int
+INFO  01:30:45,613 - #9 matrix3
+INFO  01:30:45,613 - #25 [
+INFO  01:30:45,613 - #26 ]
+INFO  01:30:45,613 - #25 [
+INFO  01:30:45,613 - #26 ]
+INFO  01:30:45,613 - #22 ,
+INFO  01:30:45,614 - #9 matrix4
+INFO  01:30:45,614 - #25 [
+INFO  01:30:45,614 - #26 ]
+INFO  01:30:45,614 - #25 [
+INFO  01:30:45,614 - #26 ]
+INFO  01:30:45,614 - #21 ;
+INFO  01:30:45,614 - #9 bool
+INFO  01:30:45,614 - #9 matrix5
+INFO  01:30:45,614 - #25 [
+INFO  01:30:45,614 - #26 ]
+INFO  01:30:45,614 - #21 ;
+INFO  01:30:45,614 - #27 {
+INFO  01:30:45,614 - #9 matrix3
+INFO  01:30:45,614 - #25 [
+INFO  01:30:45,615 - #10 2
+INFO  01:30:45,616 - #26 ]
+INFO  01:30:45,617 - #25 [
+INFO  01:30:45,617 - #10 1
+INFO  01:30:45,617 - #26 ]
+INFO  01:30:45,617 - #19 ++
+INFO  01:30:45,617 - #21 ;
+INFO  01:30:45,617 - #28 }
+INFO  01:30:45,617 - #28 }
+INFO  01:30:45,619 - 
+                     ==============ISPIS STABLA=====================
+INFO  01:30:45,619 - Program(
+  ProgramName(
+   test301
+  ) [ProgramName]
+  ConstVarDeclList_VAR(
+    ConstVarDeclList_VAR(
+      ConstVarDeclList_VAR(
+        ConstVarDeclList_VAR(
+          ConstVarDeclList_CONST(
+            ConstVarDeclList_CONST(
+              ConstVarDeclList_CONST(
+                ConstVarDeclList_EPSILON(
+                ) [ConstVarDeclList_EPSILON]
+                ConstDeclList(
+                  Type(
+                   int
+                  ) [Type]
+                  ConstDeclOneOrMore_MORE(
+                    ConstDecl(
+                     a
+                      Constant_NUMBER(
+                       3
+                      ) [Constant_NUMBER]
+                    ) [ConstDecl]
+                    ConstDeclOneOrMore_ONE(
+                      ConstDecl(
+                       b
+                        Constant_NUMBER(
+                         5
+                        ) [Constant_NUMBER]
+                      ) [ConstDecl]
+                    ) [ConstDeclOneOrMore_ONE]
+                  ) [ConstDeclOneOrMore_MORE]
+                ) [ConstDeclList]
+              ) [ConstVarDeclList_CONST]
+              ConstDeclList(
+                Type(
+                 char
+                ) [Type]
+                ConstDeclOneOrMore_MORE(
+                  ConstDecl(
+                   aa
+                    Constant_CHARACTER(
+                     c
+                    ) [Constant_CHARACTER]
+                  ) [ConstDecl]
+                  ConstDeclOneOrMore_ONE(
+                    ConstDecl(
+                     bb
+                      Constant_CHARACTER(
+                       d
+                      ) [Constant_CHARACTER]
+                    ) [ConstDecl]
+                  ) [ConstDeclOneOrMore_ONE]
+                ) [ConstDeclOneOrMore_MORE]
+              ) [ConstDeclList]
+            ) [ConstVarDeclList_CONST]
+            ConstDeclList(
+              Type(
+               bool
+              ) [Type]
+              ConstDeclOneOrMore_ONE(
+                ConstDecl(
+                 x
+                  Constant_BOOLEAN(
+                   1
+                  ) [Constant_BOOLEAN]
+                ) [ConstDecl]
+              ) [ConstDeclOneOrMore_ONE]
+            ) [ConstDeclList]
+          ) [ConstVarDeclList_CONST]
+          VarDeclList(
+            Type(
+             bool
+            ) [Type]
+            VarDeclOneOrMore_ONE(
+              VarDecl_VAR(
+               y
+              ) [VarDecl_VAR]
+            ) [VarDeclOneOrMore_ONE]
+          ) [VarDeclList]
+        ) [ConstVarDeclList_VAR]
+        VarDeclList(
+          Type(
+           int
+          ) [Type]
+          VarDeclOneOrMore_MORE(
+            VarDecl_ARRAY(
+             niz1
+            ) [VarDecl_ARRAY]
+            VarDeclOneOrMore_ONE(
+              VarDecl_ARRAY(
+               niz2
+              ) [VarDecl_ARRAY]
+            ) [VarDeclOneOrMore_ONE]
+          ) [VarDeclOneOrMore_MORE]
+        ) [VarDeclList]
+      ) [ConstVarDeclList_VAR]
+      VarDeclList(
+        Type(
+         bool
+        ) [Type]
+        VarDeclOneOrMore_ONE(
+          VarDecl_ARRAY(
+           niz3
+          ) [VarDecl_ARRAY]
+        ) [VarDeclOneOrMore_ONE]
+      ) [VarDeclList]
+    ) [ConstVarDeclList_VAR]
+    VarDeclList(
+      Type(
+       char
+      ) [Type]
+      VarDeclOneOrMore_MORE(
+        VarDecl_MATRIX(
+         matrix
+        ) [VarDecl_MATRIX]
+        VarDeclOneOrMore_ONE(
+          VarDecl_MATRIX(
+           matrix2
+          ) [VarDecl_MATRIX]
+        ) [VarDeclOneOrMore_ONE]
+      ) [VarDeclOneOrMore_MORE]
+    ) [VarDeclList]
+  ) [ConstVarDeclList_VAR]
+  MethodDecl(
+    MethodName(
+     main
+    ) [MethodName]
+    MethodVarDeclList_VAR(
+      MethodVarDeclList_VAR(
+        MethodVarDeclList_VAR(
+          MethodVarDeclList_VAR(
+            MethodVarDeclList_VAR(
+              MethodVarDeclList_EPSILON(
+              ) [MethodVarDeclList_EPSILON]
+              VarDeclList(
+                Type(
+                 int
+                ) [Type]
+                VarDeclOneOrMore_ONE(
+                  VarDecl_VAR(
+                   t
+                  ) [VarDecl_VAR]
+                ) [VarDeclOneOrMore_ONE]
+              ) [VarDeclList]
+            ) [MethodVarDeclList_VAR]
+            VarDeclList(
+              Type(
+               bool
+              ) [Type]
+              VarDeclOneOrMore_ONE(
+                VarDecl_VAR(
+                 y
+                ) [VarDecl_VAR]
+              ) [VarDeclOneOrMore_ONE]
+            ) [VarDeclList]
+          ) [MethodVarDeclList_VAR]
+          VarDeclList(
+            Type(
+             char
+            ) [Type]
+            VarDeclOneOrMore_ONE(
+              VarDecl_VAR(
+               u
+              ) [VarDecl_VAR]
+            ) [VarDeclOneOrMore_ONE]
+          ) [VarDeclList]
+        ) [MethodVarDeclList_VAR]
+        VarDeclList(
+          Type(
+           int
+          ) [Type]
+          VarDeclOneOrMore_MORE(
+            VarDecl_MATRIX(
+             matrix3
+            ) [VarDecl_MATRIX]
+            VarDeclOneOrMore_ONE(
+              VarDecl_MATRIX(
+               matrix4
+              ) [VarDecl_MATRIX]
+            ) [VarDeclOneOrMore_ONE]
+          ) [VarDeclOneOrMore_MORE]
+        ) [VarDeclList]
+      ) [MethodVarDeclList_VAR]
+      VarDeclList(
+        Type(
+         bool
+        ) [Type]
+        VarDeclOneOrMore_ONE(
+          VarDecl_ARRAY(
+           matrix5
+          ) [VarDecl_ARRAY]
+        ) [VarDeclOneOrMore_ONE]
+      ) [VarDeclList]
+    ) [MethodVarDeclList_VAR]
+    StatementList_STATEMENTS(
+      StatementList_EPSILON(
+      ) [StatementList_EPSILON]
+      Statement_DesignatorStatement(
+        DesignatorStat_INC(
+          Designator_Elem(
+            DesignatorArrayOrMatrixName(
+             matrix3
+            ) [DesignatorArrayOrMatrixName]
+            Expr_ONE(
+              Term_ONE(
+                FactorSign(
+                  UnaryMinus_EPSILON(
+                  ) [UnaryMinus_EPSILON]
+                  Factor_NUMBER(
+                   2
+                  ) [Factor_NUMBER]
+                ) [FactorSign]
+              ) [Term_ONE]
+            ) [Expr_ONE]
+            MayMatrix_MATRIX(
+              Expr_ONE(
+                Term_ONE(
+                  FactorSign(
+                    UnaryMinus_EPSILON(
+                    ) [UnaryMinus_EPSILON]
+                    Factor_NUMBER(
+                     1
+                    ) [Factor_NUMBER]
+                  ) [FactorSign]
+                ) [Term_ONE]
+              ) [Expr_ONE]
+            ) [MayMatrix_MATRIX]
+          ) [Designator_Elem]
+        ) [DesignatorStat_INC]
+      ) [Statement_DesignatorStatement]
+    ) [StatementList_STATEMENTS]
+  ) [MethodDecl]
+) [Program]
+INFO  01:30:45,620 - ==============ZAVRSEN ISPIS STABLA=====================
+
+INFO  01:30:45,620 - ==============ISPIS SEMANTICKE ANALIZE=====================
+INFO  01:30:45,627 - ==============ZAVRSEN ISPIS SEMANTICKE ANALIZE=====================
+
+INFO  01:30:45,628 - Parsiranje uspesno zavrseno!

@@ -71,6 +71,7 @@ nonterminal StatementList StatementList;
 nonterminal Statement Statement;
 nonterminal DesignatorStatement DesignatorStatement;
 nonterminal DesignatorStatementList DesignatorStatementList;
+nonterminal MayMatrix MayMatrix;
 // Expr, ExprList, Term, TermList,
 
 nonterminal MayPrintNumConst MayPrintNumConst;
@@ -81,7 +82,7 @@ nonterminal Addop Addop;
 nonterminal Mulop Mulop;
 
 nonterminal rs.etf.pp1.symboltable.concepts.Obj ProgramName, MethodName;
-nonterminal rs.etf.pp1.symboltable.concepts.Obj Designator, DesignatorArrayName;
+nonterminal rs.etf.pp1.symboltable.concepts.Obj Designator, DesignatorArrayOrMatrixName;
 nonterminal rs.etf.pp1.symboltable.concepts.Struct Constant, FactorSign, Factor, Term, Expr;
 
 
@@ -133,7 +134,9 @@ VarDecl ::= (VarDecl_VAR) IDENTIFIER:I1 {: RESULT=new VarDecl_VAR(I1); RESULT.se
 			(VarDecl_ERROR) error:e
 			{: parser.report_error("OPORAVAK od greske u definiciji promenljive izvrsen u liniji " + eleft, null);  :} {: RESULT=new VarDecl_ERROR(); :}
 		    | 
-			(VarDecl_ARRAY) IDENTIFIER:I1 LEFT_BRACKET RIGHT_BRACKET {: RESULT=new VarDecl_ARRAY(I1); RESULT.setLine(I1left); :};
+			(VarDecl_ARRAY) IDENTIFIER:I1 LEFT_BRACKET RIGHT_BRACKET {: RESULT=new VarDecl_ARRAY(I1); RESULT.setLine(I1left); :}
+			|
+			(VarDecl_MATRIX) IDENTIFIER:I1 LEFT_BRACKET RIGHT_BRACKET LEFT_BRACKET RIGHT_BRACKET {: RESULT=new VarDecl_MATRIX(I1); RESULT.setLine(I1left); :};
 			
 	
 			
@@ -251,7 +254,8 @@ Factor ::= (Factor_Designator) Designator:D1 {: RESULT=new Factor_Designator(D1)
 		   (Factor_NEW) NEW Type:T1 LEFT_BRACKET Expr:E2 RIGHT_BRACKET {: RESULT=new Factor_NEW(T1, E2); RESULT.setLine(T1left); :}
 		   |
 		   (Factor_Expr) LEFT_PARENTHESIS Expr:E1 RIGHT_PARENTHESIS {: RESULT=new Factor_Expr(E1); RESULT.setLine(E1left); :}
-		   ;
+		   |
+		   (Factor_NEW_MATRIX) NEW Type:T1 LEFT_BRACKET Expr:E2 RIGHT_BRACKET LEFT_BRACKET Expr:E3 RIGHT_BRACKET {: RESULT=new Factor_NEW_MATRIX(T1, E2, E3); RESULT.setLine(T1left); :};
 
 
 
@@ -259,9 +263,14 @@ Factor ::= (Factor_Designator) Designator:D1 {: RESULT=new Factor_Designator(D1)
 
 Designator ::= (Designator_ONE) IDENTIFIER:I1 {: RESULT=new Designator_ONE(I1); RESULT.setLine(I1left); :}
 			   |
-			   (Designator_ARRAY_Elem) DesignatorArrayName:D1 LEFT_BRACKET Expr:E2 RIGHT_BRACKET {: RESULT=new Designator_ARRAY_Elem(D1, E2); RESULT.setLine(D1left); :};
+			   (Designator_Elem) DesignatorArrayOrMatrixName:D1 LEFT_BRACKET Expr:E2 RIGHT_BRACKET MayMatrix:M3 {: RESULT=new Designator_Elem(D1, E2, M3); RESULT.setLine(D1left); :};
 			   
-DesignatorArrayName ::= (DesignatorArrayName) IDENTIFIER:I1 {: RESULT=new DesignatorArrayName(I1); RESULT.setLine(I1left); :};
+DesignatorArrayOrMatrixName ::= (DesignatorArrayOrMatrixName) IDENTIFIER:I1 {: RESULT=new DesignatorArrayOrMatrixName(I1); RESULT.setLine(I1left); :};
+
+MayMatrix ::= (MayMatrix_MATRIX) LEFT_BRACKET Expr:E1 RIGHT_BRACKET {: RESULT=new MayMatrix_MATRIX(E1); RESULT.setLine(E1left); :}
+		   	  |
+		      (MayMatrix_EPSILON) {: RESULT=new MayMatrix_EPSILON(); :} /*epsilon*/
+		      ;
 
 
 
@@ -275,8 +284,7 @@ Assignop ::= (Assignop) EQUALS {: RESULT=new Assignop(); :};
 
 Addop ::= (Addop_PLUS) PLUS {: RESULT=new Addop_PLUS(); :}
 		  |
-		  (Addop_MINUS) MINUS {: RESULT=new Addop_MINUS(); :}
-		  ;
+		  (Addop_MINUS) MINUS {: RESULT=new Addop_MINUS(); :};
 
 
 
@@ -286,5 +294,4 @@ Mulop ::= (Mulop_MUL) MULTIPLICATION {: RESULT=new Mulop_MUL(); :}
 		  |
 		  (Mulop_DIV) DIVISION {: RESULT=new Mulop_DIV(); :}
 		  |
-		  (Mulop_MOD) MODULUS {: RESULT=new Mulop_MOD(); :}
-		  ;
+		  (Mulop_MOD) MODULUS {: RESULT=new Mulop_MOD(); :};

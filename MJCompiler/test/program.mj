@@ -1,21 +1,21 @@
 // Test301
 
 program test301
-
-	const int nula = 0;
-	const int jedan = 1, s = 3;
-	const int pet = 5;
-	char c;
-
-	int niz[], niz2[], a, b;
-	char nizch[];
+	const int a = 3, b = 5;
+	const char aa = 'c', bb = 'd';
+	const bool x = true;
+	bool y;
+	int niz1[], niz2[];
+	bool niz3[];
+	char matrix[][], matrix2[][];
 	
 {
-	void main()	
-		int bodovi;
-		bool bt,ce,sd;
+	void main() int t; bool y; char u; int matrix3[][], matrix4[][]; bool matrix5[];
 	{
-	[a,jedan,bt,c] = niz2;
+		matrix3[2][1]++;
+		matrix3[2][1] = a;
+		//a = matrix3[2][1];
+		read(matrix5[1]);
 	}
 }
 

@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 10/4/2023 19:22:5
+// 11/4/2023 22:56:39
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -25,6 +25,7 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(Statement Statement) { }
     public void visit(ConstVarDeclList ConstVarDeclList) { }
     public void visit(Term Term) { }
+    public void visit(MayMatrix MayMatrix) { }
     public void visit(StatementList StatementList) { }
     public void visit(Mulop_MOD Mulop_MOD) { visit(); }
     public void visit(Mulop_DIV Mulop_DIV) { visit(); }
@@ -32,9 +33,12 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(Addop_MINUS Addop_MINUS) { visit(); }
     public void visit(Addop_PLUS Addop_PLUS) { visit(); }
     public void visit(Assignop Assignop) { visit(); }
-    public void visit(DesignatorArrayName DesignatorArrayName) { visit(); }
-    public void visit(Designator_ARRAY_Elem Designator_ARRAY_Elem) { visit(); }
+    public void visit(MayMatrix_EPSILON MayMatrix_EPSILON) { visit(); }
+    public void visit(MayMatrix_MATRIX MayMatrix_MATRIX) { visit(); }
+    public void visit(DesignatorArrayOrMatrixName DesignatorArrayOrMatrixName) { visit(); }
+    public void visit(Designator_Elem Designator_Elem) { visit(); }
     public void visit(Designator_ONE Designator_ONE) { visit(); }
+    public void visit(Factor_NEW_MATRIX Factor_NEW_MATRIX) { visit(); }
     public void visit(Factor_Expr Factor_Expr) { visit(); }
     public void visit(Factor_NEW Factor_NEW) { visit(); }
     public void visit(Factor_BOOLEAN Factor_BOOLEAN) { visit(); }
@@ -70,6 +74,7 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(MethodVarDeclList_VAR MethodVarDeclList_VAR) { visit(); }
     public void visit(MethodName MethodName) { visit(); }
     public void visit(MethodDecl MethodDecl) { visit(); }
+    public void visit(VarDecl_MATRIX VarDecl_MATRIX) { visit(); }
     public void visit(VarDecl_ARRAY VarDecl_ARRAY) { visit(); }
     public void visit(VarDecl_ERROR VarDecl_ERROR) { visit(); }
     public void visit(VarDecl_VAR VarDecl_VAR) { visit(); }

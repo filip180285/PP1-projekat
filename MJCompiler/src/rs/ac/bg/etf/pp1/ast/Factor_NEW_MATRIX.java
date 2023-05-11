@@ -1,28 +1,31 @@
 // generated with ast extension for cup
 // version 0.8
-// 10/4/2023 19:22:5
+// 11/4/2023 22:56:39
 
 
 package rs.ac.bg.etf.pp1.ast;
 
-public class Designator_ARRAY_Elem extends Designator {
+public class Factor_NEW_MATRIX extends Factor {
 
-    private DesignatorArrayName DesignatorArrayName;
+    private Type Type;
     private Expr Expr;
+    private Expr Expr1;
 
-    public Designator_ARRAY_Elem (DesignatorArrayName DesignatorArrayName, Expr Expr) {
-        this.DesignatorArrayName=DesignatorArrayName;
-        if(DesignatorArrayName!=null) DesignatorArrayName.setParent(this);
+    public Factor_NEW_MATRIX (Type Type, Expr Expr, Expr Expr1) {
+        this.Type=Type;
+        if(Type!=null) Type.setParent(this);
         this.Expr=Expr;
         if(Expr!=null) Expr.setParent(this);
+        this.Expr1=Expr1;
+        if(Expr1!=null) Expr1.setParent(this);
     }
 
-    public DesignatorArrayName getDesignatorArrayName() {
-        return DesignatorArrayName;
+    public Type getType() {
+        return Type;
     }
 
-    public void setDesignatorArrayName(DesignatorArrayName DesignatorArrayName) {
-        this.DesignatorArrayName=DesignatorArrayName;
+    public void setType(Type Type) {
+        this.Type=Type;
     }
 
     public Expr getExpr() {
@@ -33,34 +36,45 @@ public class Designator_ARRAY_Elem extends Designator {
         this.Expr=Expr;
     }
 
+    public Expr getExpr1() {
+        return Expr1;
+    }
+
+    public void setExpr1(Expr Expr1) {
+        this.Expr1=Expr1;
+    }
+
     public void accept(Visitor visitor) {
         visitor.visit(this);
     }
 
     public void childrenAccept(Visitor visitor) {
-        if(DesignatorArrayName!=null) DesignatorArrayName.accept(visitor);
+        if(Type!=null) Type.accept(visitor);
         if(Expr!=null) Expr.accept(visitor);
+        if(Expr1!=null) Expr1.accept(visitor);
     }
 
     public void traverseTopDown(Visitor visitor) {
         accept(visitor);
-        if(DesignatorArrayName!=null) DesignatorArrayName.traverseTopDown(visitor);
+        if(Type!=null) Type.traverseTopDown(visitor);
         if(Expr!=null) Expr.traverseTopDown(visitor);
+        if(Expr1!=null) Expr1.traverseTopDown(visitor);
     }
 
     public void traverseBottomUp(Visitor visitor) {
-        if(DesignatorArrayName!=null) DesignatorArrayName.traverseBottomUp(visitor);
+        if(Type!=null) Type.traverseBottomUp(visitor);
         if(Expr!=null) Expr.traverseBottomUp(visitor);
+        if(Expr1!=null) Expr1.traverseBottomUp(visitor);
         accept(visitor);
     }
 
     public String toString(String tab) {
         StringBuffer buffer=new StringBuffer();
         buffer.append(tab);
-        buffer.append("Designator_ARRAY_Elem(\n");
+        buffer.append("Factor_NEW_MATRIX(\n");
 
-        if(DesignatorArrayName!=null)
-            buffer.append(DesignatorArrayName.toString("  "+tab));
+        if(Type!=null)
+            buffer.append(Type.toString("  "+tab));
         else
             buffer.append(tab+"  null");
         buffer.append("\n");
@@ -71,8 +85,14 @@ public class Designator_ARRAY_Elem extends Designator {
             buffer.append(tab+"  null");
         buffer.append("\n");
 
+        if(Expr1!=null)
+            buffer.append(Expr1.toString("  "+tab));
+        else
+            buffer.append(tab+"  null");
+        buffer.append("\n");
+
         buffer.append(tab);
-        buffer.append(") [Designator_ARRAY_Elem]");
+        buffer.append(") [Factor_NEW_MATRIX]");
         return buffer.toString();
     }
 }
