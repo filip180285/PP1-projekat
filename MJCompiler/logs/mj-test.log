@@ -1,108 +1,320 @@
-INFO  17:14:52,958 - Compiling source file: C:\Users\Korisnik\Desktop\PP1-projekat\MJCompiler\test\program.mj
-INFO  17:14:52,977 - #2 program
-INFO  17:14:52,977 - #9 test301
-INFO  17:14:52,977 - #3 const
-INFO  17:14:52,978 - #9 int
-INFO  17:14:52,978 - #9 nula
-INFO  17:14:52,978 - #18 =
-INFO  17:14:52,979 - #10 0
-INFO  17:14:52,979 - #21 ;
-INFO  17:14:52,979 - #3 const
-INFO  17:14:52,980 - #9 int
-INFO  17:14:52,980 - #9 jedan
-INFO  17:14:52,980 - #18 =
-INFO  17:14:52,980 - #10 1
-INFO  17:14:52,980 - #22 ,
-INFO  17:14:52,980 - #9 s
-INFO  17:14:52,980 - #18 =
-INFO  17:14:52,980 - #10 3
-INFO  17:14:52,980 - #21 ;
-INFO  17:14:52,980 - #3 const
-INFO  17:14:52,980 - #9 int
-INFO  17:14:52,980 - #9 pet
-INFO  17:14:52,980 - #18 =
-INFO  17:14:52,982 - #10 5
-INFO  17:14:52,982 - #21 ;
-INFO  17:14:52,982 - #9 int
-INFO  17:14:52,982 - #9 niz
-INFO  17:14:52,982 - #25 [
-INFO  17:14:52,982 - #26 ]
-INFO  17:14:52,982 - #22 ,
-INFO  17:14:52,983 - #9 niz2
-INFO  17:14:52,983 - #25 [
-INFO  17:14:52,983 - #26 ]
-INFO  17:14:52,983 - #22 ,
-INFO  17:14:52,983 - #9 a
-INFO  17:14:52,983 - #22 ,
-INFO  17:14:52,983 - #9 b
-INFO  17:14:52,983 - #21 ;
-INFO  17:14:52,983 - #9 char
-INFO  17:14:52,984 - #9 nizch
-INFO  17:14:52,984 - #25 [
-INFO  17:14:52,984 - #26 ]
-INFO  17:14:52,984 - #21 ;
-INFO  17:14:52,984 - #27 {
-INFO  17:14:52,984 - #8 void
-INFO  17:14:52,984 - #9 main
-INFO  17:14:52,984 - #23 (
-INFO  17:14:52,984 - #24 )
-INFO  17:14:52,984 - #9 int
-INFO  17:14:52,985 - #9 bodovi
-INFO  17:14:52,985 - #21 ;
-INFO  17:14:52,985 - #9 bool
-INFO  17:14:52,985 - #9 bt
-INFO  17:14:52,985 - #22 ,
-INFO  17:14:52,985 - #9 ce
-INFO  17:14:52,985 - #22 ,
-INFO  17:14:52,985 - #9 sd
-INFO  17:14:52,985 - #21 ;
-INFO  17:14:52,985 - #9 char
-INFO  17:14:52,985 - #9 l
-INFO  17:14:52,985 - #21 ;
-INFO  17:14:52,985 - #27 {
-INFO  17:14:52,985 - #9 bodovi
-INFO  17:14:52,986 - #18 =
-INFO  17:14:52,986 - #9 pet
-INFO  17:14:52,987 - #21 ;
-INFO  17:14:52,987 - #6 read
-INFO  17:14:52,988 - #23 (
-INFO  17:14:52,988 - #9 bodovi
-INFO  17:14:52,988 - #24 )
-INFO  17:14:52,989 - #21 ;
-INFO  17:14:52,990 - #25 [
-INFO  17:14:52,990 - #22 ,
-INFO  17:14:52,990 - #22 ,
-INFO  17:14:52,991 - #22 ,
-INFO  17:14:52,991 - #9 a
-INFO  17:14:52,991 - #26 ]
-INFO  17:14:52,991 - #18 =
-INFO  17:14:52,991 - #9 niz
-INFO  17:14:52,991 - #21 ;
-INFO  17:14:52,991 - #9 b
-INFO  17:14:52,991 - #18 =
-INFO  17:14:52,991 - #9 pet
-INFO  17:14:52,991 - #13 +
-INFO  17:14:52,991 - #9 jedan
-INFO  17:14:52,992 - #21 ;
-INFO  17:14:52,992 - #9 a
-INFO  17:14:52,992 - #19 ++
-INFO  17:14:52,992 - #21 ;
-INFO  17:14:52,992 - #9 a
-INFO  17:14:52,992 - #20 --
-INFO  17:14:52,992 - #21 ;
-INFO  17:14:52,992 - #9 bt
-INFO  17:14:52,992 - #18 =
-INFO  17:14:52,992 - #12 0
-INFO  17:14:52,992 - #21 ;
-INFO  17:14:52,992 - #9 l
-INFO  17:14:52,992 - #18 =
-INFO  17:14:52,993 - #11 s
-INFO  17:14:52,993 - #21 ;
-INFO  17:14:52,993 - #28 }
-INFO  17:14:52,993 - #28 }
-INFO  17:14:52,994 - 
+INFO  18:12:46,642 - Compiling source file: C:\Users\Korisnik\Desktop\PP1-projekat\MJCompiler\test\program.mj
+INFO  18:12:46,661 - #2 program
+INFO  18:12:46,661 - #9 test301
+INFO  18:12:46,661 - #3 const
+INFO  18:12:46,662 - #9 int
+INFO  18:12:46,662 - #9 nula
+INFO  18:12:46,662 - #18 =
+INFO  18:12:46,662 - #10 0
+INFO  18:12:46,662 - #21 ;
+INFO  18:12:46,663 - #3 const
+INFO  18:12:46,663 - #9 int
+INFO  18:12:46,663 - #9 jedan
+INFO  18:12:46,663 - #18 =
+INFO  18:12:46,663 - #10 1
+INFO  18:12:46,663 - #22 ,
+INFO  18:12:46,664 - #9 s
+INFO  18:12:46,664 - #18 =
+INFO  18:12:46,664 - #10 3
+INFO  18:12:46,664 - #21 ;
+INFO  18:12:46,664 - #3 const
+INFO  18:12:46,664 - #9 int
+INFO  18:12:46,664 - #9 pet
+INFO  18:12:46,664 - #18 =
+INFO  18:12:46,666 - #10 5
+INFO  18:12:46,666 - #21 ;
+INFO  18:12:46,666 - #9 int
+INFO  18:12:46,666 - #9 niz
+INFO  18:12:46,666 - #25 [
+INFO  18:12:46,666 - #26 ]
+INFO  18:12:46,666 - #22 ,
+INFO  18:12:46,666 - #9 niz2
+INFO  18:12:46,666 - #25 [
+INFO  18:12:46,666 - #26 ]
+INFO  18:12:46,666 - #22 ,
+INFO  18:12:46,666 - #9 a
+INFO  18:12:46,666 - #22 ,
+INFO  18:12:46,666 - #9 b
+INFO  18:12:46,666 - #21 ;
+INFO  18:12:46,667 - #9 char
+INFO  18:12:46,667 - #9 nizch
+INFO  18:12:46,667 - #25 [
+INFO  18:12:46,667 - #26 ]
+INFO  18:12:46,667 - #21 ;
+INFO  18:12:46,667 - #27 {
+INFO  18:12:46,667 - #8 void
+INFO  18:12:46,667 - #9 main
+INFO  18:12:46,667 - #23 (
+INFO  18:12:46,668 - #24 )
+INFO  18:12:46,668 - #9 int
+INFO  18:12:46,668 - #9 bodovi
+INFO  18:12:46,668 - #21 ;
+INFO  18:12:46,668 - #9 bool
+INFO  18:12:46,668 - #9 bt
+INFO  18:12:46,669 - #22 ,
+INFO  18:12:46,669 - #9 ce
+INFO  18:12:46,669 - #22 ,
+INFO  18:12:46,669 - #9 sd
+INFO  18:12:46,669 - #21 ;
+INFO  18:12:46,669 - #27 {
+INFO  18:12:46,669 - #9 bodovi
+INFO  18:12:46,669 - #18 =
+INFO  18:12:46,669 - #10 0
+INFO  18:12:46,670 - #21 ;
+INFO  18:12:46,671 - #9 bodovi
+INFO  18:12:46,671 - #19 ++
+INFO  18:12:46,671 - #21 ;
+INFO  18:12:46,672 - #9 bodovi
+INFO  18:12:46,672 - #18 =
+INFO  18:12:46,672 - #9 bodovi
+INFO  18:12:46,672 - #13 +
+INFO  18:12:46,673 - #9 jedan
+INFO  18:12:46,674 - #21 ;
+INFO  18:12:46,674 - #9 bodovi
+INFO  18:12:46,674 - #18 =
+INFO  18:12:46,674 - #9 bodovi
+INFO  18:12:46,674 - #15 *
+INFO  18:12:46,674 - #9 pet
+INFO  18:12:46,675 - #21 ;
+INFO  18:12:46,675 - #9 bodovi
+INFO  18:12:46,675 - #20 --
+INFO  18:12:46,675 - #21 ;
+INFO  18:12:46,675 - #5 print
+INFO  18:12:46,675 - #23 (
+INFO  18:12:46,675 - #9 bodovi
+INFO  18:12:46,675 - #24 )
+INFO  18:12:46,676 - #21 ;
+INFO  18:12:46,676 - #9 niz
+INFO  18:12:46,676 - #18 =
+INFO  18:12:46,676 - #4 new
+INFO  18:12:46,676 - #9 int
+INFO  18:12:46,676 - #25 [
+INFO  18:12:46,676 - #10 3
+INFO  18:12:46,676 - #26 ]
+INFO  18:12:46,676 - #21 ;
+INFO  18:12:46,676 - #9 niz
+INFO  18:12:46,676 - #25 [
+INFO  18:12:46,677 - #9 nula
+INFO  18:12:46,677 - #26 ]
+INFO  18:12:46,677 - #18 =
+INFO  18:12:46,677 - #9 jedan
+INFO  18:12:46,677 - #21 ;
+INFO  18:12:46,677 - #9 niz
+INFO  18:12:46,677 - #25 [
+INFO  18:12:46,677 - #10 1
+INFO  18:12:46,677 - #26 ]
+INFO  18:12:46,677 - #18 =
+INFO  18:12:46,677 - #10 2
+INFO  18:12:46,677 - #21 ;
+INFO  18:12:46,677 - #9 niz
+INFO  18:12:46,677 - #25 [
+INFO  18:12:46,678 - #9 niz
+INFO  18:12:46,678 - #25 [
+INFO  18:12:46,678 - #9 jedan
+INFO  18:12:46,678 - #26 ]
+INFO  18:12:46,678 - #26 ]
+INFO  18:12:46,678 - #18 =
+INFO  18:12:46,678 - #9 niz
+INFO  18:12:46,678 - #25 [
+INFO  18:12:46,678 - #9 niz
+INFO  18:12:46,678 - #25 [
+INFO  18:12:46,678 - #10 0
+INFO  18:12:46,678 - #26 ]
+INFO  18:12:46,678 - #26 ]
+INFO  18:12:46,678 - #15 *
+INFO  18:12:46,678 - #10 3
+INFO  18:12:46,678 - #21 ;
+INFO  18:12:46,678 - #9 bodovi
+INFO  18:12:46,678 - #18 =
+INFO  18:12:46,679 - #9 niz
+INFO  18:12:46,679 - #25 [
+INFO  18:12:46,679 - #10 2
+INFO  18:12:46,679 - #26 ]
+INFO  18:12:46,679 - #16 /
+INFO  18:12:46,679 - #9 niz
+INFO  18:12:46,679 - #25 [
+INFO  18:12:46,679 - #10 0
+INFO  18:12:46,679 - #26 ]
+INFO  18:12:46,679 - #21 ;
+INFO  18:12:46,679 - #5 print
+INFO  18:12:46,679 - #23 (
+INFO  18:12:46,679 - #9 bodovi
+INFO  18:12:46,679 - #24 )
+INFO  18:12:46,680 - #21 ;
+INFO  18:12:46,680 - #5 print
+INFO  18:12:46,680 - #23 (
+INFO  18:12:46,680 - #9 niz
+INFO  18:12:46,680 - #25 [
+INFO  18:12:46,680 - #10 2
+INFO  18:12:46,680 - #26 ]
+INFO  18:12:46,680 - #24 )
+INFO  18:12:46,680 - #21 ;
+INFO  18:12:46,680 - #25 [
+INFO  18:12:46,680 - #9 a
+INFO  18:12:46,680 - #22 ,
+INFO  18:12:46,680 - #9 b
+INFO  18:12:46,680 - #26 ]
+INFO  18:12:46,680 - #18 =
+INFO  18:12:46,680 - #9 niz
+INFO  18:12:46,680 - #21 ;
+INFO  18:12:46,680 - #5 print
+INFO  18:12:46,680 - #23 (
+INFO  18:12:46,680 - #9 a
+INFO  18:12:46,680 - #24 )
+INFO  18:12:46,680 - #21 ;
+INFO  18:12:46,681 - #5 print
+INFO  18:12:46,681 - #23 (
+INFO  18:12:46,681 - #9 b
+INFO  18:12:46,681 - #24 )
+INFO  18:12:46,681 - #21 ;
+INFO  18:12:46,681 - #25 [
+INFO  18:12:46,681 - #22 ,
+INFO  18:12:46,681 - #9 a
+INFO  18:12:46,681 - #22 ,
+INFO  18:12:46,681 - #26 ]
+INFO  18:12:46,681 - #18 =
+INFO  18:12:46,681 - #9 niz
+INFO  18:12:46,681 - #21 ;
+INFO  18:12:46,681 - #5 print
+INFO  18:12:46,681 - #23 (
+INFO  18:12:46,681 - #9 a
+INFO  18:12:46,681 - #24 )
+INFO  18:12:46,681 - #21 ;
+INFO  18:12:46,682 - #9 niz2
+INFO  18:12:46,682 - #18 =
+INFO  18:12:46,682 - #4 new
+INFO  18:12:46,682 - #9 int
+INFO  18:12:46,682 - #25 [
+INFO  18:12:46,682 - #10 2
+INFO  18:12:46,682 - #26 ]
+INFO  18:12:46,682 - #21 ;
+INFO  18:12:46,682 - #25 [
+INFO  18:12:46,682 - #9 niz2
+INFO  18:12:46,682 - #25 [
+INFO  18:12:46,682 - #10 0
+INFO  18:12:46,682 - #26 ]
+INFO  18:12:46,682 - #22 ,
+INFO  18:12:46,682 - #22 ,
+INFO  18:12:46,682 - #9 niz2
+INFO  18:12:46,682 - #25 [
+INFO  18:12:46,682 - #9 niz
+INFO  18:12:46,682 - #25 [
+INFO  18:12:46,682 - #9 nula
+INFO  18:12:46,682 - #26 ]
+INFO  18:12:46,682 - #26 ]
+INFO  18:12:46,682 - #26 ]
+INFO  18:12:46,682 - #18 =
+INFO  18:12:46,682 - #9 niz
+INFO  18:12:46,682 - #21 ;
+INFO  18:12:46,682 - #5 print
+INFO  18:12:46,682 - #23 (
+INFO  18:12:46,682 - #9 niz2
+INFO  18:12:46,682 - #25 [
+INFO  18:12:46,682 - #10 0
+INFO  18:12:46,682 - #26 ]
+INFO  18:12:46,683 - #24 )
+INFO  18:12:46,683 - #21 ;
+INFO  18:12:46,683 - #5 print
+INFO  18:12:46,683 - #23 (
+INFO  18:12:46,683 - #9 niz2
+INFO  18:12:46,683 - #25 [
+INFO  18:12:46,683 - #10 1
+INFO  18:12:46,683 - #26 ]
+INFO  18:12:46,683 - #24 )
+INFO  18:12:46,683 - #21 ;
+INFO  18:12:46,683 - #9 nizch
+INFO  18:12:46,683 - #18 =
+INFO  18:12:46,683 - #4 new
+INFO  18:12:46,683 - #9 char
+INFO  18:12:46,683 - #25 [
+INFO  18:12:46,683 - #10 3
+INFO  18:12:46,683 - #26 ]
+INFO  18:12:46,683 - #21 ;
+INFO  18:12:46,683 - #9 nizch
+INFO  18:12:46,683 - #25 [
+INFO  18:12:46,683 - #10 0
+INFO  18:12:46,683 - #26 ]
+INFO  18:12:46,683 - #18 =
+INFO  18:12:46,683 - #11 a
+INFO  18:12:46,683 - #21 ;
+INFO  18:12:46,683 - #9 nizch
+INFO  18:12:46,683 - #25 [
+INFO  18:12:46,683 - #9 jedan
+INFO  18:12:46,683 - #26 ]
+INFO  18:12:46,683 - #18 =
+INFO  18:12:46,683 - #11 b
+INFO  18:12:46,683 - #21 ;
+INFO  18:12:46,684 - #9 nizch
+INFO  18:12:46,684 - #25 [
+INFO  18:12:46,684 - #9 pet
+INFO  18:12:46,684 - #14 -
+INFO  18:12:46,684 - #10 3
+INFO  18:12:46,684 - #26 ]
+INFO  18:12:46,684 - #18 =
+INFO  18:12:46,684 - #11 c
+INFO  18:12:46,684 - #21 ;
+INFO  18:12:46,684 - #5 print
+INFO  18:12:46,685 - #23 (
+INFO  18:12:46,685 - #9 nizch
+INFO  18:12:46,685 - #25 [
+INFO  18:12:46,685 - #10 1
+INFO  18:12:46,685 - #26 ]
+INFO  18:12:46,685 - #24 )
+INFO  18:12:46,685 - #21 ;
+INFO  18:12:46,685 - #5 print
+INFO  18:12:46,685 - #23 (
+INFO  18:12:46,685 - #9 nizch
+INFO  18:12:46,685 - #25 [
+INFO  18:12:46,685 - #9 jedan
+INFO  18:12:46,685 - #15 *
+INFO  18:12:46,685 - #10 2
+INFO  18:12:46,685 - #26 ]
+INFO  18:12:46,685 - #24 )
+INFO  18:12:46,685 - #21 ;
+INFO  18:12:46,685 - #6 read
+INFO  18:12:46,685 - #23 (
+INFO  18:12:46,685 - #9 bodovi
+INFO  18:12:46,685 - #24 )
+INFO  18:12:46,685 - #21 ;
+INFO  18:12:46,685 - #9 bodovi
+INFO  18:12:46,685 - #18 =
+INFO  18:12:46,685 - #14 -
+INFO  18:12:46,685 - #9 bodovi
+INFO  18:12:46,686 - #13 +
+INFO  18:12:46,686 - #23 (
+INFO  18:12:46,686 - #9 pet
+INFO  18:12:46,686 - #15 *
+INFO  18:12:46,686 - #9 a
+INFO  18:12:46,686 - #16 /
+INFO  18:12:46,686 - #10 2
+INFO  18:12:46,686 - #14 -
+INFO  18:12:46,686 - #9 jedan
+INFO  18:12:46,686 - #24 )
+INFO  18:12:46,686 - #15 *
+INFO  18:12:46,686 - #9 bodovi
+INFO  18:12:46,686 - #14 -
+INFO  18:12:46,686 - #23 (
+INFO  18:12:46,686 - #10 3
+INFO  18:12:46,686 - #17 %
+INFO  18:12:46,686 - #10 2
+INFO  18:12:46,687 - #13 +
+INFO  18:12:46,687 - #10 3
+INFO  18:12:46,687 - #15 *
+INFO  18:12:46,687 - #10 2
+INFO  18:12:46,687 - #14 -
+INFO  18:12:46,687 - #10 3
+INFO  18:12:46,687 - #24 )
+INFO  18:12:46,687 - #21 ;
+INFO  18:12:46,687 - #5 print
+INFO  18:12:46,687 - #23 (
+INFO  18:12:46,687 - #9 bodovi
+INFO  18:12:46,687 - #24 )
+INFO  18:12:46,687 - #21 ;
+INFO  18:12:46,687 - #28 }
+INFO  18:12:46,687 - #28 }
+INFO  18:12:46,688 - 
                      ==============ISPIS STABLA=====================
-INFO  17:14:52,995 - Program(
+INFO  18:12:46,694 - Program(
   ProgramName(
    test301
   ) [ProgramName]
@@ -206,50 +418,38 @@ INFO  17:14:52,995 - Program(
     ) [MethodName]
     MethodVarDeclList_VAR(
       MethodVarDeclList_VAR(
-        MethodVarDeclList_VAR(
-          MethodVarDeclList_EPSILON(
-          ) [MethodVarDeclList_EPSILON]
-          VarDeclList(
-            Type(
-             int
-            ) [Type]
-            VarDeclOneOrMore_ONE(
-              VarDecl_VAR(
-               bodovi
-              ) [VarDecl_VAR]
-            ) [VarDeclOneOrMore_ONE]
-          ) [VarDeclList]
-        ) [MethodVarDeclList_VAR]
+        MethodVarDeclList_EPSILON(
+        ) [MethodVarDeclList_EPSILON]
         VarDeclList(
           Type(
-           bool
+           int
           ) [Type]
-          VarDeclOneOrMore_MORE(
+          VarDeclOneOrMore_ONE(
             VarDecl_VAR(
-             bt
+             bodovi
             ) [VarDecl_VAR]
-            VarDeclOneOrMore_MORE(
-              VarDecl_VAR(
-               ce
-              ) [VarDecl_VAR]
-              VarDeclOneOrMore_ONE(
-                VarDecl_VAR(
-                 sd
-                ) [VarDecl_VAR]
-              ) [VarDeclOneOrMore_ONE]
-            ) [VarDeclOneOrMore_MORE]
-          ) [VarDeclOneOrMore_MORE]
+          ) [VarDeclOneOrMore_ONE]
         ) [VarDeclList]
       ) [MethodVarDeclList_VAR]
       VarDeclList(
         Type(
-         char
+         bool
         ) [Type]
-        VarDeclOneOrMore_ONE(
+        VarDeclOneOrMore_MORE(
           VarDecl_VAR(
-           l
+           bt
           ) [VarDecl_VAR]
-        ) [VarDeclOneOrMore_ONE]
+          VarDeclOneOrMore_MORE(
+            VarDecl_VAR(
+             ce
+            ) [VarDecl_VAR]
+            VarDeclOneOrMore_ONE(
+              VarDecl_VAR(
+               sd
+              ) [VarDecl_VAR]
+            ) [VarDeclOneOrMore_ONE]
+          ) [VarDeclOneOrMore_MORE]
+        ) [VarDeclOneOrMore_MORE]
       ) [VarDeclList]
     ) [MethodVarDeclList_VAR]
     StatementList_STATEMENTS(
@@ -260,15 +460,844 @@ INFO  17:14:52,995 - Program(
               StatementList_STATEMENTS(
                 StatementList_STATEMENTS(
                   StatementList_STATEMENTS(
-                    StatementList_EPSILON(
-                    ) [StatementList_EPSILON]
+                    StatementList_STATEMENTS(
+                      StatementList_STATEMENTS(
+                        StatementList_STATEMENTS(
+                          StatementList_STATEMENTS(
+                            StatementList_STATEMENTS(
+                              StatementList_STATEMENTS(
+                                StatementList_STATEMENTS(
+                                  StatementList_STATEMENTS(
+                                    StatementList_STATEMENTS(
+                                      StatementList_STATEMENTS(
+                                        StatementList_STATEMENTS(
+                                          StatementList_STATEMENTS(
+                                            StatementList_STATEMENTS(
+                                              StatementList_STATEMENTS(
+                                                StatementList_STATEMENTS(
+                                                  StatementList_STATEMENTS(
+                                                    StatementList_STATEMENTS(
+                                                      StatementList_STATEMENTS(
+                                                        StatementList_STATEMENTS(
+                                                          StatementList_STATEMENTS(
+                                                            StatementList_STATEMENTS(
+                                                              StatementList_STATEMENTS(
+                                                                StatementList_STATEMENTS(
+                                                                  StatementList_EPSILON(
+                                                                  ) [StatementList_EPSILON]
+                                                                  Statement_DesignatorStatement(
+                                                                    DesignatorSt_Assign(
+                                                                      Designator_ONE(
+                                                                       bodovi
+                                                                      ) [Designator_ONE]
+                                                                      Assignop(
+                                                                      ) [Assignop]
+                                                                      Expr_ONE(
+                                                                        Term_ONE(
+                                                                          FactorSign(
+                                                                            UnaryMinus_EPSILON(
+                                                                            ) [UnaryMinus_EPSILON]
+                                                                            Factor_NUMBER(
+                                                                             0
+                                                                            ) [Factor_NUMBER]
+                                                                          ) [FactorSign]
+                                                                        ) [Term_ONE]
+                                                                      ) [Expr_ONE]
+                                                                    ) [DesignatorSt_Assign]
+                                                                  ) [Statement_DesignatorStatement]
+                                                                ) [StatementList_STATEMENTS]
+                                                                Statement_DesignatorStatement(
+                                                                  DesignatorStat_INC(
+                                                                    Designator_ONE(
+                                                                     bodovi
+                                                                    ) [Designator_ONE]
+                                                                  ) [DesignatorStat_INC]
+                                                                ) [Statement_DesignatorStatement]
+                                                              ) [StatementList_STATEMENTS]
+                                                              Statement_DesignatorStatement(
+                                                                DesignatorSt_Assign(
+                                                                  Designator_ONE(
+                                                                   bodovi
+                                                                  ) [Designator_ONE]
+                                                                  Assignop(
+                                                                  ) [Assignop]
+                                                                  Expr_MORE(
+                                                                    Expr_ONE(
+                                                                      Term_ONE(
+                                                                        FactorSign(
+                                                                          UnaryMinus_EPSILON(
+                                                                          ) [UnaryMinus_EPSILON]
+                                                                          Factor_Designator(
+                                                                            Designator_ONE(
+                                                                             bodovi
+                                                                            ) [Designator_ONE]
+                                                                          ) [Factor_Designator]
+                                                                        ) [FactorSign]
+                                                                      ) [Term_ONE]
+                                                                    ) [Expr_ONE]
+                                                                    Addop_PLUS(
+                                                                    ) [Addop_PLUS]
+                                                                    Term_ONE(
+                                                                      FactorSign(
+                                                                        UnaryMinus_EPSILON(
+                                                                        ) [UnaryMinus_EPSILON]
+                                                                        Factor_Designator(
+                                                                          Designator_ONE(
+                                                                           jedan
+                                                                          ) [Designator_ONE]
+                                                                        ) [Factor_Designator]
+                                                                      ) [FactorSign]
+                                                                    ) [Term_ONE]
+                                                                  ) [Expr_MORE]
+                                                                ) [DesignatorSt_Assign]
+                                                              ) [Statement_DesignatorStatement]
+                                                            ) [StatementList_STATEMENTS]
+                                                            Statement_DesignatorStatement(
+                                                              DesignatorSt_Assign(
+                                                                Designator_ONE(
+                                                                 bodovi
+                                                                ) [Designator_ONE]
+                                                                Assignop(
+                                                                ) [Assignop]
+                                                                Expr_ONE(
+                                                                  Term_MORE(
+                                                                    Term_ONE(
+                                                                      FactorSign(
+                                                                        UnaryMinus_EPSILON(
+                                                                        ) [UnaryMinus_EPSILON]
+                                                                        Factor_Designator(
+                                                                          Designator_ONE(
+                                                                           bodovi
+                                                                          ) [Designator_ONE]
+                                                                        ) [Factor_Designator]
+                                                                      ) [FactorSign]
+                                                                    ) [Term_ONE]
+                                                                    Mulop_MUL(
+                                                                    ) [Mulop_MUL]
+                                                                    FactorSign(
+                                                                      UnaryMinus_EPSILON(
+                                                                      ) [UnaryMinus_EPSILON]
+                                                                      Factor_Designator(
+                                                                        Designator_ONE(
+                                                                         pet
+                                                                        ) [Designator_ONE]
+                                                                      ) [Factor_Designator]
+                                                                    ) [FactorSign]
+                                                                  ) [Term_MORE]
+                                                                ) [Expr_ONE]
+                                                              ) [DesignatorSt_Assign]
+                                                            ) [Statement_DesignatorStatement]
+                                                          ) [StatementList_STATEMENTS]
+                                                          Statement_DesignatorStatement(
+                                                            DesignatorStat_DEC(
+                                                              Designator_ONE(
+                                                               bodovi
+                                                              ) [Designator_ONE]
+                                                            ) [DesignatorStat_DEC]
+                                                          ) [Statement_DesignatorStatement]
+                                                        ) [StatementList_STATEMENTS]
+                                                        Statement_PRINT(
+                                                          Expr_ONE(
+                                                            Term_ONE(
+                                                              FactorSign(
+                                                                UnaryMinus_EPSILON(
+                                                                ) [UnaryMinus_EPSILON]
+                                                                Factor_Designator(
+                                                                  Designator_ONE(
+                                                                   bodovi
+                                                                  ) [Designator_ONE]
+                                                                ) [Factor_Designator]
+                                                              ) [FactorSign]
+                                                            ) [Term_ONE]
+                                                          ) [Expr_ONE]
+                                                          MayPrintNumConst_EPSILON(
+                                                          ) [MayPrintNumConst_EPSILON]
+                                                        ) [Statement_PRINT]
+                                                      ) [StatementList_STATEMENTS]
+                                                      Statement_DesignatorStatement(
+                                                        DesignatorSt_Assign(
+                                                          Designator_ONE(
+                                                           niz
+                                                          ) [Designator_ONE]
+                                                          Assignop(
+                                                          ) [Assignop]
+                                                          Expr_ONE(
+                                                            Term_ONE(
+                                                              FactorSign(
+                                                                UnaryMinus_EPSILON(
+                                                                ) [UnaryMinus_EPSILON]
+                                                                Factor_NEW(
+                                                                  Type(
+                                                                   int
+                                                                  ) [Type]
+                                                                  Expr_ONE(
+                                                                    Term_ONE(
+                                                                      FactorSign(
+                                                                        UnaryMinus_EPSILON(
+                                                                        ) [UnaryMinus_EPSILON]
+                                                                        Factor_NUMBER(
+                                                                         3
+                                                                        ) [Factor_NUMBER]
+                                                                      ) [FactorSign]
+                                                                    ) [Term_ONE]
+                                                                  ) [Expr_ONE]
+                                                                ) [Factor_NEW]
+                                                              ) [FactorSign]
+                                                            ) [Term_ONE]
+                                                          ) [Expr_ONE]
+                                                        ) [DesignatorSt_Assign]
+                                                      ) [Statement_DesignatorStatement]
+                                                    ) [StatementList_STATEMENTS]
+                                                    Statement_DesignatorStatement(
+                                                      DesignatorSt_Assign(
+                                                        Designator_ARRAY_Elem(
+                                                          DesignatorArrayName(
+                                                           niz
+                                                          ) [DesignatorArrayName]
+                                                          Expr_ONE(
+                                                            Term_ONE(
+                                                              FactorSign(
+                                                                UnaryMinus_EPSILON(
+                                                                ) [UnaryMinus_EPSILON]
+                                                                Factor_Designator(
+                                                                  Designator_ONE(
+                                                                   nula
+                                                                  ) [Designator_ONE]
+                                                                ) [Factor_Designator]
+                                                              ) [FactorSign]
+                                                            ) [Term_ONE]
+                                                          ) [Expr_ONE]
+                                                        ) [Designator_ARRAY_Elem]
+                                                        Assignop(
+                                                        ) [Assignop]
+                                                        Expr_ONE(
+                                                          Term_ONE(
+                                                            FactorSign(
+                                                              UnaryMinus_EPSILON(
+                                                              ) [UnaryMinus_EPSILON]
+                                                              Factor_Designator(
+                                                                Designator_ONE(
+                                                                 jedan
+                                                                ) [Designator_ONE]
+                                                              ) [Factor_Designator]
+                                                            ) [FactorSign]
+                                                          ) [Term_ONE]
+                                                        ) [Expr_ONE]
+                                                      ) [DesignatorSt_Assign]
+                                                    ) [Statement_DesignatorStatement]
+                                                  ) [StatementList_STATEMENTS]
+                                                  Statement_DesignatorStatement(
+                                                    DesignatorSt_Assign(
+                                                      Designator_ARRAY_Elem(
+                                                        DesignatorArrayName(
+                                                         niz
+                                                        ) [DesignatorArrayName]
+                                                        Expr_ONE(
+                                                          Term_ONE(
+                                                            FactorSign(
+                                                              UnaryMinus_EPSILON(
+                                                              ) [UnaryMinus_EPSILON]
+                                                              Factor_NUMBER(
+                                                               1
+                                                              ) [Factor_NUMBER]
+                                                            ) [FactorSign]
+                                                          ) [Term_ONE]
+                                                        ) [Expr_ONE]
+                                                      ) [Designator_ARRAY_Elem]
+                                                      Assignop(
+                                                      ) [Assignop]
+                                                      Expr_ONE(
+                                                        Term_ONE(
+                                                          FactorSign(
+                                                            UnaryMinus_EPSILON(
+                                                            ) [UnaryMinus_EPSILON]
+                                                            Factor_NUMBER(
+                                                             2
+                                                            ) [Factor_NUMBER]
+                                                          ) [FactorSign]
+                                                        ) [Term_ONE]
+                                                      ) [Expr_ONE]
+                                                    ) [DesignatorSt_Assign]
+                                                  ) [Statement_DesignatorStatement]
+                                                ) [StatementList_STATEMENTS]
+                                                Statement_DesignatorStatement(
+                                                  DesignatorSt_Assign(
+                                                    Designator_ARRAY_Elem(
+                                                      DesignatorArrayName(
+                                                       niz
+                                                      ) [DesignatorArrayName]
+                                                      Expr_ONE(
+                                                        Term_ONE(
+                                                          FactorSign(
+                                                            UnaryMinus_EPSILON(
+                                                            ) [UnaryMinus_EPSILON]
+                                                            Factor_Designator(
+                                                              Designator_ARRAY_Elem(
+                                                                DesignatorArrayName(
+                                                                 niz
+                                                                ) [DesignatorArrayName]
+                                                                Expr_ONE(
+                                                                  Term_ONE(
+                                                                    FactorSign(
+                                                                      UnaryMinus_EPSILON(
+                                                                      ) [UnaryMinus_EPSILON]
+                                                                      Factor_Designator(
+                                                                        Designator_ONE(
+                                                                         jedan
+                                                                        ) [Designator_ONE]
+                                                                      ) [Factor_Designator]
+                                                                    ) [FactorSign]
+                                                                  ) [Term_ONE]
+                                                                ) [Expr_ONE]
+                                                              ) [Designator_ARRAY_Elem]
+                                                            ) [Factor_Designator]
+                                                          ) [FactorSign]
+                                                        ) [Term_ONE]
+                                                      ) [Expr_ONE]
+                                                    ) [Designator_ARRAY_Elem]
+                                                    Assignop(
+                                                    ) [Assignop]
+                                                    Expr_ONE(
+                                                      Term_MORE(
+                                                        Term_ONE(
+                                                          FactorSign(
+                                                            UnaryMinus_EPSILON(
+                                                            ) [UnaryMinus_EPSILON]
+                                                            Factor_Designator(
+                                                              Designator_ARRAY_Elem(
+                                                                DesignatorArrayName(
+                                                                 niz
+                                                                ) [DesignatorArrayName]
+                                                                Expr_ONE(
+                                                                  Term_ONE(
+                                                                    FactorSign(
+                                                                      UnaryMinus_EPSILON(
+                                                                      ) [UnaryMinus_EPSILON]
+                                                                      Factor_Designator(
+                                                                        Designator_ARRAY_Elem(
+                                                                          DesignatorArrayName(
+                                                                           niz
+                                                                          ) [DesignatorArrayName]
+                                                                          Expr_ONE(
+                                                                            Term_ONE(
+                                                                              FactorSign(
+                                                                                UnaryMinus_EPSILON(
+                                                                                ) [UnaryMinus_EPSILON]
+                                                                                Factor_NUMBER(
+                                                                                 0
+                                                                                ) [Factor_NUMBER]
+                                                                              ) [FactorSign]
+                                                                            ) [Term_ONE]
+                                                                          ) [Expr_ONE]
+                                                                        ) [Designator_ARRAY_Elem]
+                                                                      ) [Factor_Designator]
+                                                                    ) [FactorSign]
+                                                                  ) [Term_ONE]
+                                                                ) [Expr_ONE]
+                                                              ) [Designator_ARRAY_Elem]
+                                                            ) [Factor_Designator]
+                                                          ) [FactorSign]
+                                                        ) [Term_ONE]
+                                                        Mulop_MUL(
+                                                        ) [Mulop_MUL]
+                                                        FactorSign(
+                                                          UnaryMinus_EPSILON(
+                                                          ) [UnaryMinus_EPSILON]
+                                                          Factor_NUMBER(
+                                                           3
+                                                          ) [Factor_NUMBER]
+                                                        ) [FactorSign]
+                                                      ) [Term_MORE]
+                                                    ) [Expr_ONE]
+                                                  ) [DesignatorSt_Assign]
+                                                ) [Statement_DesignatorStatement]
+                                              ) [StatementList_STATEMENTS]
+                                              Statement_DesignatorStatement(
+                                                DesignatorSt_Assign(
+                                                  Designator_ONE(
+                                                   bodovi
+                                                  ) [Designator_ONE]
+                                                  Assignop(
+                                                  ) [Assignop]
+                                                  Expr_ONE(
+                                                    Term_MORE(
+                                                      Term_ONE(
+                                                        FactorSign(
+                                                          UnaryMinus_EPSILON(
+                                                          ) [UnaryMinus_EPSILON]
+                                                          Factor_Designator(
+                                                            Designator_ARRAY_Elem(
+                                                              DesignatorArrayName(
+                                                               niz
+                                                              ) [DesignatorArrayName]
+                                                              Expr_ONE(
+                                                                Term_ONE(
+                                                                  FactorSign(
+                                                                    UnaryMinus_EPSILON(
+                                                                    ) [UnaryMinus_EPSILON]
+                                                                    Factor_NUMBER(
+                                                                     2
+                                                                    ) [Factor_NUMBER]
+                                                                  ) [FactorSign]
+                                                                ) [Term_ONE]
+                                                              ) [Expr_ONE]
+                                                            ) [Designator_ARRAY_Elem]
+                                                          ) [Factor_Designator]
+                                                        ) [FactorSign]
+                                                      ) [Term_ONE]
+                                                      Mulop_DIV(
+                                                      ) [Mulop_DIV]
+                                                      FactorSign(
+                                                        UnaryMinus_EPSILON(
+                                                        ) [UnaryMinus_EPSILON]
+                                                        Factor_Designator(
+                                                          Designator_ARRAY_Elem(
+                                                            DesignatorArrayName(
+                                                             niz
+                                                            ) [DesignatorArrayName]
+                                                            Expr_ONE(
+                                                              Term_ONE(
+                                                                FactorSign(
+                                                                  UnaryMinus_EPSILON(
+                                                                  ) [UnaryMinus_EPSILON]
+                                                                  Factor_NUMBER(
+                                                                   0
+                                                                  ) [Factor_NUMBER]
+                                                                ) [FactorSign]
+                                                              ) [Term_ONE]
+                                                            ) [Expr_ONE]
+                                                          ) [Designator_ARRAY_Elem]
+                                                        ) [Factor_Designator]
+                                                      ) [FactorSign]
+                                                    ) [Term_MORE]
+                                                  ) [Expr_ONE]
+                                                ) [DesignatorSt_Assign]
+                                              ) [Statement_DesignatorStatement]
+                                            ) [StatementList_STATEMENTS]
+                                            Statement_PRINT(
+                                              Expr_ONE(
+                                                Term_ONE(
+                                                  FactorSign(
+                                                    UnaryMinus_EPSILON(
+                                                    ) [UnaryMinus_EPSILON]
+                                                    Factor_Designator(
+                                                      Designator_ONE(
+                                                       bodovi
+                                                      ) [Designator_ONE]
+                                                    ) [Factor_Designator]
+                                                  ) [FactorSign]
+                                                ) [Term_ONE]
+                                              ) [Expr_ONE]
+                                              MayPrintNumConst_EPSILON(
+                                              ) [MayPrintNumConst_EPSILON]
+                                            ) [Statement_PRINT]
+                                          ) [StatementList_STATEMENTS]
+                                          Statement_PRINT(
+                                            Expr_ONE(
+                                              Term_ONE(
+                                                FactorSign(
+                                                  UnaryMinus_EPSILON(
+                                                  ) [UnaryMinus_EPSILON]
+                                                  Factor_Designator(
+                                                    Designator_ARRAY_Elem(
+                                                      DesignatorArrayName(
+                                                       niz
+                                                      ) [DesignatorArrayName]
+                                                      Expr_ONE(
+                                                        Term_ONE(
+                                                          FactorSign(
+                                                            UnaryMinus_EPSILON(
+                                                            ) [UnaryMinus_EPSILON]
+                                                            Factor_NUMBER(
+                                                             2
+                                                            ) [Factor_NUMBER]
+                                                          ) [FactorSign]
+                                                        ) [Term_ONE]
+                                                      ) [Expr_ONE]
+                                                    ) [Designator_ARRAY_Elem]
+                                                  ) [Factor_Designator]
+                                                ) [FactorSign]
+                                              ) [Term_ONE]
+                                            ) [Expr_ONE]
+                                            MayPrintNumConst_EPSILON(
+                                            ) [MayPrintNumConst_EPSILON]
+                                          ) [Statement_PRINT]
+                                        ) [StatementList_STATEMENTS]
+                                        Statement_DesignatorStatement(
+                                          DesignatorStatement_List(
+                                            DesignatorStatementList_MORE(
+                                              DesignatorStatementList_ONE(
+                                                MayDesignator_Designator(
+                                                  Designator_ONE(
+                                                   a
+                                                  ) [Designator_ONE]
+                                                ) [MayDesignator_Designator]
+                                              ) [DesignatorStatementList_ONE]
+                                              MayDesignator_Designator(
+                                                Designator_ONE(
+                                                 b
+                                                ) [Designator_ONE]
+                                              ) [MayDesignator_Designator]
+                                            ) [DesignatorStatementList_MORE]
+                                            Designator_ONE(
+                                             niz
+                                            ) [Designator_ONE]
+                                          ) [DesignatorStatement_List]
+                                        ) [Statement_DesignatorStatement]
+                                      ) [StatementList_STATEMENTS]
+                                      Statement_PRINT(
+                                        Expr_ONE(
+                                          Term_ONE(
+                                            FactorSign(
+                                              UnaryMinus_EPSILON(
+                                              ) [UnaryMinus_EPSILON]
+                                              Factor_Designator(
+                                                Designator_ONE(
+                                                 a
+                                                ) [Designator_ONE]
+                                              ) [Factor_Designator]
+                                            ) [FactorSign]
+                                          ) [Term_ONE]
+                                        ) [Expr_ONE]
+                                        MayPrintNumConst_EPSILON(
+                                        ) [MayPrintNumConst_EPSILON]
+                                      ) [Statement_PRINT]
+                                    ) [StatementList_STATEMENTS]
+                                    Statement_PRINT(
+                                      Expr_ONE(
+                                        Term_ONE(
+                                          FactorSign(
+                                            UnaryMinus_EPSILON(
+                                            ) [UnaryMinus_EPSILON]
+                                            Factor_Designator(
+                                              Designator_ONE(
+                                               b
+                                              ) [Designator_ONE]
+                                            ) [Factor_Designator]
+                                          ) [FactorSign]
+                                        ) [Term_ONE]
+                                      ) [Expr_ONE]
+                                      MayPrintNumConst_EPSILON(
+                                      ) [MayPrintNumConst_EPSILON]
+                                    ) [Statement_PRINT]
+                                  ) [StatementList_STATEMENTS]
+                                  Statement_DesignatorStatement(
+                                    DesignatorStatement_List(
+                                      DesignatorStatementList_MORE(
+                                        DesignatorStatementList_MORE(
+                                          DesignatorStatementList_ONE(
+                                            MayDesignator_EPSILON(
+                                            ) [MayDesignator_EPSILON]
+                                          ) [DesignatorStatementList_ONE]
+                                          MayDesignator_Designator(
+                                            Designator_ONE(
+                                             a
+                                            ) [Designator_ONE]
+                                          ) [MayDesignator_Designator]
+                                        ) [DesignatorStatementList_MORE]
+                                        MayDesignator_EPSILON(
+                                        ) [MayDesignator_EPSILON]
+                                      ) [DesignatorStatementList_MORE]
+                                      Designator_ONE(
+                                       niz
+                                      ) [Designator_ONE]
+                                    ) [DesignatorStatement_List]
+                                  ) [Statement_DesignatorStatement]
+                                ) [StatementList_STATEMENTS]
+                                Statement_PRINT(
+                                  Expr_ONE(
+                                    Term_ONE(
+                                      FactorSign(
+                                        UnaryMinus_EPSILON(
+                                        ) [UnaryMinus_EPSILON]
+                                        Factor_Designator(
+                                          Designator_ONE(
+                                           a
+                                          ) [Designator_ONE]
+                                        ) [Factor_Designator]
+                                      ) [FactorSign]
+                                    ) [Term_ONE]
+                                  ) [Expr_ONE]
+                                  MayPrintNumConst_EPSILON(
+                                  ) [MayPrintNumConst_EPSILON]
+                                ) [Statement_PRINT]
+                              ) [StatementList_STATEMENTS]
+                              Statement_DesignatorStatement(
+                                DesignatorSt_Assign(
+                                  Designator_ONE(
+                                   niz2
+                                  ) [Designator_ONE]
+                                  Assignop(
+                                  ) [Assignop]
+                                  Expr_ONE(
+                                    Term_ONE(
+                                      FactorSign(
+                                        UnaryMinus_EPSILON(
+                                        ) [UnaryMinus_EPSILON]
+                                        Factor_NEW(
+                                          Type(
+                                           int
+                                          ) [Type]
+                                          Expr_ONE(
+                                            Term_ONE(
+                                              FactorSign(
+                                                UnaryMinus_EPSILON(
+                                                ) [UnaryMinus_EPSILON]
+                                                Factor_NUMBER(
+                                                 2
+                                                ) [Factor_NUMBER]
+                                              ) [FactorSign]
+                                            ) [Term_ONE]
+                                          ) [Expr_ONE]
+                                        ) [Factor_NEW]
+                                      ) [FactorSign]
+                                    ) [Term_ONE]
+                                  ) [Expr_ONE]
+                                ) [DesignatorSt_Assign]
+                              ) [Statement_DesignatorStatement]
+                            ) [StatementList_STATEMENTS]
+                            Statement_DesignatorStatement(
+                              DesignatorStatement_List(
+                                DesignatorStatementList_MORE(
+                                  DesignatorStatementList_MORE(
+                                    DesignatorStatementList_ONE(
+                                      MayDesignator_Designator(
+                                        Designator_ARRAY_Elem(
+                                          DesignatorArrayName(
+                                           niz2
+                                          ) [DesignatorArrayName]
+                                          Expr_ONE(
+                                            Term_ONE(
+                                              FactorSign(
+                                                UnaryMinus_EPSILON(
+                                                ) [UnaryMinus_EPSILON]
+                                                Factor_NUMBER(
+                                                 0
+                                                ) [Factor_NUMBER]
+                                              ) [FactorSign]
+                                            ) [Term_ONE]
+                                          ) [Expr_ONE]
+                                        ) [Designator_ARRAY_Elem]
+                                      ) [MayDesignator_Designator]
+                                    ) [DesignatorStatementList_ONE]
+                                    MayDesignator_EPSILON(
+                                    ) [MayDesignator_EPSILON]
+                                  ) [DesignatorStatementList_MORE]
+                                  MayDesignator_Designator(
+                                    Designator_ARRAY_Elem(
+                                      DesignatorArrayName(
+                                       niz2
+                                      ) [DesignatorArrayName]
+                                      Expr_ONE(
+                                        Term_ONE(
+                                          FactorSign(
+                                            UnaryMinus_EPSILON(
+                                            ) [UnaryMinus_EPSILON]
+                                            Factor_Designator(
+                                              Designator_ARRAY_Elem(
+                                                DesignatorArrayName(
+                                                 niz
+                                                ) [DesignatorArrayName]
+                                                Expr_ONE(
+                                                  Term_ONE(
+                                                    FactorSign(
+                                                      UnaryMinus_EPSILON(
+                                                      ) [UnaryMinus_EPSILON]
+                                                      Factor_Designator(
+                                                        Designator_ONE(
+                                                         nula
+                                                        ) [Designator_ONE]
+                                                      ) [Factor_Designator]
+                                                    ) [FactorSign]
+                                                  ) [Term_ONE]
+                                                ) [Expr_ONE]
+                                              ) [Designator_ARRAY_Elem]
+                                            ) [Factor_Designator]
+                                          ) [FactorSign]
+                                        ) [Term_ONE]
+                                      ) [Expr_ONE]
+                                    ) [Designator_ARRAY_Elem]
+                                  ) [MayDesignator_Designator]
+                                ) [DesignatorStatementList_MORE]
+                                Designator_ONE(
+                                 niz
+                                ) [Designator_ONE]
+                              ) [DesignatorStatement_List]
+                            ) [Statement_DesignatorStatement]
+                          ) [StatementList_STATEMENTS]
+                          Statement_PRINT(
+                            Expr_ONE(
+                              Term_ONE(
+                                FactorSign(
+                                  UnaryMinus_EPSILON(
+                                  ) [UnaryMinus_EPSILON]
+                                  Factor_Designator(
+                                    Designator_ARRAY_Elem(
+                                      DesignatorArrayName(
+                                       niz2
+                                      ) [DesignatorArrayName]
+                                      Expr_ONE(
+                                        Term_ONE(
+                                          FactorSign(
+                                            UnaryMinus_EPSILON(
+                                            ) [UnaryMinus_EPSILON]
+                                            Factor_NUMBER(
+                                             0
+                                            ) [Factor_NUMBER]
+                                          ) [FactorSign]
+                                        ) [Term_ONE]
+                                      ) [Expr_ONE]
+                                    ) [Designator_ARRAY_Elem]
+                                  ) [Factor_Designator]
+                                ) [FactorSign]
+                              ) [Term_ONE]
+                            ) [Expr_ONE]
+                            MayPrintNumConst_EPSILON(
+                            ) [MayPrintNumConst_EPSILON]
+                          ) [Statement_PRINT]
+                        ) [StatementList_STATEMENTS]
+                        Statement_PRINT(
+                          Expr_ONE(
+                            Term_ONE(
+                              FactorSign(
+                                UnaryMinus_EPSILON(
+                                ) [UnaryMinus_EPSILON]
+                                Factor_Designator(
+                                  Designator_ARRAY_Elem(
+                                    DesignatorArrayName(
+                                     niz2
+                                    ) [DesignatorArrayName]
+                                    Expr_ONE(
+                                      Term_ONE(
+                                        FactorSign(
+                                          UnaryMinus_EPSILON(
+                                          ) [UnaryMinus_EPSILON]
+                                          Factor_NUMBER(
+                                           1
+                                          ) [Factor_NUMBER]
+                                        ) [FactorSign]
+                                      ) [Term_ONE]
+                                    ) [Expr_ONE]
+                                  ) [Designator_ARRAY_Elem]
+                                ) [Factor_Designator]
+                              ) [FactorSign]
+                            ) [Term_ONE]
+                          ) [Expr_ONE]
+                          MayPrintNumConst_EPSILON(
+                          ) [MayPrintNumConst_EPSILON]
+                        ) [Statement_PRINT]
+                      ) [StatementList_STATEMENTS]
+                      Statement_DesignatorStatement(
+                        DesignatorSt_Assign(
+                          Designator_ONE(
+                           nizch
+                          ) [Designator_ONE]
+                          Assignop(
+                          ) [Assignop]
+                          Expr_ONE(
+                            Term_ONE(
+                              FactorSign(
+                                UnaryMinus_EPSILON(
+                                ) [UnaryMinus_EPSILON]
+                                Factor_NEW(
+                                  Type(
+                                   char
+                                  ) [Type]
+                                  Expr_ONE(
+                                    Term_ONE(
+                                      FactorSign(
+                                        UnaryMinus_EPSILON(
+                                        ) [UnaryMinus_EPSILON]
+                                        Factor_NUMBER(
+                                         3
+                                        ) [Factor_NUMBER]
+                                      ) [FactorSign]
+                                    ) [Term_ONE]
+                                  ) [Expr_ONE]
+                                ) [Factor_NEW]
+                              ) [FactorSign]
+                            ) [Term_ONE]
+                          ) [Expr_ONE]
+                        ) [DesignatorSt_Assign]
+                      ) [Statement_DesignatorStatement]
+                    ) [StatementList_STATEMENTS]
                     Statement_DesignatorStatement(
                       DesignatorSt_Assign(
-                        Designator_ONE(
-                         bodovi
-                        ) [Designator_ONE]
+                        Designator_ARRAY_Elem(
+                          DesignatorArrayName(
+                           nizch
+                          ) [DesignatorArrayName]
+                          Expr_ONE(
+                            Term_ONE(
+                              FactorSign(
+                                UnaryMinus_EPSILON(
+                                ) [UnaryMinus_EPSILON]
+                                Factor_NUMBER(
+                                 0
+                                ) [Factor_NUMBER]
+                              ) [FactorSign]
+                            ) [Term_ONE]
+                          ) [Expr_ONE]
+                        ) [Designator_ARRAY_Elem]
                         Assignop(
                         ) [Assignop]
+                        Expr_ONE(
+                          Term_ONE(
+                            FactorSign(
+                              UnaryMinus_EPSILON(
+                              ) [UnaryMinus_EPSILON]
+                              Factor_CHARACTER(
+                               a
+                              ) [Factor_CHARACTER]
+                            ) [FactorSign]
+                          ) [Term_ONE]
+                        ) [Expr_ONE]
+                      ) [DesignatorSt_Assign]
+                    ) [Statement_DesignatorStatement]
+                  ) [StatementList_STATEMENTS]
+                  Statement_DesignatorStatement(
+                    DesignatorSt_Assign(
+                      Designator_ARRAY_Elem(
+                        DesignatorArrayName(
+                         nizch
+                        ) [DesignatorArrayName]
+                        Expr_ONE(
+                          Term_ONE(
+                            FactorSign(
+                              UnaryMinus_EPSILON(
+                              ) [UnaryMinus_EPSILON]
+                              Factor_Designator(
+                                Designator_ONE(
+                                 jedan
+                                ) [Designator_ONE]
+                              ) [Factor_Designator]
+                            ) [FactorSign]
+                          ) [Term_ONE]
+                        ) [Expr_ONE]
+                      ) [Designator_ARRAY_Elem]
+                      Assignop(
+                      ) [Assignop]
+                      Expr_ONE(
+                        Term_ONE(
+                          FactorSign(
+                            UnaryMinus_EPSILON(
+                            ) [UnaryMinus_EPSILON]
+                            Factor_CHARACTER(
+                             b
+                            ) [Factor_CHARACTER]
+                          ) [FactorSign]
+                        ) [Term_ONE]
+                      ) [Expr_ONE]
+                    ) [DesignatorSt_Assign]
+                  ) [Statement_DesignatorStatement]
+                ) [StatementList_STATEMENTS]
+                Statement_DesignatorStatement(
+                  DesignatorSt_Assign(
+                    Designator_ARRAY_Elem(
+                      DesignatorArrayName(
+                       nizch
+                      ) [DesignatorArrayName]
+                      Expr_MORE(
                         Expr_ONE(
                           Term_ONE(
                             FactorSign(
@@ -282,155 +1311,349 @@ INFO  17:14:52,995 - Program(
                             ) [FactorSign]
                           ) [Term_ONE]
                         ) [Expr_ONE]
-                      ) [DesignatorSt_Assign]
-                    ) [Statement_DesignatorStatement]
-                  ) [StatementList_STATEMENTS]
-                  Statement_READ(
-                    Designator_ONE(
-                     bodovi
-                    ) [Designator_ONE]
-                  ) [Statement_READ]
-                ) [StatementList_STATEMENTS]
-                Statement_DesignatorStatement(
-                  DesignatorStatement_List(
-                    DesignatorStatementList_MORE(
-                      DesignatorStatementList_MORE(
-                        DesignatorStatementList_MORE(
-                          DesignatorStatementList_ONE(
-                            MayDesignator_EPSILON(
-                            ) [MayDesignator_EPSILON]
-                          ) [DesignatorStatementList_ONE]
-                          MayDesignator_EPSILON(
-                          ) [MayDesignator_EPSILON]
-                        ) [DesignatorStatementList_MORE]
-                        MayDesignator_EPSILON(
-                        ) [MayDesignator_EPSILON]
-                      ) [DesignatorStatementList_MORE]
-                      MayDesignator_Designator(
-                        Designator_ONE(
-                         a
-                        ) [Designator_ONE]
-                      ) [MayDesignator_Designator]
-                    ) [DesignatorStatementList_MORE]
-                    Designator_ONE(
-                     niz
-                    ) [Designator_ONE]
-                  ) [DesignatorStatement_List]
-                ) [Statement_DesignatorStatement]
-              ) [StatementList_STATEMENTS]
-              Statement_DesignatorStatement(
-                DesignatorSt_Assign(
-                  Designator_ONE(
-                   b
-                  ) [Designator_ONE]
-                  Assignop(
-                  ) [Assignop]
-                  Expr_MORE(
+                        Addop_MINUS(
+                        ) [Addop_MINUS]
+                        Term_ONE(
+                          FactorSign(
+                            UnaryMinus_EPSILON(
+                            ) [UnaryMinus_EPSILON]
+                            Factor_NUMBER(
+                             3
+                            ) [Factor_NUMBER]
+                          ) [FactorSign]
+                        ) [Term_ONE]
+                      ) [Expr_MORE]
+                    ) [Designator_ARRAY_Elem]
+                    Assignop(
+                    ) [Assignop]
                     Expr_ONE(
                       Term_ONE(
                         FactorSign(
                           UnaryMinus_EPSILON(
                           ) [UnaryMinus_EPSILON]
-                          Factor_Designator(
-                            Designator_ONE(
-                             pet
-                            ) [Designator_ONE]
-                          ) [Factor_Designator]
+                          Factor_CHARACTER(
+                           c
+                          ) [Factor_CHARACTER]
                         ) [FactorSign]
                       ) [Term_ONE]
                     ) [Expr_ONE]
-                    Addop_PLUS(
-                    ) [Addop_PLUS]
-                    Term_ONE(
-                      FactorSign(
-                        UnaryMinus_EPSILON(
-                        ) [UnaryMinus_EPSILON]
-                        Factor_Designator(
-                          Designator_ONE(
-                           jedan
-                          ) [Designator_ONE]
-                        ) [Factor_Designator]
-                      ) [FactorSign]
-                    ) [Term_ONE]
-                  ) [Expr_MORE]
-                ) [DesignatorSt_Assign]
-              ) [Statement_DesignatorStatement]
+                  ) [DesignatorSt_Assign]
+                ) [Statement_DesignatorStatement]
+              ) [StatementList_STATEMENTS]
+              Statement_PRINT(
+                Expr_ONE(
+                  Term_ONE(
+                    FactorSign(
+                      UnaryMinus_EPSILON(
+                      ) [UnaryMinus_EPSILON]
+                      Factor_Designator(
+                        Designator_ARRAY_Elem(
+                          DesignatorArrayName(
+                           nizch
+                          ) [DesignatorArrayName]
+                          Expr_ONE(
+                            Term_ONE(
+                              FactorSign(
+                                UnaryMinus_EPSILON(
+                                ) [UnaryMinus_EPSILON]
+                                Factor_NUMBER(
+                                 1
+                                ) [Factor_NUMBER]
+                              ) [FactorSign]
+                            ) [Term_ONE]
+                          ) [Expr_ONE]
+                        ) [Designator_ARRAY_Elem]
+                      ) [Factor_Designator]
+                    ) [FactorSign]
+                  ) [Term_ONE]
+                ) [Expr_ONE]
+                MayPrintNumConst_EPSILON(
+                ) [MayPrintNumConst_EPSILON]
+              ) [Statement_PRINT]
             ) [StatementList_STATEMENTS]
-            Statement_DesignatorStatement(
-              DesignatorStat_INC(
-                Designator_ONE(
-                 a
-                ) [Designator_ONE]
-              ) [DesignatorStat_INC]
-            ) [Statement_DesignatorStatement]
+            Statement_PRINT(
+              Expr_ONE(
+                Term_ONE(
+                  FactorSign(
+                    UnaryMinus_EPSILON(
+                    ) [UnaryMinus_EPSILON]
+                    Factor_Designator(
+                      Designator_ARRAY_Elem(
+                        DesignatorArrayName(
+                         nizch
+                        ) [DesignatorArrayName]
+                        Expr_ONE(
+                          Term_MORE(
+                            Term_ONE(
+                              FactorSign(
+                                UnaryMinus_EPSILON(
+                                ) [UnaryMinus_EPSILON]
+                                Factor_Designator(
+                                  Designator_ONE(
+                                   jedan
+                                  ) [Designator_ONE]
+                                ) [Factor_Designator]
+                              ) [FactorSign]
+                            ) [Term_ONE]
+                            Mulop_MUL(
+                            ) [Mulop_MUL]
+                            FactorSign(
+                              UnaryMinus_EPSILON(
+                              ) [UnaryMinus_EPSILON]
+                              Factor_NUMBER(
+                               2
+                              ) [Factor_NUMBER]
+                            ) [FactorSign]
+                          ) [Term_MORE]
+                        ) [Expr_ONE]
+                      ) [Designator_ARRAY_Elem]
+                    ) [Factor_Designator]
+                  ) [FactorSign]
+                ) [Term_ONE]
+              ) [Expr_ONE]
+              MayPrintNumConst_EPSILON(
+              ) [MayPrintNumConst_EPSILON]
+            ) [Statement_PRINT]
           ) [StatementList_STATEMENTS]
-          Statement_DesignatorStatement(
-            DesignatorStat_DEC(
-              Designator_ONE(
-               a
-              ) [Designator_ONE]
-            ) [DesignatorStat_DEC]
-          ) [Statement_DesignatorStatement]
+          Statement_READ(
+            Designator_ONE(
+             bodovi
+            ) [Designator_ONE]
+          ) [Statement_READ]
         ) [StatementList_STATEMENTS]
         Statement_DesignatorStatement(
           DesignatorSt_Assign(
             Designator_ONE(
-             bt
+             bodovi
             ) [Designator_ONE]
             Assignop(
             ) [Assignop]
-            Expr_ONE(
+            Expr_MORE(
+              Expr_MORE(
+                Expr_ONE(
+                  Term_ONE(
+                    FactorSign(
+                      UnaryMinus_MINUS(
+                      ) [UnaryMinus_MINUS]
+                      Factor_Designator(
+                        Designator_ONE(
+                         bodovi
+                        ) [Designator_ONE]
+                      ) [Factor_Designator]
+                    ) [FactorSign]
+                  ) [Term_ONE]
+                ) [Expr_ONE]
+                Addop_PLUS(
+                ) [Addop_PLUS]
+                Term_MORE(
+                  Term_ONE(
+                    FactorSign(
+                      UnaryMinus_EPSILON(
+                      ) [UnaryMinus_EPSILON]
+                      Factor_Expr(
+                        Expr_MORE(
+                          Expr_ONE(
+                            Term_MORE(
+                              Term_MORE(
+                                Term_ONE(
+                                  FactorSign(
+                                    UnaryMinus_EPSILON(
+                                    ) [UnaryMinus_EPSILON]
+                                    Factor_Designator(
+                                      Designator_ONE(
+                                       pet
+                                      ) [Designator_ONE]
+                                    ) [Factor_Designator]
+                                  ) [FactorSign]
+                                ) [Term_ONE]
+                                Mulop_MUL(
+                                ) [Mulop_MUL]
+                                FactorSign(
+                                  UnaryMinus_EPSILON(
+                                  ) [UnaryMinus_EPSILON]
+                                  Factor_Designator(
+                                    Designator_ONE(
+                                     a
+                                    ) [Designator_ONE]
+                                  ) [Factor_Designator]
+                                ) [FactorSign]
+                              ) [Term_MORE]
+                              Mulop_DIV(
+                              ) [Mulop_DIV]
+                              FactorSign(
+                                UnaryMinus_EPSILON(
+                                ) [UnaryMinus_EPSILON]
+                                Factor_NUMBER(
+                                 2
+                                ) [Factor_NUMBER]
+                              ) [FactorSign]
+                            ) [Term_MORE]
+                          ) [Expr_ONE]
+                          Addop_MINUS(
+                          ) [Addop_MINUS]
+                          Term_ONE(
+                            FactorSign(
+                              UnaryMinus_EPSILON(
+                              ) [UnaryMinus_EPSILON]
+                              Factor_Designator(
+                                Designator_ONE(
+                                 jedan
+                                ) [Designator_ONE]
+                              ) [Factor_Designator]
+                            ) [FactorSign]
+                          ) [Term_ONE]
+                        ) [Expr_MORE]
+                      ) [Factor_Expr]
+                    ) [FactorSign]
+                  ) [Term_ONE]
+                  Mulop_MUL(
+                  ) [Mulop_MUL]
+                  FactorSign(
+                    UnaryMinus_EPSILON(
+                    ) [UnaryMinus_EPSILON]
+                    Factor_Designator(
+                      Designator_ONE(
+                       bodovi
+                      ) [Designator_ONE]
+                    ) [Factor_Designator]
+                  ) [FactorSign]
+                ) [Term_MORE]
+              ) [Expr_MORE]
+              Addop_MINUS(
+              ) [Addop_MINUS]
               Term_ONE(
                 FactorSign(
                   UnaryMinus_EPSILON(
                   ) [UnaryMinus_EPSILON]
-                  Factor_BOOLEAN(
-                   0
-                  ) [Factor_BOOLEAN]
+                  Factor_Expr(
+                    Expr_MORE(
+                      Expr_MORE(
+                        Expr_ONE(
+                          Term_MORE(
+                            Term_ONE(
+                              FactorSign(
+                                UnaryMinus_EPSILON(
+                                ) [UnaryMinus_EPSILON]
+                                Factor_NUMBER(
+                                 3
+                                ) [Factor_NUMBER]
+                              ) [FactorSign]
+                            ) [Term_ONE]
+                            Mulop_MOD(
+                            ) [Mulop_MOD]
+                            FactorSign(
+                              UnaryMinus_EPSILON(
+                              ) [UnaryMinus_EPSILON]
+                              Factor_NUMBER(
+                               2
+                              ) [Factor_NUMBER]
+                            ) [FactorSign]
+                          ) [Term_MORE]
+                        ) [Expr_ONE]
+                        Addop_PLUS(
+                        ) [Addop_PLUS]
+                        Term_MORE(
+                          Term_ONE(
+                            FactorSign(
+                              UnaryMinus_EPSILON(
+                              ) [UnaryMinus_EPSILON]
+                              Factor_NUMBER(
+                               3
+                              ) [Factor_NUMBER]
+                            ) [FactorSign]
+                          ) [Term_ONE]
+                          Mulop_MUL(
+                          ) [Mulop_MUL]
+                          FactorSign(
+                            UnaryMinus_EPSILON(
+                            ) [UnaryMinus_EPSILON]
+                            Factor_NUMBER(
+                             2
+                            ) [Factor_NUMBER]
+                          ) [FactorSign]
+                        ) [Term_MORE]
+                      ) [Expr_MORE]
+                      Addop_MINUS(
+                      ) [Addop_MINUS]
+                      Term_ONE(
+                        FactorSign(
+                          UnaryMinus_EPSILON(
+                          ) [UnaryMinus_EPSILON]
+                          Factor_NUMBER(
+                           3
+                          ) [Factor_NUMBER]
+                        ) [FactorSign]
+                      ) [Term_ONE]
+                    ) [Expr_MORE]
+                  ) [Factor_Expr]
                 ) [FactorSign]
               ) [Term_ONE]
-            ) [Expr_ONE]
+            ) [Expr_MORE]
           ) [DesignatorSt_Assign]
         ) [Statement_DesignatorStatement]
       ) [StatementList_STATEMENTS]
-      Statement_DesignatorStatement(
-        DesignatorSt_Assign(
-          Designator_ONE(
-           l
-          ) [Designator_ONE]
-          Assignop(
-          ) [Assignop]
-          Expr_ONE(
-            Term_ONE(
-              FactorSign(
-                UnaryMinus_EPSILON(
-                ) [UnaryMinus_EPSILON]
-                Factor_CHARACTER(
-                 s
-                ) [Factor_CHARACTER]
-              ) [FactorSign]
-            ) [Term_ONE]
-          ) [Expr_ONE]
-        ) [DesignatorSt_Assign]
-      ) [Statement_DesignatorStatement]
+      Statement_PRINT(
+        Expr_ONE(
+          Term_ONE(
+            FactorSign(
+              UnaryMinus_EPSILON(
+              ) [UnaryMinus_EPSILON]
+              Factor_Designator(
+                Designator_ONE(
+                 bodovi
+                ) [Designator_ONE]
+              ) [Factor_Designator]
+            ) [FactorSign]
+          ) [Term_ONE]
+        ) [Expr_ONE]
+        MayPrintNumConst_EPSILON(
+        ) [MayPrintNumConst_EPSILON]
+      ) [Statement_PRINT]
     ) [StatementList_STATEMENTS]
   ) [MethodDecl]
 ) [Program]
-INFO  17:14:52,995 - ==============ZAVRSEN ISPIS STABLA=====================
+INFO  18:12:46,696 - ==============ZAVRSEN ISPIS STABLA=====================
 
-INFO  17:14:52,995 - ==============ISPIS SEMANTICKE ANALIZE=====================
-INFO  17:14:53,002 - INFO-Factor_Designator: Pristup oznaci pet. Objektni cvor: { KIND: Con, NAME: pet, TYPE(Struct): { KIND: Int, ElemType: IntType } , ADR: 5, LEVEL: 0 } na liniji 17
-INFO  17:14:53,002 - INFO-DesignatorSt_Assign: Pristup oznaci bodovi. Objektni cvor: { KIND: Var, NAME: bodovi, TYPE(Struct): { KIND: Int, ElemType: IntType } , ADR: 0, LEVEL: 1 } na liniji 17
-INFO  17:14:53,002 - INFO-Statement_READ: Pristup oznaci bodovi. Objektni cvor: { KIND: Var, NAME: bodovi, TYPE(Struct): { KIND: Int, ElemType: IntType } , ADR: 0, LEVEL: 1 } na liniji 18
-INFO  17:14:53,002 - INFO-MayDesignator_Designator: Pristup oznaci a. Objektni cvor: { KIND: Var, NAME: a, TYPE(Struct): { KIND: Int, ElemType: IntType } , ADR: 2, LEVEL: 0 } na liniji 19
-INFO  17:14:53,002 - INFO-DesignatorStatement_List: Pristup oznaci niz. Objektni cvor: { KIND: Var, NAME: niz, TYPE(Struct): { KIND: Array, ElemType: ArrayType } , ADR: 0, LEVEL: 0 } na liniji 2
-INFO  17:14:53,003 - INFO-Factor_Designator: Pristup oznaci pet. Objektni cvor: { KIND: Con, NAME: pet, TYPE(Struct): { KIND: Int, ElemType: IntType } , ADR: 5, LEVEL: 0 } na liniji 20
-INFO  17:14:53,003 - INFO-Factor_Designator: Pristup oznaci jedan. Objektni cvor: { KIND: Con, NAME: jedan, TYPE(Struct): { KIND: Int, ElemType: IntType } , ADR: 1, LEVEL: 0 } na liniji 20
-INFO  17:14:53,003 - INFO-DesignatorSt_Assign: Pristup oznaci b. Objektni cvor: { KIND: Var, NAME: b, TYPE(Struct): { KIND: Int, ElemType: IntType } , ADR: 3, LEVEL: 0 } na liniji 20
-INFO  17:14:53,003 - INFO-DesignatorStat_INC: Pristup oznaci a. Objektni cvor: { KIND: Var, NAME: a, TYPE(Struct): { KIND: Int, ElemType: IntType } , ADR: 2, LEVEL: 0 } na liniji 21
-INFO  17:14:53,003 - INFO-DesignatorStat_DEC: Pristup oznaci a. Objektni cvor: { KIND: Var, NAME: a, TYPE(Struct): { KIND: Int, ElemType: IntType } , ADR: 2, LEVEL: 0 } na liniji 22
-INFO  17:14:53,003 - INFO-DesignatorSt_Assign: Pristup oznaci bt. Objektni cvor: { KIND: Var, NAME: bt, TYPE(Struct): { KIND: Bool, ElemType: BoolType } , ADR: 1, LEVEL: 1 } na liniji 23
-INFO  17:14:53,003 - INFO-DesignatorSt_Assign: Pristup oznaci l. Objektni cvor: { KIND: Var, NAME: l, TYPE(Struct): { KIND: Char, ElemType: CharType } , ADR: 4, LEVEL: 1 } na liniji 24
-INFO  17:14:53,003 - ==============ZAVRSEN ISPIS SEMANTICKE ANALIZE=====================
+INFO  18:12:46,696 - ==============ISPIS SEMANTICKE ANALIZE=====================
+INFO  18:12:46,706 - INFO-DesignatorSt_Assign: Pristup oznaci bodovi. Objektni cvor: { KIND: Var, NAME: bodovi, TYPE(Struct): { KIND: Int, ElemType: IntType } , ADR: 0, LEVEL: 1 } na liniji 17
+INFO  18:12:46,706 - INFO-DesignatorStat_INC: Pristup oznaci bodovi. Objektni cvor: { KIND: Var, NAME: bodovi, TYPE(Struct): { KIND: Int, ElemType: IntType } , ADR: 0, LEVEL: 1 } na liniji 18
+INFO  18:12:46,706 - INFO-Factor_Designator: Pristup oznaci bodovi. Objektni cvor: { KIND: Var, NAME: bodovi, TYPE(Struct): { KIND: Int, ElemType: IntType } , ADR: 0, LEVEL: 1 } na liniji 19
+INFO  18:12:46,707 - INFO-Factor_Designator: Pristup oznaci jedan. Objektni cvor: { KIND: Con, NAME: jedan, TYPE(Struct): { KIND: Int, ElemType: IntType } , ADR: 1, LEVEL: 0 } na liniji 19
+INFO  18:12:46,707 - INFO-DesignatorSt_Assign: Pristup oznaci bodovi. Objektni cvor: { KIND: Var, NAME: bodovi, TYPE(Struct): { KIND: Int, ElemType: IntType } , ADR: 0, LEVEL: 1 } na liniji 19
+INFO  18:12:46,707 - INFO-Factor_Designator: Pristup oznaci bodovi. Objektni cvor: { KIND: Var, NAME: bodovi, TYPE(Struct): { KIND: Int, ElemType: IntType } , ADR: 0, LEVEL: 1 } na liniji 20
+INFO  18:12:46,707 - INFO-Factor_Designator: Pristup oznaci pet. Objektni cvor: { KIND: Con, NAME: pet, TYPE(Struct): { KIND: Int, ElemType: IntType } , ADR: 5, LEVEL: 0 } na liniji 20
+INFO  18:12:46,707 - INFO-DesignatorSt_Assign: Pristup oznaci bodovi. Objektni cvor: { KIND: Var, NAME: bodovi, TYPE(Struct): { KIND: Int, ElemType: IntType } , ADR: 0, LEVEL: 1 } na liniji 20
+INFO  18:12:46,707 - INFO-DesignatorStat_DEC: Pristup oznaci bodovi. Objektni cvor: { KIND: Var, NAME: bodovi, TYPE(Struct): { KIND: Int, ElemType: IntType } , ADR: 0, LEVEL: 1 } na liniji 21
+INFO  18:12:46,707 - INFO-Factor_Designator: Pristup oznaci bodovi. Objektni cvor: { KIND: Var, NAME: bodovi, TYPE(Struct): { KIND: Int, ElemType: IntType } , ADR: 0, LEVEL: 1 } na liniji 22
+INFO  18:12:46,707 - INFO-DesignatorSt_Assign: Pristup oznaci niz. Objektni cvor: { KIND: Var, NAME: niz, TYPE(Struct): { KIND: Array, ElemType: IntType } , ADR: 0, LEVEL: 0 } na liniji 25
+INFO  18:12:46,707 - INFO-Factor_Designator: Pristup oznaci nula. Objektni cvor: { KIND: Con, NAME: nula, TYPE(Struct): { KIND: Int, ElemType: IntType } , ADR: 0, LEVEL: 0 } na liniji 26
+INFO  18:12:46,707 - INFO-Factor_Designator: Pristup oznaci jedan. Objektni cvor: { KIND: Con, NAME: jedan, TYPE(Struct): { KIND: Int, ElemType: IntType } , ADR: 1, LEVEL: 0 } na liniji 26
+INFO  18:12:46,707 - INFO-Factor_Designator: Pristup oznaci jedan. Objektni cvor: { KIND: Con, NAME: jedan, TYPE(Struct): { KIND: Int, ElemType: IntType } , ADR: 1, LEVEL: 0 } na liniji 28
+INFO  18:12:46,707 - INFO-DesignatorSt_Assign: Pristup oznaci bodovi. Objektni cvor: { KIND: Var, NAME: bodovi, TYPE(Struct): { KIND: Int, ElemType: IntType } , ADR: 0, LEVEL: 1 } na liniji 29
+INFO  18:12:46,707 - INFO-Factor_Designator: Pristup oznaci bodovi. Objektni cvor: { KIND: Var, NAME: bodovi, TYPE(Struct): { KIND: Int, ElemType: IntType } , ADR: 0, LEVEL: 1 } na liniji 30
+INFO  18:12:46,707 - INFO-MayDesignator_Designator: Pristup oznaci a. Objektni cvor: { KIND: Var, NAME: a, TYPE(Struct): { KIND: Int, ElemType: IntType } , ADR: 2, LEVEL: 0 } na liniji 34
+INFO  18:12:46,707 - INFO-MayDesignator_Designator: Pristup oznaci b. Objektni cvor: { KIND: Var, NAME: b, TYPE(Struct): { KIND: Int, ElemType: IntType } , ADR: 3, LEVEL: 0 } na liniji 34
+INFO  18:12:46,707 - INFO-DesignatorStatement_List: Pristup oznaci niz. Objektni cvor: { KIND: Var, NAME: niz, TYPE(Struct): { KIND: Array, ElemType: IntType } , ADR: 0, LEVEL: 0 } na liniji 34
+INFO  18:12:46,707 - INFO-Factor_Designator: Pristup oznaci a. Objektni cvor: { KIND: Var, NAME: a, TYPE(Struct): { KIND: Int, ElemType: IntType } , ADR: 2, LEVEL: 0 } na liniji 35
+INFO  18:12:46,707 - INFO-Factor_Designator: Pristup oznaci b. Objektni cvor: { KIND: Var, NAME: b, TYPE(Struct): { KIND: Int, ElemType: IntType } , ADR: 3, LEVEL: 0 } na liniji 36
+INFO  18:12:46,707 - INFO-MayDesignator_Designator: Pristup oznaci a. Objektni cvor: { KIND: Var, NAME: a, TYPE(Struct): { KIND: Int, ElemType: IntType } , ADR: 2, LEVEL: 0 } na liniji 39
+INFO  18:12:46,707 - INFO-DesignatorStatement_List: Pristup oznaci niz. Objektni cvor: { KIND: Var, NAME: niz, TYPE(Struct): { KIND: Array, ElemType: IntType } , ADR: 0, LEVEL: 0 } na liniji 2
+INFO  18:12:46,707 - INFO-Factor_Designator: Pristup oznaci a. Objektni cvor: { KIND: Var, NAME: a, TYPE(Struct): { KIND: Int, ElemType: IntType } , ADR: 2, LEVEL: 0 } na liniji 40
+INFO  18:12:46,707 - INFO-DesignatorSt_Assign: Pristup oznaci niz2. Objektni cvor: { KIND: Var, NAME: niz2, TYPE(Struct): { KIND: Array, ElemType: IntType } , ADR: 1, LEVEL: 0 } na liniji 42
+INFO  18:12:46,707 - INFO-Factor_Designator: Pristup oznaci nula. Objektni cvor: { KIND: Con, NAME: nula, TYPE(Struct): { KIND: Int, ElemType: IntType } , ADR: 0, LEVEL: 0 } na liniji 43
+INFO  18:12:46,707 - INFO-DesignatorStatement_List: Pristup oznaci niz. Objektni cvor: { KIND: Var, NAME: niz, TYPE(Struct): { KIND: Array, ElemType: IntType } , ADR: 0, LEVEL: 0 } na liniji 43
+INFO  18:12:46,708 - INFO-DesignatorSt_Assign: Pristup oznaci nizch. Objektni cvor: { KIND: Var, NAME: nizch, TYPE(Struct): { KIND: Array, ElemType: CharType } , ADR: 4, LEVEL: 0 } na liniji 50
+INFO  18:12:46,708 - INFO-Factor_Designator: Pristup oznaci jedan. Objektni cvor: { KIND: Con, NAME: jedan, TYPE(Struct): { KIND: Int, ElemType: IntType } , ADR: 1, LEVEL: 0 } na liniji 52
+INFO  18:12:46,708 - INFO-Factor_Designator: Pristup oznaci pet. Objektni cvor: { KIND: Con, NAME: pet, TYPE(Struct): { KIND: Int, ElemType: IntType } , ADR: 5, LEVEL: 0 } na liniji 53
+INFO  18:12:46,708 - INFO-Factor_Designator: Pristup oznaci jedan. Objektni cvor: { KIND: Con, NAME: jedan, TYPE(Struct): { KIND: Int, ElemType: IntType } , ADR: 1, LEVEL: 0 } na liniji 55
+INFO  18:12:46,708 - INFO-Statement_READ: Pristup oznaci bodovi. Objektni cvor: { KIND: Var, NAME: bodovi, TYPE(Struct): { KIND: Int, ElemType: IntType } , ADR: 0, LEVEL: 1 } na liniji 58
+INFO  18:12:46,708 - INFO-Factor_Designator: Pristup oznaci bodovi. Objektni cvor: { KIND: Var, NAME: bodovi, TYPE(Struct): { KIND: Int, ElemType: IntType } , ADR: 0, LEVEL: 1 } na liniji 59
+INFO  18:12:46,708 - INFO-Factor_Designator: Pristup oznaci pet. Objektni cvor: { KIND: Con, NAME: pet, TYPE(Struct): { KIND: Int, ElemType: IntType } , ADR: 5, LEVEL: 0 } na liniji 59
+INFO  18:12:46,708 - INFO-Factor_Designator: Pristup oznaci a. Objektni cvor: { KIND: Var, NAME: a, TYPE(Struct): { KIND: Int, ElemType: IntType } , ADR: 2, LEVEL: 0 } na liniji 59
+INFO  18:12:46,708 - INFO-Factor_Designator: Pristup oznaci jedan. Objektni cvor: { KIND: Con, NAME: jedan, TYPE(Struct): { KIND: Int, ElemType: IntType } , ADR: 1, LEVEL: 0 } na liniji 59
+INFO  18:12:46,708 - INFO-Factor_Designator: Pristup oznaci bodovi. Objektni cvor: { KIND: Var, NAME: bodovi, TYPE(Struct): { KIND: Int, ElemType: IntType } , ADR: 0, LEVEL: 1 } na liniji 59
+INFO  18:12:46,708 - INFO-DesignatorSt_Assign: Pristup oznaci bodovi. Objektni cvor: { KIND: Var, NAME: bodovi, TYPE(Struct): { KIND: Int, ElemType: IntType } , ADR: 0, LEVEL: 1 } na liniji 59
+INFO  18:12:46,708 - INFO-Factor_Designator: Pristup oznaci bodovi. Objektni cvor: { KIND: Var, NAME: bodovi, TYPE(Struct): { KIND: Int, ElemType: IntType } , ADR: 0, LEVEL: 1 } na liniji 60
+INFO  18:12:46,708 - ==============ZAVRSEN ISPIS SEMANTICKE ANALIZE=====================
 
-INFO  17:14:53,004 - Parsiranje uspesno zavrseno!
+INFO  18:12:46,709 - Parsiranje uspesno zavrseno!

@@ -85,17 +85,36 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     // za ispis pri prisupu simbolickoj kontanti i lokalnoj/globalnoj promjenjivoj
     private String objNodeToString(Obj o) { // kind, name, type(struct.kind, struct.elemtype), adr, level), 
     	StringBuilder sb = new StringBuilder();
-    	String kindName, structKindName;
+    	String kindName, structKindName, arrayTypeName = "", matrixTypeName = "";
     	
     	kindName = objKindToString(o.getKind());
     	
     	structKindName = structKindToString(o.getType().getKind());
+    	if("Array".equals(structKindName) == true) { // niz ili matrica
+    		arrayTypeName = structKindToString(o.getType().getElemType().getKind()); // niz
+    		if("Array".equals(arrayTypeName) == true) { // matrica
+    			matrixTypeName = structKindToString(o.getType().getElemType().getElemType().getKind());
+    		} 
+    	}
     	
     	sb.append("Objektni cvor: { ");
     	sb.append("KIND: "); sb.append(kindName); sb.append(", "); 
     	sb.append("NAME: "); sb.append(o.getName()); sb.append(", ");
     	sb.append("TYPE(Struct): { KIND: "); sb.append(structKindName); sb.append(", ");
-    	sb.append("ElemType: "); sb.append(structKindName); sb.append("Type"); sb.append(" } , ");
+    	
+    	sb.append("ElemType: ");
+    	if("Array".equals(structKindName) == true) { // niz ili matrica
+    		sb.append(arrayTypeName); sb.append("Type"); // niz
+    		if("Array".equals(arrayTypeName) == true) { // matrica
+    			sb.append(" { TYPE(Struct): { KIND: "); sb.append(matrixTypeName);
+    			sb.append("ElemType: "); sb.append(matrixTypeName); sb.append("Type"); sb.append(" }, ");
+    		} 
+    		sb.append(" } , ");
+    	}
+    	else { // prost tip
+    		sb.append(structKindName); sb.append("Type"); sb.append(" } , ");
+    	}
+    	
     	sb.append("ADR: "); sb.append(o.getAdr()); sb.append(", ");
     	sb.append("LEVEL: "); sb.append(o.getLevel()); sb.append(" }");
     	return sb.toString();
