@@ -1,5 +1,9 @@
 package rs.ac.bg.etf.pp1;
 
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
+
 import org.apache.log4j.Logger;
 
 import rs.ac.bg.etf.pp1.ast.*;
@@ -32,6 +36,13 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     	return !errorDetected;
     }
     
+    private Struct currentType; // za cuvanje tipa konstanti i varijabli i postavljanje struct kod factor_new
+    private int currentConstValue; // za cuvanje vrednosti konstante
+    
+    private boolean mainDetected = false; // za razlikovanje opsega pri ubacivanju varijabli u tabelu simbola
+    private List<Obj> listOfDesignators = new LinkedList<Obj>(); // za proveru tipova pri raspakivanju niza
+    
+    // String(objKind)
     private String objKindToString(int kind) {
     	String kindName;
     	
@@ -56,6 +67,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     	return kindName;
     }
     
+    // String(structKind)
     private String structKindToString(int kind) {
     	String structKindName;
     	
@@ -82,6 +94,13 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     	return structKindName;
     }
     
+    private String firstCharToLower(String name) {
+		char[] chars = name.toCharArray();
+		chars[0] = Character.toLowerCase(chars[0]);;
+		name = String.valueOf(chars); 
+		return name;
+    }
+    
     // za ispis pri prisupu simbolickoj kontanti i lokalnoj/globalnoj promjenjivoj
     private String objNodeToString(Obj o) { // kind, name, type(struct.kind, struct.elemtype), adr, level), 
     	StringBuilder sb = new StringBuilder();
@@ -92,8 +111,10 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     	structKindName = structKindToString(o.getType().getKind());
     	if("Array".equals(structKindName) == true) { // niz ili matrica
     		arrayTypeName = structKindToString(o.getType().getElemType().getKind()); // niz
+            arrayTypeName = firstCharToLower(arrayTypeName); 
     		if("Array".equals(arrayTypeName) == true) { // matrica
     			matrixTypeName = structKindToString(o.getType().getElemType().getElemType().getKind());
+    			matrixTypeName = firstCharToLower(matrixTypeName);  
     		} 
     	}
     	
@@ -102,10 +123,12 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     	sb.append("NAME: "); sb.append(o.getName()); sb.append(", ");
     	sb.append("TYPE(Struct): { KIND: "); sb.append(structKindName); sb.append(", ");
     	
+    	structKindName = firstCharToLower(structKindName);
+    	
     	sb.append("ElemType: ");
-    	if("Array".equals(structKindName) == true) { // niz ili matrica
+    	if("Array".equalsIgnoreCase(structKindName) == true) { // niz ili matrica
     		sb.append(arrayTypeName); sb.append("Type"); // niz
-    		if("Array".equals(arrayTypeName) == true) { // matrica
+    		if("Array".equalsIgnoreCase(arrayTypeName) == true) { // matrica
     			sb.append(" { TYPE(Struct): { KIND: "); sb.append(matrixTypeName);
     			sb.append("ElemType: "); sb.append(matrixTypeName); sb.append("Type"); sb.append(" }, ");
     		} 
@@ -119,11 +142,6 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     	sb.append("LEVEL: "); sb.append(o.getLevel()); sb.append(" }");
     	return sb.toString();
     }
-    
-    private Struct currentType; // za cuvanje tipa konstanti i varijabli i postavljanje struct kod factor_new
-    private int currentConstValue; // za cuvanje vrednosti konstante
-    
-    private boolean mainDetected = false; // za razlikovanje opsega pri ubacivanju varijabli u tabelu simbola
     
     // ProgramName ::= (ProgramName) IDENTIFIER;
     @Override
@@ -519,19 +537,37 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     // MayDesignator ::= (MayDesignator_Designator) Designator
     public void visit(MayDesignator_Designator mayDesignator_Designator) {
     	Obj desObj = mayDesignator_Designator.getDesignator().obj;
+    	int kind = desObj.getKind();
     	
+    	if(kind != Obj.Var && kind != Obj.Elem) {
+    		report_error("GRESKA-MayDesignator_Designator: Oznaka " + desObj.getName() + " u raspakivanju niza nije varijabla ni element niza", mayDesignator_Designator);
+    		return;
+    	}
+    	
+    	listOfDesignators.add(desObj);
     	if(mayDesignator_Designator.getDesignator() instanceof Designator_ONE) {
     		report_info("INFO-MayDesignator_Designator: Pristup oznaci " + desObj.getName() + ". " + objNodeToString(desObj) , mayDesignator_Designator);
-    	}	
+    	}
     }
     
-    // ************************************************************OBRADA
     // DesignatorStatement ::= (DesignatorStatement_List) LEFT_BRACKET DesignatorStatementList RIGHT_BRACKET EQUALS Designator;
     public void visit(DesignatorStatement_List designatorStatement_List) { 
-    	Obj desObj = designatorStatement_List.getDesignator().obj;
+    	Obj desArrayObj = designatorStatement_List.getDesignator().obj; // mora biti niz
+    	
+    	if(desArrayObj.getType().getKind() != Struct.Array) {
+    		report_error("GRESKA-DesignatorStatement_List: Oznaka " + desArrayObj.getName() + " nije niz", designatorStatement_List);
+    		return;
+    	}
+    	Iterator<Obj> iterator = listOfDesignators.iterator();
+    	while(iterator.hasNext()) {
+    		Obj currDesignator = iterator.next();
+    		if(desArrayObj.getType().getElemType().assignableTo(currDesignator.getType()) == false) {
+    			report_error("GRESKA-DesignatorStatement_List: Tip niza " + desArrayObj.getName() + " nije dodeljiv oznaci " + currDesignator.getName(), designatorStatement_List);
+    		}
+    	}
     	
     	if(designatorStatement_List.getDesignator() instanceof Designator_ONE) {
-    		report_info("INFO-DesignatorStatement_List: Pristup oznaci " + desObj.getName() + ". " + objNodeToString(desObj) , designatorStatement_List);
+    		report_info("INFO-DesignatorStatement_List: Pristup oznaci " + desArrayObj.getName() + ". " + objNodeToString(desArrayObj) , designatorStatement_List);
     	}	
     }
     
