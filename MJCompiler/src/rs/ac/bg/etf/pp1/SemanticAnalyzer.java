@@ -101,6 +101,20 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 		return name;
     }
     
+    private String structNodeToString(Struct s) { // za ispis strukturnog cvora radi testiranja
+    	StringBuilder sb = new StringBuilder();
+    	sb.append("Strukturni cvor: { ");
+    	sb.append("KIND: "); sb.append(structKindToString(s.getKind())); sb.append(" ");
+    	while(s.getElemType() != null) {
+    		s = s.getElemType();
+    		sb.append("Strukturni cvor: { ");
+    		sb.append("KIND: "); sb.append(structKindToString(s.getKind())); sb.append(" ");
+    		sb.append("} ");
+    	}
+    	sb.append("}");
+    	return sb.toString();
+    }
+    
     // za ispis pri prisupu simbolickoj kontanti i lokalnoj/globalnoj promjenjivoj
     private String objNodeToString(Obj o) { // kind, name, type(struct.kind, struct.elemtype), adr, level), 
     	StringBuilder sb = new StringBuilder();
@@ -705,7 +719,15 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 	    for(int i = 0; i < 3; i++) {
 	           // System.out.print(niz[i] + "    ");
 	    }
-	    matrica[0][-4] = 5;
+	    //matrica[0][-4] = 5;
+	    
+	    SemanticAnalyzer s = new SemanticAnalyzer();
+	    Struct s1 = new Struct(Struct.Array, Tab.intType);
+	    Struct s2 = new Struct(Struct.Array, new Struct(Struct.Array, Tab.intType));
+	    System.out.println(s.structNodeToString(Tab.intType));
+	    System.out.println(s.structNodeToString(s1));
+	    System.out.println(s.structNodeToString(s2));
+	    
     }
     
     
