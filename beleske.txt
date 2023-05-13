@@ -13,3 +13,7 @@ najcesce greske: zaboravljeno deklarisati terminal/neterminal, zarez na smjeni k
 
 - ako je nesto potrebno samo u jednoj smjeni, moze da se cuva kao Obj ili Struct u klasi djeteta(kod mene),
 ili kao polje klase SemanticAnalzer 
+
+    	numGlobalVars = progObj.getLocalSymbols().size(); vrati 0 prije prelancavanja
+    	numGlobalVars = Tab.currentScope().getnVars(); bg glob var
+    	numGlobalVars = Tab.currentScope().getLocals().numSymbols(); vrati broj simbola u cijelom opsegu

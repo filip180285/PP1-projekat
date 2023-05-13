@@ -42,6 +42,13 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     private boolean mainDetected = false; // za razlikovanje opsega pri ubacivanju varijabli u tabelu simbola
     private List<Obj> listOfDesignators = new LinkedList<Obj>(); // za proveru tipova pri raspakivanju niza
     
+    private int numGlobalVars = 0; // broj statickih varijabli
+    public static final int MAIN_PC = 0; // main za A nivo od 0
+    
+    public int getNumGlobalVars() {
+    	return numGlobalVars;
+    }
+    
     // String(objKind)
     private String objKindToString(int kind) {
     	String kindName;
@@ -172,6 +179,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     public void visit(Program program){
     	Obj progObj = program.getProgramName().obj;
     	
+    	numGlobalVars = Tab.currentScope().getnVars();
     	Tab.chainLocalSymbols(progObj);
     	Tab.closeScope();
     }
@@ -332,6 +340,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     public void visit(MethodDecl methodDecl) {
     	if(mainDetected == true) {
 	    	Obj methObj = methodDecl.getMethodName().obj;
+	    	
 		    Tab.chainLocalSymbols(methObj);
 		    Tab.closeScope();
     	}
@@ -447,7 +456,6 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     	designatorArrayOrMatrixName.obj = desArrayMatrixObj;
     }
     
-    //******niz vs matrica
     // Designator ::= (Designator_Elem) DesignatorArrayOrMatrixName LEFT_BRACKET Expr RIGHT_BRACKET MayMatrix;
     @Override
     public void visit(Designator_Elem designator_Elem) {
@@ -464,7 +472,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 		    		
 		    if(danObj != Tab.noObj) {
 			    Struct elemType = danObj.getType().getElemType();
-			    Obj elemObj = new Obj(Obj.Elem, "elementNiza", elemType);
+			    Obj elemObj = new Obj(Obj.Elem, "elementNiza", elemType); // ili niz matrice
 			    designator_Elem.obj = elemObj;
 		    }
 		    else {
@@ -553,6 +561,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     }
     
     // Expr ::= (Expr_MORE) Expr Addop Term;
+    @Override
     public void visit(Expr_MORE expr_MORE) {
     	Struct termType = expr_MORE.getTerm().struct; // right operand type
     	Struct exprType = expr_MORE.getExpr().struct; // left operand type
@@ -680,6 +689,10 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     		report_error("GRESKA-statement_READ: Read "+ desObj.getName() +" nije read varijable ni elementa niza", statement_READ);
     		return;
     	}
+    	else if(kind == Obj.Var && desObj.getType().getKind() == Struct.Array) {
+    		report_error("GRESKA-statement_READ: Read "+ desObj.getName() +" ne moze da se radi nad nizom i matricom", statement_READ);
+    		return;	
+    	}
     	else if(desObj.getType().equals(Tab.intType) == false && desObj.getType().equals(Tab.charType) == false && 
     		desObj.getType().equals(Tab.find("bool").getType()) == false) {
     		report_error("GRESKA-Statement_READ: Read " + desObj.getName() + " nije read nad int/char/bool tipom", statement_READ);
@@ -704,7 +717,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     
     
     public static void main(String[] args) {
-    int matrica[][] = {{1,2,3},{4,5,6},{7,8,9}};
+    int matrica[][] = {{1,2,3},{4,5,6},{7,8,9,10}};
 	    //int matrica[][] = new int[3][3];
 	    int niz[] = { 8,8,8 };
 	    System.out.println("Hello, World!\n");
@@ -716,10 +729,18 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 	        System.out.println("\n");
 	    }
 	    niz = matrica[2];
-	    for(int i = 0; i < 3; i++) {
-	           // System.out.print(niz[i] + "    ");
-	    }
+	    for(int i = 0; i < 4; i++) {
+	            System.out.print(niz[i] + "    ");
+	    } System.out.println("\n");
 	    //matrica[0][-4] = 5;
+	    
+	    int[] niz5 = new int[5];
+	    int[] niz10 = new int[10];
+	    
+	    niz5 = niz10;
+	    for(int i = 0; i < niz5.length; i++) {
+            System.out.print(niz5[i] + "    ");
+    }
 	    
 	    SemanticAnalyzer s = new SemanticAnalyzer();
 	    Struct s1 = new Struct(Struct.Array, Tab.intType);
