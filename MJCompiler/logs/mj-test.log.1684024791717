@@ -1,0 +1,154 @@
+INFO  02:35:55,868 - Compiling source file: C:\Users\Korisnik\Desktop\PP1-projekat\MJCompiler\test\program.mj
+INFO  02:35:55,888 - #2 program
+INFO  02:35:55,888 - #9 test301
+INFO  02:35:55,889 - #27 {
+INFO  02:35:55,889 - #8 void
+INFO  02:35:55,889 - #9 main
+INFO  02:35:55,889 - #23 (
+INFO  02:35:55,890 - #24 )
+INFO  02:35:55,890 - #27 {
+INFO  02:35:55,890 - #5 print
+INFO  02:35:55,890 - #23 (
+INFO  02:35:55,891 - #23 (
+INFO  02:35:55,891 - #10 1
+INFO  02:35:55,891 - #13 +
+INFO  02:35:55,892 - #10 3
+INFO  02:35:55,892 - #15 *
+INFO  02:35:55,892 - #10 5
+INFO  02:35:55,893 - #14 -
+INFO  02:35:55,893 - #10 4
+INFO  02:35:55,894 - #16 /
+INFO  02:35:55,894 - #10 2
+INFO  02:35:55,894 - #17 %
+INFO  02:35:55,894 - #10 8
+INFO  02:35:55,896 - #24 )
+INFO  02:35:55,896 - #13 +
+INFO  02:35:55,896 - #10 3
+INFO  02:35:55,896 - #24 )
+INFO  02:35:55,897 - #21 ;
+INFO  02:35:55,897 - #28 }
+INFO  02:35:55,897 - #28 }
+INFO  02:35:55,898 - 
+                     ==============ISPIS STABLA=====================
+INFO  02:35:55,898 - Program(
+  ProgramName(
+   test301
+  ) [ProgramName]
+  ConstVarDeclList_EPSILON(
+  ) [ConstVarDeclList_EPSILON]
+  MethodDecl(
+    MethodName(
+     main
+    ) [MethodName]
+    MethodVarDeclList_EPSILON(
+    ) [MethodVarDeclList_EPSILON]
+    StatementList_STATEMENTS(
+      StatementList_EPSILON(
+      ) [StatementList_EPSILON]
+      Statement_PRINT(
+        Expr_MORE(
+          Expr_ONE(
+            Term_ONE(
+              FactorSign(
+                UnaryMinus_EPSILON(
+                ) [UnaryMinus_EPSILON]
+                Factor_Expr(
+                  Expr_MORE(
+                    Expr_MORE(
+                      Expr_ONE(
+                        Term_ONE(
+                          FactorSign(
+                            UnaryMinus_EPSILON(
+                            ) [UnaryMinus_EPSILON]
+                            Factor_NUMBER(
+                             1
+                            ) [Factor_NUMBER]
+                          ) [FactorSign]
+                        ) [Term_ONE]
+                      ) [Expr_ONE]
+                      Addop_PLUS(
+                      ) [Addop_PLUS]
+                      Term_MORE(
+                        Term_ONE(
+                          FactorSign(
+                            UnaryMinus_EPSILON(
+                            ) [UnaryMinus_EPSILON]
+                            Factor_NUMBER(
+                             3
+                            ) [Factor_NUMBER]
+                          ) [FactorSign]
+                        ) [Term_ONE]
+                        Mulop_MUL(
+                        ) [Mulop_MUL]
+                        FactorSign(
+                          UnaryMinus_EPSILON(
+                          ) [UnaryMinus_EPSILON]
+                          Factor_NUMBER(
+                           5
+                          ) [Factor_NUMBER]
+                        ) [FactorSign]
+                      ) [Term_MORE]
+                    ) [Expr_MORE]
+                    Addop_MINUS(
+                    ) [Addop_MINUS]
+                    Term_MORE(
+                      Term_MORE(
+                        Term_ONE(
+                          FactorSign(
+                            UnaryMinus_EPSILON(
+                            ) [UnaryMinus_EPSILON]
+                            Factor_NUMBER(
+                             4
+                            ) [Factor_NUMBER]
+                          ) [FactorSign]
+                        ) [Term_ONE]
+                        Mulop_DIV(
+                        ) [Mulop_DIV]
+                        FactorSign(
+                          UnaryMinus_EPSILON(
+                          ) [UnaryMinus_EPSILON]
+                          Factor_NUMBER(
+                           2
+                          ) [Factor_NUMBER]
+                        ) [FactorSign]
+                      ) [Term_MORE]
+                      Mulop_MOD(
+                      ) [Mulop_MOD]
+                      FactorSign(
+                        UnaryMinus_EPSILON(
+                        ) [UnaryMinus_EPSILON]
+                        Factor_NUMBER(
+                         8
+                        ) [Factor_NUMBER]
+                      ) [FactorSign]
+                    ) [Term_MORE]
+                  ) [Expr_MORE]
+                ) [Factor_Expr]
+              ) [FactorSign]
+            ) [Term_ONE]
+          ) [Expr_ONE]
+          Addop_PLUS(
+          ) [Addop_PLUS]
+          Term_ONE(
+            FactorSign(
+              UnaryMinus_EPSILON(
+              ) [UnaryMinus_EPSILON]
+              Factor_NUMBER(
+               3
+              ) [Factor_NUMBER]
+            ) [FactorSign]
+          ) [Term_ONE]
+        ) [Expr_MORE]
+        MayPrintNumConst_EPSILON(
+        ) [MayPrintNumConst_EPSILON]
+      ) [Statement_PRINT]
+    ) [StatementList_STATEMENTS]
+  ) [MethodDecl]
+) [Program]
+INFO  02:35:55,899 - ==============ZAVRSEN ISPIS STABLA=====================
+
+INFO  02:35:55,899 - ==============ISPIS SEMANTICKE ANALIZE=====================
+INFO  02:35:55,904 - ==============ZAVRSEN ISPIS SEMANTICKE ANALIZE=====================
+
+INFO  02:35:55,905 - Parsiranje uspesno zavrseno!
+INFO  02:35:55,908 - Generisanje koda uspesno zavrseno!
