@@ -61,7 +61,6 @@ nonterminal ConstVarDeclList ConstVarDeclList;
 nonterminal ConstDeclList ConstDeclList;
 nonterminal VarDeclList VarDeclList;
 nonterminal MethodDecl MethodDecl;
-nonterminal Type Type;
 nonterminal ConstDeclOneOrMore ConstDeclOneOrMore;
 nonterminal ConstDecl ConstDecl;
 nonterminal VarDeclOneOrMore VarDeclOneOrMore;
@@ -84,6 +83,8 @@ nonterminal Mulop Mulop;
 nonterminal rs.etf.pp1.symboltable.concepts.Obj ProgramName, MethodName;
 nonterminal rs.etf.pp1.symboltable.concepts.Obj Designator, DesignatorArrayOrMatrixName;
 nonterminal rs.etf.pp1.symboltable.concepts.Struct Constant, FactorSign, Factor, Term, Expr;
+
+nonterminal rs.etf.pp1.symboltable.concepts.Struct Type;
 
 
 /*** Program = "program" ident {ConstDecl | VarDecl | ClassDecl } "{" {MethodDecl} "}". ***/

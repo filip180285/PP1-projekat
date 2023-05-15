@@ -1,0 +1,266 @@
+INFO  19:08:59,753 - Compiling source file: C:\Users\Korisnik\Desktop\PP1-projekat\MJCompiler\test\program.mj
+INFO  19:08:59,812 - #2 program
+INFO  19:08:59,812 - #9 test301
+INFO  19:08:59,812 - #3 const
+INFO  19:08:59,814 - #9 int
+INFO  19:08:59,815 - #9 a
+INFO  19:08:59,816 - #18 =
+INFO  19:08:59,816 - #10 5
+INFO  19:08:59,816 - #21 ;
+INFO  19:08:59,817 - #9 char
+INFO  19:08:59,819 - #9 x
+INFO  19:08:59,819 - #25 [
+INFO  19:08:59,819 - #26 ]
+INFO  19:08:59,819 - #21 ;
+INFO  19:08:59,820 - #9 int
+INFO  19:08:59,821 - #9 niz
+INFO  19:08:59,821 - #25 [
+INFO  19:08:59,822 - #26 ]
+INFO  19:08:59,822 - #21 ;
+INFO  19:08:59,822 - #27 {
+INFO  19:08:59,822 - #8 void
+INFO  19:08:59,822 - #9 main
+INFO  19:08:59,822 - #23 (
+INFO  19:08:59,825 - #24 )
+INFO  19:08:59,825 - #9 int
+INFO  19:08:59,826 - #9 b
+INFO  19:08:59,827 - #21 ;
+INFO  19:08:59,827 - #27 {
+INFO  19:08:59,827 - #9 niz
+INFO  19:08:59,829 - #18 =
+INFO  19:08:59,829 - #4 new
+INFO  19:08:59,832 - #9 array
+INFO  19:08:59,832 - #25 [
+INFO  19:08:59,832 - #10 3
+INFO  19:08:59,832 - #26 ]
+INFO  19:08:59,833 - #21 ;
+INFO  19:08:59,834 - #9 niz
+INFO  19:08:59,835 - #25 [
+INFO  19:08:59,836 - #10 2
+INFO  19:08:59,836 - #26 ]
+INFO  19:08:59,836 - #18 =
+INFO  19:08:59,838 - #10 77
+INFO  19:08:59,838 - #21 ;
+INFO  19:08:59,838 - #9 niz
+INFO  19:08:59,838 - #25 [
+INFO  19:08:59,838 - #10 2
+INFO  19:08:59,838 - #26 ]
+INFO  19:08:59,838 - #19 ++
+INFO  19:08:59,838 - #21 ;
+INFO  19:08:59,839 - #5 print
+INFO  19:08:59,839 - #23 (
+INFO  19:08:59,839 - #9 niz
+INFO  19:08:59,839 - #25 [
+INFO  19:08:59,839 - #10 2
+INFO  19:08:59,839 - #26 ]
+INFO  19:08:59,840 - #24 )
+INFO  19:08:59,841 - #21 ;
+INFO  19:08:59,841 - #28 }
+INFO  19:08:59,841 - #28 }
+INFO  19:08:59,844 - 
+                     ==============ISPIS STABLA=====================
+INFO  19:08:59,846 - Program(
+  ProgramName(
+   test301
+  ) [ProgramName]
+  ConstVarDeclList_VAR(
+    ConstVarDeclList_VAR(
+      ConstVarDeclList_CONST(
+        ConstVarDeclList_EPSILON(
+        ) [ConstVarDeclList_EPSILON]
+        ConstDeclList(
+          Type(
+           int
+          ) [Type]
+          ConstDeclOneOrMore_ONE(
+            ConstDecl(
+             a
+              Constant_NUMBER(
+               5
+              ) [Constant_NUMBER]
+            ) [ConstDecl]
+          ) [ConstDeclOneOrMore_ONE]
+        ) [ConstDeclList]
+      ) [ConstVarDeclList_CONST]
+      VarDeclList(
+        Type(
+         char
+        ) [Type]
+        VarDeclOneOrMore_ONE(
+          VarDecl_ARRAY(
+           x
+          ) [VarDecl_ARRAY]
+        ) [VarDeclOneOrMore_ONE]
+      ) [VarDeclList]
+    ) [ConstVarDeclList_VAR]
+    VarDeclList(
+      Type(
+       int
+      ) [Type]
+      VarDeclOneOrMore_ONE(
+        VarDecl_ARRAY(
+         niz
+        ) [VarDecl_ARRAY]
+      ) [VarDeclOneOrMore_ONE]
+    ) [VarDeclList]
+  ) [ConstVarDeclList_VAR]
+  MethodDecl(
+    MethodName(
+     main
+    ) [MethodName]
+    MethodVarDeclList_VAR(
+      MethodVarDeclList_EPSILON(
+      ) [MethodVarDeclList_EPSILON]
+      VarDeclList(
+        Type(
+         int
+        ) [Type]
+        VarDeclOneOrMore_ONE(
+          VarDecl_VAR(
+           b
+          ) [VarDecl_VAR]
+        ) [VarDeclOneOrMore_ONE]
+      ) [VarDeclList]
+    ) [MethodVarDeclList_VAR]
+    StatementList_STATEMENTS(
+      StatementList_STATEMENTS(
+        StatementList_STATEMENTS(
+          StatementList_STATEMENTS(
+            StatementList_EPSILON(
+            ) [StatementList_EPSILON]
+            Statement_DesignatorStatement(
+              DesignatorSt_Assign(
+                Designator_ONE(
+                 niz
+                ) [Designator_ONE]
+                Assignop(
+                ) [Assignop]
+                Expr_ONE(
+                  Term_ONE(
+                    FactorSign(
+                      UnaryMinus_EPSILON(
+                      ) [UnaryMinus_EPSILON]
+                      Factor_NEW(
+                        Type(
+                         array
+                        ) [Type]
+                        Expr_ONE(
+                          Term_ONE(
+                            FactorSign(
+                              UnaryMinus_EPSILON(
+                              ) [UnaryMinus_EPSILON]
+                              Factor_NUMBER(
+                               3
+                              ) [Factor_NUMBER]
+                            ) [FactorSign]
+                          ) [Term_ONE]
+                        ) [Expr_ONE]
+                      ) [Factor_NEW]
+                    ) [FactorSign]
+                  ) [Term_ONE]
+                ) [Expr_ONE]
+              ) [DesignatorSt_Assign]
+            ) [Statement_DesignatorStatement]
+          ) [StatementList_STATEMENTS]
+          Statement_DesignatorStatement(
+            DesignatorSt_Assign(
+              Designator_Elem(
+                DesignatorArrayOrMatrixName(
+                 niz
+                ) [DesignatorArrayOrMatrixName]
+                Expr_ONE(
+                  Term_ONE(
+                    FactorSign(
+                      UnaryMinus_EPSILON(
+                      ) [UnaryMinus_EPSILON]
+                      Factor_NUMBER(
+                       2
+                      ) [Factor_NUMBER]
+                    ) [FactorSign]
+                  ) [Term_ONE]
+                ) [Expr_ONE]
+                MayMatrix_EPSILON(
+                ) [MayMatrix_EPSILON]
+              ) [Designator_Elem]
+              Assignop(
+              ) [Assignop]
+              Expr_ONE(
+                Term_ONE(
+                  FactorSign(
+                    UnaryMinus_EPSILON(
+                    ) [UnaryMinus_EPSILON]
+                    Factor_NUMBER(
+                     77
+                    ) [Factor_NUMBER]
+                  ) [FactorSign]
+                ) [Term_ONE]
+              ) [Expr_ONE]
+            ) [DesignatorSt_Assign]
+          ) [Statement_DesignatorStatement]
+        ) [StatementList_STATEMENTS]
+        Statement_DesignatorStatement(
+          DesignatorStat_INC(
+            Designator_Elem(
+              DesignatorArrayOrMatrixName(
+               niz
+              ) [DesignatorArrayOrMatrixName]
+              Expr_ONE(
+                Term_ONE(
+                  FactorSign(
+                    UnaryMinus_EPSILON(
+                    ) [UnaryMinus_EPSILON]
+                    Factor_NUMBER(
+                     2
+                    ) [Factor_NUMBER]
+                  ) [FactorSign]
+                ) [Term_ONE]
+              ) [Expr_ONE]
+              MayMatrix_EPSILON(
+              ) [MayMatrix_EPSILON]
+            ) [Designator_Elem]
+          ) [DesignatorStat_INC]
+        ) [Statement_DesignatorStatement]
+      ) [StatementList_STATEMENTS]
+      Statement_PRINT(
+        Expr_ONE(
+          Term_ONE(
+            FactorSign(
+              UnaryMinus_EPSILON(
+              ) [UnaryMinus_EPSILON]
+              Factor_Designator(
+                Designator_Elem(
+                  DesignatorArrayOrMatrixName(
+                   niz
+                  ) [DesignatorArrayOrMatrixName]
+                  Expr_ONE(
+                    Term_ONE(
+                      FactorSign(
+                        UnaryMinus_EPSILON(
+                        ) [UnaryMinus_EPSILON]
+                        Factor_NUMBER(
+                         2
+                        ) [Factor_NUMBER]
+                      ) [FactorSign]
+                    ) [Term_ONE]
+                  ) [Expr_ONE]
+                  MayMatrix_EPSILON(
+                  ) [MayMatrix_EPSILON]
+                ) [Designator_Elem]
+              ) [Factor_Designator]
+            ) [FactorSign]
+          ) [Term_ONE]
+        ) [Expr_ONE]
+        MayPrintNumConst_EPSILON(
+        ) [MayPrintNumConst_EPSILON]
+      ) [Statement_PRINT]
+    ) [StatementList_STATEMENTS]
+  ) [MethodDecl]
+) [Program]
+INFO  19:08:59,848 - ==============ZAVRSEN ISPIS STABLA=====================
+
+INFO  19:08:59,848 - ==============ISPIS SEMANTICKE ANALIZE=====================
+ERROR 19:08:59,863 - GRESKA-Type: Tip ne postoji u tabeli simbola na liniji 29
+ERROR 19:08:59,864 - GRESKA-DesignatorSt_Assign: Dodela vrednosti u niz,tipovi sa leve i desne strane jednakosti nisu isti na liniji 29
+INFO  19:08:59,865 - ==============ZAVRSEN ISPIS SEMANTICKE ANALIZE=====================
+
+ERROR 19:08:59,867 - Parsiranje NIJE uspesno zavrseno!

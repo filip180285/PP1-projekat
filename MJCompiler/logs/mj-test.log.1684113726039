@@ -1,0 +1,94 @@
+INFO  03:21:55,793 - Compiling source file: C:\Users\Korisnik\Desktop\PP1-projekat\MJCompiler\test\program.mj
+INFO  03:21:55,816 - #2 program
+INFO  03:21:55,816 - #9 syntax_errors
+INFO  03:21:55,817 - #9 int
+INFO  03:21:55,817 - #9 a
+INFO  03:21:55,818 - #13 +
+ERROR 03:21:55,818 - 
+Sintaksna greska na liniji 3
+INFO  03:21:55,818 - #21 ;
+INFO  03:21:55,818 - #9 int
+INFO  03:21:55,818 - #9 a
+INFO  03:21:55,818 - #13 +
+ERROR 03:21:55,818 - OPORAVAK od greske u definiciji promenljive izvrsen u liniji 3
+ERROR 03:21:55,819 - 
+Sintaksna greska na liniji 4
+INFO  03:21:55,820 - #22 ,
+INFO  03:21:55,820 - #9 b
+INFO  03:21:55,820 - #21 ;
+INFO  03:21:55,820 - #9 class
+ERROR 03:21:55,820 - OPORAVAK od greske u definiciji promenljive izvrsen u liniji 4
+INFO  03:21:55,822 - #9 A
+INFO  03:21:55,822 - #9 extends
+ERROR 03:21:55,822 - 
+Sintaksna greska na liniji 6
+INFO  03:21:55,822 - #9 B
+INFO  03:21:55,822 - #13 +
+INFO  03:21:55,822 - #27 {
+INFO  03:21:55,822 - #9 int
+INFO  03:21:55,822 - #9 a
+INFO  03:21:55,822 - #13 +
+INFO  03:21:55,822 - #21 ;
+INFO  03:21:55,822 - #9 int
+INFO  03:21:55,822 - #9 a
+INFO  03:21:55,822 - #13 +
+ERROR 03:21:55,822 - OPORAVAK od greske u definiciji promenljive izvrsen u liniji 6
+ERROR 03:21:55,823 - 
+Sintaksna greska na liniji 8
+INFO  03:21:55,823 - #27 {
+INFO  03:21:55,823 - #28 }
+INFO  03:21:55,823 - #28 }
+INFO  03:21:55,823 - #27 {
+INFO  03:21:55,823 - #8 void
+INFO  03:21:55,823 - #9 a
+INFO  03:21:55,823 - #23 (
+INFO  03:21:55,823 - #9 int
+INFO  03:21:55,823 - #9 a
+INFO  03:21:55,823 - #13 +
+INFO  03:21:55,823 - #22 ,
+INFO  03:21:55,823 - #9 int
+INFO  03:21:55,823 - #9 b
+INFO  03:21:55,823 - #24 )
+INFO  03:21:55,823 - #27 {
+INFO  03:21:55,823 - #28 }
+INFO  03:21:55,823 - #8 void
+INFO  03:21:55,823 - #9 main
+INFO  03:21:55,823 - #23 (
+INFO  03:21:55,823 - #24 )
+INFO  03:21:55,823 - #27 {
+INFO  03:21:55,823 - #9 b
+INFO  03:21:55,823 - #18 =
+INFO  03:21:55,824 - #10 43
+INFO  03:21:55,824 - #13 +
+INFO  03:21:55,824 - #10 123
+INFO  03:21:55,824 - #13 +
+INFO  03:21:55,824 - #21 ;
+INFO  03:21:55,824 - #9 b
+INFO  03:21:55,824 - #18 =
+INFO  03:21:55,824 - #10 123
+INFO  03:21:55,824 - #21 ;
+INFO  03:21:55,824 - #9 b
+INFO  03:21:55,824 - #18 =
+INFO  03:21:55,824 - #10 43
+INFO  03:21:55,824 - #13 +
+INFO  03:21:55,824 - #10 123
+INFO  03:21:55,824 - #13 +
+INFO  03:21:55,824 - #21 ;
+INFO  03:21:55,824 - #9 if
+INFO  03:21:55,824 - #23 (
+INFO  03:21:55,824 - #9 a
+INFO  03:21:55,824 - #13 +
+INFO  03:21:55,825 - #9 b
+INFO  03:21:55,825 - #24 )
+INFO  03:21:55,825 - #27 {
+INFO  03:21:55,825 - #9 b
+INFO  03:21:55,825 - #18 =
+INFO  03:21:55,825 - #10 43
+INFO  03:21:55,825 - #13 +
+INFO  03:21:55,825 - #10 123
+INFO  03:21:55,825 - #13 +
+INFO  03:21:55,825 - #21 ;
+INFO  03:21:55,825 - #28 }
+INFO  03:21:55,825 - #28 }
+INFO  03:21:55,825 - #28 }
+ERROR 03:21:55,825 - Fatalna greska, parsiranje se ne moze nastaviti na liniji 23

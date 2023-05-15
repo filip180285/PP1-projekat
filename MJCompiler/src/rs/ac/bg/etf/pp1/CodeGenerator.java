@@ -1,5 +1,8 @@
 package rs.ac.bg.etf.pp1;
 
+import java.util.LinkedList;
+import java.util.List;
+
 import rs.ac.bg.etf.pp1.ast.*;
 import rs.etf.pp1.mj.runtime.Code;
 import rs.etf.pp1.symboltable.Tab;
@@ -7,14 +10,28 @@ import rs.etf.pp1.symboltable.concepts.Obj;
 import rs.etf.pp1.symboltable.concepts.Struct;
 
 public class CodeGenerator extends VisitorAdaptor {
+	
+    public static final int MAIN_PC = 0; // main za A nivo krece od 0
+    private List<Obj> listOfDesignators = new LinkedList<Obj>(); // za dodelu vrednosti pri raspakivanju niza
+    
+    public static final int LENGTH_EXCEPTION = -1;
 
     // MethodName ::= (MethodName) IDENTIFIER;
     @Override
     public void visit(MethodName methodName) { // enter nArg, nLoc 
-    	Code.put(Code.enter);
     	Obj methodObj = methodName.obj;
+    	methodName.obj.setAdr(Code.pc);
+    	
+    	Code.put(Code.enter);
     	Code.put(methodObj.getLevel());
     	Code.put(methodObj.getLocalSymbols().size());
+    }
+    
+    // Statement ::= (Statement_RETURN) RETURN SEMICOLON
+    @Override
+    public void visit(Statement_RETURN statement_RETURN) {
+    	Code.put(Code.exit);
+    	Code.put(Code.return_);
     }
     
     // MethodDecl ::= (MethodDecl) VOID MethodName LEFT_PARENTHESIS RIGHT_PARENTHESIS MethodVarDeclList LEFT_BRACE StatementList RIGHT_BRACE;
@@ -55,13 +72,31 @@ public class CodeGenerator extends VisitorAdaptor {
     // Factor ::= (Factor_NEW) NEW Type LEFT_BRACKET Expr RIGHT_BRACKET
     @Override
     public void visit(Factor_NEW factor_NEW) {
-
+    	Code.put(Code.newarray);
+    	Struct arrType = factor_NEW.getType().struct;
+    	
+    	if(arrType.equals(Tab.charType)) {
+    		Code.put(0); // za karaktere
+    	}
+    	else {
+    		Code.put(1); // za int i bool
+    	}
     }
     
+    //*******************************************
     // Factor ::= (Factor_NEW_MATRIX) NEW Type LEFT_BRACKET Expr RIGHT_BRACKET LEFT_BRACKET Expr RIGHT_BRACKET;
     @Override
     public void visit(Factor_NEW_MATRIX factor_NEW_MATRIX) {
-
+    	Code.put(Code.mul); // m * n
+    	Code.put(Code.newarray);
+    	Struct arrType = factor_NEW_MATRIX.getType().struct;
+    	
+    	if(arrType.equals(Tab.charType)) {
+    		Code.put(0); // za karaktere
+    	}
+    	else {
+    		Code.put(1); // za int i bool
+    	}
     }
     
     // FactorSign ::= (FactorSign) UnaryMinus Factor;
@@ -120,13 +155,114 @@ public class CodeGenerator extends VisitorAdaptor {
     @Override
     public void visit(DesignatorArrayOrMatrixName designatorArrayOrMatrixName) { 
     	Obj desObj = designatorArrayOrMatrixName.obj;
+    	Code.load(desObj);
+    }
+    
+    // Designator ::= (Designator_Elem) DesignatorArrayOrMatrixName LEFT_BRACKET Expr RIGHT_BRACKET MayMatrix;
+    @Override
+    public void visit(Designator_Elem designator_Elem) {
+    	
+    }
+    
+    // MayMatrix ::= (MayMatrix_MATRIX) LEFT_BRACKET Expr RIGHT_BRACKET
+    @Override
+    public void visit(MayMatrix_MATRIX mayMatrix_MATRIX) { 
+    	/*Code.put(Code.dup);
+    	Code.put(Code.pop);
+    	Code.put(Code.arraylength);
+    	Code.put(Code.mul);
+    	Code.put(Code.add);*/
+    }
+    
+    // DesignatorStatement ::= (DesignatorStat_INC) Designator INCREMENT
+    @Override
+    public void visit(DesignatorStat_INC designatorStat_INC) { 
+    	Obj desObj = designatorStat_INC.getDesignator().obj;
+    	
+    	if(desObj.getKind() == Obj.Elem) { 
+    		Code.put(Code.dup2); // za store
+    	} 
+    	Code.load(desObj);
+    	Code.loadConst(1);
+    	Code.put(Code.add);
     	Code.store(desObj);
     }
+    
+    // DesignatorStatement ::= (DesignatorStat_DEC) Designator DECREMENT
+    @Override
+    public void visit(DesignatorStat_DEC designatorStat_DEC) { 
+    	Obj desObj = designatorStat_DEC.getDesignator().obj;
+    	
+    	if(desObj.getKind() == Obj.Elem) {
+    		Code.put(Code.dup2);  // za store
+    	}
+    	Code.load(desObj);
+    	Code.loadConst(-1);
+    	Code.put(Code.add);
+    	Code.store(desObj);
+    }
+    
     
     // DesignatorStatement ::= (DesignatorSt_Assign) Designator Assignop Expr
     @Override
     public void visit(DesignatorSt_Assign designatorSt_Assign) {
     	Obj desObj = designatorSt_Assign.getDesignator().obj;
+    	
+    	Code.store(desObj);
+    }
+    
+   // MayDesignator ::= (MayDesignator_Designator) Designator
+    @Override
+    public void visit(MayDesignator_Designator mayDesignator_Designator) {
+    	Obj desObj = mayDesignator_Designator.getDesignator().obj;
+    	listOfDesignators.add(desObj);
+    }
+    
+   // MayDesignator ::=  (MayDesignator_EPSILON) /* epsilon */
+    @Override
+    public void visit(MayDesignator_EPSILON mayDesignator_EPSILON) {
+    	listOfDesignators.add(Tab.noObj);
+    }
+    
+    // DesignatorStatement ::= (DesignatorStatement_List) LEFT_BRACKET DesignatorStatementList RIGHT_BRACKET EQUALS Designator;
+    @Override
+    public void visit(DesignatorStatement_List designatorStatement_List) {
+    	Obj desArrayObj = designatorStatement_List.getDesignator().obj;
+    	
+		Code.loadConst(listOfDesignators.size()); 
+		Code.load(desArrayObj);
+		Code.put(Code.arraylength); 
+		int fixupAdr = Code.pc + 1;
+		Code.putFalseJump(Code.gt, 0);
+		Code.put(Code.trap);
+		Code.put(LENGTH_EXCEPTION);
+		Code.fixup(fixupAdr);
+    	
+    	for(int index = listOfDesignators.size() - 1; index >= 0; index--) {
+    		Obj desObj = listOfDesignators.remove(index);
+    		
+    		if(desObj == Tab.noObj) { 
+    			continue; 
+    		}
+    		Code.load(desArrayObj);
+    		Code.loadConst(index);
+    		if(desArrayObj.getType().getElemType().equals(Tab.charType)) {
+    			Code.put(Code.baload);
+    		}
+    		else { 
+    			Code.put(Code.aload);
+    		}
+    		Code.store(desObj);
+    	}
+    	listOfDesignators = new LinkedList<Obj>();
+    }
+    
+    // Statement ::= (Statement_READ) READ LEFT_PARENTHESIS Designator RIGHT_PARENTHESIS SEMICOLON
+    @Override
+    public void visit(Statement_READ statement_READ) {
+    	Obj desObj = statement_READ.getDesignator().obj;
+    	
+    	Code.put(Code.read);
     	Code.store(desObj);
     }
     

@@ -1,0 +1,215 @@
+INFO  00:21:02,335 - Compiling source file: C:\Users\Korisnik\Desktop\PP1-projekat\MJCompiler\test\program.mj
+INFO  00:21:02,355 - #2 program
+INFO  00:21:02,355 - #9 test301
+INFO  00:21:02,355 - #3 const
+INFO  00:21:02,356 - #9 int
+INFO  00:21:02,356 - #9 a
+INFO  00:21:02,357 - #18 =
+INFO  00:21:02,357 - #10 5
+INFO  00:21:02,357 - #21 ;
+INFO  00:21:02,357 - #9 char
+INFO  00:21:02,358 - #9 x
+INFO  00:21:02,358 - #25 [
+INFO  00:21:02,358 - #26 ]
+INFO  00:21:02,358 - #21 ;
+INFO  00:21:02,358 - #27 {
+INFO  00:21:02,359 - #8 void
+INFO  00:21:02,359 - #9 main
+INFO  00:21:02,359 - #23 (
+INFO  00:21:02,359 - #24 )
+INFO  00:21:02,359 - #9 int
+INFO  00:21:02,360 - #9 niz
+INFO  00:21:02,360 - #25 [
+INFO  00:21:02,360 - #26 ]
+INFO  00:21:02,360 - #21 ;
+INFO  00:21:02,360 - #9 int
+INFO  00:21:02,360 - #9 matrix
+INFO  00:21:02,360 - #25 [
+INFO  00:21:02,360 - #26 ]
+INFO  00:21:02,360 - #25 [
+INFO  00:21:02,360 - #26 ]
+INFO  00:21:02,360 - #21 ;
+INFO  00:21:02,360 - #27 {
+INFO  00:21:02,360 - #9 niz
+INFO  00:21:02,361 - #18 =
+INFO  00:21:02,361 - #4 new
+INFO  00:21:02,362 - #9 int
+INFO  00:21:02,362 - #25 [
+INFO  00:21:02,362 - #10 3
+INFO  00:21:02,362 - #26 ]
+INFO  00:21:02,363 - #21 ;
+INFO  00:21:02,363 - #9 niz
+INFO  00:21:02,363 - #25 [
+INFO  00:21:02,364 - #10 2
+INFO  00:21:02,364 - #26 ]
+INFO  00:21:02,364 - #18 =
+INFO  00:21:02,364 - #10 77
+INFO  00:21:02,364 - #21 ;
+INFO  00:21:02,364 - #5 print
+INFO  00:21:02,364 - #23 (
+INFO  00:21:02,364 - #9 niz
+INFO  00:21:02,364 - #25 [
+INFO  00:21:02,364 - #10 2
+INFO  00:21:02,365 - #26 ]
+INFO  00:21:02,365 - #20 --
+ERROR 00:21:02,365 - 
+Sintaksna greska na liniji 35
+INFO  00:21:02,365 - #24 )
+INFO  00:21:02,365 - #21 ;
+INFO  00:21:02,365 - #28 }
+INFO  00:21:02,365 - #28 }
+ERROR 00:21:02,365 - OPORAVAK od greske u iskazu dodele izvrsen do ; u liniji 1
+INFO  00:21:02,367 - 
+                     ==============ISPIS STABLA=====================
+INFO  00:21:02,367 - Program(
+  ProgramName(
+   test301
+  ) [ProgramName]
+  ConstVarDeclList_VAR(
+    ConstVarDeclList_CONST(
+      ConstVarDeclList_EPSILON(
+      ) [ConstVarDeclList_EPSILON]
+      ConstDeclList(
+        Type(
+         int
+        ) [Type]
+        ConstDeclOneOrMore_ONE(
+          ConstDecl(
+           a
+            Constant_NUMBER(
+             5
+            ) [Constant_NUMBER]
+          ) [ConstDecl]
+        ) [ConstDeclOneOrMore_ONE]
+      ) [ConstDeclList]
+    ) [ConstVarDeclList_CONST]
+    VarDeclList(
+      Type(
+       char
+      ) [Type]
+      VarDeclOneOrMore_ONE(
+        VarDecl_ARRAY(
+         x
+        ) [VarDecl_ARRAY]
+      ) [VarDeclOneOrMore_ONE]
+    ) [VarDeclList]
+  ) [ConstVarDeclList_VAR]
+  MethodDecl(
+    MethodName(
+     main
+    ) [MethodName]
+    MethodVarDeclList_VAR(
+      MethodVarDeclList_VAR(
+        MethodVarDeclList_EPSILON(
+        ) [MethodVarDeclList_EPSILON]
+        VarDeclList(
+          Type(
+           int
+          ) [Type]
+          VarDeclOneOrMore_ONE(
+            VarDecl_ARRAY(
+             niz
+            ) [VarDecl_ARRAY]
+          ) [VarDeclOneOrMore_ONE]
+        ) [VarDeclList]
+      ) [MethodVarDeclList_VAR]
+      VarDeclList(
+        Type(
+         int
+        ) [Type]
+        VarDeclOneOrMore_ONE(
+          VarDecl_MATRIX(
+           matrix
+          ) [VarDecl_MATRIX]
+        ) [VarDeclOneOrMore_ONE]
+      ) [VarDeclList]
+    ) [MethodVarDeclList_VAR]
+    StatementList_STATEMENTS(
+      StatementList_STATEMENTS(
+        StatementList_STATEMENTS(
+          StatementList_EPSILON(
+          ) [StatementList_EPSILON]
+          Statement_DesignatorStatement(
+            DesignatorSt_Assign(
+              Designator_ONE(
+               niz
+              ) [Designator_ONE]
+              Assignop(
+              ) [Assignop]
+              Expr_ONE(
+                Term_ONE(
+                  FactorSign(
+                    UnaryMinus_EPSILON(
+                    ) [UnaryMinus_EPSILON]
+                    Factor_NEW(
+                      Type(
+                       int
+                      ) [Type]
+                      Expr_ONE(
+                        Term_ONE(
+                          FactorSign(
+                            UnaryMinus_EPSILON(
+                            ) [UnaryMinus_EPSILON]
+                            Factor_NUMBER(
+                             3
+                            ) [Factor_NUMBER]
+                          ) [FactorSign]
+                        ) [Term_ONE]
+                      ) [Expr_ONE]
+                    ) [Factor_NEW]
+                  ) [FactorSign]
+                ) [Term_ONE]
+              ) [Expr_ONE]
+            ) [DesignatorSt_Assign]
+          ) [Statement_DesignatorStatement]
+        ) [StatementList_STATEMENTS]
+        Statement_DesignatorStatement(
+          DesignatorSt_Assign(
+            Designator_Elem(
+              DesignatorArrayOrMatrixName(
+               niz
+              ) [DesignatorArrayOrMatrixName]
+              Expr_ONE(
+                Term_ONE(
+                  FactorSign(
+                    UnaryMinus_EPSILON(
+                    ) [UnaryMinus_EPSILON]
+                    Factor_NUMBER(
+                     2
+                    ) [Factor_NUMBER]
+                  ) [FactorSign]
+                ) [Term_ONE]
+              ) [Expr_ONE]
+              MayMatrix_EPSILON(
+              ) [MayMatrix_EPSILON]
+            ) [Designator_Elem]
+            Assignop(
+            ) [Assignop]
+            Expr_ONE(
+              Term_ONE(
+                FactorSign(
+                  UnaryMinus_EPSILON(
+                  ) [UnaryMinus_EPSILON]
+                  Factor_NUMBER(
+                   77
+                  ) [Factor_NUMBER]
+                ) [FactorSign]
+              ) [Term_ONE]
+            ) [Expr_ONE]
+          ) [DesignatorSt_Assign]
+        ) [Statement_DesignatorStatement]
+      ) [StatementList_STATEMENTS]
+      Statement_DesignatorStatement(
+        DesignatorStatement_ERROR(
+        ) [DesignatorStatement_ERROR]
+      ) [Statement_DesignatorStatement]
+    ) [StatementList_STATEMENTS]
+  ) [MethodDecl]
+) [Program]
+INFO  00:21:02,367 - ==============ZAVRSEN ISPIS STABLA=====================
+
+INFO  00:21:02,367 - ==============ISPIS SEMANTICKE ANALIZE=====================
+INFO  00:21:02,377 - INFO-DesignatorSt_Assign: Pristup oznaci niz. Objektni cvor: { KIND: Var, NAME: niz, TYPE(Struct): { KIND: Array, ElemType: intType }, ADR: 0, LEVEL: 1 } na liniji 30
+INFO  00:21:02,377 - ==============ZAVRSEN ISPIS SEMANTICKE ANALIZE=====================
+
+ERROR 00:21:02,377 - Parsiranje NIJE uspesno zavrseno!

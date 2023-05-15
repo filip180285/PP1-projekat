@@ -43,7 +43,6 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     private List<Obj> listOfDesignators = new LinkedList<Obj>(); // za proveru tipova pri raspakivanju niza
     
     private int numGlobalVars = 0; // broj statickih varijabli
-    public static final int MAIN_PC = 0; // main za A nivo od 0
     
     public int getNumGlobalVars() {
     	return numGlobalVars;
@@ -191,7 +190,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     	
     	if(typeObj != Tab.noObj) { // tip postoji
     		if(typeObj.getKind() == Obj.Type) {	// int, char, bool
-    			currentType = typeObj.getType();
+    			currentType = type.struct = typeObj.getType();
     		}
     		else {
     			currentType = Tab.noType;

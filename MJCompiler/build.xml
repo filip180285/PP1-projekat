@@ -84,7 +84,7 @@
 	</target>
 
 	<target name="runObj" depends="debugObj">
-		<java classname="rs.etf.pp1.mj.runtime.Run">
+		<java classname="rs.etf.pp1.mj.runtime.Run" input="test/readInput.txt">
 			<arg value="test/program.obj"/>
 			<!-- <arg value="-debug"/> -->
 			<classpath>

@@ -17,3 +17,5 @@ ili kao polje klase SemanticAnalzer
     	numGlobalVars = progObj.getLocalSymbols().size(); vrati 0 prije prelancavanja
     	numGlobalVars = Tab.currentScope().getnVars(); bg glob var
     	numGlobalVars = Tab.currentScope().getLocals().numSymbols(); vrati broj simbola u cijelom opsegu
+		
+read preskace neadekvatne vrednosti za dodelu

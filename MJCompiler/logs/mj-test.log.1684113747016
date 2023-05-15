@@ -1,0 +1,27 @@
+INFO  03:22:06,042 - Compiling source file: C:\Users\Korisnik\Desktop\PP1-projekat\MJCompiler\test\program.mj
+INFO  03:22:06,062 - #2 program
+INFO  03:22:06,062 - #9 syntax_errors
+INFO  03:22:06,062 - #9 int
+INFO  03:22:06,063 - #9 a
+INFO  03:22:06,063 - #13 +
+ERROR 03:22:06,064 - 
+Sintaksna greska na liniji 3
+INFO  03:22:06,064 - #21 ;
+INFO  03:22:06,064 - #9 int
+INFO  03:22:06,064 - #9 a
+INFO  03:22:06,064 - #13 +
+ERROR 03:22:06,064 - OPORAVAK od greske u definiciji promenljive izvrsen u liniji 3
+ERROR 03:22:06,065 - 
+Sintaksna greska na liniji 4
+INFO  03:22:06,065 - #22 ,
+INFO  03:22:06,065 - #9 b
+INFO  03:22:06,065 - #21 ;
+INFO  03:22:06,065 - #27 {
+ERROR 03:22:06,065 - OPORAVAK od greske u definiciji promenljive izvrsen u liniji 4
+INFO  03:22:06,066 - #8 void
+INFO  03:22:06,066 - #9 a
+INFO  03:22:06,066 - #23 (
+INFO  03:22:06,066 - #9 int
+ERROR 03:22:06,066 - 
+Sintaksna greska na liniji 8
+ERROR 03:22:06,066 - Fatalna greska, parsiranje se ne moze nastaviti na liniji 8

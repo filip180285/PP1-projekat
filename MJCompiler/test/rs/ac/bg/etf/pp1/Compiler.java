@@ -68,7 +68,7 @@ public class Compiler {
 				CodeGenerator cg = new CodeGenerator();
 				prog.traverseBottomUp(cg);
 				Code.dataSize = v.getNumGlobalVars();
-				Code.mainPc = SemanticAnalyzer.MAIN_PC;
+				Code.mainPc = CodeGenerator.MAIN_PC;
 				Code.write(new FileOutputStream(objFile));
 				log.info("Generisanje koda uspesno zavrseno!");
 			}else{
