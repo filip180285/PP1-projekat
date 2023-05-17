@@ -84,7 +84,8 @@ nonterminal rs.etf.pp1.symboltable.concepts.Obj ProgramName, MethodName;
 nonterminal rs.etf.pp1.symboltable.concepts.Obj Designator, DesignatorArrayOrMatrixName;
 nonterminal rs.etf.pp1.symboltable.concepts.Struct Constant, FactorSign, Factor, Term, Expr;
 
-nonterminal rs.etf.pp1.symboltable.concepts.Struct Type;
+nonterminal rs.etf.pp1.symboltable.concepts.Struct Type, NEW_Array, NEW_Matrix;
+
 
 
 /*** Program = "program" ident {ConstDecl | VarDecl | ClassDecl } "{" {MethodDecl} "}". ***/
@@ -252,11 +253,16 @@ Factor ::= (Factor_Designator) Designator:D1 {: RESULT=new Factor_Designator(D1)
 		   |
 		   (Factor_BOOLEAN) BOOLEAN:B1 {: RESULT=new Factor_BOOLEAN(B1); RESULT.setLine(B1left); :}
 		   |
-		   (Factor_NEW) NEW Type:T1 LEFT_BRACKET Expr:E2 RIGHT_BRACKET {: RESULT=new Factor_NEW(T1, E2); RESULT.setLine(T1left); :}
+		   (Factor_NEW) NEW_Array:N1 NEW_Matrix:N2 {: RESULT=new Factor_NEW(N1, N2); RESULT.setLine(N1left); :}
 		   |
-		   (Factor_Expr) LEFT_PARENTHESIS Expr:E1 RIGHT_PARENTHESIS {: RESULT=new Factor_Expr(E1); RESULT.setLine(E1left); :}
-		   |
-		   (Factor_NEW_MATRIX) NEW Type:T1 LEFT_BRACKET Expr:E2 RIGHT_BRACKET LEFT_BRACKET Expr:E3 RIGHT_BRACKET {: RESULT=new Factor_NEW_MATRIX(T1, E2, E3); RESULT.setLine(T1left); :};
+		   (Factor_Expr) LEFT_PARENTHESIS Expr:E1 RIGHT_PARENTHESIS {: RESULT=new Factor_Expr(E1); RESULT.setLine(E1left); :};
+		   
+NEW_Array ::=  (NEW_Array) NEW Type:T1 LEFT_BRACKET Expr:E2 RIGHT_BRACKET {: RESULT=new NEW_Array(T1, E2); RESULT.setLine(T1left); :};
+
+NEW_Matrix ::=  (NEW_Matrix_MATRIX) LEFT_BRACKET Expr:E1 RIGHT_BRACKET {: RESULT=new NEW_Matrix_MATRIX(E1); RESULT.setLine(E1left); :}
+				|
+				(NEW_Matrix_EPSILON) {: RESULT=new NEW_Matrix_EPSILON(); :} /*epsilon*/
+				;
 
 
 

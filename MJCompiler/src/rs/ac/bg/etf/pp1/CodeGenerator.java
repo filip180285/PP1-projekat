@@ -13,6 +13,7 @@ public class CodeGenerator extends VisitorAdaptor {
 	
     public static final int MAIN_PC = 0; // main za A nivo krece od 0
     private List<Obj> listOfDesignators = new LinkedList<Obj>(); // za dodelu vrednosti pri raspakivanju niza
+    private Obj designatorMatrix; // za cuvanje objektnog cvora matrice radi kasnijeg ucitavanja iste na stek
     
     public static final int LENGTH_EXCEPTION = -1;
 
@@ -69,11 +70,20 @@ public class CodeGenerator extends VisitorAdaptor {
     	Code.loadConst(boolVal);
     }
     
-    // Factor ::= (Factor_NEW) NEW Type LEFT_BRACKET Expr RIGHT_BRACKET
+    // NEW_Array ::=  (NEW_Array) NEW Type LEFT_BRACKET Expr RIGHT_BRACKET;
     @Override
-    public void visit(Factor_NEW factor_NEW) {
+    public void visit(NEW_Array new_Array) {
     	Code.put(Code.newarray);
-    	Struct arrType = factor_NEW.getType().struct;
+    	Struct arrType = new_Array.getType().struct;
+    	
+    	if( ((Factor_NEW)new_Array.getParent()).getNEW_Matrix() instanceof NEW_Matrix_MATRIX ) {
+    		Code.put(1);
+    		Code.put(Code.dup);
+    		Code.store(designatorMatrix);
+    		Code.loadConst(0);
+    		Code.put(Code.dup2);
+    		return;
+    	} 
     	
     	if(arrType.equals(Tab.charType)) {
     		Code.put(0); // za karaktere
@@ -83,20 +93,36 @@ public class CodeGenerator extends VisitorAdaptor {
     	}
     }
     
-    //*******************************************
-    // Factor ::= (Factor_NEW_MATRIX) NEW Type LEFT_BRACKET Expr RIGHT_BRACKET LEFT_BRACKET Expr RIGHT_BRACKET;
+    // NEW_Matrix ::=  (NEW_Matrix_MATRIX) LEFT_BRACKET Expr RIGHT_BRACKET
     @Override
-    public void visit(Factor_NEW_MATRIX factor_NEW_MATRIX) {
-    	Code.put(Code.mul); // m * n
+    public void visit(NEW_Matrix_MATRIX new_Matrix_MATRIX) {
+    	Struct matrixType = designatorMatrix.getType().getElemType().getElemType();
+    	int retAddress = Code.pc;
     	Code.put(Code.newarray);
-    	Struct arrType = factor_NEW_MATRIX.getType().struct;
-    	
-    	if(arrType.equals(Tab.charType)) {
+    	if(matrixType.equals(Tab.charType)) {
     		Code.put(0); // za karaktere
     	}
     	else {
     		Code.put(1); // za int i bool
     	}
+    	Code.put(Code.astore);
+    	Code.loadConst(1);
+    	Code.put(Code.add);
+    	Code.put(Code.dup2);
+    	Code.load(designatorMatrix);
+    	Code.put(Code.arraylength);
+    	int fixup = Code.pc + 1;
+    	Code.putFalseJump(Code.lt, 0);
+    	Code.put(Code.dup2);
+    	Code.put(Code.pop);
+    	Code.load(designatorMatrix);
+    	Code.loadConst(0);
+    	Code.put(Code.aload);
+    	Code.put(Code.arraylength);
+    	Code.putJump(retAddress);
+    	Code.fixup(fixup);
+    	Code.put(Code.pop);
+    	Code.put(Code.pop);
     }
     
     // FactorSign ::= (FactorSign) UnaryMinus Factor;
@@ -156,22 +182,23 @@ public class CodeGenerator extends VisitorAdaptor {
     public void visit(DesignatorArrayOrMatrixName designatorArrayOrMatrixName) { 
     	Obj desObj = designatorArrayOrMatrixName.obj;
     	Code.load(desObj);
+    	// designatorMatrix = desObj;
     }
     
-    // Designator ::= (Designator_Elem) DesignatorArrayOrMatrixName LEFT_BRACKET Expr RIGHT_BRACKET MayMatrix;
+    // Designator ::= (Designator_ONE) IDENTIFIER
     @Override
-    public void visit(Designator_Elem designator_Elem) {
-    	
+    public void visit(Designator_ONE designator_ONE) { 
+    	designatorMatrix = designator_ONE.obj;
     }
     
     // MayMatrix ::= (MayMatrix_MATRIX) LEFT_BRACKET Expr RIGHT_BRACKET
     @Override
     public void visit(MayMatrix_MATRIX mayMatrix_MATRIX) { 
-    	/*Code.put(Code.dup);
+    	Code.put(Code.dup_x2);
     	Code.put(Code.pop);
-    	Code.put(Code.arraylength);
-    	Code.put(Code.mul);
-    	Code.put(Code.add);*/
+    	Code.put(Code.aload);
+    	Code.put(Code.dup_x1);
+    	Code.put(Code.pop);
     }
     
     // DesignatorStatement ::= (DesignatorStat_INC) Designator INCREMENT

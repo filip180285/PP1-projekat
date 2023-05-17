@@ -70,7 +70,8 @@ nonterminal rs.etf.pp1.symboltable.concepts.Obj ProgramName, MethodName;
 nonterminal rs.etf.pp1.symboltable.concepts.Obj Designator, DesignatorArrayOrMatrixName;
 nonterminal rs.etf.pp1.symboltable.concepts.Struct Constant, FactorSign, Factor, Term, Expr;
 
-nonterminal rs.etf.pp1.symboltable.concepts.Struct Type;
+nonterminal rs.etf.pp1.symboltable.concepts.Struct Type, NEW_Array, NEW_Matrix;
+
 
 
 /*** Program = "program" ident {ConstDecl | VarDecl | ClassDecl } "{" {MethodDecl} "}". ***/
@@ -238,11 +239,16 @@ Factor ::= (Factor_Designator) Designator
 		   |
 		   (Factor_BOOLEAN) BOOLEAN
 		   |
-		   (Factor_NEW) NEW Type LEFT_BRACKET Expr RIGHT_BRACKET
+		   (Factor_NEW) NEW_Array NEW_Matrix
 		   |
-		   (Factor_Expr) LEFT_PARENTHESIS Expr RIGHT_PARENTHESIS
-		   |
-		   (Factor_NEW_MATRIX) NEW Type LEFT_BRACKET Expr RIGHT_BRACKET LEFT_BRACKET Expr RIGHT_BRACKET;
+		   (Factor_Expr) LEFT_PARENTHESIS Expr RIGHT_PARENTHESIS;
+		   
+NEW_Array ::=  (NEW_Array) NEW Type LEFT_BRACKET Expr RIGHT_BRACKET;
+
+NEW_Matrix ::=  (NEW_Matrix_MATRIX) LEFT_BRACKET Expr RIGHT_BRACKET
+				|
+				(NEW_Matrix_EPSILON) /*epsilon*/
+				;
 
 
 

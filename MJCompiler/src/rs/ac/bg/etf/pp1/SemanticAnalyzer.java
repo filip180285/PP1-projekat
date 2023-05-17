@@ -41,6 +41,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     
     private boolean mainDetected = false; // za razlikovanje opsega pri ubacivanju varijabli u tabelu simbola
     private List<Obj> listOfDesignators = new LinkedList<Obj>(); // za proveru tipova pri raspakivanju niza
+    private Struct exprTypeArray; // za cuvanje tipa niza radi ispitivanja u matrici
     
     private int numGlobalVars = 0; // broj statickih varijabli
     
@@ -374,31 +375,41 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     	factor_BOOLEAN.struct = Tab.find("bool").getType();
     }
     
-    // Factor ::= (Factor_NEW) NEW Type LEFT_BRACKET Expr RIGHT_BRACKET
+    // NEW_Array ::=  (NEW_Array) NEW Type LEFT_BRACKET Expr RIGHT_BRACKET;
     @Override
-    public void visit(Factor_NEW factor_NEW) {
-    	Struct exprType = factor_NEW.getExpr().struct;
+    public void visit(NEW_Array new_Array) {
+    	exprTypeArray = new_Array.getExpr().struct;
     	
-    	if(exprType.equals(Tab.intType) == false) {
-    		report_error("GRESKA-Factor_NEW: Tip izraza u definiciji niza nije int", factor_NEW);
-    		factor_NEW.struct = Tab.noType;
+    	if(exprTypeArray.equals(Tab.intType) == false) {
+    		report_error("GRESKA-Factor_NEW: Tip izraza u definiciji niza nije int", new_Array);
+    		new_Array.struct = Tab.noType;
     		return;
     	}
-    	factor_NEW.struct = new Struct(Struct.Array, currentType);
+    	new_Array.struct = new Struct(Struct.Array, currentType);
     }
     
-    // Factor ::= (Factor_NEW_MATRIX) NEW Type LEFT_BRACKET Expr RIGHT_BRACKET LEFT_BRACKET Expr RIGHT_BRACKET;
+    // NEW_Matrix ::=  (NEW_Matrix_MATRIX) LEFT_BRACKET Expr RIGHT_BRACKET
     @Override
-    public void visit(Factor_NEW_MATRIX factor_NEW_MATRIX) {
-    	Struct exprType1 = factor_NEW_MATRIX.getExpr().struct;
-    	Struct exprType2 = factor_NEW_MATRIX.getExpr1().struct;
+    public void visit(NEW_Matrix_MATRIX new_Matrix_MATRIX) {
+    	// Struct exprType1 = ((Factor_NEW)new_Matrix_MATRIX.getParent()).getNEW_Array().getExpr().struct;
+    	Struct exprType2 = new_Matrix_MATRIX.getExpr().struct;
     	
-    	if(exprType1.equals(Tab.intType) == false || exprType2.equals(Tab.intType) == false) {
-    		report_error("GRESKA-Factor_NEW_MATRIX: Tip izraza u definiciji niza nije int", factor_NEW_MATRIX);
-    		factor_NEW_MATRIX.struct = Tab.noType;
+    	if(exprTypeArray.equals(Tab.intType) == false || exprType2.equals(Tab.intType) == false) {
+    		report_error("GRESKA-Factor_NEW_MATRIX: Tip izraza u definiciji matrice nije int", new_Matrix_MATRIX);
+    		new_Matrix_MATRIX.struct = Tab.noType;
     		return;
     	}
-    	factor_NEW_MATRIX.struct = new Struct(Struct.Array, new Struct(Struct.Array, currentType));
+    	new_Matrix_MATRIX.struct = new Struct(Struct.Array, new Struct(Struct.Array, currentType));
+    }
+    
+    // Factor ::= (Factor_NEW) NEW_Array NEW_Matrix
+    @Override
+    public void visit(Factor_NEW factor_NEW) {
+    	factor_NEW.struct = factor_NEW.getNEW_Array().struct; // za niz
+    	
+    	if(factor_NEW.getNEW_Matrix() instanceof NEW_Matrix_MATRIX) { // za matricu
+    		factor_NEW.struct = factor_NEW.getNEW_Matrix().struct;
+    	}
     }
     
     // Factor ::= (Factor_Expr) LEFT_PARENTHESIS Expr RIGHT_PARENTHESIS

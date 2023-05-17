@@ -1,0 +1,118 @@
+INFO  03:22:27,018 - Compiling source file: C:\Users\Korisnik\Desktop\PP1-projekat\MJCompiler\test\program.mj
+INFO  03:22:27,038 - #2 program
+INFO  03:22:27,038 - #9 syntax_errors
+INFO  03:22:27,038 - #27 {
+INFO  03:22:27,039 - #8 void
+INFO  03:22:27,039 - #9 a
+INFO  03:22:27,039 - #23 (
+INFO  03:22:27,039 - #24 )
+INFO  03:22:27,040 - #27 {
+INFO  03:22:27,040 - #28 }
+INFO  03:22:27,040 - #8 void
+ERROR 03:22:27,040 - 
+Sintaksna greska na liniji 5
+INFO  03:22:27,040 - #9 main
+INFO  03:22:27,040 - #23 (
+INFO  03:22:27,040 - #24 )
+INFO  03:22:27,041 - #27 {
+INFO  03:22:27,041 - #9 b
+INFO  03:22:27,041 - #18 =
+INFO  03:22:27,041 - #10 43
+INFO  03:22:27,041 - #13 +
+INFO  03:22:27,041 - #10 123
+INFO  03:22:27,041 - #13 +
+INFO  03:22:27,043 - #21 ;
+INFO  03:22:27,043 - #9 b
+INFO  03:22:27,043 - #18 =
+INFO  03:22:27,043 - #10 123
+ERROR 03:22:27,043 - OPORAVAK od greske u iskazu dodele izvrsen do ; u liniji 10
+INFO  03:22:27,045 - #21 ;
+INFO  03:22:27,045 - #9 b
+INFO  03:22:27,046 - #18 =
+INFO  03:22:27,046 - #10 43
+INFO  03:22:27,046 - #13 +
+INFO  03:22:27,046 - #10 123
+INFO  03:22:27,046 - #13 +
+INFO  03:22:27,046 - #21 ;
+ERROR 03:22:27,046 - 
+Sintaksna greska na liniji 8
+INFO  03:22:27,047 - #9 b
+INFO  03:22:27,047 - #18 =
+INFO  03:22:27,047 - #10 43
+ERROR 03:22:27,047 - OPORAVAK od greske u iskazu dodele izvrsen do ; u liniji 10
+INFO  03:22:27,047 - #13 +
+INFO  03:22:27,047 - #10 123
+INFO  03:22:27,047 - #13 +
+INFO  03:22:27,047 - #21 ;
+ERROR 03:22:27,047 - 
+Sintaksna greska na liniji 9
+INFO  03:22:27,047 - #28 }
+INFO  03:22:27,047 - #28 }
+ERROR 03:22:27,047 - OPORAVAK od greske u iskazu dodele izvrsen do ; u liniji 10
+INFO  03:22:27,048 - 
+                     ==============ISPIS STABLA=====================
+INFO  03:22:27,048 - Program(
+  ProgramName(
+   syntax_errors
+  ) [ProgramName]
+  ConstVarDeclList_EPSILON(
+  ) [ConstVarDeclList_EPSILON]
+  MethodDecl(
+    MethodName(
+     a
+    ) [MethodName]
+    MethodVarDeclList_EPSILON(
+    ) [MethodVarDeclList_EPSILON]
+    StatementList_STATEMENTS(
+      StatementList_STATEMENTS(
+        StatementList_STATEMENTS(
+          StatementList_STATEMENTS(
+            StatementList_EPSILON(
+            ) [StatementList_EPSILON]
+            Statement_DesignatorStatement(
+              DesignatorStatement_ERROR(
+              ) [DesignatorStatement_ERROR]
+            ) [Statement_DesignatorStatement]
+          ) [StatementList_STATEMENTS]
+          Statement_DesignatorStatement(
+            DesignatorSt_Assign(
+              Designator_ONE(
+               b
+              ) [Designator_ONE]
+              Assignop(
+              ) [Assignop]
+              Expr_ONE(
+                Term_ONE(
+                  FactorSign(
+                    UnaryMinus_EPSILON(
+                    ) [UnaryMinus_EPSILON]
+                    Factor_NUMBER(
+                     123
+                    ) [Factor_NUMBER]
+                  ) [FactorSign]
+                ) [Term_ONE]
+              ) [Expr_ONE]
+            ) [DesignatorSt_Assign]
+          ) [Statement_DesignatorStatement]
+        ) [StatementList_STATEMENTS]
+        Statement_DesignatorStatement(
+          DesignatorStatement_ERROR(
+          ) [DesignatorStatement_ERROR]
+        ) [Statement_DesignatorStatement]
+      ) [StatementList_STATEMENTS]
+      Statement_DesignatorStatement(
+        DesignatorStatement_ERROR(
+        ) [DesignatorStatement_ERROR]
+      ) [Statement_DesignatorStatement]
+    ) [StatementList_STATEMENTS]
+  ) [MethodDecl]
+) [Program]
+INFO  03:22:27,049 - ==============ZAVRSEN ISPIS STABLA=====================
+
+INFO  03:22:27,049 - ==============ISPIS SEMANTICKE ANALIZE=====================
+ERROR 03:22:27,058 - GRESKA-MethodName: Ime metode mora biti main na liniji 4
+ERROR 03:22:27,058 - GRESKA-Designator_ONE: Pristup nedeklarisanoj oznaci b na liniji 7
+ERROR 03:22:27,058 - GRESKA-DesignatorSt_Assign: Dodela vrednosti u noObj,tipovi sa leve i desne strane jednakosti nisu isti na liniji 7
+INFO  03:22:27,058 - ==============ZAVRSEN ISPIS SEMANTICKE ANALIZE=====================
+
+ERROR 03:22:27,059 - Parsiranje NIJE uspesno zavrseno!

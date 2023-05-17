@@ -1,0 +1,163 @@
+INFO  00:30:48,503 - Compiling source file: C:\Users\Korisnik\Desktop\PP1-projekat\MJCompiler\test\program.mj
+INFO  00:30:48,522 - #2 program
+INFO  00:30:48,522 - #9 test301
+INFO  00:30:48,522 - #9 int
+INFO  00:30:48,522 - #25 [
+ERROR 00:30:48,523 - 
+Sintaksna greska na liniji 5
+INFO  00:30:48,523 - #26 ]
+INFO  00:30:48,523 - #25 [
+INFO  00:30:48,523 - #26 ]
+INFO  00:30:48,523 - #9 matrix
+INFO  00:30:48,523 - #21 ;
+INFO  00:30:48,523 - #27 {
+INFO  00:30:48,523 - #8 void
+INFO  00:30:48,524 - #9 main
+ERROR 00:30:48,524 - OPORAVAK od greske u definiciji promenljive izvrsen u liniji 5
+INFO  00:30:48,524 - #23 (
+INFO  00:30:48,525 - #24 )
+INFO  00:30:48,525 - #9 int
+INFO  00:30:48,525 - #9 bodovi
+INFO  00:30:48,525 - #21 ;
+INFO  00:30:48,528 - #9 bool
+INFO  00:30:48,528 - #9 bt
+INFO  00:30:48,528 - #22 ,
+INFO  00:30:48,528 - #9 ce
+INFO  00:30:48,528 - #22 ,
+INFO  00:30:48,528 - #9 sd
+INFO  00:30:48,528 - #21 ;
+INFO  00:30:48,528 - #27 {
+INFO  00:30:48,528 - #9 matrix
+INFO  00:30:48,529 - #18 =
+INFO  00:30:48,529 - #4 new
+INFO  00:30:48,530 - #9 int
+INFO  00:30:48,530 - #25 [
+INFO  00:30:48,530 - #10 2
+INFO  00:30:48,530 - #26 ]
+INFO  00:30:48,531 - #25 [
+INFO  00:30:48,531 - #10 8
+INFO  00:30:48,531 - #26 ]
+INFO  00:30:48,531 - #21 ;
+INFO  00:30:48,531 - #28 }
+INFO  00:30:48,531 - #28 }
+INFO  00:30:48,532 - 
+                     ==============ISPIS STABLA=====================
+INFO  00:30:48,533 - Program(
+  ProgramName(
+   test301
+  ) [ProgramName]
+  ConstVarDeclList_VAR(
+    ConstVarDeclList_EPSILON(
+    ) [ConstVarDeclList_EPSILON]
+    VarDeclList(
+      Type(
+       int
+      ) [Type]
+      VarDeclOneOrMore_ONE(
+        VarDecl_ERROR(
+        ) [VarDecl_ERROR]
+      ) [VarDeclOneOrMore_ONE]
+    ) [VarDeclList]
+  ) [ConstVarDeclList_VAR]
+  MethodDecl(
+    MethodName(
+     main
+    ) [MethodName]
+    MethodVarDeclList_VAR(
+      MethodVarDeclList_VAR(
+        MethodVarDeclList_EPSILON(
+        ) [MethodVarDeclList_EPSILON]
+        VarDeclList(
+          Type(
+           int
+          ) [Type]
+          VarDeclOneOrMore_ONE(
+            VarDecl_VAR(
+             bodovi
+            ) [VarDecl_VAR]
+          ) [VarDeclOneOrMore_ONE]
+        ) [VarDeclList]
+      ) [MethodVarDeclList_VAR]
+      VarDeclList(
+        Type(
+         bool
+        ) [Type]
+        VarDeclOneOrMore_MORE(
+          VarDecl_VAR(
+           bt
+          ) [VarDecl_VAR]
+          VarDeclOneOrMore_MORE(
+            VarDecl_VAR(
+             ce
+            ) [VarDecl_VAR]
+            VarDeclOneOrMore_ONE(
+              VarDecl_VAR(
+               sd
+              ) [VarDecl_VAR]
+            ) [VarDeclOneOrMore_ONE]
+          ) [VarDeclOneOrMore_MORE]
+        ) [VarDeclOneOrMore_MORE]
+      ) [VarDeclList]
+    ) [MethodVarDeclList_VAR]
+    StatementList_STATEMENTS(
+      StatementList_EPSILON(
+      ) [StatementList_EPSILON]
+      Statement_DesignatorStatement(
+        DesignatorSt_Assign(
+          Designator_ONE(
+           matrix
+          ) [Designator_ONE]
+          Assignop(
+          ) [Assignop]
+          Expr_ONE(
+            Term_ONE(
+              FactorSign(
+                UnaryMinus_EPSILON(
+                ) [UnaryMinus_EPSILON]
+                Factor_NEW(
+                  NEW_Array(
+                    Type(
+                     int
+                    ) [Type]
+                    Expr_ONE(
+                      Term_ONE(
+                        FactorSign(
+                          UnaryMinus_EPSILON(
+                          ) [UnaryMinus_EPSILON]
+                          Factor_NUMBER(
+                           2
+                          ) [Factor_NUMBER]
+                        ) [FactorSign]
+                      ) [Term_ONE]
+                    ) [Expr_ONE]
+                  ) [NEW_Array]
+                  NEW_Matrix_MATRIX(
+                    Expr_ONE(
+                      Term_ONE(
+                        FactorSign(
+                          UnaryMinus_EPSILON(
+                          ) [UnaryMinus_EPSILON]
+                          Factor_NUMBER(
+                           8
+                          ) [Factor_NUMBER]
+                        ) [FactorSign]
+                      ) [Term_ONE]
+                    ) [Expr_ONE]
+                  ) [NEW_Matrix_MATRIX]
+                ) [Factor_NEW]
+              ) [FactorSign]
+            ) [Term_ONE]
+          ) [Expr_ONE]
+        ) [DesignatorSt_Assign]
+      ) [Statement_DesignatorStatement]
+    ) [StatementList_STATEMENTS]
+  ) [MethodDecl]
+) [Program]
+INFO  00:30:48,533 - ==============ZAVRSEN ISPIS STABLA=====================
+
+INFO  00:30:48,533 - ==============ISPIS SEMANTICKE ANALIZE=====================
+ERROR 00:30:48,542 - GRESKA-Designator_ONE: Pristup nedeklarisanoj oznaci matrix na liniji 12
+ERROR 00:30:48,543 - GRESKA-DesignatorSt_Assign: Dodela vrednosti u noObj,tipovi sa leve i desne strane jednakosti nisu isti na liniji 12
+INFO  00:30:48,543 - ==============ZAVRSEN ISPIS SEMANTICKE ANALIZE=====================
+
+ERROR 00:30:48,543 - Parsiranje NIJE uspesno zavrseno!

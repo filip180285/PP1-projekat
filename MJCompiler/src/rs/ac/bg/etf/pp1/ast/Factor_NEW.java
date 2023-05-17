@@ -1,36 +1,36 @@
 // generated with ast extension for cup
 // version 0.8
-// 14/4/2023 18:29:39
+// 16/4/2023 23:52:19
 
 
 package rs.ac.bg.etf.pp1.ast;
 
 public class Factor_NEW extends Factor {
 
-    private Type Type;
-    private Expr Expr;
+    private NEW_Array NEW_Array;
+    private NEW_Matrix NEW_Matrix;
 
-    public Factor_NEW (Type Type, Expr Expr) {
-        this.Type=Type;
-        if(Type!=null) Type.setParent(this);
-        this.Expr=Expr;
-        if(Expr!=null) Expr.setParent(this);
+    public Factor_NEW (NEW_Array NEW_Array, NEW_Matrix NEW_Matrix) {
+        this.NEW_Array=NEW_Array;
+        if(NEW_Array!=null) NEW_Array.setParent(this);
+        this.NEW_Matrix=NEW_Matrix;
+        if(NEW_Matrix!=null) NEW_Matrix.setParent(this);
     }
 
-    public Type getType() {
-        return Type;
+    public NEW_Array getNEW_Array() {
+        return NEW_Array;
     }
 
-    public void setType(Type Type) {
-        this.Type=Type;
+    public void setNEW_Array(NEW_Array NEW_Array) {
+        this.NEW_Array=NEW_Array;
     }
 
-    public Expr getExpr() {
-        return Expr;
+    public NEW_Matrix getNEW_Matrix() {
+        return NEW_Matrix;
     }
 
-    public void setExpr(Expr Expr) {
-        this.Expr=Expr;
+    public void setNEW_Matrix(NEW_Matrix NEW_Matrix) {
+        this.NEW_Matrix=NEW_Matrix;
     }
 
     public void accept(Visitor visitor) {
@@ -38,19 +38,19 @@ public class Factor_NEW extends Factor {
     }
 
     public void childrenAccept(Visitor visitor) {
-        if(Type!=null) Type.accept(visitor);
-        if(Expr!=null) Expr.accept(visitor);
+        if(NEW_Array!=null) NEW_Array.accept(visitor);
+        if(NEW_Matrix!=null) NEW_Matrix.accept(visitor);
     }
 
     public void traverseTopDown(Visitor visitor) {
         accept(visitor);
-        if(Type!=null) Type.traverseTopDown(visitor);
-        if(Expr!=null) Expr.traverseTopDown(visitor);
+        if(NEW_Array!=null) NEW_Array.traverseTopDown(visitor);
+        if(NEW_Matrix!=null) NEW_Matrix.traverseTopDown(visitor);
     }
 
     public void traverseBottomUp(Visitor visitor) {
-        if(Type!=null) Type.traverseBottomUp(visitor);
-        if(Expr!=null) Expr.traverseBottomUp(visitor);
+        if(NEW_Array!=null) NEW_Array.traverseBottomUp(visitor);
+        if(NEW_Matrix!=null) NEW_Matrix.traverseBottomUp(visitor);
         accept(visitor);
     }
 
@@ -59,14 +59,14 @@ public class Factor_NEW extends Factor {
         buffer.append(tab);
         buffer.append("Factor_NEW(\n");
 
-        if(Type!=null)
-            buffer.append(Type.toString("  "+tab));
+        if(NEW_Array!=null)
+            buffer.append(NEW_Array.toString("  "+tab));
         else
             buffer.append(tab+"  null");
         buffer.append("\n");
 
-        if(Expr!=null)
-            buffer.append(Expr.toString("  "+tab));
+        if(NEW_Matrix!=null)
+            buffer.append(NEW_Matrix.toString("  "+tab));
         else
             buffer.append(tab+"  null");
         buffer.append("\n");

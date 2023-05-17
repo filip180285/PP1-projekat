@@ -1,0 +1,161 @@
+INFO  00:33:56,425 - Compiling source file: C:\Users\Korisnik\Desktop\PP1-projekat\MJCompiler\test\program.mj
+INFO  00:33:56,445 - #2 program
+INFO  00:33:56,445 - #9 test301
+INFO  00:33:56,445 - #9 int
+INFO  00:33:56,445 - #9 matrix
+INFO  00:33:56,446 - #25 [
+INFO  00:33:56,446 - #26 ]
+INFO  00:33:56,446 - #25 [
+INFO  00:33:56,446 - #26 ]
+INFO  00:33:56,446 - #21 ;
+INFO  00:33:56,446 - #27 {
+INFO  00:33:56,447 - #8 void
+INFO  00:33:56,447 - #9 main
+INFO  00:33:56,447 - #23 (
+INFO  00:33:56,447 - #24 )
+INFO  00:33:56,447 - #9 int
+INFO  00:33:56,448 - #9 bodovi
+INFO  00:33:56,448 - #21 ;
+INFO  00:33:56,448 - #9 bool
+INFO  00:33:56,448 - #9 bt
+INFO  00:33:56,448 - #22 ,
+INFO  00:33:56,448 - #9 ce
+INFO  00:33:56,448 - #22 ,
+INFO  00:33:56,450 - #9 sd
+INFO  00:33:56,450 - #21 ;
+INFO  00:33:56,450 - #27 {
+INFO  00:33:56,450 - #9 matrix
+INFO  00:33:56,450 - #18 =
+INFO  00:33:56,451 - #4 new
+INFO  00:33:56,451 - #9 int
+INFO  00:33:56,451 - #25 [
+INFO  00:33:56,452 - #10 2
+INFO  00:33:56,452 - #26 ]
+INFO  00:33:56,452 - #25 [
+INFO  00:33:56,453 - #10 8
+INFO  00:33:56,453 - #26 ]
+INFO  00:33:56,453 - #21 ;
+INFO  00:33:56,453 - #28 }
+INFO  00:33:56,453 - #28 }
+INFO  00:33:56,454 - 
+                     ==============ISPIS STABLA=====================
+INFO  00:33:56,454 - Program(
+  ProgramName(
+   test301
+  ) [ProgramName]
+  ConstVarDeclList_VAR(
+    ConstVarDeclList_EPSILON(
+    ) [ConstVarDeclList_EPSILON]
+    VarDeclList(
+      Type(
+       int
+      ) [Type]
+      VarDeclOneOrMore_ONE(
+        VarDecl_MATRIX(
+         matrix
+        ) [VarDecl_MATRIX]
+      ) [VarDeclOneOrMore_ONE]
+    ) [VarDeclList]
+  ) [ConstVarDeclList_VAR]
+  MethodDecl(
+    MethodName(
+     main
+    ) [MethodName]
+    MethodVarDeclList_VAR(
+      MethodVarDeclList_VAR(
+        MethodVarDeclList_EPSILON(
+        ) [MethodVarDeclList_EPSILON]
+        VarDeclList(
+          Type(
+           int
+          ) [Type]
+          VarDeclOneOrMore_ONE(
+            VarDecl_VAR(
+             bodovi
+            ) [VarDecl_VAR]
+          ) [VarDeclOneOrMore_ONE]
+        ) [VarDeclList]
+      ) [MethodVarDeclList_VAR]
+      VarDeclList(
+        Type(
+         bool
+        ) [Type]
+        VarDeclOneOrMore_MORE(
+          VarDecl_VAR(
+           bt
+          ) [VarDecl_VAR]
+          VarDeclOneOrMore_MORE(
+            VarDecl_VAR(
+             ce
+            ) [VarDecl_VAR]
+            VarDeclOneOrMore_ONE(
+              VarDecl_VAR(
+               sd
+              ) [VarDecl_VAR]
+            ) [VarDeclOneOrMore_ONE]
+          ) [VarDeclOneOrMore_MORE]
+        ) [VarDeclOneOrMore_MORE]
+      ) [VarDeclList]
+    ) [MethodVarDeclList_VAR]
+    StatementList_STATEMENTS(
+      StatementList_EPSILON(
+      ) [StatementList_EPSILON]
+      Statement_DesignatorStatement(
+        DesignatorSt_Assign(
+          Designator_ONE(
+           matrix
+          ) [Designator_ONE]
+          Assignop(
+          ) [Assignop]
+          Expr_ONE(
+            Term_ONE(
+              FactorSign(
+                UnaryMinus_EPSILON(
+                ) [UnaryMinus_EPSILON]
+                Factor_NEW(
+                  NEW_Array(
+                    Type(
+                     int
+                    ) [Type]
+                    Expr_ONE(
+                      Term_ONE(
+                        FactorSign(
+                          UnaryMinus_EPSILON(
+                          ) [UnaryMinus_EPSILON]
+                          Factor_NUMBER(
+                           2
+                          ) [Factor_NUMBER]
+                        ) [FactorSign]
+                      ) [Term_ONE]
+                    ) [Expr_ONE]
+                  ) [NEW_Array]
+                  NEW_Matrix_MATRIX(
+                    Expr_ONE(
+                      Term_ONE(
+                        FactorSign(
+                          UnaryMinus_EPSILON(
+                          ) [UnaryMinus_EPSILON]
+                          Factor_NUMBER(
+                           8
+                          ) [Factor_NUMBER]
+                        ) [FactorSign]
+                      ) [Term_ONE]
+                    ) [Expr_ONE]
+                  ) [NEW_Matrix_MATRIX]
+                ) [Factor_NEW]
+              ) [FactorSign]
+            ) [Term_ONE]
+          ) [Expr_ONE]
+        ) [DesignatorSt_Assign]
+      ) [Statement_DesignatorStatement]
+    ) [StatementList_STATEMENTS]
+  ) [MethodDecl]
+) [Program]
+INFO  00:33:56,455 - ==============ZAVRSEN ISPIS STABLA=====================
+
+INFO  00:33:56,455 - ==============ISPIS SEMANTICKE ANALIZE=====================
+INFO  00:33:56,464 - INFO-DesignatorSt_Assign: Pristup oznaci matrix. Objektni cvor: { KIND: Var, NAME: matrix, TYPE(Struct): { KIND: Array, ElemType: arrayType { TYPE(Struct): { KIND: Int, ElemType: intType } }, ADR: 0, LEVEL: 0 } na liniji 12
+INFO  00:33:56,464 - ==============ZAVRSEN ISPIS SEMANTICKE ANALIZE=====================
+
+INFO  00:33:56,464 - Parsiranje uspesno zavrseno!
+INFO  00:33:56,467 - Generisanje koda uspesno zavrseno!
