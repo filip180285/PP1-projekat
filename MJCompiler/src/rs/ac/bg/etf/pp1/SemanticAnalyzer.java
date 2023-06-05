@@ -11,7 +11,7 @@ import rs.etf.pp1.symboltable.*;
 import rs.etf.pp1.symboltable.concepts.*;
 
 public class SemanticAnalyzer extends VisitorAdaptor {
-	
+	// samo komentar zbog gita
 	boolean errorDetected = false;
 	Logger log = Logger.getLogger(getClass());
 
