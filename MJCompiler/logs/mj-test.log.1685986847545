@@ -1,0 +1,116 @@
+INFO  19:39:46,906 - Compiling source file: C:\Users\Korisnik\Desktop\PP1-projekat\MJCompiler\test\program.mj
+INFO  19:39:46,928 - #2 program
+INFO  19:39:46,929 - #9 test301
+INFO  19:39:46,929 - #27 {
+INFO  19:39:46,929 - #8 void
+INFO  19:39:46,929 - #9 main
+INFO  19:39:46,930 - #23 (
+INFO  19:39:46,930 - #24 )
+INFO  19:39:46,930 - #9 char
+INFO  19:39:46,930 - #9 niz
+INFO  19:39:46,931 - #25 [
+INFO  19:39:46,931 - #26 ]
+INFO  19:39:46,931 - #21 ;
+INFO  19:39:46,931 - #9 int
+INFO  19:39:46,932 - #9 a
+INFO  19:39:46,932 - #21 ;
+INFO  19:39:46,932 - #27 {
+INFO  19:39:46,932 - #9 niz
+INFO  19:39:46,932 - #18 =
+INFO  19:39:46,932 - #4 new
+INFO  19:39:46,933 - #9 char
+INFO  19:39:46,933 - #25 [
+INFO  19:39:46,933 - #10 10
+INFO  19:39:46,935 - #26 ]
+INFO  19:39:46,936 - #21 ;
+INFO  19:39:46,937 - #28 }
+INFO  19:39:46,937 - #28 }
+INFO  19:39:46,938 - 
+                     ==============ISPIS STABLA=====================
+INFO  19:39:46,938 - Program(
+  ProgramName(
+   test301
+  ) [ProgramName]
+  ConstVarDeclList_EPSILON(
+  ) [ConstVarDeclList_EPSILON]
+  MethodDecl(
+    MethodName(
+     main
+    ) [MethodName]
+    MethodVarDeclList_VAR(
+      MethodVarDeclList_VAR(
+        MethodVarDeclList_EPSILON(
+        ) [MethodVarDeclList_EPSILON]
+        VarDeclList(
+          Type(
+           char
+          ) [Type]
+          VarDeclOneOrMore_ONE(
+            VarDecl_ARRAY(
+             niz
+            ) [VarDecl_ARRAY]
+          ) [VarDeclOneOrMore_ONE]
+        ) [VarDeclList]
+      ) [MethodVarDeclList_VAR]
+      VarDeclList(
+        Type(
+         int
+        ) [Type]
+        VarDeclOneOrMore_ONE(
+          VarDecl_VAR(
+           a
+          ) [VarDecl_VAR]
+        ) [VarDeclOneOrMore_ONE]
+      ) [VarDeclList]
+    ) [MethodVarDeclList_VAR]
+    StatementList_STATEMENTS(
+      StatementList_EPSILON(
+      ) [StatementList_EPSILON]
+      Statement_DesignatorStatement(
+        DesignatorSt_Assign(
+          Designator_ONE(
+           niz
+          ) [Designator_ONE]
+          Assignop(
+          ) [Assignop]
+          Expr_ONE(
+            Term_ONE(
+              FactorSign(
+                UnaryMinus_EPSILON(
+                ) [UnaryMinus_EPSILON]
+                Factor_NEW(
+                  NEW_Array(
+                    Type(
+                     char
+                    ) [Type]
+                    Expr_ONE(
+                      Term_ONE(
+                        FactorSign(
+                          UnaryMinus_EPSILON(
+                          ) [UnaryMinus_EPSILON]
+                          Factor_NUMBER(
+                           10
+                          ) [Factor_NUMBER]
+                        ) [FactorSign]
+                      ) [Term_ONE]
+                    ) [Expr_ONE]
+                  ) [NEW_Array]
+                  NEW_Matrix_EPSILON(
+                  ) [NEW_Matrix_EPSILON]
+                ) [Factor_NEW]
+              ) [FactorSign]
+            ) [Term_ONE]
+          ) [Expr_ONE]
+        ) [DesignatorSt_Assign]
+      ) [Statement_DesignatorStatement]
+    ) [StatementList_STATEMENTS]
+  ) [MethodDecl]
+) [Program]
+INFO  19:39:46,939 - ==============ZAVRSEN ISPIS STABLA=====================
+
+INFO  19:39:46,939 - ==============ISPIS SEMANTICKE ANALIZE=====================
+INFO  19:39:46,945 - INFO-DesignatorSt_Assign: Pristup oznaci niz. Objektni cvor: { KIND: Var, NAME: niz, TYPE(Struct): { KIND: Array, ElemType: charType }, ADR: 0, LEVEL: 1 } na liniji 9
+INFO  19:39:46,945 - ==============ZAVRSEN ISPIS SEMANTICKE ANALIZE=====================
+
+INFO  19:39:46,946 - Parsiranje uspesno zavrseno!
+INFO  19:39:46,949 - Generisanje koda uspesno zavrseno!
