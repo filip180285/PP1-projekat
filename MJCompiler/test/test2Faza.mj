@@ -1,0 +1,35 @@
+program test2Faza
+
+const int a = 3;
+// const int b; // greska nedefinisana konstanta
+const char c = 'c';
+// bool z = false;  // oporavak od greske u definiciji promenljive
+{
+	void main() 
+	int x, niz[], matrica[][];
+	bool y;
+	// int z+; // oporavak od greske u definicji promenljive
+	{
+		niz = new int[a];
+		matrica = new int[a][(a - 2) * 2 + 1];
+		
+		niz[0] = 1; niz[1] = 2; niz[2] = 3;
+		matrica[0][0] = 11;  matrica[0][1] = 12; matrica[0][2] = 13; 
+		matrica[1][0] = 14; matrica[1][1] = 15; matrica[1][2] = 16; 
+		
+		// print 11-16
+		print(matrica[0][0]); print(eol); print(matrica[0][1]); print(eol); print(matrica[0][2]); print(eol);
+		print(matrica[1][0]); print(eol); print(matrica[1][1]); print(eol); print(matrica[1][2]); print(eol);
+		
+		// a = matrica[0][0] * *; // oporavak od greske u iskazu dodele
+		
+		x = matrica[0][0];
+		x--;
+		print(x); // 10
+		print(eol);
+		y = true;
+		print(c);
+		print(eol);
+		print(y);
+	}
+}

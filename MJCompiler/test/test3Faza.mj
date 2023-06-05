@@ -1,0 +1,63 @@
+program test3Faza
+// const int x = 'c'; // greska razliciti tipovi
+// byte y; // greska neispravan tip
+
+const int m = 5, n = 2;
+int a;
+
+{
+	void main() int niz[], matrica[][]; char c;
+	int prva, druga, treca;
+
+	{
+		niz = new int[m];
+		// niz = new int['k']; // greska expr nije int
+		
+		matrica = new int[m][n];
+		// matrica = new int['x'][3 + true]; // greska expr nije int
+		a = 5;
+		
+		// m = 7; // greska dodela u konstantu
+		// a = true; // greska razliciti tipovi
+		
+		c = 'c';
+		
+		// c++; // greska, mora int tip
+		// m++; // greska dodela u konstantu
+		
+		niz[0]++;
+		matrica[0][0]--;
+		
+		read(niz[1]);
+		read(matrica[1][1]);
+		
+		// read(n); // greska read konstante
+		
+		print(a); // 5
+		print(niz[0], 3); // 1
+		print(niz[1], 4); // 3
+		print(matrica[0][0], 5); // -1
+		print(matrica[1][1], 5); // 1
+		print(eol);
+		
+		[prva,matrica[1][1],,druga] = niz;
+		// [prva,matrica[1][1],,druga] = a; // greska nije niz
+		// [prva,matrica[1][1],,c] = niz; // greska c nije int
+		
+		print(prva, 3); print(matrica[1][1], 3); print(druga, 3);  // 1 3 0 
+		print(eol);
+		
+		treca = -a;
+		print(treca, 3); // -5
+		// print(-c); // greska nije int
+		print(eol);
+		
+		// treca = 5 + false / 4; // greska nije int
+		// treca = 2 * 5 / true; // greska nije int
+		
+		treca = niz[1];
+		// treca = a[1]; // greska nije niz
+		print(treca); // 3
+		
+	}
+}

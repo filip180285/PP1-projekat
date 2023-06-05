@@ -188,7 +188,10 @@ public class CodeGenerator extends VisitorAdaptor {
     // Designator ::= (Designator_ONE) IDENTIFIER
     @Override
     public void visit(Designator_ONE designator_ONE) { 
-    	designatorMatrix = designator_ONE.obj;
+    	if(designator_ONE.getParent() instanceof DesignatorSt_Assign) {
+    		designatorMatrix = designator_ONE.obj;
+    		// System.out.println(designatorMatrix.getName());
+    	}
     }
     
     // MayMatrix ::= (MayMatrix_MATRIX) LEFT_BRACKET Expr RIGHT_BRACKET

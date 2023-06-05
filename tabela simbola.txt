@@ -1,0 +1,50 @@
+1. Object node
+	-Kind:
+		Con	
+		Var	
+		Type (ref. Struct): pokazivac na tip cvora
+		Meth
+		Field
+		Prog (uvijek noType za tip)
+		Elem - bez unosa u tabelu simbola
+	-Name:
+		ime cvora, jedinstveno za opseg
+	-Type (ref. Struct):
+		Var, Con, Field, Elem - tip promenljive (pokazivac na strukturni cvor)
+		Meth - povratni tip metode
+		Type - strukturni cvor za taj tip
+	-Next (ref. Object):
+		pokazivac na sledeci objektni cvor
+	-Adr:
+		Var, Field - offset od pocetka scope-a (redni broj)
+		Con - vrednost konstante
+		Meth - adresa pocetka metode (trenutni PC)
+	-Level:
+		Var, Con - 0 (globalna) ili 1 (lokalna)
+		Field - 2
+		Meth - broj formalnih argumenata
+	-fpPos:
+		Var - 1 (formalni parametar metode)
+	-Locals (ref. Obj):
+		pokazivac na sve objektne cvorove ovog scope-a, za program kolekcija simbola, za metode kolekcija argumenata i lokalnih promjenjivih
+		
+2. Struct node
+	-Kind:
+		None (void)
+		Int
+		Char
+		Array
+		Bool
+		Class
+		Enum
+		Interface
+	-ElemType (ref. Struct): pokazivac na strukturni cvor odredjenog tipa elementa niza ili na tip roditeljske klase
+	-N (int): broj polja klase(samo za klase)
+	-Fields (ref. Obj): - hes tabela sa poljima i metodama(samo za klase)
+		
+3. Scope node
+	-Parent (ref. Scope): - pokazivac na okruzujuci ospeg
+	-Locals (ref. Obj): - pokazivac na listu Object cvorova unutar opsega
+	-nVars  (int): - broj promjenjivih Var unutar opsega
+	
+		

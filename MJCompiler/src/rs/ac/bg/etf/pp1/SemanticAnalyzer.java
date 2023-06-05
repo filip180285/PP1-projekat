@@ -594,7 +594,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     	int kind = desObj.getKind();
     	
     	if(kind != Obj.Var && kind != Obj.Elem) {
-    		report_error("GRESKA-DesignatorSt_Assign: Dodela vrednosti u "+ desObj.getName() +" nije u promenljivu ni u element niza", designatorSt_Assign);
+    		report_error("GRESKA-DesignatorSt_Assign: Dodela vrednosti u "+ desObj.getName() +" nije u promenljivu ni u element niza/matrice", designatorSt_Assign);
     		return;
     	}
     	else if(exprType.assignableTo(desObj.getType()) == false) {
@@ -617,7 +617,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     	int kind = desObj.getKind();
     	
     	if(kind != Obj.Var && kind != Obj.Elem) {
-    		report_error("GRESKA-DesignatorStat_INC: Inkrementiranje "+ desObj.getName() +" nije inkrementiranje varijable ni elementa niza", designatorStat_INC);
+    		report_error("GRESKA-DesignatorStat_INC: Inkrementiranje "+ desObj.getName() +" nije inkrementiranje varijable ni elementa niza/matrice", designatorStat_INC);
     		return;
     	}
     	else if(desObj.getType().equals(Tab.intType) == false) {
@@ -637,7 +637,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     	int kind = desObj.getKind();
     	
     	if(kind != Obj.Var && kind != Obj.Elem) {
-    		report_error("GRESKA-DesignatorStat_DEC: Dekrementiranje "+ desObj.getName() +" nije dekrementiranje varijable ni elementa niza", designatorStat_DEC);
+    		report_error("GRESKA-DesignatorStat_DEC: Dekrementiranje "+ desObj.getName() +" nije dekrementiranje varijable ni elementa niza/matrice", designatorStat_DEC);
     		return;
     	}
     	else if(desObj.getType().equals(Tab.intType) == false) {
@@ -696,7 +696,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     	int kind = desObj.getKind();
     	
     	if(kind != Obj.Var && kind != Obj.Elem) {
-    		report_error("GRESKA-statement_READ: Read "+ desObj.getName() +" nije read varijable ni elementa niza", statement_READ);
+    		report_error("GRESKA-statement_READ: Read "+ desObj.getName() +" nije read varijable ni elementa niza/matrice", statement_READ);
     		return;
     	}
     	else if(kind == Obj.Var && desObj.getType().getKind() == Struct.Array) {
@@ -761,16 +761,5 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 	    
     }
     
-    
 }
-
-
-
-
-
-
-
-
-
-
 
