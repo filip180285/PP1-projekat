@@ -56,6 +56,8 @@ terminal Integer BOOLEAN;
 terminal PLUS, MINUS, MULTIPLICATION, DIVISION, MODULUS, EQUALS, INCREMENT, DECREMENT;
 terminal SEMICOLON, COMMA, LEFT_PARENTHESIS, RIGHT_PARENTHESIS, LEFT_BRACKET, RIGHT_BRACKET, LEFT_BRACE, RIGHT_BRACE;
 
+terminal HASH;
+
 nonterminal Program, ConstVarDeclList, ConstDeclList, VarDeclList, MethodDecl;
 nonterminal ConstDeclOneOrMore, ConstDecl, VarDeclOneOrMore, VarDecl;
 nonterminal MethodVarDeclList, StatementList;
@@ -256,7 +258,9 @@ NEW_Matrix ::=  (NEW_Matrix_MATRIX) LEFT_BRACKET Expr RIGHT_BRACKET
 
 Designator ::= (Designator_ONE) IDENTIFIER
 			   |
-			   (Designator_Elem) DesignatorArrayOrMatrixName LEFT_BRACKET Expr RIGHT_BRACKET MayMatrix;
+			   (Designator_Elem) DesignatorArrayOrMatrixName LEFT_BRACKET Expr RIGHT_BRACKET MayMatrix
+			   |
+			   (Designator_Elem_HASH) HASH DesignatorArrayOrMatrixName LEFT_BRACKET Expr RIGHT_BRACKET;
 			   
 DesignatorArrayOrMatrixName ::= (DesignatorArrayOrMatrixName) IDENTIFIER;
 

@@ -46,7 +46,36 @@ public class CodeGenerator extends VisitorAdaptor {
     @Override
     public void visit(Factor_Designator factor_Designator) {
     	Obj desObj = factor_Designator.getDesignator().obj;
-    	Code.load(desObj);
+    	if(factor_Designator.getDesignator() instanceof Designator_Elem_HASH) { // a 4
+    		Code.put(Code.dup2); // a 4 a 4
+    		Code.put(Code.pop); // a 4 a
+    		Code.put(Code.arraylength); // a 4 10
+    		Code.loadConst(2); // a 4 10 2
+    		Code.put(Code.div); // a 4 5
+    		Code.put(Code.add); // a 9
+    		Code.put(Code.aload); // cnt
+    	}
+    	else Code.load(desObj);
+    }
+    
+ // Designator ::= (Designator_Elem) DesignatorArrayOrMatrixName LEFT_BRACKET Expr RIGHT_BRACKET MayMatrix
+    @Override
+    public void visit(Designator_Elem designator_Elem) {
+    	if(designator_Elem.getMayMatrix() instanceof MayMatrix_EPSILON) {
+	    	// a 4  /// niz a[5] -> a[10] pristup a[4] tj a[9]
+	    	Code.put(Code.dup2); // a 4 a 4
+	    	Code.put(Code.dup2); // a 4 a 4 a 4
+	    	Code.put(Code.pop); //  a 4 a 4 a
+	    	Code.put(Code.arraylength); // a 4 a 4 10
+	    	Code.loadConst(2); //  a 4 a 4 10 2
+	    	Code.put(Code.div); //  a 4 a 4 5
+	    	Code.put(Code.add); // mozda baload a 4 a 9
+	    	Code.put(Code.dup2); // a 4 a 9 a 9
+	    	Code.put(Code.aload); // a 4 a 9 cnt
+	    	Code.loadConst(1); // a 4 a 9 cnt 1
+	    	Code.put(Code.add); // a 4 a 9 cnt+1
+	    	Code.put(Code.astore); // a 4
+    	}
     }
     
     // Factor ::= (Factor_NUMBER) NUMBER
@@ -73,6 +102,8 @@ public class CodeGenerator extends VisitorAdaptor {
     // NEW_Array ::=  (NEW_Array) NEW Type LEFT_BRACKET Expr RIGHT_BRACKET;
     @Override
     public void visit(NEW_Array new_Array) {
+    	Code.loadConst(2);
+    	Code.put(Code.mul);
     	Code.put(Code.newarray);
     	Struct arrType = new_Array.getType().struct;
     	

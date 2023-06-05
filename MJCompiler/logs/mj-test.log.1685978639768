@@ -1,0 +1,187 @@
+INFO  17:16:58,460 - Compiling source file: C:\Users\Korisnik\Desktop\PP1-projekat\MJCompiler\test\program.mj
+INFO  17:16:58,480 - #2 program
+INFO  17:16:58,480 - #9 test301
+INFO  17:16:58,480 - #27 {
+INFO  17:16:58,481 - #8 void
+INFO  17:16:58,481 - #9 main
+INFO  17:16:58,481 - #23 (
+INFO  17:16:58,482 - #24 )
+INFO  17:16:58,482 - #9 int
+INFO  17:16:58,482 - #9 niz
+INFO  17:16:58,482 - #25 [
+INFO  17:16:58,482 - #26 ]
+INFO  17:16:58,482 - #21 ;
+INFO  17:16:58,483 - #27 {
+INFO  17:16:58,483 - #9 niz
+INFO  17:16:58,484 - #18 =
+INFO  17:16:58,484 - #4 new
+INFO  17:16:58,484 - #9 int
+INFO  17:16:58,484 - #25 [
+INFO  17:16:58,485 - #10 10
+INFO  17:16:58,485 - #26 ]
+INFO  17:16:58,485 - #21 ;
+INFO  17:16:58,486 - #9 niz
+INFO  17:16:58,488 - #25 [
+INFO  17:16:58,489 - #10 2
+INFO  17:16:58,489 - #26 ]
+INFO  17:16:58,489 - #18 =
+INFO  17:16:58,489 - #10 7
+INFO  17:16:58,489 - #21 ;
+INFO  17:16:58,489 - #5 print
+INFO  17:16:58,490 - #23 (
+INFO  17:16:58,490 - #9 niz
+INFO  17:16:58,490 - #25 [
+INFO  17:16:58,490 - #10 2
+INFO  17:16:58,490 - #26 ]
+INFO  17:16:58,490 - #24 )
+INFO  17:16:58,490 - #21 ;
+INFO  17:16:58,490 - #28 }
+INFO  17:16:58,490 - #28 }
+INFO  17:16:58,491 - 
+                     ==============ISPIS STABLA=====================
+INFO  17:16:58,492 - Program(
+  ProgramName(
+   test301
+  ) [ProgramName]
+  ConstVarDeclList_EPSILON(
+  ) [ConstVarDeclList_EPSILON]
+  MethodDecl(
+    MethodName(
+     main
+    ) [MethodName]
+    MethodVarDeclList_VAR(
+      MethodVarDeclList_EPSILON(
+      ) [MethodVarDeclList_EPSILON]
+      VarDeclList(
+        Type(
+         int
+        ) [Type]
+        VarDeclOneOrMore_ONE(
+          VarDecl_ARRAY(
+           niz
+          ) [VarDecl_ARRAY]
+        ) [VarDeclOneOrMore_ONE]
+      ) [VarDeclList]
+    ) [MethodVarDeclList_VAR]
+    StatementList_STATEMENTS(
+      StatementList_STATEMENTS(
+        StatementList_STATEMENTS(
+          StatementList_EPSILON(
+          ) [StatementList_EPSILON]
+          Statement_DesignatorStatement(
+            DesignatorSt_Assign(
+              Designator_ONE(
+               niz
+              ) [Designator_ONE]
+              Assignop(
+              ) [Assignop]
+              Expr_ONE(
+                Term_ONE(
+                  FactorSign(
+                    UnaryMinus_EPSILON(
+                    ) [UnaryMinus_EPSILON]
+                    Factor_NEW(
+                      NEW_Array(
+                        Type(
+                         int
+                        ) [Type]
+                        Expr_ONE(
+                          Term_ONE(
+                            FactorSign(
+                              UnaryMinus_EPSILON(
+                              ) [UnaryMinus_EPSILON]
+                              Factor_NUMBER(
+                               10
+                              ) [Factor_NUMBER]
+                            ) [FactorSign]
+                          ) [Term_ONE]
+                        ) [Expr_ONE]
+                      ) [NEW_Array]
+                      NEW_Matrix_EPSILON(
+                      ) [NEW_Matrix_EPSILON]
+                    ) [Factor_NEW]
+                  ) [FactorSign]
+                ) [Term_ONE]
+              ) [Expr_ONE]
+            ) [DesignatorSt_Assign]
+          ) [Statement_DesignatorStatement]
+        ) [StatementList_STATEMENTS]
+        Statement_DesignatorStatement(
+          DesignatorSt_Assign(
+            Designator_Elem(
+              DesignatorArrayOrMatrixName(
+               niz
+              ) [DesignatorArrayOrMatrixName]
+              Expr_ONE(
+                Term_ONE(
+                  FactorSign(
+                    UnaryMinus_EPSILON(
+                    ) [UnaryMinus_EPSILON]
+                    Factor_NUMBER(
+                     2
+                    ) [Factor_NUMBER]
+                  ) [FactorSign]
+                ) [Term_ONE]
+              ) [Expr_ONE]
+              MayMatrix_EPSILON(
+              ) [MayMatrix_EPSILON]
+            ) [Designator_Elem]
+            Assignop(
+            ) [Assignop]
+            Expr_ONE(
+              Term_ONE(
+                FactorSign(
+                  UnaryMinus_EPSILON(
+                  ) [UnaryMinus_EPSILON]
+                  Factor_NUMBER(
+                   7
+                  ) [Factor_NUMBER]
+                ) [FactorSign]
+              ) [Term_ONE]
+            ) [Expr_ONE]
+          ) [DesignatorSt_Assign]
+        ) [Statement_DesignatorStatement]
+      ) [StatementList_STATEMENTS]
+      Statement_PRINT(
+        Expr_ONE(
+          Term_ONE(
+            FactorSign(
+              UnaryMinus_EPSILON(
+              ) [UnaryMinus_EPSILON]
+              Factor_Designator(
+                Designator_Elem(
+                  DesignatorArrayOrMatrixName(
+                   niz
+                  ) [DesignatorArrayOrMatrixName]
+                  Expr_ONE(
+                    Term_ONE(
+                      FactorSign(
+                        UnaryMinus_EPSILON(
+                        ) [UnaryMinus_EPSILON]
+                        Factor_NUMBER(
+                         2
+                        ) [Factor_NUMBER]
+                      ) [FactorSign]
+                    ) [Term_ONE]
+                  ) [Expr_ONE]
+                  MayMatrix_EPSILON(
+                  ) [MayMatrix_EPSILON]
+                ) [Designator_Elem]
+              ) [Factor_Designator]
+            ) [FactorSign]
+          ) [Term_ONE]
+        ) [Expr_ONE]
+        MayPrintNumConst_EPSILON(
+        ) [MayPrintNumConst_EPSILON]
+      ) [Statement_PRINT]
+    ) [StatementList_STATEMENTS]
+  ) [MethodDecl]
+) [Program]
+INFO  17:16:58,492 - ==============ZAVRSEN ISPIS STABLA=====================
+
+INFO  17:16:58,492 - ==============ISPIS SEMANTICKE ANALIZE=====================
+INFO  17:16:58,501 - INFO-DesignatorSt_Assign: Pristup oznaci niz. Objektni cvor: { KIND: Var, NAME: niz, TYPE(Struct): { KIND: Array, ElemType: intType }, ADR: 0, LEVEL: 1 } na liniji 9
+INFO  17:16:58,502 - ==============ZAVRSEN ISPIS SEMANTICKE ANALIZE=====================
+
+INFO  17:16:58,502 - Parsiranje uspesno zavrseno!
+INFO  17:16:58,505 - Generisanje koda uspesno zavrseno!
