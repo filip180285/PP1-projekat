@@ -11,7 +11,7 @@ import rs.etf.pp1.symboltable.*;
 import rs.etf.pp1.symboltable.concepts.*;
 
 public class SemanticAnalyzer extends VisitorAdaptor {
-	// neki komentar za git
+	
 	boolean errorDetected = false;
 	Logger log = Logger.getLogger(getClass());
 
@@ -519,29 +519,6 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 		    	designator_Elem.obj = Tab.noObj;
 		    }
     	}
-    }
-    
-    // // Designator ::= (Designator_Elem_HASH) HASH DesignatorArrayOrMatrixName LEFT_BRACKET Expr RIGHT_BRACKET;
-    @Override
-    public void visit(Designator_Elem_HASH designator_Elem_HASH) {
-    	Obj danObj = designator_Elem_HASH.getDesignatorArrayOrMatrixName().obj;
-    	Struct exprType = designator_Elem_HASH.getExpr().struct;
-
-		    if(exprType.equals(Tab.intType) == false) {
-		        report_error("GRESKA-Designator_Elem: Tip izraza u indeksiranju elementa niza nije int", designator_Elem_HASH);
-		        designator_Elem_HASH.obj = Tab.noObj;
-		        return;
-		    }
-		    		
-		    if(danObj != Tab.noObj) {
-			    Struct elemType = danObj.getType().getElemType();
-			    Obj elemObj = new Obj(Obj.Elem, "elementNiza", Tab.intType); // ili niz matrice
-			    designator_Elem_HASH.obj = elemObj;
-		    }
-		    else {
-		    	designator_Elem_HASH.obj = Tab.noObj;
-		    }
-		    //System.out.println(designator_Elem_HASH.obj.getName());
     }
     
     // FactorSign ::= (FactorSign) UnaryMinus Factor;

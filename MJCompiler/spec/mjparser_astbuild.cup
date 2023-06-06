@@ -56,8 +56,6 @@ terminal Integer BOOLEAN;
 terminal PLUS, MINUS, MULTIPLICATION, DIVISION, MODULUS, EQUALS, INCREMENT, DECREMENT;
 terminal SEMICOLON, COMMA, LEFT_PARENTHESIS, RIGHT_PARENTHESIS, LEFT_BRACKET, RIGHT_BRACKET, LEFT_BRACE, RIGHT_BRACE;
 
-terminal HASH;
-
 nonterminal Program Program;
 nonterminal ConstVarDeclList ConstVarDeclList;
 nonterminal ConstDeclList ConstDeclList;
@@ -272,9 +270,7 @@ NEW_Matrix ::=  (NEW_Matrix_MATRIX) LEFT_BRACKET Expr:E1 RIGHT_BRACKET {: RESULT
 
 Designator ::= (Designator_ONE) IDENTIFIER:I1 {: RESULT=new Designator_ONE(I1); RESULT.setLine(I1left); :}
 			   |
-			   (Designator_Elem) DesignatorArrayOrMatrixName:D1 LEFT_BRACKET Expr:E2 RIGHT_BRACKET MayMatrix:M3 {: RESULT=new Designator_Elem(D1, E2, M3); RESULT.setLine(D1left); :}
-			   |
-			   (Designator_Elem_HASH) HASH DesignatorArrayOrMatrixName:D1 LEFT_BRACKET Expr:E2 RIGHT_BRACKET {: RESULT=new Designator_Elem_HASH(D1, E2); RESULT.setLine(D1left); :};
+			   (Designator_Elem) DesignatorArrayOrMatrixName:D1 LEFT_BRACKET Expr:E2 RIGHT_BRACKET MayMatrix:M3 {: RESULT=new Designator_Elem(D1, E2, M3); RESULT.setLine(D1left); :};
 			   
 DesignatorArrayOrMatrixName ::= (DesignatorArrayOrMatrixName) IDENTIFIER:I1 {: RESULT=new DesignatorArrayOrMatrixName(I1); RESULT.setLine(I1left); :};
 
