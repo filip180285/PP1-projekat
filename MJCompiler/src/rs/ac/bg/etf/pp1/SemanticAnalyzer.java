@@ -650,6 +650,24 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     	}
     }
     
+    //*******************************
+ // DesignatorStat_MONKEY ::= (DesignatorStat_MONKEY) DesignatorArrayOrMatrixName LEFT_BRACKET Expr RIGHT_BRACKET MonkeyNT FactorSign
+    @Override
+    public void visit(DesignatorStat_MONKEY designatorStat_MONKEY) { 
+    	Struct exprType = designatorStat_MONKEY.getExpr().struct;
+    	
+	    if(exprType.equals(Tab.intType) == false) {
+	        report_error("GRESKA-designatorStat_MONKEY: Tip izraza u indeksiranju elementa niza nije int", designatorStat_MONKEY);
+	        return;
+	    }
+    
+	    if( ((FactorSign)designatorStat_MONKEY.getFactorSign()).getFactor() instanceof Factor_NUMBER == false) {
+	        report_error("GRESKA-designatorStat_MONKEY: Posle operatora @ mora se nalaziti broj", designatorStat_MONKEY);
+	        return;
+	    }	
+    }
+    
+    
     // MayDesignator ::= (MayDesignator_Designator) Designator
     @Override
     public void visit(MayDesignator_Designator mayDesignator_Designator) {

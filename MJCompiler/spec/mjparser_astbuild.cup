@@ -56,6 +56,9 @@ terminal Integer BOOLEAN;
 terminal PLUS, MINUS, MULTIPLICATION, DIVISION, MODULUS, EQUALS, INCREMENT, DECREMENT;
 terminal SEMICOLON, COMMA, LEFT_PARENTHESIS, RIGHT_PARENTHESIS, LEFT_BRACKET, RIGHT_BRACKET, LEFT_BRACE, RIGHT_BRACE;
 
+terminal MONKEY;
+nonterminal MonkeyNT MonkeyNT;
+
 nonterminal Program Program;
 nonterminal ConstVarDeclList ConstVarDeclList;
 nonterminal ConstDeclList ConstDeclList;
@@ -197,12 +200,16 @@ DesignatorStatement ::= (DesignatorSt_Assign) Designator:D1 Assignop:A2 Expr:E3 
 					    (DesignatorStat_INC) Designator:D1 INCREMENT {: RESULT=new DesignatorStat_INC(D1); RESULT.setLine(D1left); :}
 					    |
 					    (DesignatorStat_DEC) Designator:D1 DECREMENT {: RESULT=new DesignatorStat_DEC(D1); RESULT.setLine(D1left); :}
+					    |
+					    (DesignatorStat_MONKEY) DesignatorArrayOrMatrixName:D1 LEFT_BRACKET Expr:E2 RIGHT_BRACKET MonkeyNT:M3 FactorSign:F4 {: RESULT=new DesignatorStat_MONKEY(D1, E2, M3, F4); RESULT.setLine(D1left); :}
 						|
 						(DesignatorStatement_List) LEFT_BRACKET DesignatorStatementList:D1 RIGHT_BRACKET EQUALS Designator:D2 {: RESULT=new DesignatorStatement_List(D1, D2); RESULT.setLine(D1left); :};
 						
 DesignatorStatementList ::= (DesignatorStatementList_MORE)  DesignatorStatementList:D1 COMMA MayDesignator:M2 {: RESULT=new DesignatorStatementList_MORE(D1, M2); RESULT.setLine(D1left); :}
 							|
 							(DesignatorStatementList_ONE) MayDesignator:M1 {: RESULT=new DesignatorStatementList_ONE(M1); RESULT.setLine(M1left); :};
+							
+MonkeyNT ::= (MonkeyNT) MONKEY {: RESULT=new MonkeyNT(); :};
 
 MayDesignator ::= (MayDesignator_Designator) Designator:D1 {: RESULT=new MayDesignator_Designator(D1); RESULT.setLine(D1left); :}
 				  |

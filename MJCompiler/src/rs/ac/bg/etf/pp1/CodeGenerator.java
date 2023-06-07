@@ -308,6 +308,36 @@ public class CodeGenerator extends VisitorAdaptor {
     		Code.put(Code.print);
     	}
     }
+    
+    // DesignatorStatement ::= (DesignatorStat_MONKEY) DesignatorArrayOrMatrixName LEFT_BRACKET Expr RIGHT_BRACKET MonkeyNT FactorSign
+    @Override
+    public void visit(DesignatorStat_MONKEY designatorStat_MONKEY) { // a 3 a 3 4
+    	Obj dan = designatorStat_MONKEY.getDesignatorArrayOrMatrixName().obj;
+    	Struct type = dan.getType();
+    	
+    	Code.put(Code.add); // a 3 a 7
+    	Code.put(Code.dup2); // a 3 a 7 a 7
+    	Code.put(Code.pop); // a 3 a 7 a
+    	Code.put(Code.arraylength); // a 3 a 7 5
+    	Code.put(Code.rem); // a 3 a 2
+    	
+    	if(type.equals(Tab.charType)) {
+    		Code.put(Code.baload); // a 3 a[2] char
+    		Code.put(Code.bastore); // a[3] = a[2]
+    	}
+    	else {
+    		Code.put(Code.aload); // a 3 a[2] int
+    		Code.put(Code.astore); // a[3] = a[2]
+    	}
+  
+    }
+    
+    // MonkeyNT ::= (MonkeyNT) MONKEY;
+    @Override
+    public void visit(MonkeyNT monkeyNT) { // a 3
+    	Code.put(Code.dup2); // a 3 a 3
+    }
+	
 	
 	
 }

@@ -1,0 +1,67 @@
+INFO  01:33:16,873 - Compiling source file: C:\Users\Korisnik\Desktop\PP1-projekat\MJCompiler\test\program.mj
+INFO  01:33:16,892 - #2 program
+INFO  01:33:16,892 - #9 test3Faza
+INFO  01:33:16,892 - #27 {
+INFO  01:33:16,893 - #8 void
+INFO  01:33:16,893 - #9 main
+INFO  01:33:16,893 - #23 (
+INFO  01:33:16,894 - #24 )
+INFO  01:33:16,894 - #9 int
+INFO  01:33:16,894 - #9 niz
+INFO  01:33:16,895 - #25 [
+INFO  01:33:16,895 - #26 ]
+INFO  01:33:16,895 - #21 ;
+INFO  01:33:16,895 - #27 {
+INFO  01:33:16,895 - #9 niz
+INFO  01:33:16,896 - #25 [
+INFO  01:33:16,896 - #10 3
+INFO  01:33:16,897 - #26 ]
+INFO  01:33:16,897 - #10 4
+ERROR 01:33:16,897 - 
+Sintaksna greska na liniji 9
+INFO  01:33:16,897 - #21 ;
+INFO  01:33:16,897 - #28 }
+INFO  01:33:16,899 - #28 }
+ERROR 01:33:16,900 - OPORAVAK od greske u iskazu dodele izvrsen do ; u liniji 1
+INFO  01:33:16,901 - 
+                     ==============ISPIS STABLA=====================
+INFO  01:33:16,901 - Program(
+  ProgramName(
+   test3Faza
+  ) [ProgramName]
+  ConstVarDeclList_EPSILON(
+  ) [ConstVarDeclList_EPSILON]
+  MethodDecl(
+    MethodName(
+     main
+    ) [MethodName]
+    MethodVarDeclList_VAR(
+      MethodVarDeclList_EPSILON(
+      ) [MethodVarDeclList_EPSILON]
+      VarDeclList(
+        Type(
+         int
+        ) [Type]
+        VarDeclOneOrMore_ONE(
+          VarDecl_ARRAY(
+           niz
+          ) [VarDecl_ARRAY]
+        ) [VarDeclOneOrMore_ONE]
+      ) [VarDeclList]
+    ) [MethodVarDeclList_VAR]
+    StatementList_STATEMENTS(
+      StatementList_EPSILON(
+      ) [StatementList_EPSILON]
+      Statement_DesignatorStatement(
+        DesignatorStatement_ERROR(
+        ) [DesignatorStatement_ERROR]
+      ) [Statement_DesignatorStatement]
+    ) [StatementList_STATEMENTS]
+  ) [MethodDecl]
+) [Program]
+INFO  01:33:16,902 - ==============ZAVRSEN ISPIS STABLA=====================
+
+INFO  01:33:16,902 - ==============ISPIS SEMANTICKE ANALIZE=====================
+INFO  01:33:16,910 - ==============ZAVRSEN ISPIS SEMANTICKE ANALIZE=====================
+
+ERROR 01:33:16,910 - Parsiranje NIJE uspesno zavrseno!

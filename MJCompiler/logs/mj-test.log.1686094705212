@@ -1,0 +1,85 @@
+INFO  01:36:14,447 - Compiling source file: C:\Users\Korisnik\Desktop\PP1-projekat\MJCompiler\test\program.mj
+INFO  01:36:14,467 - #2 program
+INFO  01:36:14,467 - #9 test3Faza
+INFO  01:36:14,467 - #27 {
+INFO  01:36:14,468 - #8 void
+INFO  01:36:14,468 - #9 main
+INFO  01:36:14,468 - #23 (
+INFO  01:36:14,468 - #24 )
+INFO  01:36:14,468 - #9 int
+INFO  01:36:14,469 - #9 niz
+INFO  01:36:14,469 - #25 [
+INFO  01:36:14,469 - #26 ]
+INFO  01:36:14,469 - #21 ;
+INFO  01:36:14,469 - #27 {
+INFO  01:36:14,470 - #9 niz
+INFO  01:36:14,470 - #25 [
+INFO  01:36:14,471 - #10 3
+INFO  01:36:14,471 - #26 ]
+INFO  01:36:14,472 - #29 @
+INFO  01:36:14,472 - #11 c
+INFO  01:36:14,472 - #21 ;
+INFO  01:36:14,473 - #28 }
+INFO  01:36:14,473 - #28 }
+INFO  01:36:14,476 - 
+                     ==============ISPIS STABLA=====================
+INFO  01:36:14,476 - Program(
+  ProgramName(
+   test3Faza
+  ) [ProgramName]
+  ConstVarDeclList_EPSILON(
+  ) [ConstVarDeclList_EPSILON]
+  MethodDecl(
+    MethodName(
+     main
+    ) [MethodName]
+    MethodVarDeclList_VAR(
+      MethodVarDeclList_EPSILON(
+      ) [MethodVarDeclList_EPSILON]
+      VarDeclList(
+        Type(
+         int
+        ) [Type]
+        VarDeclOneOrMore_ONE(
+          VarDecl_ARRAY(
+           niz
+          ) [VarDecl_ARRAY]
+        ) [VarDeclOneOrMore_ONE]
+      ) [VarDeclList]
+    ) [MethodVarDeclList_VAR]
+    StatementList_STATEMENTS(
+      StatementList_EPSILON(
+      ) [StatementList_EPSILON]
+      Statement_DesignatorStatement(
+        DesignatorStat_MONKEY(
+          DesignatorArrayOrMatrixName(
+           niz
+          ) [DesignatorArrayOrMatrixName]
+          Expr_ONE(
+            Term_ONE(
+              FactorSign(
+                UnaryMinus_EPSILON(
+                ) [UnaryMinus_EPSILON]
+                Factor_NUMBER(
+                 3
+                ) [Factor_NUMBER]
+              ) [FactorSign]
+            ) [Term_ONE]
+          ) [Expr_ONE]
+          MonkeyNT(
+          ) [MonkeyNT]
+          Factor_CHARACTER(
+           c
+          ) [Factor_CHARACTER]
+        ) [DesignatorStat_MONKEY]
+      ) [Statement_DesignatorStatement]
+    ) [StatementList_STATEMENTS]
+  ) [MethodDecl]
+) [Program]
+INFO  01:36:14,476 - ==============ZAVRSEN ISPIS STABLA=====================
+
+INFO  01:36:14,476 - ==============ISPIS SEMANTICKE ANALIZE=====================
+ERROR 01:36:14,482 - GRESKA-designatorStat_MONKEY: Posle operatora @ mora se nalaziti broj na liniji 9
+INFO  01:36:14,482 - ==============ZAVRSEN ISPIS SEMANTICKE ANALIZE=====================
+
+ERROR 01:36:14,483 - Parsiranje NIJE uspesno zavrseno!
