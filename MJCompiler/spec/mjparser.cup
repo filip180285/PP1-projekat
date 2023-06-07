@@ -56,6 +56,9 @@ terminal Integer BOOLEAN;
 terminal PLUS, MINUS, MULTIPLICATION, DIVISION, MODULUS, EQUALS, INCREMENT, DECREMENT;
 terminal SEMICOLON, COMMA, LEFT_PARENTHESIS, RIGHT_PARENTHESIS, LEFT_BRACKET, RIGHT_BRACKET, LEFT_BRACE, RIGHT_BRACE;
 
+terminal HASH;
+nonterminal MayHash;
+
 nonterminal Program, ConstVarDeclList, ConstDeclList, VarDeclList, MethodDecl;
 nonterminal ConstDeclOneOrMore, ConstDecl, VarDeclOneOrMore, VarDecl;
 nonterminal MethodVarDeclList, StatementList;
@@ -231,9 +234,9 @@ UnaryMinus ::= (UnaryMinus_MINUS) MINUS
 			   (UnaryMinus_EPSILON) /* epsilon */
 			   ;
 
-Factor ::= (Factor_Designator) Designator
+Factor ::= (Factor_Designator) Designator MayHash
 		   |
-		   (Factor_NUMBER) NUMBER
+		   (Factor_NUMBER) NUMBER MayHash
 		   |
 		   (Factor_CHARACTER) CHARACTER
 		   |
@@ -242,6 +245,11 @@ Factor ::= (Factor_Designator) Designator
 		   (Factor_NEW) NEW_Array NEW_Matrix
 		   |
 		   (Factor_Expr) LEFT_PARENTHESIS Expr RIGHT_PARENTHESIS;
+		   
+MayHash ::= (MayHash_HASH) HASH HASH
+			|
+			(MayHash_EPSILON) /*epsilon*/
+			;
 		   
 NEW_Array ::=  (NEW_Array) NEW Type LEFT_BRACKET Expr RIGHT_BRACKET;
 

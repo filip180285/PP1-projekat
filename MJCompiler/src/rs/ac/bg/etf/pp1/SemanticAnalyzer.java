@@ -9,6 +9,7 @@ import org.apache.log4j.Logger;
 import rs.ac.bg.etf.pp1.ast.*;
 import rs.etf.pp1.symboltable.*;
 import rs.etf.pp1.symboltable.concepts.*;
+import rs.ac.bg.etf.pp1.ast.MayHash_HASH;
 
 public class SemanticAnalyzer extends VisitorAdaptor {
 	
@@ -346,7 +347,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     	}
     }
     
-    // Factor ::= (Factor_Designator) Designator
+    // Factor ::= (Factor_Designator) Designator MayHash
     @Override
     public void visit(Factor_Designator factor_Designator) {
     	Designator d = factor_Designator.getDesignator();
@@ -354,6 +355,11 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     	
     	if(d instanceof Designator_ONE) {
     		report_info("INFO-Factor_Designator: Pristup oznaci " + d.obj.getName() + ". " + objNodeToString(d.obj) , factor_Designator);
+    	}
+    	
+    	if(factor_Designator.getMayHash() instanceof MayHash_HASH && factor_Designator.struct.equals(Tab.intType) == false) {
+    		report_error("GRESKA-factor_Designator: operand za ## mora biti int tipa", factor_Designator);
+    		return;
     	}
     }
     

@@ -42,18 +42,60 @@ public class CodeGenerator extends VisitorAdaptor {
     	Code.put(Code.return_);
     }
     
-    // Factor ::= (Factor_Designator) Designator
+    // Factor ::= (Factor_Designator) Designator MayHash
     @Override
     public void visit(Factor_Designator factor_Designator) {
     	Obj desObj = factor_Designator.getDesignator().obj;
     	Code.load(desObj);
+    	if(factor_Designator.getMayHash() instanceof MayHash_HASH) { // 4
+    		Code.put(Code.dup); // 4 4
+    		Code.loadConst(2); // 4 4 2
+    		Code.put(Code.rem); // 4 0
+    		Code.loadConst(0); // 4 0 0
+    		int fixup = Code.pc + 1;
+    		Code.putFalseJump(Code.eq, 0); // skok na neparno 
+    		// parno 			// 4
+    		Code.put(Code.dup); // 4 4
+    		Code.put(Code.mul); // 16
+    		// preskociti neparno
+    		int fixup2 = Code.pc + 1;
+    		Code.putJump(0);;
+    		//neparno
+    		Code.fixup(fixup);
+    		Code.put(Code.dup); // 4 4
+    		Code.put(Code.dup); // 4 4 4
+    		Code.put(Code.mul); // 4 16
+    		Code.put(Code.mul); // 64
+    		Code.fixup(fixup2);
+    	}
     }
     
-    // Factor ::= (Factor_NUMBER) NUMBER
+    // Factor ::= (Factor_NUMBER) NUMBER MayHash
     @Override
     public void visit(Factor_NUMBER factor_NUMBER) {
     	int numVal = factor_NUMBER.getN1();
     	Code.loadConst(numVal);
+    	if(factor_NUMBER.getMayHash() instanceof MayHash_HASH) { // 4
+    		Code.put(Code.dup); // 4 4
+    		Code.loadConst(2); // 4 4 2
+    		Code.put(Code.rem); // 4 0
+    		Code.loadConst(0); // 4 0 0
+    		int fixup = Code.pc + 1;
+    		Code.putFalseJump(Code.eq, 0); // skok na neparno 
+    		// parno 			// 4
+    		Code.put(Code.dup); // 4 4
+    		Code.put(Code.mul); // 16
+    		// preskociti neparno
+    		int fixup2 = Code.pc + 1;
+    		Code.putJump(0);;
+    		//neparno
+    		Code.fixup(fixup);
+    		Code.put(Code.dup); // 4 4
+    		Code.put(Code.dup); // 4 4 4
+    		Code.put(Code.mul); // 4 16
+    		Code.put(Code.mul); // 64
+    		Code.fixup(fixup2);
+    	}
     }
     
     // Factor ::= (factor_CHARACTER) CHARACTER
