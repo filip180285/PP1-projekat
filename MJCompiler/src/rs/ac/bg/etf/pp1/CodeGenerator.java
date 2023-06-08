@@ -42,6 +42,37 @@ public class CodeGenerator extends VisitorAdaptor {
     	Code.put(Code.return_);
     }
     
+    // Factor ::= (Factor_Spaceship) Factor SPACESHIP Subfactor;
+    @Override
+    public void visit(Factor_Spaceship factor_Spaceship) { // 2 1
+    	Code.put(Code.dup2); // 2 1 2 1
+    	
+    	int fixupEQ = Code.pc + 1;
+    	Code.putFalseJump(Code.ne, 0); // if(a == b) skoci na return 0 	// 2 1
+    	
+    	int fixupLT = Code.pc + 1;
+    	Code.putFalseJump(Code.gt, 0); // if(a < b) skoci na return -1  // emp
+    	
+    	Code.loadConst(1); // return 1
+    	// preskoci return 0
+    	int skip = Code.pc + 1;
+    	Code.putJump(0);
+    	
+    	Code.fixup(fixupLT);
+    	Code.loadConst(-1); // return -1
+    	// preskoci return 0
+    	int skip2 = Code.pc + 1;
+    	Code.putJump(0);
+    	
+    	
+    	Code.fixup(fixupEQ);
+    	Code.put(Code.pop); // return 0
+    	Code.put(Code.pop);
+    	Code.loadConst(0);
+    	Code.fixup(skip);
+    	Code.fixup(skip2);
+    }
+    
     // Factor ::= (Factor_Designator) Designator
     @Override
     public void visit(Factor_Designator factor_Designator) {
