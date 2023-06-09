@@ -49,6 +49,26 @@ public class CodeGenerator extends VisitorAdaptor {
     	Code.load(desObj);
     }
     
+    // Factor ::= (Factor_MONKEY) Factor MONKEY Subfactor;
+    @Override
+    public void visit(Factor_MONKEY factor_MONKEY) { // 2 3   2*2 + 2*2*3 + 3*3
+    	// 2 3
+    	Code.put(Code.dup2); // 2 3 2 3
+    	Code.loadConst(2); // 2 3 2 3 2
+    	Code.put(Code.mul); // 2 3 2 6
+    	Code.put(Code.mul); // 2 3 12
+    	Code.put(Code.dup_x2); // 12 2 3 12
+    	Code.put(Code.pop); // 12 2 3
+    	Code.put(Code.dup); // 12 2 3 3
+    	Code.put(Code.mul); // 12 2 9
+    	Code.put(Code.dup_x2); // 9 12 2 9
+    	Code.put(Code.pop); // 9 12 2
+    	Code.put(Code.dup); // 9 12 2 2
+    	Code.put(Code.mul); // 9 12 4
+    	Code.put(Code.add); // 9 16
+    	Code.put(Code.add); // 25
+    }
+    
     // Factor ::= (Factor_NUMBER) NUMBER
     @Override
     public void visit(Factor_NUMBER factor_NUMBER) {

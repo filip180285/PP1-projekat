@@ -1,0 +1,194 @@
+INFO  14:50:34,804 - Compiling source file: C:\Users\Korisnik\Desktop\PP1-projekat\MJCompiler\test\program.mj
+INFO  14:50:34,826 - #2 program
+INFO  14:50:34,826 - #9 test301
+INFO  14:50:34,826 - #3 const
+INFO  14:50:34,827 - #9 char
+INFO  14:50:34,827 - #9 c
+INFO  14:50:34,827 - #18 =
+INFO  14:50:34,827 - #11 c
+INFO  14:50:34,827 - #21 ;
+INFO  14:50:34,828 - #3 const
+INFO  14:50:34,828 - #9 int
+INFO  14:50:34,828 - #9 b
+INFO  14:50:34,828 - #18 =
+INFO  14:50:34,828 - #10 3
+INFO  14:50:34,828 - #21 ;
+INFO  14:50:34,828 - #27 {
+INFO  14:50:34,829 - #8 void
+INFO  14:50:34,829 - #9 main
+INFO  14:50:34,829 - #23 (
+INFO  14:50:34,829 - #24 )
+INFO  14:50:34,829 - #9 int
+INFO  14:50:34,830 - #9 a
+INFO  14:50:34,830 - #21 ;
+INFO  14:50:34,832 - #27 {
+INFO  14:50:34,832 - #9 a
+INFO  14:50:34,833 - #18 =
+INFO  14:50:34,833 - #10 2
+INFO  14:50:34,834 - #15 *
+INFO  14:50:34,834 - #10 2
+INFO  14:50:34,835 - #29 @
+INFO  14:50:34,835 - #9 b
+INFO  14:50:34,835 - #13 +
+INFO  14:50:34,835 - #10 5
+INFO  14:50:34,836 - #21 ;
+INFO  14:50:34,836 - #5 print
+INFO  14:50:34,836 - #23 (
+INFO  14:50:34,836 - #9 a
+INFO  14:50:34,836 - #22 ,
+INFO  14:50:34,836 - #10 3
+INFO  14:50:34,836 - #24 )
+INFO  14:50:34,837 - #21 ;
+INFO  14:50:34,837 - #28 }
+INFO  14:50:34,837 - #28 }
+INFO  14:50:34,838 - 
+                     ==============ISPIS STABLA=====================
+INFO  14:50:34,838 - Program(
+  ProgramName(
+   test301
+  ) [ProgramName]
+  ConstVarDeclList_CONST(
+    ConstVarDeclList_CONST(
+      ConstVarDeclList_EPSILON(
+      ) [ConstVarDeclList_EPSILON]
+      ConstDeclList(
+        Type(
+         char
+        ) [Type]
+        ConstDeclOneOrMore_ONE(
+          ConstDecl(
+           c
+            Constant_CHARACTER(
+             c
+            ) [Constant_CHARACTER]
+          ) [ConstDecl]
+        ) [ConstDeclOneOrMore_ONE]
+      ) [ConstDeclList]
+    ) [ConstVarDeclList_CONST]
+    ConstDeclList(
+      Type(
+       int
+      ) [Type]
+      ConstDeclOneOrMore_ONE(
+        ConstDecl(
+         b
+          Constant_NUMBER(
+           3
+          ) [Constant_NUMBER]
+        ) [ConstDecl]
+      ) [ConstDeclOneOrMore_ONE]
+    ) [ConstDeclList]
+  ) [ConstVarDeclList_CONST]
+  MethodDecl(
+    MethodName(
+     main
+    ) [MethodName]
+    MethodVarDeclList_VAR(
+      MethodVarDeclList_EPSILON(
+      ) [MethodVarDeclList_EPSILON]
+      VarDeclList(
+        Type(
+         int
+        ) [Type]
+        VarDeclOneOrMore_ONE(
+          VarDecl_VAR(
+           a
+          ) [VarDecl_VAR]
+        ) [VarDeclOneOrMore_ONE]
+      ) [VarDeclList]
+    ) [MethodVarDeclList_VAR]
+    StatementList_STATEMENTS(
+      StatementList_STATEMENTS(
+        StatementList_EPSILON(
+        ) [StatementList_EPSILON]
+        Statement_DesignatorStatement(
+          DesignatorSt_Assign(
+            Designator_ONE(
+             a
+            ) [Designator_ONE]
+            Assignop(
+            ) [Assignop]
+            Expr_MORE(
+              Expr_ONE(
+                Term_MORE(
+                  Term_ONE(
+                    FactorSign(
+                      UnaryMinus_EPSILON(
+                      ) [UnaryMinus_EPSILON]
+                      Factor_SUBFACTOR(
+                        Factor_NUMBER(
+                         2
+                        ) [Factor_NUMBER]
+                      ) [Factor_SUBFACTOR]
+                    ) [FactorSign]
+                  ) [Term_ONE]
+                  Mulop_MUL(
+                  ) [Mulop_MUL]
+                  FactorSign(
+                    UnaryMinus_EPSILON(
+                    ) [UnaryMinus_EPSILON]
+                    Factor_MONKEY(
+                      Factor_SUBFACTOR(
+                        Factor_NUMBER(
+                         2
+                        ) [Factor_NUMBER]
+                      ) [Factor_SUBFACTOR]
+                      Factor_Designator(
+                        Designator_ONE(
+                         b
+                        ) [Designator_ONE]
+                      ) [Factor_Designator]
+                    ) [Factor_MONKEY]
+                  ) [FactorSign]
+                ) [Term_MORE]
+              ) [Expr_ONE]
+              Addop_PLUS(
+              ) [Addop_PLUS]
+              Term_ONE(
+                FactorSign(
+                  UnaryMinus_EPSILON(
+                  ) [UnaryMinus_EPSILON]
+                  Factor_SUBFACTOR(
+                    Factor_NUMBER(
+                     5
+                    ) [Factor_NUMBER]
+                  ) [Factor_SUBFACTOR]
+                ) [FactorSign]
+              ) [Term_ONE]
+            ) [Expr_MORE]
+          ) [DesignatorSt_Assign]
+        ) [Statement_DesignatorStatement]
+      ) [StatementList_STATEMENTS]
+      Statement_PRINT(
+        Expr_ONE(
+          Term_ONE(
+            FactorSign(
+              UnaryMinus_EPSILON(
+              ) [UnaryMinus_EPSILON]
+              Factor_SUBFACTOR(
+                Factor_Designator(
+                  Designator_ONE(
+                   a
+                  ) [Designator_ONE]
+                ) [Factor_Designator]
+              ) [Factor_SUBFACTOR]
+            ) [FactorSign]
+          ) [Term_ONE]
+        ) [Expr_ONE]
+        MayPrintNumConst_NUMBER(
+         3
+        ) [MayPrintNumConst_NUMBER]
+      ) [Statement_PRINT]
+    ) [StatementList_STATEMENTS]
+  ) [MethodDecl]
+) [Program]
+INFO  14:50:34,839 - ==============ZAVRSEN ISPIS STABLA=====================
+
+INFO  14:50:34,839 - ==============ISPIS SEMANTICKE ANALIZE=====================
+INFO  14:50:34,848 - INFO-Factor_Designator: Pristup oznaci b. Objektni cvor: { KIND: Con, NAME: b, TYPE(Struct): { KIND: Int, ElemType: intType }, ADR: 3, LEVEL: 0 } na liniji 11
+INFO  14:50:34,848 - INFO-DesignatorSt_Assign: Pristup oznaci a. Objektni cvor: { KIND: Var, NAME: a, TYPE(Struct): { KIND: Int, ElemType: intType }, ADR: 0, LEVEL: 1 } na liniji 11
+INFO  14:50:34,849 - INFO-Factor_Designator: Pristup oznaci a. Objektni cvor: { KIND: Var, NAME: a, TYPE(Struct): { KIND: Int, ElemType: intType }, ADR: 0, LEVEL: 1 } na liniji 12
+INFO  14:50:34,849 - ==============ZAVRSEN ISPIS SEMANTICKE ANALIZE=====================
+
+INFO  14:50:34,849 - Parsiranje uspesno zavrseno!
+INFO  14:50:34,852 - Generisanje koda uspesno zavrseno!

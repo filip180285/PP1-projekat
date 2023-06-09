@@ -1,0 +1,141 @@
+INFO  14:49:46,504 - Compiling source file: C:\Users\Korisnik\Desktop\PP1-projekat\MJCompiler\test\program.mj
+INFO  14:49:46,524 - #2 program
+INFO  14:49:46,524 - #9 test301
+INFO  14:49:46,524 - #3 const
+INFO  14:49:46,525 - #9 char
+INFO  14:49:46,525 - #9 c
+INFO  14:49:46,526 - #18 =
+INFO  14:49:46,526 - #11 c
+INFO  14:49:46,526 - #21 ;
+INFO  14:49:46,526 - #27 {
+INFO  14:49:46,527 - #8 void
+INFO  14:49:46,527 - #9 main
+INFO  14:49:46,527 - #23 (
+INFO  14:49:46,527 - #24 )
+INFO  14:49:46,527 - #9 int
+INFO  14:49:46,528 - #9 a
+INFO  14:49:46,528 - #21 ;
+INFO  14:49:46,528 - #27 {
+INFO  14:49:46,528 - #9 a
+INFO  14:49:46,529 - #18 =
+INFO  14:49:46,529 - #10 2
+INFO  14:49:46,530 - #29 @
+INFO  14:49:46,530 - #9 c
+INFO  14:49:46,532 - #21 ;
+INFO  14:49:46,533 - #5 print
+INFO  14:49:46,533 - #23 (
+INFO  14:49:46,533 - #9 a
+INFO  14:49:46,533 - #22 ,
+INFO  14:49:46,533 - #10 3
+INFO  14:49:46,533 - #24 )
+INFO  14:49:46,533 - #21 ;
+INFO  14:49:46,533 - #28 }
+INFO  14:49:46,533 - #28 }
+INFO  14:49:46,534 - 
+                     ==============ISPIS STABLA=====================
+INFO  14:49:46,535 - Program(
+  ProgramName(
+   test301
+  ) [ProgramName]
+  ConstVarDeclList_CONST(
+    ConstVarDeclList_EPSILON(
+    ) [ConstVarDeclList_EPSILON]
+    ConstDeclList(
+      Type(
+       char
+      ) [Type]
+      ConstDeclOneOrMore_ONE(
+        ConstDecl(
+         c
+          Constant_CHARACTER(
+           c
+          ) [Constant_CHARACTER]
+        ) [ConstDecl]
+      ) [ConstDeclOneOrMore_ONE]
+    ) [ConstDeclList]
+  ) [ConstVarDeclList_CONST]
+  MethodDecl(
+    MethodName(
+     main
+    ) [MethodName]
+    MethodVarDeclList_VAR(
+      MethodVarDeclList_EPSILON(
+      ) [MethodVarDeclList_EPSILON]
+      VarDeclList(
+        Type(
+         int
+        ) [Type]
+        VarDeclOneOrMore_ONE(
+          VarDecl_VAR(
+           a
+          ) [VarDecl_VAR]
+        ) [VarDeclOneOrMore_ONE]
+      ) [VarDeclList]
+    ) [MethodVarDeclList_VAR]
+    StatementList_STATEMENTS(
+      StatementList_STATEMENTS(
+        StatementList_EPSILON(
+        ) [StatementList_EPSILON]
+        Statement_DesignatorStatement(
+          DesignatorSt_Assign(
+            Designator_ONE(
+             a
+            ) [Designator_ONE]
+            Assignop(
+            ) [Assignop]
+            Expr_ONE(
+              Term_ONE(
+                FactorSign(
+                  UnaryMinus_EPSILON(
+                  ) [UnaryMinus_EPSILON]
+                  Factor_MONKEY(
+                    Factor_SUBFACTOR(
+                      Factor_NUMBER(
+                       2
+                      ) [Factor_NUMBER]
+                    ) [Factor_SUBFACTOR]
+                    Factor_Designator(
+                      Designator_ONE(
+                       c
+                      ) [Designator_ONE]
+                    ) [Factor_Designator]
+                  ) [Factor_MONKEY]
+                ) [FactorSign]
+              ) [Term_ONE]
+            ) [Expr_ONE]
+          ) [DesignatorSt_Assign]
+        ) [Statement_DesignatorStatement]
+      ) [StatementList_STATEMENTS]
+      Statement_PRINT(
+        Expr_ONE(
+          Term_ONE(
+            FactorSign(
+              UnaryMinus_EPSILON(
+              ) [UnaryMinus_EPSILON]
+              Factor_SUBFACTOR(
+                Factor_Designator(
+                  Designator_ONE(
+                   a
+                  ) [Designator_ONE]
+                ) [Factor_Designator]
+              ) [Factor_SUBFACTOR]
+            ) [FactorSign]
+          ) [Term_ONE]
+        ) [Expr_ONE]
+        MayPrintNumConst_NUMBER(
+         3
+        ) [MayPrintNumConst_NUMBER]
+      ) [Statement_PRINT]
+    ) [StatementList_STATEMENTS]
+  ) [MethodDecl]
+) [Program]
+INFO  14:49:46,535 - ==============ZAVRSEN ISPIS STABLA=====================
+
+INFO  14:49:46,535 - ==============ISPIS SEMANTICKE ANALIZE=====================
+INFO  14:49:46,544 - INFO-Factor_Designator: Pristup oznaci c. Objektni cvor: { KIND: Con, NAME: c, TYPE(Struct): { KIND: Char, ElemType: charType }, ADR: 99, LEVEL: 0 } na liniji 10
+ERROR 14:49:46,544 - GRESKA-Factor_MONKEY: Oba tipa u izrazu moraju biti int na liniji 10
+ERROR 14:49:46,544 - GRESKA-DesignatorSt_Assign: Dodela vrednosti u a,tipovi sa leve i desne strane jednakosti nisu isti na liniji 10
+INFO  14:49:46,545 - INFO-Factor_Designator: Pristup oznaci a. Objektni cvor: { KIND: Var, NAME: a, TYPE(Struct): { KIND: Int, ElemType: intType }, ADR: 0, LEVEL: 1 } na liniji 11
+INFO  14:49:46,545 - ==============ZAVRSEN ISPIS SEMANTICKE ANALIZE=====================
+
+ERROR 14:49:46,545 - Parsiranje NIJE uspesno zavrseno!

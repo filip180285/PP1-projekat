@@ -1,0 +1,117 @@
+INFO  14:49:03,194 - Compiling source file: C:\Users\Korisnik\Desktop\PP1-projekat\MJCompiler\test\program.mj
+INFO  14:49:03,214 - #2 program
+INFO  14:49:03,214 - #9 test301
+INFO  14:49:03,214 - #27 {
+INFO  14:49:03,215 - #8 void
+INFO  14:49:03,215 - #9 main
+INFO  14:49:03,215 - #23 (
+INFO  14:49:03,216 - #24 )
+INFO  14:49:03,216 - #9 int
+INFO  14:49:03,216 - #9 a
+INFO  14:49:03,217 - #21 ;
+INFO  14:49:03,217 - #27 {
+INFO  14:49:03,217 - #9 a
+INFO  14:49:03,218 - #18 =
+INFO  14:49:03,218 - #10 2
+INFO  14:49:03,219 - #29 @
+INFO  14:49:03,219 - #12 1
+INFO  14:49:03,219 - #21 ;
+INFO  14:49:03,220 - #5 print
+INFO  14:49:03,220 - #23 (
+INFO  14:49:03,220 - #9 a
+INFO  14:49:03,220 - #22 ,
+INFO  14:49:03,220 - #10 3
+INFO  14:49:03,222 - #24 )
+INFO  14:49:03,223 - #21 ;
+INFO  14:49:03,223 - #28 }
+INFO  14:49:03,223 - #28 }
+INFO  14:49:03,224 - 
+                     ==============ISPIS STABLA=====================
+INFO  14:49:03,224 - Program(
+  ProgramName(
+   test301
+  ) [ProgramName]
+  ConstVarDeclList_EPSILON(
+  ) [ConstVarDeclList_EPSILON]
+  MethodDecl(
+    MethodName(
+     main
+    ) [MethodName]
+    MethodVarDeclList_VAR(
+      MethodVarDeclList_EPSILON(
+      ) [MethodVarDeclList_EPSILON]
+      VarDeclList(
+        Type(
+         int
+        ) [Type]
+        VarDeclOneOrMore_ONE(
+          VarDecl_VAR(
+           a
+          ) [VarDecl_VAR]
+        ) [VarDeclOneOrMore_ONE]
+      ) [VarDeclList]
+    ) [MethodVarDeclList_VAR]
+    StatementList_STATEMENTS(
+      StatementList_STATEMENTS(
+        StatementList_EPSILON(
+        ) [StatementList_EPSILON]
+        Statement_DesignatorStatement(
+          DesignatorSt_Assign(
+            Designator_ONE(
+             a
+            ) [Designator_ONE]
+            Assignop(
+            ) [Assignop]
+            Expr_ONE(
+              Term_ONE(
+                FactorSign(
+                  UnaryMinus_EPSILON(
+                  ) [UnaryMinus_EPSILON]
+                  Factor_MONKEY(
+                    Factor_SUBFACTOR(
+                      Factor_NUMBER(
+                       2
+                      ) [Factor_NUMBER]
+                    ) [Factor_SUBFACTOR]
+                    Factor_BOOLEAN(
+                     1
+                    ) [Factor_BOOLEAN]
+                  ) [Factor_MONKEY]
+                ) [FactorSign]
+              ) [Term_ONE]
+            ) [Expr_ONE]
+          ) [DesignatorSt_Assign]
+        ) [Statement_DesignatorStatement]
+      ) [StatementList_STATEMENTS]
+      Statement_PRINT(
+        Expr_ONE(
+          Term_ONE(
+            FactorSign(
+              UnaryMinus_EPSILON(
+              ) [UnaryMinus_EPSILON]
+              Factor_SUBFACTOR(
+                Factor_Designator(
+                  Designator_ONE(
+                   a
+                  ) [Designator_ONE]
+                ) [Factor_Designator]
+              ) [Factor_SUBFACTOR]
+            ) [FactorSign]
+          ) [Term_ONE]
+        ) [Expr_ONE]
+        MayPrintNumConst_NUMBER(
+         3
+        ) [MayPrintNumConst_NUMBER]
+      ) [Statement_PRINT]
+    ) [StatementList_STATEMENTS]
+  ) [MethodDecl]
+) [Program]
+INFO  14:49:03,224 - ==============ZAVRSEN ISPIS STABLA=====================
+
+INFO  14:49:03,224 - ==============ISPIS SEMANTICKE ANALIZE=====================
+ERROR 14:49:03,232 - GRESKA-Factor_MONKEY: Oba tipa u izrazu moraju biti int na liniji 10
+ERROR 14:49:03,232 - GRESKA-DesignatorSt_Assign: Dodela vrednosti u a,tipovi sa leve i desne strane jednakosti nisu isti na liniji 10
+INFO  14:49:03,232 - INFO-Factor_Designator: Pristup oznaci a. Objektni cvor: { KIND: Var, NAME: a, TYPE(Struct): { KIND: Int, ElemType: intType }, ADR: 0, LEVEL: 1 } na liniji 11
+INFO  14:49:03,232 - ==============ZAVRSEN ISPIS SEMANTICKE ANALIZE=====================
+
+ERROR 14:49:03,233 - Parsiranje NIJE uspesno zavrseno!
