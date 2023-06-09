@@ -1,11 +1,11 @@
 // generated with ast extension for cup
 // version 0.8
-// 7/5/2023 0:44:5
+// 9/5/2023 14:28:23
 
 
 package rs.ac.bg.etf.pp1.ast;
 
-public class Factor_NEW extends Factor {
+public class Factor_NEW extends Subfactor {
 
     private NEW_Array NEW_Array;
     private NEW_Matrix NEW_Matrix;
