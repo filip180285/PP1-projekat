@@ -1,11 +1,11 @@
 // generated with ast extension for cup
 // version 0.8
-// 9/5/2023 14:28:23
+// 9/5/2023 20:15:35
 
 
 package rs.ac.bg.etf.pp1.ast;
 
-public class Factor_BOOLEAN extends Subfactor {
+public class Factor_BOOLEAN extends Factor {
 
     private Integer B1;
 
