@@ -1,137 +1,129 @@
-INFO  23:58:14,510 - Compiling source file: C:\Users\Korisnik\Desktop\PP1-projekat\MJCompiler\test\program.mj
-INFO  23:58:14,608 - #2 program
-INFO  23:58:14,609 - #9 test301
-INFO  23:58:14,609 - #27 {
-INFO  23:58:14,612 - #8 void
-INFO  23:58:14,612 - #9 main
-INFO  23:58:14,612 - #23 (
-INFO  23:58:14,614 - #24 )
-INFO  23:58:14,614 - #9 int
-INFO  23:58:14,616 - #9 a
-INFO  23:58:14,618 - #22 ,
-INFO  23:58:14,619 - #9 b
-INFO  23:58:14,620 - #22 ,
-INFO  23:58:14,620 - #9 niz
-INFO  23:58:14,620 - #25 [
-INFO  23:58:14,620 - #26 ]
-INFO  23:58:14,620 - #22 ,
-INFO  23:58:14,621 - #9 matrica
-INFO  23:58:14,621 - #25 [
-INFO  23:58:14,621 - #26 ]
-INFO  23:58:14,622 - #25 [
-INFO  23:58:14,622 - #26 ]
-INFO  23:58:14,622 - #21 ;
-INFO  23:58:14,626 - #27 {
-INFO  23:58:14,629 - #9 niz
-INFO  23:58:14,630 - #18 =
-INFO  23:58:14,631 - #4 new
-INFO  23:58:14,635 - #9 int
-INFO  23:58:14,635 - #25 [
-INFO  23:58:14,635 - #10 3
-INFO  23:58:14,635 - #26 ]
-INFO  23:58:14,638 - #21 ;
-INFO  23:58:14,643 - #9 matrica
-INFO  23:58:14,644 - #18 =
-INFO  23:58:14,644 - #4 new
-INFO  23:58:14,644 - #9 int
-INFO  23:58:14,644 - #25 [
-INFO  23:58:14,645 - #10 3
-INFO  23:58:14,645 - #26 ]
-INFO  23:58:14,645 - #25 [
-INFO  23:58:14,645 - #10 3
-INFO  23:58:14,645 - #26 ]
-INFO  23:58:14,646 - #21 ;
-INFO  23:58:14,647 - #9 a
-INFO  23:58:14,647 - #18 =
-INFO  23:58:14,647 - #10 2
-INFO  23:58:14,647 - #21 ;
-INFO  23:58:14,648 - #9 a
-INFO  23:58:14,648 - #19 ++
-INFO  23:58:14,648 - #13 +
-INFO  23:58:14,649 - #21 ;
-INFO  23:58:14,649 - #5 print
-INFO  23:58:14,649 - #23 (
-INFO  23:58:14,649 - #9 a
-INFO  23:58:14,650 - #22 ,
-INFO  23:58:14,650 - #10 5
-INFO  23:58:14,650 - #24 )
-INFO  23:58:14,651 - #21 ;
-INFO  23:58:14,651 - #9 b
-INFO  23:58:14,652 - #18 =
-INFO  23:58:14,652 - #10 2
-INFO  23:58:14,652 - #21 ;
-INFO  23:58:14,652 - #9 b
-INFO  23:58:14,653 - #19 ++
-INFO  23:58:14,653 - #21 ;
-INFO  23:58:14,654 - #5 print
-INFO  23:58:14,654 - #23 (
-INFO  23:58:14,655 - #9 b
-INFO  23:58:14,655 - #22 ,
-INFO  23:58:14,655 - #10 5
-INFO  23:58:14,655 - #24 )
-INFO  23:58:14,655 - #21 ;
-INFO  23:58:14,656 - #9 niz
-INFO  23:58:14,656 - #25 [
-INFO  23:58:14,658 - #10 1
-INFO  23:58:14,658 - #26 ]
-INFO  23:58:14,658 - #18 =
-INFO  23:58:14,661 - #10 5
-INFO  23:58:14,661 - #21 ;
-INFO  23:58:14,661 - #9 niz
-INFO  23:58:14,662 - #25 [
-INFO  23:58:14,662 - #10 1
-INFO  23:58:14,662 - #26 ]
-INFO  23:58:14,662 - #19 ++
-INFO  23:58:14,663 - #13 +
-INFO  23:58:14,663 - #21 ;
-INFO  23:58:14,663 - #5 print
-INFO  23:58:14,663 - #23 (
-INFO  23:58:14,664 - #9 niz
-INFO  23:58:14,664 - #25 [
-INFO  23:58:14,664 - #10 1
-INFO  23:58:14,665 - #26 ]
-INFO  23:58:14,665 - #22 ,
-INFO  23:58:14,665 - #10 5
-INFO  23:58:14,666 - #24 )
-INFO  23:58:14,666 - #21 ;
-INFO  23:58:14,667 - #9 matrica
-INFO  23:58:14,667 - #25 [
-INFO  23:58:14,667 - #10 2
-INFO  23:58:14,667 - #26 ]
-INFO  23:58:14,667 - #25 [
-INFO  23:58:14,667 - #10 1
-INFO  23:58:14,668 - #26 ]
-INFO  23:58:14,668 - #18 =
-INFO  23:58:14,669 - #10 9
-INFO  23:58:14,669 - #21 ;
-INFO  23:58:14,669 - #9 matrica
-INFO  23:58:14,670 - #25 [
-INFO  23:58:14,670 - #10 2
-INFO  23:58:14,671 - #26 ]
-INFO  23:58:14,671 - #25 [
-INFO  23:58:14,671 - #10 1
-INFO  23:58:14,671 - #26 ]
-INFO  23:58:14,672 - #19 ++
-INFO  23:58:14,672 - #13 +
-INFO  23:58:14,672 - #21 ;
-INFO  23:58:14,672 - #5 print
-INFO  23:58:14,672 - #23 (
-INFO  23:58:14,673 - #9 matrica
-INFO  23:58:14,673 - #25 [
-INFO  23:58:14,673 - #10 2
-INFO  23:58:14,673 - #26 ]
-INFO  23:58:14,674 - #25 [
-INFO  23:58:14,674 - #10 1
-INFO  23:58:14,674 - #26 ]
-INFO  23:58:14,674 - #22 ,
-INFO  23:58:14,675 - #10 5
-INFO  23:58:14,675 - #24 )
-INFO  23:58:14,676 - #21 ;
-INFO  23:58:14,676 - #28 }
-INFO  23:58:14,677 - #28 }
-INFO  23:58:14,682 - 
+INFO  23:57:51,179 - Compiling source file: C:\Users\Korisnik\Desktop\PP1-projekat\MJCompiler\test\program.mj
+INFO  23:57:51,272 - #2 program
+INFO  23:57:51,272 - #9 test301
+INFO  23:57:51,272 - #27 {
+INFO  23:57:51,276 - #8 void
+INFO  23:57:51,276 - #9 main
+INFO  23:57:51,276 - #23 (
+INFO  23:57:51,278 - #24 )
+INFO  23:57:51,278 - #9 int
+INFO  23:57:51,280 - #9 a
+INFO  23:57:51,282 - #22 ,
+INFO  23:57:51,282 - #9 b
+INFO  23:57:51,283 - #22 ,
+INFO  23:57:51,283 - #9 niz
+INFO  23:57:51,283 - #25 [
+INFO  23:57:51,283 - #26 ]
+INFO  23:57:51,284 - #22 ,
+INFO  23:57:51,284 - #9 matrica
+INFO  23:57:51,284 - #25 [
+INFO  23:57:51,284 - #26 ]
+INFO  23:57:51,285 - #25 [
+INFO  23:57:51,285 - #26 ]
+INFO  23:57:51,285 - #21 ;
+INFO  23:57:51,287 - #27 {
+INFO  23:57:51,289 - #9 niz
+INFO  23:57:51,291 - #18 =
+INFO  23:57:51,291 - #4 new
+INFO  23:57:51,296 - #9 int
+INFO  23:57:51,296 - #25 [
+INFO  23:57:51,296 - #10 3
+INFO  23:57:51,296 - #26 ]
+INFO  23:57:51,299 - #21 ;
+INFO  23:57:51,303 - #9 matrica
+INFO  23:57:51,304 - #18 =
+INFO  23:57:51,304 - #4 new
+INFO  23:57:51,304 - #9 int
+INFO  23:57:51,304 - #25 [
+INFO  23:57:51,304 - #10 3
+INFO  23:57:51,305 - #26 ]
+INFO  23:57:51,305 - #25 [
+INFO  23:57:51,305 - #10 3
+INFO  23:57:51,305 - #26 ]
+INFO  23:57:51,305 - #21 ;
+INFO  23:57:51,306 - #9 a
+INFO  23:57:51,307 - #18 =
+INFO  23:57:51,307 - #10 2
+INFO  23:57:51,307 - #21 ;
+INFO  23:57:51,307 - #9 a
+INFO  23:57:51,307 - #19 ++
+INFO  23:57:51,308 - #13 +
+INFO  23:57:51,308 - #21 ;
+INFO  23:57:51,309 - #5 print
+INFO  23:57:51,309 - #23 (
+INFO  23:57:51,309 - #9 a
+INFO  23:57:51,309 - #24 )
+INFO  23:57:51,312 - #21 ;
+INFO  23:57:51,312 - #9 b
+INFO  23:57:51,312 - #18 =
+INFO  23:57:51,313 - #10 2
+INFO  23:57:51,313 - #21 ;
+INFO  23:57:51,313 - #9 b
+INFO  23:57:51,314 - #19 ++
+INFO  23:57:51,314 - #21 ;
+INFO  23:57:51,315 - #5 print
+INFO  23:57:51,315 - #23 (
+INFO  23:57:51,315 - #9 b
+INFO  23:57:51,316 - #24 )
+INFO  23:57:51,316 - #21 ;
+INFO  23:57:51,316 - #9 niz
+INFO  23:57:51,317 - #25 [
+INFO  23:57:51,319 - #10 1
+INFO  23:57:51,319 - #26 ]
+INFO  23:57:51,319 - #18 =
+INFO  23:57:51,321 - #10 5
+INFO  23:57:51,321 - #21 ;
+INFO  23:57:51,322 - #9 niz
+INFO  23:57:51,322 - #25 [
+INFO  23:57:51,323 - #10 1
+INFO  23:57:51,323 - #26 ]
+INFO  23:57:51,323 - #19 ++
+INFO  23:57:51,323 - #13 +
+INFO  23:57:51,323 - #21 ;
+INFO  23:57:51,324 - #5 print
+INFO  23:57:51,324 - #23 (
+INFO  23:57:51,324 - #9 niz
+INFO  23:57:51,324 - #25 [
+INFO  23:57:51,324 - #10 1
+INFO  23:57:51,325 - #26 ]
+INFO  23:57:51,325 - #24 )
+INFO  23:57:51,325 - #21 ;
+INFO  23:57:51,325 - #9 matrica
+INFO  23:57:51,325 - #25 [
+INFO  23:57:51,326 - #10 2
+INFO  23:57:51,326 - #26 ]
+INFO  23:57:51,326 - #25 [
+INFO  23:57:51,326 - #10 1
+INFO  23:57:51,327 - #26 ]
+INFO  23:57:51,327 - #18 =
+INFO  23:57:51,327 - #10 9
+INFO  23:57:51,328 - #21 ;
+INFO  23:57:51,328 - #9 matrica
+INFO  23:57:51,328 - #25 [
+INFO  23:57:51,328 - #10 2
+INFO  23:57:51,329 - #26 ]
+INFO  23:57:51,329 - #25 [
+INFO  23:57:51,329 - #10 1
+INFO  23:57:51,329 - #26 ]
+INFO  23:57:51,329 - #19 ++
+INFO  23:57:51,329 - #13 +
+INFO  23:57:51,330 - #21 ;
+INFO  23:57:51,330 - #5 print
+INFO  23:57:51,330 - #23 (
+INFO  23:57:51,330 - #9 matrica
+INFO  23:57:51,330 - #25 [
+INFO  23:57:51,331 - #10 2
+INFO  23:57:51,331 - #26 ]
+INFO  23:57:51,331 - #25 [
+INFO  23:57:51,331 - #10 1
+INFO  23:57:51,331 - #26 ]
+INFO  23:57:51,331 - #24 )
+INFO  23:57:51,331 - #21 ;
+INFO  23:57:51,332 - #28 }
+INFO  23:57:51,332 - #28 }
+INFO  23:57:51,336 - 
                      ==============ISPIS STABLA=====================
-INFO  23:58:14,687 - Program(
+INFO  23:57:51,343 - Program(
   ProgramName(
    test301
   ) [ProgramName]
@@ -316,9 +308,8 @@ INFO  23:58:14,687 - Program(
                               ) [FactorSign]
                             ) [Term_ONE]
                           ) [Expr_ONE]
-                          MayPrintNumConst_NUMBER(
-                           5
-                          ) [MayPrintNumConst_NUMBER]
+                          MayPrintNumConst_EPSILON(
+                          ) [MayPrintNumConst_EPSILON]
                         ) [Statement_PRINT]
                       ) [StatementList_STATEMENTS]
                       Statement_DesignatorStatement(
@@ -364,9 +355,8 @@ INFO  23:58:14,687 - Program(
                         ) [FactorSign]
                       ) [Term_ONE]
                     ) [Expr_ONE]
-                    MayPrintNumConst_NUMBER(
-                     5
-                    ) [MayPrintNumConst_NUMBER]
+                    MayPrintNumConst_EPSILON(
+                    ) [MayPrintNumConst_EPSILON]
                   ) [Statement_PRINT]
                 ) [StatementList_STATEMENTS]
                 Statement_DesignatorStatement(
@@ -457,9 +447,8 @@ INFO  23:58:14,687 - Program(
                   ) [FactorSign]
                 ) [Term_ONE]
               ) [Expr_ONE]
-              MayPrintNumConst_NUMBER(
-               5
-              ) [MayPrintNumConst_NUMBER]
+              MayPrintNumConst_EPSILON(
+              ) [MayPrintNumConst_EPSILON]
             ) [Statement_PRINT]
           ) [StatementList_STATEMENTS]
           Statement_DesignatorStatement(
@@ -583,25 +572,24 @@ INFO  23:58:14,687 - Program(
             ) [FactorSign]
           ) [Term_ONE]
         ) [Expr_ONE]
-        MayPrintNumConst_NUMBER(
-         5
-        ) [MayPrintNumConst_NUMBER]
+        MayPrintNumConst_EPSILON(
+        ) [MayPrintNumConst_EPSILON]
       ) [Statement_PRINT]
     ) [StatementList_STATEMENTS]
   ) [MethodDecl]
 ) [Program]
-INFO  23:58:14,699 - ==============ZAVRSEN ISPIS STABLA=====================
+INFO  23:57:51,346 - ==============ZAVRSEN ISPIS STABLA=====================
 
-INFO  23:58:14,700 - ==============ISPIS SEMANTICKE ANALIZE=====================
-INFO  23:58:14,746 - INFO-DesignatorSt_Assign: Pristup oznaci niz. Objektni cvor: { KIND: Var, NAME: niz, TYPE(Struct): { KIND: Array, ElemType: intType }, ADR: 2, LEVEL: 1 } na liniji 9
-INFO  23:58:14,747 - INFO-DesignatorSt_Assign: Pristup oznaci matrica. Objektni cvor: { KIND: Var, NAME: matrica, TYPE(Struct): { KIND: Array, ElemType: arrayType { TYPE(Struct): { KIND: Int, ElemType: intType } }, ADR: 3, LEVEL: 1 } na liniji 10
-INFO  23:58:14,747 - INFO-DesignatorSt_Assign: Pristup oznaci a. Objektni cvor: { KIND: Var, NAME: a, TYPE(Struct): { KIND: Int, ElemType: intType }, ADR: 0, LEVEL: 1 } na liniji 13
-INFO  23:58:14,747 - INFO-DesignatorStat_INC: Pristup oznaci a. Objektni cvor: { KIND: Var, NAME: a, TYPE(Struct): { KIND: Int, ElemType: intType }, ADR: 0, LEVEL: 1 } na liniji 14
-INFO  23:58:14,748 - INFO-Factor_Designator: Pristup oznaci a. Objektni cvor: { KIND: Var, NAME: a, TYPE(Struct): { KIND: Int, ElemType: intType }, ADR: 0, LEVEL: 1 } na liniji 15
-INFO  23:58:14,748 - INFO-DesignatorSt_Assign: Pristup oznaci b. Objektni cvor: { KIND: Var, NAME: b, TYPE(Struct): { KIND: Int, ElemType: intType }, ADR: 1, LEVEL: 1 } na liniji 17
-INFO  23:58:14,748 - INFO-DesignatorStat_INC: Pristup oznaci b. Objektni cvor: { KIND: Var, NAME: b, TYPE(Struct): { KIND: Int, ElemType: intType }, ADR: 1, LEVEL: 1 } na liniji 18
-INFO  23:58:14,748 - INFO-Factor_Designator: Pristup oznaci b. Objektni cvor: { KIND: Var, NAME: b, TYPE(Struct): { KIND: Int, ElemType: intType }, ADR: 1, LEVEL: 1 } na liniji 19
-INFO  23:58:14,749 - ==============ZAVRSEN ISPIS SEMANTICKE ANALIZE=====================
+INFO  23:57:51,346 - ==============ISPIS SEMANTICKE ANALIZE=====================
+INFO  23:57:51,388 - INFO-DesignatorSt_Assign: Pristup oznaci niz. Objektni cvor: { KIND: Var, NAME: niz, TYPE(Struct): { KIND: Array, ElemType: intType }, ADR: 2, LEVEL: 1 } na liniji 9
+INFO  23:57:51,389 - INFO-DesignatorSt_Assign: Pristup oznaci matrica. Objektni cvor: { KIND: Var, NAME: matrica, TYPE(Struct): { KIND: Array, ElemType: arrayType { TYPE(Struct): { KIND: Int, ElemType: intType } }, ADR: 3, LEVEL: 1 } na liniji 10
+INFO  23:57:51,389 - INFO-DesignatorSt_Assign: Pristup oznaci a. Objektni cvor: { KIND: Var, NAME: a, TYPE(Struct): { KIND: Int, ElemType: intType }, ADR: 0, LEVEL: 1 } na liniji 13
+INFO  23:57:51,389 - INFO-DesignatorStat_INC: Pristup oznaci a. Objektni cvor: { KIND: Var, NAME: a, TYPE(Struct): { KIND: Int, ElemType: intType }, ADR: 0, LEVEL: 1 } na liniji 14
+INFO  23:57:51,389 - INFO-Factor_Designator: Pristup oznaci a. Objektni cvor: { KIND: Var, NAME: a, TYPE(Struct): { KIND: Int, ElemType: intType }, ADR: 0, LEVEL: 1 } na liniji 15
+INFO  23:57:51,396 - INFO-DesignatorSt_Assign: Pristup oznaci b. Objektni cvor: { KIND: Var, NAME: b, TYPE(Struct): { KIND: Int, ElemType: intType }, ADR: 1, LEVEL: 1 } na liniji 17
+INFO  23:57:51,397 - INFO-DesignatorStat_INC: Pristup oznaci b. Objektni cvor: { KIND: Var, NAME: b, TYPE(Struct): { KIND: Int, ElemType: intType }, ADR: 1, LEVEL: 1 } na liniji 18
+INFO  23:57:51,397 - INFO-Factor_Designator: Pristup oznaci b. Objektni cvor: { KIND: Var, NAME: b, TYPE(Struct): { KIND: Int, ElemType: intType }, ADR: 1, LEVEL: 1 } na liniji 19
+INFO  23:57:51,397 - ==============ZAVRSEN ISPIS SEMANTICKE ANALIZE=====================
 
-INFO  23:58:14,752 - Parsiranje uspesno zavrseno!
-INFO  23:58:14,763 - Generisanje koda uspesno zavrseno!
+INFO  23:57:51,400 - Parsiranje uspesno zavrseno!
+INFO  23:57:51,411 - Generisanje koda uspesno zavrseno!

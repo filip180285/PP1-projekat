@@ -218,6 +218,20 @@ public class CodeGenerator extends VisitorAdaptor {
     	Code.store(desObj);
     }
     
+    // DesignatorStatement ::= (DesignatorStat_INC) Designator INCREMENT
+    @Override
+    public void visit(DesignatorStat_INC2 designatorStat_INC2) { 
+    	Obj desObj = designatorStat_INC2.getDesignator().obj;
+    	
+    	if(desObj.getKind() == Obj.Elem) { 
+    		Code.put(Code.dup2); // za store
+    	} 
+    	Code.load(desObj);
+    	Code.loadConst(2);
+    	Code.put(Code.add);
+    	Code.store(desObj);
+    }
+    
     // DesignatorStatement ::= (DesignatorStat_DEC) Designator DECREMENT
     @Override
     public void visit(DesignatorStat_DEC designatorStat_DEC) { 

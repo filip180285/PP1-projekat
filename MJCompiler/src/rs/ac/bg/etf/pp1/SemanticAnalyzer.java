@@ -630,6 +630,26 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     	}
     }
     
+    // DesignatorStatement ::= (DesignatorStat_INC) Designator INCREMENT
+    @Override
+    public void visit(DesignatorStat_INC2 designatorStat_INC2) { 
+    	Obj desObj = designatorStat_INC2.getDesignator().obj;
+    	int kind = desObj.getKind();
+    	
+    	if(kind != Obj.Var && kind != Obj.Elem) {
+    		report_error("GRESKA-DesignatorStat_INC: Inkrementiranje "+ desObj.getName() +" nije inkrementiranje varijable ni elementa niza/matrice", designatorStat_INC2);
+    		return;
+    	}
+    	else if(desObj.getType().equals(Tab.intType) == false) {
+    		report_error("GRESKA-DesignatorStat_INC: Inkrementiranje " + desObj.getName() + " nije inkrementiranje nad int tipom", designatorStat_INC2);
+    		return;
+    	}
+    	
+    	if(designatorStat_INC2.getDesignator() instanceof Designator_ONE) {
+    		report_info("INFO-DesignatorStat_INC: Pristup oznaci " + desObj.getName() + ". " + objNodeToString(desObj) , designatorStat_INC2);
+    	}
+    }
+    
     // DesignatorStatement ::= (DesignatorStat_DEC) Designator DECREMENT
     @Override
     public void visit(DesignatorStat_DEC designatorStat_DEC) { 

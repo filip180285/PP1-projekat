@@ -182,6 +182,8 @@ DesignatorStatement ::= (DesignatorSt_Assign) Designator Assignop Expr
 					    |
 					    (DesignatorStat_INC) Designator INCREMENT
 					    |
+					    (DesignatorStat_INC2) Designator INCREMENT PLUS
+					    |
 					    (DesignatorStat_DEC) Designator DECREMENT
 						|
 						(DesignatorStatement_List) LEFT_BRACKET DesignatorStatementList RIGHT_BRACKET EQUALS Designator;
