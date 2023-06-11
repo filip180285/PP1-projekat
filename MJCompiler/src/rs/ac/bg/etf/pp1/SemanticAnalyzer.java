@@ -650,6 +650,26 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     	}
     }
     
+    // DesignatorStatement ::= (DesignatorStat_MAX) Designator MONKEY
+    @Override
+    public void visit(DesignatorStat_MAX designatorStat_MAX) { 
+    	Obj desObj = designatorStat_MAX.getDesignator().obj;
+    	int kind = desObj.getKind();
+    	
+    	if(kind != Obj.Var) {
+    		report_error("GRESKA-DesignatorStat_MAX: @ "+ desObj.getName() +" nije trazenje maksimuma promjenjive", designatorStat_MAX);
+    		return;
+    	}
+    	else if(desObj.getType().getKind() != Struct.Array) {
+    		report_error("GRESKA-DesignatorStat_MAX: @ " + desObj.getName() + " nije trazenje maksimuma nad nizom", designatorStat_MAX);
+    		return;
+    	}
+    	
+    	if(designatorStat_MAX.getDesignator() instanceof Designator_ONE) {
+    		report_info("INFO-DesignatorStat_MAX: Pristup oznaci " + desObj.getName() + ". " + objNodeToString(desObj) , designatorStat_MAX);
+    	}
+    }
+    
     // MayDesignator ::= (MayDesignator_Designator) Designator
     @Override
     public void visit(MayDesignator_Designator mayDesignator_Designator) {

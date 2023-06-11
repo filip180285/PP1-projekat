@@ -15,6 +15,8 @@ public class CodeGenerator extends VisitorAdaptor {
     private List<Obj> listOfDesignators = new LinkedList<Obj>(); // za dodelu vrednosti pri raspakivanju niza
     private Obj designatorMatrix; // za cuvanje objektnog cvora matrice radi kasnijeg ucitavanja iste na stek
     
+    private Obj designatorArray; // za cuvanje objektnog cvora niza radi kasnijeg ucitavanja iste na stek
+    
     public static final int LENGTH_EXCEPTION = -1;
 
     // MethodName ::= (MethodName) IDENTIFIER;
@@ -192,6 +194,7 @@ public class CodeGenerator extends VisitorAdaptor {
     		designatorMatrix = designator_ONE.obj;
     		// System.out.println(designatorMatrix.getName());
     	}
+    	designatorArray = designator_ONE.obj;
     }
     
     // MayMatrix ::= (MayMatrix_MATRIX) LEFT_BRACKET Expr RIGHT_BRACKET
@@ -230,6 +233,68 @@ public class CodeGenerator extends VisitorAdaptor {
     	Code.loadConst(-1);
     	Code.put(Code.add);
     	Code.store(desObj);
+    }
+    
+    // DesignatorStatement ::= (DesignatorStat_MAX) Designator MONKEY
+    @Override
+    public void visit(DesignatorStat_MAX designatorStat_MAX) { 
+    	Code.load(designatorArray);
+    	Code.put(Code.arraylength); 
+    	Code.loadConst(0);
+    	int fixup1 = Code.pc + 1;
+    	Code.putFalseJump(Code.ne, 0); // skok kraj 0
+    	
+    	Code.load(designatorArray);
+    	Code.loadConst(0);
+    	Code.put(Code.aload);
+    	Code.loadConst(1);
+    	Code.loadConst(1);
+    	Code.load(designatorArray);
+    	int goreAdr = Code.pc; // ***gore
+    	Code.put(Code.arraylength); 
+    	int fixup2 = Code.pc + 1;
+    	Code.putFalseJump(Code.ne, 0); // skok kraj 1
+    	
+    	Code.put(Code.dup2);
+    	Code.load(designatorArray);
+    	Code.put(Code.dup_x1);
+    	Code.put(Code.pop);
+    	Code.put(Code.aload);
+    	Code.put(Code.dup2);
+    	int fixup3 = Code.pc + 1;
+    	Code.putFalseJump(Code.ge, 0); // skok na zamena
+    	int fixup4 = Code.pc + 1;
+    	Code.putJump(0); // skok na dole
+    	
+    	//zamena
+    	Code.fixup(fixup3);
+    	Code.put(Code.dup_x1);
+    	Code.put(Code.pop);
+    	Code.put(Code.pop);
+    	Code.put(Code.dup_x2);
+    	Code.put(Code.pop);
+    	Code.put(Code.dup_x1);
+    	Code.fixup(fixup4); // dole
+    	Code.put(Code.pop);
+    	Code.put(Code.pop);
+    	Code.loadConst(1);
+    	Code.put(Code.add);
+    	Code.put(Code.dup);
+    	Code.load(designatorArray);
+    	Code.putJump(goreAdr);
+    	
+    	// kraj0
+    	Code.fixup(fixup1);
+    	Code.put(Code.trap);
+    	Code.put(-1);
+    	int fixup5 = Code.pc + 1;
+    	Code.putJump(0);
+    	// kraj 1
+    	Code.fixup(fixup2);
+    	Code.put(Code.pop);
+    	Code.loadConst(5);
+    	Code.put(Code.print);
+    	Code.fixup(fixup5);
     }
     
     

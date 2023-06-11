@@ -1,0 +1,66 @@
+INFO  02:18:12,733 - Compiling source file: C:\Users\Korisnik\Desktop\PP1-projekat\MJCompiler\test\program.mj
+INFO  02:18:12,753 - #2 program
+INFO  02:18:12,753 - #9 test301
+INFO  02:18:12,753 - #27 {
+INFO  02:18:12,754 - #8 void
+INFO  02:18:12,754 - #9 main
+INFO  02:18:12,754 - #23 (
+INFO  02:18:12,755 - #24 )
+INFO  02:18:12,755 - #9 int
+INFO  02:18:12,755 - #9 niz
+INFO  02:18:12,755 - #25 [
+INFO  02:18:12,755 - #26 ]
+INFO  02:18:12,756 - #21 ;
+INFO  02:18:12,756 - #27 {
+INFO  02:18:12,756 - #9 niz
+INFO  02:18:12,757 - #29 @
+INFO  02:18:12,757 - #21 ;
+INFO  02:18:12,757 - #28 }
+INFO  02:18:12,757 - #28 }
+INFO  02:18:12,758 - 
+                     ==============ISPIS STABLA=====================
+INFO  02:18:12,758 - Program(
+  ProgramName(
+   test301
+  ) [ProgramName]
+  ConstVarDeclList_EPSILON(
+  ) [ConstVarDeclList_EPSILON]
+  MethodDecl(
+    MethodName(
+     main
+    ) [MethodName]
+    MethodVarDeclList_VAR(
+      MethodVarDeclList_EPSILON(
+      ) [MethodVarDeclList_EPSILON]
+      VarDeclList(
+        Type(
+         int
+        ) [Type]
+        VarDeclOneOrMore_ONE(
+          VarDecl_ARRAY(
+           niz
+          ) [VarDecl_ARRAY]
+        ) [VarDeclOneOrMore_ONE]
+      ) [VarDeclList]
+    ) [MethodVarDeclList_VAR]
+    StatementList_STATEMENTS(
+      StatementList_EPSILON(
+      ) [StatementList_EPSILON]
+      Statement_DesignatorStatement(
+        DesignatorStat_MAX(
+          Designator_ONE(
+           niz
+          ) [Designator_ONE]
+        ) [DesignatorStat_MAX]
+      ) [Statement_DesignatorStatement]
+    ) [StatementList_STATEMENTS]
+  ) [MethodDecl]
+) [Program]
+INFO  02:18:12,761 - ==============ZAVRSEN ISPIS STABLA=====================
+
+INFO  02:18:12,761 - ==============ISPIS SEMANTICKE ANALIZE=====================
+INFO  02:18:12,770 - INFO-DesignatorStat_MAX: Pristup oznaci niz. Objektni cvor: { KIND: Var, NAME: niz, TYPE(Struct): { KIND: Array, ElemType: intType }, ADR: 0, LEVEL: 1 } na liniji 11
+INFO  02:18:12,770 - ==============ZAVRSEN ISPIS SEMANTICKE ANALIZE=====================
+
+INFO  02:18:12,771 - Parsiranje uspesno zavrseno!
+INFO  02:18:12,773 - Generisanje koda uspesno zavrseno!
