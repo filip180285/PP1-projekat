@@ -232,29 +232,6 @@ public class CodeGenerator extends VisitorAdaptor {
     	Code.store(desObj);
     }
     
-    // DesignatorStatement ::= (DesignatorStat_HASH) HASH Designator
-    @Override
-    public void visit(DesignatorStat_HASH designatorStat_HASH) { 
-    	for(int i = 0; i < 8; i++) {
-    		Code.load(designatorStat_HASH.getDesignator().obj);
-    		Code.loadConst(i);
-    		Code.put(Code.aload);
-    		Code.loadConst((int)Math.pow(2, i));
-    		Code.put(Code.mul);
-    	}
-    	
-    	for(int i = 0; i < 7; i++) {
-    		Code.put(Code.add);
-    	}
-    	
-    	Code.put(Code.dup);
-    	Code.loadConst(5);
-    	Code.put(Code.print);
-    	Code.loadConst(5);
-    	Code.put(Code.bprint);
-    	
-    }
-    
     
     // DesignatorStatement ::= (DesignatorSt_Assign) Designator Assignop Expr
     @Override
