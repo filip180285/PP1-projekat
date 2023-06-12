@@ -3,7 +3,7 @@
 program test301
 	
 {
-	void main()	int niz[];
+	void main()	int niz[]; char niz2[]; bool niz3[];
 
 	{
 		niz = new int[4];
@@ -31,6 +31,21 @@ program test301
 		niz[4] = 7;
 			
 		niz@; // 17
+		
+		niz2 = new char[3];
+		niz2[0] = 'a';
+		niz2[1] = 'c';
+		niz2[2] = 'b';
+		
+		niz2@; // c
+		
+		niz3 = new bool[3];
+		niz3[0] = 'false';
+		niz3[1] = 'true';
+		niz3[2] = 'false';
+		
+		niz3@; // 1
+		
 	}
 }
 

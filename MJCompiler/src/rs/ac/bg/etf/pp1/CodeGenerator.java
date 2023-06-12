@@ -238,6 +238,8 @@ public class CodeGenerator extends VisitorAdaptor {
     // DesignatorStatement ::= (DesignatorStat_MAX) Designator MONKEY
     @Override
     public void visit(DesignatorStat_MAX designatorStat_MAX) { 
+    	Struct type = designatorStat_MAX.getDesignator().obj.getType().getElemType();
+    	
     	Code.load(designatorArray);
     	Code.put(Code.arraylength); 
     	Code.loadConst(0);
@@ -246,7 +248,8 @@ public class CodeGenerator extends VisitorAdaptor {
     	
     	Code.load(designatorArray);
     	Code.loadConst(0);
-    	Code.put(Code.aload);
+    	if(type.equals(Tab.charType)) Code.put(Code.baload);
+    	else Code.put(Code.aload);
     	Code.loadConst(1);
     	Code.loadConst(1);
     	Code.load(designatorArray);
@@ -259,7 +262,8 @@ public class CodeGenerator extends VisitorAdaptor {
     	Code.load(designatorArray);
     	Code.put(Code.dup_x1);
     	Code.put(Code.pop);
-    	Code.put(Code.aload);
+    	if(type.equals(Tab.charType)) Code.put(Code.baload);
+    	else  Code.put(Code.aload);
     	Code.put(Code.dup2);
     	int fixup3 = Code.pc + 1;
     	Code.putFalseJump(Code.ge, 0); // skok na zamena
@@ -293,7 +297,8 @@ public class CodeGenerator extends VisitorAdaptor {
     	Code.fixup(fixup2);
     	Code.put(Code.pop);
     	Code.loadConst(5);
-    	Code.put(Code.print);
+    	if(type.equals(Tab.charType)) Code.put(Code.bprint);
+    	else Code.put(Code.print);
     	Code.fixup(fixup5);
     }
     
