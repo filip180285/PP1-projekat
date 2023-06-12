@@ -650,6 +650,26 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     	}
     }
     
+    // DesignatorStatement ::= (DesignatorStat_HASH) HASH Designator
+    @Override
+    public void visit(DesignatorStat_HASH designatorStat_HASH) { 
+    	Obj desObj = designatorStat_HASH.getDesignator().obj;
+    	int kind = desObj.getKind();
+    	
+    	if(kind != Obj.Var) {
+    		report_error("GRESKA-DesignatorStat_HASH: HASH  nije nad varijablom", designatorStat_HASH);
+    		return;
+    	}
+    	else if(desObj.getType().getKind() != Struct.Array || desObj.getType().getElemType().equals(Tab.find("bool").getType()) == false) {
+    		report_error("GRESKA-DesignatorStat_HASH: HASH " + desObj.getName() + " nije HASH nad nizovnim bool tipom", designatorStat_HASH);
+    		return;
+    	}
+    	
+    	if(designatorStat_HASH.getDesignator() instanceof Designator_ONE) {
+    		report_info("INFO-designatorStat_HASH: Pristup oznaci " + desObj.getName() + ". " + objNodeToString(desObj) , designatorStat_HASH);
+    	}
+    }
+    
     // MayDesignator ::= (MayDesignator_Designator) Designator
     @Override
     public void visit(MayDesignator_Designator mayDesignator_Designator) {
