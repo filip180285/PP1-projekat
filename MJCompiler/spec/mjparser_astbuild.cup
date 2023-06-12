@@ -56,6 +56,8 @@ terminal Integer BOOLEAN;
 terminal PLUS, MINUS, MULTIPLICATION, DIVISION, MODULUS, EQUALS, INCREMENT, DECREMENT;
 terminal SEMICOLON, COMMA, LEFT_PARENTHESIS, RIGHT_PARENTHESIS, LEFT_BRACKET, RIGHT_BRACKET, LEFT_BRACE, RIGHT_BRACE;
 
+terminal FACTORIAL;
+
 nonterminal Program Program;
 nonterminal ConstVarDeclList ConstVarDeclList;
 nonterminal ConstDeclList ConstDeclList;
@@ -82,7 +84,7 @@ nonterminal Mulop Mulop;
 
 nonterminal rs.etf.pp1.symboltable.concepts.Obj ProgramName, MethodName;
 nonterminal rs.etf.pp1.symboltable.concepts.Obj Designator, DesignatorArrayOrMatrixName;
-nonterminal rs.etf.pp1.symboltable.concepts.Struct Constant, FactorSign, Factor, Term, Expr;
+nonterminal rs.etf.pp1.symboltable.concepts.Struct Constant, FactorSign, Factor, Subfactor, Term, Expr;
 
 nonterminal rs.etf.pp1.symboltable.concepts.Struct Type, NEW_Array, NEW_Matrix;
 
@@ -244,8 +246,12 @@ UnaryMinus ::= (UnaryMinus_MINUS) MINUS {: RESULT=new UnaryMinus_MINUS(); :}
 			   |
 			   (UnaryMinus_EPSILON) {: RESULT=new UnaryMinus_EPSILON(); :} /* epsilon */
 			   ;
+			   
+Factor ::= (Factor_Subfactor) Subfactor:S1 {: RESULT=new Factor_Subfactor(S1); RESULT.setLine(S1left); :}
+		   |
+		   (Factor_Factorial) Subfactor:S1 FACTORIAL {: RESULT=new Factor_Factorial(S1); RESULT.setLine(S1left); :};
 
-Factor ::= (Factor_Designator) Designator:D1 {: RESULT=new Factor_Designator(D1); RESULT.setLine(D1left); :}
+Subfactor ::= (Factor_Designator) Designator:D1 {: RESULT=new Factor_Designator(D1); RESULT.setLine(D1left); :}
 		   |
 		   (Factor_NUMBER) NUMBER:N1 {: RESULT=new Factor_NUMBER(N1); RESULT.setLine(N1left); :}
 		   |

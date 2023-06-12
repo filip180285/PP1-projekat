@@ -42,6 +42,60 @@ public class CodeGenerator extends VisitorAdaptor {
     	Code.put(Code.return_);
     }
     
+    // Factor ::= (Factor_Factorial) Subfactor FACTORIAL;
+    @Override
+    public void visit(Factor_Factorial factor_Factorial) { // 5
+    	Code.put(Code.dup); // -1 -1
+    	Code.loadConst(0);; // -1 -1 0
+    	int fixup3 = Code.pc + 1;
+    	Code.putFalseJump(Code.ge, 0); // skok na trap // -1
+    	
+    	Code.put(Code.dup); // 0 0
+    	Code.loadConst(0);; // 0 0 0
+    	int fixup4 = Code.pc + 1;
+    	Code.putFalseJump(Code.ne, 0); // skok na return 0
+    	
+    	Code.put(Code.dup); // 1 1
+    	Code.loadConst(1);; // 1 1 1
+    	int fixup2 = Code.pc + 1;
+    	Code.putFalseJump(Code.ne, 0); // skok na return 1
+    	
+    	Code.put(Code.dup); // 5 5
+    	Code.put(Code.dup); // 5 5 5
+    	int gore = Code.pc; // 4 20 4
+    	Code.loadConst(1); // 5 5 5 1	4 20 4 1
+    	Code.put(Code.sub); // 5 5 4	4 20 3
+    	Code.put(Code.dup); // 5 5 4 4	4 20 3 3
+    	Code.loadConst(1); // 5 5 4 4 1	4 20 3 3 1
+    	int fixup = Code.pc + 1;
+    	Code.putFalseJump(Code.ne, 0); // skok na kraj	5 5 4	4 20 3
+    	Code.put(Code.mul); // 5 20
+    	Code.put(Code.dup2); // 5 20 5 20
+    	Code.put(Code.pop); // 5 20 5
+    	Code.loadConst(1); // 5 20 5 1
+    	Code.put(Code.sub); // 5 20 4
+    	Code.put(Code.dup_x2); // 4 5 20 4
+    	Code.put(Code.pop); // 4 5 20
+    	Code.put(Code.dup_x1); // 4 20 5 20
+    	Code.put(Code.pop); // 4 20 5
+    	Code.put(Code.pop); // 4 20
+    	Code.put(Code.dup2); // 4 20 4 20
+    	Code.put(Code.pop); // 4 20 4
+    	Code.putJump(gore);
+    	
+    	Code.fixup(fixup3);
+    	Code.put(Code.trap);
+    	Code.put(7);
+    	
+    	Code.fixup(fixup); // 2 120 1
+    	Code.put(Code.pop); // 2 120
+    	Code.put(Code.dup_x1); // 120 2 120
+    	Code.put(Code.pop); // 120 2
+    	Code.put(Code.pop); // 120
+    	Code.fixup(fixup2);
+    	Code.fixup(fixup4);
+    }
+    
     // Factor ::= (Factor_Designator) Designator
     @Override
     public void visit(Factor_Designator factor_Designator) {

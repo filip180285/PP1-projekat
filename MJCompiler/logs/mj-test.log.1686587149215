@@ -1,0 +1,81 @@
+INFO  18:11:13,814 - Compiling source file: C:\Users\Korisnik\Desktop\PP1-projekat\MJCompiler\test\program.mj
+INFO  18:11:13,887 - #2 program
+INFO  18:11:13,888 - #9 test301
+INFO  18:11:13,888 - #27 {
+INFO  18:11:13,890 - #8 void
+INFO  18:11:13,890 - #9 main
+INFO  18:11:13,890 - #23 (
+INFO  18:11:13,892 - #24 )
+INFO  18:11:13,892 - #9 int
+INFO  18:11:13,894 - #9 a
+INFO  18:11:13,895 - #21 ;
+INFO  18:11:13,896 - #27 {
+INFO  18:11:13,898 - #9 a
+INFO  18:11:13,899 - #18 =
+INFO  18:11:13,899 - #10 5
+INFO  18:11:13,902 - #29 !
+INFO  18:11:13,903 - #21 ;
+INFO  18:11:13,905 - #28 }
+INFO  18:11:13,905 - #28 }
+INFO  18:11:13,908 - 
+                     ==============ISPIS STABLA=====================
+INFO  18:11:13,909 - Program(
+  ProgramName(
+   test301
+  ) [ProgramName]
+  ConstVarDeclList_EPSILON(
+  ) [ConstVarDeclList_EPSILON]
+  MethodDecl(
+    MethodName(
+     main
+    ) [MethodName]
+    MethodVarDeclList_VAR(
+      MethodVarDeclList_EPSILON(
+      ) [MethodVarDeclList_EPSILON]
+      VarDeclList(
+        Type(
+         int
+        ) [Type]
+        VarDeclOneOrMore_ONE(
+          VarDecl_VAR(
+           a
+          ) [VarDecl_VAR]
+        ) [VarDeclOneOrMore_ONE]
+      ) [VarDeclList]
+    ) [MethodVarDeclList_VAR]
+    StatementList_STATEMENTS(
+      StatementList_EPSILON(
+      ) [StatementList_EPSILON]
+      Statement_DesignatorStatement(
+        DesignatorSt_Assign(
+          Designator_ONE(
+           a
+          ) [Designator_ONE]
+          Assignop(
+          ) [Assignop]
+          Expr_ONE(
+            Term_ONE(
+              FactorSign(
+                UnaryMinus_EPSILON(
+                ) [UnaryMinus_EPSILON]
+                Factor_Factorial(
+                  Factor_NUMBER(
+                   5
+                  ) [Factor_NUMBER]
+                ) [Factor_Factorial]
+              ) [FactorSign]
+            ) [Term_ONE]
+          ) [Expr_ONE]
+        ) [DesignatorSt_Assign]
+      ) [Statement_DesignatorStatement]
+    ) [StatementList_STATEMENTS]
+  ) [MethodDecl]
+) [Program]
+INFO  18:11:13,912 - ==============ZAVRSEN ISPIS STABLA=====================
+
+INFO  18:11:13,912 - ==============ISPIS SEMANTICKE ANALIZE=====================
+INFO  18:11:13,936 - INFO-DesignatorSt_Assign: Pristup oznaci a. Objektni cvor: { KIND: Var, NAME: a, TYPE(Struct): { KIND: Int, ElemType: intType }, ADR: 0, LEVEL: 1 } na liniji 10
+INFO  18:11:13,936 - ==============ZAVRSEN ISPIS SEMANTICKE ANALIZE=====================
+
+INFO  18:11:13,938 - Parsiranje uspesno zavrseno!
+INFO  18:11:13,947 - Generisanje koda uspesno zavrseno!

@@ -60,6 +60,7 @@ import java_cup.runtime.Symbol;
 "]" 		{ return new_symbol(sym.RIGHT_BRACKET, yytext()); }
 "{" 		{ return new_symbol(sym.LEFT_BRACE, yytext()); }
 "}" 		{ return new_symbol(sym.RIGHT_BRACE, yytext()); }
+"!" 		{ return new_symbol(sym.FACTORIAL, yytext()); }
 
 "//" 			 { yybegin(COMMENT); }
 <COMMENT> . 	 { yybegin(COMMENT); }

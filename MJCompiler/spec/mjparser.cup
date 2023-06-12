@@ -56,6 +56,8 @@ terminal Integer BOOLEAN;
 terminal PLUS, MINUS, MULTIPLICATION, DIVISION, MODULUS, EQUALS, INCREMENT, DECREMENT;
 terminal SEMICOLON, COMMA, LEFT_PARENTHESIS, RIGHT_PARENTHESIS, LEFT_BRACKET, RIGHT_BRACKET, LEFT_BRACE, RIGHT_BRACE;
 
+terminal FACTORIAL;
+
 nonterminal Program, ConstVarDeclList, ConstDeclList, VarDeclList, MethodDecl;
 nonterminal ConstDeclOneOrMore, ConstDecl, VarDeclOneOrMore, VarDecl;
 nonterminal MethodVarDeclList, StatementList;
@@ -68,7 +70,7 @@ nonterminal UnaryMinus, Assignop, Addop, Mulop;
 
 nonterminal rs.etf.pp1.symboltable.concepts.Obj ProgramName, MethodName;
 nonterminal rs.etf.pp1.symboltable.concepts.Obj Designator, DesignatorArrayOrMatrixName;
-nonterminal rs.etf.pp1.symboltable.concepts.Struct Constant, FactorSign, Factor, Term, Expr;
+nonterminal rs.etf.pp1.symboltable.concepts.Struct Constant, FactorSign, Factor, Subfactor, Term, Expr;
 
 nonterminal rs.etf.pp1.symboltable.concepts.Struct Type, NEW_Array, NEW_Matrix;
 
@@ -230,8 +232,12 @@ UnaryMinus ::= (UnaryMinus_MINUS) MINUS
 			   |
 			   (UnaryMinus_EPSILON) /* epsilon */
 			   ;
+			   
+Factor ::= (Factor_Subfactor) Subfactor
+		   |
+		   (Factor_Factorial) Subfactor FACTORIAL;
 
-Factor ::= (Factor_Designator) Designator
+Subfactor ::= (Factor_Designator) Designator
 		   |
 		   (Factor_NUMBER) NUMBER
 		   |

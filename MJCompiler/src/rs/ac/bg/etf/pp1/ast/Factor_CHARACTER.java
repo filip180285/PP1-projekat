@@ -1,11 +1,11 @@
 // generated with ast extension for cup
 // version 0.8
-// 9/5/2023 20:15:35
+// 12/5/2023 18:36:30
 
 
 package rs.ac.bg.etf.pp1.ast;
 
-public class Factor_CHARACTER extends Factor {
+public class Factor_CHARACTER extends Subfactor {
 
     private Character C1;
 

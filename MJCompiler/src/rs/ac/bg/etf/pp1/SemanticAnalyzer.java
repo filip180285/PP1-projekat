@@ -346,6 +346,25 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     	}
     }
     
+    // Factor ::= (Factor_Subfactor) Subfactor
+    @Override
+    public void visit(Factor_Subfactor factor_Subfactor) {
+    	factor_Subfactor.struct = factor_Subfactor.getSubfactor().struct;
+    }
+    
+    // Factor ::= (Factor_Factorial) Subfactor FACTORIAL;
+    @Override
+    public void visit(Factor_Factorial factor_Factorial) {
+    	Struct type = factor_Factorial.getSubfactor().struct;
+    	
+    	if(type.equals(Tab.intType) == false) {
+    		report_error("GRESKA-Factor_Factorial: Faktorijal nije pozvan nad int tipom", factor_Factorial);
+    		return;
+    	}
+    	
+    	factor_Factorial.struct = type;
+    }
+    
     // Factor ::= (Factor_Designator) Designator
     @Override
     public void visit(Factor_Designator factor_Designator) {
