@@ -183,6 +183,8 @@ DesignatorStatement ::= (DesignatorSt_Assign) Designator Assignop Expr
 					    (DesignatorStat_INC) Designator INCREMENT
 					    |
 					    (DesignatorStat_DEC) Designator DECREMENT
+					    |
+					    (DesignatorStat_SWAP) DesignatorArrayOrMatrixName LEFT_BRACKET Expr COMMA Expr RIGHT_BRACKET
 						|
 						(DesignatorStatement_List) LEFT_BRACKET DesignatorStatementList RIGHT_BRACKET EQUALS Designator;
 						
@@ -257,7 +259,9 @@ NEW_Matrix ::=  (NEW_Matrix_MATRIX) LEFT_BRACKET Expr RIGHT_BRACKET
 Designator ::= (Designator_ONE) IDENTIFIER
 			   |
 			   (Designator_Elem) DesignatorArrayOrMatrixName LEFT_BRACKET Expr RIGHT_BRACKET MayMatrix;
-			   
+
+
+
 DesignatorArrayOrMatrixName ::= (DesignatorArrayOrMatrixName) IDENTIFIER;
 
 MayMatrix ::= (MayMatrix_MATRIX) LEFT_BRACKET Expr RIGHT_BRACKET

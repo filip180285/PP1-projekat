@@ -650,6 +650,14 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     	}
     }
     
+    // DesignatorStatement ::= (DesignatorStat_SWAP) DesignatorArrayOrMatrixName LEFT_BRACKET Expr COMMA Expr RIGHT_BRACKET
+    @Override
+    public void visit(DesignatorStat_SWAP designatorStat_SWAP) { 
+    	Obj desObj = designatorStat_SWAP.getDesignatorArrayOrMatrixName().obj;
+    	
+    	report_info("INFO-DesignatorStat_SWAP: Pristup oznaci " + desObj.getName() + ". " + objNodeToString(desObj) , designatorStat_SWAP);
+    }
+    
     // MayDesignator ::= (MayDesignator_Designator) Designator
     @Override
     public void visit(MayDesignator_Designator mayDesignator_Designator) {

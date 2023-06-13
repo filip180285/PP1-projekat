@@ -232,6 +232,56 @@ public class CodeGenerator extends VisitorAdaptor {
     	Code.store(desObj);
     }
     
+    // DesignatorStatement ::= (DesignatorStat_SWAP) DesignatorArrayOrMatrixName LEFT_BRACKET Expr COMMA Expr RIGHT_BRACKET
+    @Override
+    public void visit(DesignatorStat_SWAP designatorStat_SWAP) { // niz 1 2
+    	Obj desObj = designatorStat_SWAP.getDesignatorArrayOrMatrixName().obj;
+    	Code.load(desObj); // niz 1 2 niz
+    	Code.put(Code.dup2); // niz 1 2 niz 2 niz
+    	Code.put(Code.pop); // niz 1 2 niz 2
+    	
+    	if(desObj.getType().getElemType().equals(Tab.charType)) {
+    		Code.put(Code.baload);  // niz 1 2 niz[2]
+    	}
+    	else Code.put(Code.aload);  // niz 1 2 niz[2]
+    	
+    	Code.put(Code.dup_x2);  // niz niz[2] 1 2 niz[2]
+    	Code.put(Code.pop);  // niz niz[2] 1 2
+    	Code.put(Code.dup2);  // niz niz[2] 1 2 1 2
+    	Code.put(Code.pop);  // niz niz[2] 1 2 1
+    	Code.load(desObj); // niz niz[2] 1 2 1 niz
+    	Code.put(Code.dup_x1);  // niz niz[2] 1 2 niz 1 niz
+    	Code.put(Code.pop);  // niz niz[2] 1 2 niz 1
+    	
+    	if(desObj.getType().getElemType().equals(Tab.charType)) {
+    		Code.put(Code.baload);  // niz niz[2] 1 2 niz[1]
+    	}
+    	else Code.put(Code.aload);  // niz niz[2] 1 2 niz[1]
+    	
+    	Code.load(desObj); // niz niz[2] 1 2 niz[1] niz
+    	Code.put(Code.dup_x2);; // niz niz[2] 1 niz 2 niz[1] niz
+    	Code.put(Code.pop);; // niz niz[2] 1 niz 2 niz[1]
+    	
+    	
+    	if(desObj.getType().getElemType().equals(Tab.charType)) {
+    		Code.put(Code.bastore);  // niz niz[2] 1
+    	}
+    	else Code.put(Code.astore);  // niz niz[2] 1
+    	
+    	Code.load(desObj); // niz niz[2] 1 niz
+    	Code.put(Code.dup_x2);; // niz niz niz[2] 1 niz
+    	Code.put(Code.pop);; // niz niz niz[2] 1
+    	Code.put(Code.dup_x1);; // niz niz 1 niz[2] 1
+    	Code.put(Code.pop);; // niz niz 1 niz[2]
+    	
+    	if(desObj.getType().getElemType().equals(Tab.charType)) {
+    		Code.put(Code.bastore);  // niz
+    	}
+    	else Code.put(Code.astore);  // niz
+    	
+    	Code.put(Code.pop);
+    }
+    
     
     // DesignatorStatement ::= (DesignatorSt_Assign) Designator Assignop Expr
     @Override

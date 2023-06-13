@@ -5,19 +5,19 @@
 
 package rs.ac.bg.etf.pp1.ast;
 
-public class Designator_Elem extends Designator {
+public class DesignatorStat_SWAP extends DesignatorStatement {
 
     private DesignatorArrayOrMatrixName DesignatorArrayOrMatrixName;
     private Expr Expr;
-    private MayMatrix MayMatrix;
+    private Expr Expr1;
 
-    public Designator_Elem (DesignatorArrayOrMatrixName DesignatorArrayOrMatrixName, Expr Expr, MayMatrix MayMatrix) {
+    public DesignatorStat_SWAP (DesignatorArrayOrMatrixName DesignatorArrayOrMatrixName, Expr Expr, Expr Expr1) {
         this.DesignatorArrayOrMatrixName=DesignatorArrayOrMatrixName;
         if(DesignatorArrayOrMatrixName!=null) DesignatorArrayOrMatrixName.setParent(this);
         this.Expr=Expr;
         if(Expr!=null) Expr.setParent(this);
-        this.MayMatrix=MayMatrix;
-        if(MayMatrix!=null) MayMatrix.setParent(this);
+        this.Expr1=Expr1;
+        if(Expr1!=null) Expr1.setParent(this);
     }
 
     public DesignatorArrayOrMatrixName getDesignatorArrayOrMatrixName() {
@@ -36,12 +36,12 @@ public class Designator_Elem extends Designator {
         this.Expr=Expr;
     }
 
-    public MayMatrix getMayMatrix() {
-        return MayMatrix;
+    public Expr getExpr1() {
+        return Expr1;
     }
 
-    public void setMayMatrix(MayMatrix MayMatrix) {
-        this.MayMatrix=MayMatrix;
+    public void setExpr1(Expr Expr1) {
+        this.Expr1=Expr1;
     }
 
     public void accept(Visitor visitor) {
@@ -51,27 +51,27 @@ public class Designator_Elem extends Designator {
     public void childrenAccept(Visitor visitor) {
         if(DesignatorArrayOrMatrixName!=null) DesignatorArrayOrMatrixName.accept(visitor);
         if(Expr!=null) Expr.accept(visitor);
-        if(MayMatrix!=null) MayMatrix.accept(visitor);
+        if(Expr1!=null) Expr1.accept(visitor);
     }
 
     public void traverseTopDown(Visitor visitor) {
         accept(visitor);
         if(DesignatorArrayOrMatrixName!=null) DesignatorArrayOrMatrixName.traverseTopDown(visitor);
         if(Expr!=null) Expr.traverseTopDown(visitor);
-        if(MayMatrix!=null) MayMatrix.traverseTopDown(visitor);
+        if(Expr1!=null) Expr1.traverseTopDown(visitor);
     }
 
     public void traverseBottomUp(Visitor visitor) {
         if(DesignatorArrayOrMatrixName!=null) DesignatorArrayOrMatrixName.traverseBottomUp(visitor);
         if(Expr!=null) Expr.traverseBottomUp(visitor);
-        if(MayMatrix!=null) MayMatrix.traverseBottomUp(visitor);
+        if(Expr1!=null) Expr1.traverseBottomUp(visitor);
         accept(visitor);
     }
 
     public String toString(String tab) {
         StringBuffer buffer=new StringBuffer();
         buffer.append(tab);
-        buffer.append("Designator_Elem(\n");
+        buffer.append("DesignatorStat_SWAP(\n");
 
         if(DesignatorArrayOrMatrixName!=null)
             buffer.append(DesignatorArrayOrMatrixName.toString("  "+tab));
@@ -85,14 +85,14 @@ public class Designator_Elem extends Designator {
             buffer.append(tab+"  null");
         buffer.append("\n");
 
-        if(MayMatrix!=null)
-            buffer.append(MayMatrix.toString("  "+tab));
+        if(Expr1!=null)
+            buffer.append(Expr1.toString("  "+tab));
         else
             buffer.append(tab+"  null");
         buffer.append("\n");
 
         buffer.append(tab);
-        buffer.append(") [Designator_Elem]");
+        buffer.append(") [DesignatorStat_SWAP]");
         return buffer.toString();
     }
 }

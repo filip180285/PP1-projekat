@@ -197,6 +197,8 @@ DesignatorStatement ::= (DesignatorSt_Assign) Designator:D1 Assignop:A2 Expr:E3 
 					    (DesignatorStat_INC) Designator:D1 INCREMENT {: RESULT=new DesignatorStat_INC(D1); RESULT.setLine(D1left); :}
 					    |
 					    (DesignatorStat_DEC) Designator:D1 DECREMENT {: RESULT=new DesignatorStat_DEC(D1); RESULT.setLine(D1left); :}
+					    |
+					    (DesignatorStat_SWAP) DesignatorArrayOrMatrixName:D1 LEFT_BRACKET Expr:E2 COMMA Expr:E3 RIGHT_BRACKET {: RESULT=new DesignatorStat_SWAP(D1, E2, E3); RESULT.setLine(D1left); :}
 						|
 						(DesignatorStatement_List) LEFT_BRACKET DesignatorStatementList:D1 RIGHT_BRACKET EQUALS Designator:D2 {: RESULT=new DesignatorStatement_List(D1, D2); RESULT.setLine(D1left); :};
 						
@@ -271,7 +273,9 @@ NEW_Matrix ::=  (NEW_Matrix_MATRIX) LEFT_BRACKET Expr:E1 RIGHT_BRACKET {: RESULT
 Designator ::= (Designator_ONE) IDENTIFIER:I1 {: RESULT=new Designator_ONE(I1); RESULT.setLine(I1left); :}
 			   |
 			   (Designator_Elem) DesignatorArrayOrMatrixName:D1 LEFT_BRACKET Expr:E2 RIGHT_BRACKET MayMatrix:M3 {: RESULT=new Designator_Elem(D1, E2, M3); RESULT.setLine(D1left); :};
-			   
+
+
+
 DesignatorArrayOrMatrixName ::= (DesignatorArrayOrMatrixName) IDENTIFIER:I1 {: RESULT=new DesignatorArrayOrMatrixName(I1); RESULT.setLine(I1left); :};
 
 MayMatrix ::= (MayMatrix_MATRIX) LEFT_BRACKET Expr:E1 RIGHT_BRACKET {: RESULT=new MayMatrix_MATRIX(E1); RESULT.setLine(E1left); :}
