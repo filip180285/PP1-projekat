@@ -14,6 +14,7 @@ public class CodeGenerator extends VisitorAdaptor {
     public static final int MAIN_PC = 0; // main za A nivo krece od 0
     private List<Obj> listOfDesignators = new LinkedList<Obj>(); // za dodelu vrednosti pri raspakivanju niza
     private Obj designatorMatrix; // za cuvanje objektnog cvora matrice radi kasnijeg ucitavanja iste na stek
+    private Obj designatorArray; // za cuvanje objektnog cvora niza radi kasnijeg ucitavanja iste na stek
     
     public static final int LENGTH_EXCEPTION = -1;
 
@@ -183,6 +184,7 @@ public class CodeGenerator extends VisitorAdaptor {
     	Obj desObj = designatorArrayOrMatrixName.obj;
     	Code.load(desObj);
     	// designatorMatrix = desObj;
+    	designatorArray = desObj;
     }
     
     // Designator ::= (Designator_ONE) IDENTIFIER
@@ -230,6 +232,75 @@ public class CodeGenerator extends VisitorAdaptor {
     	Code.loadConst(-1);
     	Code.put(Code.add);
     	Code.store(desObj);
+    }
+    
+    // DesignatorStatement ::= (DesignatorStat_SUM) HASH DesignatorArrayOrMatrixName
+    @Override
+    public void visit(DesignatorStat_SUM designatorStat_SUM) { // adr 
+    	Code.put(Code.pop); //
+    	Code.loadConst(0); // 0
+    	Code.load(designatorArray); // 0 adr
+    	Code.put(Code.arraylength); // 0 5
+    	Code.put(Code.dup2); // 0 5 0 5
+    	int fixup1 = Code.pc + 1;
+    	Code.putFalseJump(Code.ne, 0); // skoci na kraj 1
+    	Code.put(Code.pop); // 0
+    	Code.load(designatorArray); // 0 adr
+    	Code.put(Code.dup2); // 0 adr 0 adr
+    	Code.put(Code.pop); // 0 adr 0
+    	Code.put(Code.aload); // 0 adr[0]
+    	
+    	// skok ovde
+    	int gore = Code.pc;
+    	Code.put(Code.dup2); // 0 adr[0] 0 adr[0]
+    	Code.put(Code.pop); // 0 adr[0] 0
+    	Code.loadConst(1); // 0 adr[0] 0 1
+    	Code.put(Code.add); // 0 adr[0] 1
+    	Code.load(designatorArray); // 0 adr[0] 1 adr
+    	Code.put(Code.arraylength); // 0 adr[0] 1 5
+    	int fixup2 = Code.pc + 1;
+    	Code.putFalseJump(Code.ne, 0); // 0 adr[0] skok na kraj2
+    	Code.put(Code.dup2); // 0 adr[0] 0 adr[0]
+    	Code.put(Code.pop); // 0 adr[0] 0
+    	Code.loadConst(1); // 0 adr[0] 0 1
+    	Code.put(Code.add); // 0 adr[0] 1
+    	Code.put(Code.dup); // 0 adr[0] 1 1
+    	Code.load(designatorArray); // 0 adr[0] 1 1 adr
+    	Code.put(Code.dup_x1); // 0 adr[0] 1 adr 1 adr
+    	Code.put(Code.pop); // 0 adr[0] 1 adr 1
+    	Code.put(Code.aload); // 0 adr[0] 1 adr[1]
+    	Code.putJump(gore); // skok gore
+    	
+    	// kraj 1
+    	Code.fixup(fixup1); // 0 5
+    	Code.put(Code.pop); // 0
+    	int fixup3 = Code.pc + 1; // preskoci kraj 2
+    	Code.putJump(0);  // 0
+    	
+    	// kraj 2 0 a[0] 1 a[1] 2 a[2]
+    	Code.fixup(fixup2);
+    	int opet = Code.pc;
+    	Code.put(Code.dup2); // 0 a[0] 1 a[1] 2 a[2] 2 a[2]
+    	Code.put(Code.pop); // 0 a[0] 1 a[1] 2 a[2] 2
+    	Code.loadConst(0);; // 0 a[0] 1 a[1] 2 a[2] 2 0
+    	int fixup4 = Code.pc + 1;
+    	Code.putFalseJump(Code.ne, 0); // skoci na poslednji dio  0 a[0] 1 a[1] 2 a[2]
+    	Code.put(Code.dup_x1); //  0 a[0] 1 a[1] a[2] 2 a[2]
+    	Code.put(Code.pop); //  0 a[0] 1 a[1] a[2] 2
+    	Code.put(Code.pop); //  0 a[0] 1 a[1] a[2]
+    	Code.put(Code.add); // 0 a[0] 1 a[1 + 2]
+    	Code.putJump(opet);
+    	
+    	// poslednji dio
+    	Code.fixup(fixup4); // 0 a[0 + 1 + 2]
+    	Code.put(Code.dup_x1); // a[0 + 1 + 2] 0 a[0 + 1 + 2]
+    	Code.put(Code.pop); // a[0 + 1 + 2]
+    	Code.put(Code.pop); // a[0 + 1 + 2] 
+    	Code.fixup(fixup3);
+    	
+    	Code.loadConst(5);
+    	Code.put(Code.print);
+    	
     }
     
     

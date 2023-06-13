@@ -650,6 +650,16 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     	}
     }
     
+    // DesignatorStatement ::= (DesignatorStat_SUM) HASH DesignatorArrayOrMatrixName
+    @Override
+    public void visit(DesignatorStat_SUM designatorStat_SUM) { 
+    	if(designatorStat_SUM.getDesignatorArrayOrMatrixName().obj.getType().getElemType().equals(Tab.intType) == false) {
+    		report_error("GRESKA-DesignatorStat_SUM: Niz "+ designatorStat_SUM.getDesignatorArrayOrMatrixName().obj.getName() +" nije niz int tipa", designatorStat_SUM);
+    		return;
+    	}
+    	report_info("INFO-DesignatorStat_SUM: Pristup oznaci " + designatorStat_SUM.getDesignatorArrayOrMatrixName().obj.getName() + ". " + objNodeToString(designatorStat_SUM.getDesignatorArrayOrMatrixName().obj) , designatorStat_SUM);
+    }
+    
     // MayDesignator ::= (MayDesignator_Designator) Designator
     @Override
     public void visit(MayDesignator_Designator mayDesignator_Designator) {

@@ -1,0 +1,351 @@
+INFO  16:39:27,719 - Compiling source file: C:\Users\Korisnik\Desktop\PP1-projekat\MJCompiler\test\program.mj
+INFO  16:39:27,812 - #2 program
+INFO  16:39:27,812 - #9 test301
+INFO  16:39:27,813 - #27 {
+INFO  16:39:27,816 - #8 void
+INFO  16:39:27,816 - #9 main
+INFO  16:39:27,816 - #23 (
+INFO  16:39:27,818 - #24 )
+INFO  16:39:27,819 - #9 int
+INFO  16:39:27,820 - #9 niz
+INFO  16:39:27,823 - #25 [
+INFO  16:39:27,823 - #26 ]
+INFO  16:39:27,824 - #21 ;
+INFO  16:39:27,824 - #9 char
+INFO  16:39:27,827 - #9 niz2
+INFO  16:39:27,827 - #25 [
+INFO  16:39:27,828 - #26 ]
+INFO  16:39:27,829 - #21 ;
+INFO  16:39:27,829 - #27 {
+INFO  16:39:27,829 - #9 niz
+INFO  16:39:27,831 - #18 =
+INFO  16:39:27,832 - #4 new
+INFO  16:39:27,836 - #9 int
+INFO  16:39:27,838 - #25 [
+INFO  16:39:27,839 - #10 5
+INFO  16:39:27,839 - #26 ]
+INFO  16:39:27,841 - #21 ;
+INFO  16:39:27,845 - #9 niz
+INFO  16:39:27,847 - #25 [
+INFO  16:39:27,848 - #10 0
+INFO  16:39:27,848 - #26 ]
+INFO  16:39:27,849 - #18 =
+INFO  16:39:27,851 - #10 1
+INFO  16:39:27,851 - #21 ;
+INFO  16:39:27,851 - #9 niz
+INFO  16:39:27,851 - #25 [
+INFO  16:39:27,852 - #10 1
+INFO  16:39:27,852 - #26 ]
+INFO  16:39:27,852 - #18 =
+INFO  16:39:27,852 - #10 2
+INFO  16:39:27,852 - #21 ;
+INFO  16:39:27,853 - #9 niz
+INFO  16:39:27,853 - #25 [
+INFO  16:39:27,853 - #10 2
+INFO  16:39:27,853 - #26 ]
+INFO  16:39:27,853 - #18 =
+INFO  16:39:27,854 - #10 3
+INFO  16:39:27,854 - #21 ;
+INFO  16:39:27,854 - #9 niz
+INFO  16:39:27,854 - #25 [
+INFO  16:39:27,855 - #10 3
+INFO  16:39:27,855 - #26 ]
+INFO  16:39:27,855 - #18 =
+INFO  16:39:27,855 - #10 4
+INFO  16:39:27,855 - #21 ;
+INFO  16:39:27,856 - #9 niz
+INFO  16:39:27,856 - #25 [
+INFO  16:39:27,856 - #10 4
+INFO  16:39:27,857 - #26 ]
+INFO  16:39:27,857 - #18 =
+INFO  16:39:27,857 - #10 5
+INFO  16:39:27,857 - #21 ;
+INFO  16:39:27,858 - #29 #
+INFO  16:39:27,858 - #9 niz
+INFO  16:39:27,858 - #21 ;
+INFO  16:39:27,859 - #28 }
+INFO  16:39:27,859 - #28 }
+INFO  16:39:27,863 - 
+                     ==============ISPIS STABLA=====================
+INFO  16:39:27,868 - Program(
+  ProgramName(
+   test301
+  ) [ProgramName]
+  ConstVarDeclList_EPSILON(
+  ) [ConstVarDeclList_EPSILON]
+  MethodDecl(
+    MethodName(
+     main
+    ) [MethodName]
+    MethodVarDeclList_VAR(
+      MethodVarDeclList_VAR(
+        MethodVarDeclList_EPSILON(
+        ) [MethodVarDeclList_EPSILON]
+        VarDeclList(
+          Type(
+           int
+          ) [Type]
+          VarDeclOneOrMore_ONE(
+            VarDecl_ARRAY(
+             niz
+            ) [VarDecl_ARRAY]
+          ) [VarDeclOneOrMore_ONE]
+        ) [VarDeclList]
+      ) [MethodVarDeclList_VAR]
+      VarDeclList(
+        Type(
+         char
+        ) [Type]
+        VarDeclOneOrMore_ONE(
+          VarDecl_ARRAY(
+           niz2
+          ) [VarDecl_ARRAY]
+        ) [VarDeclOneOrMore_ONE]
+      ) [VarDeclList]
+    ) [MethodVarDeclList_VAR]
+    StatementList_STATEMENTS(
+      StatementList_STATEMENTS(
+        StatementList_STATEMENTS(
+          StatementList_STATEMENTS(
+            StatementList_STATEMENTS(
+              StatementList_STATEMENTS(
+                StatementList_STATEMENTS(
+                  StatementList_EPSILON(
+                  ) [StatementList_EPSILON]
+                  Statement_DesignatorStatement(
+                    DesignatorSt_Assign(
+                      Designator_ONE(
+                       niz
+                      ) [Designator_ONE]
+                      Assignop(
+                      ) [Assignop]
+                      Expr_ONE(
+                        Term_ONE(
+                          FactorSign(
+                            UnaryMinus_EPSILON(
+                            ) [UnaryMinus_EPSILON]
+                            Factor_NEW(
+                              NEW_Array(
+                                Type(
+                                 int
+                                ) [Type]
+                                Expr_ONE(
+                                  Term_ONE(
+                                    FactorSign(
+                                      UnaryMinus_EPSILON(
+                                      ) [UnaryMinus_EPSILON]
+                                      Factor_NUMBER(
+                                       5
+                                      ) [Factor_NUMBER]
+                                    ) [FactorSign]
+                                  ) [Term_ONE]
+                                ) [Expr_ONE]
+                              ) [NEW_Array]
+                              NEW_Matrix_EPSILON(
+                              ) [NEW_Matrix_EPSILON]
+                            ) [Factor_NEW]
+                          ) [FactorSign]
+                        ) [Term_ONE]
+                      ) [Expr_ONE]
+                    ) [DesignatorSt_Assign]
+                  ) [Statement_DesignatorStatement]
+                ) [StatementList_STATEMENTS]
+                Statement_DesignatorStatement(
+                  DesignatorSt_Assign(
+                    Designator_Elem(
+                      DesignatorArrayOrMatrixName(
+                       niz
+                      ) [DesignatorArrayOrMatrixName]
+                      Expr_ONE(
+                        Term_ONE(
+                          FactorSign(
+                            UnaryMinus_EPSILON(
+                            ) [UnaryMinus_EPSILON]
+                            Factor_NUMBER(
+                             0
+                            ) [Factor_NUMBER]
+                          ) [FactorSign]
+                        ) [Term_ONE]
+                      ) [Expr_ONE]
+                      MayMatrix_EPSILON(
+                      ) [MayMatrix_EPSILON]
+                    ) [Designator_Elem]
+                    Assignop(
+                    ) [Assignop]
+                    Expr_ONE(
+                      Term_ONE(
+                        FactorSign(
+                          UnaryMinus_EPSILON(
+                          ) [UnaryMinus_EPSILON]
+                          Factor_NUMBER(
+                           1
+                          ) [Factor_NUMBER]
+                        ) [FactorSign]
+                      ) [Term_ONE]
+                    ) [Expr_ONE]
+                  ) [DesignatorSt_Assign]
+                ) [Statement_DesignatorStatement]
+              ) [StatementList_STATEMENTS]
+              Statement_DesignatorStatement(
+                DesignatorSt_Assign(
+                  Designator_Elem(
+                    DesignatorArrayOrMatrixName(
+                     niz
+                    ) [DesignatorArrayOrMatrixName]
+                    Expr_ONE(
+                      Term_ONE(
+                        FactorSign(
+                          UnaryMinus_EPSILON(
+                          ) [UnaryMinus_EPSILON]
+                          Factor_NUMBER(
+                           1
+                          ) [Factor_NUMBER]
+                        ) [FactorSign]
+                      ) [Term_ONE]
+                    ) [Expr_ONE]
+                    MayMatrix_EPSILON(
+                    ) [MayMatrix_EPSILON]
+                  ) [Designator_Elem]
+                  Assignop(
+                  ) [Assignop]
+                  Expr_ONE(
+                    Term_ONE(
+                      FactorSign(
+                        UnaryMinus_EPSILON(
+                        ) [UnaryMinus_EPSILON]
+                        Factor_NUMBER(
+                         2
+                        ) [Factor_NUMBER]
+                      ) [FactorSign]
+                    ) [Term_ONE]
+                  ) [Expr_ONE]
+                ) [DesignatorSt_Assign]
+              ) [Statement_DesignatorStatement]
+            ) [StatementList_STATEMENTS]
+            Statement_DesignatorStatement(
+              DesignatorSt_Assign(
+                Designator_Elem(
+                  DesignatorArrayOrMatrixName(
+                   niz
+                  ) [DesignatorArrayOrMatrixName]
+                  Expr_ONE(
+                    Term_ONE(
+                      FactorSign(
+                        UnaryMinus_EPSILON(
+                        ) [UnaryMinus_EPSILON]
+                        Factor_NUMBER(
+                         2
+                        ) [Factor_NUMBER]
+                      ) [FactorSign]
+                    ) [Term_ONE]
+                  ) [Expr_ONE]
+                  MayMatrix_EPSILON(
+                  ) [MayMatrix_EPSILON]
+                ) [Designator_Elem]
+                Assignop(
+                ) [Assignop]
+                Expr_ONE(
+                  Term_ONE(
+                    FactorSign(
+                      UnaryMinus_EPSILON(
+                      ) [UnaryMinus_EPSILON]
+                      Factor_NUMBER(
+                       3
+                      ) [Factor_NUMBER]
+                    ) [FactorSign]
+                  ) [Term_ONE]
+                ) [Expr_ONE]
+              ) [DesignatorSt_Assign]
+            ) [Statement_DesignatorStatement]
+          ) [StatementList_STATEMENTS]
+          Statement_DesignatorStatement(
+            DesignatorSt_Assign(
+              Designator_Elem(
+                DesignatorArrayOrMatrixName(
+                 niz
+                ) [DesignatorArrayOrMatrixName]
+                Expr_ONE(
+                  Term_ONE(
+                    FactorSign(
+                      UnaryMinus_EPSILON(
+                      ) [UnaryMinus_EPSILON]
+                      Factor_NUMBER(
+                       3
+                      ) [Factor_NUMBER]
+                    ) [FactorSign]
+                  ) [Term_ONE]
+                ) [Expr_ONE]
+                MayMatrix_EPSILON(
+                ) [MayMatrix_EPSILON]
+              ) [Designator_Elem]
+              Assignop(
+              ) [Assignop]
+              Expr_ONE(
+                Term_ONE(
+                  FactorSign(
+                    UnaryMinus_EPSILON(
+                    ) [UnaryMinus_EPSILON]
+                    Factor_NUMBER(
+                     4
+                    ) [Factor_NUMBER]
+                  ) [FactorSign]
+                ) [Term_ONE]
+              ) [Expr_ONE]
+            ) [DesignatorSt_Assign]
+          ) [Statement_DesignatorStatement]
+        ) [StatementList_STATEMENTS]
+        Statement_DesignatorStatement(
+          DesignatorSt_Assign(
+            Designator_Elem(
+              DesignatorArrayOrMatrixName(
+               niz
+              ) [DesignatorArrayOrMatrixName]
+              Expr_ONE(
+                Term_ONE(
+                  FactorSign(
+                    UnaryMinus_EPSILON(
+                    ) [UnaryMinus_EPSILON]
+                    Factor_NUMBER(
+                     4
+                    ) [Factor_NUMBER]
+                  ) [FactorSign]
+                ) [Term_ONE]
+              ) [Expr_ONE]
+              MayMatrix_EPSILON(
+              ) [MayMatrix_EPSILON]
+            ) [Designator_Elem]
+            Assignop(
+            ) [Assignop]
+            Expr_ONE(
+              Term_ONE(
+                FactorSign(
+                  UnaryMinus_EPSILON(
+                  ) [UnaryMinus_EPSILON]
+                  Factor_NUMBER(
+                   5
+                  ) [Factor_NUMBER]
+                ) [FactorSign]
+              ) [Term_ONE]
+            ) [Expr_ONE]
+          ) [DesignatorSt_Assign]
+        ) [Statement_DesignatorStatement]
+      ) [StatementList_STATEMENTS]
+      Statement_DesignatorStatement(
+        DesignatorStat_SUM(
+          DesignatorArrayOrMatrixName(
+           niz
+          ) [DesignatorArrayOrMatrixName]
+        ) [DesignatorStat_SUM]
+      ) [Statement_DesignatorStatement]
+    ) [StatementList_STATEMENTS]
+  ) [MethodDecl]
+) [Program]
+INFO  16:39:27,876 - ==============ZAVRSEN ISPIS STABLA=====================
+
+INFO  16:39:27,877 - ==============ISPIS SEMANTICKE ANALIZE=====================
+INFO  16:39:27,918 - INFO-DesignatorSt_Assign: Pristup oznaci niz. Objektni cvor: { KIND: Var, NAME: niz, TYPE(Struct): { KIND: Array, ElemType: intType }, ADR: 0, LEVEL: 1 } na liniji 12
+INFO  16:39:27,919 - INFO-DesignatorStat_SUM: Pristup oznaci niz. Objektni cvor: { KIND: Var, NAME: niz, TYPE(Struct): { KIND: Array, ElemType: intType }, ADR: 0, LEVEL: 1 } na liniji 14
+INFO  16:39:27,919 - ==============ZAVRSEN ISPIS SEMANTICKE ANALIZE=====================
+
+INFO  16:39:27,921 - Parsiranje uspesno zavrseno!
+INFO  16:39:27,932 - Generisanje koda uspesno zavrseno!

@@ -1,0 +1,130 @@
+INFO  16:38:28,612 - Compiling source file: C:\Users\Korisnik\Desktop\PP1-projekat\MJCompiler\test\program.mj
+INFO  16:38:28,706 - #2 program
+INFO  16:38:28,707 - #9 test301
+INFO  16:38:28,708 - #27 {
+INFO  16:38:28,710 - #8 void
+INFO  16:38:28,711 - #9 main
+INFO  16:38:28,712 - #23 (
+INFO  16:38:28,713 - #24 )
+INFO  16:38:28,713 - #9 int
+INFO  16:38:28,715 - #9 niz
+INFO  16:38:28,717 - #25 [
+INFO  16:38:28,718 - #26 ]
+INFO  16:38:28,718 - #21 ;
+INFO  16:38:28,719 - #9 char
+INFO  16:38:28,721 - #9 niz2
+INFO  16:38:28,722 - #25 [
+INFO  16:38:28,723 - #26 ]
+INFO  16:38:28,723 - #21 ;
+INFO  16:38:28,723 - #27 {
+INFO  16:38:28,723 - #9 niz2
+INFO  16:38:28,724 - #18 =
+INFO  16:38:28,725 - #4 new
+INFO  16:38:28,729 - #9 char
+INFO  16:38:28,731 - #25 [
+INFO  16:38:28,732 - #10 5
+INFO  16:38:28,732 - #26 ]
+INFO  16:38:28,735 - #21 ;
+INFO  16:38:28,739 - #29 #
+INFO  16:38:28,740 - #9 niz2
+INFO  16:38:28,740 - #21 ;
+INFO  16:38:28,742 - #28 }
+INFO  16:38:28,742 - #28 }
+INFO  16:38:28,746 - 
+                     ==============ISPIS STABLA=====================
+INFO  16:38:28,747 - Program(
+  ProgramName(
+   test301
+  ) [ProgramName]
+  ConstVarDeclList_EPSILON(
+  ) [ConstVarDeclList_EPSILON]
+  MethodDecl(
+    MethodName(
+     main
+    ) [MethodName]
+    MethodVarDeclList_VAR(
+      MethodVarDeclList_VAR(
+        MethodVarDeclList_EPSILON(
+        ) [MethodVarDeclList_EPSILON]
+        VarDeclList(
+          Type(
+           int
+          ) [Type]
+          VarDeclOneOrMore_ONE(
+            VarDecl_ARRAY(
+             niz
+            ) [VarDecl_ARRAY]
+          ) [VarDeclOneOrMore_ONE]
+        ) [VarDeclList]
+      ) [MethodVarDeclList_VAR]
+      VarDeclList(
+        Type(
+         char
+        ) [Type]
+        VarDeclOneOrMore_ONE(
+          VarDecl_ARRAY(
+           niz2
+          ) [VarDecl_ARRAY]
+        ) [VarDeclOneOrMore_ONE]
+      ) [VarDeclList]
+    ) [MethodVarDeclList_VAR]
+    StatementList_STATEMENTS(
+      StatementList_STATEMENTS(
+        StatementList_EPSILON(
+        ) [StatementList_EPSILON]
+        Statement_DesignatorStatement(
+          DesignatorSt_Assign(
+            Designator_ONE(
+             niz2
+            ) [Designator_ONE]
+            Assignop(
+            ) [Assignop]
+            Expr_ONE(
+              Term_ONE(
+                FactorSign(
+                  UnaryMinus_EPSILON(
+                  ) [UnaryMinus_EPSILON]
+                  Factor_NEW(
+                    NEW_Array(
+                      Type(
+                       char
+                      ) [Type]
+                      Expr_ONE(
+                        Term_ONE(
+                          FactorSign(
+                            UnaryMinus_EPSILON(
+                            ) [UnaryMinus_EPSILON]
+                            Factor_NUMBER(
+                             5
+                            ) [Factor_NUMBER]
+                          ) [FactorSign]
+                        ) [Term_ONE]
+                      ) [Expr_ONE]
+                    ) [NEW_Array]
+                    NEW_Matrix_EPSILON(
+                    ) [NEW_Matrix_EPSILON]
+                  ) [Factor_NEW]
+                ) [FactorSign]
+              ) [Term_ONE]
+            ) [Expr_ONE]
+          ) [DesignatorSt_Assign]
+        ) [Statement_DesignatorStatement]
+      ) [StatementList_STATEMENTS]
+      Statement_DesignatorStatement(
+        DesignatorStat_SUM(
+          DesignatorArrayOrMatrixName(
+           niz2
+          ) [DesignatorArrayOrMatrixName]
+        ) [DesignatorStat_SUM]
+      ) [Statement_DesignatorStatement]
+    ) [StatementList_STATEMENTS]
+  ) [MethodDecl]
+) [Program]
+INFO  16:38:28,749 - ==============ZAVRSEN ISPIS STABLA=====================
+
+INFO  16:38:28,749 - ==============ISPIS SEMANTICKE ANALIZE=====================
+INFO  16:38:28,791 - INFO-DesignatorSt_Assign: Pristup oznaci niz2. Objektni cvor: { KIND: Var, NAME: niz2, TYPE(Struct): { KIND: Array, ElemType: charType }, ADR: 1, LEVEL: 1 } na liniji 9
+ERROR 16:38:28,791 - GRESKA-DesignatorStat_SUM: Niz niz2 nije niz int tipa na liniji 10
+INFO  16:38:28,792 - ==============ZAVRSEN ISPIS SEMANTICKE ANALIZE=====================
+
+ERROR 16:38:28,794 - Parsiranje NIJE uspesno zavrseno!
