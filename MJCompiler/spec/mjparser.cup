@@ -56,6 +56,8 @@ terminal Integer BOOLEAN;
 terminal PLUS, MINUS, MULTIPLICATION, DIVISION, MODULUS, EQUALS, INCREMENT, DECREMENT;
 terminal SEMICOLON, COMMA, LEFT_PARENTHESIS, RIGHT_PARENTHESIS, LEFT_BRACKET, RIGHT_BRACKET, LEFT_BRACE, RIGHT_BRACE;
 
+terminal FINAL;
+
 nonterminal Program, ConstVarDeclList, ConstDeclList, VarDeclList, MethodDecl;
 nonterminal ConstDeclOneOrMore, ConstDecl, VarDeclOneOrMore, VarDecl;
 nonterminal MethodVarDeclList, StatementList;
@@ -63,7 +65,7 @@ nonterminal Statement;
 nonterminal DesignatorStatement, DesignatorStatementList, MayMatrix;
 // Expr, ExprList, Term, TermList,
 
-nonterminal MayPrintNumConst, MayDesignator;
+nonterminal MayPrintNumConst, MayDesignator, MayFinal;
 nonterminal UnaryMinus, Assignop, Addop, Mulop;
 
 nonterminal rs.etf.pp1.symboltable.concepts.Obj ProgramName, MethodName;
@@ -111,7 +113,7 @@ Type ::= (Type) IDENTIFIER;
 
 /*** VarDecl = Type ident ["[" "]"] {"," ident ["[" "]"]} ";". ***/
 
-VarDeclList ::= (VarDeclList) Type VarDeclOneOrMore SEMICOLON;	// int x; int y, z, niz[];
+VarDeclList ::= (VarDeclList) MayFinal Type VarDeclOneOrMore SEMICOLON;	// int x; int y, z, niz[];
 
 VarDeclOneOrMore ::= (VarDeclOneOrMore_MORE) VarDecl COMMA VarDeclOneOrMore
 					 |
@@ -125,6 +127,11 @@ VarDecl ::= (VarDecl_VAR) IDENTIFIER
 			(VarDecl_ARRAY) IDENTIFIER LEFT_BRACKET RIGHT_BRACKET
 			|
 			(VarDecl_MATRIX) IDENTIFIER LEFT_BRACKET RIGHT_BRACKET LEFT_BRACKET RIGHT_BRACKET;
+			
+MayFinal ::= (MayFinal_FINAL) FINAL
+		 	 |
+		 	 (MayFinal_EPSILON) /*epsilon*/
+		 	 ;
 			
 	
 			

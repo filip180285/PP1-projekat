@@ -1,8 +1,10 @@
 package rs.ac.bg.etf.pp1;
 
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.log4j.Logger;
 
@@ -42,6 +44,9 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     private boolean mainDetected = false; // za razlikovanje opsega pri ubacivanju varijabli u tabelu simbola
     private List<Obj> listOfDesignators = new LinkedList<Obj>(); // za proveru tipova pri raspakivanju niza
     private Struct exprTypeArray; // za cuvanje tipa niza radi ispitivanja u matrici
+    
+    private Map<Obj, Integer> mapFinal = new HashMap<Obj, Integer>(); 
+    private boolean isFinal = false;
     
     private int numGlobalVars = 0; // broj statickih varijabli
     
@@ -241,6 +246,18 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     	currentConstValue = constant_CHARACTER.getC1();
     }
     
+    // MayFinal ::= (MayFinal_FINAL) FINAL
+    @Override
+    public void visit(MayFinal_FINAL mayFinal_FINAL) { 
+    	isFinal = true;
+    }
+    
+    // MayFinal ::= (MayFinal_EPSILON) /* epsilon */
+    @Override
+    public void visit(MayFinal_EPSILON mayFinal_EPSILON) { 
+    	isFinal = false;
+    }
+    
     // Constant ::= (Constant_BOOLEAN) BOOLEAN;
     @Override
     public void visit(Constant_BOOLEAN constant_BOOLEAN) { 
@@ -269,7 +286,12 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     		report_error("GRESKA-VarDecl_VAR: Ime varijable " + varName + " je vec deklarisano", varDecl_VAR);
     		return;
     	} else {
-    		Tab.insert(Obj.Var, varName, currentType);
+    		if(isFinal) {
+    			mapFinal.put(Tab.insert(Obj.Var, varName, currentType), 0);
+    		}
+    		else {
+    			Tab.insert(Obj.Var, varName, currentType);
+    		}
     	}
     }
     
@@ -293,7 +315,12 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     		report_error("GRESKA-VarDecl_ARRAY: Ime niza " + arrayName + " je vec deklarisano", varDecl_ARRAY);
     		return;
     	} else {
-    		Tab.insert(Obj.Var, arrayName, new Struct(Struct.Array, currentType));
+    		if(isFinal) {
+    			mapFinal.put(Tab.insert(Obj.Var, arrayName, new Struct(Struct.Array, currentType)), 0);
+    		}
+    		else {
+    			Tab.insert(Obj.Var, arrayName, new Struct(Struct.Array, currentType));
+    		}
     	}
     }
     
@@ -317,7 +344,12 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     		report_error("GRESKA-VarDecl_MATRIX: Ime matrice " + matrixName + " je vec deklarisano", varDecl_MATRIX);
     		return;
     	} else {
-    		Tab.insert(Obj.Var, matrixName, new Struct(Struct.Array, new Struct(Struct.Array, currentType)));
+    		if(isFinal) {
+    			mapFinal.put(Tab.insert(Obj.Var, matrixName, new Struct(Struct.Array, new Struct(Struct.Array, currentType))), 0);
+    		}
+    		else {
+    			Tab.insert(Obj.Var, matrixName, new Struct(Struct.Array, new Struct(Struct.Array, currentType)));
+    		}
     	}
     }
     
@@ -600,6 +632,15 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     	else if(exprType.assignableTo(desObj.getType()) == false) {
     		report_error("GRESKA-DesignatorSt_Assign: Dodela vrednosti u " + desObj.getName() + ",tipovi sa leve i desne strane jednakosti nisu isti", designatorSt_Assign);
     		return;
+    	}
+    	
+    	int numAssigned = mapFinal.getOrDefault(desObj, -1);
+    	if(numAssigned == 1) {
+    		report_error("GRESKA-DesignatorSt_Assign: Ponovna dodela vrednosti u " + desObj.getName() + ", final deklaracija dozvoljava samo inicijalizaciju", designatorSt_Assign);
+    		return;
+    	}
+    	else if(numAssigned  == 0) {
+    		mapFinal.put(desObj, numAssigned + 1);
     	}
     	
     	//report_info("Tip leve strane " + desObj.getName() + " " + objNodeToString(desObj) , designatorSt_Assign);

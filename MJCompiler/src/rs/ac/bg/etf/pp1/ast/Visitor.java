@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 12/5/2023 20:47:51
+// 13/5/2023 23:51:41
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -17,6 +17,7 @@ public interface Visitor {
     public void visit(MayPrintNumConst MayPrintNumConst);
     public void visit(Expr Expr);
     public void visit(MethodVarDeclList MethodVarDeclList);
+    public void visit(MayFinal MayFinal);
     public void visit(ConstDeclOneOrMore ConstDeclOneOrMore);
     public void visit(UnaryMinus UnaryMinus);
     public void visit(MayDesignator MayDesignator);
@@ -77,6 +78,8 @@ public interface Visitor {
     public void visit(MethodVarDeclList_VAR MethodVarDeclList_VAR);
     public void visit(MethodName MethodName);
     public void visit(MethodDecl MethodDecl);
+    public void visit(MayFinal_EPSILON MayFinal_EPSILON);
+    public void visit(MayFinal_FINAL MayFinal_FINAL);
     public void visit(VarDecl_MATRIX VarDecl_MATRIX);
     public void visit(VarDecl_ARRAY VarDecl_ARRAY);
     public void visit(VarDecl_ERROR VarDecl_ERROR);
