@@ -66,6 +66,8 @@ nonterminal DesignatorStatement, DesignatorStatementList, MayMatrix;
 nonterminal MayPrintNumConst, MayDesignator;
 nonterminal UnaryMinus, Assignop, Addop, Mulop;
 
+nonterminal Nonterminal_RIGHT_BRACKET;
+
 nonterminal rs.etf.pp1.symboltable.concepts.Obj ProgramName, MethodName;
 nonterminal rs.etf.pp1.symboltable.concepts.Obj Designator, DesignatorArrayOrMatrixName;
 nonterminal rs.etf.pp1.symboltable.concepts.Struct Constant, FactorSign, Factor, Term, Expr;
@@ -256,7 +258,9 @@ NEW_Matrix ::=  (NEW_Matrix_MATRIX) LEFT_BRACKET Expr RIGHT_BRACKET
 
 Designator ::= (Designator_ONE) IDENTIFIER
 			   |
-			   (Designator_Elem) DesignatorArrayOrMatrixName LEFT_BRACKET Expr RIGHT_BRACKET MayMatrix;
+			   (Designator_Elem) DesignatorArrayOrMatrixName LEFT_BRACKET Expr Nonterminal_RIGHT_BRACKET MayMatrix;
+			   
+Nonterminal_RIGHT_BRACKET ::= (Nonterminal_RIGHT_BRACKET) RIGHT_BRACKET;
 			   
 DesignatorArrayOrMatrixName ::= (DesignatorArrayOrMatrixName) IDENTIFIER;
 

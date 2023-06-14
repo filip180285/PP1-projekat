@@ -80,6 +80,8 @@ nonterminal Assignop Assignop;
 nonterminal Addop Addop;
 nonterminal Mulop Mulop;
 
+nonterminal Nonterminal_RIGHT_BRACKET Nonterminal_RIGHT_BRACKET;
+
 nonterminal rs.etf.pp1.symboltable.concepts.Obj ProgramName, MethodName;
 nonterminal rs.etf.pp1.symboltable.concepts.Obj Designator, DesignatorArrayOrMatrixName;
 nonterminal rs.etf.pp1.symboltable.concepts.Struct Constant, FactorSign, Factor, Term, Expr;
@@ -270,7 +272,9 @@ NEW_Matrix ::=  (NEW_Matrix_MATRIX) LEFT_BRACKET Expr:E1 RIGHT_BRACKET {: RESULT
 
 Designator ::= (Designator_ONE) IDENTIFIER:I1 {: RESULT=new Designator_ONE(I1); RESULT.setLine(I1left); :}
 			   |
-			   (Designator_Elem) DesignatorArrayOrMatrixName:D1 LEFT_BRACKET Expr:E2 RIGHT_BRACKET MayMatrix:M3 {: RESULT=new Designator_Elem(D1, E2, M3); RESULT.setLine(D1left); :};
+			   (Designator_Elem) DesignatorArrayOrMatrixName:D1 LEFT_BRACKET Expr:E2 Nonterminal_RIGHT_BRACKET:N3 MayMatrix:M4 {: RESULT=new Designator_Elem(D1, E2, N3, M4); RESULT.setLine(D1left); :};
+			   
+Nonterminal_RIGHT_BRACKET ::= (Nonterminal_RIGHT_BRACKET) RIGHT_BRACKET {: RESULT=new Nonterminal_RIGHT_BRACKET(); :};
 			   
 DesignatorArrayOrMatrixName ::= (DesignatorArrayOrMatrixName) IDENTIFIER:I1 {: RESULT=new DesignatorArrayOrMatrixName(I1); RESULT.setLine(I1left); :};
 

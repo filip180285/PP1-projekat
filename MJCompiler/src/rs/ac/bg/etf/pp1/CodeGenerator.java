@@ -15,6 +15,8 @@ public class CodeGenerator extends VisitorAdaptor {
     private List<Obj> listOfDesignators = new LinkedList<Obj>(); // za dodelu vrednosti pri raspakivanju niza
     private Obj designatorMatrix; // za cuvanje objektnog cvora matrice radi kasnijeg ucitavanja iste na stek
     
+    private Obj designatorArrMat; // za cuvanje objektnog cvora niza/matrice radi provere opsega indeksa
+    
     public static final int LENGTH_EXCEPTION = -1;
 
     // MethodName ::= (MethodName) IDENTIFIER;
@@ -183,6 +185,7 @@ public class CodeGenerator extends VisitorAdaptor {
     	Obj desObj = designatorArrayOrMatrixName.obj;
     	Code.load(desObj);
     	// designatorMatrix = desObj;
+    	designatorArrMat = desObj;
     }
     
     // Designator ::= (Designator_ONE) IDENTIFIER
@@ -194,14 +197,65 @@ public class CodeGenerator extends VisitorAdaptor {
     	}
     }
     
+    // Nonterminal_RIGHT_BRACKET ::= (Nonterminal_RIGHT_BRACKET) RIGHT_BRACKET;
+    @Override
+    public void visit(Nonterminal_RIGHT_BRACKET nonterminal_RIGHT_BRACKET) { // adr e1
+    	Code.put(Code.dup2); // adr e1 adr e1
+    	Code.put(Code.dup); // adr e1 adr e1 e1
+    	Code.loadConst(-1); // adr e1 adr e1 e1 -1
+    	int fixup1 = Code.pc + 1;
+    	Code.putFalseJump(Code.gt, 0); // if(e1 <= -1) skok na trap	 adr e1 adr e1
+    	Code.put(Code.dup_x1); // adr e1 e1 adr e1
+    	Code.put(Code.pop); // adr e1 e1 adr
+    	Code.put(Code.arraylength); // adr e1 e1 len
+    	int fixup2 = Code.pc + 1;
+    	Code.putFalseJump(Code.lt, 0); // if(e1 >= len) skok na trap	 adr e1
+    	
+    	int fixup3 = Code.pc + 1;
+    	Code.putJump(0); // preskok trap
+    	
+    	Code.fixup(fixup1); // trap
+    	Code.fixup(fixup2);
+    	Code.put(Code.trap);
+    	Code.put(80);
+    	
+    	Code.fixup(fixup3);
+    }
+    
     // MayMatrix ::= (MayMatrix_MATRIX) LEFT_BRACKET Expr RIGHT_BRACKET
     @Override
-    public void visit(MayMatrix_MATRIX mayMatrix_MATRIX) { 
+    public void visit(MayMatrix_MATRIX mayMatrix_MATRIX) { // adr e1 e2
+    	Code.put(Code.dup2); // adr e1 e2 e1 e2
+    	Code.put(Code.dup); // adr e1 e2 e1 e2 e2
+    	Code.loadConst(-1); //  adr e1 e2 e1 e2 e2 -1
+    	int fixup1 = Code.pc + 1;
+    	Code.putFalseJump(Code.gt, 0); // if(e2 <= -1) skok na trap	 adr e1 e2 e1 e2
+    	Code.put(Code.dup_x1); // adr e1 e2 e2 e1 e2
+    	Code.put(Code.pop); // adr e1 e2 e2 e1
+    	Code.load(designatorArrMat); // adr e1 e2 e2 e1 adr
+    	Code.put(Code.dup_x1); // adr e1 e2 e2 adr e1 adr
+    	Code.put(Code.pop); // adr e1 e2 e2 adr e1
+    	Code.put(Code.aload); // adr e1 e2 e2 adr[e1]
+    	Code.put(Code.arraylength); // adr e1 e2 e2 len
+    	int fixup2 = Code.pc + 1;
+    	Code.putFalseJump(Code.lt, 0); // if(e2 >= len) skok na trap	adr e1 e2
+    	
+    	
     	Code.put(Code.dup_x2);
     	Code.put(Code.pop);
     	Code.put(Code.aload);
     	Code.put(Code.dup_x1);
     	Code.put(Code.pop);
+    	
+    	int fixup3 = Code.pc + 1;
+    	Code.putJump(0); // preskok trap
+    	
+    	Code.fixup(fixup1); // trap
+    	Code.fixup(fixup2);
+    	Code.put(Code.trap);
+    	Code.put(90);
+    	
+    	Code.fixup(fixup3);
     }
     
     // DesignatorStatement ::= (DesignatorStat_INC) Designator INCREMENT

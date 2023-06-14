@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 12/5/2023 20:47:51
+// 14/5/2023 16:2:21
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -37,6 +37,7 @@ public interface Visitor {
     public void visit(MayMatrix_EPSILON MayMatrix_EPSILON);
     public void visit(MayMatrix_MATRIX MayMatrix_MATRIX);
     public void visit(DesignatorArrayOrMatrixName DesignatorArrayOrMatrixName);
+    public void visit(Nonterminal_RIGHT_BRACKET Nonterminal_RIGHT_BRACKET);
     public void visit(Designator_Elem Designator_Elem);
     public void visit(Designator_ONE Designator_ONE);
     public void visit(NEW_Matrix_EPSILON NEW_Matrix_EPSILON);
