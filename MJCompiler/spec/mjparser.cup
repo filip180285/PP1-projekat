@@ -63,6 +63,8 @@ nonterminal Statement;
 nonterminal DesignatorStatement, DesignatorStatementList, MayMatrix;
 // Expr, ExprList, Term, TermList,
 
+nonterminal ListOfNCB, ListOfNCBMore, Ncb;
+
 nonterminal MayPrintNumConst, MayDesignator;
 nonterminal UnaryMinus, Assignop, Addop, Mulop;
 
@@ -176,7 +178,7 @@ MayPrintNumConst ::= (MayPrintNumConst_NUMBER) COMMA NUMBER
  ***/
  
 DesignatorStatement ::= (DesignatorSt_Assign) Designator Assignop Expr
-					    | 
+						|
 					    (DesignatorStatement_ERROR) error:e
 					    {: parser.report_error("OPORAVAK od greske u iskazu dodele izvrsen do ; u liniji " + eleft, null);  :}
 					    |
@@ -202,8 +204,22 @@ MayDesignator ::= (MayDesignator_Designator) Designator
 		
 Expr ::= (Expr_ONE) Term // ExprList
 		 |
-		 (Expr_MORE) Expr Addop Term;
-		
+		 (Expr_MORE) Expr Addop Term
+		 |
+		 (Expr_INIT) LEFT_BRACKET ListOfNCB RIGHT_BRACKET;
+		 		 
+ListOfNCB ::= (ListOfNCB) Ncb ListOfNCBMore;
+
+ListOfNCBMore ::= (ListOfNCBMore_MORE) COMMA Ncb ListOfNCBMore
+				  |
+				  (ListOfNCBMore_EPSILON) /* epsilon */
+				   ;
+	
+Ncb ::= (Ncb_NUMBER) NUMBER
+		| 
+		(Ncb_CHARACTER) CHARACTER
+		| 
+		(Ncb_BOOLEAN) BOOLEAN;
 
 
 /*** Term = Factor {Mulop Factor}. ***/

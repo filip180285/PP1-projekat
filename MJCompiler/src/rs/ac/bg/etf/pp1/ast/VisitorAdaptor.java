@@ -1,33 +1,35 @@
 // generated with ast extension for cup
 // version 0.8
-// 15/5/2023 16:0:38
+// 15/5/2023 17:25:14
 
 
 package rs.ac.bg.etf.pp1.ast;
 
 public abstract class VisitorAdaptor implements Visitor { 
 
-    public void visit(Designator Designator) { }
-    public void visit(Factor Factor) { }
     public void visit(Mulop Mulop) { }
-    public void visit(NEW_Matrix NEW_Matrix) { }
-    public void visit(DesignatorStatement DesignatorStatement) { }
     public void visit(Constant Constant) { }
+    public void visit(StatementList StatementList) { }
+    public void visit(ConstVarDeclList ConstVarDeclList) { }
+    public void visit(Addop Addop) { }
+    public void visit(Factor Factor) { }
+    public void visit(Designator Designator) { }
+    public void visit(Term Term) { }
+    public void visit(VarDeclOneOrMore VarDeclOneOrMore) { }
+    public void visit(MayDesignator MayDesignator) { }
     public void visit(DesignatorStatementList DesignatorStatementList) { }
     public void visit(MayPrintNumConst MayPrintNumConst) { }
+    public void visit(Ncb Ncb) { }
     public void visit(Expr Expr) { }
-    public void visit(MethodVarDeclList MethodVarDeclList) { }
-    public void visit(ConstDeclOneOrMore ConstDeclOneOrMore) { }
+    public void visit(NEW_Matrix NEW_Matrix) { }
+    public void visit(DesignatorStatement DesignatorStatement) { }
     public void visit(UnaryMinus UnaryMinus) { }
-    public void visit(MayDesignator MayDesignator) { }
-    public void visit(VarDecl VarDecl) { }
-    public void visit(VarDeclOneOrMore VarDeclOneOrMore) { }
-    public void visit(Addop Addop) { }
-    public void visit(Statement Statement) { }
-    public void visit(ConstVarDeclList ConstVarDeclList) { }
-    public void visit(Term Term) { }
     public void visit(MayMatrix MayMatrix) { }
-    public void visit(StatementList StatementList) { }
+    public void visit(ConstDeclOneOrMore ConstDeclOneOrMore) { }
+    public void visit(Statement Statement) { }
+    public void visit(VarDecl VarDecl) { }
+    public void visit(MethodVarDeclList MethodVarDeclList) { }
+    public void visit(ListOfNCBMore ListOfNCBMore) { }
     public void visit(Mulop_MOD Mulop_MOD) { visit(); }
     public void visit(Mulop_DIV Mulop_DIV) { visit(); }
     public void visit(Mulop_MUL Mulop_MUL) { visit(); }
@@ -53,6 +55,13 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(FactorSign FactorSign) { visit(); }
     public void visit(Term_MORE Term_MORE) { visit(); }
     public void visit(Term_ONE Term_ONE) { visit(); }
+    public void visit(Ncb_BOOLEAN Ncb_BOOLEAN) { visit(); }
+    public void visit(Ncb_CHARACTER Ncb_CHARACTER) { visit(); }
+    public void visit(Ncb_NUMBER Ncb_NUMBER) { visit(); }
+    public void visit(ListOfNCBMore_EPSILON ListOfNCBMore_EPSILON) { visit(); }
+    public void visit(ListOfNCBMore_MORE ListOfNCBMore_MORE) { visit(); }
+    public void visit(ListOfNCB ListOfNCB) { visit(); }
+    public void visit(Expr_INIT Expr_INIT) { visit(); }
     public void visit(Expr_MORE Expr_MORE) { visit(); }
     public void visit(Expr_ONE Expr_ONE) { visit(); }
     public void visit(MayDesignator_EPSILON MayDesignator_EPSILON) { visit(); }

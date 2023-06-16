@@ -73,6 +73,10 @@ nonterminal DesignatorStatementList DesignatorStatementList;
 nonterminal MayMatrix MayMatrix;
 // Expr, ExprList, Term, TermList,
 
+nonterminal ListOfNCB ListOfNCB;
+nonterminal ListOfNCBMore ListOfNCBMore;
+nonterminal Ncb Ncb;
+
 nonterminal MayPrintNumConst MayPrintNumConst;
 nonterminal MayDesignator MayDesignator;
 nonterminal UnaryMinus UnaryMinus;
@@ -190,7 +194,7 @@ MayPrintNumConst ::= (MayPrintNumConst_NUMBER) COMMA NUMBER:N1 {: RESULT=new May
  ***/
  
 DesignatorStatement ::= (DesignatorSt_Assign) Designator:D1 Assignop:A2 Expr:E3 {: RESULT=new DesignatorSt_Assign(D1, A2, E3); RESULT.setLine(D1left); :}
-					    | 
+						|
 					    (DesignatorStatement_ERROR) error:e
 					    {: parser.report_error("OPORAVAK od greske u iskazu dodele izvrsen do ; u liniji " + eleft, null);  :} {: RESULT=new DesignatorStatement_ERROR(); :}
 					    |
@@ -216,8 +220,22 @@ MayDesignator ::= (MayDesignator_Designator) Designator:D1 {: RESULT=new MayDesi
 		
 Expr ::= (Expr_ONE) Term:T1 {: RESULT=new Expr_ONE(T1); RESULT.setLine(T1left); :} // ExprList
 		 |
-		 (Expr_MORE) Expr:E1 Addop:A2 Term:T3 {: RESULT=new Expr_MORE(E1, A2, T3); RESULT.setLine(E1left); :};
-		
+		 (Expr_MORE) Expr:E1 Addop:A2 Term:T3 {: RESULT=new Expr_MORE(E1, A2, T3); RESULT.setLine(E1left); :}
+		 |
+		 (Expr_INIT) LEFT_BRACKET ListOfNCB:L1 RIGHT_BRACKET {: RESULT=new Expr_INIT(L1); RESULT.setLine(L1left); :};
+		 		 
+ListOfNCB ::= (ListOfNCB) Ncb:N1 ListOfNCBMore:L2 {: RESULT=new ListOfNCB(N1, L2); RESULT.setLine(N1left); :};
+
+ListOfNCBMore ::= (ListOfNCBMore_MORE) COMMA Ncb:N1 ListOfNCBMore:L2 {: RESULT=new ListOfNCBMore_MORE(N1, L2); RESULT.setLine(N1left); :}
+				  |
+				  (ListOfNCBMore_EPSILON) {: RESULT=new ListOfNCBMore_EPSILON(); :} /* epsilon */
+				   ;
+	
+Ncb ::= (Ncb_NUMBER) NUMBER:N1 {: RESULT=new Ncb_NUMBER(N1); RESULT.setLine(N1left); :}
+		| 
+		(Ncb_CHARACTER) CHARACTER:C1 {: RESULT=new Ncb_CHARACTER(C1); RESULT.setLine(C1left); :}
+		| 
+		(Ncb_BOOLEAN) BOOLEAN:B1 {: RESULT=new Ncb_BOOLEAN(B1); RESULT.setLine(B1left); :};
 
 
 /*** Term = Factor {Mulop Factor}. ***/

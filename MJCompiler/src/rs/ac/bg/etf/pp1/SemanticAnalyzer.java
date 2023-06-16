@@ -43,6 +43,8 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     private List<Obj> listOfDesignators = new LinkedList<Obj>(); // za proveru tipova pri raspakivanju niza
     private Struct exprTypeArray; // za cuvanje tipa niza radi ispitivanja u matrici
     
+    private Struct typeInit; // za cuvanje tipa niza radi ispitivanja u inicijalizaciji
+    
     private int numGlobalVars = 0; // broj statickih varijabli
     
     public int getNumGlobalVars() {
@@ -435,6 +437,9 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     		designator_ONE.obj = Tab.noObj;
     		return;
     	}
+    	
+    	typeInit = desObj.getType();
+    	// System.out.println("anannana");
     	//report_info("ONE" , designator_ONE);
     	//report_info("Pristup oznaci " + desName + ". " + objNodeToString(desObj) , designator_ONE);
     	designator_ONE.obj = desObj;
@@ -586,6 +591,34 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     	}
     }
     
+    // Ncb ::= (Ncb_NUMBER) NUMBER
+    @Override
+    public void visit(Ncb_NUMBER ncb_NUMBER) {
+    	if(Tab.intType.assignableTo(typeInit.getElemType()) == false) {
+  
+    		report_error("GRESKA-Ncb_NUMBER: Niz je tipa int a clan niza nije", ncb_NUMBER);
+    		return;
+    	}
+    }
+    
+    // Ncb ::= (Ncb_CHARACTER) CHARACTER
+    @Override
+    public void visit(Ncb_CHARACTER ncb_CHARACTER) {
+    	if(Tab.charType.assignableTo(typeInit.getElemType()) == false) {
+    		report_error("GRESKA-Ncb_CHARACTER: Niz je tipa char a clan niza nije", ncb_CHARACTER);
+    		return;
+    	}
+    }
+    
+    // Ncb ::= (Ncb_BOOLEAN) BOOLEAN;
+    @Override
+    public void visit(Ncb_BOOLEAN ncb_BOOLEAN) {
+    	if(Tab.find("bool").getType().assignableTo(typeInit.getElemType()) == false) {
+    		report_error("GRESKA-Ncb_BOOLEAN: Niz je tipa bool a clan niza nije", ncb_BOOLEAN);
+    		return;
+    	}
+    }
+    
     // DesignatorStatement ::= (DesignatorSt_Assign) Designator Assignop Expr
     @Override
     public void visit(DesignatorSt_Assign designatorSt_Assign) {
@@ -597,9 +630,20 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     		report_error("GRESKA-DesignatorSt_Assign: Dodela vrednosti u "+ desObj.getName() +" nije u promenljivu ni u element niza/matrice", designatorSt_Assign);
     		return;
     	}
-    	else if(exprType.assignableTo(desObj.getType()) == false) {
+    	else if(designatorSt_Assign.getExpr() instanceof Expr_INIT == false &&
+    			exprType.assignableTo(desObj.getType()) == false) {
     		report_error("GRESKA-DesignatorSt_Assign: Dodela vrednosti u " + desObj.getName() + ",tipovi sa leve i desne strane jednakosti nisu isti", designatorSt_Assign);
     		return;
+    	}
+    	
+    	if(designatorSt_Assign.getExpr() instanceof Expr_INIT) {
+    		if(designatorSt_Assign.getDesignator().obj.getType().getKind() != Struct.Array
+    				|| ( designatorSt_Assign.getDesignator().obj.getType().getKind() == Struct.Array &&
+    					designatorSt_Assign.getDesignator().obj.getType().getElemType().getKind() == Struct.Array )
+    				) {
+    			report_error("GRESKA-DesignatorSt_Assign: Inicijalizacija nije nad nizom", designatorSt_Assign);
+        		return;
+    		}
     	}
     	
     	//report_info("Tip leve strane " + desObj.getName() + " " + objNodeToString(desObj) , designatorSt_Assign);

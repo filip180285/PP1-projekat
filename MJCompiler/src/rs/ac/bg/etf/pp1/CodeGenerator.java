@@ -15,6 +15,9 @@ public class CodeGenerator extends VisitorAdaptor {
     private List<Obj> listOfDesignators = new LinkedList<Obj>(); // za dodelu vrednosti pri raspakivanju niza
     private Obj designatorMatrix; // za cuvanje objektnog cvora matrice radi kasnijeg ucitavanja iste na stek
     
+    private Obj array; // za cuvanje objektnog cvora niza za inicijalizaciju
+    private int counter = 0; // brojac elemenata niza
+    
     public static final int LENGTH_EXCEPTION = -1;
 
     // MethodName ::= (MethodName) IDENTIFIER;
@@ -192,6 +195,40 @@ public class CodeGenerator extends VisitorAdaptor {
     		designatorMatrix = designator_ONE.obj;
     		// System.out.println(designatorMatrix.getName());
     	}
+    	array = designator_ONE.obj;
+    }
+    
+    // Ncb ::= (Ncb_NUMBER) NUMBER
+    @Override
+    public void visit(Ncb_NUMBER ncb_NUMBER) { 
+    	Code.load(array);
+    	Code.loadConst(counter++);
+    	Code.loadConst(ncb_NUMBER.getN1());
+    	Code.put(Code.astore);
+    }
+    
+    // Ncb ::= (Ncb_CHARACTER) CHARACTER
+    @Override
+    public void visit(Ncb_CHARACTER ncb_CHARACTER) { 
+    	Code.load(array);
+    	Code.loadConst(counter++);
+    	Code.loadConst(ncb_CHARACTER.getC1());
+    	Code.put(Code.bastore);
+    }
+    
+    // Ncb ::= (Ncb_BOOLEAN) BOOLEAN
+    @Override
+    public void visit(Ncb_BOOLEAN ncb_BOOLEAN) { 
+    	Code.load(array);
+    	Code.loadConst(counter++);
+    	Code.loadConst(ncb_BOOLEAN.getB1());
+    	Code.put(Code.astore);
+    }
+    
+    // ListOfNCBMore ::= (ListOfNCBMore_EPSILON) /* epsilon */
+    @Override
+    public void visit(ListOfNCBMore_EPSILON listOfNCBMore_EPSILON) { 
+    	counter = 0;
     }
     
     // MayMatrix ::= (MayMatrix_MATRIX) LEFT_BRACKET Expr RIGHT_BRACKET
@@ -236,9 +273,11 @@ public class CodeGenerator extends VisitorAdaptor {
     // DesignatorStatement ::= (DesignatorSt_Assign) Designator Assignop Expr
     @Override
     public void visit(DesignatorSt_Assign designatorSt_Assign) {
-    	Obj desObj = designatorSt_Assign.getDesignator().obj;
+    	if(designatorSt_Assign.getExpr() instanceof Expr_INIT == false) {
+    		Obj desObj = designatorSt_Assign.getDesignator().obj;
     	
-    	Code.store(desObj);
+    		Code.store(desObj);
+    	}
     }
     
    // MayDesignator ::= (MayDesignator_Designator) Designator
