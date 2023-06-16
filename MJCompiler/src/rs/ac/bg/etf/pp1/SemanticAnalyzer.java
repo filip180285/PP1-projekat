@@ -648,6 +648,26 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     	if(designatorStat_DEC.getDesignator() instanceof Designator_ONE) {
     		report_info("INFO-DesignatorStat_DEC: Pristup oznaci " + desObj.getName() + ". " + objNodeToString(desObj) , designatorStat_DEC);
     	}
+    }    
+    
+    // DesignatorStatement ::= (DesignatorStat_Ceasar) TILDE Designator UnaryMinus NUMBER
+    @Override
+    public void visit(DesignatorStat_Ceasar designatorStat_Ceasar) { 
+    	Obj desObj = designatorStat_Ceasar.getDesignator().obj;
+    	int kind = desObj.getKind();
+    	
+    	if(kind != Obj.Var) {
+    		report_error("GRESKA-DesignatorStat_Ceasar: Sifrovanje "+ desObj.getName() +" nije sifrovanje nizovske varijable", designatorStat_Ceasar);
+    		return;
+    	}
+    	else if(Tab.charType.equals(desObj.getType().getElemType()) == false) {
+    		report_error("GRESKA-DesignatorStat_Ceasar: Sifrovanje " + desObj.getName() + " nije sifrovanje niza char-ova", designatorStat_Ceasar);
+    		return;
+    	}
+    	
+    	if(designatorStat_Ceasar.getDesignator() instanceof Designator_ONE) {
+    		report_info("INFO-DesignatorStat_Ceasar: Pristup oznaci " + desObj.getName() + ". " + objNodeToString(desObj) , designatorStat_Ceasar);
+    	}
     }
     
     // MayDesignator ::= (MayDesignator_Designator) Designator

@@ -15,6 +15,8 @@ public class CodeGenerator extends VisitorAdaptor {
     private List<Obj> listOfDesignators = new LinkedList<Obj>(); // za dodelu vrednosti pri raspakivanju niza
     private Obj designatorMatrix; // za cuvanje objektnog cvora matrice radi kasnijeg ucitavanja iste na stek
     
+    private Obj designatorArray; // za cuvanje objektnog cvora niza kod obrade Cezar sifre
+    
     public static final int LENGTH_EXCEPTION = -1;
 
     // MethodName ::= (MethodName) IDENTIFIER;
@@ -192,6 +194,7 @@ public class CodeGenerator extends VisitorAdaptor {
     		designatorMatrix = designator_ONE.obj;
     		// System.out.println(designatorMatrix.getName());
     	}
+    	designatorArray = designator_ONE.obj;
     }
     
     // MayMatrix ::= (MayMatrix_MATRIX) LEFT_BRACKET Expr RIGHT_BRACKET
@@ -230,6 +233,70 @@ public class CodeGenerator extends VisitorAdaptor {
     	Code.loadConst(-1);
     	Code.put(Code.add);
     	Code.store(desObj);
+    }
+    
+    // DesignatorStatement ::= (DesignatorStat_Ceasar) Designator TILDE UnaryMinus NUMBER
+    @Override
+    public void visit(DesignatorStat_Ceasar designatorStat_Ceasar) { 
+    	int num = designatorStat_Ceasar.getN3();
+    	if(designatorStat_Ceasar.getUnaryMinus() instanceof UnaryMinus_MINUS) { num *= -1; }
+    	// for(int i = 0; i < len; i++) niz[i] = (niz[i] + num) % 26
+    	// 0 0 gore
+    	// 0 0 niz -> 0 0 len -> jmp eq kraj(pop)
+    	// 0 niz 0 niz 0 -> 0 niz 0 niz[0] -> 0 niz 0 niz[0] -> 0 niz 0 niz[0] num -> 0 niz 0 niz[0] + num % 26 -> 0
+    	// 0 1 -> 1 gore
+    	Code.loadConst(0); // 0
+    	int gore = Code.pc;
+    	Code.put(Code.dup); // 0 0
+    	Code.load(designatorArray); // 0 0 arr
+    	Code.put(Code.arraylength); // 0 0 5
+    	int fixup = Code.pc + 1;
+    	Code.putFalseJump(Code.ne, 0); // if ind == 5
+    	Code.load(designatorArray); // 0 arr
+    	Code.put(Code.dup2); // 0 arr 0 arr
+    	Code.put(Code.dup2); // 0 arr 0 arr 0 arr
+    	Code.put(Code.pop); // 0 arr 0 arr 0
+    	Code.put(Code.baload); // 0 arr 0 arr[0]
+    	
+    	Code.put(Code.dup); // 0 arr 0 arr[0] arr[0]
+    	Code.loadConst(97); // 0 arr 0 arr[0] arr[0] 97
+    	int fixup2 = Code.pc + 1;
+    	Code.putFalseJump(Code.lt, 0); // if(arr[0] >= 97) dole  0 arr 0 arr[0] 
+    	
+    	Code.loadConst(65);  // 0 arr 0 arr[0] 65
+    	Code.put(Code.sub); // 0 arr 0 arr[0]-65
+    	Code.loadConst(26);  // 0 arr 0 arr[0]-65 26
+    	Code.put(Code.rem); // 0 arr 0 arr[0]-65 % 26
+    	Code.loadConst(num); // 0 arr 0 arr[0]-65 % 26 pom
+    	Code.put(Code.add); // 0 arr 0 arr[0]-65 % 26 + pom
+    	Code.loadConst(26);  // 0 arr 0 arr[0]-65 % 26 + pom 26
+    	Code.put(Code.rem); //0 arr 0 arr[0]-65 % 26 + pom % 26
+    	Code.loadConst(65);  // 0 arr 0 arr[0]-65 % 26 + pom % 26 65
+    	Code.put(Code.add); // 0 arr 0 arr[0]-65 % 26 + pom % 26 + 65
+    	Code.put(Code.bastore); // 0
+    	int fixup3 = Code.pc + 1;
+    	Code.putJump(0);
+    	
+    	Code.fixup(fixup2); // dole
+    	Code.loadConst(97);  // 0 arr 0 arr[0] 97
+    	Code.put(Code.sub); // 0 arr 0 arr[0]-97
+    	Code.loadConst(26);  // 0 arr 0 arr[0]-97 26
+    	Code.put(Code.rem); // 0 arr 0 arr[0]-97 % 26
+    	Code.loadConst(num); // 0 arr 0 arr[0]-97 % 26 pom
+    	Code.put(Code.add); // 0 arr 0 arr[0]-97 % 26 + pom
+    	Code.loadConst(26);  // 0 arr 0 arr[0]-97 % 26 + pom 26
+    	Code.put(Code.rem); //0 arr 0 arr[0]-65 % 26 + pom % 26
+    	Code.loadConst(97);  // 0 arr 0 arr[0]-65 % 26 + pom % 26 97
+    	Code.put(Code.add); // 0 arr 0 arr[0]-65 % 26 + pom % 26 + 97
+    	Code.put(Code.bastore); // 0
+    	
+    	Code.fixup(fixup3);
+    	Code.loadConst(1); // 0 1
+    	Code.put(Code.add); // 1
+    	Code.putJump(gore);
+    	//kraj
+    	Code.fixup(fixup); // 5
+    	Code.put(Code.pop); //
     }
     
     
