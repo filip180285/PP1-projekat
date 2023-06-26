@@ -1,0 +1,89 @@
+INFO  01:24:29,574 - Compiling source file: C:\Users\Korisnik\Desktop\PP1-projekat\MJCompiler\test\program.mj
+INFO  01:24:29,613 - #2 program
+INFO  01:24:29,613 - #9 test301
+INFO  01:24:29,614 - #27 {
+INFO  01:24:29,615 - #8 void
+INFO  01:24:29,615 - #9 main
+INFO  01:24:29,615 - #23 (
+INFO  01:24:29,616 - #24 )
+INFO  01:24:29,616 - #9 char
+INFO  01:24:29,617 - #9 a
+INFO  01:24:29,618 - #21 ;
+INFO  01:24:29,619 - #27 {
+INFO  01:24:29,620 - #6 read
+INFO  01:24:29,621 - #23 (
+INFO  01:24:29,621 - #9 a
+INFO  01:24:29,621 - #24 )
+INFO  01:24:29,622 - #21 ;
+INFO  01:24:29,622 - #5 print
+INFO  01:24:29,622 - #23 (
+INFO  01:24:29,622 - #9 a
+INFO  01:24:29,624 - #24 )
+INFO  01:24:29,626 - #21 ;
+INFO  01:24:29,626 - #28 }
+INFO  01:24:29,628 - #28 }
+INFO  01:24:29,631 - 
+                     ==============ISPIS STABLA=====================
+INFO  01:24:29,632 - Program(
+  ProgramName(
+   test301
+  ) [ProgramName]
+  ConstVarDeclList_EPSILON(
+  ) [ConstVarDeclList_EPSILON]
+  MethodDecl(
+    MethodName(
+     main
+    ) [MethodName]
+    MethodVarDeclList_VAR(
+      MethodVarDeclList_EPSILON(
+      ) [MethodVarDeclList_EPSILON]
+      VarDeclList(
+        Type(
+         char
+        ) [Type]
+        VarDeclOneOrMore_ONE(
+          VarDecl_VAR(
+           a
+          ) [VarDecl_VAR]
+        ) [VarDeclOneOrMore_ONE]
+      ) [VarDeclList]
+    ) [MethodVarDeclList_VAR]
+    StatementList_STATEMENTS(
+      StatementList_STATEMENTS(
+        StatementList_EPSILON(
+        ) [StatementList_EPSILON]
+        Statement_READ(
+          Designator_ONE(
+           a
+          ) [Designator_ONE]
+        ) [Statement_READ]
+      ) [StatementList_STATEMENTS]
+      Statement_PRINT(
+        Expr_ONE(
+          Term_ONE(
+            FactorSign(
+              UnaryMinus_EPSILON(
+              ) [UnaryMinus_EPSILON]
+              Factor_Designator(
+                Designator_ONE(
+                 a
+                ) [Designator_ONE]
+              ) [Factor_Designator]
+            ) [FactorSign]
+          ) [Term_ONE]
+        ) [Expr_ONE]
+        MayPrintNumConst_EPSILON(
+        ) [MayPrintNumConst_EPSILON]
+      ) [Statement_PRINT]
+    ) [StatementList_STATEMENTS]
+  ) [MethodDecl]
+) [Program]
+INFO  01:24:29,632 - ==============ZAVRSEN ISPIS STABLA=====================
+
+INFO  01:24:29,632 - ==============ISPIS SEMANTICKE ANALIZE=====================
+INFO  01:24:29,652 - INFO-Statement_READ: Pristup oznaci a. Objektni cvor: { KIND: Var, NAME: a, TYPE(Struct): { KIND: Char, ElemType: charType }, ADR: 0, LEVEL: 1 } na liniji 9
+INFO  01:24:29,652 - INFO-Factor_Designator: Pristup oznaci a. Objektni cvor: { KIND: Var, NAME: a, TYPE(Struct): { KIND: Char, ElemType: charType }, ADR: 0, LEVEL: 1 } na liniji 10
+INFO  01:24:29,653 - ==============ZAVRSEN ISPIS SEMANTICKE ANALIZE=====================
+
+INFO  01:24:29,654 - Parsiranje uspesno zavrseno!
+INFO  01:24:29,660 - Generisanje koda uspesno zavrseno!

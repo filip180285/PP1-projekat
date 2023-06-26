@@ -1,0 +1,28 @@
+// Test301
+
+program test301
+	const int a = 3, b = 5;
+	const char aa = 'c', bb = 'd';
+	const bool x = true;
+	bool y;
+	int niz1[], niz2[];
+	bool niz3[];
+	char matrix[][], matrix2[][];
+	
+{
+	void main() int t; bool y; char u; int matrix3[][], matrix4[][]; bool matrix5[];
+	{
+		matrix[3]++; //error
+		matrix[3][-3]++; // ok
+		niz1 = matrix3[0]; // ok
+		niz1 = matrix5[0] // error
+		matrix3[3] = niz2; // ok
+		matrix5[1][1] = false; //ok
+		u = matrix[1][1]; // ok
+		matrix[matrix[1][1]][niz1[2]] = a; // ok
+		niz3[matrix2[1][2]] = true; // ok
+		y = matrix[-'c'][-a]; // error 
+	}
+}
+
+

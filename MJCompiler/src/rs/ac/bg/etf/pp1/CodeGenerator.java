@@ -292,7 +292,8 @@ public class CodeGenerator extends VisitorAdaptor {
     public void visit(Statement_READ statement_READ) {
     	Obj desObj = statement_READ.getDesignator().obj;
     	
-    	Code.put(Code.read);
+    	if(desObj.getType().equals(Tab.charType)) Code.put(Code.bread);
+    	else Code.put(Code.read);
     	Code.store(desObj);
     }
     

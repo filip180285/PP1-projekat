@@ -1,0 +1,20 @@
+Program	=  "class" ident {ConstDecl | VarDecl} "{" {MethodDecl} "}".
+ConstDecl	=  "final" Type ident "=" (number | charConst) ";".
+VarDecl	=  Type ident [ "[" "]" ] { "," ident [ "[" "]" ] } ";".
+MethodDecl	=  (Type | "void") ident "(" [FormPars] ")" {VarDecl} "{" {Statement} "}".
+FormPars	=  Type ident [ "[" "]" ] { "," Type ident [ "[" "]" ] }.
+Type		=  ident.
+Statement	=  Designator ("=" Expr | "(" [ActPars] ")") ";"
+			|    "return" [Expr] ";"
+			|    "print" "(" Expr ")" ";".
+ActPars	=  Expr {"," Expr}.
+Expr		=  ["-"] Term {Addop Term}.
+Term		=  Factor {Mulop Factor}.
+Factor		=  Designator ["(" [ActPars] ")"]
+			|    number
+			|    charConst
+			|    "new" Type "[" "]"
+			|    "(" Expr ")".
+Designator	=  ident [ "[" Expr "]" ].
+Addop		=  "+" | "-".
+Mulop		=  "*" | "/".

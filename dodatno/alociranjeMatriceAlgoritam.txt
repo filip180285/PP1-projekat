@@ -1,0 +1,58 @@
+[2,8]
+
+
+EXPR:
+2
+20: new arr 1
+ADR_MAT
+22: dup
+ADR_MAT ADR_MAT
+23: store_2
+ADR_MAT
+24: cst0
+ADR_MAT 0
+25: dup2
+
+ADR_MAT 0 ADR_MAT 0 8 // doda se duz expr2 mozda provera za [0][0] ADR_MAT 1 ADR_MAT 1 8
+petlja:
+26: newarr 1 // npr niz ch
+ADR_MAT 0 ADR_MAT 0 ADR*
+28: astore // mat[0] = adr
+ADR_MAT 0
+29 :cst 1
+ADR_MAT 0 1
+30:add
+ADR_MAT 1
+31: dup2:
+ADR_MAT 1 ADR_MAT 1
+32: ld_2
+ADR_MAT 1 ADR_MAT 1 ADR_MAT
+33.len
+ADR_MAT 1 ADR_MAT 1 2
+34: jge 46
+ADR_MAT 1 ADR_MAT ************** 1 izgled steka
+37:dup 2
+ADR_MAT 1 ADR_MAT 1 ADR_MAT
+38:pop
+ADR_MAT 1 ADR_MAT 1
+39:ld_2
+ADR_MAT 1 ADR_MAT 1 ADR_MAT
+40:cst0
+ADR_MAT 1 ADR_MAT 1 ADR_MAT 0
+41:aload
+ADR_MAT 1 ADR_MAT 1 ADR*
+42:len
+ADR_MAT 1 ADR_MAT 1 3
+43:jmp 26
+
+46: daljeeee
+
+
+
+
+
+
+
+
+
+
