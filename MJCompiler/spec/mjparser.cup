@@ -56,6 +56,8 @@ terminal Integer BOOLEAN;
 terminal PLUS, MINUS, MULTIPLICATION, DIVISION, MODULUS, EQUALS, INCREMENT, DECREMENT;
 terminal SEMICOLON, COMMA, LEFT_PARENTHESIS, RIGHT_PARENTHESIS, LEFT_BRACKET, RIGHT_BRACKET, LEFT_BRACE, RIGHT_BRACE;
 
+terminal HASH;
+
 nonterminal Program, ConstVarDeclList, ConstDeclList, VarDeclList, MethodDecl;
 nonterminal ConstDeclOneOrMore, ConstDecl, VarDeclOneOrMore, VarDecl;
 nonterminal MethodVarDeclList, StatementList;
@@ -97,7 +99,7 @@ ConstDeclOneOrMore ::= (ConstDeclOneOrMore_MORE) ConstDecl COMMA ConstDeclOneOrM
 					   |
 					   (ConstDeclOneOrMore_ONE) ConstDecl;
 
-ConstDecl ::= (ConstDecl) IDENTIFIER EQUALS Constant;
+ConstDecl ::= (ConstDecl) IDENTIFIER EQUALS UnaryMinus Constant;
 
 Constant ::= (Constant_NUMBER) NUMBER
 			 | 
@@ -183,6 +185,10 @@ DesignatorStatement ::= (DesignatorSt_Assign) Designator Assignop Expr
 					    (DesignatorStat_INC) Designator INCREMENT
 					    |
 					    (DesignatorStat_DEC) Designator DECREMENT
+					    |
+					    (DesignatorStat_HASH) Factor HASH DesignatorArrayOrMatrixName
+					    |
+					    (DesignatorStat_HASH_NEG) MINUS Factor HASH DesignatorArrayOrMatrixName
 						|
 						(DesignatorStatement_List) LEFT_BRACKET DesignatorStatementList RIGHT_BRACKET EQUALS Designator;
 						

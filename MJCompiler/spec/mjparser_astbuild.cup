@@ -56,6 +56,8 @@ terminal Integer BOOLEAN;
 terminal PLUS, MINUS, MULTIPLICATION, DIVISION, MODULUS, EQUALS, INCREMENT, DECREMENT;
 terminal SEMICOLON, COMMA, LEFT_PARENTHESIS, RIGHT_PARENTHESIS, LEFT_BRACKET, RIGHT_BRACKET, LEFT_BRACE, RIGHT_BRACE;
 
+terminal HASH;
+
 nonterminal Program Program;
 nonterminal ConstVarDeclList ConstVarDeclList;
 nonterminal ConstDeclList ConstDeclList;
@@ -111,7 +113,7 @@ ConstDeclOneOrMore ::= (ConstDeclOneOrMore_MORE) ConstDecl:C1 COMMA ConstDeclOne
 					   |
 					   (ConstDeclOneOrMore_ONE) ConstDecl:C1 {: RESULT=new ConstDeclOneOrMore_ONE(C1); RESULT.setLine(C1left); :};
 
-ConstDecl ::= (ConstDecl) IDENTIFIER:I1 EQUALS Constant:C2 {: RESULT=new ConstDecl(I1, C2); RESULT.setLine(I1left); :};
+ConstDecl ::= (ConstDecl) IDENTIFIER:I1 EQUALS UnaryMinus:U2 Constant:C3 {: RESULT=new ConstDecl(I1, U2, C3); RESULT.setLine(I1left); :};
 
 Constant ::= (Constant_NUMBER) NUMBER:N1 {: RESULT=new Constant_NUMBER(N1); RESULT.setLine(N1left); :}
 			 | 
@@ -197,6 +199,10 @@ DesignatorStatement ::= (DesignatorSt_Assign) Designator:D1 Assignop:A2 Expr:E3 
 					    (DesignatorStat_INC) Designator:D1 INCREMENT {: RESULT=new DesignatorStat_INC(D1); RESULT.setLine(D1left); :}
 					    |
 					    (DesignatorStat_DEC) Designator:D1 DECREMENT {: RESULT=new DesignatorStat_DEC(D1); RESULT.setLine(D1left); :}
+					    |
+					    (DesignatorStat_HASH) Factor:F1 HASH DesignatorArrayOrMatrixName:D2 {: RESULT=new DesignatorStat_HASH(F1, D2); RESULT.setLine(F1left); :}
+					    |
+					    (DesignatorStat_HASH_NEG) MINUS Factor:F1 HASH DesignatorArrayOrMatrixName:D2 {: RESULT=new DesignatorStat_HASH_NEG(F1, D2); RESULT.setLine(F1left); :}
 						|
 						(DesignatorStatement_List) LEFT_BRACKET DesignatorStatementList:D1 RIGHT_BRACKET EQUALS Designator:D2 {: RESULT=new DesignatorStatement_List(D1, D2); RESULT.setLine(D1left); :};
 						

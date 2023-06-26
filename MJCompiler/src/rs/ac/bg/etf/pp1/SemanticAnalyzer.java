@@ -206,7 +206,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     	}
     }
     
-    // ConstDecl ::= (ConstDecl) IDENTIFIER EQUALS Constant;
+    // ConstDecl ::= (ConstDecl) IDENTIFIER EQUALS UnaryMinus Constant;
     @Override
     public void visit(ConstDecl constDecl) { 
     	String constName = constDecl.getI1();
@@ -223,6 +223,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
         		return;
     		}
     		constObj = Tab.insert(Obj.Con, constName, currentType);
+    		if(constDecl.getUnaryMinus() instanceof UnaryMinus_MINUS) currentConstValue *= -1;
     		constObj.setAdr(currentConstValue);
     	}
     }
@@ -647,6 +648,46 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     	
     	if(designatorStat_DEC.getDesignator() instanceof Designator_ONE) {
     		report_info("INFO-DesignatorStat_DEC: Pristup oznaci " + desObj.getName() + ". " + objNodeToString(desObj) , designatorStat_DEC);
+    	}
+    }
+    
+    // DesignatorStatement ::= (DesignatorStat_HASH) Factor HASH DesignatorArrayOrMatrixName
+    @Override
+    public void visit(DesignatorStat_HASH designatorStat_HASH) { 
+    	Factor f = designatorStat_HASH.getFactor();
+    	Obj dao =  designatorStat_HASH.getDesignatorArrayOrMatrixName().obj;
+    	
+    	if(f.struct.equals(Tab.intType) == false) {
+    		report_error("GRESKA-DesignatorStat_HASH: Faktor nije int tipa", designatorStat_HASH);
+    		return;
+    	}
+    	else if(dao.getType().getKind() == Struct.Array && dao.getType().getElemType().getKind() == Struct.Array) {
+    		report_error("GRESKA-DesignatorStat_HASH: " + dao.getName() + "je matrica", designatorStat_HASH);
+    		return;
+    	}
+    	else if(dao.getType().getElemType().equals(Tab.intType) == false) {
+    		report_error("GRESKA-DesignatorStat_HASH: Niz" + dao.getName() + " nije int tipa", designatorStat_HASH);
+    		return;
+    	}
+    }
+    
+    // DesignatorStatement ::= (DesignatorStat_HASH) MINUS Factor HASH DesignatorArrayOrMatrixName
+    @Override
+    public void visit(DesignatorStat_HASH_NEG designatorStat_HASH_NEG) { 
+    	Factor f = designatorStat_HASH_NEG.getFactor();
+    	Obj dao =  designatorStat_HASH_NEG.getDesignatorArrayOrMatrixName().obj;
+    	
+    	if(f.struct.equals(Tab.intType) == false) {
+    		report_error("GRESKA-DesignatorStat_HASH: Faktor nije int tipa", designatorStat_HASH_NEG);
+    		return;
+    	}
+    	else if(dao.getType().getKind() == Struct.Array && dao.getType().getElemType().getKind() == Struct.Array) {
+    		report_error("GRESKA-DesignatorStat_HASH_NEG: " + dao.getName() + "je matrica", designatorStat_HASH_NEG);
+    		return;
+    	}
+    	else if(dao.getType().getElemType().equals(Tab.intType) == false) {
+    		report_error("GRESKA-DesignatorStat_HASH: Niz" + dao.getName() + " nije int tipa", designatorStat_HASH_NEG);
+    		return;
     	}
     }
     

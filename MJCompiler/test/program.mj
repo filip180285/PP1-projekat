@@ -1,56 +1,24 @@
 // Test301
 
 program test301
-
-	const int nula = 0;
-	const int jedan = 1;
-	const int pet = 5;
-
-	int niz[], niz2[], a, b;
-	char nizch[];
-	int mat[][];
+const int a = 10, b = -1, c = 20; // indeksi 4, 0, 7
 	
 {
 	void main()	
-		int bodovi;
-		bool bt;
+		int niz[], matrica[][]; char nizChar[];
 	{
-		bodovi = 0;
-		bodovi++;
-		bodovi = bodovi + jedan;
-		bodovi = bodovi * pet;
-		bodovi--;
-		print(bodovi);
-			
+		niz = new int[7];
+		niz[0] = 2; niz[1] = 3; niz[2] = 6; niz[3] = 9; niz[4] = 12; niz[5] = 15; niz[6] = 18;
 		
-		niz = new int[3];
-		niz[nula] = jedan;
-		niz[1] = 2;
-		niz[niz[jedan]] = niz[niz[0]] * 3;
-		bodovi = niz[2]/niz[0];
-		print(bodovi);
-		print(niz[2]);
+		nizChar = new char[10];
+		// a#nizChar; 
+		// 'c'#niz;
 		
-		mat = new int[2][2];
-		mat[0][0] = niz[nula];
-		mat[0][mat[0][0]] = 2;
-		mat[1][jedan - niz[0]] = 5;
-		mat[1][1] = mat[0][0] * mat[0][1];
-		print(mat[1][0]); // 5
-		print(mat[1][1]); // 2
+		a#niz; // 4
+		b#niz; // 0
+		c#niz; // 7
 		
-		nizch = new char[3];
-		nizch[0] = 'a';
-		nizch[jedan] = 'b';
-		nizch[pet - 3] = 'c';
-		print(nizch[1]);
-		print(nizch[jedan * 2]);
-			
-		
-		read(bodovi);
-		bodovi = -bodovi + (pet * a / 2 - jedan) * bodovi - (3 % 2 + 3 * 2 - 3); 
-		print(bodovi);
-			
+		// print(b - 1 , 5);
 	}
 }
 

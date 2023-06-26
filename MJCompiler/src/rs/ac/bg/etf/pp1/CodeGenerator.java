@@ -232,6 +232,100 @@ public class CodeGenerator extends VisitorAdaptor {
     	Code.store(desObj);
     }
     
+    // DesignatorStatement ::= (DesignatorStat_HASH) Factor HASH DesignatorArrayOrMatrixName
+    @Override
+    public void visit(DesignatorStat_HASH designatorStat_HASH) { // 3 niz
+    	Obj dao = designatorStat_HASH.getDesignatorArrayOrMatrixName().obj;
+    	
+    	Code.put(Code.pop); // 3
+    	Code.loadConst(0); // 3 0
+    	int gore = Code.pc;
+    	Code.put(Code.dup2); // 3 0 3 0
+    	Code.load(dao); // 3 0 3 0 niz
+    	Code.put(Code.dup_x1); // 3 0 3 niz 0 niz
+    	Code.put(Code.pop); // 3 0 3 niz 0
+    	Code.put(Code.aload); // 3 0 3 niz[0]
+    	int fixup = Code.pc + 1;
+    	Code.putFalseJump(Code.gt, 0); // if(3 <= niz[i]) goto kraj
+    	// 3 0
+    	Code.loadConst(1); // 3 0 1
+    	Code.put(Code.add); // 3 1
+    	Code.put(Code.dup); // 3 1 1
+    	Code.load(dao); // 3 1 1 niz
+    	Code.put(Code.arraylength); // 3 1 1 len
+    	int fixup2 = Code.pc + 1;
+    	Code.putFalseJump(Code.ne, 0); // if (ind == lenNiza) goto kraj2
+    	// 3 1
+    	Code.putJump(gore);
+    	
+    	// kraj: 3 0
+    	Code.fixup(fixup);
+    	Code.put(Code.dup_x1); // 0 3 0
+    	Code.put(Code.pop); // 0 3
+    	Code.put(Code.pop); // 0 - tj indeks
+    	Code.loadConst(5); // 0 5
+    	Code.put(Code.print); // ispise se indeks
+    	int fixup3 = Code.pc + 1; // preskoci do kraja 
+    	Code.putJump(0);
+    	
+    	// kraj2: 3 len
+    	Code.fixup(fixup2);
+    	Code.loadConst(5); // 3 len 5
+    	Code.put(Code.print); // 3
+    	Code.put(Code.pop); //
+    	Code.fixup(fixup3);
+    }
+    
+    // DesignatorStatement ::= (DesignatorStat_HASH) MINUS Factor HASH DesignatorArrayOrMatrixName
+    @Override
+    public void visit(DesignatorStat_HASH_NEG designatorStat_HASH_NEG) { 
+    	Obj dao = designatorStat_HASH_NEG.getDesignatorArrayOrMatrixName().obj;
+    	
+    	Code.put(Code.dup_x1); // niz 3 niz
+    	Code.put(Code.pop); // niz 3
+    	Code.put(Code.neg); // niz -3
+    	Code.put(Code.dup_x1); // -3 niz -3
+    	Code.put(Code.pop); // -3 niz
+    	
+    	Code.put(Code.pop); // 3
+    	Code.loadConst(0); // 3 0
+    	int gore = Code.pc;
+    	Code.put(Code.dup2); // 3 0 3 0
+    	Code.load(dao); // 3 0 3 0 niz
+    	Code.put(Code.dup_x1); // 3 0 3 niz 0 niz
+    	Code.put(Code.pop); // 3 0 3 niz 0
+    	Code.put(Code.aload); // 3 0 3 niz[0]
+    	int fixup = Code.pc + 1;
+    	Code.putFalseJump(Code.lt, 0); // if(3 >= niz[i]) goto kraj
+    	// 3 0
+    	Code.loadConst(1); // 3 0 1
+    	Code.put(Code.add); // 3 1
+    	Code.put(Code.dup); // 3 1 1
+    	Code.load(dao); // 3 1 1 niz
+    	Code.put(Code.arraylength); // 3 1 1 len
+    	int fixup2 = Code.pc + 1;
+    	Code.putFalseJump(Code.ne, 0); // if (ind == lenNiza) goto kraj2
+    	// 3 1
+    	Code.putJump(gore);
+    	
+    	// kraj: 3 0
+    	Code.fixup(fixup);
+    	Code.put(Code.dup_x1); // 0 3 0
+    	Code.put(Code.pop); // 0 3
+    	Code.put(Code.pop); // 0 - tj indeks
+    	Code.loadConst(5); // 0 5
+    	Code.put(Code.print); // ispise se indeks
+    	int fixup3 = Code.pc + 1; // preskoci do kraja 
+    	Code.putJump(0);
+    	
+    	// kraj2: 3 len
+    	Code.fixup(fixup2);
+    	Code.loadConst(5); // 3 len 5
+    	Code.put(Code.print); // 3
+    	Code.put(Code.pop); //
+    	Code.fixup(fixup3);
+    }
+    
     
     // DesignatorStatement ::= (DesignatorSt_Assign) Designator Assignop Expr
     @Override

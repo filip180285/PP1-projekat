@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 26/5/2023 1:22:13
+// 26/5/2023 23:29:36
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -10,10 +10,13 @@ public class ConstDecl implements SyntaxNode {
     private SyntaxNode parent;
     private int line;
     private String I1;
+    private UnaryMinus UnaryMinus;
     private Constant Constant;
 
-    public ConstDecl (String I1, Constant Constant) {
+    public ConstDecl (String I1, UnaryMinus UnaryMinus, Constant Constant) {
         this.I1=I1;
+        this.UnaryMinus=UnaryMinus;
+        if(UnaryMinus!=null) UnaryMinus.setParent(this);
         this.Constant=Constant;
         if(Constant!=null) Constant.setParent(this);
     }
@@ -24,6 +27,14 @@ public class ConstDecl implements SyntaxNode {
 
     public void setI1(String I1) {
         this.I1=I1;
+    }
+
+    public UnaryMinus getUnaryMinus() {
+        return UnaryMinus;
+    }
+
+    public void setUnaryMinus(UnaryMinus UnaryMinus) {
+        this.UnaryMinus=UnaryMinus;
     }
 
     public Constant getConstant() {
@@ -55,15 +66,18 @@ public class ConstDecl implements SyntaxNode {
     }
 
     public void childrenAccept(Visitor visitor) {
+        if(UnaryMinus!=null) UnaryMinus.accept(visitor);
         if(Constant!=null) Constant.accept(visitor);
     }
 
     public void traverseTopDown(Visitor visitor) {
         accept(visitor);
+        if(UnaryMinus!=null) UnaryMinus.traverseTopDown(visitor);
         if(Constant!=null) Constant.traverseTopDown(visitor);
     }
 
     public void traverseBottomUp(Visitor visitor) {
+        if(UnaryMinus!=null) UnaryMinus.traverseBottomUp(visitor);
         if(Constant!=null) Constant.traverseBottomUp(visitor);
         accept(visitor);
     }
@@ -74,6 +88,12 @@ public class ConstDecl implements SyntaxNode {
         buffer.append("ConstDecl(\n");
 
         buffer.append(" "+tab+I1);
+        buffer.append("\n");
+
+        if(UnaryMinus!=null)
+            buffer.append(UnaryMinus.toString("  "+tab));
+        else
+            buffer.append(tab+"  null");
         buffer.append("\n");
 
         if(Constant!=null)
