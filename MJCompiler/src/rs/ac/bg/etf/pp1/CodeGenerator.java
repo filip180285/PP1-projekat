@@ -278,7 +278,7 @@ public class CodeGenerator extends VisitorAdaptor {
     
     // DesignatorStatement ::= (DesignatorStat_HASH) MINUS Factor HASH DesignatorArrayOrMatrixName
     @Override
-    public void visit(DesignatorStat_HASH_NEG designatorStat_HASH_NEG) { 
+    public void visit(DesignatorStat_HASH_NEG designatorStat_HASH_NEG) {  // 3 niz
     	Obj dao = designatorStat_HASH_NEG.getDesignatorArrayOrMatrixName().obj;
     	
     	Code.put(Code.dup_x1); // niz 3 niz
@@ -296,7 +296,7 @@ public class CodeGenerator extends VisitorAdaptor {
     	Code.put(Code.pop); // 3 0 3 niz 0
     	Code.put(Code.aload); // 3 0 3 niz[0]
     	int fixup = Code.pc + 1;
-    	Code.putFalseJump(Code.lt, 0); // if(3 >= niz[i]) goto kraj
+    	Code.putFalseJump(Code.gt, 0); // if(3 >= niz[i]) goto kraj
     	// 3 0
     	Code.loadConst(1); // 3 0 1
     	Code.put(Code.add); // 3 1

@@ -15,6 +15,7 @@ const int a = 10, b = -1, c = 20; // indeksi 4, 0, 7
 		// 'c'#niz;
 		
 		a#niz; // 4
+		-a#niz; // 0
 		b#niz; // 0
 		c#niz; // 7
 		
