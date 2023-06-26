@@ -3,7 +3,6 @@
 - yyline i yycolumn uvecati za 1 pri ispisu, jer krecu od 0
 - false = 0, true = 1 (mozda staviti new Integer(0|1) ali vrv ne treba)
 
-- rad po uzoru na veru, neke razlike u gramatici:
 deklaracija niza
 nema goto i single statement, mozda izdvojiti ugnjezdeni statement u poseban neterminal
 dodat nivo indirekcije za term i expr, nisam siguran zasto
@@ -19,3 +18,129 @@ ili kao polje klase SemanticAnalzer
     	numGlobalVars = Tab.currentScope().getLocals().numSymbols(); vrati broj simbola u cijelom opsegu
 		
 read preskace neadekvatne vrednosti za dodelu
+
+Modifikacije:
+
+- modifikacija4: print(#niz[i]) - broj pristupa i-tom elementu niza 
+leksicka analiza: uvodjenje #
+sintaksna analiza: dodavanje nove smjene designatorHash ispod designatorElem
+semanticka analiza: pravljenje novog privatnog objektnog cvora int tipa + provjera da je expr i int tipa
+(da bi taj broj mogao da se ispise kao int nezavisno da li je niz int, char, bool tipa)
+i proslednjivanje objektnog cvora nagore
+generisanje koda: za pristup samo kao citanje kod moze biti u factorDesignator, a za bilo koji pristup u
+designatorElem, prethodno napravljen niz duplo duzi da bi u i + len moglo da se cuva broj pristupa tom elementu,
+u designatorElem uradjeno brojanje, a u factorDesignator ukoliko je designatorHash u pitanju dohvati se
+broj sa indeksa i + len
+
+- modifikacija5: niz[i]@num - naredba koja vrsi niz[i] = niz[(i + num) % arrlength]
+leksicka analiza: uvodjenje @
+sintaksna analiza: dodavanje nove smjene DesignatorStat_MONKEY i neterminal za Monkey da bi se mogao 
+	"presresti" stek i duplirati adresu niza i indeks pre stavljanja num na stek
+semanticka analiza: provera da li je factorSign.Factor int tipa i provera da li je indeks celi broj
+generisanje koda: U MonkeyNt dupliran kod, a u DesignatorStat_MONKEY izvrsena obrada
+
+-modifikacija##: a##, vraca a^2 za a parno i a^3 za a neparno
+leksicka analiza: uvodjenje #
+sintaksna analiza: dopuna smjena factorDesignator i factorNumber sa MayHash(## | epsilon)
+semanticka analiza: ako je MayHash ## provjera da li je designator int tipa
+generisanje koda: dopuna factorDesignator i factorNumber istim kodom ako je MayHash ##, umjesto
+originalne vrijednosti izvrsiti obradu sa skokovima na provjeri num % 2s
+
+-modifikacijaShip: expr1 <=> expr2, vraca 0 ako su jednaki, 1 za e1 > e2 i -1 za e2 > e1 i <=> je najprioritetniji
+operator
+leksicka analiza: uvodjenje <=>
+sintaksna analiza: posto je <=> najprioritetniji operator, mora biti u stablu ispod * / %, to radimo izmjenom
+smjene factor, factor -> subfactor i factor -> factor spaceship subfactor, subfactor postaje ono sto je 
+prethodno bio factor
+semanticka analiza: prosledjivanje struct od subfactora u factor
+generisanje koda: visit smene factor -> factor spaceship subfactor, obrada pomocu skokova, skok na razlicite
+return naredbe u zavisnosti od jednakosti factora na steku, paziti da se nakon return preskoce naredbe do kraja
+smene
+
+-modifikacijax@y: x@y = x^2 + 2xy + y^2, @ sam postavio da je najprioritetniji operator
+leksicka analiza: uvodjenje @
+sintaksna analiza: posto je @ najprioritetniji operator, mora biti u stablu ispod * / %, to radimo izmjenom
+smjene factor, factor -> subfactor i factor -> factor spaceship subfactor, subfactor postaje ono sto je 
+prethodno bio factor
+semanticka analiza: prosledjivanje struct od subfactora u factor
+generisanje koda: visit smene factor -> factor @ subfactor, obrada sa dup_x2
+
+-modifikacijaInc2: x+++ -> x+=2
+leksicka analiza:
+sintaksna analiza: dodata smena ispod originalnog incrementa sa dodatnim PLUS terminalom
+semanticka analiza: prekopiran originalni increment
+generisanje koda: staviti na stek 2 umjesto 1 prije add operacije
+
+-modifikacija7: niz@ -> ispis maksimuma niza
+leksicka analiza: uvodjenje @
+sintaksna analiza: dodata smena designator MONKEY
+semanticka analiza: provera da li je desiganator nizovna promenljiva
+generisanje koda: obrada manipulacijom steka
+
+-modifikacija1: #niz -> ispis char-a napravljenog od bool niza od 8 elemenata
+leksicka analiza: uvodjenje #
+sintaksna analiza: dodata smena HASH Designator
+semanticka analiza: provera da li je Designator nizovna promenljiva bool tipa
+generisanje koda: obrada manipulacijom steka sa dva for-a, prvi 8 iteracija sa ucitavanjem
+i-tog elementa niza sa 2 na i i mnozenje 2 vrednosti, drugi sa 7 iteracija sabiranja tih
+vrednosti
+
+-modifikacija8: niz[x,y] -> swap(niz[x], niz[y])
+leksicka analiza: 
+sintaksna analiza: dodata smena DesignatorStat_SWAP
+semanticka analiza: samo info poseta designatoru, provera da li je niz je vec izvrsena
+u designatorArrayOrMatrixName
+generisanje koda: obrada manipulacijom steka
+
+-modifikacijaSuma: #niz - ispis sume niza
+leksicka analiza: uvodjenje #
+sintaksna analiza: dodata smena HASH DesignatorArrayOrMatrixName
+semanticka analiza: provera da li je niz int tipa
+generisanje koda: obrada manipulacijom steka
+
+-modifikacijaFinal: dodatak deklaracije final, koja dozvoljava samo jednu dodelu vrednosti promenljivoj
+leksicka analiza: uvodjenje kljucne reci final
+sintaksna analiza: dodata smena MayFinal u VarDeclList
+semanticka analiza: dodata hes mapa koja sadrzi sve objektne cvorove koji su deklarisani sa final kao kljuc i 
+broj njihovih ponavljanja u smeni za dodelu vrednosti kao vrednost, kada vrednost dostigne 1, svaki naredni
+put pri dodeli pozvati report error
+generisanje koda: bez obrade
+
+-modifikacijaTrap: trap prekid pri indeksiranju niza ako indeks nije u odgovarajucem opsegu
+leksicka analiza: 
+sintaksna analiza: dodata smena Nonterminal_RIGHT_BRACKET da bi se u designatorElem-u mogla podijeliti
+provjera na indeks niza i indeks matrice
+semanticka analiza: 
+generisanje koda: u smjeni Nonterminal_RIGHT_BRACKET provjera indeksa niza, a u smjeni MayMatrix provjera
+indeksa ukoliko je u pitanju element matrice
+
+-modifikacijaInit: uveden inicijalizator niza, npr a = [1, 2, 3], podrazumevano je bilo da ce inicijalizator
+imati onoliko elemenata kolika je i duzina niza
+leksicka analiza: 
+sintaksna analiza: dodata smena Expr_Init koja predstavlja listu int/char/bool razdvojenih zarezima, 
+dodate i smene koje terminiraju u njih(ne u faktor jer onda bude konflikata)
+semanticka analiza: dodata provera da je dodela izvrsena u niz
+generisanje koda: u svakoj smeni koja terminira u int/char/bool dodat kod za smestanje vrednosti u niz,
+indeks niza se prati kroz brojac koji se resetuje u ListOfNCBMore_EPSILON
+
+-modifikacijaCezar: implementacija Cezarove sifre, niz~pom, elementi niza se pomeraju za pom
+leksicka analiza: uvodjenje ~
+sintaksna analiza: dodata smena Designator ~ UnaryMinus NUMBER (moglo je i Expr)
+semanticka analiza: provera da li je niz char tipa i da li je niz promenljiva
+generisanje koda: prolazak kroz niz i razlicita obrada za mala i velika slova, ne radi fino jer
+rem operator ne daje dobar rezultat za negativne brojeve za setanje unazad po opsegu, s pozitivnim 
+brojevima radi
+
+
+
+
+
+
+
+
+
+
+
+
+
+
