@@ -56,6 +56,8 @@ terminal Integer BOOLEAN;
 terminal PLUS, MINUS, MULTIPLICATION, DIVISION, MODULUS, EQUALS, INCREMENT, DECREMENT;
 terminal SEMICOLON, COMMA, LEFT_PARENTHESIS, RIGHT_PARENTHESIS, LEFT_BRACKET, RIGHT_BRACKET, LEFT_BRACE, RIGHT_BRACE;
 
+terminal GOTO, COLON;
+
 nonterminal Program, ConstVarDeclList, ConstDeclList, VarDeclList, MethodDecl;
 nonterminal ConstDeclOneOrMore, ConstDecl, VarDeclOneOrMore, VarDecl;
 nonterminal MethodVarDeclList, StatementList;
@@ -71,6 +73,8 @@ nonterminal rs.etf.pp1.symboltable.concepts.Obj Designator, DesignatorArrayOrMat
 nonterminal rs.etf.pp1.symboltable.concepts.Struct Constant, FactorSign, Factor, Term, Expr;
 
 nonterminal rs.etf.pp1.symboltable.concepts.Struct Type, NEW_Array, NEW_Matrix;
+
+nonterminal Label;
 
 
 
@@ -141,8 +145,12 @@ MethodVarDeclList ::= (MethodVarDeclList_VAR) MethodVarDeclList VarDeclList
 
 StatementList ::= (StatementList_STATEMENTS) StatementList Statement
 				  |
+				  (StatementList_LABEL) StatementList Label COLON Statement
+				  |
 				  (StatementList_EPSILON) /* epsilon */
 				  ;
+				  
+Label ::= (Label) IDENTIFIER;
 				  
 				  
 				  
@@ -160,6 +168,8 @@ Statement ::= (Statement_DesignatorStatement) DesignatorStatement SEMICOLON
 			  (Statement_READ) READ LEFT_PARENTHESIS Designator RIGHT_PARENTHESIS SEMICOLON
 			  |
 			  (Statement_PRINT) PRINT LEFT_PARENTHESIS Expr MayPrintNumConst RIGHT_PARENTHESIS SEMICOLON
+			  |
+			  (Statement_GOTO) GOTO IDENTIFIER SEMICOLON
 			  |
 			  (Statement_StatementList) LEFT_BRACE StatementList RIGHT_BRACE;
 			  

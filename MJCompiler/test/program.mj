@@ -2,54 +2,34 @@
 
 program test301
 
-	const int nula = 0;
-	const int jedan = 1;
-	const int pet = 5;
-
-	int niz[], niz2[], a, b;
-	char nizch[];
-	int mat[][];
 	
 {
 	void main()	
-		int bodovi;
-		bool bt;
+		int bodovi, poeni;
 	{
-		bodovi = 0;
-		bodovi++;
-		bodovi = bodovi + jedan;
-		bodovi = bodovi * pet;
-		bodovi--;
-		print(bodovi);
-			
+		bodovi = 10;
+		poeni = 15;
 		
-		niz = new int[3];
-		niz[nula] = jedan;
-		niz[1] = 2;
-		niz[niz[jedan]] = niz[niz[0]] * 3;
-		bodovi = niz[2]/niz[0];
-		print(bodovi);
-		print(niz[2]);
+		labela1:
+		bodovi++; // 11
+		poeni--; // 14
+		goto labela3;
 		
-		mat = new int[2][2];
-		mat[0][0] = niz[nula];
-		mat[0][mat[0][0]] = 2;
-		mat[1][jedan - niz[0]] = 5;
-		mat[1][1] = mat[0][0] * mat[0][1];
-		print(mat[1][0]); // 5
-		print(mat[1][1]); // 2
+		labela2:
+		bodovi++; // 13
+		poeni--; // 12
+		goto labela4;
 		
-		nizch = new char[3];
-		nizch[0] = 'a';
-		nizch[jedan] = 'b';
-		nizch[pet - 3] = 'c';
-		print(nizch[1]);
-		print(nizch[jedan * 2]);
-			
+		labela3:
+		bodovi++; // 12
+		poeni--; // 13
+		goto labela2;
 		
-		read(bodovi);
-		bodovi = -bodovi + (pet * a / 2 - jedan) * bodovi - (3 % 2 + 3 * 2 - 3); 
-		print(bodovi);
+		labela4:
+		bodovi = bodovi + 10; // 23
+		poeni = poeni + 10; // 22
+		
+		print(bodovi, 5); print(poeni, 5); // 23 22
 			
 	}
 }

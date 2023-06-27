@@ -1,7 +1,10 @@
 package rs.ac.bg.etf.pp1;
 
+import java.util.HashMap;
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Set;
 
 import rs.ac.bg.etf.pp1.ast.*;
 import rs.etf.pp1.mj.runtime.Code;
@@ -14,6 +17,10 @@ public class CodeGenerator extends VisitorAdaptor {
     public static final int MAIN_PC = 0; // main za A nivo krece od 0
     private List<Obj> listOfDesignators = new LinkedList<Obj>(); // za dodelu vrednosti pri raspakivanju niza
     private Obj designatorMatrix; // za cuvanje objektnog cvora matrice radi kasnijeg ucitavanja iste na stek
+    
+    private HashMap<String, Integer> addresses = new HashMap<String, Integer>(); // par labela - adresa
+    private HashMap<String, LinkedList<Integer>> listToFill = new HashMap<String, LinkedList<Integer>>(); // par labela - sve adrese koje skacu na labelu
+    
     
     public static final int LENGTH_EXCEPTION = -1;
 
@@ -37,9 +44,40 @@ public class CodeGenerator extends VisitorAdaptor {
     
     // MethodDecl ::= (MethodDecl) VOID MethodName LEFT_PARENTHESIS RIGHT_PARENTHESIS MethodVarDeclList LEFT_BRACE StatementList RIGHT_BRACE;
     @Override
-    public void visit(MethodDecl methodDecl) {
+    public void visit(MethodDecl methodDecl) {   	
     	Code.put(Code.exit);
     	Code.put(Code.return_);
+    }
+    
+    //Label ::= (Label) IDENTIFIER;
+    @Override
+    public void visit(Label label) {
+    	LinkedList<Integer> list = listToFill.get(label.getI1());
+    	if(list != null) {
+    		while(list.isEmpty() == false) {
+    			Code.fixup(list.removeFirst());
+    		}
+    	}
+    	addresses.put(label.getI1(), Code.pc);
+    }
+    
+    // Statement ::= (Statement_GOTO) GOTO IDENTIFIER SEMICOLON
+    @Override
+    public void visit(Statement_GOTO statement_GOTO) {
+    	LinkedList<Integer> list = listToFill.get(statement_GOTO.getI1());
+    	Integer adr = addresses.get(statement_GOTO.getI1());
+    	int fixup = Code.pc + 1;
+    	if(adr == null) {
+        	Code.putJump(0);
+	    	if(list == null) {
+	    		list = new LinkedList<Integer>();
+	    	}
+	    	list.add(fixup);
+	    	listToFill.put(statement_GOTO.getI1(), list);
+	    }
+    	else {
+    		Code.putJump(adr);
+    	}
     }
     
     // Factor ::= (Factor_Designator) Designator

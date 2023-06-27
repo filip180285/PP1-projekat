@@ -1,0 +1,380 @@
+INFO  13:12:13,041 - Compiling source file: C:\Users\Korisnik\Desktop\PP1-projekat\MJCompiler\test\program.mj
+INFO  13:12:13,061 - #2 program
+INFO  13:12:13,061 - #9 test301
+INFO  13:12:13,061 - #27 {
+INFO  13:12:13,062 - #8 void
+INFO  13:12:13,062 - #9 main
+INFO  13:12:13,062 - #23 (
+INFO  13:12:13,062 - #24 )
+INFO  13:12:13,062 - #9 int
+INFO  13:12:13,063 - #9 bodovi
+INFO  13:12:13,063 - #22 ,
+INFO  13:12:13,063 - #9 poeni
+INFO  13:12:13,063 - #21 ;
+INFO  13:12:13,064 - #27 {
+INFO  13:12:13,064 - #9 bodovi
+INFO  13:12:13,065 - #18 =
+INFO  13:12:13,065 - #10 10
+INFO  13:12:13,066 - #21 ;
+INFO  13:12:13,067 - #9 poeni
+INFO  13:12:13,067 - #18 =
+INFO  13:12:13,067 - #10 15
+INFO  13:12:13,067 - #21 ;
+INFO  13:12:13,069 - #9 labela1
+INFO  13:12:13,069 - #30 :
+INFO  13:12:13,069 - #9 bodovi
+INFO  13:12:13,069 - #19 ++
+INFO  13:12:13,069 - #21 ;
+INFO  13:12:13,070 - #9 poeni
+INFO  13:12:13,070 - #20 --
+INFO  13:12:13,070 - #21 ;
+INFO  13:12:13,070 - #29 goto
+INFO  13:12:13,070 - #9 labela3
+INFO  13:12:13,070 - #21 ;
+INFO  13:12:13,070 - #9 labela2
+INFO  13:12:13,070 - #30 :
+INFO  13:12:13,070 - #9 bodovi
+INFO  13:12:13,070 - #19 ++
+INFO  13:12:13,070 - #21 ;
+INFO  13:12:13,070 - #9 poeni
+INFO  13:12:13,070 - #20 --
+INFO  13:12:13,070 - #21 ;
+INFO  13:12:13,070 - #29 goto
+INFO  13:12:13,070 - #9 labela4
+INFO  13:12:13,070 - #21 ;
+INFO  13:12:13,070 - #9 labela3
+INFO  13:12:13,071 - #30 :
+INFO  13:12:13,071 - #9 bodovi
+INFO  13:12:13,071 - #19 ++
+INFO  13:12:13,071 - #21 ;
+INFO  13:12:13,071 - #9 poeni
+INFO  13:12:13,071 - #20 --
+INFO  13:12:13,071 - #21 ;
+INFO  13:12:13,071 - #29 goto
+INFO  13:12:13,071 - #9 labela5
+INFO  13:12:13,071 - #21 ;
+INFO  13:12:13,071 - #9 labela4
+INFO  13:12:13,071 - #30 :
+INFO  13:12:13,071 - #9 bodovi
+INFO  13:12:13,071 - #18 =
+INFO  13:12:13,071 - #9 bodovi
+INFO  13:12:13,071 - #13 +
+INFO  13:12:13,071 - #10 10
+INFO  13:12:13,072 - #21 ;
+INFO  13:12:13,072 - #9 poeni
+INFO  13:12:13,072 - #18 =
+INFO  13:12:13,072 - #9 poeni
+INFO  13:12:13,072 - #13 +
+INFO  13:12:13,073 - #10 10
+INFO  13:12:13,073 - #21 ;
+INFO  13:12:13,073 - #5 print
+INFO  13:12:13,073 - #23 (
+INFO  13:12:13,073 - #9 bodovi
+INFO  13:12:13,073 - #22 ,
+INFO  13:12:13,073 - #10 5
+INFO  13:12:13,073 - #24 )
+INFO  13:12:13,073 - #21 ;
+INFO  13:12:13,073 - #5 print
+INFO  13:12:13,073 - #23 (
+INFO  13:12:13,073 - #9 poeni
+INFO  13:12:13,073 - #22 ,
+INFO  13:12:13,073 - #10 5
+INFO  13:12:13,073 - #24 )
+INFO  13:12:13,073 - #21 ;
+INFO  13:12:13,073 - #28 }
+INFO  13:12:13,073 - #28 }
+INFO  13:12:13,075 - 
+                     ==============ISPIS STABLA=====================
+INFO  13:12:13,075 - Program(
+  ProgramName(
+   test301
+  ) [ProgramName]
+  ConstVarDeclList_EPSILON(
+  ) [ConstVarDeclList_EPSILON]
+  MethodDecl(
+    MethodName(
+     main
+    ) [MethodName]
+    MethodVarDeclList_VAR(
+      MethodVarDeclList_EPSILON(
+      ) [MethodVarDeclList_EPSILON]
+      VarDeclList(
+        Type(
+         int
+        ) [Type]
+        VarDeclOneOrMore_MORE(
+          VarDecl_VAR(
+           bodovi
+          ) [VarDecl_VAR]
+          VarDeclOneOrMore_ONE(
+            VarDecl_VAR(
+             poeni
+            ) [VarDecl_VAR]
+          ) [VarDeclOneOrMore_ONE]
+        ) [VarDeclOneOrMore_MORE]
+      ) [VarDeclList]
+    ) [MethodVarDeclList_VAR]
+    StatementList_STATEMENTS(
+      StatementList_STATEMENTS(
+        StatementList_STATEMENTS(
+          StatementList_LABEL(
+            StatementList_STATEMENTS(
+              StatementList_STATEMENTS(
+                StatementList_LABEL(
+                  StatementList_STATEMENTS(
+                    StatementList_STATEMENTS(
+                      StatementList_LABEL(
+                        StatementList_STATEMENTS(
+                          StatementList_STATEMENTS(
+                            StatementList_LABEL(
+                              StatementList_STATEMENTS(
+                                StatementList_STATEMENTS(
+                                  StatementList_EPSILON(
+                                  ) [StatementList_EPSILON]
+                                  Statement_DesignatorStatement(
+                                    DesignatorSt_Assign(
+                                      Designator_ONE(
+                                       bodovi
+                                      ) [Designator_ONE]
+                                      Assignop(
+                                      ) [Assignop]
+                                      Expr_ONE(
+                                        Term_ONE(
+                                          FactorSign(
+                                            UnaryMinus_EPSILON(
+                                            ) [UnaryMinus_EPSILON]
+                                            Factor_NUMBER(
+                                             10
+                                            ) [Factor_NUMBER]
+                                          ) [FactorSign]
+                                        ) [Term_ONE]
+                                      ) [Expr_ONE]
+                                    ) [DesignatorSt_Assign]
+                                  ) [Statement_DesignatorStatement]
+                                ) [StatementList_STATEMENTS]
+                                Statement_DesignatorStatement(
+                                  DesignatorSt_Assign(
+                                    Designator_ONE(
+                                     poeni
+                                    ) [Designator_ONE]
+                                    Assignop(
+                                    ) [Assignop]
+                                    Expr_ONE(
+                                      Term_ONE(
+                                        FactorSign(
+                                          UnaryMinus_EPSILON(
+                                          ) [UnaryMinus_EPSILON]
+                                          Factor_NUMBER(
+                                           15
+                                          ) [Factor_NUMBER]
+                                        ) [FactorSign]
+                                      ) [Term_ONE]
+                                    ) [Expr_ONE]
+                                  ) [DesignatorSt_Assign]
+                                ) [Statement_DesignatorStatement]
+                              ) [StatementList_STATEMENTS]
+                              Label(
+                               labela1
+                              ) [Label]
+                              Statement_DesignatorStatement(
+                                DesignatorStat_INC(
+                                  Designator_ONE(
+                                   bodovi
+                                  ) [Designator_ONE]
+                                ) [DesignatorStat_INC]
+                              ) [Statement_DesignatorStatement]
+                            ) [StatementList_LABEL]
+                            Statement_DesignatorStatement(
+                              DesignatorStat_DEC(
+                                Designator_ONE(
+                                 poeni
+                                ) [Designator_ONE]
+                              ) [DesignatorStat_DEC]
+                            ) [Statement_DesignatorStatement]
+                          ) [StatementList_STATEMENTS]
+                          Statement_GOTO(
+                           labela3
+                          ) [Statement_GOTO]
+                        ) [StatementList_STATEMENTS]
+                        Label(
+                         labela2
+                        ) [Label]
+                        Statement_DesignatorStatement(
+                          DesignatorStat_INC(
+                            Designator_ONE(
+                             bodovi
+                            ) [Designator_ONE]
+                          ) [DesignatorStat_INC]
+                        ) [Statement_DesignatorStatement]
+                      ) [StatementList_LABEL]
+                      Statement_DesignatorStatement(
+                        DesignatorStat_DEC(
+                          Designator_ONE(
+                           poeni
+                          ) [Designator_ONE]
+                        ) [DesignatorStat_DEC]
+                      ) [Statement_DesignatorStatement]
+                    ) [StatementList_STATEMENTS]
+                    Statement_GOTO(
+                     labela4
+                    ) [Statement_GOTO]
+                  ) [StatementList_STATEMENTS]
+                  Label(
+                   labela3
+                  ) [Label]
+                  Statement_DesignatorStatement(
+                    DesignatorStat_INC(
+                      Designator_ONE(
+                       bodovi
+                      ) [Designator_ONE]
+                    ) [DesignatorStat_INC]
+                  ) [Statement_DesignatorStatement]
+                ) [StatementList_LABEL]
+                Statement_DesignatorStatement(
+                  DesignatorStat_DEC(
+                    Designator_ONE(
+                     poeni
+                    ) [Designator_ONE]
+                  ) [DesignatorStat_DEC]
+                ) [Statement_DesignatorStatement]
+              ) [StatementList_STATEMENTS]
+              Statement_GOTO(
+               labela5
+              ) [Statement_GOTO]
+            ) [StatementList_STATEMENTS]
+            Label(
+             labela4
+            ) [Label]
+            Statement_DesignatorStatement(
+              DesignatorSt_Assign(
+                Designator_ONE(
+                 bodovi
+                ) [Designator_ONE]
+                Assignop(
+                ) [Assignop]
+                Expr_MORE(
+                  Expr_ONE(
+                    Term_ONE(
+                      FactorSign(
+                        UnaryMinus_EPSILON(
+                        ) [UnaryMinus_EPSILON]
+                        Factor_Designator(
+                          Designator_ONE(
+                           bodovi
+                          ) [Designator_ONE]
+                        ) [Factor_Designator]
+                      ) [FactorSign]
+                    ) [Term_ONE]
+                  ) [Expr_ONE]
+                  Addop_PLUS(
+                  ) [Addop_PLUS]
+                  Term_ONE(
+                    FactorSign(
+                      UnaryMinus_EPSILON(
+                      ) [UnaryMinus_EPSILON]
+                      Factor_NUMBER(
+                       10
+                      ) [Factor_NUMBER]
+                    ) [FactorSign]
+                  ) [Term_ONE]
+                ) [Expr_MORE]
+              ) [DesignatorSt_Assign]
+            ) [Statement_DesignatorStatement]
+          ) [StatementList_LABEL]
+          Statement_DesignatorStatement(
+            DesignatorSt_Assign(
+              Designator_ONE(
+               poeni
+              ) [Designator_ONE]
+              Assignop(
+              ) [Assignop]
+              Expr_MORE(
+                Expr_ONE(
+                  Term_ONE(
+                    FactorSign(
+                      UnaryMinus_EPSILON(
+                      ) [UnaryMinus_EPSILON]
+                      Factor_Designator(
+                        Designator_ONE(
+                         poeni
+                        ) [Designator_ONE]
+                      ) [Factor_Designator]
+                    ) [FactorSign]
+                  ) [Term_ONE]
+                ) [Expr_ONE]
+                Addop_PLUS(
+                ) [Addop_PLUS]
+                Term_ONE(
+                  FactorSign(
+                    UnaryMinus_EPSILON(
+                    ) [UnaryMinus_EPSILON]
+                    Factor_NUMBER(
+                     10
+                    ) [Factor_NUMBER]
+                  ) [FactorSign]
+                ) [Term_ONE]
+              ) [Expr_MORE]
+            ) [DesignatorSt_Assign]
+          ) [Statement_DesignatorStatement]
+        ) [StatementList_STATEMENTS]
+        Statement_PRINT(
+          Expr_ONE(
+            Term_ONE(
+              FactorSign(
+                UnaryMinus_EPSILON(
+                ) [UnaryMinus_EPSILON]
+                Factor_Designator(
+                  Designator_ONE(
+                   bodovi
+                  ) [Designator_ONE]
+                ) [Factor_Designator]
+              ) [FactorSign]
+            ) [Term_ONE]
+          ) [Expr_ONE]
+          MayPrintNumConst_NUMBER(
+           5
+          ) [MayPrintNumConst_NUMBER]
+        ) [Statement_PRINT]
+      ) [StatementList_STATEMENTS]
+      Statement_PRINT(
+        Expr_ONE(
+          Term_ONE(
+            FactorSign(
+              UnaryMinus_EPSILON(
+              ) [UnaryMinus_EPSILON]
+              Factor_Designator(
+                Designator_ONE(
+                 poeni
+                ) [Designator_ONE]
+              ) [Factor_Designator]
+            ) [FactorSign]
+          ) [Term_ONE]
+        ) [Expr_ONE]
+        MayPrintNumConst_NUMBER(
+         5
+        ) [MayPrintNumConst_NUMBER]
+      ) [Statement_PRINT]
+    ) [StatementList_STATEMENTS]
+  ) [MethodDecl]
+) [Program]
+INFO  13:12:13,076 - ==============ZAVRSEN ISPIS STABLA=====================
+
+INFO  13:12:13,076 - ==============ISPIS SEMANTICKE ANALIZE=====================
+INFO  13:12:13,085 - INFO-DesignatorSt_Assign: Pristup oznaci bodovi. Objektni cvor: { KIND: Var, NAME: bodovi, TYPE(Struct): { KIND: Int, ElemType: intType }, ADR: 0, LEVEL: 1 } na liniji 10
+INFO  13:12:13,085 - INFO-DesignatorSt_Assign: Pristup oznaci poeni. Objektni cvor: { KIND: Var, NAME: poeni, TYPE(Struct): { KIND: Int, ElemType: intType }, ADR: 1, LEVEL: 1 } na liniji 11
+INFO  13:12:13,085 - INFO-DesignatorStat_INC: Pristup oznaci bodovi. Objektni cvor: { KIND: Var, NAME: bodovi, TYPE(Struct): { KIND: Int, ElemType: intType }, ADR: 0, LEVEL: 1 } na liniji 14
+INFO  13:12:13,085 - INFO-DesignatorStat_DEC: Pristup oznaci poeni. Objektni cvor: { KIND: Var, NAME: poeni, TYPE(Struct): { KIND: Int, ElemType: intType }, ADR: 1, LEVEL: 1 } na liniji 15
+INFO  13:12:13,085 - INFO-DesignatorStat_INC: Pristup oznaci bodovi. Objektni cvor: { KIND: Var, NAME: bodovi, TYPE(Struct): { KIND: Int, ElemType: intType }, ADR: 0, LEVEL: 1 } na liniji 19
+INFO  13:12:13,085 - INFO-DesignatorStat_DEC: Pristup oznaci poeni. Objektni cvor: { KIND: Var, NAME: poeni, TYPE(Struct): { KIND: Int, ElemType: intType }, ADR: 1, LEVEL: 1 } na liniji 20
+INFO  13:12:13,085 - INFO-DesignatorStat_INC: Pristup oznaci bodovi. Objektni cvor: { KIND: Var, NAME: bodovi, TYPE(Struct): { KIND: Int, ElemType: intType }, ADR: 0, LEVEL: 1 } na liniji 24
+INFO  13:12:13,085 - INFO-DesignatorStat_DEC: Pristup oznaci poeni. Objektni cvor: { KIND: Var, NAME: poeni, TYPE(Struct): { KIND: Int, ElemType: intType }, ADR: 1, LEVEL: 1 } na liniji 25
+INFO  13:12:13,085 - INFO-Factor_Designator: Pristup oznaci bodovi. Objektni cvor: { KIND: Var, NAME: bodovi, TYPE(Struct): { KIND: Int, ElemType: intType }, ADR: 0, LEVEL: 1 } na liniji 29
+INFO  13:12:13,085 - INFO-DesignatorSt_Assign: Pristup oznaci bodovi. Objektni cvor: { KIND: Var, NAME: bodovi, TYPE(Struct): { KIND: Int, ElemType: intType }, ADR: 0, LEVEL: 1 } na liniji 29
+INFO  13:12:13,085 - INFO-Factor_Designator: Pristup oznaci poeni. Objektni cvor: { KIND: Var, NAME: poeni, TYPE(Struct): { KIND: Int, ElemType: intType }, ADR: 1, LEVEL: 1 } na liniji 30
+INFO  13:12:13,085 - INFO-DesignatorSt_Assign: Pristup oznaci poeni. Objektni cvor: { KIND: Var, NAME: poeni, TYPE(Struct): { KIND: Int, ElemType: intType }, ADR: 1, LEVEL: 1 } na liniji 30
+INFO  13:12:13,085 - INFO-Factor_Designator: Pristup oznaci bodovi. Objektni cvor: { KIND: Var, NAME: bodovi, TYPE(Struct): { KIND: Int, ElemType: intType }, ADR: 0, LEVEL: 1 } na liniji 32
+INFO  13:12:13,085 - INFO-Factor_Designator: Pristup oznaci poeni. Objektni cvor: { KIND: Var, NAME: poeni, TYPE(Struct): { KIND: Int, ElemType: intType }, ADR: 1, LEVEL: 1 } na liniji 32
+ERROR 13:12:13,085 - GRESKA-MethodDecl: Skok na nepostojecu labelu na liniji 7
+INFO  13:12:13,086 - ==============ZAVRSEN ISPIS SEMANTICKE ANALIZE=====================
+
+ERROR 13:12:13,086 - Parsiranje NIJE uspesno zavrseno!

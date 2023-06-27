@@ -43,6 +43,7 @@ import java_cup.runtime.Symbol;
 "read" 		{ return new_symbol(sym.READ, yytext()); }
 "return" 	{ return new_symbol(sym.RETURN, yytext()); }
 "void" 		{ return new_symbol(sym.VOID, yytext()); }
+"goto" 		{ return new_symbol(sym.GOTO, yytext()); }
 
 "+" 		{ return new_symbol(sym.PLUS, yytext()); }
 "-" 		{ return new_symbol(sym.MINUS, yytext()); }
@@ -53,6 +54,7 @@ import java_cup.runtime.Symbol;
 "++" 		{ return new_symbol(sym.INCREMENT, yytext()); }
 "--" 		{ return new_symbol(sym.DECREMENT, yytext()); }
 ";" 		{ return new_symbol(sym.SEMICOLON, yytext()); }
+":" 		{ return new_symbol(sym.COLON, yytext()); }
 "," 		{ return new_symbol(sym.COMMA, yytext()); }
 "(" 		{ return new_symbol(sym.LEFT_PARENTHESIS, yytext()); }
 ")" 		{ return new_symbol(sym.RIGHT_PARENTHESIS, yytext()); }

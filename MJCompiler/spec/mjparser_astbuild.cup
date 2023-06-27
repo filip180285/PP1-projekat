@@ -56,6 +56,8 @@ terminal Integer BOOLEAN;
 terminal PLUS, MINUS, MULTIPLICATION, DIVISION, MODULUS, EQUALS, INCREMENT, DECREMENT;
 terminal SEMICOLON, COMMA, LEFT_PARENTHESIS, RIGHT_PARENTHESIS, LEFT_BRACKET, RIGHT_BRACKET, LEFT_BRACE, RIGHT_BRACE;
 
+terminal GOTO, COLON;
+
 nonterminal Program Program;
 nonterminal ConstVarDeclList ConstVarDeclList;
 nonterminal ConstDeclList ConstDeclList;
@@ -85,6 +87,8 @@ nonterminal rs.etf.pp1.symboltable.concepts.Obj Designator, DesignatorArrayOrMat
 nonterminal rs.etf.pp1.symboltable.concepts.Struct Constant, FactorSign, Factor, Term, Expr;
 
 nonterminal rs.etf.pp1.symboltable.concepts.Struct Type, NEW_Array, NEW_Matrix;
+
+nonterminal Label Label;
 
 
 
@@ -155,8 +159,12 @@ MethodVarDeclList ::= (MethodVarDeclList_VAR) MethodVarDeclList:M1 VarDeclList:V
 
 StatementList ::= (StatementList_STATEMENTS) StatementList:S1 Statement:S2 {: RESULT=new StatementList_STATEMENTS(S1, S2); RESULT.setLine(S1left); :}
 				  |
+				  (StatementList_LABEL) StatementList:S1 Label:L2 COLON Statement:S3 {: RESULT=new StatementList_LABEL(S1, L2, S3); RESULT.setLine(S1left); :}
+				  |
 				  (StatementList_EPSILON) {: RESULT=new StatementList_EPSILON(); :} /* epsilon */
 				  ;
+				  
+Label ::= (Label) IDENTIFIER:I1 {: RESULT=new Label(I1); RESULT.setLine(I1left); :};
 				  
 				  
 				  
@@ -174,6 +182,8 @@ Statement ::= (Statement_DesignatorStatement) DesignatorStatement:D1 SEMICOLON {
 			  (Statement_READ) READ LEFT_PARENTHESIS Designator:D1 RIGHT_PARENTHESIS SEMICOLON {: RESULT=new Statement_READ(D1); RESULT.setLine(D1left); :}
 			  |
 			  (Statement_PRINT) PRINT LEFT_PARENTHESIS Expr:E1 MayPrintNumConst:M2 RIGHT_PARENTHESIS SEMICOLON {: RESULT=new Statement_PRINT(E1, M2); RESULT.setLine(E1left); :}
+			  |
+			  (Statement_GOTO) GOTO IDENTIFIER:I1 SEMICOLON {: RESULT=new Statement_GOTO(I1); RESULT.setLine(I1left); :}
 			  |
 			  (Statement_StatementList) LEFT_BRACE StatementList:S1 RIGHT_BRACE {: RESULT=new Statement_StatementList(S1); RESULT.setLine(S1left); :};
 			  

@@ -1,5 +1,6 @@
 package rs.ac.bg.etf.pp1;
 
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
@@ -44,6 +45,9 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     private Struct exprTypeArray; // za cuvanje tipa niza radi ispitivanja u matrici
     
     private int numGlobalVars = 0; // broj statickih varijabli
+    
+    private HashSet<String> setOfLabels = new HashSet<String>();
+    private HashSet<String> setOfGotoLabels = new HashSet<String>();
     
     public int getNumGlobalVars() {
     	return numGlobalVars;
@@ -343,7 +347,24 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 	    	
 		    Tab.chainLocalSymbols(methObj);
 		    Tab.closeScope();
+		    
+	    	if(setOfLabels.containsAll(setOfGotoLabels) == false) {
+	    		report_error("GRESKA-MethodDecl: Skok na nepostojecu labelu", methodDecl);
+	    		return;
+	    	}
     	}
+    }
+    
+    // StatementList ::= (StatementList_LABEL) StatementList Label COLON Statement
+    @Override
+    public void visit(StatementList_LABEL statementList_LABEL) {
+    	setOfLabels.add(statementList_LABEL.getLabel().getI1());
+    }
+    
+    // Statement ::= (Statement_GOTO) GOTO IDENTIFIER SEMICOLON
+    @Override
+    public void visit(Statement_GOTO statement_GOTO) {
+    	setOfGotoLabels.add(statement_GOTO.getI1());
     }
     
     // Factor ::= (Factor_Designator) Designator
