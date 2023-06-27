@@ -77,6 +77,15 @@ sintaksna analiza: dodata smena designator MONKEY
 semanticka analiza: provera da li je desiganator nizovna promenljiva
 generisanje koda: obrada manipulacijom steka
 
+-modifikacijaFakt: factor factorial@ -> ispis faktorijela clana
+leksicka analiza: uvodjenje ! najprioritetniji operator, mora biti u stablu ispod * / %, to radimo izmjenom
+smjene factor, factor -> subfactor i factor -> factor subfactor FACTORIAL, subfactor postaje ono sto je 
+prethodno bio factor
+semanticka analiza: provera da li je subfactor int tipa
+generisanje koda: obrada manipulacijom steka, posebno se obrade slucajevi za subfactor < 0, subfactor == 0 i subfactor == 1,
+zatim se vrsi obrada steka sve dok ne dodjemo da je drugi cinilac proizvoda 1, da iskocimo na vrijeme iz petlje, prije
+mnozenja sa 0 
+
 -modifikacija1: #niz -> ispis char-a napravljenog od bool niza od 8 elemenata
 leksicka analiza: uvodjenje #
 sintaksna analiza: dodata smena HASH Designator
@@ -130,6 +139,39 @@ semanticka analiza: provera da li je niz char tipa i da li je niz promenljiva
 generisanje koda: prolazak kroz niz i razlicita obrada za mala i velika slova, ne radi fino jer
 rem operator ne daje dobar rezultat za negativne brojeve za setanje unazad po opsegu, s pozitivnim 
 brojevima radi
+
+-modifikacijaIndex: num#niz - ispis indeksa datog sortiranog niza na kome bi trebalo da se nadje num
+leksicka analiza: uvodjenje #
+sintaksna analiza: dodata smena FactorSign HASH DesignatorArrayOrMatrixName
+semanticka analiza: provera da li je niz int tipa i da li je niz promenljiva i da li je faktor int tipa
+generisanje koda: prolazak kroz niz i trazenje prvog veceg elementa
+
+-modifikacijaGoto: goto labela - implementacija goto naredbe, skok unapred i unazad
+leksicka analiza: uvodjenje kljucne reci goto i COLON
+sintaksna analiza: dodate smene StatementList ::= StatementList Label COLON Statement, Label ::= IDENTIFIER
+Statement ::= GOTO IDENTIFIER SEMICOLON
+semanticka analiza: provera da li je skup svih labela na koje se skace(goto l1) podskup svih deklarisanih labela,
+rad sa dva seta stringova
+generisanje koda: Cuvaju se dve hes mape, jedna za adresu labele(ime + adresa), druga za pracenje svih adresa koje
+treba da skoce na labelu(ime + lista adresa), kada se obidje cvor label dodaje se ime i adresa u prvu mapu i popunjavaju
+se sve adrese iz liste sa imenom trenutne labele, tako se obradjuje skok unapred, a kada se obradjuje goto smena onda 
+se trazi adresa labele i ako je pronadjena u prvoj mapi, vrsi se obican skok na tu adresu i to je skok unazad,
+a ako nije, onda se lista za drugu mapu pravi ukoliko vec ne postoji i dodaje se Code.pc + 1 za kasniji fixup kada se obidje
+labela, tj obradi se skok unapred
+
+- moze nesto da se cuva u semantic analizer i da se pristupa iz code generator
+
+-modifikacijaSort: niz#, sortiranje niza neopadajuce
+leksicka analiza: uvodjenje #
+sintaksna analiza: dodata smena DesignatorArrayOrMatrixName HASH
+semanticka analiza: provera da li je niz int tipa i da li je niz promenljiva i da nije matrica
+generisanje koda: obrada manipulacijom steka, nije pokriven slucaj granicne duzine 0/1, to se lako dodaje
+
+-modifikacijaSort: niz1~niz2, kopiranje sadrzaja niz2 u niz1, podrazumevano su nizovi inicijalizovani i iste duzine
+leksicka analiza: uvodjenje ~
+sintaksna analiza: DesignatorArrayOrMatrixName TILDE DesignatorArrayOrMatrixName
+semanticka analiza: provera da li su oba clana nizovi, da nisu matrice i da su istog tipa
+generisanje koda: obrada manipulacijom steka
 
 
 
