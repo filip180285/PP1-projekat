@@ -1,143 +1,143 @@
-INFO  17:09:23,497 - Compiling source file: C:\Users\Korisnik\Desktop\PP1-projekat\MJCompiler\test\program.mj
-INFO  17:09:23,518 - #2 program
-INFO  17:09:23,518 - #9 test301
-INFO  17:09:23,518 - #27 {
-INFO  17:09:23,519 - #8 void
-INFO  17:09:23,519 - #9 main
-INFO  17:09:23,519 - #23 (
-INFO  17:09:23,519 - #24 )
-INFO  17:09:23,519 - #9 int
-INFO  17:09:23,520 - #9 niz1
-INFO  17:09:23,520 - #25 [
-INFO  17:09:23,520 - #26 ]
-INFO  17:09:23,520 - #22 ,
-INFO  17:09:23,521 - #9 niz2
-INFO  17:09:23,521 - #25 [
-INFO  17:09:23,521 - #26 ]
-INFO  17:09:23,521 - #22 ,
-INFO  17:09:23,521 - #9 matrica
-INFO  17:09:23,521 - #25 [
-INFO  17:09:23,521 - #26 ]
-INFO  17:09:23,521 - #25 [
-INFO  17:09:23,521 - #26 ]
-INFO  17:09:23,521 - #21 ;
-INFO  17:09:23,523 - #9 char
-INFO  17:09:23,524 - #9 niz3
-INFO  17:09:23,524 - #25 [
-INFO  17:09:23,524 - #26 ]
-INFO  17:09:23,524 - #21 ;
-INFO  17:09:23,524 - #27 {
-INFO  17:09:23,524 - #9 niz1
-INFO  17:09:23,525 - #18 =
-INFO  17:09:23,525 - #4 new
-INFO  17:09:23,526 - #9 int
-INFO  17:09:23,526 - #25 [
-INFO  17:09:23,526 - #10 5
-INFO  17:09:23,526 - #26 ]
-INFO  17:09:23,526 - #21 ;
-INFO  17:09:23,527 - #9 niz2
-INFO  17:09:23,528 - #18 =
-INFO  17:09:23,528 - #4 new
-INFO  17:09:23,528 - #9 int
-INFO  17:09:23,528 - #25 [
-INFO  17:09:23,528 - #10 5
-INFO  17:09:23,528 - #26 ]
-INFO  17:09:23,528 - #21 ;
-INFO  17:09:23,528 - #9 niz2
-INFO  17:09:23,528 - #25 [
-INFO  17:09:23,528 - #10 0
-INFO  17:09:23,528 - #26 ]
-INFO  17:09:23,528 - #18 =
-INFO  17:09:23,529 - #10 12
-INFO  17:09:23,529 - #21 ;
-INFO  17:09:23,529 - #9 niz2
-INFO  17:09:23,529 - #25 [
-INFO  17:09:23,529 - #10 1
-INFO  17:09:23,529 - #26 ]
-INFO  17:09:23,529 - #18 =
-INFO  17:09:23,529 - #10 11
-INFO  17:09:23,529 - #21 ;
-INFO  17:09:23,529 - #9 niz2
-INFO  17:09:23,529 - #25 [
-INFO  17:09:23,529 - #10 2
-INFO  17:09:23,529 - #26 ]
-INFO  17:09:23,530 - #18 =
-INFO  17:09:23,530 - #14 -
-INFO  17:09:23,530 - #10 2
-INFO  17:09:23,530 - #21 ;
-INFO  17:09:23,530 - #9 niz2
-INFO  17:09:23,530 - #25 [
-INFO  17:09:23,530 - #10 3
-INFO  17:09:23,530 - #26 ]
-INFO  17:09:23,530 - #18 =
-INFO  17:09:23,530 - #10 7
-INFO  17:09:23,530 - #21 ;
-INFO  17:09:23,530 - #9 niz2
-INFO  17:09:23,530 - #25 [
-INFO  17:09:23,530 - #10 4
-INFO  17:09:23,530 - #26 ]
-INFO  17:09:23,531 - #18 =
-INFO  17:09:23,531 - #10 10
-INFO  17:09:23,531 - #21 ;
-INFO  17:09:23,531 - #9 niz1
-INFO  17:09:23,531 - #29 ~
-INFO  17:09:23,531 - #9 niz2
-INFO  17:09:23,531 - #21 ;
-INFO  17:09:23,531 - #5 print
-INFO  17:09:23,531 - #23 (
-INFO  17:09:23,531 - #9 niz1
-INFO  17:09:23,531 - #25 [
-INFO  17:09:23,531 - #10 0
-INFO  17:09:23,531 - #26 ]
-INFO  17:09:23,531 - #22 ,
-INFO  17:09:23,531 - #10 5
-INFO  17:09:23,531 - #24 )
-INFO  17:09:23,531 - #21 ;
-INFO  17:09:23,531 - #5 print
-INFO  17:09:23,532 - #23 (
-INFO  17:09:23,532 - #9 niz1
-INFO  17:09:23,532 - #25 [
-INFO  17:09:23,532 - #10 1
-INFO  17:09:23,532 - #26 ]
-INFO  17:09:23,532 - #22 ,
-INFO  17:09:23,532 - #10 5
-INFO  17:09:23,532 - #24 )
-INFO  17:09:23,532 - #21 ;
-INFO  17:09:23,532 - #5 print
-INFO  17:09:23,532 - #23 (
-INFO  17:09:23,532 - #9 niz1
-INFO  17:09:23,532 - #25 [
-INFO  17:09:23,532 - #10 2
-INFO  17:09:23,532 - #26 ]
-INFO  17:09:23,532 - #22 ,
-INFO  17:09:23,532 - #10 5
-INFO  17:09:23,532 - #24 )
-INFO  17:09:23,532 - #21 ;
-INFO  17:09:23,532 - #5 print
-INFO  17:09:23,532 - #23 (
-INFO  17:09:23,532 - #9 niz1
-INFO  17:09:23,532 - #25 [
-INFO  17:09:23,532 - #10 3
-INFO  17:09:23,532 - #26 ]
-INFO  17:09:23,533 - #22 ,
-INFO  17:09:23,533 - #10 5
-INFO  17:09:23,533 - #24 )
-INFO  17:09:23,533 - #21 ;
-INFO  17:09:23,533 - #5 print
-INFO  17:09:23,533 - #23 (
-INFO  17:09:23,533 - #9 niz1
-INFO  17:09:23,533 - #25 [
-INFO  17:09:23,533 - #10 4
-INFO  17:09:23,533 - #26 ]
-INFO  17:09:23,533 - #22 ,
-INFO  17:09:23,533 - #10 5
-INFO  17:09:23,534 - #24 )
-INFO  17:09:23,535 - #21 ;
-INFO  17:09:23,535 - #28 }
-INFO  17:09:23,535 - #28 }
-INFO  17:09:23,536 - 
+INFO  17:06:17,693 - Compiling source file: C:\Users\Korisnik\Desktop\PP1-projekat\MJCompiler\test\program.mj
+INFO  17:06:17,712 - #2 program
+INFO  17:06:17,712 - #9 test301
+INFO  17:06:17,712 - #27 {
+INFO  17:06:17,713 - #8 void
+INFO  17:06:17,713 - #9 main
+INFO  17:06:17,713 - #23 (
+INFO  17:06:17,713 - #24 )
+INFO  17:06:17,713 - #9 int
+INFO  17:06:17,714 - #9 niz1
+INFO  17:06:17,714 - #25 [
+INFO  17:06:17,714 - #26 ]
+INFO  17:06:17,714 - #22 ,
+INFO  17:06:17,714 - #9 niz2
+INFO  17:06:17,714 - #25 [
+INFO  17:06:17,714 - #26 ]
+INFO  17:06:17,714 - #22 ,
+INFO  17:06:17,714 - #9 matrica
+INFO  17:06:17,715 - #25 [
+INFO  17:06:17,715 - #26 ]
+INFO  17:06:17,715 - #25 [
+INFO  17:06:17,715 - #26 ]
+INFO  17:06:17,715 - #21 ;
+INFO  17:06:17,717 - #9 char
+INFO  17:06:17,718 - #9 niz3
+INFO  17:06:17,718 - #25 [
+INFO  17:06:17,718 - #26 ]
+INFO  17:06:17,718 - #21 ;
+INFO  17:06:17,718 - #27 {
+INFO  17:06:17,718 - #9 niz1
+INFO  17:06:17,718 - #18 =
+INFO  17:06:17,718 - #4 new
+INFO  17:06:17,719 - #9 int
+INFO  17:06:17,719 - #25 [
+INFO  17:06:17,719 - #10 5
+INFO  17:06:17,719 - #26 ]
+INFO  17:06:17,720 - #21 ;
+INFO  17:06:17,721 - #9 niz2
+INFO  17:06:17,721 - #18 =
+INFO  17:06:17,721 - #4 new
+INFO  17:06:17,721 - #9 int
+INFO  17:06:17,721 - #25 [
+INFO  17:06:17,721 - #10 5
+INFO  17:06:17,721 - #26 ]
+INFO  17:06:17,721 - #21 ;
+INFO  17:06:17,721 - #9 niz2
+INFO  17:06:17,721 - #25 [
+INFO  17:06:17,721 - #10 0
+INFO  17:06:17,722 - #26 ]
+INFO  17:06:17,722 - #18 =
+INFO  17:06:17,722 - #10 12
+INFO  17:06:17,722 - #21 ;
+INFO  17:06:17,722 - #9 niz2
+INFO  17:06:17,722 - #25 [
+INFO  17:06:17,722 - #10 0
+INFO  17:06:17,722 - #26 ]
+INFO  17:06:17,722 - #18 =
+INFO  17:06:17,722 - #10 11
+INFO  17:06:17,722 - #21 ;
+INFO  17:06:17,722 - #9 niz2
+INFO  17:06:17,723 - #25 [
+INFO  17:06:17,723 - #10 0
+INFO  17:06:17,723 - #26 ]
+INFO  17:06:17,723 - #18 =
+INFO  17:06:17,723 - #14 -
+INFO  17:06:17,723 - #10 2
+INFO  17:06:17,723 - #21 ;
+INFO  17:06:17,724 - #9 niz2
+INFO  17:06:17,724 - #25 [
+INFO  17:06:17,725 - #10 0
+INFO  17:06:17,725 - #26 ]
+INFO  17:06:17,725 - #18 =
+INFO  17:06:17,725 - #10 7
+INFO  17:06:17,725 - #21 ;
+INFO  17:06:17,725 - #9 niz2
+INFO  17:06:17,725 - #25 [
+INFO  17:06:17,726 - #10 0
+INFO  17:06:17,726 - #26 ]
+INFO  17:06:17,726 - #18 =
+INFO  17:06:17,726 - #10 10
+INFO  17:06:17,726 - #21 ;
+INFO  17:06:17,726 - #9 niz1
+INFO  17:06:17,726 - #29 ~
+INFO  17:06:17,726 - #9 niz2
+INFO  17:06:17,726 - #21 ;
+INFO  17:06:17,726 - #5 print
+INFO  17:06:17,726 - #23 (
+INFO  17:06:17,726 - #9 niz1
+INFO  17:06:17,726 - #25 [
+INFO  17:06:17,726 - #10 0
+INFO  17:06:17,726 - #26 ]
+INFO  17:06:17,727 - #22 ,
+INFO  17:06:17,727 - #10 5
+INFO  17:06:17,727 - #24 )
+INFO  17:06:17,727 - #21 ;
+INFO  17:06:17,727 - #5 print
+INFO  17:06:17,727 - #23 (
+INFO  17:06:17,727 - #9 niz1
+INFO  17:06:17,727 - #25 [
+INFO  17:06:17,727 - #10 1
+INFO  17:06:17,727 - #26 ]
+INFO  17:06:17,727 - #22 ,
+INFO  17:06:17,728 - #10 5
+INFO  17:06:17,728 - #24 )
+INFO  17:06:17,728 - #21 ;
+INFO  17:06:17,728 - #5 print
+INFO  17:06:17,728 - #23 (
+INFO  17:06:17,728 - #9 niz1
+INFO  17:06:17,728 - #25 [
+INFO  17:06:17,728 - #10 2
+INFO  17:06:17,728 - #26 ]
+INFO  17:06:17,728 - #22 ,
+INFO  17:06:17,728 - #10 5
+INFO  17:06:17,728 - #24 )
+INFO  17:06:17,728 - #21 ;
+INFO  17:06:17,728 - #5 print
+INFO  17:06:17,728 - #23 (
+INFO  17:06:17,728 - #9 niz1
+INFO  17:06:17,728 - #25 [
+INFO  17:06:17,728 - #10 3
+INFO  17:06:17,728 - #26 ]
+INFO  17:06:17,729 - #22 ,
+INFO  17:06:17,729 - #10 5
+INFO  17:06:17,729 - #24 )
+INFO  17:06:17,729 - #21 ;
+INFO  17:06:17,729 - #5 print
+INFO  17:06:17,729 - #23 (
+INFO  17:06:17,729 - #9 niz1
+INFO  17:06:17,729 - #25 [
+INFO  17:06:17,729 - #10 4
+INFO  17:06:17,729 - #26 ]
+INFO  17:06:17,729 - #22 ,
+INFO  17:06:17,729 - #10 5
+INFO  17:06:17,729 - #24 )
+INFO  17:06:17,729 - #21 ;
+INFO  17:06:17,729 - #28 }
+INFO  17:06:17,729 - #28 }
+INFO  17:06:17,730 - 
                      ==============ISPIS STABLA=====================
-INFO  17:09:23,537 - Program(
+INFO  17:06:17,732 - Program(
   ProgramName(
    test301
   ) [ProgramName]
@@ -322,7 +322,7 @@ INFO  17:09:23,537 - Program(
                                     UnaryMinus_EPSILON(
                                     ) [UnaryMinus_EPSILON]
                                     Factor_NUMBER(
-                                     1
+                                     0
                                     ) [Factor_NUMBER]
                                   ) [FactorSign]
                                 ) [Term_ONE]
@@ -358,7 +358,7 @@ INFO  17:09:23,537 - Program(
                                   UnaryMinus_EPSILON(
                                   ) [UnaryMinus_EPSILON]
                                   Factor_NUMBER(
-                                   2
+                                   0
                                   ) [Factor_NUMBER]
                                 ) [FactorSign]
                               ) [Term_ONE]
@@ -394,7 +394,7 @@ INFO  17:09:23,537 - Program(
                                 UnaryMinus_EPSILON(
                                 ) [UnaryMinus_EPSILON]
                                 Factor_NUMBER(
-                                 3
+                                 0
                                 ) [Factor_NUMBER]
                               ) [FactorSign]
                             ) [Term_ONE]
@@ -430,7 +430,7 @@ INFO  17:09:23,537 - Program(
                               UnaryMinus_EPSILON(
                               ) [UnaryMinus_EPSILON]
                               Factor_NUMBER(
-                               4
+                               0
                               ) [Factor_NUMBER]
                             ) [FactorSign]
                           ) [Term_ONE]
@@ -637,12 +637,12 @@ INFO  17:09:23,537 - Program(
     ) [StatementList_STATEMENTS]
   ) [MethodDecl]
 ) [Program]
-INFO  17:09:23,538 - ==============ZAVRSEN ISPIS STABLA=====================
+INFO  17:06:17,733 - ==============ZAVRSEN ISPIS STABLA=====================
 
-INFO  17:09:23,538 - ==============ISPIS SEMANTICKE ANALIZE=====================
-INFO  17:09:23,547 - INFO-DesignatorSt_Assign: Pristup oznaci niz1. Objektni cvor: { KIND: Var, NAME: niz1, TYPE(Struct): { KIND: Array, ElemType: intType }, ADR: 0, LEVEL: 1 } na liniji 11
-INFO  17:09:23,548 - INFO-DesignatorSt_Assign: Pristup oznaci niz2. Objektni cvor: { KIND: Var, NAME: niz2, TYPE(Struct): { KIND: Array, ElemType: intType }, ADR: 1, LEVEL: 1 } na liniji 12
-INFO  17:09:23,548 - ==============ZAVRSEN ISPIS SEMANTICKE ANALIZE=====================
+INFO  17:06:17,733 - ==============ISPIS SEMANTICKE ANALIZE=====================
+INFO  17:06:17,743 - INFO-DesignatorSt_Assign: Pristup oznaci niz1. Objektni cvor: { KIND: Var, NAME: niz1, TYPE(Struct): { KIND: Array, ElemType: intType }, ADR: 0, LEVEL: 1 } na liniji 11
+INFO  17:06:17,743 - INFO-DesignatorSt_Assign: Pristup oznaci niz2. Objektni cvor: { KIND: Var, NAME: niz2, TYPE(Struct): { KIND: Array, ElemType: intType }, ADR: 1, LEVEL: 1 } na liniji 12
+INFO  17:06:17,743 - ==============ZAVRSEN ISPIS SEMANTICKE ANALIZE=====================
 
-INFO  17:09:23,548 - Parsiranje uspesno zavrseno!
-INFO  17:09:23,551 - Generisanje koda uspesno zavrseno!
+INFO  17:06:17,744 - Parsiranje uspesno zavrseno!
+INFO  17:06:17,747 - Generisanje koda uspesno zavrseno!

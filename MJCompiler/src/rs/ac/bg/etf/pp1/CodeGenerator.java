@@ -232,6 +232,46 @@ public class CodeGenerator extends VisitorAdaptor {
     	Code.store(desObj);
     }
     
+    // DesignatorStatement ::= (DesignatorStat_Copy) DesignatorArrayOrMatrixName TILDE DesignatorArrayOrMatrixName
+    @Override
+    public void visit(DesignatorStat_Copy designatorStat_Copy) { // a1 a2
+    	Obj a1 = designatorStat_Copy.getDesignatorArrayOrMatrixName().obj;
+    	Obj a2 = designatorStat_Copy.getDesignatorArrayOrMatrixName1().obj;
+    	
+    	Code.put(Code.pop); // a1
+    	Code.put(Code.pop); //
+    	Code.loadConst(0); // 0
+    	int gore = Code.pc;
+    	Code.put(Code.dup); // 0 0
+    	Code.load(a1); // 0 0 a1
+    	Code.put(Code.arraylength); // 0 0 5
+    	
+    	int fixup = Code.pc + 1;
+    	Code.putFalseJump(Code.ne, 0); // if(ind == len) goto kraj	// 0
+    	// 0 -> 0 a1 0 a2 -> 0 a1 0 a2 0 -> 0 a1 0 a2[0] 
+    	Code.load(a1); // 0 a1
+    	Code.put(Code.dup2); // 0 a1 0 a1
+    	Code.put(Code.pop); // 0 a1 0
+    	Code.load(a2); // 0 a1 0 a2
+    	Code.put(Code.dup2); // 0 a1 0 a2 0 a2
+    	Code.put(Code.pop); // 0 a1 0 a2 0
+    	if(a2.getType().getElemType().equals(Tab.charType)) {
+    		Code.put(Code.baload); // 0 a1 0 a2[0]
+    		Code.put(Code.bastore); // 0		a1[0] = a2[0]
+    	}
+    	else {
+    		Code.put(Code.aload); // 0 a1 0 a2[0]
+    		Code.put(Code.astore); // 0		a1[0] = a2[0]
+    	}
+    	Code.loadConst(1); // 0 1
+    	Code.put(Code.add); // 1
+    	Code.putJump(gore);
+    	
+    	//kraj
+    	Code.fixup(fixup);
+    	Code.put(Code.pop);
+    }
+    
     
     // DesignatorStatement ::= (DesignatorSt_Assign) Designator Assignop Expr
     @Override

@@ -650,6 +650,22 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     	}
     }
     
+    // DesignatorStatement ::= (DesignatorStat_Copy) DesignatorArrayOrMatrixName TILDE DesignatorArrayOrMatrixName
+    @Override
+    public void visit(DesignatorStat_Copy designatorStat_Copy) { 
+    	Obj a1 = designatorStat_Copy.getDesignatorArrayOrMatrixName().obj;
+    	Obj a2 = designatorStat_Copy.getDesignatorArrayOrMatrixName1().obj;
+    	
+    	if(a1.getType().getElemType().getKind() == Struct.Array || a2.getType().getElemType().getKind() == Struct.Array) {
+    		report_error("GRESKA-DesignatorStat_Copy: Oba operatora moraju biti nizovi", designatorStat_Copy);
+    		return;
+    	}
+    	else if(a1.getType().equals(a2.getType()) == false) {
+    		report_error("GRESKA-DesignatorStat_Copy: Tipovi nizova moraju biti isti", designatorStat_Copy);
+    		return;
+    	}
+    }
+    
     // MayDesignator ::= (MayDesignator_Designator) Designator
     @Override
     public void visit(MayDesignator_Designator mayDesignator_Designator) {
