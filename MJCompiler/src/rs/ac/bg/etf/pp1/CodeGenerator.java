@@ -232,6 +232,97 @@ public class CodeGenerator extends VisitorAdaptor {
     	Code.store(desObj);
     }
     
+    // DesignatorStatement ::= (DesignatorStat_SORT) DesignatorArrayOrMatrixName HASH
+    @Override
+    public void visit(DesignatorStat_SORT designatorStat_SORT) { // arr
+    	Obj array = designatorStat_SORT.getDesignatorArrayOrMatrixName().obj;
+    	Code.put(Code.pop); // 
+    	Code.loadConst(0); // 0
+    	Code.loadConst(1); // 0 1
+    	
+    	int gore = Code.pc;
+    	Code.put(Code.dup2); // 0 1 0 1
+    	Code.put(Code.dup2); // 0 1 0 1 0 1
+    	Code.load(array); //  0 1 0 1 0 1 adr
+    	Code.put(Code.dup_x1); // 0 1 0 1 0 adr 1 adr
+    	Code.put(Code.pop); // 0 1 0 1 0 adr 1
+    	Code.put(Code.aload); // 0 1 0 1 0 a[1]
+    	Code.put(Code.dup_x1); // 0 1 0 1 a[1] 0 a[1]
+    	Code.put(Code.pop); // 0 1 0 1 a[1] 0
+    	Code.load(array); // 0 1 0 1 a[1] 0 adr
+    	Code.put(Code.dup_x1); // 0 1 0 1 a[1] adr 0 adr
+    	Code.put(Code.pop); // 0 1 0 1 a[1] adr 0
+    	Code.put(Code.aload); // 0 1 0 1 a[1] a[0]
+    	Code.put(Code.dup2); // 0 1 0 1 a[1] a[0] a[1] a[0]
+    	
+    	int fixup = Code.pc + 1;
+    	Code.putFalseJump(Code.gt, 0); // if(a[1] < a[0]) skoci na swap 0 1 0 1 a[1] a[0]
+    	Code.put(Code.pop); // 0 1 0 1 a[1]
+    	Code.put(Code.pop); // 0 1 0 1
+    	Code.put(Code.pop); // 0 1 0
+    	Code.put(Code.pop); // 0 1
+    	// else sledeca iteracija
+    	int inc = Code.pc;
+    	Code.put(Code.dup); // 0 1 1 adr
+    	Code.load(array); // 0 1 1 adr
+    	Code.put(Code.arraylength); // 0 1 1 len
+    	Code.loadConst(1); // 0 1 1 len 1
+    	Code.put(Code.sub); // 0 1 1 len-1
+    	
+    	int fixup2 = Code.pc + 1;
+    	Code.putFalseJump(Code.ne, 0); // if(j == len - 1) skoci na inc i + j = 0 // 0 1
+    	//else j++
+    	Code.loadConst(1); // 0 1 1
+    	Code.put(Code.add); // 0 2
+    	Code.putJump(gore); // 0 2
+    	
+    	// inc i + j = i + 1 + provjera i
+    	Code.fixup(fixup2); // 0 1
+    	Code.put(Code.pop); // 0
+    	Code.put(Code.dup); // 0 0
+    	Code.load(array); // 0 0 arr
+    	Code.put(Code.arraylength); // 0 0 len
+    	Code.loadConst(2); // 0 0 len 2
+    	Code.put(Code.sub); // 0 0 len-2
+    	int fixup3 = Code.pc + 1;
+    	Code.putFalseJump(Code.ne, 0); // if(i == len-2) idi na kraj // 0
+    	// else inc 1 + j == i + 1
+    	Code.loadConst(1); // 0 1
+    	Code.put(Code.add); // 1
+    	Code.put(Code.dup); // 1 1
+    	Code.loadConst(1); // 1 1 1
+    	Code.put(Code.add); // 1 2
+    	Code.putJump(gore);
+    	
+    	// swap 0 1 0 1 a[1] a[0]
+    	Code.fixup(fixup);
+    	Code.put(Code.dup_x2); // 0 1 0 a[0] 1 a[1] a[0]
+    	Code.put(Code.pop); // 0 1 0 a[0] 1 a[1]
+    	Code.put(Code.dup_x2); // 0 1 0 a[1] a[0] 1 a[1]
+    	Code.put(Code.pop); // 0 1 0 a[1] a[0] 1
+    	Code.load(array); //  0 1 0 a[1] a[0] 1 adr
+    	Code.put(Code.dup_x2); //  0 1 0 a[1] adr a[0] 1 adr
+    	Code.put(Code.pop); // 0 1 0 a[1] adr a[0] 1
+    	Code.put(Code.dup_x1); // 0 1 0 a[1] adr 1 a[0] 1
+    	Code.put(Code.pop); // 0 1 0 a[1] adr 1 a[0]
+    	Code.put(Code.astore); // 0 1 0 a[1] 		a[1] = a[0]
+    	
+    	Code.load(array); // 0 1 0 a[1] adr
+    	Code.put(Code.dup_x2); // 0 1 adr 0 a[1] adr
+    	Code.put(Code.pop); // 0 1 adr 0 a[1]
+    	Code.put(Code.astore); // 0 1		a[0] = a[1]
+    	
+    	/*Code.load(array); //  0 1 0 1 a[1] adr
+    	Code.put(Code.dup_x2); // 0 1 0 adr 1 a[1] adr
+    	Code.put(Code.pop); // 0 1 0 adr 1 a[1]
+    	Code.put(Code.astore); // 0 1 		a[0] = a[1]*/
+    	
+    	Code.putJump(inc);
+    	
+    	Code.fixup(fixup3); // 0
+    	Code.put(Code.pop); //
+    }
+    
     
     // DesignatorStatement ::= (DesignatorSt_Assign) Designator Assignop Expr
     @Override
