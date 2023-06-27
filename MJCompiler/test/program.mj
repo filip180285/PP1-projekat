@@ -12,7 +12,7 @@ program test301
 		//niz2#;
 		
 		niz = new int[5];
-		niz[0] = 3;  niz[1] = 2;  niz[2] = 5;  niz[3] = 1;  niz[4] = 4; 
+		niz[0] = 3;  niz[1] = 3;  niz[2] = 5;  niz[3] = 1;  niz[4] = 4; 
 		print(niz[0], 5); print(niz[1], 5); print(niz[2], 5); print(niz[3], 5); print(niz[4], 5);
 		print(eol);
 		niz#;
